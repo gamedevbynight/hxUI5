@@ -1,6 +1,6 @@
 {
     "name": "hxUI5",
-    "url" : "https://git.korbelcloud.de/nico/hxUI5",
+    "url" : "https://github.com/gamedevbynight/hxUI5",
     "license": "MIT",
     "tags": ["js", "OpenUI5"],
     "description": "Haxe externs for OpenUI5",
