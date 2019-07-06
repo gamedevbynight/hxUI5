@@ -33,7 +33,7 @@ or
 You cannot use the MVC Style of OpenUI5. I didn't find a Haxe-Solution for the style of the Javascript files of the OpenUI5-Controller. Maybe there is a posibillity with CustomJSGenerator for haxe. But i didn't found the right way how to do it. 
 
 # Examples
-See [hxUI5 Examples](URL einfügen) to get an idea how to use hxUI5.
+See [hxUI5 Examples](https://github.com/gamedevbynight/hxUI5-Examples.git) to get an idea how to use hxUI5.
 
 After the hxUI5 examples, you can try to surf to [OpenUI5 Documentation](https://openui5.hana.ondemand.com/#/topic) and check out the samples for every Control.
 
