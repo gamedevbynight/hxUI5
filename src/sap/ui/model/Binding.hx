@@ -1,0 +1,133 @@
+package sap.ui.model;
+
+@:native("sap.ui.model.Binding")
+
+/**
+* The Binding is the object, which holds the necessary information for a data binding, like the binding path and the binding context, and acts like an interface to the model for the control, so it is the event provider for changes in the data model and provides getters for accessing properties or lists.
+*/
+extern class Binding extends sap.ui.base.EventProvider
+{
+
+	/**
+	* 
+	* @param	oModel the model
+	* @param	sPath the path
+	* @param	oContext the context object
+	* @param	mParameters null
+	* @return	Object
+	*/
+	public function new( ?oModel:sap.ui.model.Model, ?sPath:String, ?oContext:sap.ui.model.Context, ?mParameters:Dynamic):Void;
+
+	/**
+	* Attach event-handler <code>fnFunction</code> to the 'change' event of this <code>sap.ui.model.Model</code>.<br/>
+	* @param	fnFunction The function to call, when the event occurs.
+	* @param	oListener object on which to call the given function.
+	* @return	Void
+	*/
+	public function attachChange( fnFunction:()->Void, ?oListener:Dynamic):Void;
+
+	/**
+	* Attach event-handler <code>fnFunction</code> to the 'dataReceived' event of this <code>sap.ui.model.Binding</code>.<br/>
+	* @param	fnFunction The function to call, when the event occurs.
+	* @param	oListener object on which to call the given function.
+	* @return	Void
+	*/
+	public function attachDataReceived( fnFunction:()->Void, ?oListener:Dynamic):Void;
+
+	/**
+	* Attach event-handler <code>fnFunction</code> to the 'dataRequested' event of this <code>sap.ui.model.Binding</code>.<br/>
+	* @param	fnFunction The function to call, when the event occurs.
+	* @param	oListener object on which to call the given function.
+	* @return	Void
+	*/
+	public function attachDataRequested( fnFunction:()->Void, ?oListener:Dynamic):Void;
+
+	/**
+	* Removes all control messages for this binding from the MessageManager in addition to the standard clean-up tasks.
+	* @return	Void
+	*/
+	public function destroy( ):Void;
+
+	/**
+	* Detach event-handler <code>fnFunction</code> from the 'change' event of this <code>sap.ui.model.Model</code>.<br/>
+	* @param	fnFunction The function to call, when the event occurs.
+	* @param	oListener object on which to call the given function.
+	* @return	Void
+	*/
+	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):Void;
+
+	/**
+	* Detach event-handler <code>fnFunction</code> from the 'dataReceived' event of this <code>sap.ui.model.Binding</code>.<br/>
+	* @param	fnFunction The function to call, when the event occurs.
+	* @param	oListener object on which to call the given function.
+	* @return	Void
+	*/
+	public function detachDataReceived( fnFunction:()->Void, ?oListener:Dynamic):Void;
+
+	/**
+	* Detach event-handler <code>fnFunction</code> from the 'dataRequested' event of this <code>sap.ui.model.Binding</code>.<br/>
+	* @param	fnFunction The function to call, when the event occurs.
+	* @param	oListener object on which to call the given function.
+	* @return	Void
+	*/
+	public function detachDataRequested( fnFunction:()->Void, ?oListener:Dynamic):Void;
+
+	/**
+	* Creates a new subclass of class sap.ui.model.Binding with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
+
+<code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.EventProvider.extend}.
+	* @param	sClassName Name of the class being created
+	* @param	oClassInfo Object literal with information about the class
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @return	Created class / constructor function
+	*/
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+
+	/**
+	* Returns a metadata object for class sap.ui.model.Binding.
+	* @return	Metadata object describing this class
+	*/
+	public static function getMetadata( ):sap.ui.base.Metadata;
+
+	/**
+	* Returns whether the binding is initial, which means it did not get an initial value yet
+	* @return	whether binding is initial
+	*/
+	public function isInitial( ):Bool;
+
+	/**
+	* Returns whether the binding is relative, which means it did not start with a /
+	* @return	whether binding is relative
+	*/
+	public function isRelative( ):Bool;
+
+	/**
+	* Returns true if the binding is suspended or false if not.
+	* @return	whether binding is suspended
+	*/
+	public function isSuspended( ):Bool;
+
+	/**
+	* Refreshes the binding, check whether the model data has been changed and fire change event if this is the case. For server side models this should refetch the data from the server. To update a control, even if no data has been changed, e.g. to reset a control after failed validation, please use the parameter <code>bForceUpdate</code>.
+	* @param	bForceUpdate Update the bound control even if no data has been changed
+	* @return	Void
+	*/
+	public function refresh( bForceUpdate:Bool):Void;
+
+	/**
+	* Resumes the binding update. Change events will be fired again.
+
+When the binding is resumed, a change event will be fired immediately, if the data has changed while the binding was suspended. For serverside models, a request to the server will be triggered, if a refresh was requested while the binding was suspended.
+	* @return	Void
+	*/
+	public function resume( ):Void;
+
+	/**
+	* Suspends the binding update. No change events will be fired.
+
+A refresh call with bForceUpdate set to true will also update the binding and fire a change in suspended mode. Special operations on bindings, which require updates to work properly (as paging or filtering in list bindings) will also update and cause a change event although the binding is suspended.
+	* @return	Void
+	*/
+	public function suspend( ):Void;
+}
+
