@@ -230,9 +230,15 @@ Default value is <code>Inherit</code>.
 	public function removeAriaLabelledBy( vAriaLabelledBy:sap.ui.core.Control):sap.ui.core.ID;
 
 	/**
-	* Sets the editable status of the token.
-	* @param	bEditable Indicates if the token is editable.
-	* @return	this instance for method chaining
+	* Sets a new value for property {@link #getEditable editable}.
+
+Indicates the editable status of the token. If it is set to <code>true</code>, token displays a delete icon.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bEditable New value for property <code>editable</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setEditable( bEditable:Bool):sap.m.Token;
 
@@ -250,9 +256,15 @@ Default value is <code>empty string</code>.
 	public function setKey( sKey:String):sap.m.Token;
 
 	/**
-	* Sets the selection status of the token.
-	* @param	bSelected Indicates if the token is selected.
-	* @return	this instance for method chaining
+	* Sets a new value for property {@link #getSelected selected}.
+
+Indicates the current selection status of the token.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bSelected New value for property <code>selected</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setSelected( bSelected:Bool):sap.m.Token;
 

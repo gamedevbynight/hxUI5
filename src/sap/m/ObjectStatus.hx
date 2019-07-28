@@ -221,9 +221,13 @@ Default value is <code>false</code>.
 	public function setState( sValue:String):sap.m.ObjectStatus;
 
 	/**
-	* Sets the text. The default value is empty/undefined.
-	* @param	sText New value for property text
-	* @return	this to allow method chaining
+	* Sets a new value for property {@link #getText text}.
+
+Defines the ObjectStatus text.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sText New value for property <code>text</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setText( sText:String):sap.m.ObjectStatus;
 
@@ -241,9 +245,13 @@ Default value is <code>Inherit</code>.
 	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.ObjectStatus;
 
 	/**
-	* Sets the title. The default value is empty/undefined.
-	* @param	sTitle New value for property title
-	* @return	this to allow method chaining
+	* Sets a new value for property {@link #getTitle title}.
+
+Defines the ObjectStatus title.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sTitle New value for property <code>title</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setTitle( sTitle:String):sap.m.ObjectStatus;
 }

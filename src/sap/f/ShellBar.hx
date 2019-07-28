@@ -13,7 +13,7 @@ The <code>ShellBar</code> is used as the uppermost section (shell) of the app. I
 
 Content specified in the <code>ShellBar</code> properties and aggregations is automatically positioned in dedicated places of the control.
 */
-extern class ShellBar extends sap.ui.core.Control implements sap.f.IShellBar implements sap.m.IBar
+extern class ShellBar extends sap.ui.core.Control implements sap.f.IShellBar implements sap.m.IBar implements sap.tnt.IToolHeader
 {
 	@:overload(function(?sId:String, ?mSettings:ShellBarArgs):Void {})
 	public function new(?mSettings:ShellBarArgs):Void;

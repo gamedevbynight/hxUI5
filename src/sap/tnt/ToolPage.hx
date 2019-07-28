@@ -52,7 +52,7 @@ extern class ToolPage extends sap.ui.core.Control
 The control to appear in the header area.
 	* @return	null
 	*/
-	public function getHeader( ):sap.tnt.ToolHeader;
+	public function getHeader( ):sap.tnt.IToolHeader;
 
 	/**
 	* Gets content of aggregation {@link #getMainContents mainContents}.
@@ -123,7 +123,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @param	oHeader The header to set
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeader( oHeader:sap.tnt.ToolHeader):sap.tnt.ToolPage;
+	public function setHeader( oHeader:sap.tnt.IToolHeader):sap.tnt.ToolPage;
 
 	/**
 	* Sets the aggregated {@link #getSideContent sideContent}.
@@ -156,7 +156,7 @@ typedef ToolPageArgs = sap.ui.core.Control.ControlArgs & {
     /**
     * The control to appear in the header area.
     */
-	@:optional var header:haxe.extern.EitherType<String,sap.tnt.ToolHeader>;
+	@:optional var header:haxe.extern.EitherType<String,sap.tnt.IToolHeader>;
 
     /**
     * The side menu of the layout.

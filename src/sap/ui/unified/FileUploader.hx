@@ -58,6 +58,8 @@ extern class FileUploader extends sap.ui.core.Control implements sap.ui.core.IFo
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.unified.FileUploader</code> itself.
 
 Event is fired when the value of the file path has been changed.
+
+<b>Note:</b> Keep in mind that because of the HTML input element of type file, the event is also fired in Chrome browser when the Cancel button of the uploads window is pressed.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
@@ -83,7 +85,7 @@ Event is fired when the file is allowed for upload on client side.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.unified.FileUploader</code> itself.
 
-Event is fired, if the filename of a chosen file is longer than the value specified with the maximumFilenameLength property.
+Event is fired, if the filename of a chosen file is longer than the value specified with the <code>maximumFilenameLength</code> property.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
@@ -96,7 +98,7 @@ Event is fired, if the filename of a chosen file is longer than the value specif
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.unified.FileUploader</code> itself.
 
-Event is fired when the size of a file is above the maximumFileSize property. This event is not supported by Internet Explorer 9 (same restriction as for the property maximumFileSize).
+Event is fired when the size of a file is above the <code>maximumFileSize</code> property. This event is not supported by Internet Explorer 9 (same restriction as for the property <code>maximumFileSize</code>).
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
@@ -109,7 +111,7 @@ Event is fired when the size of a file is above the maximumFileSize property. Th
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.unified.FileUploader</code> itself.
 
-Event is fired when the type of a file does not match the mimeType or fileType property.
+Event is fired when the type of a file does not match the <code>mimeType</code> or <code>fileType</code> property.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
@@ -122,7 +124,9 @@ Event is fired when the type of a file does not match the mimeType or fileType p
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.unified.FileUploader</code> itself.
 
-Event is fired after the current upload has been aborted. This is event is only supported with property sendXHR set to true, i.e. the event is not supported in Internet Explorer 9.
+Event is fired after the current upload has been aborted.
+
+This event is only supported with property <code>sendXHR</code> set to true, i.e. the event is not supported in Internet Explorer 9.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
@@ -135,7 +139,9 @@ Event is fired after the current upload has been aborted. This is event is only 
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.unified.FileUploader</code> itself.
 
-Event is fired as soon as the upload request is completed (either successful or unsuccessful). To see if the upload request was successful, check the 'state' parameter for a value 2xx. The uploads actual progress can be retrieved via the 'uploadProgress' Event. However this covers only the client side of the Upload process and does not give any success status from the server.
+Event is fired as soon as the upload request is completed (either successful or unsuccessful).
+
+To see if the upload request was successful, check the <code>status</code> parameter for a value 2xx. The actual progress of the upload can be monitored by listening to the <code>uploadProgress</code> event. However, this covers only the client side of the upload process and does not give any success status from the server.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
@@ -148,7 +154,11 @@ Event is fired as soon as the upload request is completed (either successful or 
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.unified.FileUploader</code> itself.
 
-Event is fired after the upload has started and before the upload is completed and contains progress information related to the running upload. Depending on file size, band width and used browser the event is fired once or multiple times. This is event is only supported with property sendXHR set to true, i.e. the event is not supported in Internet Explorer 9.
+Event is fired after the upload has started and before the upload is completed.
+
+It contains progress information related to the running upload. Depending on file size, band width and used browser the event is fired once or multiple times.
+
+This event is only supported with property <code>sendXHR</code> set to true, i.e. the event is not supported in Internet Explorer 9.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
@@ -299,7 +309,9 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getAdditionalData additionalData}.
 
-Additional data that is sent to the back end service. Data will be transmitted as value of a hidden input where the name is derived from the name property with suffix -data.
+Additional data that is sent to the back end service.
+
+Data will be transmitted as value of a hidden input where the name is derived from the <code>name</code> property with suffix "-data".
 	* @return	Value of property <code>additionalData</code>
 	*/
 	public function getAdditionalData( ):String;
@@ -319,7 +331,7 @@ Additional data that is sent to the back end service. Data will be transmitted a
 	/**
 	* Gets current value of property {@link #getButtonOnly buttonOnly}.
 
-If set to "true", the FileUploader will be rendered as Button only, without showing the InputField.
+If set to "true", the <code>FileUploader</code> will be rendered as Button only, without showing the input field.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>buttonOnly</code>
@@ -329,7 +341,7 @@ Default value is <code>false</code>.
 	/**
 	* Gets current value of property {@link #getButtonText buttonText}.
 
-The Button text can be overwritten using this property.
+The button's text can be overwritten using this property.
 	* @return	Value of property <code>buttonText</code>
 	*/
 	public function getButtonText( ):String;
@@ -347,7 +359,11 @@ Default value is <code>true</code>.
 	/**
 	* Gets current value of property {@link #getFileType fileType}.
 
-The chosen files will be checked against an array of file types. If at least one file does not fit the file type restriction the upload is prevented. Example: ["jpg", "png", "bmp"].
+The chosen files will be checked against an array of file types.
+
+If at least one file does not fit the file type restriction, the upload is prevented.
+
+Example: <code>["jpg", "png", "bmp"]</code>.
 	* @return	Value of property <code>fileType</code>
 	*/
 	public function getFileType( ):Array<String>;
@@ -355,7 +371,7 @@ The chosen files will be checked against an array of file types. If at least one
 	/**
 	* Gets content of aggregation {@link #getHeaderParameters headerParameters}.
 
-The header parameters for the FileUploader which are only submitted with XHR requests. Header parameters are not supported by Internet Explorer 9.
+The header parameters for the <code>FileUploader</code> which are only submitted with XHR requests. Header parameters are not supported by Internet Explorer 9.
 	* @return	null
 	*/
 	public function getHeaderParameters( ):Array<sap.ui.unified.FileUploaderParameter>;
@@ -363,7 +379,9 @@ The header parameters for the FileUploader which are only submitted with XHR req
 	/**
 	* Gets current value of property {@link #getIcon icon}.
 
-Icon to be displayed as graphical element within the button. This can be a URI to an image or an icon font URI.
+Icon to be displayed as graphical element within the button.
+
+This can be a URI to an image or an icon font URI.
 
 Default value is <code>empty string</code>.
 	* @return	Value of property <code>icon</code>
@@ -383,7 +401,9 @@ Default value is <code>true</code>.
 	/**
 	* Gets current value of property {@link #getIconHovered iconHovered}.
 
-Icon to be displayed as graphical element within the button when it is hovered (only if also a base icon was specified). If not specified the base icon is used. If an icon font icon is used, this property is ignored.
+Icon to be displayed as graphical element within the button when it is hovered (only if also a base icon was specified).
+
+If not specified, the base icon is used. If an icon font icon is used, this property is ignored.
 
 Default value is <code>empty string</code>.
 	* @return	Value of property <code>iconHovered</code>
@@ -403,7 +423,9 @@ Default value is <code>false</code>.
 	/**
 	* Gets current value of property {@link #getIconSelected iconSelected}.
 
-Icon to be displayed as graphical element within the button when it is selected (only if also a base icon was specified). If not specified the base or hovered icon is used. If an icon font icon is used, this property is ignored.
+Icon to be displayed as graphical element within the button when it is selected (only if also a base icon was specified).
+
+If not specified, the base or hovered icon is used. If an icon font icon is used, this property is ignored.
 
 Default value is <code>empty string</code>.
 	* @return	Value of property <code>iconSelected</code>
@@ -413,7 +435,9 @@ Default value is <code>empty string</code>.
 	/**
 	* Gets current value of property {@link #getMaximumFilenameLength maximumFilenameLength}.
 
-The maximum length of a filename which the FileUploader will accept. If the maximum filename length is exceeded, the corresponding Event 'filenameLengthExceed' is fired.
+The maximum length of a filename which the <code>FileUploader</code> will accept.
+
+If the maximum filename length is exceeded, the corresponding event <code>filenameLengthExceed</code> is fired.
 	* @return	Value of property <code>maximumFilenameLength</code>
 	*/
 	public function getMaximumFilenameLength( ):Int;
@@ -421,7 +445,9 @@ The maximum length of a filename which the FileUploader will accept. If the maxi
 	/**
 	* Gets current value of property {@link #getMaximumFileSize maximumFileSize}.
 
-A file size limit in megabytes which prevents the upload if at least one file exceeds it. This property is not supported by Internet Explorer 9.
+A file size limit in megabytes which prevents the upload if at least one file exceeds it.
+
+This property is not supported by Internet Explorer 9.
 	* @return	Value of property <code>maximumFileSize</code>
 	*/
 	public function getMaximumFileSize( ):Float;
@@ -435,7 +461,11 @@ A file size limit in megabytes which prevents the upload if at least one file ex
 	/**
 	* Gets current value of property {@link #getMimeType mimeType}.
 
-The chosen files will be checked against an array of mime types. If at least one file does not fit the mime type restriction the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Edge. Example: mimeType ["image/png", "image/jpeg"].
+The chosen files will be checked against an array of mime types.
+
+If at least one file does not fit the mime type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Edge.
+
+Example: <code>["image/png", "image/jpeg"]</code>.
 	* @return	Value of property <code>mimeType</code>
 	*/
 	public function getMimeType( ):Array<String>;
@@ -443,7 +473,9 @@ The chosen files will be checked against an array of mime types. If at least one
 	/**
 	* Gets current value of property {@link #getMultiple multiple}.
 
-Allows multiple files to be chosen and uploaded from the same folder. This property is not supported by Internet Explorer 9.
+Allows multiple files to be chosen and uploaded from the same folder.
+
+This property is not supported by Internet Explorer 9.
 
 <b>Note:</b> Keep in mind that the various operating systems for mobile devices can react differently to the property so that fewer upload functions may be available in some cases.
 
@@ -463,7 +495,7 @@ Unique control name for identification on the server side after sending data to 
 	/**
 	* Gets content of aggregation {@link #getParameters parameters}.
 
-The parameters for the FileUploader which are rendered as a hidden inputfield.
+The parameters for the <code>FileUploader</code> which are rendered as a hidden input field.
 	* @return	null
 	*/
 	public function getParameters( ):Array<sap.ui.unified.FileUploaderParameter>;
@@ -490,7 +522,9 @@ This is a default implementation of the interface <code>sap.ui.unified.IProcessa
 	/**
 	* Gets current value of property {@link #getSameFilenameAllowed sameFilenameAllowed}.
 
-If the FileUploader is configured to upload the file directly after the file is selected it is not allowed to upload a file with the same name again. If a user should be allowed to upload a file with the same name again this parameter has to be "true". A typical use case would be if the files have different paths.
+If the FileUploader is configured to upload the file directly after the file is selected, it is not allowed to upload a file with the same name again. If a user should be allowed to upload a file with the same name again this parameter has to be "true".
+
+A typical use case would be if the files have different paths.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>sameFilenameAllowed</code>
@@ -500,7 +534,9 @@ Default value is <code>false</code>.
 	/**
 	* Gets current value of property {@link #getSendXHR sendXHR}.
 
-If set to "true", the request will be sent as XHR request instead of a form submit. This property is not supported by Internet Explorer 9.
+If set to "true", the request will be sent as XHR request instead of a form submit.
+
+This property is not supported by Internet Explorer 9.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>sendXHR</code>
@@ -510,7 +546,9 @@ Default value is <code>false</code>.
 	/**
 	* Gets current value of property {@link #getStyle style}.
 
-Style of the button. "Transparent, "Accept", "Reject", or "Emphasized" is allowed.
+Style of the button.
+
+Values "Transparent, "Accept", "Reject", or "Emphasized" are allowed.
 	* @return	Value of property <code>style</code>
 	*/
 	public function getStyle( ):String;
@@ -538,7 +576,9 @@ Default value is <code>empty string</code>.
 	/**
 	* Gets current value of property {@link #getUseMultipart useMultipart}.
 
-If set to "false", the request will be sent as file only request instead of a multipart/form-data request. Only one file could be uploaded using this type of request. Required for sending such a request is to set the property "sendXHR" to "true". This property is not supported by Internet Explorer 9.
+If set to "false", the request will be sent as file only request instead of a multipart/form-data request.
+
+Only one file could be uploaded using this type of request. Required for sending such a request is to set the property <code>sendXHR</code> to "true". This property is not supported by Internet Explorer 9.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>useMultipart</code>
@@ -558,7 +598,9 @@ Default value is <code>empty string</code>.
 	/**
 	* Gets current value of property {@link #getValueState valueState}.
 
-Visualizes warnings or errors related to the text field. Possible values: Warning, Error, Success, None.
+Visualizes warnings or errors related to the text field.
+
+Possible values: Warning, Error, Success, None.
 
 Default value is <code>None</code>.
 	* @return	Value of property <code>valueState</code>
@@ -690,7 +732,9 @@ Additionally, it unregisters them from the hosting UIArea.
 	/**
 	* Sets a new value for property {@link #getAdditionalData additionalData}.
 
-Additional data that is sent to the back end service. Data will be transmitted as value of a hidden input where the name is derived from the name property with suffix -data.
+Additional data that is sent to the back end service.
+
+Data will be transmitted as value of a hidden input where the name is derived from the <code>name</code> property with suffix "-data".
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sAdditionalData New value for property <code>additionalData</code>
@@ -701,7 +745,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getButtonOnly buttonOnly}.
 
-If set to "true", the FileUploader will be rendered as Button only, without showing the InputField.
+If set to "true", the <code>FileUploader</code> will be rendered as Button only, without showing the input field.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -714,7 +758,7 @@ Default value is <code>false</code>.
 	/**
 	* Sets a new value for property {@link #getButtonText buttonText}.
 
-The Button text can be overwritten using this property.
+The button's text can be overwritten using this property.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sButtonText New value for property <code>buttonText</code>
@@ -738,7 +782,11 @@ Default value is <code>true</code>.
 	/**
 	* Sets a new value for property {@link #getFileType fileType}.
 
-The chosen files will be checked against an array of file types. If at least one file does not fit the file type restriction the upload is prevented. Example: ["jpg", "png", "bmp"].
+The chosen files will be checked against an array of file types.
+
+If at least one file does not fit the file type restriction, the upload is prevented.
+
+Example: <code>["jpg", "png", "bmp"]</code>.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sFileType New value for property <code>fileType</code>
@@ -749,7 +797,9 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
 
-Icon to be displayed as graphical element within the button. This can be a URI to an image or an icon font URI.
+Icon to be displayed as graphical element within the button.
+
+This can be a URI to an image or an icon font URI.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -775,7 +825,9 @@ Default value is <code>true</code>.
 	/**
 	* Sets a new value for property {@link #getIconHovered iconHovered}.
 
-Icon to be displayed as graphical element within the button when it is hovered (only if also a base icon was specified). If not specified the base icon is used. If an icon font icon is used, this property is ignored.
+Icon to be displayed as graphical element within the button when it is hovered (only if also a base icon was specified).
+
+If not specified, the base icon is used. If an icon font icon is used, this property is ignored.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -801,7 +853,9 @@ Default value is <code>false</code>.
 	/**
 	* Sets a new value for property {@link #getIconSelected iconSelected}.
 
-Icon to be displayed as graphical element within the button when it is selected (only if also a base icon was specified). If not specified the base or hovered icon is used. If an icon font icon is used, this property is ignored.
+Icon to be displayed as graphical element within the button when it is selected (only if also a base icon was specified).
+
+If not specified, the base or hovered icon is used. If an icon font icon is used, this property is ignored.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -814,7 +868,9 @@ Default value is <code>empty string</code>.
 	/**
 	* Sets a new value for property {@link #getMaximumFilenameLength maximumFilenameLength}.
 
-The maximum length of a filename which the FileUploader will accept. If the maximum filename length is exceeded, the corresponding Event 'filenameLengthExceed' is fired.
+The maximum length of a filename which the <code>FileUploader</code> will accept.
+
+If the maximum filename length is exceeded, the corresponding event <code>filenameLengthExceed</code> is fired.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	iMaximumFilenameLength New value for property <code>maximumFilenameLength</code>
@@ -825,7 +881,9 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getMaximumFileSize maximumFileSize}.
 
-A file size limit in megabytes which prevents the upload if at least one file exceeds it. This property is not supported by Internet Explorer 9.
+A file size limit in megabytes which prevents the upload if at least one file exceeds it.
+
+This property is not supported by Internet Explorer 9.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	fMaximumFileSize New value for property <code>maximumFileSize</code>
@@ -836,7 +894,11 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getMimeType mimeType}.
 
-The chosen files will be checked against an array of mime types. If at least one file does not fit the mime type restriction the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Edge. Example: mimeType ["image/png", "image/jpeg"].
+The chosen files will be checked against an array of mime types.
+
+If at least one file does not fit the mime type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Edge.
+
+Example: <code>["image/png", "image/jpeg"]</code>.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sMimeType New value for property <code>mimeType</code>
@@ -847,7 +909,9 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getMultiple multiple}.
 
-Allows multiple files to be chosen and uploaded from the same folder. This property is not supported by Internet Explorer 9.
+Allows multiple files to be chosen and uploaded from the same folder.
+
+This property is not supported by Internet Explorer 9.
 
 <b>Note:</b> Keep in mind that the various operating systems for mobile devices can react differently to the property so that fewer upload functions may be available in some cases.
 
@@ -884,7 +948,9 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getSameFilenameAllowed sameFilenameAllowed}.
 
-If the FileUploader is configured to upload the file directly after the file is selected it is not allowed to upload a file with the same name again. If a user should be allowed to upload a file with the same name again this parameter has to be "true". A typical use case would be if the files have different paths.
+If the FileUploader is configured to upload the file directly after the file is selected, it is not allowed to upload a file with the same name again. If a user should be allowed to upload a file with the same name again this parameter has to be "true".
+
+A typical use case would be if the files have different paths.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -897,7 +963,9 @@ Default value is <code>false</code>.
 	/**
 	* Sets a new value for property {@link #getSendXHR sendXHR}.
 
-If set to "true", the request will be sent as XHR request instead of a form submit. This property is not supported by Internet Explorer 9.
+If set to "true", the request will be sent as XHR request instead of a form submit.
+
+This property is not supported by Internet Explorer 9.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -910,7 +978,9 @@ Default value is <code>false</code>.
 	/**
 	* Sets a new value for property {@link #getStyle style}.
 
-Style of the button. "Transparent, "Accept", "Reject", or "Emphasized" is allowed.
+Style of the button.
+
+Values "Transparent, "Accept", "Reject", or "Emphasized" are allowed.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sStyle New value for property <code>style</code>
@@ -947,7 +1017,9 @@ Default value is <code>empty string</code>.
 	/**
 	* Sets a new value for property {@link #getUseMultipart useMultipart}.
 
-If set to "false", the request will be sent as file only request instead of a multipart/form-data request. Only one file could be uploaded using this type of request. Required for sending such a request is to set the property "sendXHR" to "true". This property is not supported by Internet Explorer 9.
+If set to "false", the request will be sent as file only request instead of a multipart/form-data request.
+
+Only one file could be uploaded using this type of request. Required for sending such a request is to set the property <code>sendXHR</code> to "true". This property is not supported by Internet Explorer 9.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -973,7 +1045,9 @@ Default value is <code>empty string</code>.
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
 
-Visualizes warnings or errors related to the text field. Possible values: Warning, Error, Success, None.
+Visualizes warnings or errors related to the text field.
+
+Possible values: Warning, Error, Success, None.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -1057,44 +1131,62 @@ typedef FileUploaderArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var uploadOnChange:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Additional data that is sent to the back end service. Data will be transmitted as value of a hidden input where the name is derived from the name property with suffix -data.
+	* Additional data that is sent to the back end service.
+
+Data will be transmitted as value of a hidden input where the name is derived from the <code>name</code> property with suffix "-data".
 	*/
 	@:optional var additionalData:String;
 
 	/**
-	* If the FileUploader is configured to upload the file directly after the file is selected it is not allowed to upload a file with the same name again. If a user should be allowed to upload a file with the same name again this parameter has to be "true". A typical use case would be if the files have different paths.
+	* If the FileUploader is configured to upload the file directly after the file is selected, it is not allowed to upload a file with the same name again. If a user should be allowed to upload a file with the same name again this parameter has to be "true".
+
+A typical use case would be if the files have different paths.
 	*/
 	@:optional var sameFilenameAllowed:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* The Button text can be overwritten using this property.
+	* The button's text can be overwritten using this property.
 	*/
 	@:optional var buttonText:String;
 
 	/**
-	* The chosen files will be checked against an array of file types. If at least one file does not fit the file type restriction the upload is prevented. Example: ["jpg", "png", "bmp"].
+	* The chosen files will be checked against an array of file types.
+
+If at least one file does not fit the file type restriction, the upload is prevented.
+
+Example: <code>["jpg", "png", "bmp"]</code>.
 	*/
 	@:optional var fileType:Array<String>;
 
 	/**
-	* Allows multiple files to be chosen and uploaded from the same folder. This property is not supported by Internet Explorer 9.
+	* Allows multiple files to be chosen and uploaded from the same folder.
+
+This property is not supported by Internet Explorer 9.
 
 <b>Note:</b> Keep in mind that the various operating systems for mobile devices can react differently to the property so that fewer upload functions may be available in some cases.
 	*/
 	@:optional var multiple:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* A file size limit in megabytes which prevents the upload if at least one file exceeds it. This property is not supported by Internet Explorer 9.
+	* A file size limit in megabytes which prevents the upload if at least one file exceeds it.
+
+This property is not supported by Internet Explorer 9.
 	*/
 	@:optional var maximumFileSize:haxe.extern.EitherType<String,Float>;
 
 	/**
-	* The chosen files will be checked against an array of mime types. If at least one file does not fit the mime type restriction the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Edge. Example: mimeType ["image/png", "image/jpeg"].
+	* The chosen files will be checked against an array of mime types.
+
+If at least one file does not fit the mime type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Edge.
+
+Example: <code>["image/png", "image/jpeg"]</code>.
 	*/
 	@:optional var mimeType:Array<String>;
 
 	/**
-	* If set to "true", the request will be sent as XHR request instead of a form submit. This property is not supported by Internet Explorer 9.
+	* If set to "true", the request will be sent as XHR request instead of a form submit.
+
+This property is not supported by Internet Explorer 9.
 	*/
 	@:optional var sendXHR:haxe.extern.EitherType<String,Bool>;
 
@@ -1104,27 +1196,35 @@ typedef FileUploaderArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var placeholder:String;
 
 	/**
-	* Style of the button. "Transparent, "Accept", "Reject", or "Emphasized" is allowed.
+	* Style of the button.
+
+Values "Transparent, "Accept", "Reject", or "Emphasized" are allowed.
 	*/
 	@:optional var style:String;
 
 	/**
-	* If set to "true", the FileUploader will be rendered as Button only, without showing the InputField.
+	* If set to "true", the <code>FileUploader</code> will be rendered as Button only, without showing the input field.
 	*/
 	@:optional var buttonOnly:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* If set to "false", the request will be sent as file only request instead of a multipart/form-data request. Only one file could be uploaded using this type of request. Required for sending such a request is to set the property "sendXHR" to "true". This property is not supported by Internet Explorer 9.
+	* If set to "false", the request will be sent as file only request instead of a multipart/form-data request.
+
+Only one file could be uploaded using this type of request. Required for sending such a request is to set the property <code>sendXHR</code> to "true". This property is not supported by Internet Explorer 9.
 	*/
 	@:optional var useMultipart:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* The maximum length of a filename which the FileUploader will accept. If the maximum filename length is exceeded, the corresponding Event 'filenameLengthExceed' is fired.
+	* The maximum length of a filename which the <code>FileUploader</code> will accept.
+
+If the maximum filename length is exceeded, the corresponding event <code>filenameLengthExceed</code> is fired.
 	*/
 	@:optional var maximumFilenameLength:haxe.extern.EitherType<String,Int>;
 
 	/**
-	* Visualizes warnings or errors related to the text field. Possible values: Warning, Error, Success, None.
+	* Visualizes warnings or errors related to the text field.
+
+Possible values: Warning, Error, Success, None.
 	*/
 	@:optional var valueState:haxe.extern.EitherType<String,sap.ui.core.ValueState>;
 
@@ -1136,17 +1236,23 @@ typedef FileUploaderArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var valueStateText:String;
 
 	/**
-	* Icon to be displayed as graphical element within the button. This can be a URI to an image or an icon font URI.
+	* Icon to be displayed as graphical element within the button.
+
+This can be a URI to an image or an icon font URI.
 	*/
 	@:optional var icon:haxe.extern.EitherType<String,sap.ui.core.URI>;
 
 	/**
-	* Icon to be displayed as graphical element within the button when it is hovered (only if also a base icon was specified). If not specified the base icon is used. If an icon font icon is used, this property is ignored.
+	* Icon to be displayed as graphical element within the button when it is hovered (only if also a base icon was specified).
+
+If not specified, the base icon is used. If an icon font icon is used, this property is ignored.
 	*/
 	@:optional var iconHovered:haxe.extern.EitherType<String,sap.ui.core.URI>;
 
 	/**
-	* Icon to be displayed as graphical element within the button when it is selected (only if also a base icon was specified). If not specified the base or hovered icon is used. If an icon font icon is used, this property is ignored.
+	* Icon to be displayed as graphical element within the button when it is selected (only if also a base icon was specified).
+
+If not specified, the base or hovered icon is used. If an icon font icon is used, this property is ignored.
 	*/
 	@:optional var iconSelected:haxe.extern.EitherType<String,sap.ui.core.URI>;
 
@@ -1161,12 +1267,12 @@ typedef FileUploaderArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var iconOnly:haxe.extern.EitherType<String,Bool>;
 
     /**
-    * The parameters for the FileUploader which are rendered as a hidden inputfield.
+    * The parameters for the <code>FileUploader</code> which are rendered as a hidden input field.
     */
 	@:optional var parameters:Array<haxe.extern.EitherType<String,sap.ui.unified.FileUploaderParameter>>;
 
     /**
-    * The header parameters for the FileUploader which are only submitted with XHR requests. Header parameters are not supported by Internet Explorer 9.
+    * The header parameters for the <code>FileUploader</code> which are only submitted with XHR requests. Header parameters are not supported by Internet Explorer 9.
     */
 	@:optional var headerParameters:Array<haxe.extern.EitherType<String,sap.ui.unified.FileUploaderParameter>>;
 
@@ -1176,17 +1282,19 @@ typedef FileUploaderArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var xhrSettings:haxe.extern.EitherType<String,sap.ui.unified.FileUploaderXHRSettings>;
 
 	/**
-	* Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).
+	* Association to controls / IDs which describe this control (see WAI-ARIA attribute <code>aria-describedby</code>).
 	*/
 	@:optional var ariaDescribedBy:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 
 	/**
-	* Association to controls / IDs which label this control (see WAI-ARIA attribute aria-labelledby).
+	* Association to controls / IDs which label this control (see WAI-ARIA attribute <code>aria-labelledby</code>).
 	*/
 	@:optional var ariaLabelledBy:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 
 	/**
 	* Event is fired when the value of the file path has been changed.
+
+<b>Note:</b> Keep in mind that because of the HTML input element of type file, the event is also fired in Chrome browser when the Cancel button of the uploads window is pressed.
 	*/
 	@:optional var change:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
@@ -1196,32 +1304,40 @@ typedef FileUploaderArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var fileAllowed:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* Event is fired, if the filename of a chosen file is longer than the value specified with the maximumFilenameLength property.
+	* Event is fired, if the filename of a chosen file is longer than the value specified with the <code>maximumFilenameLength</code> property.
 	*/
 	@:optional var filenameLengthExceed:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* Event is fired when the size of a file is above the maximumFileSize property. This event is not supported by Internet Explorer 9 (same restriction as for the property maximumFileSize).
+	* Event is fired when the size of a file is above the <code>maximumFileSize</code> property. This event is not supported by Internet Explorer 9 (same restriction as for the property <code>maximumFileSize</code>).
 	*/
 	@:optional var fileSizeExceed:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* Event is fired when the type of a file does not match the mimeType or fileType property.
+	* Event is fired when the type of a file does not match the <code>mimeType</code> or <code>fileType</code> property.
 	*/
 	@:optional var typeMissmatch:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* Event is fired after the current upload has been aborted. This is event is only supported with property sendXHR set to true, i.e. the event is not supported in Internet Explorer 9.
+	* Event is fired after the current upload has been aborted.
+
+This event is only supported with property <code>sendXHR</code> set to true, i.e. the event is not supported in Internet Explorer 9.
 	*/
 	@:optional var uploadAborted:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* Event is fired as soon as the upload request is completed (either successful or unsuccessful). To see if the upload request was successful, check the 'state' parameter for a value 2xx. The uploads actual progress can be retrieved via the 'uploadProgress' Event. However this covers only the client side of the Upload process and does not give any success status from the server.
+	* Event is fired as soon as the upload request is completed (either successful or unsuccessful).
+
+To see if the upload request was successful, check the <code>status</code> parameter for a value 2xx. The actual progress of the upload can be monitored by listening to the <code>uploadProgress</code> event. However, this covers only the client side of the upload process and does not give any success status from the server.
 	*/
 	@:optional var uploadComplete:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* Event is fired after the upload has started and before the upload is completed and contains progress information related to the running upload. Depending on file size, band width and used browser the event is fired once or multiple times. This is event is only supported with property sendXHR set to true, i.e. the event is not supported in Internet Explorer 9.
+	* Event is fired after the upload has started and before the upload is completed.
+
+It contains progress information related to the running upload. Depending on file size, band width and used browser the event is fired once or multiple times.
+
+This event is only supported with property <code>sendXHR</code> set to true, i.e. the event is not supported in Internet Explorer 9.
 	*/
 	@:optional var uploadProgress:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 

@@ -3,7 +3,7 @@ package sap.ui.model.odata;
 @:native("sap.ui.model.odata.ODataAnnotations")
 
 /**
-* Implementation to access oData Annotations
+* Implementation to access OData Annotations
 */
 extern class ODataAnnotations extends sap.ui.base.EventProvider
 {

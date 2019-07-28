@@ -76,6 +76,14 @@ This event will be fired when the search button has been clicked on the searchfi
 	public function attachSearch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectDialog;
 
 	/**
+	* Clears the selections in the <code>sap.m.SelectDialog</code> and its internally used <code>sap.m.List</code> control.
+
+Use this method whenever the application logic expects changes in the model providing data for the SelectDialog that will modify the position of the items, or will change the set with completely new items.
+	* @return	<code>this</code> to allow method chaining.
+	*/
+	public function clearSelection( ):sap.m.SelectDialog;
+
+	/**
 	* Destroys all the items in the aggregation {@link #getItems items}.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -131,6 +139,14 @@ The passed function and listener object must match the ones used for event regis
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+
+	/**
+	* Gets current value of property {@link #getConfirmButtonText confirmButtonText}.
+
+Overwrites the default text for the confirmation button.
+	* @return	Value of property <code>confirmButtonText</code>
+	*/
+	public function getConfirmButtonText( ):String;
 
 	/**
 	* Get the internal Dialog's contentHeight property {@link sap.m.Dialog}
@@ -287,6 +303,13 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function setBusyIndicatorDelay( iValue:Int):sap.m.SelectDialog;
 
 	/**
+	* Sets the text of the confirmation button.
+	* @param	sText The text for the confirm button
+	* @return	<code>this</code> pointer for chaining
+	*/
+	public function setConfirmButtonText( sText:String):sap.m.SelectDialog;
+
+	/**
 	* Set the internal Dialog's contentHeight property {@link sap.m.Dialog}
 	* @param	sHeight The new content width value for the dialog
 	* @return	<code>this</code> pointer for chaining
@@ -412,6 +435,11 @@ typedef SelectDialogArgs = sap.ui.core.Control.ControlArgs & {
 	* This flag controls whether the Clear button is shown. When set to <code>true</code>, it provides a way to clear selection mode in Select Dialog. We recommended enabling of the Clear button in the following cases, where a mechanism to clear the value is needed: In case of single selection mode(default mode) for Select Dialog and <code>rememberSelections</code> is set to <code>true</code>. Clear button needs to be enabled in order to allow users to clear the selection. In case of using <code>sap.m.Input</code> with <code>valueHelpOnly</code> set to <code>true</code>, the Clear button could be used for clearing selection. In case the application stores a value and uses only Select Dialog to edit/maintain it. <b>Note:</b>When used with oData, only the loaded selections will be cleared.
 	*/
 	@:optional var showClearButton:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Overwrites the default text for the confirmation button.
+	*/
+	@:optional var confirmButtonText:String;
 
     /**
     * The items of the list shown in the search dialog. It is recommended to use a StandardListItem for the dialog but other combinations are also possible.

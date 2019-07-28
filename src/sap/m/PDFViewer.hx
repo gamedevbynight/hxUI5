@@ -178,7 +178,7 @@ Default value is <code>true</code>.
 	/**
 	* Gets current value of property {@link #getSource source}.
 
-Specifies the path to the PDF file to display. Can be set to a relative or an absolute path.<br> Optionally, this property can also be set to a data URI path or a blob URL in all major web browsers except Internet Explorer and Microsoft Edge, provided that this data URI or blob URL is whitelisted in advance.
+Specifies the path to the PDF file to display. Can be set to a relative or an absolute path.<br> Optionally, this property can also be set to a data URI path or a blob URL in all major web browsers except Internet Explorer and Microsoft Edge, provided that this data URI or blob URL is whitelisted in advance. For more information about whitelisting, see {@link topic:91f3768f6f4d1014b6dd926db0e91070 URL Whitelist Filtering}.
 	* @return	Value of property <code>source</code>
 	*/
 	public function getSource( ):sap.ui.core.URI;
@@ -306,7 +306,7 @@ Default value is <code>true</code>.
 	/**
 	* Sets a new value for property {@link #getSource source}.
 
-Specifies the path to the PDF file to display. Can be set to a relative or an absolute path.<br> Optionally, this property can also be set to a data URI path or a blob URL in all major web browsers except Internet Explorer and Microsoft Edge, provided that this data URI or blob URL is whitelisted in advance.
+Specifies the path to the PDF file to display. Can be set to a relative or an absolute path.<br> Optionally, this property can also be set to a data URI path or a blob URL in all major web browsers except Internet Explorer and Microsoft Edge, provided that this data URI or blob URL is whitelisted in advance. For more information about whitelisting, see {@link topic:91f3768f6f4d1014b6dd926db0e91070 URL Whitelist Filtering}.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sSource New value for property <code>source</code>
@@ -352,7 +352,7 @@ typedef PDFViewerArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var width:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
 	/**
-	* Specifies the path to the PDF file to display. Can be set to a relative or an absolute path.<br> Optionally, this property can also be set to a data URI path or a blob URL in all major web browsers except Internet Explorer and Microsoft Edge, provided that this data URI or blob URL is whitelisted in advance.
+	* Specifies the path to the PDF file to display. Can be set to a relative or an absolute path.<br> Optionally, this property can also be set to a data URI path or a blob URL in all major web browsers except Internet Explorer and Microsoft Edge, provided that this data URI or blob URL is whitelisted in advance. For more information about whitelisting, see {@link topic:91f3768f6f4d1014b6dd926db0e91070 URL Whitelist Filtering}.
 	*/
 	@:optional var source:haxe.extern.EitherType<String,sap.ui.core.URI>;
 

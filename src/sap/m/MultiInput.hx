@@ -38,12 +38,6 @@ Fired when the tokens aggregation changed due to a user interaction (add / remov
 	public function attachTokenUpdate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MultiInput;
 
 	/**
-	* Function overwrites clone function to add tokens to MultiInput
-	* @return	reference to the newly created clone
-	*/
-	public function clone( ):sap.ui.core.Element;
-
-	/**
 	* Destroys all the tokens in the aggregation {@link #getTokens tokens}.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

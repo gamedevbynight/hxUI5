@@ -12,7 +12,7 @@ extern class String extends sap.ui.model.odata.type.ODataType
 
 	/**
 	* 
-	* @param	oFormatOptions format options as defined in the interface of {@link sap.ui.model.SimpleType}; this type ignores them since it does not support any format options
+	* @param	oFormatOptions format options as defined in the interface of {@link sap.ui.model.SimpleType}
 	* @param	oConstraints constraints; {@link #validateValue validateValue} throws an error if any constraint is violated
 	* @return	Object
 	*/
@@ -54,10 +54,10 @@ extern class String extends sap.ui.model.odata.type.ODataType
 	/**
 	* Parses the given value which is expected to be of the given type to a string. If <code>isDigitSequence</code> constraint of this type is set to <code>true</code> and the parsed string is a sequence of digits, then the parsed string is either enhanced with leading zeros, if <code>maxLength</code> constraint is given, or leading zeros are removed from parsed string.
 
-Note: An empty input string (<code>""</code>) is parsed to <code>null</code>. This value will be rejected with a {@link sap.ui.model.ValidateException ValidateException} by {@link #validateValue} if the constraint <code>nullable</code> is <code>false</code>.
+Note: Depending on the format option <code>parseKeepsEmptyString</code>, an empty input string (<code>""</code>) is either parsed to <code>""</code> or <code>null</code>. If the constraint <code>nullable</code> is <code>false</code>, a <code>null</code> value is rejected with a {@link sap.ui.model.ValidateException ValidateException} raised in the {@link #validateValue} method.
 	* @param	vValue the value to be parsed
 	* @param	sSourceType the source type (the expected type of <code>vValue</code>). See {@link sap.ui.model.odata.type} for more information.
-	* @return	the parsed value or <code>null</code> if <code>vValue</code> is <code>""</code>
+	* @return	the parsed value
 	*/
 	public function parseValue( vValue:Bool, sSourceType:String):String;
 

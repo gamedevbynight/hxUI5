@@ -150,6 +150,18 @@ Specifies the name of the uploaded file.
 	public function getFileName( ):String;
 
 	/**
+	* Returns file object.
+	* @return	File object.
+	*/
+	public function getFileObject( ):Dynamic;
+
+	/**
+	* Returns list item.
+	* @return	List item.
+	*/
+	public function getListItem( ):sap.m.CustomListItem;
+
+	/**
 	* Gets content of aggregation {@link #getMarkers markers}.
 
 Markers of the item.
@@ -366,6 +378,13 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setMediaType( sMediaType:String):sap.m.upload.UploadSetItem;
+
+	/**
+	* Set current progress.
+	* @param	iProgress Current progress.
+	* @return	Returns instance for chaining.
+	*/
+	public function setProgress( iProgress:Int):sap.m.upload.UploadSetItem;
 
 	/**
 	* Sets a new value for property {@link #getThumbnailUrl thumbnailUrl}.

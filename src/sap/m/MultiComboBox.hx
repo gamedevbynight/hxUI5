@@ -102,6 +102,16 @@ The passed function and listener object must match the ones used for event regis
 	public function getSelectedItems( ):Array<sap.ui.core.Item>;
 
 	/**
+	* Gets current value of property {@link #getSelectedKeys selectedKeys}.
+
+Keys of the selected items. If the key has no corresponding item, no changes will apply. If duplicate keys exists the first item matching the key is used.
+
+Default value is <code>[]</code>.
+	* @return	Value of property <code>selectedKeys</code>
+	*/
+	public function getSelectedKeys( ):Array<String>;
+
+	/**
 	* Inserts an item into the aggregation named <code>items</code>.
 	* @param	oItem The item to insert; if empty, nothing is inserted.
 	* @param	iIndex The <code>0</code>-based index the item should be inserted at; for a negative value of <code>iIndex</code>, the item is inserted at position 0; for a value greater than the current size of the aggregation, the item is inserted at the last position.
@@ -161,6 +171,13 @@ The passed function and listener object must match the ones used for event regis
 	* @return	<code>this</code> to allow method chaining.
 	*/
 	public function setSelectedItems( aItems:Dynamic):sap.m.MultiComboBox;
+
+	/**
+	* Sets the value state text
+	* @param	sValueStateText The new value state text
+	* @return	this for chaining
+	*/
+	public function setValueStateText( ?sValueStateText:String):sap.m.MultiComboBox;
 }
 
 typedef MultiComboBoxArgs = sap.m.ComboBoxBase.ComboBoxBaseArgs & {

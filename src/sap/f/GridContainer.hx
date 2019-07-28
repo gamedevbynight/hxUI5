@@ -47,8 +47,10 @@ All rows have the same height and all columns have the same width. Their sizes c
 	&lt;/f:items&gt;
 &lt;/f:GridContainer&gt;
 </pre>
+
+<h3>Drag and drop:</h3> The <code>items</code> aggregation of <code>sap.f.GridContainer</code> is valid drag and drop target. This can be configured with either the default <code>{@link sap.ui.core.dnd.DropInfo}</code>, or with an extended version of it - <code>{@link sap.f.dnd.GridDropInfo}</code>. <code>GridDropInfo</code> will provide a different visualization more suitable for grids during drag over.
 */
-extern class GridContainer extends sap.ui.core.Control
+extern class GridContainer extends sap.ui.core.Control implements sap.f.dnd.IGridDroppable
 {
 	@:overload(function(?sId:String, ?mSettings:GridContainerArgs):Void {})
 	public function new(?mSettings:GridContainerArgs):Void;

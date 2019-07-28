@@ -126,6 +126,12 @@ Default value is <code>empty string</code>.
 	* @return	Value of property <code>selectedKey</code>
 	*/
 	public function getSelectedKey( ):String;
+
+	/**
+	* Removes all the controls in the aggregation named <code>items</code>. Additionally unregisters them from the hosting UIArea and clears the selection.
+	* @return	An array of the removed items (might be empty).
+	*/
+	public function removeAllItems( ):Array<sap.ui.core.Item>;
 	@:overload( function(vItem:Int):sap.ui.core.Item{ })
 	@:overload( function(vItem:String):sap.ui.core.Item{ })
 

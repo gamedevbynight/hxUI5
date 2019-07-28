@@ -171,6 +171,16 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @return	Void
 	*/
 	public function terminateItem( oItem:sap.m.upload.UploadSetItem):Void;
+	@:overload( function(oFile:File, sUrl:String, ?aHeaderFields:Array<sap.ui.core.Item>):js.lib.Promise<Uploader>{ })
+
+	/**
+	* Starts function for uploading one file object to given url. Returns promise that resolves when the upload is finished or rejects when the upload fails.
+	* @param	oFile File or Blob object to be uploaded.
+	* @param	sUrl Upload Url.
+	* @param	aHeaderFields Collection of request header fields to be send along.
+	* @return	Promise that resolves when the upload is finished or rejects when the upload fails.
+	*/
+	public static function uploadFile( oFile:Blob, sUrl:String, ?aHeaderFields:Array<sap.ui.core.Item>):js.lib.Promise<Uploader>;
 
 	/**
 	* Starts the process of uploading the specified file.
@@ -178,6 +188,6 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	aHeaderFields Collection of request header fields to be send along.
 	* @return	Void
 	*/
-	public function uploadItem( oItem:sap.m.upload.UploadSetItem, aHeaderFields:Array<sap.ui.core.Item>):Void;
+	public function uploadItem( oItem:sap.m.upload.UploadSetItem, ?aHeaderFields:Array<sap.ui.core.Item>):Void;
 }
 

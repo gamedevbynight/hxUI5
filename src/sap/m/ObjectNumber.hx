@@ -141,18 +141,30 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setNumber( sNumber:String):sap.m.ObjectNumber;
 
 	/**
-	* Sets the ObjectNumber's value state.
-	* @param	sState The state to be set to
-	* @return	this pointer for chaining
+	* Sets a new value for property {@link #getState state}.
+
+Determines the object number's value state. Setting this state will cause the number to be rendered in state-specific colors.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>None</code>.
+	* @param	sState New value for property <code>state</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setState( sState:sap.ui.core.ValueState):sap.m.ObjectNumber;
 
 	/**
-	* Sets the text alignment of the control without re-rendering the whole ObjectNumber.
-	* @param	sAlign The new value
-	* @return	<code>this</code> pointer for chaining
+	* Sets a new value for property {@link #getTextAlign textAlign}.
+
+Sets the horizontal alignment of the number and unit.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Begin</code>.
+	* @param	sTextAlign New value for property <code>textAlign</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sAlign:sap.ui.core.TextAlign):sap.m.ObjectNumber;
+	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.ObjectNumber;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.

@@ -156,7 +156,7 @@ The passed function and listener object must match the ones used for event regis
 	public function detachWeekNumberSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
 
 	/**
-	* Displays a date in the calendar but don't set the focus.
+	* Displays a date in the calendar but doesn't set the focus.
 	* @param	oDate JavaScript date object for focused date.
 	* @return	<code>this</code> to allow method chaining
 	*/

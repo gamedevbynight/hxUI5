@@ -23,7 +23,7 @@ For general cases, use the default grid configuration of the <code>GridList</cod
 
 <h3>Current Limitations</h3> <ul> <li>For Microsoft Internet Explorer some layouts are not supported, due to browser specifics.</li> <li>For Microsoft Edge 15 and older versions some layouts are not supported, due to browser specifics.</li> </ul>
 */
-extern class GridList extends sap.m.ListBase implements sap.ui.layout.cssgrid.IGridConfigurable
+extern class GridList extends sap.m.ListBase implements sap.ui.layout.cssgrid.IGridConfigurable implements sap.f.dnd.IGridDroppable
 {
 	@:overload(function(?sId:String, ?mSettings:GridListArgs):Void {})
 	public function new(?mSettings:GridListArgs):Void;

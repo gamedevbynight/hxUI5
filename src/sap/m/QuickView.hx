@@ -63,6 +63,12 @@ This event fires before the QuickView is opened.
 	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickView;
 
 	/**
+	* Closes the QuickView.
+	* @return	Pointer to the control instance for chaining
+	*/
+	public function close( ):sap.m.QuickView;
+
+	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterClose afterClose} event of this <code>sap.m.QuickView</code>.
 
 The passed function and listener object must match the ones used for event registration.

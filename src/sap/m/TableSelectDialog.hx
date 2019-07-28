@@ -180,6 +180,14 @@ The columns bindings.
 	public function getColumns( ):Array<sap.m.Column>;
 
 	/**
+	* Gets current value of property {@link #getConfirmButtonText confirmButtonText}.
+
+Overwrites the default text for the confirmation button.
+	* @return	Value of property <code>confirmButtonText</code>
+	*/
+	public function getConfirmButtonText( ):String;
+
+	/**
 	* Retrieves content height of the select dialog {@link sap.m.Dialog}
 	* @return	sHeight the content height of the internal dialog
 	*/
@@ -377,6 +385,13 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function setBusyIndicatorDelay( iValue:Int):sap.m.TableSelectDialog;
 
 	/**
+	* Sets the text of the confirmation button.
+	* @param	sText The text for the confirm button
+	* @return	<code>this</code> pointer for chaining
+	*/
+	public function setConfirmButtonText( sText:String):sap.m.TableSelectDialog;
+
+	/**
 	* Sets content height of the select dialog {@link sap.m.Dialog}
 	* @param	sHeight the new content height value for the dialog
 	* @return	this pointer for chaining
@@ -516,6 +531,11 @@ Optional: In case <code>multiSelect</code> is set to <code>true</code>, the sele
 <b>Note:</b> When used with oData, only the loaded selections will be cleared.
 	*/
 	@:optional var showClearButton:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Overwrites the default text for the confirmation button.
+	*/
+	@:optional var confirmButtonText:String;
 
     /**
     * The items of the table.

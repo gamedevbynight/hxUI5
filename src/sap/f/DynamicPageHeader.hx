@@ -115,9 +115,15 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeContent( vContent:sap.ui.core.Control):sap.ui.core.Control;
 
 	/**
-	* Sets the value of the <code>backgroundDesign</code> property.
-	* @param	sBackgroundDesign new value of the <code>backgroundDesign</code>
-	* @return	<code>this</code> to allow method chaining
+	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
+
+Determines the background color of the <code>DynamicPageHeader</code>.
+
+<b>Note:</b> The default value of <code>backgroundDesign</code> property is null. If the property is not set, the color of the background is <code>@sapUiObjectHeaderBackground</code>, which depends on the specific theme.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setBackgroundDesign( sBackgroundDesign:sap.m.BackgroundDesign):sap.f.DynamicPageHeader;
 

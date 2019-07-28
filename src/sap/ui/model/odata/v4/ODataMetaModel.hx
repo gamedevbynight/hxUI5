@@ -207,6 +207,7 @@ Any other segment, including an OData simple identifier, is looked up as a prope
 	/**
 	* Requests information to retrieve a value list for the property given by <code>sPropertyPath</code>.
 	* @param	sPropertyPath An absolute path to an OData property within the OData data model or a (meta) path to an operation parameter, for example "/TEAMS(1)/acme.NewAction/Team_ID"
+	* @param	bAutoExpandSelect The value of the parameter <code>autoExpandSelect</code> for value list models created by this method. If the value list model is the data model associated with this meta model, this flag has no effect. Supported since 1.68.0
 	* @return	A promise which is resolved with a map of qualifier to value list mapping objects structured as defined by <code>com.sap.vocabularies.Common.v1.ValueListType</code>; the map entry with key "" represents the mapping without qualifier. Each entry has an additional property "$model" which is the {@link sap.ui.model.odata.v4.ODataModel} instance to read value list data via this mapping.
 
 For fixed values, only one mapping is expected and the qualifier is ignored. The mapping is available with key "".
@@ -215,7 +216,7 @@ The promise is rejected with an error if there is no value list information avai
 
 An inconsistency can result from one of the following reasons: <ul> <li> There is a reference, but the referenced service does not contain mappings for the property. <li> The referenced service contains annotation targets in the namespace of the data service that are not mappings for the property. <li> Two different referenced services contain a mapping using the same qualifier. <li> A service is referenced twice. <li> There are multiple mappings for a fixed value list. <li> A <code>com.sap.vocabularies.Common.v1.ValueList</code> annotation in a referenced service has the property <code>CollectionRoot</code> or <code>SearchSupported</code>. <li> A <code>com.sap.vocabularies.Common.v1.ValueList</code> annotation in the service itself has the property <code>SearchSupported</code> and additionally the annotation <code>com.sap.vocabularies.Common.v1.ValueListWithFixedValues</code> is defined. </ul>
 	*/
-	public function requestValueListInfo( sPropertyPath:String):js.lib.Promise<ODataMetaModel>;
+	public function requestValueListInfo( sPropertyPath:String, ?bAutoExpandSelect:Bool):js.lib.Promise<ODataMetaModel>;
 
 	/**
 	* Determines which type of value list exists for the given property.

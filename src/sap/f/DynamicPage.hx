@@ -68,6 +68,16 @@ extern class DynamicPage extends sap.ui.core.Control
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
+	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
+
+Determines the background color of <code>DynamicPage</code>.
+
+Default value is <code>Standard</code>.
+	* @return	Value of property <code>backgroundDesign</code>
+	*/
+	public function getBackgroundDesign( ):sap.m.PageBackgroundDesign;
+
+	/**
 	* Gets content of aggregation {@link #getContent content}.
 
 <code>DynamicPage</code> content.
@@ -192,6 +202,19 @@ Default value is <code>true</code>.
 	* @return	Value of property <code>toggleHeaderOnTitleClick</code>
 	*/
 	public function getToggleHeaderOnTitleClick( ):Bool;
+
+	/**
+	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
+
+Determines the background color of <code>DynamicPage</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Standard</code>.
+	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setBackgroundDesign( sBackgroundDesign:sap.m.PageBackgroundDesign):sap.f.DynamicPage;
 
 	/**
 	* Sets the aggregated {@link #getContent content}.
@@ -341,6 +364,11 @@ The header can be also expanded/collapsed by user interaction, which requires th
 	* Determines whether the footer is visible.
 	*/
 	@:optional var showFooter:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Determines the background color of <code>DynamicPage</code>.
+	*/
+	@:optional var backgroundDesign:haxe.extern.EitherType<String,sap.m.PageBackgroundDesign>;
 
 	/**
 	* Optimizes <code>DynamicPage</code> responsiveness on small screens and behavior when expanding/collapsing the <code>DynamicPageHeader</code>.
