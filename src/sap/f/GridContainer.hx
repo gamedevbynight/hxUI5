@@ -260,12 +260,12 @@ Default value is <code>empty string</code>.
 	public function indexOfItem( oItem:sap.ui.core.Control):Int;
 
 	/**
-	* Inserts a item into the aggregation {@link #getItems items}.
-	* @param	oItem The item to insert; if empty, nothing is inserted
-	* @param	iIndex The <code>0</code>-based index the item should be inserted at; for a negative value of <code>iIndex</code>, the item is inserted at position 0; for a value greater than the current size of the aggregation, the item is inserted at the last position
-	* @return	Reference to <code>this</code> in order to allow method chaining
+	* Inserts an item into the aggregation named <code>items</code>.
+	* @param	oItem The item to be inserted; if empty, nothing is inserted.
+	* @param	iIndex The <code>0</code>-based index the item should be inserted at; for a negative value of <code>iIndex</code>, the item is inserted at position 0; for a value greater than the current size of the aggregation, the item is inserted at the last position.
+	* @return	<code>this</code> to allow method chaining.
 	*/
-	public function insertItem( oItem:sap.ui.core.Control, iIndex:Int):sap.f.GridContainer;
+	public function insertItem( oItem:sap.ui.core.Item, iIndex:Int):sap.f.GridContainer;
 
 	/**
 	* Removes all the controls from the aggregation {@link #getItems items}.
@@ -278,11 +278,11 @@ Additionally, it unregisters them from the hosting UIArea.
 	@:overload( function(vItem:String):sap.ui.core.Control{ })
 
 	/**
-	* Removes a item from the aggregation {@link #getItems items}.
-	* @param	vItem The item to remove or its index or id
-	* @return	The removed item or <code>null</code>
+	* Removes an item from the aggregation named <code>items</code>.
+	* @param	vItem The item to remove or its index or ID.
+	* @return	The removed item or null.
 	*/
-	public function removeItem( vItem:sap.ui.core.Control):sap.ui.core.Control;
+	public function removeItem( vItem:sap.ui.core.Item):sap.ui.core.Control;
 
 	/**
 	* Sets a new value for property {@link #getAllowDenseFill allowDenseFill}.

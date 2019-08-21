@@ -139,6 +139,15 @@ Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or applic
 	public function refresh( ?sGroupId:String):Void;
 
 	/**
+	* Returns a promise on the value for the given path relative to this binding. The function allows access to the complete data the binding points to (if <code>sPath</code> is "") or any part thereof. The data is a JSON structure as described in <a href="http://docs.oasis-open.org/odata/odata-json-format/v4.0/odata-json-format-v4.0.html"> "OData JSON Format Version 4.0"</a>. Note that the function clones the result. Modify values via {@link sap.ui.model.odata.v4.Context#setProperty}.
+
+If you want {@link #requestObject} to read fresh data, call <code>oBinding.refresh()</code> first.
+	* @param	sPath A relative path within the JSON structure
+	* @return	A promise on the requested value; in case there is no bound context this promise resolves with <code>undefined</code>
+	*/
+	public function requestObject( ?sPath:String):js.lib.Promise<ODataContextBinding>;
+
+	/**
 	* Resets all pending changes of this binding, see {@link #hasPendingChanges}. Resets also invalid user input.
 	* @return	Void
 	*/

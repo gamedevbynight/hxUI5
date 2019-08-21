@@ -204,9 +204,9 @@ The passed function and listener object must match the ones previously used for 
 	* @param	sPath the path to where to read the object
 	* @param	oContext the context with which the path should be resolved
 	* @param	mParameters additional model specific parameters
-	* @return	Void
+	* @return	The value for the given path/context or <code>undefined</code> if data could not be found
 	*/
-	public function getObject( sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic):Void;
+	public function getObject( sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic):Dynamic;
 
 	/**
 	* Returns the original value for the property with the given path and context. The original value is the value that was last responded by a server if using a server model implementation.

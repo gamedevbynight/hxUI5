@@ -815,16 +815,6 @@ Template for row settings. A template is decoupled from the row or table. Each t
 	public function getRowSettingsTemplate( ):sap.ui.table.RowSettings;
 
 	/**
-	* Gets current value of property {@link #getSelectedIndex selectedIndex}.
-
-Zero-based index of selected item. Index value for no selection is -1. When multi-selection is enabled and multiple items are selected, the method returns the lead selected item. Sets the zero-based index of the currently selected item. This method removes any previous selections. When the given index is invalid, the call is ignored.
-
-Default value is <code>-1</code>.
-	* @return	Value of property <code>selectedIndex</code>
-	*/
-	public function getSelectedIndex( ):Int;
-
-	/**
 	* Zero-based indices of selected items, wrapped in an array. An empty array means "no selection".
 	* @return	Selected indices
 	*/
@@ -843,7 +833,7 @@ Default value is <code>RowSelector</code>.
 	/**
 	* Gets current value of property {@link #getSelectionMode selectionMode}.
 
-Selection mode of the Table. This property controls whether single or multiple rows can be selected and how the selection can be extended. It may also influence the visual appearance. When the selection mode is changed, the current selection is removed. <b>Note:</b> Since the group header visualization relies on the row selectors, the row selectors are always shown if the grouping functionality (depends on table type) is enabled, even if <code>sap.ui.table.SelectionMode.None</code> is set. <b>Note:</b> When a selection plugin is applied to the table, the selection mode is controlled by the plugin and cannot be changed manually.
+Selection mode of the Table. This property controls whether single or multiple rows can be selected and how the selection can be extended. It may also influence the visual appearance. When the selection mode is changed, the current selection is removed. <b>Note:</b> Since the group header visualization relies on the row selectors, the row selectors are always shown if the grouping functionality (depends on table type) is enabled, even if <code>sap.ui.table.SelectionMode.None</code> is set. <b>Note:</b> When a selection plugin is applied to the table, the selection mode is controlled by the plugin.
 
 Default value is <code>MultiToggle</code>.
 	* @return	Value of property <code>selectionMode</code>
@@ -1392,17 +1382,11 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setRowSettingsTemplate( oRowSettingsTemplate:sap.ui.table.RowSettings):sap.ui.table.Table;
 
 	/**
-	* Sets a new value for property {@link #getSelectedIndex selectedIndex}.
-
-Zero-based index of selected item. Index value for no selection is -1. When multi-selection is enabled and multiple items are selected, the method returns the lead selected item. Sets the zero-based index of the currently selected item. This method removes any previous selections. When the given index is invalid, the call is ignored.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>-1</code>.
-	* @param	iSelectedIndex New value for property <code>selectedIndex</code>
+	* Sets the selected index. The previous selection is removed.
+	* @param	iIndex The index to select
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelectedIndex( iSelectedIndex:Int):sap.ui.table.Table;
+	public function setSelectedIndex( iIndex:Int):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getSelectionBehavior selectionBehavior}.
@@ -1607,7 +1591,7 @@ If no value is set (includes 0), a default height is applied based on the conten
 	@:optional var firstVisibleRow:haxe.extern.EitherType<String,Int>;
 
 	/**
-	* Selection mode of the Table. This property controls whether single or multiple rows can be selected and how the selection can be extended. It may also influence the visual appearance. When the selection mode is changed, the current selection is removed. <b>Note:</b> Since the group header visualization relies on the row selectors, the row selectors are always shown if the grouping functionality (depends on table type) is enabled, even if <code>sap.ui.table.SelectionMode.None</code> is set. <b>Note:</b> When a selection plugin is applied to the table, the selection mode is controlled by the plugin and cannot be changed manually.
+	* Selection mode of the Table. This property controls whether single or multiple rows can be selected and how the selection can be extended. It may also influence the visual appearance. When the selection mode is changed, the current selection is removed. <b>Note:</b> Since the group header visualization relies on the row selectors, the row selectors are always shown if the grouping functionality (depends on table type) is enabled, even if <code>sap.ui.table.SelectionMode.None</code> is set. <b>Note:</b> When a selection plugin is applied to the table, the selection mode is controlled by the plugin.
 	*/
 	@:optional var selectionMode:haxe.extern.EitherType<String,sap.ui.table.SelectionMode>;
 
@@ -1615,11 +1599,6 @@ If no value is set (includes 0), a default height is applied based on the conten
 	* Selection behavior of the Table. This property defines whether the row selector is displayed and whether the row, the row selector or both can be clicked to select a row. <b>Note:</b> Since the group header visualization relies on the row selectors, the row selectors are always shown if the grouping functionality (depends on table type) is enabled, even if <code>sap.ui.table.SelectionBehavior.RowOnly</code> is set.
 	*/
 	@:optional var selectionBehavior:haxe.extern.EitherType<String,sap.ui.table.SelectionBehavior>;
-
-	/**
-	* Zero-based index of selected item. Index value for no selection is -1. When multi-selection is enabled and multiple items are selected, the method returns the lead selected item. Sets the zero-based index of the currently selected item. This method removes any previous selections. When the given index is invalid, the call is ignored.
-	*/
-	@:optional var selectedIndex:haxe.extern.EitherType<String,Int>;
 
 	/**
 	* Flag whether the controls of the Table are editable or not (currently this only controls the background color in certain themes!)
@@ -1750,6 +1729,11 @@ In the <code>"Interactive"</code> mode, the table has as many rows as defined in
     * Rows of the Table
     */
 	@:optional var rows:Array<haxe.extern.EitherType<String,sap.ui.table.Row>>;
+
+    /**
+    * Row mode
+    */
+	@:optional var rowMode:haxe.extern.EitherType<String,sap.ui.core.Element>;
 
     /**
     * This row can be used for user input to create new data. Like in any other row, the cells of this row are also managed by the table and must not be modified. The cell content is defined via the <code>creationTemplate</code> aggregation of the {@link sap.ui.table.Column}. If the creation row is set, the busy indicator will no longer cover the horizontal scrollbar, even if the creation row is invisible.

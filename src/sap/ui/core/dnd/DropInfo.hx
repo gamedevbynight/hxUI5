@@ -95,6 +95,8 @@ The passed function and listener object must match the ones used for event regis
 
 Defines the visual drop effect.
 
+In Internet Explorer, default visual drop effect is <code>Copy</code> and this property has no effect.
+
 Default value is <code>Move</code>.
 	* @return	Value of property <code>dropEffect</code>
 	*/
@@ -138,6 +140,8 @@ The aggregation name in the drop target control which is the target of this drag
 	* Sets a new value for property {@link #getDropEffect dropEffect}.
 
 Defines the visual drop effect.
+
+In Internet Explorer, default visual drop effect is <code>Copy</code> and this property has no effect.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -194,6 +198,8 @@ typedef DropInfoArgs = sap.ui.core.dnd.DragDropBase.DragDropBaseArgs & {
 
 	/**
 	* Defines the visual drop effect.
+
+In Internet Explorer, default visual drop effect is <code>Copy</code> and this property has no effect.
 	*/
 	@:optional var dropEffect:haxe.extern.EitherType<String,sap.ui.core.dnd.DropEffect>;
 

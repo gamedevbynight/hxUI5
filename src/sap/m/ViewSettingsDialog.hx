@@ -607,13 +607,14 @@ Default value is <code>false</code>.
 	*/
 	public function setSelectedGroupItem( vItemOrKey:String):sap.m.ViewSettingsDialog;
 	@:overload( function(vItemOrKey:sap.m.ViewSettingsItem):sap.m.ViewSettingsDialog{ })
+	@:overload( function(vItemOrKey:String):sap.m.ViewSettingsDialog{ })
 
 	/**
 	* Sets the selected preset filter item.
 	* @param	vItemOrKey The selected item or the item's key string
 	* @return	this pointer for chaining
 	*/
-	public function setSelectedPresetFilterItem( vItemOrKey:String):sap.m.ViewSettingsDialog;
+	public function setSelectedPresetFilterItem( vItemOrKey:Dynamic):sap.m.ViewSettingsDialog;
 	@:overload( function(vItemOrKey:sap.m.ViewSettingsItem):sap.m.ViewSettingsDialog{ })
 
 	/**

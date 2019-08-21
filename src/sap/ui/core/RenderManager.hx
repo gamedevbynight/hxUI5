@@ -304,7 +304,9 @@ This is only valid when called between <code>openStart/voidStart</code> and <cod
 
 	/**
 	* Sets the given HTML markup without any encoding or sanitizing.
-	* @param	sHtml HTML markup
+
+This must not be used for plain texts; use the <code>text</code> method instead.
+	* @param	sHtml Well-formed, valid HTML markup
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function unsafeHtml( sHtml:String):sap.ui.core.RenderManager;

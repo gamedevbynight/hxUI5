@@ -3,15 +3,11 @@ package sap.m;
 @:native("sap.m.SinglePlanningCalendar")
 
 /**
-* <h3>Overview</h3>
+* Displays a calendar of a single entity (such as person, resource) for the selected time interval.
 
-Displays a calendar of a single entity (such as person, resource) for the selected time interval.
+<h3>Overview</h3>
 
 <b>Note:</b> The <code>SinglePlanningCalendar</code> uses parts of the <code>sap.ui.unified</code> library. This library will be loaded after the <code>SinglePlanningCalendar</code>, if it wasn't previously loaded. This could lead to a waiting time when a <code>SinglePlanningCalendar</code> is used for the first time. To prevent this, apps using the <code>SinglePlanningCalendar</code> must also load the <code>sap.ui.unified</code> library.
-
-<b>Disclaimer</b>: This control is in a beta state - incompatible API changes may be done before its official public release. Use at your own discretion.
-
-<h3>Usage</h3>
 
 The <code>SinglePlanningCalendar</code> has the following structure:
 
@@ -19,7 +15,7 @@ The <code>SinglePlanningCalendar</code> has the following structure:
 
 To create custom views, extend the <code>SinglePlanningCalendarView</code> basic view class. It defines three methods that should be overwritten: <code>getEntityCount</code>, <code>getScrollEntityCount</code> and <code>calculateStartDate</code> <ul> <li><code>getEntityCount</code> - returns number of columns to be displayed</li> <li><code>getScrollEntityCount</code> - used when next and previous arrows in the calendar are used. For example, in work week view, the <code>getEntityCount</code> returns 5 (5 columns from Monday to Friday), but when next arrow is selected, the control navigates 7 days ahead and <code>getScrollEntityCount</code> returns 7.</li> <li><code>calculateStartDate</code> - calculates the first day displayed in the calendar based on the <code>startDate</code> property of the <code>SinglePlanningCalendar</code>. For example, it returns the first date of a month or a week to display the first 10 days of the month.</li> </ul>
 
-<li>A <code>SinglePlanningCalendarGrid</code>, which displays the appointments, set to the visual time range. An all-day appointment is an appointment which starts at 00:00 and ends in 00:00 on any day in the future. </ul>
+<li>A <code>SinglePlanningCalendarGrid</code> or <code>SinglePlanningCalendarMonthGrid</code>, which displays the appointments, set to the visual time range. An all-day appointment is an appointment which starts at 00:00 and ends in 00:00 on any day in the future. </ul>
 */
 extern class SinglePlanningCalendar extends sap.ui.core.Control
 {
@@ -133,6 +129,19 @@ Fired if a date is selected in the calendar header.
 	public function attachHeaderDateSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:moreLinkPress moreLinkPress} event of this <code>sap.m.SinglePlanningCalendar</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.SinglePlanningCalendar</code> itself.
+
+Fired when a 'more' button is pressed. <b>Note:</b> The 'more' button appears in a month view cell when multiple appointments exist and the available space is not sufficient to display all of them.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachMoreLinkPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+
+	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:startDateChange startDateChange} event of this <code>sap.m.SinglePlanningCalendar</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.SinglePlanningCalendar</code> itself.
@@ -228,6 +237,16 @@ The passed function and listener object must match the ones used for event regis
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachHeaderDateSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+
+	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:moreLinkPress moreLinkPress} event of this <code>sap.m.SinglePlanningCalendar</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachMoreLinkPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:startDateChange startDateChange} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -676,14 +695,19 @@ See {@link #property:enableAppointmentsResize enableAppointmentsResize} for the 
 	@:optional var specialDates:Array<haxe.extern.EitherType<String,sap.ui.unified.DateTypeRange>>;
 
     /**
-    * Hidden, for internal use only. The header part of the <code>SinglePlanningCalendar</code>.
+    * The header part of the <code>SinglePlanningCalendar</code>.
     */
 	@:optional var _header:haxe.extern.EitherType<String,sap.m.PlanningCalendarHeader>;
 
     /**
-    * Hidden, for internal use only. The gid part of the <code>SinglePlanningCalendar</code>.
+    * The grid part of the <code>SinglePlanningCalendar</code>.
     */
-	@:optional var _grid:haxe.extern.EitherType<String,sap.m.SinglePlanningCalendarGrid>;
+	@:optional var _grid:haxe.extern.EitherType<String,sap.ui.core.Control>;
+
+    /**
+    * The grid part of the <code>SinglePlanningCalendar</code>.
+    */
+	@:optional var _mvgrid:haxe.extern.EitherType<String,sap.ui.core.Control>;
 
 	/**
 	* Corresponds to the currently selected view.
@@ -726,6 +750,11 @@ See {@link #property:enableAppointmentsResize enableAppointmentsResize} for the 
 	* Fired if a date is selected in the calendar header.
 	*/
 	@:optional var headerDateSelect:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* Fired when a 'more' button is pressed. <b>Note:</b> The 'more' button appears in a month view cell when multiple appointments exist and the available space is not sufficient to display all of them.
+	*/
+	@:optional var moreLinkPress:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
 	* <code>startDate</code> is changed while navigating in the <code>SinglePlanningCalendar</code>.

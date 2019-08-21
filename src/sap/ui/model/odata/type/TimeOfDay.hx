@@ -30,10 +30,10 @@ extern class TimeOfDay extends sap.ui.model.odata.type.ODataType
 	/**
 	* Formats the given value to the given target type.
 	* @param	sValue The value to be formatted, which is represented as a string in the model
-	* @param	sTargetType The target type, may be "any", "string", or a type with one of these types as its {@link sap.ui.base.DataType#getPrimitiveType primitive type}. See {@link sap.ui.model.odata.type} for more information
+	* @param	sTargetType The target type, may be "any", "object" (since 1.69.0), "string", or a type with one of these types as its {@link sap.ui.base.DataType#getPrimitiveType primitive type}. See {@link sap.ui.model.odata.type} for more information
 	* @return	The formatted output value in the target type; <code>undefined</code> or <code>null</code> are formatted to <code>null</code>
 	*/
-	public function formatValue( sValue:String, sTargetType:String):String;
+	public function formatValue( sValue:String, sTargetType:String):Dynamic;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.odata.type.TimeOfDay.
@@ -46,14 +46,15 @@ extern class TimeOfDay extends sap.ui.model.odata.type.ODataType
 	* @return	The type's name
 	*/
 	public function getName( ):String;
+	@:overload( function(vValue:Date, sSourceType:String):String{ })
 
 	/**
 	* Parses the given value, which is expected to be of the given type, to a string with an OData V4 Edm.TimeOfDay value.
-	* @param	sValue The value to be parsed, maps <code>""</code> to <code>null</code>
-	* @param	sSourceType The source type (the expected type of <code>sValue</code>), must be "string", or a type with "string" as its {@link sap.ui.base.DataType#getPrimitiveType primitive type}. See {@link sap.ui.model.odata.type} for more information.
+	* @param	vValue The value to be parsed, maps <code>""</code> to <code>null</code>; <code>Date</code> objects are expected to represent local time and are supported if and only if source type is "object".
+	* @param	sSourceType The source type (the expected type of <code>sValue</code>), must be "string", "object" (since 1.69.0) or a type with one of these types as its {@link sap.ui.base.DataType#getPrimitiveType primitive type}. See {@link sap.ui.model.odata.type} for more information.
 	* @return	The parsed value
 	*/
-	public function parseValue( sValue:String, sSourceType:String):String;
+	public function parseValue( vValue:String, sSourceType:String):String;
 
 	/**
 	* Validates the given value in model representation and meets the type's constraints.

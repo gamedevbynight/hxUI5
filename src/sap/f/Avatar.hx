@@ -100,6 +100,18 @@ The passed function and listener object must match the ones used for event regis
 	public function getAriaLabelledBy( ):Array<sap.ui.core.ID>;
 
 	/**
+	* Gets current value of property {@link #getBackgroundColor backgroundColor}.
+
+Determines the background color of the control.
+
+<b>Note:</b> By using background colors from the predefined sets, your colors can later be customized from the Theme Designer.
+
+Default value is <code>Accent6</code>.
+	* @return	Value of property <code>backgroundColor</code>
+	*/
+	public function getBackgroundColor( ):sap.f.AvatarColor;
+
+	/**
 	* Gets current value of property {@link #getCustomDisplaySize customDisplaySize}.
 
 Specifies custom display size of the <code>Avatar</code>.
@@ -188,6 +200,16 @@ Defines the displayed initials.
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
+	* Gets current value of property {@link #getShowBorder showBorder}.
+
+Determines whether the control is displayed with border.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>showBorder</code>
+	*/
+	public function getShowBorder( ):Bool;
+
+	/**
 	* Gets current value of property {@link #getSrc src}.
 
 Determines the path to the desired image or icon.
@@ -224,6 +246,21 @@ Determines the path to the desired image or icon.
 	* @return	The removed ariaLabelledBy or <code>null</code>
 	*/
 	public function removeAriaLabelledBy( vAriaLabelledBy:sap.ui.core.Control):sap.ui.core.ID;
+
+	/**
+	* Sets a new value for property {@link #getBackgroundColor backgroundColor}.
+
+Determines the background color of the control.
+
+<b>Note:</b> By using background colors from the predefined sets, your colors can later be customized from the Theme Designer.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Accent6</code>.
+	* @param	sBackgroundColor New value for property <code>backgroundColor</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setBackgroundColor( sBackgroundColor:sap.f.AvatarColor):sap.f.Avatar;
 
 	/**
 	* Sets a new value for property {@link #getCustomDisplaySize customDisplaySize}.
@@ -327,6 +364,19 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setInitials( sInitials:String):sap.f.Avatar;
 
 	/**
+	* Sets a new value for property {@link #getShowBorder showBorder}.
+
+Determines whether the control is displayed with border.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bShowBorder New value for property <code>showBorder</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setShowBorder( bShowBorder:Bool):sap.f.Avatar;
+
+	/**
 	* Sets a new value for property {@link #getSrc src}.
 
 Determines the path to the desired image or icon.
@@ -391,6 +441,18 @@ typedef AvatarArgs = sap.ui.core.Control.ControlArgs & {
 <b>Notes:</b> <ul> <li>If not set, a default fallback icon is displayed depending on the set <code>displayShape</code> property.</li> <li>Accepted values are only icons from the SAP icon font.</li> </ul>
 	*/
 	@:optional var fallbackIcon:String;
+
+	/**
+	* Determines the background color of the control.
+
+<b>Note:</b> By using background colors from the predefined sets, your colors can later be customized from the Theme Designer.
+	*/
+	@:optional var backgroundColor:haxe.extern.EitherType<String,sap.f.AvatarColor>;
+
+	/**
+	* Determines whether the control is displayed with border.
+	*/
+	@:optional var showBorder:haxe.extern.EitherType<String,Bool>;
 
     /**
     * A <code>sap.m.LightBox</code> instance, that will be opened automatically when the user interacts with the <code>Avatar</code> control.

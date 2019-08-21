@@ -200,9 +200,15 @@ Default value is <code>empty string</code>.
 	public function setName( sName:String):sap.m.Switch;
 
 	/**
-	* Change the switch state between on and off.
-	* @param	bState The new state - true for 'on' and false for 'off'
-	* @return	<code>this</code> to allow method chaining.
+	* Sets a new value for property {@link #getState state}.
+
+A boolean value indicating whether the switch is on or off.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bState New value for property <code>state</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setState( bState:Bool):sap.m.Switch;
 

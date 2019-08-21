@@ -130,6 +130,8 @@ Note: The binding must have the parameter <code>$count : true</code> when creati
 	* Filters the list with the given filters.
 
 If there are pending changes an error is thrown. Use {@link #hasPendingChanges} to check if there are pending changes. If there are changes, call {@link sap.ui.model.odata.v4.ODataModel#submitBatch} to submit the changes or {@link sap.ui.model.odata.v4.ODataModel#resetChanges} to reset the changes before calling {@link #filter}.
+
+Filters are case sensitive unless the property <code>caseSensitive</code> is set to <code>false</code>. This property has to be set on each filter, it is not inherited from a multi-filter.
 	* @param	vFilters The dynamic filters to be used; replaces the dynamic filters given in {@link sap.ui.model.odata.v4.ODataModel#bindList}. The filter executed on the list is created from the following parts, which are combined with a logical 'and': <ul> <li> Dynamic filters of type {@link sap.ui.model.FilterType.Application} <li> Dynamic filters of type {@link sap.ui.model.FilterType.Control} <li> The static filters, as defined in the '$filter' binding parameter </ul>
 	* @param	sFilterType The filter type to be used
 	* @return	<code>this</code> to facilitate method chaining

@@ -19,7 +19,7 @@ extern class MultiInput extends sap.m.Input
 
 	/**
 	* Function adds a validation callback called before any new token gets added to the tokens aggregation
-	* @param	fValidator The validation callback
+	* @param	fValidator The validation callback whose parameter contains the following properties:
 	* @return	Void
 	*/
 	public function addValidator( fValidator:()->Void):Void;

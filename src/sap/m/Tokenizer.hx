@@ -43,7 +43,7 @@ extern class Tokenizer extends sap.ui.core.Control
 
 	/**
 	* Function validates the given text and adds a new token if validation was successful
-	* @param	oParameters parameter bag containing following fields: {sap.m.String} text - the source text {sap.m.Token} [optional] token - a suggested token {object} [optional] suggestionObject - any object used to find the suggested token {function} [optional] validationCallback - callback which gets called after validation has finished
+	* @param	oParameters Parameter bag containing the following fields:
 	* @return	Void
 	*/
 	public function addValidateToken( oParameters:Dynamic):Void;
@@ -285,24 +285,18 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function selectAllTokens( bSelect:Bool):sap.m.Tokenizer;
 
 	/**
-	* Sets a new value for property {@link #getEditable editable}.
-
-true if tokens shall be editable otherwise false
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>true</code>.
-	* @param	bEditable New value for property <code>editable</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
+	* Sets the editable property of the <code>sap.m.Tokenizer</code> and propagates it to its internal <code>sap.m.Token</code> controls. The value should be set to true, if tokens shall be editable; otherwise it should be set as false. When called with a value of null or undefined, the default value of the property will be restored. Default value is true.
+	* @param	bEditable Whether the control should be editable
+	* @return	this instance for method chaining
 	*/
 	public function setEditable( bEditable:Bool):sap.m.Tokenizer;
 
 	/**
 	* Function sets the maximum width of the Tokenizer.
 	* @param	sWidth The new maximal width
-	* @return	Void
+	* @return	this instance for method chaining
 	*/
-	public function setMaxWidth( sWidth:String):Void;
+	public function setMaxWidth( sWidth:String):sap.m.Tokenizer;
 
 	/**
 	* Function sets the tokenizer's width in pixels

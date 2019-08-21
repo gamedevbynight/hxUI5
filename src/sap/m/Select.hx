@@ -326,6 +326,16 @@ Default value is <code>auto</code>.
 	public function getWidth( ):sap.ui.core.CSSSize;
 
 	/**
+	* Gets current value of property {@link #getWrapItemsText wrapItemsText}.
+
+Determines whether the text in the items wraps on multiple lines when the available width is not enough.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>wrapItemsText</code>
+	*/
+	public function getWrapItemsText( ):Bool;
+
+	/**
 	* Checks for the provided <code>sap.ui.core.Item</code> in the aggregation {@link #getItems items}. and returns its index if found or -1 otherwise.
 	* @param	oItem The item whose index is looked for
 	* @return	The index of the provided control in the aggregation if found, or -1 otherwise
@@ -599,6 +609,13 @@ Default value is <code>auto</code>.
 	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Select;
 
 	/**
+	* Sets the <code>wrapItemsText</code> property.
+	* @param	bWrap null
+	* @return	<code>this</code> to allow method chaining
+	*/
+	public function setWrapItemsText( bWrap:Bool):sap.m.Select;
+
+	/**
 	* Unbinds aggregation {@link #getItems items} from model data.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -696,6 +713,11 @@ typedef SelectArgs = sap.ui.core.Control.ControlArgs & {
 	* Indicates whether the selection is restricted to one of the items in the list. <b>Note:</b> We strongly recommend that you always set this property to <code>false</code> and bind the <code>selectedKey</code> property to the desired value for better interoperability with data binding.
 	*/
 	@:optional var forceSelection:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Determines whether the text in the items wraps on multiple lines when the available width is not enough.
+	*/
+	@:optional var wrapItemsText:haxe.extern.EitherType<String,Bool>;
 
     /**
     * Defines the items contained within this control.

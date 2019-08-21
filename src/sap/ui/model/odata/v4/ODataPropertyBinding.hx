@@ -77,6 +77,12 @@ Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or applic
 	public function refresh( ?sGroupId:String):Void;
 
 	/**
+	* Requests the value of the property binding.
+	* @return	A promise resolving with the resulting value or <code>undefined</code> if it could not be determined
+	*/
+	public function requestValue( ):js.lib.Promise<ODataPropertyBinding>;
+
+	/**
 	* Requests information to retrieve a value list for this property.
 	* @param	bAutoExpandSelect The value of the parameter <code>autoExpandSelect</code> for value list models created by this method. If the value list model is this binding's model, this flag has no effect. Supported since 1.68.0
 	* @return	A promise which is resolved with a map of qualifier to value list mapping objects structured as defined by <code>com.sap.vocabularies.Common.v1.ValueListMappingType</code>; the map entry with key "" represents the mapping without qualifier. Each entry has an additional property "$model" which is the {@link sap.ui.model.odata.v4.ODataModel} instance to read value list data via this mapping.

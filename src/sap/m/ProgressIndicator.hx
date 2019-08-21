@@ -9,6 +9,22 @@ extern class ProgressIndicator extends sap.ui.core.Control implements sap.ui.cor
 {
 	@:overload(function(?sId:String, ?mSettings:ProgressIndicatorArgs):Void {})
 	public function new(?mSettings:ProgressIndicatorArgs):Void;
+	@:overload( function(vAriaDescribedBy:sap.ui.core.ID):sap.m.ProgressIndicator{ })
+
+	/**
+	* Adds some ariaDescribedBy into the association {@link #getAriaDescribedBy ariaDescribedBy}.
+	* @param	vAriaDescribedBy The ariaDescribedBy to add; if empty, nothing is inserted
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function addAriaDescribedBy( vAriaDescribedBy:sap.ui.core.Control):sap.m.ProgressIndicator;
+	@:overload( function(vAriaLabelledBy:sap.ui.core.ID):sap.m.ProgressIndicator{ })
+
+	/**
+	* Adds some ariaLabelledBy into the association {@link #getAriaLabelledBy ariaLabelledBy}.
+	* @param	vAriaLabelledBy The ariaLabelledBy to add; if empty, nothing is inserted
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function addAriaLabelledBy( vAriaLabelledBy:sap.ui.core.Control):sap.m.ProgressIndicator;
 
 	/**
 	* Creates a new subclass of class sap.m.ProgressIndicator with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -20,6 +36,18 @@ extern class ProgressIndicator extends sap.ui.core.Control implements sap.ui.cor
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+
+	/**
+	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
+	* @return	null
+	*/
+	public function getAriaDescribedBy( ):Array<sap.ui.core.ID>;
+
+	/**
+	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
+	* @return	null
+	*/
+	public function getAriaLabelledBy( ):Array<sap.ui.core.ID>;
 
 	/**
 	* Gets current value of property {@link #getDisplayOnly displayOnly}.
@@ -114,6 +142,36 @@ Default value is <code>100%</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
+
+	/**
+	* Removes all the controls in the association named {@link #getAriaDescribedBy ariaDescribedBy}.
+	* @return	An array of the removed elements (might be empty)
+	*/
+	public function removeAllAriaDescribedBy( ):Array<sap.ui.core.ID>;
+
+	/**
+	* Removes all the controls in the association named {@link #getAriaLabelledBy ariaLabelledBy}.
+	* @return	An array of the removed elements (might be empty)
+	*/
+	public function removeAllAriaLabelledBy( ):Array<sap.ui.core.ID>;
+	@:overload( function(vAriaDescribedBy:Int):sap.ui.core.ID{ })
+	@:overload( function(vAriaDescribedBy:sap.ui.core.ID):sap.ui.core.ID{ })
+
+	/**
+	* Removes an ariaDescribedBy from the association named {@link #getAriaDescribedBy ariaDescribedBy}.
+	* @param	vAriaDescribedBy The ariaDescribedBy to be removed or its index or ID
+	* @return	The removed ariaDescribedBy or <code>null</code>
+	*/
+	public function removeAriaDescribedBy( vAriaDescribedBy:sap.ui.core.Control):sap.ui.core.ID;
+	@:overload( function(vAriaLabelledBy:Int):sap.ui.core.ID{ })
+	@:overload( function(vAriaLabelledBy:sap.ui.core.ID):sap.ui.core.ID{ })
+
+	/**
+	* Removes an ariaLabelledBy from the association named {@link #getAriaLabelledBy ariaLabelledBy}.
+	* @param	vAriaLabelledBy The ariaLabelledBy to be removed or its index or ID
+	* @return	The removed ariaLabelledBy or <code>null</code>
+	*/
+	public function removeAriaLabelledBy( vAriaLabelledBy:sap.ui.core.Control):sap.ui.core.ID;
 
 	/**
 	* Sets a new value for property {@link #getDisplayOnly displayOnly}.
@@ -279,4 +337,14 @@ typedef ProgressIndicatorArgs = sap.ui.core.Control.ControlArgs & {
 	* Determines whether the control is in display-only state where the control has different visualization and cannot be focused.
 	*/
 	@:optional var displayOnly:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).
+	*/
+	@:optional var ariaDescribedBy:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
+
+	/**
+	* Association to controls / IDs which label this control (see WAI-ARIA attribute aria-labelledBy).
+	*/
+	@:optional var ariaLabelledBy:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 }

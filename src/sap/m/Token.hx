@@ -322,6 +322,11 @@ typedef TokenArgs = sap.ui.core.Control.ControlArgs & {
 	*/
 	@:optional var textDirection:haxe.extern.EitherType<String,sap.ui.core.TextDirection>;
 
+	/**
+	* Indicates the editable status of the token's parent (Tokenizer). If it is set to <code>true</code>, the ARIA attributes of the token are updated accordingly.
+	*/
+	@:optional var editableParent:haxe.extern.EitherType<String,Bool>;
+
     /**
     * The delete icon.
     */

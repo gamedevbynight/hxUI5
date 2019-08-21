@@ -57,6 +57,16 @@ A list of all the active link elements in the Breadcrumbs control. <b>Note:</b> 
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
+	* Gets current value of property {@link #getSeparatorStyle separatorStyle}.
+
+Determines the visual style of the separator between the <code>Breadcrumbs</code> elements.
+
+Default value is <code>Slash</code>.
+	* @return	Value of property <code>separatorStyle</code>
+	*/
+	public function getSeparatorStyle( ):sap.m.BreadcrumbsSeparatorStyle;
+
+	/**
 	* Checks for the provided <code>sap.m.Link</code> in the aggregation {@link #getLinks links}. and returns its index if found or -1 otherwise.
 	* @param	oLink The link whose index is looked for
 	* @return	The index of the provided control in the aggregation if found, or -1 otherwise
@@ -98,6 +108,19 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setCurrentLocationText( sCurrentLocationText:String):sap.m.Breadcrumbs;
+
+	/**
+	* Sets a new value for property {@link #getSeparatorStyle separatorStyle}.
+
+Determines the visual style of the separator between the <code>Breadcrumbs</code> elements.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Slash</code>.
+	* @param	sSeparatorStyle New value for property <code>separatorStyle</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setSeparatorStyle( sSeparatorStyle:sap.m.BreadcrumbsSeparatorStyle):sap.m.Breadcrumbs;
 }
 
 typedef BreadcrumbsArgs = sap.ui.core.Control.ControlArgs & {
@@ -106,6 +129,11 @@ typedef BreadcrumbsArgs = sap.ui.core.Control.ControlArgs & {
 	* Determines the text of current/last element in the Breadcrumbs path.
 	*/
 	@:optional var currentLocationText:String;
+
+	/**
+	* Determines the visual style of the separator between the <code>Breadcrumbs</code> elements.
+	*/
+	@:optional var separatorStyle:haxe.extern.EitherType<String,sap.m.BreadcrumbsSeparatorStyle>;
 
     /**
     * A list of all the active link elements in the Breadcrumbs control. <b>Note:</b> Enabling the property <code>wrapping</code> of the link will not work since it's incompatible with the concept of the control. The other properties will work, but their effect may be undesirable.

@@ -3,16 +3,18 @@ package sap.ui.table.plugins;
 @:native("sap.ui.table.plugins.MultiSelectionPlugin")
 
 /**
-* Implements a plugin to enable a special multi-selection behavior: <ul> <li>No Select All checkbox, select all can only be done via range selection</li> <li>Dedicated Deselect All button to clear the selection</li> <li>The number of items which can be selected in a range is defined with the limit property by the application. If the user tries to select more items, the selection is automatically limited, and the table scrolls back to the last selected item</li> <li>If not already loaded, the table loads the selected items up to the given limit</li> <li>Multiple consecutive selections are possible</li> </ul>
+* Implements a plugin to enable a special multi-selection behavior: <ul> <li>No Select All checkbox, select all can only be done via range selection</li> <li>Dedicated Deselect All button to clear the selection</li> <li>The number of indices which can be selected in a range is defined by the <code>limit</code> property by the application. If the user tries to select more indices, the selection is automatically limited, and the table scrolls to the last selected index.</li> <li>The plugin makes sure that the corresponding binding contexts up to the given limit are available, by requesting them from the binding.</li> <li>Multiple consecutive selections are possible</li> </ul>
 
-When this plugin is applied to the table, the table's selection mode is automatically set to MultiToggle and cannot be changed.
+This plugin is intended for the multi-selection mode, but also supports single selection for ease of use. When this plugin is applied to the table, the table's selection mode is automatically set to MultiToggle and cannot be changed.
 */
 extern class MultiSelectionPlugin extends sap.ui.table.plugins.SelectionPlugin
 {
 public function new():Void;
 
 	/**
-	* Loads the context of the selected range and adds the given selection interval to the selection.
+	* Adds the given selection interval to the selection and requests the corresponding binding contexts. In single-selection mode it requests the context and sets the selected index to <code>iIndexTo</code>.
+
+If the number of indices in the range is greater than the value of the <code>limit</code> property, only n=limit indices, starting from <code>iIndexFrom</code>, are selected. The table is scrolled to display the index last selected.
 	* @param	iIndexFrom Index from which the selection starts
 	* @param	iIndexTo Index up to which to select
 	* @return	Void
@@ -62,7 +64,7 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getLimit limit}.
 
-Number of items which can be selected in a range. Accepts positive integer values. If set to 0, the limit is disabled, and the Select All checkbox appears instead of the Deselect All button. The plugin loads all selected items. <b>Note:</b> To avoid severe performance problems, the limit should only be set to 0 in the following cases: <ul> <li>With client-side models</li> <li>With server-side models if they are used in client mode</li> <li>If the entity set is small</li> </ul>
+Number of indices which can be selected in a range. Accepts positive integer values. If set to 0, the limit is disabled, and the Select All checkbox appears instead of the Deselect All button. <b>Note:</b> To avoid severe performance problems, the limit should only be set to 0 in the following cases: <ul> <li>With client-side models</li> <li>With server-side models if they are used in client mode</li> <li>If the entity set is small</li> </ul>
 
 Default value is <code>200</code>.
 	* @return	Value of property <code>limit</code>
@@ -76,10 +78,20 @@ Default value is <code>200</code>.
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
-	* Zero-based indices of selected items, wrapped in an array. An empty array means nothing has been selected.
+	* Zero-based indices of selected indices, wrapped in an array. An empty array means nothing has been selected.
 	* @return	An array containing all selected indices
 	*/
 	public function getSelectedIndices( ):Array<Int>;
+
+	/**
+	* Gets current value of property {@link #getSelectionMode selectionMode}.
+
+Selection mode of the plugin. This property controls whether single or multiple rows can be selected. It also influences the visual appearance. When the selection mode is changed, the current selection is removed.
+
+Default value is <code>MultiToggle</code>.
+	* @return	Value of property <code>selectionMode</code>
+	*/
+	public function getSelectionMode( ):sap.ui.table.SelectionMode;
 
 	/**
 	* Gets current value of property {@link #getShowHeaderSelector showHeaderSelector}.
@@ -107,7 +119,7 @@ Default value is <code>true</code>.
 	public function removeSelectionInterval( iIndexFrom:Int, iIndexTo:Int):Void;
 
 	/**
-	* Loads all contexts and adds all indices to the selection if the limit is disabled.
+	* Requests the binding contexts and adds all indices to the selection if the limit is disabled.
 	* @return	Void
 	*/
 	public function selectAll( ):Void;
@@ -115,7 +127,7 @@ Default value is <code>true</code>.
 	/**
 	* Sets a new value for property {@link #getLimit limit}.
 
-Number of items which can be selected in a range. Accepts positive integer values. If set to 0, the limit is disabled, and the Select All checkbox appears instead of the Deselect All button. The plugin loads all selected items. <b>Note:</b> To avoid severe performance problems, the limit should only be set to 0 in the following cases: <ul> <li>With client-side models</li> <li>With server-side models if they are used in client mode</li> <li>If the entity set is small</li> </ul>
+Number of indices which can be selected in a range. Accepts positive integer values. If set to 0, the limit is disabled, and the Select All checkbox appears instead of the Deselect All button. <b>Note:</b> To avoid severe performance problems, the limit should only be set to 0 in the following cases: <ul> <li>With client-side models</li> <li>With server-side models if they are used in client mode</li> <li>If the entity set is small</li> </ul>
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -126,12 +138,27 @@ Default value is <code>200</code>.
 	public function setLimit( iLimit:Int):sap.ui.table.plugins.MultiSelectionPlugin;
 
 	/**
-	* Loads the contexts of the selected range and sets the given selection interval as the selection.
+	* Sets the given selection interval as the selection and requests the corresponding binding contexts. In single-selection mode it requests the context and sets the selected index to <code>iIndexTo</code>.
+
+If the number of indices in the range is greater than the value of the <code>limit</code> property, only n=limit indices, starting from <code>iIndexFrom</code>, are selected. The table is scrolled to display the index last selected.
 	* @param	iIndexFrom Index from which the selection starts
 	* @param	iIndexTo Index up to which to select
 	* @return	Void
 	*/
 	public function setSelectionInterval( iIndexFrom:Int, iIndexTo:Int):Void;
+
+	/**
+	* Sets a new value for property {@link #getSelectionMode selectionMode}.
+
+Selection mode of the plugin. This property controls whether single or multiple rows can be selected. It also influences the visual appearance. When the selection mode is changed, the current selection is removed.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>MultiToggle</code>.
+	* @param	sSelectionMode New value for property <code>selectionMode</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setSelectionMode( sSelectionMode:sap.ui.table.SelectionMode):sap.ui.table.plugins.MultiSelectionPlugin;
 
 	/**
 	* Sets a new value for property {@link #getShowHeaderSelector showHeaderSelector}.

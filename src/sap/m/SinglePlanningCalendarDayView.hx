@@ -3,11 +3,7 @@ package sap.m;
 @:native("sap.m.SinglePlanningCalendarDayView")
 
 /**
-* <h3>Overview</h3>
-
-A {@link sap.m.SinglePlanningCalendarDayView} element represents a day view of the SinglePlanningCalendar. The purpose of the element is to decouple the view logic from parent control SinglePlanningCalendar
-
-<b>Disclaimer</b>: This control is in a beta state - incompatible API changes may be done before its official public release. Use at your own discretion.
+* Represents a day view of the {@link sap.m.SinglePlanningCalendar}. The purpose of the element is to decouple the view logic from parent control <code>SinglePlanningCalendar</code>.
 */
 extern class SinglePlanningCalendarDayView extends sap.m.SinglePlanningCalendarView
 {

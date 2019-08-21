@@ -163,11 +163,11 @@ Default value is <code>true</code>.
 	public function setAutoPriority( bAutoPriority:Bool):sap.m.NotificationListGroup;
 
 	/**
-	* Overwrites the setter for collapsed property.
-	* @param	Collapsed Collapsed indicator.
+	* Sets a new value for property {@link #collapsed}. Determines if the group is collapsed or expanded.
+	* @param	bCollapsed New value for property <code>collapsed</code>.
 	* @return	this NotificationListGroup reference for chaining.
 	*/
-	public function setCollapsed( Collapsed:Bool):sap.m.NotificationListGroup;
+	public function setCollapsed( bCollapsed:Bool):sap.m.NotificationListGroup;
 
 	/**
 	* Sets a new value for property {@link #getEnableCollapseButtonWhenEmpty enableCollapseButtonWhenEmpty}.

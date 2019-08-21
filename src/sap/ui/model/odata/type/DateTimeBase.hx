@@ -30,7 +30,7 @@ extern class DateTimeBase extends sap.ui.model.odata.type.ODataType
 	/**
 	* Formats the given value to the given target type.
 	* @param	oValue The value to be formatted, which is represented in the model as a <code>Date</code> instance (OData V2)
-	* @param	sTargetType The target type, may be "any", "string", or a type with one of these types as its {@link sap.ui.base.DataType#getPrimitiveType primitive type}. See {@link sap.ui.model.odata.type} for more information.
+	* @param	sTargetType The target type, may be "any", "object" (since 1.69.0), "string", or a type with one of these types as its {@link sap.ui.base.DataType#getPrimitiveType primitive type}. See {@link sap.ui.model.odata.type} for more information.
 	* @return	The formatted output value in the target type; <code>undefined</code> or <code>null</code> are formatted to <code>null</code>
 	*/
 	public function formatValue( oValue:Date, sTargetType:String):Dynamic;
@@ -40,14 +40,15 @@ extern class DateTimeBase extends sap.ui.model.odata.type.ODataType
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.base.Metadata;
+	@:overload( function(vValue:String, sSourceType:String):Date{ })
 
 	/**
 	* Parses the given value to a <code>Date</code> instance (OData V2).
-	* @param	sValue The value to be parsed; the empty string and <code>null</code> are parsed to <code>null</code>
-	* @param	sSourceType The source type (the expected type of <code>sValue</code>), must be "string", or a type with "string" as its {@link sap.ui.base.DataType#getPrimitiveType primitive type}. See {@link sap.ui.model.odata.type} for more information.
+	* @param	vValue The value to be parsed; the empty string and <code>null</code> are parsed to <code>null</code>
+	* @param	sSourceType The source type (the expected type of <code>vValue</code>), must be "object" (since 1.69.0), "string", or a type with one of these types as its {@link sap.ui.base.DataType#getPrimitiveType primitive type}. See {@link sap.ui.model.odata.type} for more information.
 	* @return	The parsed value
 	*/
-	public function parseValue( sValue:String, sSourceType:String):Date;
+	public function parseValue( vValue:Date, sSourceType:String):Date;
 
 	/**
 	* Validates whether the given value in model representation is valid and meets the defined constraints.

@@ -173,6 +173,13 @@ Default value is <code>[]</code>.
 	public function setSelectedItems( aItems:Dynamic):sap.m.MultiComboBox;
 
 	/**
+	* Sets a new value for property <code>selectedKeys</code>. Keys of the selected items. If the key has no corresponding item, no changes will apply. If duplicate keys exists the first item matching the key is used. When called with a value of null or undefined, the default value of the property will be restored. Default value is [].
+	* @param	aKeys Keys of items to be set as selected
+	* @return	<code>this</code> to allow method chaining.
+	*/
+	public function setSelectedKeys( aKeys:Array<String>):sap.m.MultiComboBox;
+
+	/**
 	* Sets the value state text
 	* @param	sValueStateText The new value state text
 	* @return	this for chaining

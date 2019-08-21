@@ -4,7 +4,7 @@ Generated with: [Haxe UI5 Extern Generatroe](https://github.com/gamedevbynight/h
 Write UI5-Apps in a typesafe language using [Haxe](https://haxe.org/)
 
 Generated from Version:
-1.68.1 
+1.69.1 
 
 OpenUI5 is under Apache 2 License.
 Everything (classes, interfaces, enums, namespaces, description) is created using the data from the following URLs:

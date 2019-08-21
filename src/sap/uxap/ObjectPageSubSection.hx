@@ -7,6 +7,8 @@ package sap.uxap;
 
 An <code>ObjectPageSubSection</code> may only be used within sections in the <code>ObjectPageLayout</code>. Subsections are used to display primary information in the <code>blocks</code> aggregation (always visible) and not-so-important information in the <code>moreBlocks</code> aggregation. The content in the <code>moreBlocks</code> aggregation is initially hidden, but may be accessed with a "See more" (...) button.
 
+As of version 1.61, applications can enable auto-expand of the subsections to fit the sections container by adding the <code>sapUxAPObjectPageSubSectionFitContainer</code> class to the subsection. This is useful in situations where the sub-section contains a control that has “100%” height, for example, <code>sap.ui.table.Table</code> with <code>visibleRowCountMode</code> set to <code>Auto</code>.
+
 <b>Note:</b> This control is intended to be used only as part of the <code>ObjectPageLayout</code>.
 */
 extern class ObjectPageSubSection extends sap.uxap.ObjectPageSectionBase

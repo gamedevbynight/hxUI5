@@ -15,7 +15,7 @@ extern class BaseTreeModifier
 	@:overload( function(vControl:sap.ui.base.ManagedObject, sEventName:String, sFunctionPath:String, vData:Dynamic):Void{ })
 
 	/**
-	* Attaches event on the specified ManagedObject.
+	* Attaches event on the specified <code>ManagedObject</code>.
 	* @param	vControl Control representation
 	* @param	sEventName Event name
 	* @param	sFunctionPath Absolute path to a function
@@ -55,7 +55,7 @@ extern class BaseTreeModifier
 
 	/**
 	* Creates the control in the corresponding representation.
-	* @param	sClassName Class name for the control (for example, <code>sap.m.Button</code>), ensure the class is loaded (no synchronous requests are called)
+	* @param	sClassName Class name for the control (for example, <code>sap.m.Button</code>), ensures that the class is loaded (no synchronous requests are called)
 	* @param	oAppComponent Needed to calculate the correct ID in case you provide an ID
 	* @param	oView XML node of the view, required for XML case to create nodes and to find elements
 	* @param	oSelector Selector to calculate the ID for the control that is created
@@ -121,7 +121,7 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	@:overload( function(vControl:sap.ui.base.ManagedObject, sAggregationName:String):Void{ })
 
 	/**
-	* Get the binding template from an aggregation. See {@link sap.ui.base.ManagedObject#getBindingInfo} method.
+	* Gets the binding template from an aggregation. See {@link sap.ui.base.ManagedObject#getBindingInfo} method.
 	* @param	vControl Control representation
 	* @param	sAggregationName Aggregation name
 	* @return	Void
@@ -203,7 +203,7 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	/**
 	* Function for determining the selector that is used later to apply a change for a given control. The function distinguishes between local IDs generated starting with 1.40 and the global IDs generated in previous versions.
 	* @param	vControl Control or ID string for which the selector should be determined
-	* @param	oAppComponent Application component, needed only if vControl is a string or XML node
+	* @param	oAppComponent Application component, needed only if <code>vControl</code> is a string or XML node
 	* @param	mAdditionalSelectorInformation Additional mapped data which is added to the selector
 	* @return	oSelector
 	*/
@@ -213,7 +213,7 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	/**
 	* See {@link sap.ui.core.StashedControlSupport#getVisible} method.
 	* @param	vControl Control representation
-	* @return	Whether the control is stashed or not
+	* @return	<code>true</code> if the control is stashed
 	*/
 	public static function getStashed( vControl:js.html.Element):Bool;
 	@:overload( function(vControl:sap.ui.base.ManagedObject):Bool{ })
@@ -221,7 +221,7 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	/**
 	* See {@link sap.ui.core.Control#getVisible} method.
 	* @param	vControl Control representation
-	* @return	Whether the control's <code>visible</code> property is set or not
+	* @return	<code>true</code> if the control's <code>visible</code> property is set
 	*/
 	public static function getVisible( vControl:js.html.Element):Bool;
 	@:overload( function(vParent:sap.ui.base.ManagedObject, sAggregationName:String, oObject:sap.ui.base.ManagedObject, iIndex:Int, ?oView:js.html.Element):Void{ })
@@ -234,7 +234,7 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	* @param	sAggregationName Aggregation name
 	* @param	oObject XML node or element of the control that will be inserted
 	* @param	iIndex Index for <code>oObject</code> in the aggregation
-	* @param	oView XML node of the view - needed in XML case to potentially create (aggregation) nodes
+	* @param	oView XML node of the view, needed in XML case to potentially create (aggregation) nodes
 	* @return	Void
 	*/
 	public static function insertAggregation( vParent:js.html.Element, sAggregationName:String, oObject:js.html.Element, iIndex:Int, ?oView:js.html.Element):Void;
@@ -244,9 +244,9 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	* @param	sFragment XML fragment as string
 	* @param	sNamespace Namespace of the app
 	* @param	oView View for the fragment
-	* @return	Array with the nodes of the controls of the fragment
+	* @return	Array with the nodes/instances of the controls of the fragment
 	*/
-	public static function instantiateFragment( sFragment:String, sNamespace:String, oView:sap.ui.core.mvc.View):Array<js.html.Element>;
+	public static function instantiateFragment( sFragment:String, sNamespace:String, oView:sap.ui.core.mvc.View):Dynamic;
 	@:overload( function(vControl:sap.ui.base.ManagedObject, sPropertyName:String):Bool{ })
 
 	/**
@@ -375,7 +375,7 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	* @param	vControl Control whose type is to be checked
 	* @param	mAggregationMetadata Aggregation info object
 	* @param	vParent Parent of the control
-	* @param	sFragment Path to the fragment that contains the control, whose type is to be checked
+	* @param	sFragment Path to the fragment that contains the control whose type is to be checked
 	* @param	iIndex Index of the current control in the parent aggregation
 	* @return	<code>true</code> if the type matches
 	*/

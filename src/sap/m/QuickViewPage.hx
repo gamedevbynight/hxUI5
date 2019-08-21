@@ -62,6 +62,16 @@ Default value is <code>empty string</code>.
 	public function getDescription( ):String;
 
 	/**
+	* Gets current value of property {@link #getFallbackIcon fallbackIcon}.
+
+Defines the fallback icon displayed in case of wrong image src or loading issues.
+
+<b>Note</b> Accepted values are only icons from the SAP icon font.
+	* @return	Value of property <code>fallbackIcon</code>
+	*/
+	public function getFallbackIcon( ):sap.ui.core.URI;
+
+	/**
 	* Gets content of aggregation {@link #getGroups groups}.
 
 QuickViewGroup consists of a title (optional) and an entity of group elements.
@@ -182,6 +192,19 @@ Default value is <code>empty string</code>.
 	public function setDescription( sDescription:String):sap.m.QuickViewPage;
 
 	/**
+	* Sets a new value for property {@link #getFallbackIcon fallbackIcon}.
+
+Defines the fallback icon displayed in case of wrong image src or loading issues.
+
+<b>Note</b> Accepted values are only icons from the SAP icon font.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sFallbackIcon New value for property <code>fallbackIcon</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setFallbackIcon( sFallbackIcon:sap.ui.core.URI):sap.m.QuickViewPage;
+
+	/**
 	* Sets a new value for property {@link #getHeader header}.
 
 Specifies the text displayed in the header of the control.
@@ -289,6 +312,13 @@ typedef QuickViewPageArgs = sap.ui.core.Control.ControlArgs & {
 	* Specifies the URL of the icon displayed under the header of the page
 	*/
 	@:optional var icon:String;
+
+	/**
+	* Defines the fallback icon displayed in case of wrong image src or loading issues.
+
+<b>Note</b> Accepted values are only icons from the SAP icon font.
+	*/
+	@:optional var fallbackIcon:haxe.extern.EitherType<String,sap.ui.core.URI>;
 
     /**
     * QuickViewGroup consists of a title (optional) and an entity of group elements.

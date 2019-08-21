@@ -730,6 +730,11 @@ To set a single date (instead of a range), set only the <code>startDate</code> p
     */
 	@:optional var yearPicker:haxe.extern.EitherType<String,sap.ui.unified.calendar.YearPicker>;
 
+    /**
+    * null
+    */
+	@:optional var yearRangePicker:haxe.extern.EitherType<String,sap.ui.unified.calendar.YearPicker>;
+
 	/**
 	* Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).
 	*/

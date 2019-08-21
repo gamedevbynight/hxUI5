@@ -118,9 +118,9 @@ Returns <code>undefined</code> if the data is not (yet) available; no request is
 	public function requestCanonicalPath( ):js.lib.Promise<Context>;
 
 	/**
-	* Returns a promise on the value for the given path relative to this context. The function allows access to the complete data the context points to (if <code>sPath</code> is "") or any part thereof. The data is a JSON structure as described in <a href="http://docs.oasis-open.org/odata/odata-json-format/v4.0/odata-json-format-v4.0.html"> "OData JSON Format Version 4.0"</a>. Note that the function clones the result. Modify values via {@link sap.ui.model.odata.v4.ODataPropertyBinding#setValue}.
+	* Returns a promise on the value for the given path relative to this context. The function allows access to the complete data the context points to (if <code>sPath</code> is "") or any part thereof. The data is a JSON structure as described in <a href="http://docs.oasis-open.org/odata/odata-json-format/v4.0/odata-json-format-v4.0.html"> "OData JSON Format Version 4.0"</a>. Note that the function clones the result. Modify values via {@link sap.ui.model.odata.v4.Context#setProperty}.
 
-If you want {@link #requestObject} to read fresh data, call <code>oContext.getBinding().refresh()</code> first.
+If you want {@link #requestObject} to read fresh data, call {@link #refresh} first.
 	* @param	sPath A relative path within the JSON structure
 	* @return	A promise on the requested value
 	*/
@@ -137,13 +137,14 @@ If you want {@link #requestObject} to read fresh data, call <code>oContext.getBi
 	/**
 	* Loads side effects for this context using the given "14.5.11 Expression edm:NavigationPropertyPath" or "14.5.13 Expression edm:PropertyPath" objects. Use this method to explicitly load side effects in case implicit loading is switched off via the binding-specific parameter <code>$$patchWithoutSideEffects</code>. The method can be called on <ul> <li> the bound context of a context binding, <li> the return value context of an operation binding, <li> a context of a list binding representing a single entity, <li> the header context of a list binding; side effects are loaded for the whole binding in this case. </ul> Key predicates must be available in this context's path. Avoid navigation properties as part of a binding's $select system query option as they may trigger pointless requests.
 
-The request always uses the update group ID for this context's binding, see "$$updateGroupId" at {@link sap.ui.model.odata.v4.ODataModel#bindContext}; this way, it can easily be part of the same batch request as the corresponding update. <b>Caution:</b> If a dependent binding uses a different update group ID, it may lose its pending changes.
+By default, the request uses the update group ID for this context's binding; this way, it can easily be part of the same batch request as the corresponding update. <b>Caution:</b> If a dependent binding uses a different update group ID, it may lose its pending changes. The same will happen if a different group ID is provided, and the side effects affect properties for which there are pending changes.
 
 The events 'dataRequested' and 'dataReceived' are not fired. Whatever should happen in the event handler attached to... <ul> <li>'dataRequested', can instead be done before calling {@link #requestSideEffects}.</li> <li>'dataReceived', can instead be done once the <code>oPromise</code> returned by {@link #requestSideEffects} fulfills or rejects (using <code>oPromise.then(function () {...}, function () {...})</code>).</li> </ul>
 	* @param	aPathExpressions The "14.5.11 Expression edm:NavigationPropertyPath" or "14.5.13 Expression edm:PropertyPath" objects describing which properties need to be loaded because they may have changed due to side effects of a previous update, for example <code>[{$PropertyPath : "TEAM_ID"}, {$NavigationPropertyPath : "EMPLOYEE_2_MANAGER"}, {$PropertyPath : "EMPLOYEE_2_TEAM/Team_Id"}]</code>
+	* @param	sGroupId The group ID to be used (since 1.69.0); if not specified, the update group ID for the context's binding is used, see "$$updateGroupId" at {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}. If a different group ID is specified, make sure that {@link #requestSideEffects} is called after the corresponding updates have been successfully processed by the server and that there are no pending changes for the affected properties.
 	* @return	Promise resolved with <code>undefined</code>, or rejected with an error if loading of side effects fails. Use it to set fields affected by side effects to read-only before {@link #requestSideEffects} and make them editable again when the promise resolves; in the error handler, you can repeat the loading of side effects.
 	*/
-	public function requestSideEffects( aPathExpressions:Array<Dynamic>):js.lib.Promise<Context>;
+	public function requestSideEffects( aPathExpressions:Array<Dynamic>, ?sGroupId:String):js.lib.Promise<Context>;
 
 	/**
 	* Sets a new value for the property identified by the given path. The path is relative to this context and is expected to point to a structural property with primitive type.

@@ -423,16 +423,6 @@ typedef RadioButtonArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var editableParent:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Specifies the aria-posinset of the RadioButton.
-	*/
-	@:optional var posinset:String;
-
-	/**
-	* Specifies the aria-setsize of the RadioButton.
-	*/
-	@:optional var setsize:String;
-
-	/**
 	* Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).
 	*/
 	@:optional var ariaDescribedBy:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
