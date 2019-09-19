@@ -78,7 +78,9 @@ This event will be fired before the ActionSheet is opened.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.ActionSheet</code> itself.
 
-This event is fired when the cancelButton is clicked. For iPad, this event is also fired when showCancelButton is set to true, and Popover is closed by clicking outside.
+This event is fired when the cancelButton is clicked.
+
+<b>Note: </b> For any device other than phones, this event would be fired always when the Popover closes. To prevent this behavior, the <code>showCancelButton</code> property needs to be set to <code>false</code>.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ActionSheet</code> itself
@@ -361,7 +363,9 @@ typedef ActionSheetArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var beforeOpen:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event is fired when the cancelButton is clicked. For iPad, this event is also fired when showCancelButton is set to true, and Popover is closed by clicking outside.
+	* This event is fired when the cancelButton is clicked.
+
+<b>Note: </b> For any device other than phones, this event would be fired always when the Popover closes. To prevent this behavior, the <code>showCancelButton</code> property needs to be set to <code>false</code>.
 	*/
 	@:optional var cancelButtonPress:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

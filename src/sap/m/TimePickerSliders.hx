@@ -168,16 +168,26 @@ Sets the width of the container. The minimum width is 320px.
 	public function setDisplayFormat( sFormat:String):sap.m.TimePickerSliders;
 
 	/**
-	* Sets the height of the <code>TimepickerSliders</code> container.
-	* @param	sHeight The height of the <code>TimepickerSliders</code> as CSS size
-	* @return	Pointer to the control instance to allow method chaining
+	* Sets a new value for property {@link #getHeight height}.
+
+Sets the height of the container. If percentage value is used the parent container should have specified height
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sHeight New value for property <code>height</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.TimePickerSliders;
 
 	/**
-	* Sets the text for the picker label.
-	* @param	sLabelText A text for the label
-	* @return	this instance, used for chaining
+	* Sets a new value for property {@link #getLabelText labelText}.
+
+Defines the text of the picker label.
+
+It is read by screen readers. It is visible only on phone.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sLabelText New value for property <code>labelText</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setLabelText( sLabelText:String):sap.m.TimePickerSliders;
 
@@ -228,9 +238,13 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setValueFormat( sValueFormat:String):sap.m.TimePickerSliders;
 
 	/**
-	* Sets the width of the <code>TimepickerSliders</code> container.
-	* @param	sWidth The width of the <code>TimepickerSliders</code< as CSS size
-	* @return	Pointer to the control instance to allow method chaining
+	* Sets a new value for property {@link #getWidth width}.
+
+Sets the width of the container. The minimum width is 320px.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sWidth New value for property <code>width</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.TimePickerSliders;
 }

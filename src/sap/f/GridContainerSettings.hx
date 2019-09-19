@@ -38,7 +38,7 @@ If not defined, <code>sap.f.GridContainer</code> will position as many columns a
 
 The width of the columns.
 
-<b>Note:</b> Use only 'px' or 'rem'. Some features may not work as expected otherwise.
+<b>Note:</b> Values different than single size in 'px' or 'rem' are not supported for the polyfill for IE.
 
 Default value is <code>80px</code>.
 	* @return	Value of property <code>columnSize</code>
@@ -58,10 +58,34 @@ Default value is <code>16px</code>.
 	public function getGap( ):sap.ui.core.CSSSize;
 
 	/**
+	* Gets current value of property {@link #getMaxColumnSize maxColumnSize}.
+
+Sets the maximum width of the columns. Setting this together with <code>minColumnSize</code> will allow the columns to breath between those two values.
+
+<b>Note:</b> Will not work in combination with <code>columnSize</code>.
+
+<b>Note:</b> Not supported for the polyfill for IE.
+	* @return	Value of property <code>maxColumnSize</code>
+	*/
+	public function getMaxColumnSize( ):sap.ui.core.CSSSize;
+
+	/**
 	* Returns a metadata object for class sap.f.GridContainerSettings.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.base.Metadata;
+
+	/**
+	* Gets current value of property {@link #getMinColumnSize minColumnSize}.
+
+Sets the minimum width of the columns. Setting this together with <code>maxColumnSize</code> will allow the columns to breath between those two values.
+
+<b>Note:</b> Will not work in combination with <code>columnSize</code>.
+
+<b>Note:</b> Not supported for the polyfill for IE.
+	* @return	Value of property <code>minColumnSize</code>
+	*/
+	public function getMinColumnSize( ):sap.ui.core.CSSSize;
 
 	/**
 	* Gets current value of property {@link #getRowSize rowSize}.
@@ -93,7 +117,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 
 The width of the columns.
 
-<b>Note:</b> Use only 'px' or 'rem'. Some features may not work as expected otherwise.
+<b>Note:</b> Values different than single size in 'px' or 'rem' are not supported for the polyfill for IE.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -117,6 +141,36 @@ Default value is <code>16px</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setGap( sGap:sap.ui.core.CSSSize):sap.f.GridContainerSettings;
+
+	/**
+	* Sets a new value for property {@link #getMaxColumnSize maxColumnSize}.
+
+Sets the maximum width of the columns. Setting this together with <code>minColumnSize</code> will allow the columns to breath between those two values.
+
+<b>Note:</b> Will not work in combination with <code>columnSize</code>.
+
+<b>Note:</b> Not supported for the polyfill for IE.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sMaxColumnSize New value for property <code>maxColumnSize</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setMaxColumnSize( sMaxColumnSize:sap.ui.core.CSSSize):sap.f.GridContainerSettings;
+
+	/**
+	* Sets a new value for property {@link #getMinColumnSize minColumnSize}.
+
+Sets the minimum width of the columns. Setting this together with <code>maxColumnSize</code> will allow the columns to breath between those two values.
+
+<b>Note:</b> Will not work in combination with <code>columnSize</code>.
+
+<b>Note:</b> Not supported for the polyfill for IE.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sMinColumnSize New value for property <code>minColumnSize</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setMinColumnSize( sMinColumnSize:sap.ui.core.CSSSize):sap.f.GridContainerSettings;
 
 	/**
 	* Sets a new value for property {@link #getRowSize rowSize}.
@@ -146,9 +200,27 @@ If not defined, <code>sap.f.GridContainer</code> will position as many columns a
 	/**
 	* The width of the columns.
 
-<b>Note:</b> Use only 'px' or 'rem'. Some features may not work as expected otherwise.
+<b>Note:</b> Values different than single size in 'px' or 'rem' are not supported for the polyfill for IE.
 	*/
 	@:optional var columnSize:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
+
+	/**
+	* Sets the minimum width of the columns. Setting this together with <code>maxColumnSize</code> will allow the columns to breath between those two values.
+
+<b>Note:</b> Will not work in combination with <code>columnSize</code>.
+
+<b>Note:</b> Not supported for the polyfill for IE.
+	*/
+	@:optional var minColumnSize:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
+
+	/**
+	* Sets the maximum width of the columns. Setting this together with <code>minColumnSize</code> will allow the columns to breath between those two values.
+
+<b>Note:</b> Will not work in combination with <code>columnSize</code>.
+
+<b>Note:</b> Not supported for the polyfill for IE.
+	*/
+	@:optional var maxColumnSize:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
 	/**
 	* The height of the rows.

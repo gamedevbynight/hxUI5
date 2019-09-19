@@ -18,28 +18,34 @@ extern class Targets extends sap.ui.base.EventProvider
 	public function new( ?oOptions:Dynamic):Void;
 
 	/**
-	* Creates a target by using the given name and options. If there's already a target with the same name exists, the existing target is kept from being overwritten and an error log will be written to the development console.
-	* @param	sName the name of a target
-	* @param	oTarget the options of a target. The option names are the same as the ones in "oOptions.targets.anyName" of {@link #constructor}.
-	* @return	Targets itself for method chaining
+	* Creates a target by using the given name and options.
+
+If there's already a target with the same name, the existing target is not overwritten and an error log will be written to the console.
+	* @param	sName Name of a target
+	* @param	oTarget Options of a target. The option names are the same as the ones in "oOptions.targets.anyName" of {@link #constructor}.
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function addTarget( sName:String, oTarget:Dynamic):sap.ui.core.routing.Targets;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'display' event of this <code>sap.ui.core.routing.Targets</code>.<br/>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:display display} event of this <code>sap.ui.core.routing.Targets</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.routing.Targets</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.routing.Targets</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachDisplay( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'titleChanged' event of this <code>sap.ui.core.routing.Targets</code>.<br/>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:titleChanged titleChanged} event of this <code>sap.ui.core.routing.Targets</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.routing.Targets</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.routing.Targets</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachTitleChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
 
@@ -50,29 +56,29 @@ extern class Targets extends sap.ui.base.EventProvider
 	public function destroy( ):sap.ui.core.routing.Targets;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'display' event of this <code>sap.ui.core.routing.Targets</code>.<br/>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:display display} event of this <code>sap.ui.core.routing.Targets</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDisplay( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Targets;
+	public function detachDisplay( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'titleChanged' event of this <code>sap.ui.core.routing.Targets</code>.<br/>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:titleChanged titleChanged} event of this <code>sap.ui.core.routing.Targets</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTitleChanged( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Targets;
+	public function detachTitleChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
 	@:overload( function(vTargets:String, ?oData:Dynamic, ?sTitleTarget:String):Dynamic{ })
 
 	/**
 	* Creates a view and puts it in an aggregation of the specified control.
-	* @param	vTargets the key of the target as specified in the {@link #constructor}. To display multiple targets you may also pass an array of keys.
+	* @param	vTargets Key of the target as specified in the {@link #constructor}. To display multiple targets you may also pass an array of keys.
 	* @param	oData an object that will be passed to the display event in the data property. If the target has parents, the data will also be passed to them.
 	* @param	sTitleTarget the name of the target from which the title option is taken for firing the {@link sap.ui.core.routing.Targets#event:titleChanged titleChanged} event
 	* @return	this pointer for chaining or a Promise
@@ -91,11 +97,11 @@ The passed function and listener object must match the ones previously used for 
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
-	* Fire event created to attached listeners.
-	* @param	mArguments the arguments to pass along with the event.
-	* @return	<code>this</code> to allow method chaining
+	* Fires event {@link #event:created created} to attached listeners.
+	* @param	oParameters Parameters to pass along with the event
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function fireDisplay( ?mArguments:Dynamic):sap.ui.core.routing.Targets;
+	public function fireDisplay( ?oParameters:Dynamic):sap.ui.core.routing.Targets;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.routing.Targets.

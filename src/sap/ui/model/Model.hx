@@ -10,53 +10,63 @@ extern class Model extends sap.ui.core.message.MessageProcessor
 public function new():Void;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'parseError' event of this <code>sap.ui.model.Model</code>.<br/>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, the global context (window) is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:parseError parseError} event of this <code>sap.ui.model.Model</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.Model</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.Model</code> itself.
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachParseError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'propertyChange' event of this <code>sap.ui.model.Model</code>.
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, the global context (window) is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:propertyChange propertyChange} event of this <code>sap.ui.model.Model</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.Model</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.Model</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachPropertyChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'requestCompleted' event of this <code>sap.ui.model.Model</code>.
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, the global context (window) is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:requestCompleted requestCompleted} event of this <code>sap.ui.model.Model</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.Model</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.Model</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachRequestCompleted( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'requestFailed' event of this <code>sap.ui.model.Model</code>.<br/>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, this Model is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:requestFailed requestFailed} event of this <code>sap.ui.model.Model</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.Model</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.Model</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachRequestFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'requestSent' event of this <code>sap.ui.model.Model</code>.
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, the global context (window) is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:requestSent requestSent} event of this <code>sap.ui.model.Model</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.Model</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.Model</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachRequestSent( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
 	@:overload( function(sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic, ?oEvents:Dynamic):sap.ui.model.ContextBinding{ })
 
 	/**
-	* Create ContextBinding
+	* Create ContextBinding.
 	* @param	sPath the path pointing to the property that should be bound or an object which contains the following parameter properties: path, context, parameters
 	* @param	oContext the context object for this databinding (optional)
 	* @param	mParameters additional model specific parameters (optional)
@@ -66,7 +76,7 @@ public function new():Void;
 	public function bindContext( sPath:Dynamic, ?oContext:Dynamic, ?mParameters:Dynamic, ?oEvents:Dynamic):sap.ui.model.ContextBinding;
 
 	/**
-	* Implement in inheriting classes
+	* Implement in inheriting classes.
 	* @param	sPath the path pointing to the list / array that should be bound
 	* @param	oContext the context object for this databinding (optional)
 	* @param	aSorters initial sort order (can be either a sorter or an array of sorters) (optional)
@@ -77,7 +87,7 @@ public function new():Void;
 	public function bindList( sPath:String, ?oContext:Dynamic, ?aSorters:sap.ui.model.Sorter, ?aFilters:Array<Dynamic>, ?mParameters:Dynamic):sap.ui.model.ListBinding;
 
 	/**
-	* Implement in inheriting classes
+	* Implement in inheriting classes.
 	* @param	sPath the path pointing to the property that should be bound
 	* @param	oContext the context object for this databinding (optional)
 	* @param	mParameters additional model specific parameters (optional)
@@ -86,7 +96,7 @@ public function new():Void;
 	public function bindProperty( sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic):sap.ui.model.PropertyBinding;
 
 	/**
-	* Implement in inheriting classes
+	* Implement in inheriting classes.
 	* @param	sPath the path pointing to the tree / array that should be bound
 	* @param	oContext the context object for this databinding (optional)
 	* @param	aFilters predefined filter/s contained in an array (optional)
@@ -97,7 +107,7 @@ public function new():Void;
 	public function bindTree( sPath:String, ?oContext:Dynamic, ?aFilters:Array<Dynamic>, ?mParameters:Dynamic, ?aSorters:Array<Dynamic>):sap.ui.model.TreeBinding;
 
 	/**
-	* Implement in inheriting classes
+	* Implement in inheriting classes.
 	* @param	sPath the path to create the new context from
 	* @param	oContext the context which should be used to create the new binding context
 	* @param	mParameters the parameters used to create the new binding context
@@ -108,67 +118,69 @@ public function new():Void;
 	public function createBindingContext( sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic, ?fnCallBack:()->Void, ?bReload:Bool):sap.ui.model.Context;
 
 	/**
-	* Destroys the model and clears the model data. A model implementation may override this function and perform model specific cleanup tasks e.g. abort requests, prevent new requests, etc.
+	* Destroys the model and clears the model data.
+
+A model implementation may override this function and perform model specific cleanup tasks e.g. abort requests, prevent new requests, etc.
 	* @return	Void
 	*/
 	public function destroy( ):Void;
 
 	/**
-	* Implement in inheriting classes
+	* Implement in inheriting classes.
 	* @param	oContext to destroy
 	* @return	Void
 	*/
 	public function destroyBindingContext( oContext:Dynamic):Void;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'parseError' event of this <code>sap.ui.model.Model</code>.<br/>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:parseError parseError} event of this <code>sap.ui.model.Model</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachParseError( fnFunction:()->Void, oListener:Dynamic):sap.ui.model.Model;
+	public function detachParseError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'propertyChange' event of this <code>sap.ui.model.Model</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:propertyChange propertyChange} event of this <code>sap.ui.model.Model</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPropertyChange( fnFunction:()->Void, oListener:Dynamic):sap.ui.model.Model;
+	public function detachPropertyChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'requestCompleted' event of this <code>sap.ui.model.Model</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:requestCompleted requestCompleted} event of this <code>sap.ui.model.Model</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRequestCompleted( fnFunction:()->Void, oListener:Dynamic):sap.ui.model.Model;
+	public function detachRequestCompleted( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'requestFailed' event of this <code>sap.ui.model.Model</code>.<br/>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:requestFailed requestFailed} event of this <code>sap.ui.model.Model</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRequestFailed( fnFunction:()->Void, oListener:Dynamic):sap.ui.model.Model;
+	public function detachRequestFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'requestSent' event of this <code>sap.ui.model.Model</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:requestSent requestSent} event of this <code>sap.ui.model.Model</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRequestSent( fnFunction:()->Void, oListener:Dynamic):sap.ui.model.Model;
+	public function detachRequestSent( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.Model with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -182,8 +194,8 @@ The passed function and listener object must match the ones previously used for 
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
-	* Get the default binding mode for the model
-	* @return	default binding mode of the model
+	* Get the default binding mode for the model.
+	* @return	Default binding mode of the model
 	*/
 	public function getDefaultBindingMode( ):sap.ui.model.BindingMode;
 
@@ -195,29 +207,31 @@ The passed function and listener object must match the ones previously used for 
 
 	/**
 	* Returns the meta model associated with this model if it is available for the concrete model type.
-	* @return	The meta model or undefined if no meta model exists.
+	* @return	The meta model or <code>undefined</code> if no meta model exists.
 	*/
 	public function getMetaModel( ):sap.ui.model.MetaModel;
 
 	/**
-	* Implement in inheriting classes
-	* @param	sPath the path to where to read the object
-	* @param	oContext the context with which the path should be resolved
-	* @param	mParameters additional model specific parameters
+	* Implement in inheriting classes.
+	* @param	sPath Path to where to read the object
+	* @param	oContext Context with which the path should be resolved
+	* @param	mParameters Additional model specific parameters
 	* @return	The value for the given path/context or <code>undefined</code> if data could not be found
 	*/
 	public function getObject( sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic):Dynamic;
 
 	/**
-	* Returns the original value for the property with the given path and context. The original value is the value that was last responded by a server if using a server model implementation.
-	* @param	sPath the path/name of the property
-	* @param	oContext the context if available to access the property value
-	* @return	vValue the value of the property
+	* Returns the original value for the property with the given path and context.
+
+The original value is the value that was last responded by a server if using a server model implementation.
+	* @param	sPath Path/name of the property
+	* @param	oContext Context if available to access the property value
+	* @return	vValue The value of the property
 	*/
 	public function getOriginalProperty( sPath:String, ?oContext:Dynamic):Dynamic;
 
 	/**
-	* Implement in inheriting classes
+	* Implement in inheriting classes.
 	* @param	sPath the path to where to read the attribute value
 	* @param	oContext the context with which the path should be resolved
 	* @return	Void
@@ -226,42 +240,46 @@ The passed function and listener object must match the ones previously used for 
 
 	/**
 	* Check if the specified binding mode is supported by the model.
-	* @param	sMode the binding mode to check
+	* @param	sMode The binding mode to check
 	* @return	Void
 	*/
 	public function isBindingModeSupported( sMode:sap.ui.model.BindingMode):Void;
 
 	/**
-	* Returns whether legacy path syntax is used
+	* Returns whether legacy path syntax is used.
 	* @return	null
 	*/
 	public function isLegacySyntax( ):Bool;
 
 	/**
-	* Refresh the model. This will check all bindings for updated data and update the controls if data has been changed.
+	* Refresh the model.
+
+This will check all bindings for updated data and update the controls if data has been changed.
 	* @param	bForceUpdate Update controls even if data has not been changed
 	* @return	Void
 	*/
 	public function refresh( bForceUpdate:Bool):Void;
 
 	/**
-	* Set the default binding mode for the model. If the default binding mode should be changed, this method should be called directly after model instance creation and before any binding creation. Otherwise it is not guaranteed that the existing bindings will be updated with the new binding mode.
-	* @param	sMode the default binding mode to set for the model
-	* @return	this pointer for chaining
+	* Set the default binding mode for the model.
+
+If the default binding mode should be changed, this method should be called directly after model instance creation and before any binding creation. Otherwise it is not guaranteed that the existing bindings will be updated with the new binding mode.
+	* @param	sMode The default binding mode to set for the model
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setDefaultBindingMode( sMode:sap.ui.model.BindingMode):sap.ui.model.Model;
 
 	/**
-	* Enables legacy path syntax handling
+	* Enables legacy path syntax handling.
 
-This defines, whether relative bindings, which do not have a defined binding context, should be compatible to earlier releases which means they are resolved relative to the root element or handled strict and stay unresolved until a binding context is set
-	* @param	bLegacySyntax the path syntax to use
+This defines, whether relative bindings, which do not have a defined binding context, should be compatible to earlier releases which means they are resolved relative to the root element or handled strict and stay unresolved until a binding context is set.
+	* @param	bLegacySyntax The path syntax to use
 	* @return	Void
 	*/
 	public function setLegacySyntax( bLegacySyntax:Bool):Void;
 
 	/**
-	* Sets messages
+	* Sets messages.
 	* @param	mMessages Messages for this model
 	* @return	Void
 	*/

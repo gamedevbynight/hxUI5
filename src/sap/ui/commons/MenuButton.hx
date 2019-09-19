@@ -24,13 +24,15 @@ Event that is fired when a menu item is selected by the user
 	public function attachItemSelected( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.MenuButton;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'press' event of this <code>sap.ui.commons.MenuButton</code>.<br/>
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:press press} event of this <code>sap.ui.commons.MenuButton</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.commons.MenuButton</code> itself.
 
 Event is fired when an item from the menu was selected.
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, the global context (window) is used.
-	* @return	<code>this</code> to allow method chaining
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.MenuButton</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.MenuButton;
 
@@ -51,14 +53,14 @@ The passed function and listener object must match the ones used for event regis
 	public function detachItemSelected( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.MenuButton;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'press' event of this <code>sap.ui.commons.MenuButton</code>.<br/>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.ui.commons.MenuButton</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, oListener:Dynamic):sap.ui.commons.MenuButton;
+	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.MenuButton;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.MenuButton with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.

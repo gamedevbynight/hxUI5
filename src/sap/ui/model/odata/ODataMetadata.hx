@@ -17,42 +17,46 @@ extern class ODataMetadata extends sap.ui.base.EventProvider
 	public function new( ?sMetadataURI:String, ?mParams:Dynamic):Void;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'failed' event of this <code>sap.ui.model.odata.ODataMetadata</code>.
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, the global context (window) is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:failed failed} event of this <code>sap.ui.model.odata.ODataMetadata</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.odata.ODataMetadata</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.ODataMetadata</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'loaded' event of this <code>sap.ui.model.odata.ODataMetadata</code>.
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, the global context (window) is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:loaded loaded} event of this <code>sap.ui.model.odata.ODataMetadata</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.odata.ODataMetadata</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.ODataMetadata</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachLoaded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'failed' event of this <code>sap.ui.model.odata.ODataMetadata</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:failed failed} event of this <code>sap.ui.model.odata.ODataMetadata</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFailed( fnFunction:()->Void, oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
+	public function detachFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'loaded' event of this <code>sap.ui.model.odata.ODataMetadata</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:loaded loaded} event of this <code>sap.ui.model.odata.ODataMetadata</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLoaded( fnFunction:()->Void, oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
+	public function detachLoaded( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.odata.ODataMetadata with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -72,8 +76,8 @@ The passed function and listener object must match the ones previously used for 
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
-	* Return the metadata object
-	* @return	metdata object
+	* Return the metadata object.
+	* @return	Metadata object
 	*/
 	public function getServiceMetadata( ):Dynamic;
 
@@ -84,26 +88,28 @@ The passed function and listener object must match the ones previously used for 
 	public function getUseBatch( ):Bool;
 
 	/**
-	* Checks whether metadata loading has already failed
-	* @return	returns whether metadata request has failed
+	* Checks whether metadata loading has already failed.
+	* @return	Whether metadata request has failed
 	*/
 	public function isFailed( ):Bool;
 
 	/**
-	* Checks whether metadata is available
-	* @return	returns whether metadata is already loaded
+	* Checks whether metadata is available.
+	* @return	Whether metadata is already loaded
 	*/
 	public function isLoaded( ):Bool;
 
 	/**
-	* Returns a promise for the loaded state of the metadata
-	* @return	returns a promise on metadata loaded state
+	* Returns a promise for the loaded state of the metadata.
+	* @return	A promise on metadata loaded state
 	*/
 	public function loaded( ):js.lib.Promise<ODataMetadata>;
 
 	/**
-	* Refreshes the metadata creating a new request to the server. Returns a new promise which can be resolved or rejected depending on the metadata loading state.
-	* @return	returns a promise on metadata loaded state
+	* Refreshes the metadata creating a new request to the server.
+
+Returns a new promise which can be resolved or rejected depending on the metadata loading state.
+	* @return	A promise on metadata loaded state
 	*/
 	public function refresh( ):js.lib.Promise<ODataMetadata>;
 }

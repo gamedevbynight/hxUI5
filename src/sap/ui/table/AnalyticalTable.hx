@@ -24,13 +24,13 @@ Please also take notice of the fact, that "addSelectionInterval" does not change
 	/**
 	* Collapses one or more rows.
 	* @param	vRowIndex A single index, or an array of indices of the rows to be collapsed
-	* @return	<code>this</code> to allow method chaining
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function collapse( vRowIndex:Array<Int>):sap.ui.table.AnalyticalTable;
 
 	/**
 	* Collapses all nodes (and their child nodes if collapseRecursive is activated).
-	* @return	<code>this</code> to allow method chaining
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function collapseAll( ):sap.ui.table.AnalyticalTable;
 	@:overload( function(vRowIndex:Int):sap.ui.table.AnalyticalTable{ })
@@ -38,9 +38,15 @@ Please also take notice of the fact, that "addSelectionInterval" does not change
 	/**
 	* Expands one or more rows.
 	* @param	vRowIndex A single index or an array of indices of the rows to be expanded
-	* @return	<code>this</code> to allow method chaining
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function expand( vRowIndex:Array<Int>):sap.ui.table.AnalyticalTable;
+
+	/**
+	* Expands all nodes. The current selection is removed, and the table scrolls back to the top. If this method is called, not all groups might be loaded. If the user then scrolls to the bottom of the table, additional groups are loaded, which increases the scroll range, and the scroll thumb moves up.
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function expandAll( ):sap.ui.table.AnalyticalTable;
 
 	/**
 	* Creates a new subclass of class sap.ui.table.AnalyticalTable with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.

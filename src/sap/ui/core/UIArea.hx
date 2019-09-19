@@ -179,8 +179,10 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeDependent( vDependent:sap.ui.core.Control):sap.ui.core.Control;
 
 	/**
-	* Allows setting the Root Node hosting this instance of <code>UIArea</code>.<br/> The Dom Ref must have an Id that will be used as Id for this instance of <code>UIArea</code>.
-	* @param	oRootNode the hosting Dom Ref for this instance of <code>UIArea</code>.
+	* Allows setting the root node hosting this instance of <code>UIArea</code>.
+
+The node must have an ID that will be used as ID for this instance of <code>UIArea</code>.
+	* @param	oRootNode the hosting DOM node for this instance of <code>UIArea</code>.
 	* @return	Void
 	*/
 	public function setRootNode( oRootNode:Dynamic):Void;

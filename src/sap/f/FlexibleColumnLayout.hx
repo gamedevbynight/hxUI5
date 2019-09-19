@@ -335,7 +335,7 @@ Default value is <code>Transparent</code>.
 
 The content entities between which the <code>FlexibleColumnLayout</code> navigates in the <code>Begin</code> column.
 
-These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
 	* @return	null
 	*/
 	public function getBeginColumnPages( ):Array<sap.ui.core.Control>;
@@ -393,7 +393,7 @@ Default value is <code>slide</code>.
 
 The content entities between which the <code>FlexibleColumnLayout</code> navigates in the <code>End</code> column.
 
-These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
 	* @return	null
 	*/
 	public function getEndColumnPages( ):Array<sap.ui.core.Control>;
@@ -445,7 +445,7 @@ Default value is <code>OneColumn</code>.
 
 The content entities between which the <code>FlexibleColumnLayout</code> navigates in the <code>Mid</code> column.
 
-These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
 	* @return	null
 	*/
 	public function getMidColumnPages( ):Array<sap.ui.core.Control>;
@@ -750,21 +750,21 @@ For more details, see {@link topic:3b9f760da5b64adf8db7f95247879086 Types of Lay
     /**
     * The content entities between which the <code>FlexibleColumnLayout</code> navigates in the <code>Begin</code> column.
 
-These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
     */
 	@:optional var beginColumnPages:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 
     /**
     * The content entities between which the <code>FlexibleColumnLayout</code> navigates in the <code>Mid</code> column.
 
-These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
     */
 	@:optional var midColumnPages:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 
     /**
     * The content entities between which the <code>FlexibleColumnLayout</code> navigates in the <code>End</code> column.
 
-These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+These should be any control with page semantics. These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
     */
 	@:optional var endColumnPages:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 

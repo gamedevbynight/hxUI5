@@ -168,9 +168,10 @@ Examples: <ul> <li><code>/Products('42')/Name##@com.sap.vocabularies.Common.v1.L
 
 	/**
 	* Returns <code>true</code> if there are pending changes, meaning updates or created entities (see {@link sap.ui.model.odata.v4.ODataListBinding#create}) that have not yet been successfully sent to the server.
+	* @param	sGroupId A group ID as specified in {@link sap.ui.model.odata.v4.ODataModel}, except group IDs having {@link sap.ui.model.odata.v4.SubmitMode.Direct}; if specified, only pending changes related to that group ID are considered (since 1.70.0)
 	* @return	<code>true</code> if there are pending changes
 	*/
-	public function hasPendingChanges( ):Bool;
+	public function hasPendingChanges( ?sGroupId:String):Bool;
 
 	/**
 	* Refreshes the model by calling refresh on all bindings which have a change event handler attached.
@@ -197,7 +198,7 @@ If there are pending changes, an error is thrown. Use {@link #hasPendingChanges}
 	public function setLegacySyntax( ):Void;
 
 	/**
-	* Submits the requests associated with the given group ID in one batch request. Requests from subsequent calls to this method for the same group ID may be combined in one batch request using separate change sets. For group IDs with {@link sap.ui.model.odata.v4.SubmitMode.Auto}, only a single change set is used; this method is useful to repeat failed updates or creates (see {@link sap.ui.model.odata.v4.ODataListBinding#create}).
+	* Submits the requests associated with the given group ID in one batch request. Requests from subsequent calls to this method for the same group ID may be combined in one batch request using separate change sets. For group IDs with {@link sap.ui.model.odata.v4.SubmitMode.Auto}, only a single change set is used; this method is useful to repeat failed updates or creates (see {@link sap.ui.model.odata.v4.ODataListBinding#create}) together with all other requests for the given group ID in one batch request.
 	* @param	sGroupId A valid group ID as specified in {@link sap.ui.model.odata.v4.ODataModel}.
 	* @return	A promise on the outcome of the HTTP request resolving with <code>undefined</code>; it is rejected with an error if the batch request itself fails
 	*/

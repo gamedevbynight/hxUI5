@@ -101,7 +101,7 @@ Default value is <code>false</code>.
 
 Determines whether the user can modify the selected item. When the property is set to <code>false</code>, the control appears as disabled but CAN still be focused.
 
-<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false<code>, <code>enabled</code> has priority over <code>editable</code>.
+<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false</code>, <code>enabled</code> has priority over <code>editable</code>.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>editable</code>
@@ -113,7 +113,7 @@ Default value is <code>true</code>.
 
 Determines whether the user can modify the selected item. When the property is set to <code>false</code>, the control appears as disabled and CANNOT be focused.
 
-<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false<code>, <code>enabled</code> has priority over <code>editable</code>.
+<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false</code>, <code>enabled</code> has priority over <code>editable</code>.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>enabled</code>
@@ -404,7 +404,7 @@ Default value is <code>false</code>.
 
 Determines whether the user can modify the selected item. When the property is set to <code>false</code>, the control appears as disabled but CAN still be focused.
 
-<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false<code>, <code>enabled</code> has priority over <code>editable</code>.
+<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false</code>, <code>enabled</code> has priority over <code>editable</code>.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -419,7 +419,7 @@ Default value is <code>true</code>.
 
 Determines whether the user can modify the selected item. When the property is set to <code>false</code>, the control appears as disabled and CANNOT be focused.
 
-<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false<code>, <code>enabled</code> has priority over <code>editable</code>.
+<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false</code>, <code>enabled</code> has priority over <code>editable</code>.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -632,14 +632,14 @@ typedef SelectArgs = sap.ui.core.Control.ControlArgs & {
 	/**
 	* Determines whether the user can modify the selected item. When the property is set to <code>false</code>, the control appears as disabled and CANNOT be focused.
 
-<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false<code>, <code>enabled</code> has priority over <code>editable</code>.
+<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false</code>, <code>enabled</code> has priority over <code>editable</code>.
 	*/
 	@:optional var enabled:haxe.extern.EitherType<String,Bool>;
 
 	/**
 	* Determines whether the user can modify the selected item. When the property is set to <code>false</code>, the control appears as disabled but CAN still be focused.
 
-<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false<code>, <code>enabled</code> has priority over <code>editable</code>.
+<b>Note:</b> When both <code>enabled</code> and <code>editable</code> properties are set to <code>false</code>, <code>enabled</code> has priority over <code>editable</code>.
 	*/
 	@:optional var editable:haxe.extern.EitherType<String,Bool>;
 

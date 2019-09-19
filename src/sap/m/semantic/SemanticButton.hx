@@ -15,7 +15,7 @@ extern class SemanticButton extends sap.m.semantic.SemanticControl
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.semantic.SemanticButton</code> itself.
 
-See {@link sap.m.Button#press}
+See {@link sap.m.Button#event:press}
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.semantic.SemanticButton</code> itself
@@ -82,7 +82,7 @@ typedef SemanticButtonArgs = sap.m.semantic.SemanticControl.SemanticControlArgs 
 	@:optional var enabled:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* See {@link sap.m.Button#press}
+	* See {@link sap.m.Button#event:press}
 	*/
 	@:optional var press:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

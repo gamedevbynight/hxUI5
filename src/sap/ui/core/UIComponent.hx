@@ -39,15 +39,13 @@ This method can be overwritten by subclasses if the default implementation doesn
 	public function createId( sId:String):String;
 
 	/**
-	* Creates a new subclass of class sap.ui.core.UIComponent with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
-
-<code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Component.extend}.
-	* @param	sClassName Name of the class being created
+	* Creates a new subclass of class <code>sap.ui.core.UIComponent</code> with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>. <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Component.extend}.
+	* @param	sClassName Qualified name of the newly created class
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
-	* @return	Created class / constructor function
+	* @param	FNMetaImpl} Constructor function for the metadata object. If not given, it defaults to <code>sap.ui.core.UIComponentMetadata</code> (which is not public).
+	* @return	Void
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, FNMetaImpl}:()->Void):Void;
 
 	/**
 	* Returns the local ID of an element by removing the component ID prefix or <code>null</code> if the ID does not contain a prefix.
@@ -70,7 +68,18 @@ This method can be overwritten by subclasses if the default implementation doesn
 	@:overload( function(oControllerOrView:sap.ui.core.mvc.View):sap.ui.core.routing.Router{ })
 
 	/**
-	* Returns the reference to the router instance. The passed controller or view has to be created in the context of a UIComponent to return the router instance. Otherwise this function will return undefined. You may define the routerClass property in the config section of the routing to make the Component create your router extension. Example: routing: { config: { routerClass : myAppNamespace.MyRouterClass ... } ...
+	* Returns the reference to the router instance.
+
+The passed controller or view has to be created in the context of a UIComponent to return the router instance. Otherwise this function will return undefined. You may define the routerClass property in the config section of the routing to make the Component create your router extension.
+
+Example: <pre>
+routing: {
+	config: {
+		routerClass : myAppNamespace.MyRouterClass
+		...
+}
+...
+</pre>
 	* @param	oControllerOrView either a view or controller
 	* @return	the router instance
 	*/

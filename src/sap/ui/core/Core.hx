@@ -56,19 +56,23 @@ If the theme resources are not all either below this base location or with their
 
 	/**
 	* Registers a listener for control events.
-	* @param	fnFunction callback to be called for each control event
-	* @param	oListener optional context object to call the callback on.
+
+When called, the context of the listener (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to a dummy event provider object.
+	* @param	fnFunction Callback to be called for each control event
+	* @param	oListener Optional context object to call the callback on
 	* @return	Void
 	*/
 	public function attachControlEvent( fnFunction:()->Void, ?oListener:Dynamic):Void;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'formatError' event of <code>sap.ui.core.Core</code>.
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:formatError formatError} event of <code>sap.ui.core.Core</code>.
+
+When called, the context of the listener (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to a dummy event provider object.
 
 Please note that this event is a bubbling event and may already be canceled before reaching the core.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, an unspecified context object is used (listeners cannot expect this to be the <code>Core</code>).
-	* @return	<code>this</code> to allow method chaining
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachFormatError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
@@ -84,51 +88,61 @@ More information about the initialization process and the steps it consists of c
 	public function attachInit( fnFunction:()->Void):Void;
 
 	/**
-	* Register a listener for the <code>localizationChanged</code> event.
-	* @param	fnFunction callback to be called
-	* @param	oListener context object to cal lthe function on.
+	* Register a listener for the {@link #event:localizationChanged localizationChanged} event.
+
+When called, the context of the listener (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to a dummy event provider object.
+	* @param	fnFunction Callback to be called when the event occurs
+	* @param	oListener Context object to call the function on
 	* @return	Void
 	*/
-	public function attachLocalizationChanged( fnFunction:()->Void, oListener:Dynamic):Void;
+	public function attachLocalizationChanged( fnFunction:()->Void, ?oListener:Dynamic):Void;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'parseError' event of <code>sap.ui.core.Core</code>.
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:parseError parseError} event of <code>sap.ui.core.Core</code>.
+
+When called, the context of the listener (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to a dummy event provider object.
 
 Please note that this event is a bubbling event and may already be canceled before reaching the core.
-	* @param	oData The object, that should be passed along with the event-object when firing the event
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, an unspecified context object is used (listeners cannot expect this to be the <code>Core</code>).
-	* @return	<code>this</code> to allow method chaining
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachParseError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the <code>ThemeChanged</code> event of this <code>sap.ui.core.Core</code>.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function.
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:ThemeChanged ThemeChanged} event of this <code>sap.ui.core.Core</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to a dummy event provider object.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
 	* @return	Void
 	*/
 	public function attachThemeChanged( fnFunction:()->Void, ?oListener:Dynamic):Void;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'validationError' event of <code>sap.ui.core.Core</code>.
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:validationError validationError} event of <code>sap.ui.core.Core</code>.
+
+When called, the context of the listener (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to a dummy event provider object.
 
 Please note that this event is a bubbling event and may already be canceled before reaching the core.
-	* @param	oData The object, that should be passed along with the event-object when firing the event
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, an unspecified context object is used (listeners cannot expect this to be the <code>Core</code>).
-	* @return	<code>this</code> to allow method chaining
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachValidationError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'validationSuccess' event of <code>sap.ui.core.Core</code>.
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:validationSuccess validationSuccess} event of <code>sap.ui.core.Core</code>.
+
+When called, the context of the listener (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to a dummy event provider object.
 
 Please note that this event is a bubbling event and may already be canceled before reaching the core.
 	* @param	oData The object, that should be passed along with the event-object when firing the event
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, an unspecified context object is used (listeners cannot expect this to be the <code>Core</code>).
-	* @return	<code>this</code> to allow method chaining
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachValidationSuccess( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
 	@:overload( function(?vFieldGroupIds:String):Array<sap.ui.core.Control>{ })
@@ -179,72 +193,72 @@ The caller must take care to destroy the render manager when it is no longer nee
 	/**
 	* Unregisters a listener for control events.
 
-A listener will only be unregistered if the same function/context combination is given as in the attachControlEvent call.
-	* @param	fnFunction function to unregister
-	* @param	oListener context object given during registration
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction Function to unregister
+	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
 	public function detachControlEvent( fnFunction:()->Void, ?oListener:Dynamic):Void;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'formatError' event of <code>sap.ui.core.Core</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:formatError formatError} event of <code>sap.ui.core.Core</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
+The passed function and listener object must match the ones used for event registration.
 	* @param	fnFunction The callback function to unregister
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFormatError( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.Core;
+	public function detachFormatError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
-	* Unregister a listener from the <code>localizationChanged</code> event.
+	* Unregister a listener from the {@link #event:localizationChanged localizationChanged} event.
 
 The listener will only be unregistered if the same function/context combination is given as in the call to <code>attachLocalizationListener</code>.
-	* @param	fnFunction callback to be deregistered
-	* @param	oListener context object given in a previous call to attachLocalizationChanged.
+	* @param	fnFunction Callback to be deregistered
+	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
-	public function detachLocalizationChanged( fnFunction:()->Void, oListener:Dynamic):Void;
+	public function detachLocalizationChanged( fnFunction:()->Void, ?oListener:Dynamic):Void;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'parseError' event of <code>sap.ui.core.Core</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:parseError parseError} event of <code>sap.ui.core.Core</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
+The passed function and listener object must match the ones used for event registration.
 	* @param	fnFunction The callback function to unregister.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachParseError( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.Core;
+	public function detachParseError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the <code>ThemeChanged</code> event of this <code>sap.ui.core.Core</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:ThemeChanged ThemeChanged} event of this <code>sap.ui.core.Core</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
 	* @param	oListener Object on which the given function had to be called.
 	* @return	Void
 	*/
 	public function detachThemeChanged( fnFunction:()->Void, ?oListener:Dynamic):Void;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'validationError' event of <code>sap.ui.core.Core</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:validationError validationError} event of <code>sap.ui.core.Core</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
+The passed function and listener object must match the ones used for event registration.
 	* @param	fnFunction The callback function to unregister
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachValidationError( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.Core;
+	public function detachValidationError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'validationSuccess' event of <code>sap.ui.core.Core</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:validationSuccess validationSuccess} event of <code>sap.ui.core.Core</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachValidationSuccess( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.Core;
+	public function detachValidationSuccess( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.Core with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -440,7 +454,9 @@ This function must not be used before the init event of the Core. If the styles 
 	@:overload( function(sLibrary:String, ?vUrl:Bool):Dynamic{ })
 
 	/**
-	* Loads the given library and its dependencies and makes it available to the application.
+	* Loads the given library and its dependencies and makes its content available to the application.
+
+<h3>What it does</h3>
 
 When library preloads are not suppressed for the given library, then a library-preload bundle will be loaded for it. By default, the bundle will be loaded synchronously (for compatibility reasons). Only when the optional parameter <code>vUrl</code> is given as <code>true</code> or as a configuration object with a property of <code>async:true</code>, then the bundle will be loaded asynchronously and a <code>Promise</code> will be returned (preferred usage).
 
@@ -457,6 +473,24 @@ When the optional parameter <code>vUrl</code> is given as a string or when a con
 </pre>
 
 When the given library has been loaded already, no further action will be taken, especially, a given URL will not be registered! In the case of asynchronous loading, a Promise will be returned, but will be resolved immediately.
+
+<h3>When to use</h3>
+
+For applications that follow the best practices and use components with component descriptors (manifest.json), the framework will load all declared mandatory libraries and their dependencies automatically before instantiating the application component.
+
+The same is true for libraries that are listed in the bootstrap configuration (e.g. with the attribute <code>data-sap-ui-libs</code>). They will be loaded before the <code>init</code> event of the UI5 Core is fired.
+
+Only when an app declares a library to be a lazy library dependency or when code does not use descriptors at all, then an explicit call to <code>loadLibrary</code> becomes necessary. The call should be made before artifacts (controls, elements, types, helpers, modules etc.) from the library are used or required. This allows the framework to optimize access to those artifacts.
+
+For example, when an app uses a heavy-weight charting library that shouldn't be loaded during startup, it can declare it as "lazy" and load it just before it loads and displays a view that uses the charting library: <pre>
+  sap.ui.getCore().loadLibrary("heavy.charting", {async: true})
+    .then(function() {
+      View.create({
+        name: "myapp.views.HeavyChartingView",
+        type: ViewType.XML
+      });
+    });
+</pre>
 	* @param	sLibrary name of the library to load
 	* @param	vUrl URL to load the library from or the async flag or a complex configuration object
 	* @return	An info object for the library (sync) or a Promise (async)
@@ -498,7 +532,7 @@ Any change (new model, removed model) is propagated to all existing UIAreas and 
 Note: to be compatible with future versions of this API, applications must not use the value <code>null</code>, the empty string <code>""</code> or the string literals <code>"null"</code> or <code>"undefined"</code> as model name.
 	* @param	oModel the model to be set or <code>null</code> or <code>undefined</code>
 	* @param	sName the name of the model or <code>undefined</code>
-	* @return	<code>this</code> to allow method chaining
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setModel( oModel:sap.ui.model.Model, ?sName:String):sap.ui.core.Core;
 

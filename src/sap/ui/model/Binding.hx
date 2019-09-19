@@ -19,25 +19,31 @@ extern class Binding extends sap.ui.base.EventProvider
 	public function new( ?oModel:sap.ui.model.Model, ?sPath:String, ?oContext:sap.ui.model.Context, ?mParameters:Dynamic):Void;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'change' event of this <code>sap.ui.model.Model</code>.<br/>
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener object on which to call the given function.
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:change change} event of this <code>sap.ui.model.Model</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.Binding</code> itself.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.model.Binding</code> itself
 	* @return	Void
 	*/
 	public function attachChange( fnFunction:()->Void, ?oListener:Dynamic):Void;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'dataReceived' event of this <code>sap.ui.model.Binding</code>.<br/>
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener object on which to call the given function.
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:dataReceived dataReceived} event of this <code>sap.ui.model.Binding</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.Binding</code> itself.
+	* @param	fnFunction Function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.model.Binding</code> itself
 	* @return	Void
 	*/
 	public function attachDataReceived( fnFunction:()->Void, ?oListener:Dynamic):Void;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'dataRequested' event of this <code>sap.ui.model.Binding</code>.<br/>
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener object on which to call the given function.
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:dataRequested dataRequested} event of this <code>sap.ui.model.Binding</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.Binding</code> itself.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.model.Binding</code> itself
 	* @return	Void
 	*/
 	public function attachDataRequested( fnFunction:()->Void, ?oListener:Dynamic):Void;
@@ -49,25 +55,25 @@ extern class Binding extends sap.ui.base.EventProvider
 	public function destroy( ):Void;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'change' event of this <code>sap.ui.model.Model</code>.<br/>
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener object on which to call the given function.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:change change} event of this <code>sap.ui.model.Binding</code>.
+	* @param	fnFunction Function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
 	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):Void;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'dataReceived' event of this <code>sap.ui.model.Binding</code>.<br/>
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener object on which to call the given function.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:dataReceived dataReceived} event of this <code>sap.ui.model.Binding</code>.
+	* @param	fnFunction Function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
 	public function detachDataReceived( fnFunction:()->Void, ?oListener:Dynamic):Void;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'dataRequested' event of this <code>sap.ui.model.Binding</code>.<br/>
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener object on which to call the given function.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:dataRequested dataRequested} event of this <code>sap.ui.model.Binding</code>.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
 	public function detachDataRequested( fnFunction:()->Void, ?oListener:Dynamic):Void;

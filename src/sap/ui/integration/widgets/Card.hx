@@ -59,6 +59,14 @@ The passed function and listener object must match the ones used for event regis
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
+	* Gets current value of property {@link #getBaseUrl baseUrl}.
+
+Defines the base URL of the Card Manifest. It should be used when manifest property is an object instead of a URL.
+	* @return	Value of property <code>baseUrl</code>
+	*/
+	public function getBaseUrl( ):sap.ui.core.URI;
+
+	/**
 	* Gets current value of property {@link #getDataMode dataMode}.
 
 Defines the state of the <code>Card</code>. When set to <code>Inactive</code>, the <code>Card</code> doesn't make requests.
@@ -125,6 +133,17 @@ Default value is <code>100%</code>.
 	public function refresh( ):Void;
 
 	/**
+	* Sets a new value for property {@link #getBaseUrl baseUrl}.
+
+Defines the base URL of the Card Manifest. It should be used when manifest property is an object instead of a URL.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sBaseUrl New value for property <code>baseUrl</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setBaseUrl( sBaseUrl:sap.ui.core.URI):sap.ui.integration.widgets.Card;
+
+	/**
 	* Sets a new value for the <code>dataMode</code> property.
 	* @param	sMode The mode to set to the Card.
 	* @return	Pointer to the control instance to allow method chaining.
@@ -151,21 +170,30 @@ Default value is <code>auto</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHostConfigurationId( oHostConfigurationId:sap.ui.core.Control):sap.ui.integration.widgets.Card;
-	@:overload( function(vValue:String):sap.ui.integration.widgets.Card{ })
 
 	/**
-	* Overwrites setter for card manifest.
-	* @param	vValue The manifest object or its URL.
-	* @return	Pointer to the control instance to allow method chaining.
+	* Sets a new value for property {@link #getManifest manifest}.
+
+The URL of the manifest or an object.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	oManifest New value for property <code>manifest</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setManifest( vValue:Dynamic):sap.ui.integration.widgets.Card;
+	public function setManifest( oManifest:Dynamic):sap.ui.integration.widgets.Card;
 
 	/**
-	* Overwrites setter for card params.
-	* @param	vValue oParameters Parameters set in the card trough parameters property.
-	* @return	Pointer to the control instance to allow method chaining.
+	* Sets a new value for property {@link #getParameters parameters}.
+
+The parameters used in the manifest.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	oParameters New value for property <code>parameters</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setParameters( vValue:Dynamic):sap.ui.integration.widgets.Card;
+	public function setParameters( oParameters:Dynamic):sap.ui.integration.widgets.Card;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -207,6 +235,11 @@ typedef CardArgs = sap.ui.core.Control.ControlArgs & {
 	* Defines the state of the <code>Card</code>. When set to <code>Inactive</code>, the <code>Card</code> doesn't make requests.
 	*/
 	@:optional var dataMode:haxe.extern.EitherType<String,sap.ui.integration.CardDataMode>;
+
+	/**
+	* Defines the base URL of the Card Manifest. It should be used when manifest property is an object instead of a URL.
+	*/
+	@:optional var baseUrl:haxe.extern.EitherType<String,sap.ui.core.URI>;
 
     /**
     * Defines the header of the card.

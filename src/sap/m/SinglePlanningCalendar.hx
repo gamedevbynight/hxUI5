@@ -324,6 +324,26 @@ Default value is <code>false</code>.
 	public function getEnableAppointmentsResize( ):Bool;
 
 	/**
+	* Gets current value of property {@link #getEndHour endHour}.
+
+Determines the end hour of the grid to be shown if the <code>fullDay</code> property is set to <code>false</code>. Otherwise the next hours are displayed as non-working. The passed hour is considered as 24-hour based.
+
+Default value is <code>24</code>.
+	* @return	Value of property <code>endHour</code>
+	*/
+	public function getEndHour( ):Int;
+
+	/**
+	* Gets current value of property {@link #getFullDay fullDay}.
+
+Determines if all of the hours in a day are displayed. If set to <code>false</code>, the hours shown are between the <code>startHour</code> and <code>endHour</code>.
+
+Default value is <code>true</code>.
+	* @return	Value of property <code>fullDay</code>
+	*/
+	public function getFullDay( ):Bool;
+
+	/**
 	* ID of the element which is the current target of the association {@link #getLegend legend}, or <code>null</code>.
 	* @return	null
 	*/
@@ -364,6 +384,16 @@ Determines the start date of the grid, as a JavaScript date object. It is consid
 	* @return	Value of property <code>startDate</code>
 	*/
 	public function getStartDate( ):Dynamic;
+
+	/**
+	* Gets current value of property {@link #getStartHour startHour}.
+
+Determines the start hour of the grid to be shown if the <code>fullDay</code> property is set to <code>false</code>. Otherwise the previous hours are displayed as non-working. The passed hour is considered as 24-hour based.
+
+Default value is <code>0</code>.
+	* @return	Value of property <code>startHour</code>
+	*/
+	public function getStartHour( ):Int;
 
 	/**
 	* Gets current value of property {@link #getStickyMode stickyMode}.
@@ -571,6 +601,32 @@ Default value is <code>false</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setEnableAppointmentsResize( bEnableAppointmentsResize:Bool):sap.m.SinglePlanningCalendar;
+
+	/**
+	* Sets a new value for property {@link #getEndHour endHour}.
+
+Determines the end hour of the grid to be shown if the <code>fullDay</code> property is set to <code>false</code>. Otherwise the next hours are displayed as non-working. The passed hour is considered as 24-hour based.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>24</code>.
+	* @param	iEndHour New value for property <code>endHour</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setEndHour( iEndHour:Int):sap.m.SinglePlanningCalendar;
+
+	/**
+	* Sets a new value for property {@link #getFullDay fullDay}.
+
+Determines if all of the hours in a day are displayed. If set to <code>false</code>, the hours shown are between the <code>startHour</code> and <code>endHour</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bFullDay New value for property <code>fullDay</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setFullDay( bFullDay:Bool):sap.m.SinglePlanningCalendar;
 	@:overload( function(oLegend:sap.ui.core.ID):sap.m.SinglePlanningCalendar{ })
 
 	/**
@@ -598,6 +654,19 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setStartDate( oStartDate:Dynamic):sap.m.SinglePlanningCalendar;
+
+	/**
+	* Sets a new value for property {@link #getStartHour startHour}.
+
+Determines the start hour of the grid to be shown if the <code>fullDay</code> property is set to <code>false</code>. Otherwise the previous hours are displayed as non-working. The passed hour is considered as 24-hour based.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>0</code>.
+	* @param	iStartHour New value for property <code>startHour</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setStartHour( iStartHour:Int):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getStickyMode stickyMode}.
@@ -639,6 +708,21 @@ typedef SinglePlanningCalendarArgs = sap.ui.core.Control.ControlArgs & {
 	* Determines the start date of the grid, as a JavaScript date object. It is considered as a local date. The time part will be ignored. The current date is used as default.
 	*/
 	@:optional var startDate:haxe.extern.EitherType<String,Dynamic>;
+
+	/**
+	* Determines the start hour of the grid to be shown if the <code>fullDay</code> property is set to <code>false</code>. Otherwise the previous hours are displayed as non-working. The passed hour is considered as 24-hour based.
+	*/
+	@:optional var startHour:haxe.extern.EitherType<String,Int>;
+
+	/**
+	* Determines the end hour of the grid to be shown if the <code>fullDay</code> property is set to <code>false</code>. Otherwise the next hours are displayed as non-working. The passed hour is considered as 24-hour based.
+	*/
+	@:optional var endHour:haxe.extern.EitherType<String,Int>;
+
+	/**
+	* Determines if all of the hours in a day are displayed. If set to <code>false</code>, the hours shown are between the <code>startHour</code> and <code>endHour</code>.
+	*/
+	@:optional var fullDay:haxe.extern.EitherType<String,Bool>;
 
 	/**
 	* Determines which part of the control will remain fixed at the top of the page during vertical scrolling as long as the control is in the viewport.

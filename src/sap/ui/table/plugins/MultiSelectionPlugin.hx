@@ -138,6 +138,13 @@ Default value is <code>200</code>.
 	public function setLimit( iLimit:Int):sap.ui.table.plugins.MultiSelectionPlugin;
 
 	/**
+	* Requests the context and sets the selected index to <code>iIndex</code>.
+	* @param	iIndex The index to select
+	* @return	Void
+	*/
+	public function setSelectedIndex( iIndex:Int):Void;
+
+	/**
 	* Sets the given selection interval as the selection and requests the corresponding binding contexts. In single-selection mode it requests the context and sets the selected index to <code>iIndexTo</code>.
 
 If the number of indices in the range is greater than the value of the <code>limit</code> property, only n=limit indices, starting from <code>iIndexFrom</code>, are selected. The table is scrolled to display the index last selected.

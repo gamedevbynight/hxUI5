@@ -9,12 +9,12 @@ extern class Event extends sap.ui.base.Object implements sap.ui.base.Poolable
 
 	/**
 	* 
-	* @param	sId The id of the event
-	* @param	oSource The source of the event
-	* @param	mParameters A map of parameters for this event
+	* @param	sId The ID of the event
+	* @param	oSource Source of the event
+	* @param	oParameters Parameters for this event
 	* @return	Object
 	*/
-	public function new( ?sId:String, ?oSource:sap.ui.base.EventProvider, ?mParameters:Dynamic):Void;
+	public function new( ?sId:String, ?oSource:sap.ui.base.EventProvider, ?oParameters:Dynamic):Void;
 
 	/**
 	* Cancel bubbling of the event.
@@ -37,7 +37,7 @@ extern class Event extends sap.ui.base.Object implements sap.ui.base.Poolable
 
 	/**
 	* Returns the id of the event.
-	* @return	The id of the event
+	* @return	The ID of the event
 	*/
 	public function getId( ):String;
 
@@ -48,15 +48,15 @@ extern class Event extends sap.ui.base.Object implements sap.ui.base.Poolable
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
-	* Returns the value of the parameter with the given sName.
-	* @param	sName The name of the parameter to return
-	* @return	The value for the named parameter
+	* Returns the value of the parameter with the given name.
+	* @param	sName Name of the parameter to return
+	* @return	Value of the named parameter
 	*/
 	public function getParameter( sName:String):Dynamic;
 
 	/**
-	* Returns all parameter values of the event keyed by their names.
-	* @return	All parameters of the event keyed by name
+	* Returns an object with all parameter values of the event.
+	* @return	All parameters of the event
 	*/
 	public function getParameters( ):Dynamic;
 

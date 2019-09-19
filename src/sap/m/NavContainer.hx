@@ -5,7 +5,7 @@ package sap.m;
 /**
 * Handles hierarchical navigation between Pages or other fullscreen controls.
 
-All children of this control receive navigation events, such as {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+All children of this control receive navigation events, such as {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
 */
 extern class NavContainer extends sap.ui.core.Control
 {
@@ -171,7 +171,7 @@ The passed function and listener object must match the ones used for event regis
 
 Determines whether the initial focus is set automatically on first rendering and after navigating to a new page. This is useful when on touch devices the keyboard pops out due to the focus being automatically set on an input field. If necessary, the <code>afterShow</code> event can be used to focus another element, only if <code>autoFocus</code> is set to <code>false</code>.
 
-<b>Note:</b> The following scenarios are possible, depending on where the focus was before navigation to a new page: <ul><li>If <code>autoFocus</code> is set to <code>true</code> and the focus was inside the current page, the focus will be moved automatically on the new page.</li> <li>If <code>autoFocus</code> is set to <code>false</code> and the focus was inside the current page, the focus will disappear. <li>If the focus was outside the current page, after the navigation it will remain unchanged regardless of what is set to the <code>autoFocus</code> property.</li></ul>
+<b>Note:</b> The following scenarios are possible, depending on where the focus was before navigation to a new page: <ul><li>If <code>autoFocus</code> is set to <code>true</code> and the focus was inside the current page, the focus will be moved automatically on the new page.</li> <li>If <code>autoFocus</code> is set to <code>false</code> and the focus was inside the current page, the focus will disappear. <li>If the focus was outside the current page, after the navigation it will remain unchanged regardless of what is set to the <code>autoFocus</code> property.</li> <li>If the <code>autoFocus</code> is set to <code>false</code> and at the same time another wrapping control has its own logic for focus restoring upon rerendering, the focus will still appear.</li></ul>
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>autoFocus</code>
@@ -230,7 +230,7 @@ Default value is <code>100%</code>.
 
 The content entities between which this NavContainer navigates. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics.
 
-These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}
+These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}
 	* @return	null
 	*/
 	public function getPages( ):Array<sap.ui.core.Control>;
@@ -302,7 +302,7 @@ Additionally, it unregisters them from the hosting UIArea.
 
 Determines whether the initial focus is set automatically on first rendering and after navigating to a new page. This is useful when on touch devices the keyboard pops out due to the focus being automatically set on an input field. If necessary, the <code>afterShow</code> event can be used to focus another element, only if <code>autoFocus</code> is set to <code>false</code>.
 
-<b>Note:</b> The following scenarios are possible, depending on where the focus was before navigation to a new page: <ul><li>If <code>autoFocus</code> is set to <code>true</code> and the focus was inside the current page, the focus will be moved automatically on the new page.</li> <li>If <code>autoFocus</code> is set to <code>false</code> and the focus was inside the current page, the focus will disappear. <li>If the focus was outside the current page, after the navigation it will remain unchanged regardless of what is set to the <code>autoFocus</code> property.</li></ul>
+<b>Note:</b> The following scenarios are possible, depending on where the focus was before navigation to a new page: <ul><li>If <code>autoFocus</code> is set to <code>true</code> and the focus was inside the current page, the focus will be moved automatically on the new page.</li> <li>If <code>autoFocus</code> is set to <code>false</code> and the focus was inside the current page, the focus will disappear. <li>If the focus was outside the current page, after the navigation it will remain unchanged regardless of what is set to the <code>autoFocus</code> property.</li> <li>If the <code>autoFocus</code> is set to <code>false</code> and at the same time another wrapping control has its own logic for focus restoring upon rerendering, the focus will still appear.</li></ul>
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -402,7 +402,7 @@ typedef NavContainerArgs = sap.ui.core.Control.ControlArgs & {
 	/**
 	* Determines whether the initial focus is set automatically on first rendering and after navigating to a new page. This is useful when on touch devices the keyboard pops out due to the focus being automatically set on an input field. If necessary, the <code>afterShow</code> event can be used to focus another element, only if <code>autoFocus</code> is set to <code>false</code>.
 
-<b>Note:</b> The following scenarios are possible, depending on where the focus was before navigation to a new page: <ul><li>If <code>autoFocus</code> is set to <code>true</code> and the focus was inside the current page, the focus will be moved automatically on the new page.</li> <li>If <code>autoFocus</code> is set to <code>false</code> and the focus was inside the current page, the focus will disappear. <li>If the focus was outside the current page, after the navigation it will remain unchanged regardless of what is set to the <code>autoFocus</code> property.</li></ul>
+<b>Note:</b> The following scenarios are possible, depending on where the focus was before navigation to a new page: <ul><li>If <code>autoFocus</code> is set to <code>true</code> and the focus was inside the current page, the focus will be moved automatically on the new page.</li> <li>If <code>autoFocus</code> is set to <code>false</code> and the focus was inside the current page, the focus will disappear. <li>If the focus was outside the current page, after the navigation it will remain unchanged regardless of what is set to the <code>autoFocus</code> property.</li> <li>If the <code>autoFocus</code> is set to <code>false</code> and at the same time another wrapping control has its own logic for focus restoring upon rerendering, the focus will still appear.</li></ul>
 	*/
 	@:optional var autoFocus:haxe.extern.EitherType<String,Bool>;
 
@@ -429,7 +429,7 @@ typedef NavContainerArgs = sap.ui.core.Control.ControlArgs & {
     /**
     * The content entities between which this NavContainer navigates. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics.
 
-These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}
+These aggregated controls will receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}
     */
 	@:optional var pages:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 

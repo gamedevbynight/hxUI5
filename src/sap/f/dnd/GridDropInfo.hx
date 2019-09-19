@@ -3,7 +3,13 @@ package sap.f.dnd;
 @:native("sap.f.dnd.GridDropInfo")
 
 /**
-* Provides enhanced configuration for drop operations inside grid based controls. If drop position is "Between" and drop layout is "Horizontal", this drop configuration will provide enhanced user experience. This includes the display of a target drop indicator which represents the exact position and size of the dragged control. <b>Note:</b> This configuration might be ignored due to control {@link sap.ui.core.Element.extend metadata} restrictions.
+* Provides enhanced configuration for drop operations inside grid-based controls.
+
+If drop position is <code>Between</code> and drop layout is <code>Horizontal</code>, this drop configuration will provide enhanced visualization and interaction, better suited for grid items. It will show a drop indicator which mimics the size of the dragged item and shows the potential drop position inside the grid. The indicator will push away other grid items, showing the correct arrangement calculated by the grid’s auto-placement algorithm.
+
+When position is different than <code>Between</code> or layout is not <code>Horizontal</code>, the drag and drop will look and behave like the general <code>{@link sap.ui.core.dnd.DropInfo}</code>.
+
+<b>Note:</b> This configuration might be ignored due to control {@link sap.ui.core.Element.extend metadata} restrictions.
 */
 extern class GridDropInfo extends sap.ui.core.dnd.DropInfo implements sap.ui.core.dnd.IDropInfo
 {

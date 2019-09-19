@@ -119,9 +119,4 @@ typedef DateTimePickerArgs = sap.m.DatePicker.DatePickerArgs & {
 	* Sets the seconds slider step. If the step is less than 1, it will be automatically converted back to 1. The seconds slider is populated only by multiples of the step.
 	*/
 	@:optional var secondsStep:haxe.extern.EitherType<String,Int>;
-
-    /**
-    * Internal aggregation that contains the inner _picker pop-up.
-    */
-	@:optional var _popup:haxe.extern.EitherType<String,sap.m.ResponsivePopover>;
 }

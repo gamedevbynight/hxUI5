@@ -78,7 +78,7 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getAutoResizable autoResizable}.
 
-Enables auto-resizing of the column on double clicking the resize bar. The width is determined on the widest currently displayed content. It does not consider rows which are currently not scrolled into view. Currently only implemented to work with the following controls: <code>sap.m.Text, sap.m.Label, sap.m.Link, sap.m.Input, sap.ui.commons.TextView, sap.ui.commons.Label, sap.ui.commons.Link and sap.ui.commons.TextField, sap.ui.commons.Checkbox, sap.m.Checkbox</code>
+Enables auto-resizing of the column on double clicking the resize bar. The width is determined on the widest currently displayed content. It does not consider rows which are currently not scrolled into view. Currently only implemented to work with the following controls: <code>sap.m.Text, sap.m.Label, sap.m.Link, sap.m.Input, sap.ui.commons.TextView, sap.ui.commons.Label, sap.ui.commons.Link and sap.ui.commons.TextField, sap.ui.commons.Checkbox, sap.m.CheckBox</code>
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>autoResizable</code>
@@ -124,7 +124,7 @@ A column menu entry for filtering can only be generated if the <code>filterPrope
 	/**
 	* Gets current value of property {@link #getFilterType filterType}.
 
-Type of Filter. This is used to transform the search term to the specified type, to make sure that the right columns are displayed. This should be the same as defined in binding for this column. As an alternative you can pass a function which does the conversion. The function receives the entered filter value as parameter and returns the proper value for the filter expression. Another option is to pass the class name of the type, e.g.: <code>sap.ui.model.type.Date</code> or an expression similar to the binding syntax, e.g.: <code>"\{type: 'sap.ui.model.type.Date', formatOptions: \{UTC: true\}, constraints: \{\} \}"</code>. Here the escaping is mandatory to avoid handling by the binding parser. By default the filter type is <code>sap.ui.model.type.String</code>.
+Type of filter. It is used to transform the search term into the specified type and should be the same as defined in the binding for the column template. Default value is <code>sap.ui.model.type.String</code>. It can be set to the class name of the type, e.g.: <code>sap.ui.model.type.Date</code>, or an expression similar to the binding syntax, e.g.: <code>"\{type: 'sap.ui.model.type.Date', formatOptions: \{UTC: true\}, constraints: \{\} \}"</code>. Here the escaping is mandatory to avoid handling by the binding parser. As an alternative, a function can be passed that takes over the conversion. This cannot be done in the XMLView, use {@link #setFilterType} instead.
 	* @return	Value of property <code>filterType</code>
 	*/
 	public function getFilterType( ):Dynamic;
@@ -350,7 +350,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	/**
 	* Sets a new value for property {@link #getAutoResizable autoResizable}.
 
-Enables auto-resizing of the column on double clicking the resize bar. The width is determined on the widest currently displayed content. It does not consider rows which are currently not scrolled into view. Currently only implemented to work with the following controls: <code>sap.m.Text, sap.m.Label, sap.m.Link, sap.m.Input, sap.ui.commons.TextView, sap.ui.commons.Label, sap.ui.commons.Link and sap.ui.commons.TextField, sap.ui.commons.Checkbox, sap.m.Checkbox</code>
+Enables auto-resizing of the column on double clicking the resize bar. The width is determined on the widest currently displayed content. It does not consider rows which are currently not scrolled into view. Currently only implemented to work with the following controls: <code>sap.m.Text, sap.m.Label, sap.m.Link, sap.m.Input, sap.ui.commons.TextView, sap.ui.commons.Label, sap.ui.commons.Link and sap.ui.commons.TextField, sap.ui.commons.Checkbox, sap.m.CheckBox</code>
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -409,15 +409,11 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setFilterProperty( sFilterProperty:String):sap.ui.table.Column;
 
 	/**
-	* Sets a new value for property {@link #getFilterType filterType}.
-
-Type of Filter. This is used to transform the search term to the specified type, to make sure that the right columns are displayed. This should be the same as defined in binding for this column. As an alternative you can pass a function which does the conversion. The function receives the entered filter value as parameter and returns the proper value for the filter expression. Another option is to pass the class name of the type, e.g.: <code>sap.ui.model.type.Date</code> or an expression similar to the binding syntax, e.g.: <code>"\{type: 'sap.ui.model.type.Date', formatOptions: \{UTC: true\}, constraints: \{\} \}"</code>. Here the escaping is mandatory to avoid handling by the binding parser. By default the filter type is <code>sap.ui.model.type.String</code>.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-	* @param	oFilterType New value for property <code>filterType</code>
+	* The filter type can be the class name of a type, an expression similar to the binding syntax, or a function. A function receives the entered filter value as a parameter and should return the appropriate value for the filter expression.
+	* @param	vType The filter type
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFilterType( oFilterType:Dynamic):sap.ui.table.Column;
+	public function setFilterType( vType:Dynamic):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getFilterValue filterValue}.
@@ -710,7 +706,7 @@ some..thing   between
 	@:optional var defaultFilterOperator:String;
 
 	/**
-	* Type of Filter. This is used to transform the search term to the specified type, to make sure that the right columns are displayed. This should be the same as defined in binding for this column. As an alternative you can pass a function which does the conversion. The function receives the entered filter value as parameter and returns the proper value for the filter expression. Another option is to pass the class name of the type, e.g.: <code>sap.ui.model.type.Date</code> or an expression similar to the binding syntax, e.g.: <code>"\{type: 'sap.ui.model.type.Date', formatOptions: \{UTC: true\}, constraints: \{\} \}"</code>. Here the escaping is mandatory to avoid handling by the binding parser. By default the filter type is <code>sap.ui.model.type.String</code>.
+	* Type of filter. It is used to transform the search term into the specified type and should be the same as defined in the binding for the column template. Default value is <code>sap.ui.model.type.String</code>. It can be set to the class name of the type, e.g.: <code>sap.ui.model.type.Date</code>, or an expression similar to the binding syntax, e.g.: <code>"\{type: 'sap.ui.model.type.Date', formatOptions: \{UTC: true\}, constraints: \{\} \}"</code>. Here the escaping is mandatory to avoid handling by the binding parser. As an alternative, a function can be passed that takes over the conversion. This cannot be done in the XMLView, use {@link #setFilterType} instead.
 	*/
 	@:optional var filterType:Dynamic;
 
@@ -745,7 +741,7 @@ some..thing   between
 	@:optional var headerSpan:Dynamic;
 
 	/**
-	* Enables auto-resizing of the column on double clicking the resize bar. The width is determined on the widest currently displayed content. It does not consider rows which are currently not scrolled into view. Currently only implemented to work with the following controls: <code>sap.m.Text, sap.m.Label, sap.m.Link, sap.m.Input, sap.ui.commons.TextView, sap.ui.commons.Label, sap.ui.commons.Link and sap.ui.commons.TextField, sap.ui.commons.Checkbox, sap.m.Checkbox</code>
+	* Enables auto-resizing of the column on double clicking the resize bar. The width is determined on the widest currently displayed content. It does not consider rows which are currently not scrolled into view. Currently only implemented to work with the following controls: <code>sap.m.Text, sap.m.Label, sap.m.Link, sap.m.Input, sap.ui.commons.TextView, sap.ui.commons.Label, sap.ui.commons.Link and sap.ui.commons.TextField, sap.ui.commons.Checkbox, sap.m.CheckBox</code>
 	*/
 	@:optional var autoResizable:haxe.extern.EitherType<String,Bool>;
 

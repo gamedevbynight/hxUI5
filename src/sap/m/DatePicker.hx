@@ -156,6 +156,16 @@ If set, the days in the calendar popup are also displayed in this calendar type 
 	public function getSecondaryCalendarType( ):sap.ui.core.CalendarType;
 
 	/**
+	* Gets current value of property {@link #getShowFooter showFooter}.
+
+Hides or shows the popover's footer.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>showFooter</code>
+	*/
+	public function getShowFooter( ):Bool;
+
+	/**
 	* Gets content of aggregation {@link #getSpecialDates specialDates}.
 
 Date Range with type to visualize special days in the Calendar. If one day is assigned to more than one Type, only the first one will be used.
@@ -286,6 +296,13 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setSecondaryCalendarType( sSecondaryCalendarType:sap.ui.core.CalendarType):sap.m.DatePicker;
 
 	/**
+	* Sets <code>showFooter</code> property to the given boolean value
+	* @param	bFlag when true footer is displayed
+	* @return	Void
+	*/
+	public function setShowFooter( bFlag:Dynamic):Void;
+
+	/**
 	* Setter for property <code>value</code>.
 
 Expects a date as a string in the format defined in property <code>valueFormat</code>.
@@ -334,6 +351,11 @@ typedef DatePickerArgs = sap.m.DateTimeField.DateTimeFieldArgs & {
 	*/
 	@:optional var maxDate:haxe.extern.EitherType<String,Dynamic>;
 
+	/**
+	* Hides or shows the popover's footer.
+	*/
+	@:optional var showFooter:haxe.extern.EitherType<String,Bool>;
+
     /**
     * Date Range with type to visualize special days in the Calendar. If one day is assigned to more than one Type, only the first one will be used.
 
@@ -342,6 +364,11 @@ To set a single date (instead of a range), set only the startDate property of th
 <b>Note:</b> Since 1.48 you could set a non-working day via the sap.ui.unified.CalendarDayType.NonWorking enum type just as any other special date type using sap.ui.unified.DateRangeType.
     */
 	@:optional var specialDates:Array<haxe.extern.EitherType<String,sap.ui.core.Element>>;
+
+    /**
+    * Internal aggregation that contains the inner picker pop-up.
+    */
+	@:optional var _popup:haxe.extern.EitherType<String,sap.m.ResponsivePopover>;
 
 	/**
 	* Association to the <code>CalendarLegend</code> explaining the colors of the <code>specialDates</code>.

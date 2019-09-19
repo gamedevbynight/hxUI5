@@ -5,36 +5,40 @@ extern class BusyIndicator
 {
 
 	/**
-	* Registers a handler for the "close" event
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function.
-	* @return	<code>this</code> to allow method chaining
+	* Registers a handler for the {@link #event:Close Close} event.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to <code>sap.ui.core.BusyIndicator</code>.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with; defaults to <code>sap.ui.core.BusyIndicator</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public static function attachClose( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
 
 	/**
-	* Registers a handler for the "open" event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function.
-	* @return	<code>this</code> to allow method chaining
+	* Registers a handler for the {@link #event:Open Open} event.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to <code>sap.ui.core.BusyIndicator</code>.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with; defaults to <code>sap.ui.core.BusyIndicator</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public static function attachOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
 
 	/**
-	* Unregisters a handler for the "close" event
+	* Unregisters a handler from the {@link #event:Close Close} event.
 	* @param	fnFunction The callback function to unregister
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public static function detachClose( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.BusyIndicator;
+	public static function detachClose( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
 
 	/**
-	* Unregisters a handler for the "open" event
+	* Unregisters a handler from the {@link #event:Open Open} event.
 	* @param	fnFunction The callback function to unregister
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public static function detachOpen( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.BusyIndicator;
+	public static function detachOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
 
 	/**
 	* Removes the BusyIndicator from the screen.

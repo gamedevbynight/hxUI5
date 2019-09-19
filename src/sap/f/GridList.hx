@@ -13,6 +13,8 @@ With <code>customLayout</code> aggregation it is possible to use: <ul> <li>Prede
 
 Every item can override its size by specifying the number of columns and/or rows it will take in the grid. This is done using {@link sap.ui.layout.cssgrid.GridItemLayoutData GridItemLayoutData}.
 
+For best visualization, items of type {@link sap.f.GridListItem sap.f.GridListItem} should be used inside the <code>items</code> aggregation.
+
 <h3>Usage</h3>
 
 For general cases, use the default grid configuration of the <code>GridList</code>. For Box case (equal sized items), use <code>customLayout</code> aggregation with {@link sap.ui.layout.cssgrid.GridBoxLayout GridBoxLayout} For Grids which need different configurations based on available width, use <code>customLayout</code> aggregation with {@link sap.ui.layout.cssgrid.GridResponsiveLayout GridResponsiveLayout} To set a specific position to an item or define its dimensions in the grid, pass <code>layoutData</code> of type {@link sap.ui.layout.cssgrid.GridItemLayoutData GridItemLayoutData}
@@ -20,6 +22,12 @@ For general cases, use the default grid configuration of the <code>GridList</cod
 <i>When to use</i> <ul> <li>If {@link sap.m.ListBase} features are required and the items must be positioned in a grid layout</li> </ul>
 
 <i>When not to use</i> <ul> <li>If a list layout is required, use {@link sap.m.List} instead. <li>If only the layout is required, use {@link sap.ui.layout.cssgrid.CSSGrid} instead. </ul>
+
+<h3>Drag and drop:</h3> Drag and drop is enabled for the <code>GridList</code> with enhanced visualization and interaction, better suited for grid items. This is configured by using the <code>{@link sap.f.dnd.GridDropInfo}</code>.
+
+Similar to the <code>{@link sap.ui.core.dnd.DropInfo}</code>, <code>{@link sap.f.dnd.GridDropInfo}</code> has to be added to the <code>dragDropConfig</code> aggregation, by using <code>{@link sap.ui.core.Element#addDragDropConfig}</code>.
+
+Both <code>{@link sap.ui.core.dnd.DropInfo}</code> and <code>{@link sap.f.dnd.GridDropInfo}</code> can be used to configure drag and drop. The difference is that the <code>{@link sap.f.dnd.GridDropInfo}</code> will provide a drop indicator, which mimics the size of the dragged item and shows the potential drop position inside the grid.
 
 <h3>Current Limitations</h3> <ul> <li>For Microsoft Internet Explorer some layouts are not supported, due to browser specifics.</li> <li>For Microsoft Edge 15 and older versions some layouts are not supported, due to browser specifics.</li> </ul>
 */

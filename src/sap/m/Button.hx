@@ -106,6 +106,8 @@ Default value is <code>true</code>.
 	* Gets current value of property {@link #getIcon icon}.
 
 Defines the icon to be displayed as graphical element within the <code>Button</code>. It can be an image or an icon from the icon font.
+
+Default value is <code>empty string</code>.
 	* @return	Value of property <code>icon</code>
 	*/
 	public function getIcon( ):sap.ui.core.URI;
@@ -142,6 +144,8 @@ Default value is <code>true</code>.
 	* Gets current value of property {@link #getText text}.
 
 Determines the text of the <code>Button</code>.
+
+Default value is <code>empty string</code>.
 	* @return	Value of property <code>text</code>
 	*/
 	public function getText( ):String;
@@ -229,9 +233,15 @@ Default value is <code>true</code>.
 	public function setEnabled( bEnabled:Bool):sap.m.Button;
 
 	/**
-	* Property setter for the icon
-	* @param	sIcon new value of the Icon property
-	* @return	this to allow method chaining
+	* Sets a new value for property {@link #getIcon icon}.
+
+Defines the icon to be displayed as graphical element within the <code>Button</code>. It can be an image or an icon from the icon font.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sIcon New value for property <code>icon</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIcon( sIcon:sap.ui.core.URI):sap.m.Button;
 
@@ -264,9 +274,15 @@ Default value is <code>true</code>.
 	public function setIconFirst( bIconFirst:Bool):sap.m.Button;
 
 	/**
-	* Property setter for the text
-	* @param	sText new value of the Text attribute
-	* @return	this to allow method chaining
+	* Sets a new value for property {@link #getText text}.
+
+Determines the text of the <code>Button</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sText New value for property <code>text</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setText( sText:String):sap.m.Button;
 

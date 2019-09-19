@@ -230,7 +230,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 
 fired when the row selection of the table has been changed (the event parameters can be used to determine selection changes - to find out the selected rows you should better use the table selection API)
 
-<b>Note:</b> When a selection plugin is applied to the table, this event won't be fired.
+<b>Note:</b> If a selection plugin is applied to the table, this event won't be fired.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
@@ -833,7 +833,7 @@ Default value is <code>RowSelector</code>.
 	/**
 	* Gets current value of property {@link #getSelectionMode selectionMode}.
 
-Selection mode of the Table. This property controls whether single or multiple rows can be selected and how the selection can be extended. It may also influence the visual appearance. When the selection mode is changed, the current selection is removed. <b>Note:</b> Since the group header visualization relies on the row selectors, the row selectors are always shown if the grouping functionality (depends on table type) is enabled, even if <code>sap.ui.table.SelectionMode.None</code> is set. <b>Note:</b> When a selection plugin is applied to the table, the selection mode is controlled by the plugin.
+Selection mode of the Table. This property controls whether single or multiple rows can be selected and how the selection can be extended. It may also influence the visual appearance. When the selection mode is changed, the current selection is removed. <b>Note:</b> Since the group header visualization relies on the row selectors, the row selectors are always shown if the grouping functionality (depends on table type) is enabled, even if <code>sap.ui.table.SelectionMode.None</code> is set. <b>Note:</b> If a selection plugin is applied to the table, the selection mode is controlled by the plugin.
 
 Default value is <code>MultiToggle</code>.
 	* @return	Value of property <code>selectionMode</code>
@@ -1591,7 +1591,7 @@ If no value is set (includes 0), a default height is applied based on the conten
 	@:optional var firstVisibleRow:haxe.extern.EitherType<String,Int>;
 
 	/**
-	* Selection mode of the Table. This property controls whether single or multiple rows can be selected and how the selection can be extended. It may also influence the visual appearance. When the selection mode is changed, the current selection is removed. <b>Note:</b> Since the group header visualization relies on the row selectors, the row selectors are always shown if the grouping functionality (depends on table type) is enabled, even if <code>sap.ui.table.SelectionMode.None</code> is set. <b>Note:</b> When a selection plugin is applied to the table, the selection mode is controlled by the plugin.
+	* Selection mode of the Table. This property controls whether single or multiple rows can be selected and how the selection can be extended. It may also influence the visual appearance. When the selection mode is changed, the current selection is removed. <b>Note:</b> Since the group header visualization relies on the row selectors, the row selectors are always shown if the grouping functionality (depends on table type) is enabled, even if <code>sap.ui.table.SelectionMode.None</code> is set. <b>Note:</b> If a selection plugin is applied to the table, the selection mode is controlled by the plugin.
 	*/
 	@:optional var selectionMode:haxe.extern.EitherType<String,sap.ui.table.SelectionMode>;
 
@@ -1851,7 +1851,7 @@ The following restrictions apply: <ul> <li>If a selection plugin is applied to t
 	/**
 	* fired when the row selection of the table has been changed (the event parameters can be used to determine selection changes - to find out the selected rows you should better use the table selection API)
 
-<b>Note:</b> When a selection plugin is applied to the table, this event won't be fired.
+<b>Note:</b> If a selection plugin is applied to the table, this event won't be fired.
 	*/
 	@:optional var rowSelectionChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 

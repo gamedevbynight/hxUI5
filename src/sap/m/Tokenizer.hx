@@ -13,7 +13,7 @@ extern class Tokenizer extends sap.ui.core.Control
 	public function new(?mSettings:TokenizerArgs):Void;
 
 	/**
-	* Function removes all selected tokens
+	* Function removes all selected tokens.
 	* @return	this instance for method chaining
 	*/
 	public function _removeSelectedTokens( ):sap.m.Tokenizer;
@@ -42,14 +42,14 @@ extern class Tokenizer extends sap.ui.core.Control
 	public function addToken( oToken:sap.m.Token):sap.m.Tokenizer;
 
 	/**
-	* Function validates the given text and adds a new token if validation was successful
+	* Function validates the given text and adds a new token if validation was successful.
 	* @param	oParameters Parameter bag containing the following fields:
 	* @return	Void
 	*/
 	public function addValidateToken( oParameters:Dynamic):Void;
 
 	/**
-	* Function adds a validation callback called before any new token gets added to the tokens aggregation
+	* Function adds a validation callback called before any new token gets added to the tokens aggregation.
 	* @param	fValidator The validation function
 	* @return	Void
 	*/
@@ -157,19 +157,19 @@ Default value is <code>100%</code>.
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
-	* Function returns the internally used scroll delegate
+	* Function returns the internally used scroll delegate.
 	* @return	The scroll delegate
 	*/
 	public function getScrollDelegate( ):sap.ui.core.delegate.ScrollEnablement;
 
 	/**
-	* Function returns the tokens' width
+	* Function returns the tokens' width.
 	* @return	The complete width of all tokens
 	*/
 	public function getScrollWidth( ):String;
 
 	/**
-	* Function returns all currently selected tokens
+	* Function returns all currently selected tokens.
 	* @return	Array of selected tokens or empty array
 	*/
 	public function getSelectedTokens( ):Array<sap.m.Token>;
@@ -259,26 +259,26 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeToken( vToken:sap.m.Token):sap.m.Token;
 
 	/**
-	* Function removes a validation callback
+	* Function removes a validation callback.
 	* @param	fValidator The validation function
 	* @return	Void
 	*/
 	public function removeValidator( fValidator:()->Void):Void;
 
 	/**
-	* Function scrolls the tokens to the end
+	* Function scrolls the tokens to the end.
 	* @return	Void
 	*/
 	public function scrollToEnd( ):Void;
 
 	/**
-	* Function scrolls the tokens to the start
+	* Function scrolls the tokens to the start.
 	* @return	Void
 	*/
 	public function scrollToStart( ):Void;
 
 	/**
-	* Function selects all tokens
+	* Function selects all tokens.
 	* @param	bSelect [optional] true for selecting, false for deselecting
 	* @return	this instance for method chaining
 	*/
@@ -299,7 +299,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function setMaxWidth( sWidth:String):sap.m.Tokenizer;
 
 	/**
-	* Function sets the tokenizer's width in pixels
+	* Function sets the tokenizer's width in pixels.
 	* @param	nWidth The new width in pixels
 	* @return	Void
 	*/

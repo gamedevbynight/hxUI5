@@ -5,7 +5,7 @@ extern class Registry
 {
 
 	/**
-	* Return am object with all instances of <code>sap.ui.core.Component</code>, keyed by their ID.
+	* Return an object with all instances of <code>sap.ui.core.Component</code>, keyed by their ID.
 
 Each call creates a new snapshot object. Depending on the size of the UI, this operation therefore might be expensive. Consider to use the <code>forEach</code> or <code>filter</code> method instead of executing similar operations on the returned object.
 
@@ -33,11 +33,13 @@ This function returns an array with all components matching the given predicate.
 	public static function filter( callback:()->Void, ?thisArg:Dynamic):Array<sap.ui.core.Component>;
 
 	/**
-	* Calls the given <code>callback</code> for each Component.
+	* Calls the given <code>callback</code> for each existing component.
 
 The expected signature of the callback is <pre>
    function callback(oComponent, sID)
 </pre> where <code>oComponent</code> is the currently visited component instance and <code>sID</code> is the ID of that instance.
+
+The order in which the callback is called for components is not specified and might change between calls (over time and across different versions of UI5).
 
 If components are created or destroyed within the <code>callback</code>, then the behavior is not specified. Newly added objects might or might not be visited. When a component is destroyed during the filtering and was not visited yet, it might or might not be visited. As the behavior for such concurrent modifications is not specified, it may change in newer releases.
 

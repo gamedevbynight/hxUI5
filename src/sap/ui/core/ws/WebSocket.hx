@@ -17,88 +17,96 @@ extern class WebSocket extends sap.ui.base.EventProvider
 	public function new( ?sUrl:String, ?aProtocols:Array<Dynamic>):Void;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'close' event of this <code>sap.ui.core.ws.WebSocket</code>.<br>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, this WebSocket is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:close close} event of this <code>sap.ui.core.ws.WebSocket</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.ws.WebSocket</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>WebSocket</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'error' event of this <code>sap.ui.core.ws.WebSocket</code>.<br>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, this WebSocket is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:error error} event of this <code>sap.ui.core.ws.WebSocket</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.ws.WebSocket</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>WebSocket</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'message' event of this <code>sap.ui.core.ws.WebSocket</code>.<br>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, this WebSocket is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:message message} event of this <code>sap.ui.core.ws.WebSocket</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.ws.WebSocket</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>WebSocket</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachMessage( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'open' event of this <code>sap.ui.core.ws.WebSocket</code>.<br>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, this WebSocket is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:open open} event of this <code>sap.ui.core.ws.WebSocket</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.ws.WebSocket</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>WebSocket</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
 	* Closes the connection.
-	* @param	iCode Status code that explains why the connection is closed. Must be either 1000, or between 3000 and 4999 (default 1000)
+	* @param	iCode Status code that explains why the connection is closed. Must either be 1000, or between 3000 and 4999 (default 1000)
 	* @param	sReason Closing reason as a string
-	* @return	<code>this</code> to allow method chaining
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function close( ?iCode:Int, ?sReason:String):sap.ui.core.ws.WebSocket;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'close' event of this <code>sap.ui.core.ws.WebSocket</code>.<br>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:close close} event of this <code>sap.ui.core.ws.WebSocket</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to call, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachClose( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function detachClose( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'error' event of this <code>sap.ui.core.ws.WebSocket</code>.<br>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:error error} event of this <code>sap.ui.core.ws.WebSocket</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to call, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachError( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function detachError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'message' event of this <code>sap.ui.core.ws.WebSocket</code>.<br>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:message message} event of this <code>sap.ui.core.ws.WebSocket</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to call, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMessage( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function detachMessage( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'open' event of this <code>sap.ui.core.ws.WebSocket</code>.<br>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:open open} event of this <code>sap.ui.core.ws.WebSocket</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to call, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachOpen( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function detachOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.ws.WebSocket with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -136,9 +144,11 @@ The passed function and listener object must match the ones previously used for 
 	public function getReadyState( ):sap.ui.core.ws.ReadyState;
 
 	/**
-	* Sends a message.<br> <br> If the connection is not yet opened, the message will be queued and sent when the connection is established.
+	* Sends a message.
+
+If the connection is not yet opened, the message will be queued and sent when the connection is established.
 	* @param	sMessage Message to send
-	* @return	<code>this</code> to allow method chaining
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function send( sMessage:String):sap.ui.core.ws.WebSocket;
 }

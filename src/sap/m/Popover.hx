@@ -717,6 +717,11 @@ typedef PopoverArgs = sap.ui.core.Control.ControlArgs & {
 	*/
 	@:optional var resizable:haxe.extern.EitherType<String,Bool>;
 
+	/**
+	* Specifies the aria-modal of the Popover.
+	*/
+	@:optional var ariaModal:haxe.extern.EitherType<String,Bool>;
+
     /**
     * The content inside the popover.
     */

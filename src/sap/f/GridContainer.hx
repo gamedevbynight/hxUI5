@@ -48,7 +48,11 @@ All rows have the same height and all columns have the same width. Their sizes c
 &lt;/f:GridContainer&gt;
 </pre>
 
-<h3>Drag and drop:</h3> The <code>items</code> aggregation of <code>sap.f.GridContainer</code> is valid drag and drop target. This can be configured with either the default <code>{@link sap.ui.core.dnd.DropInfo}</code>, or with an extended version of it - <code>{@link sap.f.dnd.GridDropInfo}</code>. <code>GridDropInfo</code> will provide a different visualization more suitable for grids during drag over.
+<h3>Drag and drop:</h3> Drag and drop is enabled for the <code>GridContainer</code> with enhanced visualization and interaction, better suited for grid items. This is configured by using the <code>{@link sap.f.dnd.GridDropInfo}</code>.
+
+Similar to the <code>{@link sap.ui.core.dnd.DropInfo}</code>, <code>{@link sap.f.dnd.GridDropInfo}</code> has to be added to the <code>dragDropConfig</code> aggregation, by using <code>{@link sap.ui.core.Element#addDragDropConfig}</code>.
+
+Both <code>{@link sap.ui.core.dnd.DropInfo}</code> and <code>{@link sap.f.dnd.GridDropInfo}</code> can be used to configure drag and drop. The difference is that the <code>{@link sap.f.dnd.GridDropInfo}</code> will provide a drop indicator, which mimics the size of the dragged item and shows the potential drop position inside the grid.
 */
 extern class GridContainer extends sap.ui.core.Control implements sap.f.dnd.IGridDroppable
 {
@@ -110,6 +114,12 @@ Fired when the currently active GridSettings change.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function destroyLayoutXL( ):sap.f.GridContainer;
+
+	/**
+	* Destroys the layoutXS in the aggregation {@link #getLayoutXS layoutXS}.
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function destroyLayoutXS( ):sap.f.GridContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:layoutChange layoutChange} event of this <code>sap.f.GridContainer</code>.
@@ -188,6 +198,8 @@ The items contained by the control.
 The sap.f.GridContainerSettings applied if no settings are provided for a specific size.
 
 If no layout is given, a default layout will be used. See the default values for <code>sap.f.GridContainerSettings</code>.
+
+<b>Note:</b> It is not possible to reuse the same instance of <code>GridContainerSettings</code> for several layouts. New instance has to be created for each of them. This is caused by the fact that one object can exist in only a single aggregation.
 	* @return	null
 	*/
 	public function getLayout( ):sap.f.GridContainerSettings;
@@ -195,7 +207,7 @@ If no layout is given, a default layout will be used. See the default values for
 	/**
 	* Gets content of aggregation {@link #getLayoutL layoutL}.
 
-The sap.f.GridContainerSettings applied for size "L"
+The sap.f.GridContainerSettings applied for size "L". Range: 1023px - 1439px.
 	* @return	null
 	*/
 	public function getLayoutL( ):sap.f.GridContainerSettings;
@@ -203,7 +215,7 @@ The sap.f.GridContainerSettings applied for size "L"
 	/**
 	* Gets content of aggregation {@link #getLayoutM layoutM}.
 
-The sap.f.GridContainerSettings applied for size "M"
+The sap.f.GridContainerSettings applied for size "M". Range: 600px - 1023px.
 	* @return	null
 	*/
 	public function getLayoutM( ):sap.f.GridContainerSettings;
@@ -211,7 +223,7 @@ The sap.f.GridContainerSettings applied for size "M"
 	/**
 	* Gets content of aggregation {@link #getLayoutS layoutS}.
 
-The sap.f.GridContainerSettings applied for size "S"
+The sap.f.GridContainerSettings applied for size "S". Range: 375px - 599px.
 	* @return	null
 	*/
 	public function getLayoutS( ):sap.f.GridContainerSettings;
@@ -219,10 +231,18 @@ The sap.f.GridContainerSettings applied for size "S"
 	/**
 	* Gets content of aggregation {@link #getLayoutXL layoutXL}.
 
-The sap.f.GridContainerSettings applied for size "XL"
+The sap.f.GridContainerSettings applied for size "XL". Range: from 1440px.
 	* @return	null
 	*/
 	public function getLayoutXL( ):sap.f.GridContainerSettings;
+
+	/**
+	* Gets content of aggregation {@link #getLayoutXS layoutXS}.
+
+The sap.f.GridContainerSettings applied for size "XS". Range: up to 374px.
+	* @return	null
+	*/
+	public function getLayoutXS( ):sap.f.GridContainerSettings;
 
 	/**
 	* Returns a metadata object for class sap.f.GridContainer.
@@ -365,6 +385,13 @@ Default value is <code>false</code>.
 	public function setLayoutXL( oLayoutXL:sap.f.GridContainerSettings):sap.f.GridContainer;
 
 	/**
+	* Sets the aggregated {@link #getLayoutXS layoutXS}.
+	* @param	oLayoutXS The layoutXS to set
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setLayoutXS( oLayoutXS:sap.f.GridContainerSettings):sap.f.GridContainer;
+
+	/**
 	* Sets a new value for property {@link #getSnapToRow snapToRow}.
 
 Should the items stretch to fill the rows that they occupy, or not.
@@ -437,26 +464,33 @@ If set to <code>true</code> the items will stretch.
     * The sap.f.GridContainerSettings applied if no settings are provided for a specific size.
 
 If no layout is given, a default layout will be used. See the default values for <code>sap.f.GridContainerSettings</code>.
+
+<b>Note:</b> It is not possible to reuse the same instance of <code>GridContainerSettings</code> for several layouts. New instance has to be created for each of them. This is caused by the fact that one object can exist in only a single aggregation.
     */
 	@:optional var layout:haxe.extern.EitherType<String,sap.f.GridContainerSettings>;
 
     /**
-    * The sap.f.GridContainerSettings applied for size "S"
+    * The sap.f.GridContainerSettings applied for size "XS". Range: up to 374px.
+    */
+	@:optional var layoutXS:haxe.extern.EitherType<String,sap.f.GridContainerSettings>;
+
+    /**
+    * The sap.f.GridContainerSettings applied for size "S". Range: 375px - 599px.
     */
 	@:optional var layoutS:haxe.extern.EitherType<String,sap.f.GridContainerSettings>;
 
     /**
-    * The sap.f.GridContainerSettings applied for size "M"
+    * The sap.f.GridContainerSettings applied for size "M". Range: 600px - 1023px.
     */
 	@:optional var layoutM:haxe.extern.EitherType<String,sap.f.GridContainerSettings>;
 
     /**
-    * The sap.f.GridContainerSettings applied for size "L"
+    * The sap.f.GridContainerSettings applied for size "L". Range: 1023px - 1439px.
     */
 	@:optional var layoutL:haxe.extern.EitherType<String,sap.f.GridContainerSettings>;
 
     /**
-    * The sap.f.GridContainerSettings applied for size "XL"
+    * The sap.f.GridContainerSettings applied for size "XL". Range: from 1440px.
     */
 	@:optional var layoutXL:haxe.extern.EitherType<String,sap.f.GridContainerSettings>;
 

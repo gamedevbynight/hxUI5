@@ -11,7 +11,7 @@ extern class ODataAnnotations extends sap.ui.base.EventProvider
 
 	/**
 	* 
-	* @param	aAnnotationURI The annotation-URL or an array of URLS that should be parsed and merged
+	* @param	aAnnotationURI The annotation-URL or an array of URLs that should be parsed and merged
 	* @param	oMetadata null
 	* @param	mParams null
 	* @return	Object
@@ -27,42 +27,42 @@ extern class ODataAnnotations extends sap.ui.base.EventProvider
 	public function addUrl( vUrl:Array<String>):js.lib.Promise<ODataAnnotations>;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'failed' event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, the global context (window) is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:failed failed} event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.ODataAnnotations</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'loaded' event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, the global context (window) is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:loaded loaded} event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.ODataAnnotations</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachLoaded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'failed' event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:failed failed} event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFailed( fnFunction:()->Void, oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
+	public function detachFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'loaded' event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:loaded loaded} event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLoaded( fnFunction:()->Void, oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
+	public function detachLoaded( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.odata.ODataAnnotations with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.

@@ -49,7 +49,7 @@ The passed function and listener object must match the ones used for event regis
 	@:overload( function(vParam:Int):sap.m.Tree{ })
 
 	/**
-	* Expands one or multiple items.
+	* Expands one or multiple items. Note that items that are hidden at the time of calling this API can't be expanded.
 	* @param	vParam The index or indices of the item to be expanded
 	* @return	A reference to the Tree control
 	*/

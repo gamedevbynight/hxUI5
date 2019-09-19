@@ -436,7 +436,7 @@ Default value is <code>slide</code>.
 	/**
 	* Gets content of aggregation {@link #getDetailPages detailPages}.
 
-Determines the content entities, between which the SplitContainer navigates in detail area. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics. These aggregated controls receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+Determines the content entities, between which the SplitContainer navigates in detail area. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics. These aggregated controls receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
 	* @return	null
 	*/
 	public function getDetailPages( ):Array<sap.ui.core.Control>;
@@ -479,7 +479,7 @@ Specifies the tooltip of the master button. If the tooltip is not specified, the
 	/**
 	* Gets content of aggregation {@link #getMasterPages masterPages}.
 
-Determines the content entities, between which the SplitContainer navigates in master area. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics. These aggregated controls receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+Determines the content entities, between which the SplitContainer navigates in master area. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics. These aggregated controls receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
 	* @return	null
 	*/
 	public function getMasterPages( ):Array<sap.ui.core.Control>;
@@ -842,12 +842,12 @@ typedef SplitContainerArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var backgroundOpacity:haxe.extern.EitherType<String,Float>;
 
     /**
-    * Determines the content entities, between which the SplitContainer navigates in master area. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics. These aggregated controls receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+    * Determines the content entities, between which the SplitContainer navigates in master area. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics. These aggregated controls receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
     */
 	@:optional var masterPages:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 
     /**
-    * Determines the content entities, between which the SplitContainer navigates in detail area. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics. These aggregated controls receive navigation events like {@link sap.m.NavContainerChild#beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
+    * Determines the content entities, between which the SplitContainer navigates in detail area. These can be of type sap.m.Page, sap.ui.core.View, sap.m.Carousel or any other control with fullscreen/page semantics. These aggregated controls receive navigation events like {@link sap.m.NavContainerChild#event:beforeShow beforeShow}, they are documented in the pseudo interface {@link sap.m.NavContainerChild sap.m.NavContainerChild}.
     */
 	@:optional var detailPages:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 

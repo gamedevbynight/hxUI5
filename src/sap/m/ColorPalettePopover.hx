@@ -69,6 +69,16 @@ The color, which the app developer will receive when end-user chooses the "Defau
 	public function getDefaultColor( ):sap.ui.core.CSSColor;
 
 	/**
+	* Gets current value of property {@link #getDisplayMode displayMode}.
+
+Determines the <code>displayMode</code> of the <code>ColorPicker</code> among three types - Default, Large and Simplified
+
+Default value is <code>Default</code>.
+	* @return	Value of property <code>displayMode</code>
+	*/
+	public function getDisplayMode( ):sap.ui.unified.ColorPickerDisplayMode;
+
+	/**
 	* Returns a metadata object for class sap.m.ColorPalettePopover.
 	* @return	Metadata object describing this class
 	*/
@@ -95,13 +105,6 @@ Default value is <code>true</code>.
 	public function getShowMoreColorsButton( ):Bool;
 
 	/**
-	* Opens the <code>ColorPalettePopover</code>. The popover is positioned relative to the control parameter on tablet or desktop and is full screen on phone. Therefore the control parameter is only used on tablet or desktop and is ignored on phone.
-	* @param	openBy When this control is displayed on tablet or desktop, the <code>ColorPalettePopover</code> is positioned relative to this control
-	* @return	Reference to the opening control
-	*/
-	public function openBy( openBy:Dynamic):Dynamic;
-
-	/**
 	* Sets a new value for property {@link #getColors colors}.
 
 Defines the List of colors displayed in the palette. Minimum is 2 colors, maximum is 15 colors.
@@ -124,6 +127,19 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setDefaultColor( sDefaultColor:sap.ui.core.CSSColor):sap.m.ColorPalettePopover;
+
+	/**
+	* Sets a new value for property {@link #getDisplayMode displayMode}.
+
+Determines the <code>displayMode</code> of the <code>ColorPicker</code> among three types - Default, Large and Simplified
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Default</code>.
+	* @param	sDisplayMode New value for property <code>displayMode</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setDisplayMode( sDisplayMode:sap.ui.unified.ColorPickerDisplayMode):sap.m.ColorPalettePopover;
 
 	/**
 	* Sets a new value for property {@link #getShowDefaultColorButton showDefaultColorButton}.
@@ -173,6 +189,11 @@ typedef ColorPalettePopoverArgs = sap.ui.core.Control.ControlArgs & {
 	* Denotes if the color has been chosen by selecting the "Default Color" button (true or false)
 	*/
 	@:optional var showMoreColorsButton:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Determines the <code>displayMode</code> of the <code>ColorPicker</code> among three types - Default, Large and Simplified
+	*/
+	@:optional var displayMode:haxe.extern.EitherType<String,sap.ui.unified.ColorPickerDisplayMode>;
 
 	/**
 	* Fired when the user selects a color.

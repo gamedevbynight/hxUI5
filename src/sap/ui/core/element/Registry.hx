@@ -39,6 +39,8 @@ The expected signature of the callback is <pre>
    function callback(oElement, sID)
 </pre> where <code>oElement</code> is the currently visited element instance and <code>sID</code> is the ID of that instance.
 
+The order in which the callback is called for elements is not specified and might change between calls (over time and across different versions of UI5).
+
 If elements are created or destroyed within the <code>callback</code>, then the behavior is not specified. Newly added objects might or might not be visited. When an element is destroyed during the filtering and was not visited yet, it might or might not be visited. As the behavior for such concurrent modifications is not specified, it may change in newer releases.
 
 If a <code>thisArg</code> is given, it will be provided as <code>this</code> context when calling <code>callback</code>. The <code>this</code> value that the implementation of <code>callback</code> sees, depends on the usual resolution mechanism. E.g. when <code>callback</code> was bound to some context object, that object wins over the given <code>thisArg</code>.

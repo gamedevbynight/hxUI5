@@ -213,7 +213,7 @@ Whether the control should be visible on the screen.
 
 If set to false, a placeholder will be rendered to mark the location of the invisible control in the DOM of the current page. The placeholder will be hidden and have zero dimensions (<code>display: none</code>).
 
-See {@link sap.ui.core.RenderManager#writeInvisiblePlaceholderData RenderManager#writeInvisiblePlaceholderData} for details.
+Also see {@link module:sap/ui/core/InvisibleRenderer InvisibleRenderer}.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>visible</code>
@@ -306,7 +306,7 @@ Whether the control should be visible on the screen.
 
 If set to false, a placeholder will be rendered to mark the location of the invisible control in the DOM of the current page. The placeholder will be hidden and have zero dimensions (<code>display: none</code>).
 
-See {@link sap.ui.core.RenderManager#writeInvisiblePlaceholderData RenderManager#writeInvisiblePlaceholderData} for details.
+Also see {@link module:sap/ui/core/InvisibleRenderer InvisibleRenderer}.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -340,11 +340,6 @@ See {@link #attachValidateFieldGroup}.
 typedef ControlArgs = sap.ui.core.Element.ElementArgs & {
 
 	/**
-	* Whether the control is currently in blocked state.
-	*/
-	@:optional var blocked:haxe.extern.EitherType<String,Bool>;
-
-	/**
 	* Whether the control is currently in busy state.
 	*/
 	@:optional var busy:haxe.extern.EitherType<String,Bool>;
@@ -364,7 +359,7 @@ typedef ControlArgs = sap.ui.core.Element.ElementArgs & {
 
 If set to false, a placeholder will be rendered to mark the location of the invisible control in the DOM of the current page. The placeholder will be hidden and have zero dimensions (<code>display: none</code>).
 
-See {@link sap.ui.core.RenderManager#writeInvisiblePlaceholderData RenderManager#writeInvisiblePlaceholderData} for details.
+Also see {@link module:sap/ui/core/InvisibleRenderer InvisibleRenderer}.
 	*/
 	@:optional var visible:haxe.extern.EitherType<String,Bool>;
 

@@ -3,19 +3,26 @@ package sap.ui.core;
 @:native("sap.ui.core.Popup")
 
 /**
-* Popup Class is a helper class for controls that want themselves or parts of themselves or even other aggregated or composed controls or plain HTML content to popup on the screen like menues, dialogs, drop down boxes.
+* Popup Class is a helper class for controls that want themselves or parts of themselves or even other aggregated or composed controls or plain HTML content to popup on the screen like menus, dialogs, drop down boxes.
 
-It allows the controls to be aligned to other dom elements using the {@link sap.ui.core.Popup.Dock} method. With it you can define where the popup should be docked. One can dock the popup to the top bottom left or right side of a dom ref.
+It allows the controls to be aligned to other DOM elements using the {@link sap.ui.core.Popup.Dock} method. With it you can define where the popup should be docked. One can dock the popup to the top, bottom, left or right side of another DOM element.
 
-In the case that the popup has no space to show itself in the view port of the current window it tries to open itself to the inverted direction.
+In the case that the popup has no space to show itself in the view port of the current window, it tries to open itself to the inverted direction.
 
-<strong>Since 1.12.3</strong> it is possible to add further DOM-element-ids that can get the focus when 'autoclose' is enabled. E.g. the RichTextEditor with running TinyMCE uses this method to be able to focus the Popups of the TinyMCE if the RichTextEditor runs within a Popup/Dialog etc.
+<strong>Since 1.12.3</strong>, it is possible to add further DOM-element-IDs that can get the focus when <code>autoclose</code> is enabled. E.g. the <code>RichTextEditor</code> with running TinyMCE uses this method to be able to focus the popups of the TinyMCE if the <code>RichTextEditor</code> runs within a <code>Popup</code>/<code>Dialog</code> etc.
 
-To provide an additional DOM-element that can get the focus the following should be done: // create an object with the corresponding DOM-id var oObject = { id : "this_is_the_most_valuable_id_of_the_DOM_element" };
+To provide an additional DOM element that can get the focus the following should be done: <pre>
+  // create an object with the corresponding DOM-ID
+  var oObject = {
+    id : "this_is_the_most_valuable_id_of_the_DOM_element"
+  };
 
-// add the event prefix for adding an element to the ID of the corresponding Popup var sEventId = "sap.ui.core.Popup.addFocusableContent-" + oPopup.getId();
+  // add the event prefix for adding an element to the ID of the corresponding Popup
+  var sEventId = "sap.ui.core.Popup.addFocusableContent-" + oPopup.getId();
 
-// fire the event with the created event-id and the object with the DOM-id sap.ui.getCore().getEventBus().publish("sap.ui", sEventId, oObject);
+  // fire the event with the created event-ID and the object with the DOM-ID
+  sap.ui.getCore().getEventBus().publish("sap.ui", sEventId, oObject);
+</pre>
 */
 extern class Popup extends sap.ui.base.ManagedObject
 {
@@ -33,12 +40,14 @@ extern class Popup extends sap.ui.base.ManagedObject
 	public function new( ?oContent:DOMNode, ?bModal:Bool, ?bShadow:Bool, ?bAutoClose:Bool):Void;
 
 	/**
-	* Attaches an event-handler <code>fnFunction</code> to the static 'blockLayerStateChange' event.
+	* Attaches event handler <code>fnFunction</code> to the static {@link #.blockLayerStateChange blockLayerStateChange} event.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to a dummy event provider object.
 
 The event gets triggered in case of modal popups when the first of multiple popups opens and closes.
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
 	* @return	Void
 	*/
 	public static function attachBlockLayerStateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):Void;
@@ -81,11 +90,11 @@ If the Popup is already closed or in the process of closing, calling this method
 	public function destroy( ):Void;
 
 	/**
-	* Removes a previously attached event handler <code>fnFunction</code> from the static 'blockLayerStateChange' event.
+	* Removes a previously attached event handler <code>fnFunction</code> from the static {@link #.blockLayerStateChange blockLayerStateChange} event.
 
 The event gets triggered in case of modal popups when the first of multiple popups opens and closes.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
 	public static function detachBlockLayerStateChange( fnFunction:()->Void, ?oListener:Dynamic):Void;
@@ -140,7 +149,7 @@ The passed function and listener object must match the ones used for event regis
 	public function getContent( ):Dynamic;
 
 	/**
-	* This returns true/false if the default followOf method should be used. If a separate followOf-handler was previously added the correspodning function is returned.
+	* This returns true/false if the default followOf method should be used. If a separate followOf-handler was previously added the corresponding function is returned.
 	* @return	if a function was set it is returned otherwise a boolean value whether the follow of is activated
 	*/
 	public function getFollowOf( ):Dynamic;
@@ -172,7 +181,7 @@ The passed function and listener object must match the ones used for event regis
 	public static function getNextZIndex( ):Number;
 
 	/**
-	* Returns whether the Popup is currently open, closed, or transitioning between these states.
+	* Returns whether the Popup is currently open, closed, or in a transition between these states.
 	* @return	whether the Popup is opened
 	*/
 	public function getOpenState( ):sap.ui.core.OpenState;
@@ -211,7 +220,7 @@ If the Popup's OpenState is different from "CLOSED" (i.e. if the Popup is alread
 	public function setAnimations( fnOpen:()->Void, fnClose:()->Void):sap.ui.core.Popup;
 
 	/**
-	* Used to specify whether the Popup should close as soon as - for non-touch environment: the focus leaves - for touch environment: user clicks the area which is outside the popup itself, the dom elemnt which popup aligns to (except document), and one of the autoCloseAreas set by calling setAutoCloseAreas.
+	* Used to specify whether the Popup should close as soon as - for non-touch environment: the focus leaves - for touch environment: user clicks the area which is outside the popup itself, the DOM element which popup aligns to (except document), and one of the autoCloseAreas set by calling setAutoCloseAreas.
 	* @param	bAutoClose whether the Popup should close as soon as the focus leaves
 	* @return	<code>this</code> to allow method chaining
 	*/

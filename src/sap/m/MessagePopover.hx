@@ -3,7 +3,7 @@ package sap.m;
 @:native("sap.m.MessagePopover")
 
 /**
-* <h3>Overview</h3> A <code>MessagePopover</code> is used to display a summarized list of different types of messages (error, warning, success, and information messages). It provides a handy and systemized way to navigate and explore details for every message. It is adaptive and responsive. It renders as a dialog with a Close button in the header on phones, and as a popover on tablets and higher resolution devices. It also exposes an event {@link sap.m.MessagePopover#activeTitlePress}, which can be used for navigation from a message to the source of the issue. <h3>Notes:</h3> <ul> <li> Messages can have descriptions pre-formatted with HTML markup. In this case, the <code>markupDescription</code> has to be set to <code>true</code>.</li> <li> If the message cannot be fully displayed or includes a long description, the message popover provides navigation to the detailed description.</li> </ul> <h3>Structure</h3> The message popover stores all messages in an aggregation of type {@link sap.m.MessageItem} named <code>items</code>.
+* <h3>Overview</h3> A <code>MessagePopover</code> is used to display a summarized list of different types of messages (error, warning, success, and information messages). It provides a handy and systemized way to navigate and explore details for every message. It is adaptive and responsive. It renders as a dialog with a Close button in the header on phones, and as a popover on tablets and higher resolution devices. It also exposes an event {@link sap.m.MessagePopover#event:activeTitlePress}, which can be used for navigation from a message to the source of the issue. <h3>Notes:</h3> <ul> <li> Messages can have descriptions pre-formatted with HTML markup. In this case, the <code>markupDescription</code> has to be set to <code>true</code>.</li> <li> If the message cannot be fully displayed or includes a long description, the message popover provides navigation to the detailed description.</li> </ul> <h3>Structure</h3> The message popover stores all messages in an aggregation of type {@link sap.m.MessageItem} named <code>items</code>.
 
 A set of properties determines how the items are rendered: <ul> <li> counter - An integer that is used to indicate the number of errors for each type </li> <li> type - The type of message </li> <li> title/subtitle - The title and subtitle of the message</li> <li> description - The long text description of the message</li> <li> activeTitle - Determines whether the title of the item is interactive</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>When you want to make sure that all content is visible on any device.</li> <li>When you want a way to centrally manage messages and show them to the user without additional work for the developer. The message popover is triggered from a messaging button in the footer toolbar. If an error has occurred at any validation point, the total number of messages should be incremented, but the user's work shouldn't be interrupted. Navigation between the message item and the source of the error can be created, if needed by the application. This can be done by setting the <code>activeTitle</code> property to true and providing a handler for the <code>activeTitlePress</code> event. In addition, you can achieve the same functionality inside a different container using the {@link sap.m.MessageView} control.</li> </ul> <h3>Responsive Behavior</h3> On mobile phones, the message popover is automatically shown in full screen mode.<br> On desktop and tablet, the message popover opens in a popover.<br> On desktop the opened popover is resizable if it is placed in a {@link sap.m.Toolbar}, {@link sap.m.Bar} or used in {@link sap.f.semantic.SemanticPage}
 */
@@ -283,7 +283,7 @@ A custom header button
 	/**
 	* Gets current value of property {@link #getInitiallyExpanded initiallyExpanded}.
 
-Sets the initial state of the control - expanded or collapsed. By default the control opens as expanded.
+Sets the initial state of the control - expanded or collapsed. By default the control opens as expanded. Note: If there is only one message in the control, this state will be ignored and the details page of the message will be shown.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>initiallyExpanded</code>
@@ -394,7 +394,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getInitiallyExpanded initiallyExpanded}.
 
-Sets the initial state of the control - expanded or collapsed. By default the control opens as expanded.
+Sets the initial state of the control - expanded or collapsed. By default the control opens as expanded. Note: If there is only one message in the control, this state will be ignored and the details page of the message will be shown.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -437,7 +437,7 @@ typedef MessagePopoverArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var placement:haxe.extern.EitherType<String,sap.m.VerticalPlacementType>;
 
 	/**
-	* Sets the initial state of the control - expanded or collapsed. By default the control opens as expanded.
+	* Sets the initial state of the control - expanded or collapsed. By default the control opens as expanded. Note: If there is only one message in the control, this state will be ignored and the details page of the message will be shown.
 	*/
 	@:optional var initiallyExpanded:haxe.extern.EitherType<String,Bool>;
 

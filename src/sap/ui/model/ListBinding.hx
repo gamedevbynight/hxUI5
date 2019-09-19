@@ -51,7 +51,7 @@ By using the second parameter <code>sFilterType</code> of method <code>filter</c
 	public function filter( aFilters:Array<sap.ui.model.Filter>, ?sFilterType:sap.ui.model.FilterType):sap.ui.model.ListBinding;
 
 	/**
-	* Returns an array of currently used binding contexts of the bound control
+	* Returns an array of currently used binding contexts of the bound control.
 
 This method does not trigger any data requests from the backend or delta calculation, but just returns the context array as last requested by the control. This can be used by the application to get access to the data currently displayed by a list control.
 	* @return	the array of contexts for each row of the bound list
@@ -59,21 +59,23 @@ This method does not trigger any data requests from the backend or delta calcula
 	public function getCurrentContexts( ):Array<sap.ui.model.Context>;
 
 	/**
-	* Returns list of distinct values for the given relative binding path
-	* @param	sPath the relative binding path
-	* @return	the array of distinct values.
+	* Returns list of distinct values for the given relative binding path.
+	* @param	sPath Relative binding path
+	* @return	Array of distinct values.
 	*/
 	public function getDistinctValues( sPath:String):Array<Dynamic>;
 
 	/**
-	* Gets the group for the given context. Must only be called if isGrouped() returns that grouping is enabled for this binding. The grouping will be performed using the first sorter (in case multiple sorters are defined).
-	* @param	oContext the binding context
-	* @return	the group object containing a key property and optional custom properties
+	* Gets the group for the given context. Must only be called if <code>isGrouped()</code> returns that grouping is enabled for this binding. The grouping will be performed using the first sorter (in case multiple sorters are defined).
+	* @param	oContext The binding context
+	* @return	The group object containing a key property and optional custom properties
 	*/
 	public function getGroup( oContext:sap.ui.model.Context):Dynamic;
 
 	/**
-	* Returns the number of entries in the list. This might be an estimated or preliminary length, in case the full length is not known yet, see method isLengthFinal().
+	* Returns the number of entries in the list.
+
+This might be an estimated or preliminary length, in case the full length is not known yet, see method {@link #isLengthFinal}.
 	* @return	returns the number of entries in the list
 	*/
 	public function getLength( ):Int;
@@ -86,13 +88,13 @@ This method does not trigger any data requests from the backend or delta calcula
 
 	/**
 	* Indicates whether grouping is enabled for the binding. Grouping is enabled for a list binding, if at least one sorter exists on the binding and the first sorter is a grouping sorter.
-	* @return	whether grouping is enabled
+	* @return	Whether grouping is enabled
 	*/
 	public function isGrouped( ):Bool;
 
 	/**
 	* Returns whether the length which can be retrieved using getLength() is a known, final length, or a preliminary or estimated length which may change if further data is requested.
-	* @return	returns whether the length is final
+	* @return	Whether the length is final
 	*/
 	public function isLengthFinal( ):Bool;
 	@:overload( function(aSorters:sap.ui.model.Sorter):sap.ui.model.ListBinding{ })

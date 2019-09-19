@@ -36,10 +36,12 @@ extern class SapPcpWebSocket extends sap.ui.core.ws.WebSocket
 	@:overload( function(message:Blob, ?oPcpFields:Dynamic):sap.ui.core.ws.SapPcpWebSocket{ })
 
 	/**
-	* Sends a message and optional pcp-header-fields using the pcp-protocol.<br> <br> If the connection is not yet opened, the message will be queued and sent when the connection is established.
+	* Sends a message and optional pcp-header-fields using the pcp-protocol.
+
+If the connection is not yet opened, the message will be queued and sent when the connection is established.
 	* @param	message message to send
 	* @param	oPcpFields additional pcp-fields as key-value map
-	* @return	<code>this</code> to allow method chaining
+	* @return	Reference to <code>this</code> to allow method chaining
 	*/
 	public function send( message:ArrayBuffer, ?oPcpFields:Dynamic):sap.ui.core.ws.SapPcpWebSocket;
 }

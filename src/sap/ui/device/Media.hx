@@ -31,7 +31,7 @@ The passed parameters must match those used for registration with {@link #.attac
 	/**
 	* Returns information about the current active range of the range set with the given name.
 
-If the optional parameter <code>iWidth</iWidth> is given, the active range will be determined for that width, otherwise it is determined for the current window size.
+If the optional parameter <code>iWidth</code> is given, the active range will be determined for that width, otherwise it is determined for the current window size.
 	* @param	sName The name of the range set. The range set must be initialized beforehand ({@link sap.ui.Device.media.initRangeSet})
 	* @param	iWidth An optional width, based on which the range should be determined; If <code>iWidth</code> is not a number, the window size will be used.
 	* @return	Information about the current active interval of the range set. The returned map has the same structure as the argument of the event handlers ({@link sap.ui.Device.media.attachHandler})

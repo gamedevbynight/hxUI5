@@ -93,7 +93,6 @@ The alternative way of defining routes is an Object.<br/> If you choose this way
 Since the xmlTarget does not specify its viewType, XML is taken from the config object. The jsTarget is specifying it, so the viewType will be JS.
 	* @param	oOwner the Component of all the views that will be created by this Router,<br/> will get forwarded to the {@link sap.ui.core.routing.Views#constructor}.<br/> If you are using the componentMetadata to define your routes you should skip this parameter.
 	* @param	oTargetsConfig available @since 1.28 the target configuration, see {@link sap.ui.core.routing.Targets#constructor} documentation (the options object).<br/> You should use Targets to create and display views. Since 1.28 the route should only contain routing relevant properties.<br/> <b>Example:</b> <pre>
-<code>
     new Router(
     // Routes
     [
@@ -126,118 +125,137 @@ Since the xmlTarget does not specify its viewType, XML is taken from the config 
              controlAggregation: "pages"
          }
     })
-</code>
 </pre>
 	* @return	Object
 	*/
 	public function new( ?oRoutes:Array<Dynamic>, ?oConfig:Dynamic, ?oOwner:sap.ui.core.UIComponent, ?oTargetsConfig:Dynamic):Void;
 
 	/**
-	* Adds a route to the router
-	* @param	oConfig configuration object for the route @see sap.ui.core.routing.Route#constructor
-	* @param	oParent The parent route - if a parent route is given, the routeMatched event of this route will also trigger the route matched of the parent and it will also create the view of the parent (if provided).
+	* Adds a route to the router.
+	* @param	oConfig Configuration object for the route @see sap.ui.core.routing.Route#constructor
+	* @param	oParent The parent route - if a parent route is given, the <code>routeMatched</code> event of this route will also trigger the <code>routeMatched</code> of the parent and it will also create the view of the parent (if provided).
 	* @return	Void
 	*/
 	public function addRoute( oConfig:Dynamic, oParent:sap.ui.core.routing.Route):Void;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'beforeRouteMatched' event of this <code>sap.ui.core.routing.Router</code>.<br/>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, this router is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeRouteMatched beforeRouteMatched} event of this <code>sap.ui.core.routing.Router</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.routing.Router</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.core.routing.Router</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachBeforeRouteMatched( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'bypassed' event of this <code>sap.ui.core.routing.Router</code>.<br/> The event will get fired, if none of the routes of the routes is matching. <br/>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, this router is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:bypassed bypassed} event of this <code>sap.ui.core.routing.Router</code>.
+
+The event will get fired, if none of the routes of the router is matching.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.routing.Router</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.core.routing.Router</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachBypassed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'routeMatched' event of this <code>sap.ui.core.routing.Router</code>.<br/>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, this router is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:routeMatched routeMatched} event of this <code>sap.ui.core.routing.Router</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.routing.Router</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.core.routing.Router</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachRouteMatched( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'routePatternMatched' event of this <code>sap.ui.core.routing.Router</code>.<br/> This event is similar to route matched. But it will only fire for the route that has a matching pattern, not for its parent Routes <br/>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function. If empty, this router is used.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:routePatternMatched routePatternMatched} event of this <code>sap.ui.core.routing.Router</code>.
+
+This event is similar to <code>routeMatched</code>. But it will only fire for the route that has a matching pattern, not for its parent routes.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.routing.Router</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.core.routing.Router</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachRoutePatternMatched( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
-	* Attach event-handler <code>fnFunction</code> to the 'titleChanged' event of this <code>sap.ui.core.routing.Router</code>.<br/>
-	* @param	oData The object, that should be passed along with the event-object when firing the event.
-	* @param	fnFunction The function to call, when the event occurs. This function will be called on the oListener-instance (if present) or in a 'static way'.
-	* @param	oListener Object on which to call the given function.
-	* @return	<code>this</code> to allow method chaining
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:titleChanged titleChanged} event of this <code>sap.ui.core.routing.Router</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.routing.Router</code> itself.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.core.routing.Router</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachTitleChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
-	* Removes the router from the hash changer @see sap.ui.core.routing.HashChanger
+	* Removes the router from the hash changer.
+
+See {@link sap.ui.core.routing.HashChanger}.
 	* @return	this for chaining.
 	*/
 	public function destroy( ):sap.ui.core.routing.Router;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'beforeRouteMatched' event of this <code>sap.ui.core.routing.Router</code>.<br/>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeRouteMatched beforeRouteMatched} event of this <code>sap.ui.core.routing.Router</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachBeforeRouteMatched( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'bypassed' event of this <code>sap.ui.core.routing.Router</code>.<br/> The event will get fired, if none of the routes of the routes is matching. <br/>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:bypassed bypassed} event of this <code>sap.ui.core.routing.Router</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+
+The event will get fired, if none of the routes of the router is matching.
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachBypassed( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'routeMatched' event of this <code>sap.ui.core.routing.Router</code>.<br/>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:routeMatched routeMatched} event of this <code>sap.ui.core.routing.Router</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachRouteMatched( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'routePatternMatched' event of this <code>sap.ui.core.routing.Router</code>.<br/> This event is similar to route matched. But it will only fire for the route that has a matching pattern, not for its parent Routes <br/>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:routePatternMatched routePatternMatched} event of this <code>sap.ui.core.routing.Router</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+
+This event is similar to <code>routeMatched</code>. But it will only fire for the route that has a matching pattern, not for its parent routes.
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachRoutePatternMatched( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
-	* Detach event-handler <code>fnFunction</code> from the 'titleChanged' event of this <code>sap.ui.core.routing.Router</code>.<br/>
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:titleChanged titleChanged} event of this <code>sap.ui.core.routing.Router</code>.
 
-The passed function and listener object must match the ones previously used for event registration.
-	* @param	fnFunction The function to call, when the event occurs.
-	* @param	oListener Object on which the given function had to be called.
-	* @return	<code>this</code> to allow method chaining
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachTitleChanged( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Router;
 
@@ -259,14 +277,14 @@ The passed function and listener object must match the ones previously used for 
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
-	* Returns the Route with a name, if no route is found undefined is returned
+	* Returns the route with the given name or <code>undefined</code> if no route is found.
 	* @param	sName Name of the route
-	* @return	the route with the provided name or undefined.
+	* @return	Route with the provided name or <code>undefined</code>.
 	*/
 	public function getRoute( sName:String):sap.ui.core.routing.Route;
 
 	/**
-	* Get a registered router
+	* Get a registered router.
 	* @param	sName Name of the router
 	* @return	The router with the specified name, else undefined
 	*/
@@ -274,70 +292,82 @@ The passed function and listener object must match the ones previously used for 
 	@:overload( function(vName:String):Dynamic{ })
 
 	/**
-	* Returns a target by its name (if you pass myTarget: { view: "myView" }) in the config myTarget is the name. See {@link sap.ui.core.routing.Targets#getTarget}
-	* @param	vName the name of a single target or the name of multiple targets
-	* @return	The target with the corresponding name or undefined. If an array way passed as name this will return an array with all found targets. Non existing targets will not be returned but will log an error.
+	* Returns a target by its name.
+
+If you pass <code>myTarget: { view: "myView" })</code> in the config, <code>myTarget</code> is the name. See {@link sap.ui.core.routing.Targets#getTarget}.
+	* @param	vName Name of a single target or an array of names of multiple targets
+	* @return	Target with the corresponding name or <code>undefined</code>. If an array of names was passed, this will return an array with all found targets. Non existing targets will not be returned but will log an error.
 	*/
 	public function getTarget( vName:Array<String>):Dynamic;
 
 	/**
-	* Returns the instance of Targets, if you pass a targets config to the router
-	* @return	The instance of targets, the router uses to place views or undefined if you did not specify the targets parameter in the router's constructor.
+	* Returns the instance of <code>sap.ui.core.routing.Targets</code>, if you passed a <code>targets</code> configuration to the router.
+	* @return	Instance of <code>Targets</code> which the router uses to place views or <code>undefined</code> if you did not specify the <code>targets</code> parameter in the router's constructor.
 	*/
 	public function getTargets( ):Dynamic;
 
 	/**
 	* Returns the title history.
 
-History entry example: <code> { title: "TITLE", // The displayed title hash: "HASH" // The url hash isHome: "true/false" // The app home indicator } </code>
+History entry example: <pre>
+	{
+		title: "TITLE", // The displayed title
+		hash: "HASH" // The url hash
+		isHome: "true/false" // The app home indicator
+	}
+</pre>
 	* @return	An array which contains the history entries.
 	*/
 	public function getTitleHistory( ):Array<Dynamic>;
 
 	/**
-	* Returns the URL for the route and replaces the placeholders with the values in oParameters
+	* Returns the URL for the route and replaces the placeholders with the values in <code>oParameters</code>.
 	* @param	sName Name of the route
 	* @param	oParameters Parameters for the route
-	* @return	the unencoded pattern with interpolated arguments
+	* @return	The unencoded pattern with interpolated arguments
 	*/
 	public function getURL( sName:String, ?oParameters:Dynamic):String;
 
 	/**
-	* Returns the views instance created by the router
+	* Returns the <code>sap.ui.core.routing.Views</code> instance created by the router.
 	* @return	the Views instance
 	*/
 	public function getViews( ):sap.ui.core.routing.Views;
 
 	/**
-	* Attaches the router to the hash changer @see sap.ui.core.routing.HashChanger
-	* @param	bIgnoreInitialHash @since 1.48.0 whether the current url hash shouldn't be parsed after the router is initialized
+	* Attaches the router to the hash changer.
+
+See {@link sap.ui.core.routing.HashChanger}.
+	* @param	bIgnoreInitialHash @since 1.48.0 Whether the current URL hash shouldn't be parsed after the router is initialized
 	* @return	this for chaining.
 	*/
 	public function initialize( ?bIgnoreInitialHash:Bool):sap.ui.core.routing.Router;
 
 	/**
-	* Returns whether the router is initialized by calling {@link sap.ui.core.routing.Router#initialize} function
-	* @return	whether the router is initialized
+	* Returns whether the router is initialized by calling {@link sap.ui.core.routing.Router#initialize} function.
+	* @return	Whether the router is initialized
 	*/
 	public function isInitialized( ):Bool;
 
 	/**
-	* Returns whether the router is stopped by calling {@link sap.ui.core.routing.Router#stop} function
-	* @return	whether the router is stopped
+	* Returns whether the router is stopped by calling {@link sap.ui.core.routing.Router#stop} function.
+	* @return	Whether the router is stopped
 	*/
 	public function isStopped( ):Bool;
 
 	/**
-	* Returns whether the given hash can be matched by any one of the Route in the Router.
-	* @param	hash which will be tested by the Router
-	* @return	whether the hash can be matched
+	* Returns whether the given hash can be matched by any of the routes in the router.
+	* @param	Hash which will be tested by the Router
+	* @return	Whether the hash can be matched
 	*/
-	public function match( hash:String):Bool;
+	public function match( Hash:String):Bool;
 
 	/**
-	* Navigates to a specific route defining a set of parameters. The Parameters will be URI encoded - the characters ; , / ? : @ & = + $ are reserved and will not be encoded. If you want to use special characters in your oParameters, you have to encode them (encodeURIComponent).
+	* Navigates to a specific route defining a set of parameters.
 
-IF the given route name can't be found, an error message is logged to the console and the hash will be changed to empty string.
+The parameters will be URI encoded - the characters ; , / ? : @ & = + $ are reserved and will not be encoded. If you want to use special characters in your <code>oParameters</code>, you have to encode them (encodeURIComponent).
+
+If the given route name can't be found, an error message is logged to the console and the hash will be changed to the empty string.
 	* @param	sName Name of the route
 	* @param	oParameters Parameters for the route
 	* @param	bReplace If set to <code>true</code>, the hash is replaced, and there will be no entry in the browser history, if set to <code>false</code>, the hash is set and the entry is stored in the browser history.
@@ -346,14 +376,18 @@ IF the given route name can't be found, an error message is logged to the consol
 	public function navTo( sName:String, ?oParameters:Dynamic, ?bReplace:Bool):sap.ui.core.routing.Router;
 
 	/**
-	* Registers the router to access it from another context. Use sap.ui.routing.Router.getRouter() to receive the instance
+	* Registers the router to access it from another context.
+
+Use <code>sap.ui.routing.Router.getRouter()</code> to receive the instance.
 	* @param	sName Name of the router
 	* @return	Void
 	*/
 	public function register( sName:String):Void;
 
 	/**
-	* Stops to listen to the hashChange of the browser.</br> If you want the router to start again, call initialize again.
+	* Stops to listen to the <code>hashChange</code> of the browser.
+
+If you want the router to start again, call {@link #initialize} again.
 	* @return	this for chaining.
 	*/
 	public function stop( ):sap.ui.core.routing.Router;

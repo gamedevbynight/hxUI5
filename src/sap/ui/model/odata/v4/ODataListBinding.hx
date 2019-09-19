@@ -199,7 +199,7 @@ The <code>$count</code> is unknown, if the binding is relative, but has no conte
 
 	/**
 	* Returns <code>true</code> if the length has been determined by the data returned from server. If the length is a client side estimation <code>false</code> is returned.
-	* @return	If <code>true</true> the length is determined by server side data
+	* @return	If <code>true</code> the length is determined by server side data
 	*/
 	public function isLengthFinal( ):Bool;
 
@@ -217,6 +217,15 @@ Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or applic
 	* @return	Void
 	*/
 	public function refresh( ?sGroupId:String):Void;
+
+	/**
+	* Requests the entities for the given index range of the binding's collection and resolves with the corresponding contexts.
+	* @param	iStart The index where to start the retrieval of contexts; must be greater than or equal to 0
+	* @param	iLength The number of contexts to retrieve beginning from the start index; defaults to the model's size limit, see {@link sap.ui.model.Model#setSizeLimit}; must be greater than 0, <code>Infinity</code> may be used to retrieve all data
+	* @param	sGroupId The group ID to be used for the request; if not specified, the group ID for this binding is used, see {@link sap.ui.model.odata.v4.ODataListBinding#constructor}. Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or application group IDs as specified in {@link sap.ui.model.odata.v4.ODataModel}.
+	* @return	A promise which is resolved with the array of the contexts, the first entry containing the context for <code>iStart</code>; it is rejected if <code>iStart</code> or <code>iLength</code> are less than 0 or when requesting the data fails
+	*/
+	public function requestContexts( ?iStart:String, ?iLength:String, ?sGroupId:String):Array<js.lib.Promise<sap.ui.model.odata.v4.Context>>;
 
 	/**
 	* Resets all pending changes of this binding, see {@link #hasPendingChanges}. Resets also invalid user input.

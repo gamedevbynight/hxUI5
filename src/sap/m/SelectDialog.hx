@@ -3,7 +3,7 @@ package sap.m;
 @:native("sap.m.SelectDialog")
 
 /**
-* <h3>Overview</h3> A SelectDialog is a dialog containing a list, search functionality to filter it and a confirmation/cancel button. The list used in the dialog is a growing list and can be filled with any kind of list item. <h3>Structure</h3> <h4>Dialog structure</h4> The select dialog has the following components: <ul> <li>Header - title of the dialog</li> <li>Search field - input field to enter search terms</li> <li>Info toolbar (only in multi-select) - displays the number of currently selected items</li> <li>Content - {@link sap.m.StandardListItem standard list items}, {@link sap.m.DisplayListItem display list items} or {@link sap.m.FeedListItem feed list items}</li> <li>Button toolbar - for confirmation/cancellation buttons </li> </ul> <h4>List structure & selection</h4> <ul> <li> The search field triggers the events <code>search</code> and <code>liveChange</code> where a filter function can be applied to the list binding. </li> <li> The growing functionality of the list does not support two-way Binding, so if you use this control with a JSON model make sure the binding mode is set to <code>OneWay</code> and that you update the selection model manually with the items passed in the <code>confirm</code> event. </li> <li> In the multi-select mode of the select dialog, checkboxes are provided for choosing multiple entries. </li> <li> You can set <code>rememberSelections</code> to true to store the current selection and load this state when the dialog is opened again. </li> <li> When cancelling the selection, the event <code>change</code> will be fired and the selection is restored to the state when the dialog was opened. </li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to select one or more entries from a comprehensive list that contains multiple attributes or values. </li> </ul> <h4>When not to use:</h4> <ul> <li> You need to pick one item from a predefined set of options. Use {@link sap.m.Select select} or {@link sap.m.ComboBox combobox} instead. </li> <li> You need to select a range of item. Use {@link sap.ui.comp.valuehelpdialog.ValueHelpDialog value help dialog} instead. </li> <li> You need to be able to add your own values to an existing list. Use a {@link sap.m.Dialog dialog} instead. </li> </ul> <h4>Note:</h4> The property <code>growing</code> determines the progressive loading. If it's set to true (the default value), the <code>selected count</code> in info bar and search will work only for the currently loaded items. To make sure that all items in the list are loaded at once and the above feature works properly, we recommend setting the <code>growing</code> property to false. <h3>Responsive Behavior</h3> <ul> <li> On phones, the select dialog takes up the whole screen. </li> <li> On desktop and tablet devices, the select dialog appears as a popover. </li> </ul>
+* <h3>Overview</h3> A SelectDialog is a dialog containing a list, search functionality to filter it and a confirmation/cancel button. The list used in the dialog is a growing list and can be filled with any kind of list item. <h3>Structure</h3> <h4>Dialog structure</h4> The select dialog has the following components: <ul> <li>Header - title of the dialog</li> <li>Search field - input field to enter search terms</li> <li>Info toolbar (only in multi-select) - displays the number of currently selected items</li> <li>Content - {@link sap.m.StandardListItem standard list items}, {@link sap.m.DisplayListItem display list items} or {@link sap.m.FeedListItem feed list items}</li> <li>Button toolbar - for confirmation/cancellation buttons </li> </ul> <h4>List structure & selection</h4> <ul> <li> The search field triggers the events <code>search</code> and <code>liveChange</code> where a filter function can be applied to the list binding. </li> <li> The growing functionality of the list does not support two-way Binding, so if you use this control with a JSON model make sure the binding mode is set to <code>OneWay</code> and that you update the selection model manually with the items passed in the <code>confirm</code> event. </li> <li> In the multi-select mode of the select dialog, checkboxes are provided for choosing multiple entries. </li> <li> You can set <code>rememberSelections</code> to true to store the current selection and load this state when the dialog is opened again. </li> <li> When cancelling the selection, the event <code>change</code> will be fired and the selection is restored to the state when the dialog was opened. </li> <li>The SelectDialog is usually displayed at the center of the screen. Its size and position can be changed by the user. To enable this you need to set the <code>resizable</code> and <code>draggable</code> properties. Both properties are available only in desktop mode.</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to select one or more entries from a comprehensive list that contains multiple attributes or values. </li> </ul> <h4>When not to use:</h4> <ul> <li> You need to pick one item from a predefined set of options. Use {@link sap.m.Select select} or {@link sap.m.ComboBox combobox} instead. </li> <li> You need to select a range of item. Use {@link sap.ui.comp.valuehelpdialog.ValueHelpDialog value help dialog} instead. </li> <li> You need to be able to add your own values to an existing list. Use a {@link sap.m.Dialog dialog} instead. </li> </ul> <h4>Note:</h4> The property <code>growing</code> determines the progressive loading. If it's set to true (the default value), the <code>selected count</code> in info bar and search will work only for the currently loaded items. To make sure that all items in the list are loaded at once and the above feature works properly, we recommend setting the <code>growing</code> property to false. <h3>Responsive Behavior</h3> <ul> <li> On phones, the select dialog takes up the whole screen. </li> <li> On desktop and tablet devices, the select dialog appears as a popover. </li> </ul>
 */
 extern class SelectDialog extends sap.ui.core.Control
 {
@@ -167,6 +167,16 @@ Overwrites the default text for the confirmation button.
 	public function getDomRef( ):js.html.Element;
 
 	/**
+	* Gets current value of property {@link #getDraggable draggable}.
+
+When set to <code>true</code>, the SelectDialog is draggable by its header. The default value is <code>false</code>. <b>Note</b>: The SelectDialog can be draggable only in desktop mode.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>draggable</code>
+	*/
+	public function getDraggable( ):Bool;
+
+	/**
 	* Gets current value of property {@link #getGrowing growing}.
 
 If set to <code>true</code>, enables the growing feature of the control to load more items by requesting from the bound model (progressive loading). <b>Note:</b> This feature only works when an <code>items</code> aggregation is bound. <b>Note:</b> Growing property, must not be used together with two-way binding.
@@ -225,6 +235,16 @@ Default value is <code>false</code>.
 	* @return	Value of property <code>rememberSelections</code>
 	*/
 	public function getRememberSelections( ):Bool;
+
+	/**
+	* Gets current value of property {@link #getResizable resizable}.
+
+When set to <code>true</code>, the SelectDialog will have a resize handler in its bottom right corner. The default value is <code>false</code>. <b>Note</b>: The SelectDialog can be resizable only in desktop mode.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>resizable</code>
+	*/
+	public function getResizable( ):Bool;
 
 	/**
 	* Gets current value of property {@link #getShowClearButton showClearButton}.
@@ -324,6 +344,13 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function setContentWidth( sWidth:sap.ui.core.CSSSize):sap.m.SelectDialog;
 
 	/**
+	* Sets the draggable property.
+	* @param	bValue Value for the draggable property
+	* @return	<code>this</code> pointer for chaining
+	*/
+	public function setDraggable( bValue:Bool):sap.m.SelectDialog;
+
+	/**
 	* Sets the growing to the internal list
 	* @param	bValue Value for the list's growing.
 	* @return	<code>this</code> pointer for chaining
@@ -365,6 +392,13 @@ Default value is <code>false</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setRememberSelections( bRememberSelections:Bool):sap.m.SelectDialog;
+
+	/**
+	* Sets the resizable property.
+	* @param	bValue Value for the resizable property
+	* @return	<code>this</code> pointer for chaining
+	*/
+	public function setResizable( bValue:Bool):sap.m.SelectDialog;
 
 	/**
 	* Sets the Clear button visible state
@@ -440,6 +474,16 @@ typedef SelectDialogArgs = sap.ui.core.Control.ControlArgs & {
 	* Overwrites the default text for the confirmation button.
 	*/
 	@:optional var confirmButtonText:String;
+
+	/**
+	* When set to <code>true</code>, the SelectDialog is draggable by its header. The default value is <code>false</code>. <b>Note</b>: The SelectDialog can be draggable only in desktop mode.
+	*/
+	@:optional var draggable:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* When set to <code>true</code>, the SelectDialog will have a resize handler in its bottom right corner. The default value is <code>false</code>. <b>Note</b>: The SelectDialog can be resizable only in desktop mode.
+	*/
+	@:optional var resizable:haxe.extern.EitherType<String,Bool>;
 
     /**
     * The items of the list shown in the search dialog. It is recommended to use a StandardListItem for the dialog but other combinations are also possible.
