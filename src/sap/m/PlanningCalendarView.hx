@@ -54,7 +54,7 @@ Default value is <code>8</code>.
 	/**
 	* Gets current value of property {@link #getIntervalsS intervalsS}.
 
-Defines the number of intervals that are displayed for a {@link sap.m.PlanningCalendar} that is less than 600 pixels wide.
+Defines the number of intervals that are displayed for a {@link sap.m.PlanningCalendar} that is less than 600 pixels wide. <b>Note:</b> On a phone the maximum visible intervals are 8.
 
 Default value is <code>6</code>.
 	* @return	Value of property <code>intervalsS</code>
@@ -139,7 +139,7 @@ Default value is <code>8</code>.
 	/**
 	* Sets a new value for property {@link #getIntervalsS intervalsS}.
 
-Defines the number of intervals that are displayed for a {@link sap.m.PlanningCalendar} that is less than 600 pixels wide.
+Defines the number of intervals that are displayed for a {@link sap.m.PlanningCalendar} that is less than 600 pixels wide. <b>Note:</b> On a phone the maximum visible intervals are 8.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -211,7 +211,7 @@ typedef PlanningCalendarViewArgs = sap.ui.core.Element.ElementArgs & {
 	@:optional var description:String;
 
 	/**
-	* Defines the number of intervals that are displayed for a {@link sap.m.PlanningCalendar} that is less than 600 pixels wide.
+	* Defines the number of intervals that are displayed for a {@link sap.m.PlanningCalendar} that is less than 600 pixels wide. <b>Note:</b> On a phone the maximum visible intervals are 8.
 	*/
 	@:optional var intervalsS:haxe.extern.EitherType<String,Int>;
 

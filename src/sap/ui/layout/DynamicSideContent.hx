@@ -34,6 +34,8 @@ Screen width <= 720 px (for example on a mobile device)
 <ul><li>In this case, the side content automatically disappears from the screen (unless specified to stay under the content) and can be triggered from a pre-set trigger (specified within the app). When the side content is triggered, it replaces the main content. We recommend that you always place the trigger for the side content in the same location, such as in the app footer.</li></ul>
 
 A special case, allows for comparison mode between the main and side content. In this case, the screen is split into 50:50 percent for main vs. side content. The responsive behavior of the equal split is the same as in the standard view - the side content disappears on screen widths of less than 720 px and can only be viewed by triggering it.
+
+<b>Note:</b> If the control that has property sticky inside the <code>DynamicSideContent</code> the stickiness of that control will not work. <code>DynamicSideContent</code> has the overflow: auto style definition and this prevents the sticky elements of the control from becoming fixed at the top of the viewport. This applies for example to {@link sap.m.Table} and {@link sap.m.PlanningCalendar}.
 */
 extern class DynamicSideContent extends sap.ui.core.Control
 {
@@ -154,6 +156,8 @@ Default value is <code>true</code>.
 	* Gets current value of property {@link #getShowSideContent showSideContent}.
 
 Determines whether the side content is visible or hidden.
+
+<b>Note:</b> If both <code>DynamicSideContent</code> and <code>showMainContent</code> properties are set to <code>true</code>, use the <code>toggle</code> method for showing the side content on phone.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>showSideContent</code>
@@ -355,6 +359,8 @@ typedef DynamicSideContentArgs = sap.ui.core.Control.ControlArgs & {
 
 	/**
 	* Determines whether the side content is visible or hidden.
+
+<b>Note:</b> If both <code>DynamicSideContent</code> and <code>showMainContent</code> properties are set to <code>true</code>, use the <code>toggle</code> method for showing the side content on phone.
 	*/
 	@:optional var showSideContent:haxe.extern.EitherType<String,Bool>;
 

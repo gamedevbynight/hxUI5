@@ -155,6 +155,19 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	public function attachStartDateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:viewChange viewChange} event of this <code>sap.m.SinglePlanningCalendar</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.SinglePlanningCalendar</code> itself.
+
+The view was changed by user interaction.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachViewChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+
+	/**
 	* Destroys all the actions in the aggregation {@link #getActions actions}.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -257,6 +270,16 @@ The passed function and listener object must match the ones used for event regis
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachStartDateChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+
+	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:viewChange viewChange} event of this <code>sap.m.SinglePlanningCalendar</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachViewChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Creates a new subclass of class sap.m.SinglePlanningCalendar with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -844,4 +867,9 @@ See {@link #property:enableAppointmentsResize enableAppointmentsResize} for the 
 	* <code>startDate</code> is changed while navigating in the <code>SinglePlanningCalendar</code>.
 	*/
 	@:optional var startDateChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* The view was changed by user interaction.
+	*/
+	@:optional var viewChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

@@ -110,17 +110,11 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setCurrentLocationText( sCurrentLocationText:String):sap.m.Breadcrumbs;
 
 	/**
-	* Sets a new value for property {@link #getSeparatorStyle separatorStyle}.
-
-Determines the visual style of the separator between the <code>Breadcrumbs</code> elements.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>Slash</code>.
-	* @param	sSeparatorStyle New value for property <code>separatorStyle</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
+	* Custom setter for the <code>Breadcrumbs</code> separator style.
+	* @param	sSeparatorStyle null
+	* @return	this
 	*/
-	public function setSeparatorStyle( sSeparatorStyle:sap.m.BreadcrumbsSeparatorStyle):sap.m.Breadcrumbs;
+	public function setSeparatorStyle( sSeparatorStyle:String):Dynamic;
 }
 
 typedef BreadcrumbsArgs = sap.ui.core.Control.ControlArgs & {

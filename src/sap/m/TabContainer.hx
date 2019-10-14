@@ -129,6 +129,16 @@ The passed function and listener object must match the ones used for event regis
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
+	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
+
+Determines the background color of the content in <code>TabContainer</code>.
+
+Default value is <code>List</code>.
+	* @return	Value of property <code>backgroundDesign</code>
+	*/
+	public function getBackgroundDesign( ):sap.m.PageBackgroundDesign;
+
+	/**
 	* Gets content of aggregation {@link #getItems items}.
 
 The items displayed in the <code>TabContainer</code>.
@@ -189,6 +199,19 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @return	The removed item or null
 	*/
 	public function removeItem( vItem:sap.m.TabContainerItem):sap.m.TabContainerItem;
+
+	/**
+	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
+
+Determines the background color of the content in <code>TabContainer</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>List</code>.
+	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setBackgroundDesign( sBackgroundDesign:sap.m.PageBackgroundDesign):sap.m.TabContainer;
 	@:overload( function(oSelectedItem:sap.ui.core.ID):sap.m.TabContainer{ })
 
 	/**
@@ -224,6 +247,11 @@ typedef TabContainerArgs = sap.ui.core.Control.ControlArgs & {
 	* Defines whether an <i>Add New Tab</i> button is displayed in the <code>TabStrip</code>.
 	*/
 	@:optional var showAddNewButton:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Determines the background color of the content in <code>TabContainer</code>.
+	*/
+	@:optional var backgroundDesign:haxe.extern.EitherType<String,sap.m.PageBackgroundDesign>;
 
     /**
     * The items displayed in the <code>TabContainer</code>.

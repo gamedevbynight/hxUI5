@@ -9,13 +9,15 @@ package sap.m;
 
 The <code>DateRangeSelection</code> enables the users to enter a localized date range using touch, mouse, keyboard input, or by selecting a date range in the calendar. They can also navigate directly from one month or year to another.
 
-<b>Note:</b> The {@link sap.ui.unified.Calendar} is used internally only if the <code>DateRangeSelection</code> is opened (not used for the initial rendering). If the <code>sap.ui.unified</code> library is not loaded before the <code>DateRangeSelection</code> is opened, it will be loaded upon opening. This could lead to a waiting time when the <code>DateRangeSelection</code> is opened for the first time. To prevent this, apps using the <code>DateRangeSelection</code> should also load the <code>sap.ui.unified</code> library.
+<b>Note:</b> The control is not UTC aware and the selected date range starts from 00:00:00:000 of the first date and ends in 23:59:59:999 on the second date.
+
+The {@link sap.ui.unified.Calendar} is used internally only if the <code>DateRangeSelection</code> is opened (not used for the initial rendering). If the <code>sap.ui.unified</code> library is not loaded before the <code>DateRangeSelection</code> is opened, it will be loaded upon opening. This could lead to a waiting time when the <code>DateRangeSelection</code> is opened for the first time. To prevent this, apps using the <code>DateRangeSelection</code> should also load the <code>sap.ui.unified</code> library.
 
 <h3>Usage</h3>
 
 <i>When to use?</i>
 
-If you need a time range and know that your user is a power user who has to input lots of data. If the keyboard is the primary device used for navigating the app, use two input fields. This allows the user to quickly jump from field to field. By selecting a date in one of the fields, the other field should recognize the information and jump to the same selection.
+If you need a date range and know that your user is a power user who has to input lots of data. If the keyboard is the primary device used for navigating the app, use two input fields. This allows the user to quickly jump from field to field. By selecting a date in one of the fields, the other field should recognize the information and jump to the same selection.
 
 <i>When not to use?</i>
 

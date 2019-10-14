@@ -74,6 +74,15 @@ If the target type specified in the corresponding control property's binding inf
 	public function bindTree( ):Void;
 
 	/**
+	* Changes the HTTP headers used for data and metadata requests sent by this model.
+
+If batch requests are used, the headers will be set for the batch itself, as well as for the individual requests within the batch. The headers are changed according to the given map of headers: Headers with an <code>undefined</code> value are removed, the other headers are set, and missing headers remain unchanged. The following headers must not be used: <ul> <li> OData V4 requests headers as specified in "8.1 Common Headers" and "8.2 Request Headers" of the specification "OData Version 4.0 Part 1: Protocol" <li> OData V2 request headers as specified in "2.2.5 HTTP Header Fields" of the specification "OData Version 2 v10.1" <li> The headers "Content-Id" and "Content-Transfer-Encoding" <li> The header "SAP-ContextId" </ul> Note: The "X-CSRF-Token" header will not be used for metadata requests.
+	* @param	mHeaders Map of HTTP header names to their values
+	* @return	Void
+	*/
+	public function changeHttpHeaders( ?mHeaders:Dynamic):Void;
+
+	/**
 	* Creates a binding context for the given path. A relative path can only be resolved if a context is provided. Note: The parameters <code>mParameters</code>, <code>fnCallBack</code>, and <code>bReload</code> from {@link sap.ui.model.Model#createBindingContext} are not supported.
 
 It is possible to create binding contexts pointing to metadata. A '##' is recognized as separator in the resolved path and splits it into two parts; note that '#' may also be used as separator but is deprecated since 1.51. The part before the separator is transformed into a metadata context (see {@link sap.ui.model.odata.v4.ODataMetaModel#getMetaContext}). The part following the separator is then interpreted relative to this metadata context, even if it starts with a '/'; a trailing '/' is allowed here, see {@link sap.ui.model.odata.v4.ODataMetaModel#requestObject} for the effect it has.
@@ -123,6 +132,12 @@ Examples: <ul> <li><code>/Products('42')/Name##@com.sap.vocabularies.Common.v1.L
 	* @return	The group ID
 	*/
 	public function getGroupId( ):String;
+
+	/**
+	* Returns a map of HTTP headers used for data and metadata requests.
+	* @return	The map of HTTP headers
+	*/
+	public function getHttpHeaders( ):Dynamic;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.odata.v4.ODataModel.

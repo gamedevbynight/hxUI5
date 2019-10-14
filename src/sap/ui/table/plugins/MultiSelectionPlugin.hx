@@ -62,6 +62,16 @@ The passed function and listener object must match the ones used for event regis
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
+	* Gets current value of property {@link #getEnableNotification enableNotification}.
+
+Enables notifications that are displayed once a selection has been limited.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>enableNotification</code>
+	*/
+	public function getEnableNotification( ):Bool;
+
+	/**
 	* Gets current value of property {@link #getLimit limit}.
 
 Number of indices which can be selected in a range. Accepts positive integer values. If set to 0, the limit is disabled, and the Select All checkbox appears instead of the Deselect All button. <b>Note:</b> To avoid severe performance problems, the limit should only be set to 0 in the following cases: <ul> <li>With client-side models</li> <li>With server-side models if they are used in client mode</li> <li>If the entity set is small</li> </ul>
@@ -123,6 +133,19 @@ Default value is <code>true</code>.
 	* @return	Void
 	*/
 	public function selectAll( ):Void;
+
+	/**
+	* Sets a new value for property {@link #getEnableNotification enableNotification}.
+
+Enables notifications that are displayed once a selection has been limited.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bEnableNotification New value for property <code>enableNotification</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setEnableNotification( bEnableNotification:Bool):sap.ui.table.plugins.MultiSelectionPlugin;
 
 	/**
 	* Sets a new value for property {@link #getLimit limit}.
