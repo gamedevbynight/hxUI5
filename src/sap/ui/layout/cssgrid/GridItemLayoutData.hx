@@ -5,7 +5,7 @@ package sap.ui.layout.cssgrid;
 /**
 * Holds layout data for a grid item.
 */
-extern class GridItemLayoutData extends sap.ui.core.LayoutData
+extern class GridItemLayoutData extends sap.ui.core.LayoutData implements sap.ui.layout.cssgrid.IGridItemLayoutData
 {
 	@:overload(function(?sId:String, ?mSettings:GridItemLayoutDataArgs):Void {})
 	public function new(?mSettings:GridItemLayoutDataArgs):Void;

@@ -4,6 +4,14 @@ package sap.ui.test.matchers;
 
 /**
 * Checks if a property has the exact same value.
+
+As of version 1.72, it is available as a declarative matcher with the following syntax: <code><pre>{
+    propertyStrictEquals: {
+        name: "string",
+        value: "any"
+    }
+}
+</code></pre>
 */
 extern class PropertyStrictEquals extends sap.ui.test.matchers.Matcher
 {

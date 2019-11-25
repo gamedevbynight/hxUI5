@@ -211,8 +211,12 @@ Sample usage: <pre>
 	public static function stopQueue( ):Void;
 
 	/**
-	* Takes the same parameters as {@link sap.ui.test.Opa#waitFor}. Also allows you to specify additional parameters:
-	* @param	options An Object containing conditions for waiting and callbacks
+	* Takes a superset of the parameters of {@link sap.ui.test.Opa#waitFor}.
+	* @param	options An object containing conditions for waiting and callbacks.
+
+The allowed keys are listed below. If a key is not allowed, an error is thrown, stating that "the parameter is not defined in the API".
+
+As of version 1.72, in addition to the listed keys, declarative matchers are also allowed. Any matchers declared on the root level of the options object are merged with those declared in <code>options.matchers</code>. For details on declarative matchers, see the <code>options.matchers</code> property.
 	* @return	A promise that gets resolved on success. If an error occurs, the promise is rejected with the options object. A detailed error message containing the stack trace and Opa logs is available in options.errorMessage.
 	*/
 	public function waitFor( options:Dynamic):jquery.promise;

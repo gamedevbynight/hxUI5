@@ -152,6 +152,16 @@ Default value is <code>false</code>.
 	public function getContainerQuery( ):Bool;
 
 	/**
+	* Gets current value of property {@link #getEnableEmptyOperations enableEmptyOperations}.
+
+Should empty operation be enabled for certain data types. This is also based on their nullable setting.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>enableEmptyOperations</code>
+	*/
+	public function getEnableEmptyOperations( ):Bool;
+
+	/**
 	* Getter for the exclude operations.
 	* @param	sType the type for which the operations are defined
 	* @return	array of operations [<code>sap.m.P13nConditionOperation.BT</code>, <code>sap.m.P13nConditionOperation.EQ</code>]
@@ -272,6 +282,19 @@ Default value is <code>false</code>.
 	public function setContainerQuery( bContainerQuery:Bool):sap.m.P13nFilterPanel;
 
 	/**
+	* Sets a new value for property {@link #getEnableEmptyOperations enableEmptyOperations}.
+
+Should empty operation be enabled for certain data types. This is also based on their nullable setting.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bEnableEmptyOperations New value for property <code>enableEmptyOperations</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setEnableEmptyOperations( bEnableEmptyOperations:Bool):sap.m.P13nFilterPanel;
+
+	/**
 	* Setter for the supported exclude operations array.
 	* @param	aOperation array of operations [<code>sap.m.P13nConditionOperation.BT</code>, <code>sap.m.P13nConditionOperation.EQ</code>]
 	* @param	sType the type for which the operations are defined
@@ -358,6 +381,11 @@ typedef P13nFilterPanelArgs = sap.m.P13nPanel.P13nPanelArgs & {
 	* Can be used to control the layout behavior. Default is "" which will automatically change the layout. With "Desktop", "Table" or"Phone" you can set a fixed layout.
 	*/
 	@:optional var layoutMode:String;
+
+	/**
+	* Should empty operation be enabled for certain data types. This is also based on their nullable setting.
+	*/
+	@:optional var enableEmptyOperations:haxe.extern.EitherType<String,Bool>;
 
     /**
     * Contains content for include and exclude panels.

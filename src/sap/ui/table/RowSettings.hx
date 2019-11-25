@@ -52,6 +52,18 @@ Default value is <code>empty string</code>.
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
+	* Gets current value of property {@link #getNavigated navigated}.
+
+The navigated state of a row.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the row. <b>Note:</b> The navigation indicator is only visible if row actions are available.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>navigated</code>
+	*/
+	public function getNavigated( ):Bool;
+
+	/**
 	* Sets a new value for property {@link #getHighlight highlight}.
 
 The highlight state of the rows.
@@ -80,6 +92,21 @@ Default value is <code>empty string</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHighlightText( sHighlightText:String):sap.ui.table.RowSettings;
+
+	/**
+	* Sets a new value for property {@link #getNavigated navigated}.
+
+The navigated state of a row.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the row. <b>Note:</b> The navigation indicator is only visible if row actions are available.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bNavigated New value for property <code>navigated</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setNavigated( bNavigated:Bool):sap.ui.table.RowSettings;
 }
 
 typedef RowSettingsArgs = sap.ui.core.Element.ElementArgs & {
@@ -97,4 +124,11 @@ Accessibility support is provided through the associated {@link sap.ui.table.Row
 	* Defines the semantics of the {@link sap.ui.table.RowSettings#setHighlight highlight} property for accessibility purposes.
 	*/
 	@:optional var highlightText:String;
+
+	/**
+	* The navigated state of a row.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the row. <b>Note:</b> The navigation indicator is only visible if row actions are available.
+	*/
+	@:optional var navigated:haxe.extern.EitherType<String,Bool>;
 }

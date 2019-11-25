@@ -265,6 +265,16 @@ Determines the title text that appears in the dialog header
 	public function getTitle( ):String;
 
 	/**
+	* Gets current value of property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+Default value is <code>Auto</code>.
+	* @return	Value of property <code>titleAlignment</code>
+	*/
+	public function getTitleAlignment( ):sap.m.TitleAlignment;
+
+	/**
 	* Forward method to the inner dialog: hasStyleClass
 	* @return	true if the class is set, false otherwise
 	*/
@@ -415,6 +425,19 @@ Default value is <code>false</code>.
 	public function setTitle( sTitle:String):sap.m.SelectDialog;
 
 	/**
+	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Auto</code>.
+	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.SelectDialog;
+
+	/**
 	* Forward method to the inner dialog: toggleStyleClass
 	* @return	<code>this</code> pointer for chaining
 	*/
@@ -484,6 +507,11 @@ typedef SelectDialogArgs = sap.ui.core.Control.ControlArgs & {
 	* When set to <code>true</code>, the SelectDialog will have a resize handler in its bottom right corner. The default value is <code>false</code>. <b>Note</b>: The SelectDialog can be resizable only in desktop mode.
 	*/
 	@:optional var resizable:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+	*/
+	@:optional var titleAlignment:haxe.extern.EitherType<String,sap.m.TitleAlignment>;
 
     /**
     * The items of the list shown in the search dialog. It is recommended to use a StandardListItem for the dialog but other combinations are also possible.

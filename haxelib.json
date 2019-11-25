@@ -8,5 +8,6 @@
     "releasenote": "just started",
     "contributors": ["Gamedevbynight"],
     "dependencies": {
-    }
+    },
+    "license": "MIT"
   }

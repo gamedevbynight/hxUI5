@@ -95,6 +95,16 @@ specifies the number of characters which can be entered in the value fields of t
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
+	* Gets current value of property {@link #getNullable nullable}.
+
+Defines if the item is nullable
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>nullable</code>
+	*/
+	public function getNullable( ):Bool;
+
+	/**
 	* Gets current value of property {@link #getPrecision precision}.
 
 if type==numeric the precision will be used to format the entered value (maxIntegerDigits of the used Formatter)
@@ -273,6 +283,19 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setMaxLength( sMaxLength:String):sap.m.P13nItem;
+
+	/**
+	* Sets a new value for property {@link #getNullable nullable}.
+
+Defines if the item is nullable
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bNullable New value for property <code>nullable</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setNullable( bNullable:Bool):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getPrecision precision}.
@@ -500,4 +523,9 @@ typedef P13nItemArgs = sap.ui.core.Element.ElementArgs & {
 	* Defines additional information of the link.
 	*/
 	@:optional var description:String;
+
+	/**
+	* Defines if the item is nullable
+	*/
+	@:optional var nullable:haxe.extern.EitherType<String,Bool>;
 }

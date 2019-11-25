@@ -4,6 +4,13 @@ package sap.ui.test.matchers;
 
 /**
 * Checks if an aggregation is empty.
+
+As of version 1.72, it is available as a declarative matcher with the following syntax: <code><pre>{
+    aggregationEmpty: {
+        name: "string"
+    }
+}
+</code>
 */
 extern class AggregationEmpty extends sap.ui.test.matchers.Matcher
 {

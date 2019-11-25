@@ -7,7 +7,7 @@ package sap.m;
 
 <h3>Overview</h3> The sap.m.Page is a container control that holds one whole screen of an application. The page has three distinct areas that can hold content - a header, content area and a footer. <h3>Structure</h3> <h4>Header</h4> The top most area of the page is occupied by the header. The standard header includes a navigation button and a title. Alternatively, you can create your own custom header, which is defined in the <code>customHeader</code> aggregation. <h4>Content</h4> The content occupies the main part of the page. Only the content area is scrollable by default. This can be prevented by setting <code>enableScrolling</code> to <code>false</code>. <h4>Footer</h4> The footer is optional and occupies the fixed bottom part of the page. Alternatively, the footer can be floating above the bottom part of the content. This is enabled with the <code>floatingFooter</code> property.
 
-<b>Note:</b> All accessibility information for the different areas and their corresponding ARIA roles is set in the aggregation <code>landmarkInfo</code> of type {@link sap.m.PageAccessibleLandmarkInfo}
+<b>Note:</b> All accessibility information for the different areas and their corresponding ARIA roles is set in the aggregation <code>landmarkInfo</code> of type {@link sap.m.PageAccessibleLandmarkInfo} <h3>Responsive Behavior</h3> When using the sap.m.Page in SAP Quartz theme, the breakpoints and layout paddings could be determined by the container's width. To enable this concept and add responsive paddings to an element of the Page control, you may add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--subHeader</code>, <code>sapUiResponsivePadding--content</code>, <code>sapUiResponsivePadding--footer</code>, <code>sapUiResponsivePadding--floatingFooter</code>.
 */
 extern class Page extends sap.ui.core.Control
 {
@@ -253,6 +253,16 @@ The title text appearing in the page header bar.
 	* @return	Value of property <code>title</code>
 	*/
 	public function getTitle( ):String;
+
+	/**
+	* Gets current value of property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+Default value is <code>Auto</code>.
+	* @return	Value of property <code>titleAlignment</code>
+	*/
+	public function getTitleAlignment( ):sap.m.TitleAlignment;
 
 	/**
 	* Gets current value of property {@link #getTitleLevel titleLevel}.
@@ -505,6 +515,19 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setTitle( sTitle:String):sap.m.Page;
 
 	/**
+	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Auto</code>.
+	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.Page;
+
+	/**
 	* Sets a new value for property {@link #getTitleLevel titleLevel}.
 
 Defines the semantic level of the title. Using "Auto" no explicit level information is written. Used for accessibility purposes only.
@@ -578,6 +601,11 @@ The Page only allows vertical scrolling because horizontal scrolling is discoura
 	* Decides whether the footer can float. When set to true, the footer is not fixed below the content area anymore, but rather floats over it with a slight offset from the bottom.
 	*/
 	@:optional var floatingFooter:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+	*/
+	@:optional var titleAlignment:haxe.extern.EitherType<String,sap.m.TitleAlignment>;
 
     /**
     * The content of this page

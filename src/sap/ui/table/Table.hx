@@ -337,12 +337,6 @@ See {@link sap.ui.base.ManagedObject#bindAggregation ManagedObject.bindAggregati
 	public function destroyRowSettingsTemplate( ):sap.ui.table.Table;
 
 	/**
-	* Destroys the title in the aggregation {@link #getTitle title}.
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function destroyTitle( ):sap.ui.table.Table;
-
-	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeOpenContextMenu beforeOpenContextMenu} event of this <code>sap.ui.table.Table</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -801,7 +795,11 @@ If no value is set (includes 0), a default height is applied based on the conten
 	/**
 	* Gets content of aggregation {@link #getRows rows}.
 
-Rows of the Table
+This aggregation is managed by the table itself. It can only be used with data binding, is read-only, and does not support templates or factories.
+
+Rows are created and rendered only for a subset of the available data and reused for performance reasons. When scrolling, only the binding contexts are updated to show the correct section of the data. This makes it possible to bind the rows to large data sets. But you must not change rows and their children programmatically, as these changes might get lost when the table updates the rows the next time. Also, properties must not be set to static values, as these would not change when scrolling.
+
+The cells of rows can be defined with the {@link sap.ui.table.Column#setTemplate template} aggregation of the columns in the {@link sap.ui.table.Table#setColumns columns} aggregation of the table. The actions of rows can be defined with the {@link sap.ui.table.Table#setRowActionTemplate rowActionTemplate} aggregation of the table. Furthermore, row-specific settings can be defined with the {@link sap.ui.table.Table#setRowSettingsTemplate rowSettingsTemplate} aggregation of the table.
 	* @return	null
 	*/
 	public function getRows( ):Array<sap.ui.table.Row>;
@@ -885,14 +883,6 @@ Default value is <code>100</code>.
 	* @return	Value of property <code>threshold</code>
 	*/
 	public function getThreshold( ):Int;
-
-	/**
-	* Gets content of aggregation {@link #getTitle title}.
-
-Control or text of title section of the Table (if not set it will be hidden)
-	* @return	null
-	*/
-	public function getTitle( ):Dynamic;
 
 	/**
 	* Gets current value of property {@link #getVisibleRowCount visibleRowCount}.
@@ -1461,14 +1451,6 @@ Default value is <code>false</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setThreshold( iThreshold:Int):sap.ui.table.Table;
-	@:overload( function(vTitle:sap.ui.core.Control):sap.ui.table.Table{ })
-
-	/**
-	* Sets the aggregated {@link #getTitle title}.
-	* @param	vTitle The title to set
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setTitle( vTitle:String):sap.ui.table.Table;
 	@:overload( function(vTooltip:String):sap.ui.table.Table{ })
 
 	/**
@@ -1706,11 +1688,6 @@ In the <code>"Interactive"</code> mode, the table has as many rows as defined in
 	@:optional var alternateRowColors:haxe.extern.EitherType<String,Bool>;
 
     /**
-    * Control or text of title section of the Table (if not set it will be hidden)
-    */
-	@:optional var title:haxe.extern.EitherType<String,sap.ui.core.Control>;
-
-    /**
     * Control or text of footer section of the Table (if not set it will be hidden)
     */
 	@:optional var footer:haxe.extern.EitherType<String,sap.ui.core.Control>;
@@ -1726,7 +1703,11 @@ In the <code>"Interactive"</code> mode, the table has as many rows as defined in
 	@:optional var columns:Array<haxe.extern.EitherType<String,sap.ui.table.Column>>;
 
     /**
-    * Rows of the Table
+    * This aggregation is managed by the table itself. It can only be used with data binding, is read-only, and does not support templates or factories.
+
+Rows are created and rendered only for a subset of the available data and reused for performance reasons. When scrolling, only the binding contexts are updated to show the correct section of the data. This makes it possible to bind the rows to large data sets. But you must not change rows and their children programmatically, as these changes might get lost when the table updates the rows the next time. Also, properties must not be set to static values, as these would not change when scrolling.
+
+The cells of rows can be defined with the {@link sap.ui.table.Column#setTemplate template} aggregation of the columns in the {@link sap.ui.table.Table#setColumns columns} aggregation of the table. The actions of rows can be defined with the {@link sap.ui.table.Table#setRowActionTemplate rowActionTemplate} aggregation of the table. Furthermore, row-specific settings can be defined with the {@link sap.ui.table.Table#setRowSettingsTemplate rowSettingsTemplate} aggregation of the table.
     */
 	@:optional var rows:Array<haxe.extern.EitherType<String,sap.ui.table.Row>>;
 

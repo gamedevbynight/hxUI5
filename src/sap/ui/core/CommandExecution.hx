@@ -68,6 +68,16 @@ Default value is <code>true</code>.
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
+	* Gets current value of property {@link #getVisible visible}.
+
+Whether the CommandExecution is visible, or not. By default, it is visible. If not visible, the CommandExecution will not be triggered even if it is enabled.
+
+Default value is <code>true</code>.
+	* @return	Value of property <code>visible</code>
+	*/
+	public function getVisible( ):Bool;
+
+	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
 
 Whether the CommandExecution is enabled or not. By default, it is enabled
@@ -79,6 +89,13 @@ Default value is <code>true</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setEnabled( bEnabled:Bool):sap.ui.core.CommandExecution;
+
+	/**
+	* Sets whether the <code>CommandExecution</code> is visible, or not. If set to false, the <code>CommandExecution</code> will unregister the shortcut. If not visible, the CommandExecution will not be triggered even if it is enabled.
+	* @param	bValue Whether the CommandExecution is visible, or not.
+	* @return	The CommandExecution
+	*/
+	public function setVisible( bValue:Bool):sap.ui.core.Element;
 
 	/**
 	* Fires the execute event and triggers the attached handler. If the CommandExecution is disabled, the handler will not be triggered.

@@ -4,6 +4,15 @@ package sap.ui.test.matchers;
 
 /**
 * Checks if an aggregation contains at least one item that has a property set to a certain value.
+
+As of version 1.72, it is available as a declarative matcher with the following syntax: <pre><code>{
+    aggregationContainsPropertyEqual: {
+        aggregationName: "string",
+        propertyName: "string",
+        propertyValue: "string"
+    }
+}
+</code></pre>
 */
 extern class AggregationContainsPropertyEqual extends sap.ui.test.matchers.Matcher
 {

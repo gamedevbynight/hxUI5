@@ -44,7 +44,19 @@ package sap.f;
     */
     var Accent9= "Accent9";
     /**
-    * Random color, chosen from the other options (Accent1 to Accent10)
+    * Recommended when used as a placeholder (no image or initials are provided).
+    */
+    var Placeholder= "Placeholder";
+    /**
+    * Random color, chosen from the accent options (Accent1 to Accent10)
     */
     var Random= "Random";
+    /**
+    * Recommended when used as an icon in a tile.
+    */
+    var TileIcon= "TileIcon";
+    /**
+    * Transparent
+    */
+    var Transparent= "Transparent";
 }

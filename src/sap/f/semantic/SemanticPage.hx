@@ -3,7 +3,7 @@ package sap.f.semantic;
 @:native("sap.f.semantic.SemanticPage")
 
 /**
-* An enhanced {@link sap.f.DynamicPage}, that contains controls with semantic-specific meaning.
+* Provides enhanced functionality by internally aggregating {@link sap.f.DynamicPage} and contains controls with semantic-specific meaning.
 
 <h3>Overview</h3>
 

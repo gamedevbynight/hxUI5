@@ -4,6 +4,13 @@ package sap.ui.test.matchers;
 
 /**
 * Checks if an aggregation contains at least one entry.
+
+As of version 1.72, it is available as a declarative matcher with the following syntax: <code><pre>{
+    aggregationFilled: {
+        name: "string"
+    }
+}
+</code></pre>
 */
 extern class AggregationFilled extends sap.ui.test.matchers.Matcher
 {

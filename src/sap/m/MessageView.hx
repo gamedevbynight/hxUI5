@@ -31,19 +31,6 @@ This event will be fired when an active title of a MessageItem is pressed
 	public function attachActiveTitlePress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
-	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterOpen afterOpen} event of this <code>sap.m.MessageView</code>.
-
-When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessageView</code> itself.
-
-This event will be fired after the popover is opened
-	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
-	* @param	fnFunction The function to be called when the event occurs
-	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function attachAfterOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
-
-	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:itemSelect itemSelect} event of this <code>sap.m.MessageView</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessageView</code> itself.
@@ -116,16 +103,6 @@ The passed function and listener object must match the ones used for event regis
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachActiveTitlePress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
-
-	/**
-	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterOpen afterOpen} event of this <code>sap.m.MessageView</code>.
-
-The passed function and listener object must match the ones used for event registration.
-	* @param	fnFunction The function to be called, when the event occurs
-	* @param	oListener Context object on which the given function had to be called
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function detachAfterOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:itemSelect itemSelect} event of this <code>sap.m.MessageView</code>.
@@ -371,11 +348,6 @@ typedef MessageViewArgs = sap.ui.core.Control.ControlArgs & {
 	* This event will be fired when an active title of a MessageItem is pressed
 	*/
 	@:optional var activeTitlePress:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
-
-	/**
-	* This event will be fired after the popover is opened
-	*/
-	@:optional var afterOpen:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
 	* This event will be fired when description is shown

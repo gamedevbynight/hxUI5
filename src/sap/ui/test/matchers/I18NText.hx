@@ -6,6 +6,16 @@ package sap.ui.test.matchers;
 * The I18NText matcher checks if a control property has the same value as a text from an I18N file.
 
 The matcher automatically: <ul> <li> retrieves the text from the assigned 'i18n' model (name can be changed) </li> <li> checks that the I18N key does actually exist in the file </li> <li> checks if asynchronously loaded I18N have actually been loaded </li> </ul>
+
+As of version 1.72, it is available as a declarative matcher with the following syntax: <code><pre>{
+    i18NText: {
+        propertyName: "string",
+        key: "string",
+        parameters: "any",
+        modelName: "string"
+    }
+}
+</code></pre>
 */
 extern class I18NText extends sap.ui.test.matchers.Matcher
 {

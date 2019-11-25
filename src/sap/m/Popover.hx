@@ -7,7 +7,7 @@ package sap.m;
 
 <h3>Overview</h3> The popover displays additional information for an object in a compact way and without leaving the page. The popover can contain various UI elements such as fields, tables, images, and charts. It can also include actions in the footer. <h3>Structure</h3> The popover has three main areas: <ul> <li>Header (optional) - with a back button and a title</li> <li>Content - holds all the controls</li> <li>Footer (optional) - with additional action buttons</li> </ul> <h4>Guidelines</h4> <ul> <li>Do not overlap popovers.</li> <li>You can determine the {@link sap.m.PlacementType placement} of the popover relative to the control that opens it.</li> <li>Ensure that the content has a basic design and shows only the most important information.</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to define your own structure of controls within the popover.</li> </ul> <h4>When not to use:</h4> <ul> <li>The {@link sap.m.QuickView QuickView} is more appropriate for your use case.</li> </ul> <h3>Responsive Behavior</h3> The popover is closed when the user clicks or taps outside the popover or selects an action within the popover. You can prevent this with the <code>modal</code> property. The popover can be resized when the <code>resizable</code> property is enabled.
 
-<ul> <li>{@link sap.m.Popover} is <u>not</u> responsive on mobile devices - it will always be rendered as a popover and you have to take care of its size and position.</li> <li>{@link sap.m.ResponsivePopover} is adaptive and responsive. It renders as a dialog with a close button in the header on phones, and as a popover on tablets.</li> </ul>
+When using the sap.m.Popover in Sap Quartz theme, the breakpoints and layout paddings could be determined by the container's width. To enable this concept and add responsive paddings to an element of the Popover control, you may add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--subHeader</code>, <code>sapUiResponsivePadding--content</code>, <code>sapUiResponsivePadding--footer</code>. <ul> <li>{@link sap.m.Popover} is <u>not</u> responsive on mobile devices - it will always be rendered as a popover and you have to take care of its size and position.</li> <li>{@link sap.m.ResponsivePopover} is adaptive and responsive. It renders as a dialog with a close button in the header on phones, and as a popover on tablets.</li> </ul>
 */
 extern class Popover extends sap.ui.core.Control implements sap.ui.core.PopupInterface
 {
@@ -369,6 +369,16 @@ Title text appears in the header. This property will be ignored when showHeader 
 	public function getTitle( ):String;
 
 	/**
+	* Gets current value of property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+Default value is <code>Auto</code>.
+	* @return	Value of property <code>titleAlignment</code>
+	*/
+	public function getTitleAlignment( ):sap.m.TitleAlignment;
+
+	/**
 	* Gets current value of property {@link #getVerticalScrolling verticalScrolling}.
 
 This property indicates if user can scroll vertically inside popover when the content is bigger than the content area. However, when scrollable control (sap.m.ScrollContainer, sap.m.Page) is in the popover, this property needs to be set to false to disable the scrolling in popover in order to make the scrolling in the child control work properly. Popover detects if there's sap.m.NavContainer, sap.m.Page, or sap.m.ScrollContainer as direct child added to Popover. If there is, Popover will turn off scrolling by setting this property to false automatically ignoring the existing value of this property.
@@ -637,6 +647,19 @@ If you want to show a header in the popover, don't forget to set the {@link #set
 	public function setTitle( sTitle:String):sap.m.Popover;
 
 	/**
+	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Auto</code>.
+	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.Popover;
+
+	/**
 	* Sets a new value for property {@link #getVerticalScrolling verticalScrolling}.
 
 This property indicates if user can scroll vertically inside popover when the content is bigger than the content area. However, when scrollable control (sap.m.ScrollContainer, sap.m.Page) is in the popover, this property needs to be set to false to disable the scrolling in popover in order to make the scrolling in the child control work properly. Popover detects if there's sap.m.NavContainer, sap.m.Page, or sap.m.ScrollContainer as direct child added to Popover. If there is, Popover will turn off scrolling by setting this property to false automatically ignoring the existing value of this property.
@@ -721,6 +744,11 @@ typedef PopoverArgs = sap.ui.core.Control.ControlArgs & {
 	* Specifies the aria-modal of the Popover.
 	*/
 	@:optional var ariaModal:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+	*/
+	@:optional var titleAlignment:haxe.extern.EitherType<String,sap.m.TitleAlignment>;
 
     /**
     * The content inside the popover.

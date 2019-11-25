@@ -4,6 +4,17 @@ package sap.ui.test.matchers;
 
 /**
 * The LabelFor matcher checks if a given control has a label associated with it. For every Label on the page, the matcher checks if: <ul> <li> its labelFor association is to the given control </li> <li> its properties match a condition </li> </ul> Labels can be matched by: <ul> <li> text </li> <li> i18n key, modelName, parameters or propertyName. See {@link sap.ui.test.matchers.I18NText} </li> <li> combination of text and key is not possible </li> </ul> Some control types cannot be in a labelFor association: <ul> <li> sap.ui.comp.navpopover.SmartLink </li> <li> sap.m.Link </li> <li> sap.m.Label </li> <li> sap.m.Text </li> </ul>
+
+As of version 1.72, it is available as a declarative matcher with the following syntax: <code><pre>{
+    labelFor: {
+        text: "string",
+        modelName: "string",
+        key: "string",
+        parameters: "any",
+        propertyName: "string"
+    }
+}
+</code></pre>
 */
 extern class LabelFor extends sap.ui.test.matchers.Matcher
 {

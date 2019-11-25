@@ -26,10 +26,33 @@ extern class BlockBase extends sap.ui.core.Control
 	public function addMapping( oMapping:sap.uxap.ModelMapping):sap.uxap.BlockBase;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:viewInit viewInit} event of this <code>sap.uxap.BlockBase</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.uxap.BlockBase</code> itself.
+
+Fired when an aggregated view is instantiated.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.BlockBase</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachViewInit( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.BlockBase;
+
+	/**
 	* Destroys all the mappings in the aggregation {@link #getMappings mappings}.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function destroyMappings( ):sap.uxap.BlockBase;
+
+	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:viewInit viewInit} event of this <code>sap.uxap.BlockBase</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachViewInit( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.BlockBase;
 
 	/**
 	* Creates a new subclass of class sap.uxap.BlockBase with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -79,7 +102,7 @@ Map external UI5 model and internal Block model
 	/**
 	* Gets current value of property {@link #getMode mode}.
 
-Determines the mode of the block. When block is used inside ObjectPage this mode is inherited my the SubSection. The mode of the block is changed when SubSection mode changes.
+Determines the mode of the block. See {@link sap.uxap.ObjectPageSubSectionMode ObjectPageSubSectionMode}. When <code>BlockBase</code> is used inside an <code>ObjectPageLayout</code>, the <code>mode</code> property is inherited from the respective {@link sap.uxap.ObjectPageSubSection SubSection}. The <code>mode</code> property of <code>BlockBase</code> changes when the <code>mode</code> property of <code>ObjectPageSubSection</code> changes.
 	* @return	Value of property <code>mode</code>
 	*/
 	public function getMode( ):String;
@@ -204,7 +227,7 @@ Default value is <code>false</code>.
 typedef BlockBaseArgs = sap.ui.core.Control.ControlArgs & {
 
 	/**
-	* Determines the mode of the block. When block is used inside ObjectPage this mode is inherited my the SubSection. The mode of the block is changed when SubSection mode changes.
+	* Determines the mode of the block. See {@link sap.uxap.ObjectPageSubSectionMode ObjectPageSubSectionMode}. When <code>BlockBase</code> is used inside an <code>ObjectPageLayout</code>, the <code>mode</code> property is inherited from the respective {@link sap.uxap.ObjectPageSubSection SubSection}. The <code>mode</code> property of <code>BlockBase</code> changes when the <code>mode</code> property of <code>ObjectPageSubSection</code> changes.
 	*/
 	@:optional var mode:String;
 
@@ -241,7 +264,14 @@ typedef BlockBaseArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var _views:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 
 	/**
-	* The view that is rendered now. Can be used as getter for the rendered view.
+	* The current view. Corresponds to the currently specified <code>mode</code> of the <code>sap.uxap.BlockBase<code>. Can be used as a getter for the internally created view.
+
+<b>Note:</b> As the views are created asynchronously, this association will be updated only after the view creation is completed. Applications that want to be notified when a view is created should subscribe to the <code>viewInit</code> event.
 	*/
 	@:optional var selectedView:haxe.extern.EitherType<String,sap.ui.core.Control>;
+
+	/**
+	* Fired when an aggregated view is instantiated.
+	*/
+	@:optional var viewInit:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

@@ -45,7 +45,7 @@ Determines the background color of the <code>AnchorBar</code>.
 	* Returns an sap.ui.core.delegate.ScrollEnablement object used to handle scrolling.
 	* @return	The <code>sap.ui.core.delegate.ScrollEnablement</code> instance
 	*/
-	public function getScrollDelegate( ):Dynamic;
+	public function getScrollDelegate( ):sap.ui.core.delegate.ScrollEnablement;
 
 	/**
 	* ID of the element which is the current target of the association {@link #getSelectedButton selectedButton}, or <code>null</code>.

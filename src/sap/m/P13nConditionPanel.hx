@@ -185,7 +185,7 @@ Default value is <code>-1</code>.
 	* @param	sType defines the type for which the operations should be returned.
 	* @return	array of operations
 	*/
-	public function getOperations( sType:String):Array<sap.m.P13nConditionOperation>;
+	public function getOperations( ?sType:String):Array<sap.m.P13nConditionOperation>;
 
 	/**
 	* Gets current value of property {@link #getShowLabel showLabel}.

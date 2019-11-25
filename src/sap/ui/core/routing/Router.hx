@@ -370,10 +370,11 @@ The parameters will be URI encoded - the characters ; , / ? : @ & = + $ are rese
 If the given route name can't be found, an error message is logged to the console and the hash will be changed to the empty string.
 	* @param	sName Name of the route
 	* @param	oParameters Parameters for the route
+	* @param	oComponentTargetInfo Information for route name and parameters of the router in nested components. When any target of the route which is specified with the <code>sName</code> parameter loads a component and a route of this component whose pattern is different than an empty string should be matched directly with this navTo call, the route name and its parameters can be given by using this parameter. Information for deeper nested component target can be given within the <code>componentTargetInfo</code> property which contains the same properties as the top level.
 	* @param	bReplace If set to <code>true</code>, the hash is replaced, and there will be no entry in the browser history, if set to <code>false</code>, the hash is set and the entry is stored in the browser history.
 	* @return	this for chaining.
 	*/
-	public function navTo( sName:String, ?oParameters:Dynamic, ?bReplace:Bool):sap.ui.core.routing.Router;
+	public function navTo( sName:String, ?oParameters:Dynamic, ?oComponentTargetInfo:Dynamic, ?bReplace:Bool):sap.ui.core.routing.Router;
 
 	/**
 	* Registers the router to access it from another context.

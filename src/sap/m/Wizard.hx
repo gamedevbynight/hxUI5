@@ -4,6 +4,8 @@ package sap.m;
 
 /**
 * Enables users to accomplish a single goal which consists of multiple dependable sub-tasks. <h3>Overview</h3> The sap.m.Wizard helps users complete a complex and unfamiliar task by dividing it into sections and guiding the user through it. The wizard has two main areas - a navigation area at the top showing the step sequence and a content area below it. <h3>Structure</h3> <h4>Navigation Area</h4> The top most area of the wizard is occupied by the navigation area. It shows the sequence of {@link sap.m.WizardStep wizard steps}. <ul> <li>The minimum number of steps is 3 and the maximum is 8 and are stored in the <code>steps</code> aggregation.</li> <li>Steps can be branching depending on choices the user made in their input - this is set by the <code>enableBranching</code> property. </li> <li>Steps can have different visual representations - numbers or icons. You can add labels for better readability </li> </ul> <h4>Content</h4> The content occupies the main part of the page. It can hold any type of input controls. The content is kept in {@link sap.m.WizardStep wizard steps}. <h4>Next Step Button</h4> The next step button is displayed below the content. It can be hidden by setting <code>showNextButton</code> to <code>false</code> and displayed, for example, only after the user has filled all mandatory fields. <h3>Usage</h3> <h4>When to use:</h4> When the user has to accomplish a long or unfamiliar task. <h4>When not to use:</h4> When the user has to accomplish a routine task that is clear and familiar. When the task has only two steps or less. <h3>Responsive Behavior</h3> On mobile devices the steps in the StepNavigator are grouped together and overlap. Tapping on them will show a popover to select the step to navigate to.
+
+When using the sap.m.Wizard in SAP Quartz theme, the breakpoints and layout paddings could be determined by the container's width. To enable this concept and add responsive paddings to the navigation area and to the content of the Wizard control, you may add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--content</code>.
 */
 extern class Wizard extends sap.ui.core.Control
 {
@@ -12,10 +14,10 @@ extern class Wizard extends sap.ui.core.Control
 
 	/**
 	* Adds a new step to the Wizard.
-	* @param	wizardStep New WizardStep to add to the Wizard
-	* @return	Pointer to the control instance for chaining
+	* @param	oWizardStep New WizardStep to add to the Wizard.
+	* @return	Pointer to the control instance for chaining.
 	*/
-	public function addStep( wizardStep:sap.m.WizardStep):sap.m.Wizard;
+	public function addStep( oWizardStep:sap.m.WizardStep):sap.m.Wizard;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:complete complete} event of this <code>sap.m.Wizard</code>.
@@ -71,10 +73,11 @@ The passed function and listener object must match the ones used for event regis
 
 	/**
 	* Discards all progress done from the given step(incl.) to the end of the wizard. The verified state of the steps is returned to the initial provided.
-	* @param	step The step after which the progress is discarded.
+	* @param	oStep The step after which the progress is discarded.
+	* @param	bPreserveNextStep Indicating whether we should preserve next step
 	* @return	Pointer to the control instance for chaining.
 	*/
-	public function discardProgress( step:sap.m.WizardStep):sap.m.Wizard;
+	public function discardProgress( oStep:sap.m.WizardStep, bPreserveNextStep:Bool):sap.m.Wizard;
 
 	/**
 	* Creates a new subclass of class sap.m.Wizard with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -88,6 +91,16 @@ The passed function and listener object must match the ones used for event regis
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
+	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
+
+This property is used to set the background color of a Wizard content. The <code>Standard</code> option with the default background color is used, if not specified.
+
+Default value is <code>Standard</code>.
+	* @return	Value of property <code>backgroundDesign</code>
+	*/
+	public function getBackgroundDesign( ):sap.m.PageBackgroundDesign;
+
+	/**
 	* ID of the element which is the current target of the association {@link #getCurrentStep currentStep}, or <code>null</code>.
 	* @return	null
 	*/
@@ -96,7 +109,7 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getEnableBranching enableBranching}.
 
-Enables the branching functionality of the Wizard. Branching gives the developer the ability to define multiple routes a user is able to take based on the input in the current step. It is up to the developer to programatically check for what is the input in the current step and set a concrete next step amongs the available subsequent steps. Note: If this property is set to false, <code>next</code> and <code>subSequentSteps</code> associations of the WizardStep control are ignored.
+Enables the branching functionality of the Wizard. Branching gives the developer the ability to define multiple routes a user is able to take based on the input in the current step. It is up to the developer to programmatically check for what is the input in the current step and set a concrete next step amongst the available subsequent steps. Note: If this property is set to false, <code>next</code> and <code>subSequentSteps</code> associations of the WizardStep control are ignored.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>enableBranching</code>
@@ -182,10 +195,10 @@ Default value is <code>auto</code>.
 
 	/**
 	* Invalidates the given step.
-	* @param	step The step to be invalidated.
+	* @param	oStep The step to be invalidated.
 	* @return	Pointer to the control instance for chaining.
 	*/
-	public function invalidateStep( step:sap.m.WizardStep):sap.m.Wizard;
+	public function invalidateStep( oStep:sap.m.WizardStep):sap.m.Wizard;
 
 	/**
 	* Validates the current step, and moves one step further.
@@ -204,19 +217,19 @@ Default value is <code>auto</code>.
 	* @return	Pointer to the Steps that were removed.
 	*/
 	public function removeAllSteps( ):Array<sap.m.WizardStep>;
-	@:overload( function(stepId:sap.m.WizardStep):sap.m.Wizard{ })
+	@:overload( function(vStepId:sap.m.WizardStep):sap.m.Wizard{ })
 
 	/**
 	* Sets association currentStep to the given step.
-	* @param	stepId The step of the wizard that will be currently activated (meaning the last step)
+	* @param	vStepId The step of the wizard that will be currently activated (meaning the last step).
 	* @return	Reference to the control instance for chaining.
 	*/
-	public function setCurrentStep( stepId:String):sap.m.Wizard;
+	public function setCurrentStep( vStepId:String):sap.m.Wizard;
 
 	/**
 	* Sets a new value for property {@link #getEnableBranching enableBranching}.
 
-Enables the branching functionality of the Wizard. Branching gives the developer the ability to define multiple routes a user is able to take based on the input in the current step. It is up to the developer to programatically check for what is the input in the current step and set a concrete next step amongs the available subsequent steps. Note: If this property is set to false, <code>next</code> and <code>subSequentSteps</code> associations of the WizardStep control are ignored.
+Enables the branching functionality of the Wizard. Branching gives the developer the ability to define multiple routes a user is able to take based on the input in the current step. It is up to the developer to programmatically check for what is the input in the current step and set a concrete next step amongst the available subsequent steps. Note: If this property is set to false, <code>next</code> and <code>subSequentSteps</code> associations of the WizardStep control are ignored.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -228,10 +241,10 @@ Default value is <code>false</code>.
 
 	/**
 	* Sets the text for the finish button. By default it is "Review".
-	* @param	value The text of the finish button.
+	* @param	sValue The text of the finish button.
 	* @return	Reference to the control instance for chaining.
 	*/
-	public function setFinishButtonText( value:String):sap.m.Wizard;
+	public function setFinishButtonText( sValue:String):sap.m.Wizard;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -248,10 +261,10 @@ Default value is <code>100%</code>.
 
 	/**
 	* Sets the visibility of the next button.
-	* @param	value True to show the button or false to hide it.
+	* @param	bValue True to show the button or false to hide it.
 	* @return	Reference to the control instance for chaining.
 	*/
-	public function setShowNextButton( value:Bool):sap.m.Wizard;
+	public function setShowNextButton( bValue:Bool):sap.m.Wizard;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -268,10 +281,10 @@ Default value is <code>auto</code>.
 
 	/**
 	* Validates the given step.
-	* @param	step The step to be validated.
+	* @param	oStep The step to be validated.
 	* @return	Pointer to the control instance for chaining.
 	*/
-	public function validateStep( step:sap.m.WizardStep):sap.m.Wizard;
+	public function validateStep( oStep:sap.m.WizardStep):sap.m.Wizard;
 }
 
 typedef WizardArgs = sap.ui.core.Control.ControlArgs & {
@@ -297,9 +310,14 @@ typedef WizardArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var finishButtonText:String;
 
 	/**
-	* Enables the branching functionality of the Wizard. Branching gives the developer the ability to define multiple routes a user is able to take based on the input in the current step. It is up to the developer to programatically check for what is the input in the current step and set a concrete next step amongs the available subsequent steps. Note: If this property is set to false, <code>next</code> and <code>subSequentSteps</code> associations of the WizardStep control are ignored.
+	* Enables the branching functionality of the Wizard. Branching gives the developer the ability to define multiple routes a user is able to take based on the input in the current step. It is up to the developer to programmatically check for what is the input in the current step and set a concrete next step amongst the available subsequent steps. Note: If this property is set to false, <code>next</code> and <code>subSequentSteps</code> associations of the WizardStep control are ignored.
 	*/
 	@:optional var enableBranching:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* This property is used to set the background color of a Wizard content. The <code>Standard</code> option with the default background color is used, if not specified.
+	*/
+	@:optional var backgroundDesign:haxe.extern.EitherType<String,sap.m.PageBackgroundDesign>;
 
     /**
     * The wizard steps to be included in the content of the control.

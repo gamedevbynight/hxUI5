@@ -216,6 +216,16 @@ Buttons can be added to the footer area of the Dialog through this aggregation. 
 	public function getButtons( ):Array<sap.m.Button>;
 
 	/**
+	* Gets current value of property {@link #getCloseOnNavigation closeOnNavigation}.
+
+Indicates whether the Dialog will be closed automatically when a routing navigation occurs.
+
+Default value is <code>true</code>.
+	* @return	Value of property <code>closeOnNavigation</code>
+	*/
+	public function getCloseOnNavigation( ):Bool;
+
+	/**
 	* Gets content of aggregation {@link #getContent content}.
 
 The content inside the Dialog.<br/><b>Note:</b> When the content of the Dialog is comprised of controls that use <code>position: absolute</code>, such as <code>SplitContainer</code>, the Dialog has to have either <code>stretch: true</code> or <code>contentHeight</code> set.
@@ -360,6 +370,16 @@ Title text appears in the Dialog header.
 	public function getTitle( ):String;
 
 	/**
+	* Gets current value of property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+Default value is <code>Auto</code>.
+	* @return	Value of property <code>titleAlignment</code>
+	*/
+	public function getTitleAlignment( ):sap.m.TitleAlignment;
+
+	/**
 	* Gets current value of property {@link #getType type}.
 
 The <code>type</code> of the Dialog. In some themes, the type Message will limit the Dialog width within 480px on tablet and desktop.
@@ -491,6 +511,19 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setBeginButton( oBeginButton:sap.m.Button):sap.m.Dialog;
+
+	/**
+	* Sets a new value for property {@link #getCloseOnNavigation closeOnNavigation}.
+
+Indicates whether the Dialog will be closed automatically when a routing navigation occurs.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bCloseOnNavigation New value for property <code>closeOnNavigation</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setCloseOnNavigation( bCloseOnNavigation:Bool):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getContentHeight contentHeight}.
@@ -655,6 +688,19 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setTitle( sTitle:String):sap.m.Dialog;
 
 	/**
+	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Auto</code>.
+	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.Dialog;
+
+	/**
 	* Sets a new value for property {@link #getType type}.
 
 The <code>type</code> of the Dialog. In some themes, the type Message will limit the Dialog width within 480px on tablet and desktop.
@@ -752,6 +798,16 @@ typedef DialogArgs = sap.ui.core.Control.ControlArgs & {
 	* Specifies the ARIA role of the Dialog. If the state of the control is "Error" or "Warning" the role will be "AlertDialog" regardless of what is set.
 	*/
 	@:optional var role:haxe.extern.EitherType<String,sap.m.DialogRoleType>;
+
+	/**
+	* Indicates whether the Dialog will be closed automatically when a routing navigation occurs.
+	*/
+	@:optional var closeOnNavigation:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+	*/
+	@:optional var titleAlignment:haxe.extern.EitherType<String,sap.m.TitleAlignment>;
 
     /**
     * The content inside the Dialog.<br/><b>Note:</b> When the content of the Dialog is comprised of controls that use <code>position: absolute</code>, such as <code>SplitContainer</code>, the Dialog has to have either <code>stretch: true</code> or <code>contentHeight</code> set.

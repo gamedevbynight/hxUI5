@@ -8,6 +8,15 @@ package sap.ui.test.matchers;
 As of version 1.60, comparison is strict and can include one or more binding criteria: <ul> <li>context path (matches children of bound controls, eg: items in a table)</li> <li>property path (matches controls with no context and a single bound property, eg: Text with binding for property text)</li> <li>context path + property path (matches children of bound controls, where the child has a binding for a certain property within the context)</li> </ul>
 
 <b>Note:</b> Before version 1.60, the only available criteria is binding context path.
+
+As of version 1.72, it is available as a declarative matcher with the following syntax: <code><pre>{
+    bindingPath: {
+        path: "string",
+        modelName: "string",
+        propertyPath: "string"
+    }
+}
+</code></pre>
 */
 extern class BindingPath extends sap.ui.test.matchers.Matcher
 {

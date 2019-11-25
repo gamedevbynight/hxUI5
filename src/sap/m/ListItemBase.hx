@@ -120,6 +120,18 @@ Default value is <code>empty string</code>.
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
+	* Gets current value of property {@link #getNavigated navigated}.
+
+The navigated state of the list item.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the list item.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>navigated</code>
+	*/
+	public function getNavigated( ):Bool;
+
+	/**
 	* Gets current value of property {@link #getSelected selected}.
 
 Defines the selected state of the list items. <b>Note:</b> Binding the <code>selected</code> property in single selection modes may cause unwanted results if you have more than one selected items in your binding.
@@ -216,6 +228,21 @@ Default value is <code>empty string</code>.
 	public function setHighlightText( sHighlightText:String):sap.m.ListItemBase;
 
 	/**
+	* Sets a new value for property {@link #getNavigated navigated}.
+
+The navigated state of the list item.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the list item.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bNavigated New value for property <code>navigated</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setNavigated( bNavigated:Bool):sap.m.ListItemBase;
+
+	/**
 	* Sets a new value for property {@link #getSelected selected}.
 
 Defines the selected state of the list items. <b>Note:</b> Binding the <code>selected</code> property in single selection modes may cause unwanted results if you have more than one selected items in your binding.
@@ -308,6 +335,13 @@ Accessibility support is provided through the associated {@link sap.m.ListItemBa
 	* Defines the semantics of the {@link sap.m.ListItemBase#setHighlight highlight} property for accessibility purposes.
 	*/
 	@:optional var highlightText:String;
+
+	/**
+	* The navigated state of the list item.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the list item.
+	*/
+	@:optional var navigated:haxe.extern.EitherType<String,Bool>;
 
 	/**
 	* Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).

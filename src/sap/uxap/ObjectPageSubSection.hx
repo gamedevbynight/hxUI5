@@ -85,6 +85,8 @@ Controls to be displayed in the subsection
 
 <b>Note:</b> The SAP Fiori Design guidelines require that the <code>ObjectPageHeader</code>'s content and the <code>ObjectPage</code>'s subsection content are aligned vertically. When using {@link sap.ui.layout.form.Form}, {@link sap.m.Panel}, {@link sap.m.Table} and {@link sap.m.List} in the subsection content area of <code>ObjectPage</code>, if the content is not already aligned, you need to adjust their left text offset to achieve the vertical alignment. To do this, apply the <code>sapUxAPObjectPageSubSectionAlignContent</code> CSS class to them and set their <code>width</code> property to <code>auto</code> (if not set by default).
 
+Avoid using this class in combination with <code>ResponsiveLayout</code> because <code>ResponsiveLayout</code> applies custom paddings. To align items with <code>sapUxAPObjectPageSubSectionAlignContent</code>, use <code>ColumnLayout</code>.
+
 Example:
 
 <pre>
@@ -276,6 +278,8 @@ typedef ObjectPageSubSectionArgs = sap.uxap.ObjectPageSectionBase.ObjectPageSect
     * Controls to be displayed in the subsection
 
 <b>Note:</b> The SAP Fiori Design guidelines require that the <code>ObjectPageHeader</code>'s content and the <code>ObjectPage</code>'s subsection content are aligned vertically. When using {@link sap.ui.layout.form.Form}, {@link sap.m.Panel}, {@link sap.m.Table} and {@link sap.m.List} in the subsection content area of <code>ObjectPage</code>, if the content is not already aligned, you need to adjust their left text offset to achieve the vertical alignment. To do this, apply the <code>sapUxAPObjectPageSubSectionAlignContent</code> CSS class to them and set their <code>width</code> property to <code>auto</code> (if not set by default).
+
+Avoid using this class in combination with <code>ResponsiveLayout</code> because <code>ResponsiveLayout</code> applies custom paddings. To align items with <code>sapUxAPObjectPageSubSectionAlignContent</code>, use <code>ColumnLayout</code>.
 
 Example:
 

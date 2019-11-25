@@ -187,6 +187,14 @@ The content of the tile.
 	public function getTileContent( ):Array<sap.m.TileContent>;
 
 	/**
+	* Gets current value of property {@link #getWidth width}.
+
+Width of the control.
+	* @return	Value of property <code>width</code>
+	*/
+	public function getWidth( ):sap.ui.core.CSSSize;
+
+	/**
 	* Gets current value of property {@link #getWrappingType wrappingType}.
 
 Defines the type of text wrapping to be used (hyphenated or normal).
@@ -371,6 +379,17 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setSubheader( sSubheader:String):sap.m.GenericTile;
 
 	/**
+	* Sets a new value for property {@link #getWidth width}.
+
+Width of the control.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sWidth New value for property <code>width</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.GenericTile;
+
+	/**
 	* Sets a new value for property {@link #getWrappingType wrappingType}.
 
 Defines the type of text wrapping to be used (hyphenated or normal).
@@ -456,6 +475,11 @@ typedef GenericTileArgs = sap.ui.core.Control.ControlArgs & {
 	* Defines the type of text wrapping to be used (hyphenated or normal).
 	*/
 	@:optional var wrappingType:haxe.extern.EitherType<String,sap.m.WrappingType>;
+
+	/**
+	* Width of the control.
+	*/
+	@:optional var width:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
     /**
     * The content of the tile.

@@ -359,6 +359,16 @@ This property is supported by both variants. Please see the documentation on sap
 	public function getTitle( ):String;
 
 	/**
+	* Gets current value of property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+Default value is <code>Auto</code>.
+	* @return	Value of property <code>titleAlignment</code>
+	*/
+	public function getTitleAlignment( ):sap.m.TitleAlignment;
+
+	/**
 	* Gets current value of property {@link #getVerticalScrolling verticalScrolling}.
 
 This property is supported by both variants. Please see the documentation on sap.m.Popover#verticalScrolling and sap.m.Dialog#verticalScrolling
@@ -629,6 +639,19 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setTitle( sTitle:String):sap.m.ResponsivePopover;
 
 	/**
+	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Auto</code>.
+	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.ResponsivePopover;
+
+	/**
 	* Sets a new value for property {@link #getVerticalScrolling verticalScrolling}.
 
 This property is supported by both variants. Please see the documentation on sap.m.Popover#verticalScrolling and sap.m.Dialog#verticalScrolling
@@ -713,6 +736,11 @@ typedef ResponsivePopoverArgs = sap.ui.core.Control.ControlArgs & {
 	* Whether resize option is enabled.
 	*/
 	@:optional var resizable:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+	*/
+	@:optional var titleAlignment:haxe.extern.EitherType<String,sap.m.TitleAlignment>;
 
     /**
     * Content is supported by both variants. Please see the documentation on sap.m.Popover#content and sap.m.Dialog#content

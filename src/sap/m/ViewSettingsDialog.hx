@@ -11,6 +11,8 @@ The <code>ViewSettingsDialog</code> is a composite control, consisting of a moda
 
 <b>Note:</b> If the app does not offer all three sorting, filtering, and grouping operations, but only one of these (such as sort), we recommend placing the icon button directly in the toolbar. Do not place sort, filter, or group buttons in the footer toolbar if they refer to a table. Place group, sort, and filter buttons in the footer toolbar if they refer to a master list.
 
+<b>Note:</b> Reset button, when used in <code>ViewSettingsDialog</code> without custom tabs, is enabled when there are some Filters or presetFilters selected as well as there are changes in Sort by, Sort order, Group By or Group order values compared to initial state of the dialog, and disabled, if there are no changes or filters set. If the <code>ViewSettingsDialog</code> have one or more custom tabs, the Reset button is always enabled, because there is no way to determine the initial state of the custom tabs content and compare to their current state in order to determine enable/disable state of the Reset button.
+
 <h3>Usage</h3>
 
 <i>When to use?</i> <ul><li>If you need to allow the user to sort line items in a manageable list or table (up to 20 columns)</li> <li>If you need to offer custom filter settings in a manageable list or table (up to 20 columns)</li> <li>If you need to allow the user to group line items in a manageable list or table (up to 20 columns)</li></ul>
@@ -107,11 +109,24 @@ Fired when the filter detail page is opened.
 	public function attachFilterDetailPageOpened( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:reset reset} event of this <code>sap.m.ViewSettingsDialog</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.ViewSettingsDialog</code> itself.
+
+Called when the Reset button is pressed. It can be used to set the state of custom tabs.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ViewSettingsDialog</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachReset( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+
+	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:resetFilters resetFilters} event of this <code>sap.m.ViewSettingsDialog</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.ViewSettingsDialog</code> itself.
 
-Called when the reset filters button is pressed. It can be used to clear the state of custom filter controls.
+Called when the filters are being reset.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ViewSettingsDialog</code> itself
@@ -163,6 +178,12 @@ See {@link sap.ui.base.ManagedObject#bindAggregation ManagedObject.bindAggregati
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function bindSortItems( oBindingInfo:Dynamic):sap.m.ViewSettingsDialog;
+
+	/**
+	* Clears the selected filters and navigates to the filter overview page
+	* @return	this pointer for chaining
+	*/
+	public function clearFilters( ):sap.m.ViewSettingsDialog;
 
 	/**
 	* Destroys all the customTabs in the aggregation {@link #getCustomTabs customTabs}.
@@ -223,6 +244,16 @@ The passed function and listener object must match the ones used for event regis
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachFilterDetailPageOpened( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+
+	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:reset reset} event of this <code>sap.m.ViewSettingsDialog</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachReset( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:resetFilters resetFilters} event of this <code>sap.m.ViewSettingsDialog</code>.
@@ -374,6 +405,16 @@ Defines the title of the dialog. If not set and there is only one active tab, th
 	* @return	Value of property <code>title</code>
 	*/
 	public function getTitle( ):String;
+
+	/**
+	* Gets current value of property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+Default value is <code>Auto</code>.
+	* @return	Value of property <code>titleAlignment</code>
+	*/
+	public function getTitleAlignment( ):sap.m.TitleAlignment;
 
 	/**
 	* Forward method to the inner dialog method: hasStyleClass.
@@ -645,6 +686,19 @@ Default value is <code>false</code>.
 	public function setTitle( sTitle:String):sap.m.ViewSettingsDialog;
 
 	/**
+	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Auto</code>.
+	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.ViewSettingsDialog;
+
+	/**
 	* Forward method to the inner dialog method: toggleStyleClass.
 	* @return	this pointer for chaining
 	*/
@@ -702,6 +756,11 @@ typedef ViewSettingsDialogArgs = sap.ui.core.Control.ControlArgs & {
 	* Provides a string filter operator which is used when the user searches items in filter details page. Possible operators are: <code>AnyWordStartsWith</code>, <code>Contains</code>, <code>StartsWith</code>, <code>Equals</code>. This property will be ignored if a custom callback is provided through <code>setFilterSearchCallback</code> method.
 	*/
 	@:optional var filterSearchOperator:haxe.extern.EitherType<String,sap.m.StringFilterOperator>;
+
+	/**
+	* Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+	*/
+	@:optional var titleAlignment:haxe.extern.EitherType<String,sap.m.TitleAlignment>;
 
     /**
     * The list of items with key and value that can be sorted over (for example, a list of columns for a table).
@@ -761,7 +820,12 @@ typedef ViewSettingsDialogArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var filterDetailPageOpened:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* Called when the reset filters button is pressed. It can be used to clear the state of custom filter controls.
+	* Called when the Reset button is pressed. It can be used to set the state of custom tabs.
+	*/
+	@:optional var reset:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* Called when the filters are being reset.
 	*/
 	@:optional var resetFilters:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

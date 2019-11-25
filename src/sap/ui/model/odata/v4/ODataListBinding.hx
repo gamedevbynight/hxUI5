@@ -229,9 +229,9 @@ Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or applic
 
 	/**
 	* Resets all pending changes of this binding, see {@link #hasPendingChanges}. Resets also invalid user input.
-	* @return	Void
+	* @return	A promise which is resolved without a defined result as soon as all changes in the binding itself and all dependent bindings are canceled (since 1.72.0)
 	*/
-	public function resetChanges( ):Void;
+	public function resetChanges( ):js.lib.Promise<ODataListBinding>;
 
 	/**
 	* Resumes this binding. The binding can again fire change events and trigger data service requests. Before 1.53.0, this method was not supported and threw an error.

@@ -216,7 +216,7 @@ Usage: <pre>
 	* @param	oControl the control that should be rendered
 	* @return	the renderer class for a given control instance
 	*/
-	public static function getRenderer( oControl:sap.ui.core.Control):()->Void;
+	public static function getRenderer( oControl:sap.ui.core.Control):Dynamic;
 	@:overload( function(sURI:sap.ui.core.URI, ?aClasses:Array<Dynamic>, ?mAttributes:Dynamic):sap.ui.core.RenderManager{ })
 
 	/**
