@@ -92,6 +92,13 @@ Default value is <code>true</code>.
 	public function setVisible( bValue:Bool):sap.ui.core.Element;
 
 	/**
+	* Sets whether the <code>CommandExecution</code> is visible, or not. If set to false, the <code>CommandExecution</code> will unregister the shortcut. If not visible, the CommandExecution will not be triggered even if it is enabled.
+	* @param	bValue Whether the CommandExecution is visible, or not.
+	* @return	The CommandExecution
+	*/
+	public function setVisible( bValue:Bool):sap.ui.core.Element;
+
+	/**
 	* Fires the execute event and triggers the attached handler. If the CommandExecution is disabled, the handler will not be triggered.
 	* @return	Void
 	*/

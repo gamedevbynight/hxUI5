@@ -105,6 +105,16 @@ Default value is <code>false</code>.
 	public function getNullable( ):Bool;
 
 	/**
+	* Gets current value of property {@link #getNullable nullable}.
+
+Defines if the item is nullable
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>nullable</code>
+	*/
+	public function getNullable( ):Bool;
+
+	/**
 	* Gets current value of property {@link #getPrecision precision}.
 
 if type==numeric the precision will be used to format the entered value (maxIntegerDigits of the used Formatter)

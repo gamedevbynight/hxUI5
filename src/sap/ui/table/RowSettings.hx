@@ -64,6 +64,18 @@ Default value is <code>false</code>.
 	public function getNavigated( ):Bool;
 
 	/**
+	* Gets current value of property {@link #getNavigated navigated}.
+
+The navigated state of a row.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the row. <b>Note:</b> The navigation indicator is only visible if row actions are available.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>navigated</code>
+	*/
+	public function getNavigated( ):Bool;
+
+	/**
 	* Sets a new value for property {@link #getHighlight highlight}.
 
 The highlight state of the rows.

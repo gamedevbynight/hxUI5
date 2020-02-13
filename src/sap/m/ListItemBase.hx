@@ -132,6 +132,18 @@ Default value is <code>false</code>.
 	public function getNavigated( ):Bool;
 
 	/**
+	* Gets current value of property {@link #getNavigated navigated}.
+
+The navigated state of the list item.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the list item.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>navigated</code>
+	*/
+	public function getNavigated( ):Bool;
+
+	/**
 	* Gets current value of property {@link #getSelected selected}.
 
 Defines the selected state of the list items. <b>Note:</b> Binding the <code>selected</code> property in single selection modes may cause unwanted results if you have more than one selected items in your binding.
