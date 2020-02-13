@@ -39,10 +39,20 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+
+	/**
+	* Gets current value of property {@link #getAdaptiveFontSize adaptiveFontSize}.
+
+If set to its default value true this property applies the appropriate font style class based on the language. When set to false the font size will always be large
+
+Default value is <code>true</code>.
+	* @return	Value of property <code>adaptiveFontSize</code>
+	*/
+	public function getAdaptiveFontSize( ):Bool;
 
 	/**
 	* Gets current value of property {@link #getAnimateTextChange animateTextChange}.
@@ -94,7 +104,7 @@ Default value is <code>None</code>.
 	* Returns a metadata object for class sap.m.NumericContent.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getNullifyValue nullifyValue}.
@@ -129,7 +139,7 @@ Default value is <code>Loaded</code>.
 
 The number of characters of the <code>value</code> property to display.
 
-Default value is <code>4</code>.
+<b>Note</b> If <code>adaptiveFontSize</code> is set to <code>true</code> the default value of this property will vary between languages. If <code>adaptiveFontSize</code> is set to <code>false</code> the default value of this property is <code>4</code>.
 	* @return	Value of property <code>truncateValueTo</code>
 	*/
 	public function getTruncateValueTo( ):Int;
@@ -169,6 +179,19 @@ Default value is <code>true</code>.
 	* @return	Value of property <code>withMargin</code>
 	*/
 	public function getWithMargin( ):Bool;
+
+	/**
+	* Sets a new value for property {@link #getAdaptiveFontSize adaptiveFontSize}.
+
+If set to its default value true this property applies the appropriate font style class based on the language. When set to false the font size will always be large
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bAdaptiveFontSize New value for property <code>adaptiveFontSize</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setAdaptiveFontSize( bAdaptiveFontSize:Bool):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getAnimateTextChange animateTextChange}.
@@ -273,9 +296,9 @@ Default value is <code>Loaded</code>.
 
 The number of characters of the <code>value</code> property to display.
 
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+<b>Note</b> If <code>adaptiveFontSize</code> is set to <code>true</code> the default value of this property will vary between languages. If <code>adaptiveFontSize</code> is set to <code>false</code> the default value of this property is <code>4</code>.
 
-Default value is <code>4</code>.
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	iTruncateValueTo New value for property <code>truncateValueTo</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -369,6 +392,8 @@ typedef NumericContentArgs = sap.ui.core.Control.ControlArgs & {
 
 	/**
 	* The number of characters of the <code>value</code> property to display.
+
+<b>Note</b> If <code>adaptiveFontSize</code> is set to <code>true</code> the default value of this property will vary between languages. If <code>adaptiveFontSize</code> is set to <code>false</code> the default value of this property is <code>4</code>.
 	*/
 	@:optional var truncateValueTo:haxe.extern.EitherType<String,Int>;
 
@@ -396,6 +421,11 @@ typedef NumericContentArgs = sap.ui.core.Control.ControlArgs & {
 	* Indicates the load status.
 	*/
 	@:optional var state:haxe.extern.EitherType<String,sap.m.LoadState>;
+
+	/**
+	* If set to its default value true this property applies the appropriate font style class based on the language. When set to false the font size will always be large
+	*/
+	@:optional var adaptiveFontSize:haxe.extern.EitherType<String,Bool>;
 
 	/**
 	* The event is fired when the user chooses the numeric content.

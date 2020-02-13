@@ -21,7 +21,7 @@ public function new():Void;
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.ManagedObject.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -52,7 +52,7 @@ This information is used to group the columns within the TablePersoDialog if the
 	* Returns a metadata object for class sap.m.TablePersoProvider.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.base.ManagedObjectMetadata;
 
 	/**
 	* Retrieves the personalization bundle. This must return a jQuery promise (see http://api.jquery.com/promise/)

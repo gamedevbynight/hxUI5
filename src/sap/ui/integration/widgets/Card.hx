@@ -38,6 +38,19 @@ Fired when an action is triggered on the card.
 	public function attachAction( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:manifestReady manifestReady} event of this <code>sap.ui.integration.widgets.Card</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.integration.widgets.Card</code> itself.
+
+Fired when the manifest is loaded.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.integration.widgets.Card</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachManifestReady( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
+
+	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:action action} event of this <code>sap.ui.integration.widgets.Card</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -48,12 +61,22 @@ The passed function and listener object must match the ones used for event regis
 	public function detachAction( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
 
 	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:manifestReady manifestReady} event of this <code>sap.ui.integration.widgets.Card</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachManifestReady( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
+
+	/**
 	* Creates a new subclass of class sap.ui.integration.widgets.Card with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
 
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -102,7 +125,7 @@ Default value is <code>auto</code>.
 	* Returns a metadata object for class sap.ui.integration.widgets.Card.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Overwrites getter for card parameters.
@@ -125,6 +148,14 @@ Default value is <code>100%</code>.
 	* @return	If the card is ready or not.
 	*/
 	public function isReady( ):Bool;
+
+	/**
+	* Loads the module designtime/Card.designtime or the module given in "sap.card": { "designtime": "designtime/Own.designtime" } This file should contain the designtime configuration for the card.
+
+Returns a promise that resolves with an object { designtime: the designtime modules response manifest: the complete manifest json } The promise is rejected if the module cannot be loaded with an object: { error: "Card.designtime not found" }
+	* @return	Promise resolves after the designtime configuration is loaded.
+	*/
+	public function loadDesigntime( ):js.lib.Promise<Card>;
 
 	/**
 	* Refreshes the card by re-applying the manifest settings and triggering all data requests.
@@ -260,4 +291,9 @@ typedef CardArgs = sap.ui.core.Control.ControlArgs & {
 	* Fired when an action is triggered on the card.
 	*/
 	@:optional var action:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* Fired when the manifest is loaded.
+	*/
+	@:optional var manifestReady:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

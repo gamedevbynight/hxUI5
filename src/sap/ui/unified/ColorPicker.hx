@@ -68,7 +68,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -95,12 +95,14 @@ Default value is <code>Default</code>.
 	* Returns a metadata object for class sap.ui.unified.ColorPicker.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getMode mode}.
 
-Determines the color mode of the <code>ColorPicker</code>.
+Determines the color representation mode the ColorPicker works with - Hue, Saturation, and Value (HSV) or Hue, Saturation, and Lightness (HSL).
+
+<b>Note:</b> The <code>ColorPickerMode.HSV</code> is set by default. For color composing with alpha values, please set the mode to <code>ColorPickerMode.HSL</code>
 
 Default value is <code>HSV</code>.
 	* @return	Value of property <code>mode</code>
@@ -155,7 +157,9 @@ typedef ColorPickerArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var colorString:String;
 
 	/**
-	* Determines the color mode of the <code>ColorPicker</code>.
+	* Determines the color representation mode the ColorPicker works with - Hue, Saturation, and Value (HSV) or Hue, Saturation, and Lightness (HSL).
+
+<b>Note:</b> The <code>ColorPickerMode.HSV</code> is set by default. For color composing with alpha values, please set the mode to <code>ColorPickerMode.HSL</code>
 	*/
 	@:optional var mode:haxe.extern.EitherType<String,sap.ui.unified.ColorPickerMode>;
 

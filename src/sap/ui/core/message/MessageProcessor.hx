@@ -22,9 +22,9 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 
 	/**
 	* Implement in inheriting classes
-	* @return	null
+	* @return	Void
 	*/
-	public function checkMessage( ):sap.ui.model.ListBinding;
+	public function checkMessages( ):Void;
 
 	/**
 	* Destroys the MessageProcessor Instance
@@ -48,7 +48,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.EventProvider.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -70,6 +70,6 @@ The passed function and listener object must match the ones used for event regis
 	* @param	vMessages map of messages: {'target': [array of messages],...}
 	* @return	Void
 	*/
-	public function setMessages( vMessages:Dynamic):Void;
+	public function setMessages( vMessages:Map<String,Array<Dynamic>>):Void;
 }
 

@@ -237,7 +237,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -394,7 +394,7 @@ Default value is <code>Navigation</code>.
 	* Returns a metadata object for class sap.m.ListBase.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getMode mode}.
@@ -1055,6 +1055,11 @@ There are also some known limitations. A few are given below: <ul> <li>If the co
     * Defines the context menu of the items.
     */
 	@:optional var contextMenu:haxe.extern.EitherType<String,sap.ui.core.IContextMenu>;
+
+    /**
+    * Defines the message strip to display binding-related messages.
+    */
+	@:optional var _messageStrip:haxe.extern.EitherType<String,sap.m.MessageStrip>;
 
 	/**
 	* Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).

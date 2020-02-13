@@ -12,18 +12,20 @@ extern class Opa5 extends sap.ui.base.Object
 public function new():Void;
 
 	/**
-	* Create a page object configured as arrangement, action and assertion to the Opa.config. Use it to structure your arrangement, action and assertion based on parts of the screen to avoid name clashes and help to structure your tests.
-	* @param	mPageObjects null
-	* @return	mPageObject The created page object. It will look like this: <pre><code>
- {
-  &lt;your-page-object-name&gt; : {
-      actions: // an instance of baseClass or Opa5 with all the actions defined above
-      assertions: // an instance of baseClass or Opa5 with all the assertions defined above
-  }
- }
-</code></pre>
+	* Creates a set of page objects, each consisting of actions and assertions and adds them to the Opa configuration.
+
+Use page objects to structure your actions and assertions based on parts of the screen. This helps to avoid name clashes and to structure your tests.
+	* @param	mPageObjects Multiple page objects are possible, provide at least actions or assertions
+	* @return	The created page object. It will look like this: <pre>
+    {
+      &lt;your-page-object-name&gt; : {
+        actions: // an instance of baseClass or Opa5 with all the actions defined above
+        assertions: // an instance of baseClass or Opa5 with all the assertions defined above
+      }
+    }
+  </pre>
 	*/
-	public static function createPageObjects( mPageObjects:Dynamic):Dynamic;
+	public static function createPageObjects( mPageObjects:map<string,sap.ui.test.PageObjectDefinition>):Map<String,Dynamic>;
 
 	/**
 	* Waits until all waitFor calls are done See {@link sap.ui.test.Opa.emptyQueue} for the description
@@ -211,8 +213,12 @@ Sample usage: <pre>
 	public static function stopQueue( ):Void;
 
 	/**
-	* Takes the same parameters as {@link sap.ui.test.Opa#waitFor}. Also allows you to specify additional parameters:
-	* @param	options An Object containing conditions for waiting and callbacks
+	* Takes a superset of the parameters of {@link sap.ui.test.Opa#waitFor}.
+	* @param	options An object containing conditions for waiting and callbacks.
+
+The allowed keys are listed below. If a key is not allowed, an error is thrown, stating that "the parameter is not defined in the API".
+
+As of version 1.72, in addition to the listed keys, declarative matchers are also allowed. Any matchers declared on the root level of the options object are merged with those declared in <code>options.matchers</code>. For details on declarative matchers, see the <code>options.matchers</code> property.
 	* @return	A promise that gets resolved on success. If an error occurs, the promise is rejected with the options object. A detailed error message containing the stack trace and Opa logs is available in options.errorMessage.
 	*/
 	public function waitFor( options:Dynamic):jquery.promise;

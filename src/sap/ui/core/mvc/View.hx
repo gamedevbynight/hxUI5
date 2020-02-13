@@ -83,13 +83,25 @@ This method expects a view-local ID of an element (the same as e.g. defined in t
 	public function byId( sId:String):sap.ui.core.Element;
 
 	/**
-	* Creates a view of the given type, name and with the given id.
+	* Creates a clone of this view.
+
+Overrides the clone method to avoid conflicts between generic cloning of the content aggregation and content creation as defined by the UI5 Model View Controller lifecycle.
+
+For more details see the {@link topic:a575619e25c2487f904bae71764e2350 View Cloning} section in the documentation.
+	* @param	sIdSuffix Suffix to be appended to the cloned element IDs
+	* @param	aLocalIds Array of local IDs within the cloned hierarchy (internally used)
+	* @return	Reference to the newly created clone
+	*/
+	public function clone( ?sIdSuffix:String, ?aLocalIds:Array<String>):sap.ui.core.mvc.View;
+
+	/**
+	* Creates a view of the given type, name and with the given ID.
 
 If the option <code>viewName</code> is given, the corresponding view module is loaded if needed.
 
 See also the API references for the specific view factories: <ul> <li>{@link sap.ui.core.mvc.XMLView.create}</li> <li>{@link sap.ui.core.mvc.JSView.create}</li> <li>{@link sap.ui.core.mvc.JSONView.create}</li> <li>{@link sap.ui.core.mvc.HTMLView.create}</li> </ul>
-	* @param	oOptions A parameter object for the view instantiation. Specialized view types could bring in additional parameters.
-	* @return	a Promise which resolves with the created View instance
+	* @param	oOptions Options for the view instantiation. Can contain any settings that are documented for the {@link sap.ui.core.mvc.View}; specialized view types could bring in additional settings.
+	* @return	A Promise which resolves with the created View instance
 	*/
 	public static function create( oOptions:Dynamic):js.lib.Promise<sap.ui.core.mvc.View>;
 
@@ -152,7 +164,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -206,7 +218,7 @@ The height
 	* Returns a metadata object for class sap.ui.core.mvc.View.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Returns user specific data object

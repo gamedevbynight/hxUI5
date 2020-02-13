@@ -42,10 +42,10 @@ This method can be overwritten by subclasses if the default implementation doesn
 	* Creates a new subclass of class <code>sap.ui.core.UIComponent</code> with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>. <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Component.extend}.
 	* @param	sClassName Qualified name of the newly created class
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl} Constructor function for the metadata object. If not given, it defaults to <code>sap.ui.core.UIComponentMetadata</code> (which is not public).
+	* @param	FNMetaImpl Constructor function for the metadata object. If not given, it defaults to an internal subclass of <code>sap.ui.core.ComponentMetadata</code>.
 	* @return	Void
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, FNMetaImpl}:()->Void):Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):Void;
 
 	/**
 	* Returns the local ID of an element by removing the component ID prefix or <code>null</code> if the ID does not contain a prefix.
@@ -58,7 +58,7 @@ This method can be overwritten by subclasses if the default implementation doesn
 	* Returns a metadata object for class sap.ui.core.UIComponent.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ComponentMetadata;
 
 	/**
 	* Returns the reference to the router instance which has been created by the UIComponent once the routes in the routing metadata has been defined.

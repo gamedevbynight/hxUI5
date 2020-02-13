@@ -128,7 +128,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -235,7 +235,7 @@ Default value is <code>false</code>.
 	* Returns a metadata object for class sap.uxap.ObjectPageHeader.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets content of aggregation {@link #getNavigationBar navigationBar}.
@@ -256,6 +256,16 @@ Default value is <code>empty string</code>.
 	public function getObjectImageAlt( ):String;
 
 	/**
+	* Gets current value of property {@link #getObjectImageBackgroundColor objectImageBackgroundColor}.
+
+Determines the background color of the image placeholder or icon if valid icon URI is provided.
+
+Default value is <code>Accent6</code>.
+	* @return	Value of property <code>objectImageBackgroundColor</code>
+	*/
+	public function getObjectImageBackgroundColor( ):sap.m.AvatarColor;
+
+	/**
 	* Gets current value of property {@link #getObjectImageDensityAware objectImageDensityAware}.
 
 The value of densityAware for the image, supplied via the objectImageURI property. See sap.m.Image for more details on densityAware.
@@ -273,7 +283,7 @@ Determines whether the picture should be displayed in a square or with a circle-
 Default value is <code>Square</code>.
 	* @return	Value of property <code>objectImageShape</code>
 	*/
-	public function getObjectImageShape( ):sap.uxap.ObjectPageHeaderPictureShape;
+	public function getObjectImageShape( ):sap.m.AvatarShape;
 
 	/**
 	* Gets current value of property {@link #getObjectImageURI objectImageURI}.
@@ -513,6 +523,19 @@ Default value is <code>empty string</code>.
 	public function setObjectImageAlt( sObjectImageAlt:String):sap.uxap.ObjectPageHeader;
 
 	/**
+	* Sets a new value for property {@link #getObjectImageBackgroundColor objectImageBackgroundColor}.
+
+Determines the background color of the image placeholder or icon if valid icon URI is provided.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Accent6</code>.
+	* @param	sObjectImageBackgroundColor New value for property <code>objectImageBackgroundColor</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setObjectImageBackgroundColor( sObjectImageBackgroundColor:sap.m.AvatarColor):sap.uxap.ObjectPageHeader;
+
+	/**
 	* Sets a new value for property {@link #getObjectImageDensityAware objectImageDensityAware}.
 
 The value of densityAware for the image, supplied via the objectImageURI property. See sap.m.Image for more details on densityAware.
@@ -536,7 +559,7 @@ Default value is <code>Square</code>.
 	* @param	sObjectImageShape New value for property <code>objectImageShape</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setObjectImageShape( sObjectImageShape:sap.uxap.ObjectPageHeaderPictureShape):sap.uxap.ObjectPageHeader;
+	public function setObjectImageShape( sObjectImageShape:sap.m.AvatarShape):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getObjectImageURI objectImageURI}.
@@ -656,7 +679,12 @@ typedef ObjectPageHeaderArgs = sap.ui.core.Control.ControlArgs & {
 	/**
 	* Determines whether the picture should be displayed in a square or with a circle-shaped mask.
 	*/
-	@:optional var objectImageShape:haxe.extern.EitherType<String,sap.uxap.ObjectPageHeaderPictureShape>;
+	@:optional var objectImageShape:haxe.extern.EitherType<String,sap.m.AvatarShape>;
+
+	/**
+	* Determines the background color of the image placeholder or icon if valid icon URI is provided.
+	*/
+	@:optional var objectImageBackgroundColor:haxe.extern.EitherType<String,sap.m.AvatarColor>;
 
 	/**
 	* Determines whether the icon should always be visible or visible only when the header is snapped.
@@ -741,7 +769,7 @@ typedef ObjectPageHeaderArgs = sap.ui.core.Control.ControlArgs & {
     /**
     * null
     */
-	@:optional var _placeholder:haxe.extern.EitherType<String,sap.ui.core.Icon>;
+	@:optional var _placeholder:haxe.extern.EitherType<String,sap.m.Avatar>;
 
     /**
     * null

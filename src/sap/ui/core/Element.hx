@@ -53,6 +53,16 @@ To avoid double registrations, all registrations of the given delegate are first
 	* @return	reference to the instance itself
 	*/
 	public function bindElement( vPath:Dynamic, ?mParameters:Dynamic):sap.ui.core.Element;
+
+	/**
+	* Create a clone of this Element.
+
+Calls {@link sap.ui.base.ManagedObject#clone} and additionally clones event delegates.
+	* @param	sIdSuffix Suffix to be appended to the cloned element ID
+	* @param	aLocalIds Array of local IDs within the cloned hierarchy (internally used)
+	* @return	reference to the newly created clone
+	*/
+	public function clone( ?sIdSuffix:String, ?aLocalIds:Array<String>):sap.ui.core.Element;
 	@:overload( function(?vKeyOrData:String, ?vValue:String, ?bWriteToDom:Bool):Dynamic{ })
 	@:overload( function(?vKeyOrData:String, ?vValue:Dynamic, ?bWriteToDom:Bool):Dynamic{ })
 	@:overload( function(?vKeyOrData:Map<String,Dynamic>, ?vValue:String, ?bWriteToDom:Bool):Dynamic{ })
@@ -62,33 +72,33 @@ To avoid double registrations, all registrations of the given delegate are first
 	/**
 	* Retrieves, modifies or removes custom data attached to an <code>Element</code>.
 
-Usage: <pre>
+Usages: <h4>Setting the value for a single key</h4> <pre>
    data("myKey", myData)
 </pre> Attaches <code>myData</code> (which can be any JS data type, e.g. a number, a string, an object, or a function) to this element, under the given key "myKey". If the key already exists,the value will be updated.
 
-<pre>
+<h4>Setting a value for a single key (rendered to the DOM)</h4> <pre>
    data("myKey", myData, writeToDom)
 </pre> Attaches <code>myData</code> to this element, under the given key "myKey" and (if <code>writeToDom</code> is true) writes key and value to the HTML. If the key already exists,the value will be updated. While <code>oValue</code> can be any JS data type to be attached, it must be a string to be also written to DOM. The key must also be a valid HTML attribute name (it must conform to <code>sap.ui.core.ID</code> and may contain no colon) and may not start with "sap-ui". When written to HTML, the key is prefixed with "data-".
 
-<pre>
+<h4>Getting the value for a single key</h4> <pre>
    data("myKey")
-</pre> Retrieves whatever data has been attached to this element (using the key "myKey") before
+</pre> Retrieves whatever data has been attached to this element (using the key "myKey") before.
 
-<pre>
+<h4>Removing the value for a single key</h4> <pre>
    data("myKey", null)
-</pre> Removes whatever data has been attached to this element (using the key "myKey") before
+</pre> Removes whatever data has been attached to this element (using the key "myKey") before.
 
-<pre>
+<h4>Removing all custom data for all keys</h4> <pre>
    data(null)
-</pre> Removes all data
+</pre>
 
-<pre>
+<h4>Getting all custom data values as a plain object</h4> <pre>
    data()
-</pre> Returns all data, as a map
+</pre> Returns all data, as a map-like object, property names are keys, property values are values.
 
-<pre>
+<h4>Setting multiple key/value pairs in a single call</h4> <pre>
    data({"myKey1": myData, "myKey2": null})
-</pre> Attaches <code>myData</code> (using the key "myKey1" and removes any data that had been attached for key "myKey2"
+</pre> Attaches <code>myData</code> (using the key "myKey1" and removes any data that had been attached for key "myKey2".
 	* @param	vKeyOrData Single key to set or remove, or an object with key/value pairs or <code>null</code> to remove all custom data
 	* @param	vValue Value to set or <code>null</code> to remove the corresponding custom data
 	* @param	bWriteToDom Whether this custom data entry should be written to the DOM during rendering
@@ -168,9 +178,9 @@ Element.extend('sap.mylib.MyElement', {
 <b>dnd</b>: <i>object|boolean</i><br> In addition to draggable and droppable configuration, the layout of the aggregation can be defined as a hint at the drop position indicator. <ul> <li><code>[layout="Vertical"]: </code> The arrangement of the items in this aggregation. This setting is recommended for the aggregation with multiplicity 0..n (<code>multiple: true</code>). Possible values are <code>Vertical</code> (e.g. rows in a table) and <code>Horizontal</code> (e.g. columns in a table). It is recommended to use <code>Horizontal</code> layout if the arrangement is multidimensional.</li> </ul>
 	* @param	sClassName fully qualified name of the class that is described by this metadata object
 	* @param	oStaticInfo static info to construct the metadata from
-	* @return	Void
+	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, oStaticInfo:Dynamic):Void;
+	public static function extend( sClassName:String, oStaticInfo:Dynamic):()->Void;
 
 	/**
 	* Searches and returns an array of child elements and controls which are referenced within an aggregation or aggregations of child elements/controls. This can be either done recursive or not.
@@ -234,13 +244,13 @@ Defines the layout constraints for this control when it is used inside a Layout.
 	* @return	null
 	*/
 	public function getLayoutData( ):sap.ui.core.LayoutData;
-@:overload( function():Dynamic{ })
+@:overload( function():sap.ui.core.ElementMetadata{ })
 
 	/**
 	* Returns a metadata object for class sap.ui.core.Element.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Returns the tooltip for this element if any or an undefined value. The tooltip can either be a simple string or a subclass of {@link sap.ui.core.TooltipBase}.

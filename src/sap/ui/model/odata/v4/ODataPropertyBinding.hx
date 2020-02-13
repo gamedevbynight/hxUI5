@@ -20,7 +20,7 @@ extern class ODataPropertyBinding extends sap.ui.model.PropertyBinding
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.PropertyBinding.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -103,9 +103,9 @@ An inconsistency can result from one of the following reasons: <ul> <li> There i
 
 	/**
 	* Resets all pending changes of this binding, see {@link #hasPendingChanges}. Resets also invalid user input.
-	* @return	Void
+	* @return	A promise which is resolved without a defined result as soon as all changes in the binding itself and all dependent bindings are canceled (since 1.72.0)
 	*/
-	public function resetChanges( ):Void;
+	public function resetChanges( ):js.lib.Promise<ODataPropertyBinding>;
 
 	/**
 	* Method not supported

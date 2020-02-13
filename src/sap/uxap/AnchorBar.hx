@@ -20,7 +20,7 @@ extern class AnchorBar extends sap.m.Toolbar
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.Toolbar.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -39,13 +39,13 @@ Determines the background color of the <code>AnchorBar</code>.
 	* Returns a metadata object for class sap.uxap.AnchorBar.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Returns an sap.ui.core.delegate.ScrollEnablement object used to handle scrolling.
 	* @return	The <code>sap.ui.core.delegate.ScrollEnablement</code> instance
 	*/
-	public function getScrollDelegate( ):Dynamic;
+	public function getScrollDelegate( ):sap.ui.core.delegate.ScrollEnablement;
 
 	/**
 	* ID of the element which is the current target of the association {@link #getSelectedButton selectedButton}, or <code>null</code>.
@@ -82,9 +82,15 @@ Default value is <code>false</code>.
 	public function scrollToSection( sId:String, iDuration:Int):Void;
 
 	/**
-	* Sets the value of the <code>backgroundDesign</code> property.
-	* @param	sBackgroundDesign new value of the <code>backgroundDesign</code>
-	* @return	<code>this</code> to allow method chaining
+	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
+
+Determines the background color of the <code>AnchorBar</code>.
+
+<b>Note:</b> The default value of <code>backgroundDesign</code> property is null. If the property is not set, the color of the background is <code>@sapUiObjectHeaderBackground</code>, which depends on the specific theme.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setBackgroundDesign( sBackgroundDesign:sap.m.BackgroundDesign):sap.uxap.AnchorBar;
 	@:overload( function(oSelectedButton:sap.ui.core.ID):sap.uxap.AnchorBar{ })

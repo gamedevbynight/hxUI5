@@ -61,7 +61,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -80,7 +80,7 @@ Default value is <code>5000</code>.
 	* Returns a metadata object for class sap.m.SlideTile.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getScope scope}.
@@ -119,6 +119,14 @@ Default value is <code>500</code>.
 	* @return	Value of property <code>transitionTime</code>
 	*/
 	public function getTransitionTime( ):Int;
+
+	/**
+	* Gets current value of property {@link #getWidth width}.
+
+Width of the control.
+	* @return	Value of property <code>width</code>
+	*/
+	public function getWidth( ):sap.ui.core.CSSSize;
 
 	/**
 	* Checks for the provided <code>sap.m.GenericTile</code> in the aggregation {@link #getTiles tiles}. and returns its index if found or -1 otherwise.
@@ -205,6 +213,17 @@ Default value is <code>500</code>.
 	public function setTransitionTime( iTransitionTime:Int):sap.m.SlideTile;
 
 	/**
+	* Sets a new value for property {@link #getWidth width}.
+
+Width of the control.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sWidth New value for property <code>width</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.SlideTile;
+
+	/**
 	* Unbinds aggregation {@link #getTiles tiles} from model data.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -232,6 +251,11 @@ typedef SlideTileArgs = sap.ui.core.Control.ControlArgs & {
 	* If set to <code>TileSizeBehavior.Small</code>, the tile size is the same as it would be on a small-screened phone (374px wide and lower), regardless of the screen size of the actual device being used. If set to <code>TileSizeBehavior.Responsive</code>, the tile size adapts to the size of the screen. This property has to be set consistently for the <code>SlideTile</code> along with all its inner <code>GenericTile</code> elements, so that they match one another visually.
 	*/
 	@:optional var sizeBehavior:haxe.extern.EitherType<String,sap.m.TileSizeBehavior>;
+
+	/**
+	* Width of the control.
+	*/
+	@:optional var width:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
     /**
     * The set of Generic Tiles to be shown in the control.

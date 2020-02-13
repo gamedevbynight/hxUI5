@@ -17,9 +17,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 
 This event is fired when the value in the text input field is changed in combination with one of the following actions:
 
-<ul> <li>The focus leaves the text input field</li> <li>The <i>Enter</i> key is pressed</li> </ul>
-
-In addition, this event is also fired when an item in the list is selected.
+<ul> <li>The focus leaves the text input field</li> <li>The <i>Enter</i> key is pressed</li> <li>An item in the list is selected</li> </ul>
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ComboBox</code> itself
@@ -39,6 +37,13 @@ This event is fired when the user types something that matches with an item in t
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachSelectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ComboBox;
+
+	/**
+	* Clones the <code>sap.m.ComboBox</code> control.
+	* @param	sIdSuffix Suffix to be added to the ids of the new control and its internal objects.
+	* @return	The cloned <code>sap.m.ComboBox</code> control.
+	*/
+	public function clone( sIdSuffix:String):sap.m.ComboBox;
 
 	/**
 	* Closes the control's picker popup and focus input field.
@@ -78,7 +83,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.ComboBoxBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -97,7 +102,7 @@ Default value is <code>false</code>.
 	* Returns a metadata object for class sap.m.ComboBox.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets the selected item object from the aggregation named <code>items</code>.
@@ -213,9 +218,7 @@ typedef ComboBoxArgs = sap.m.ComboBoxBase.ComboBoxBaseArgs & {
 	/**
 	* This event is fired when the value in the text input field is changed in combination with one of the following actions:
 
-<ul> <li>The focus leaves the text input field</li> <li>The <i>Enter</i> key is pressed</li> </ul>
-
-In addition, this event is also fired when an item in the list is selected.
+<ul> <li>The focus leaves the text input field</li> <li>The <i>Enter</i> key is pressed</li> <li>An item in the list is selected</li> </ul>
 	*/
 	@:optional var change:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 

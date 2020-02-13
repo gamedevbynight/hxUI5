@@ -4,6 +4,13 @@ package sap.ui.test.matchers;
 
 /**
 * Checks if a control's properties have the provided values - all properties have to match their values.
+
+As of version 1.72, it is available as a declarative matcher with the following syntax: <code><pre>{
+    properties: {
+        propertyName: "propertyValue"
+    }
+}
+</code></pre>
 */
 extern class Properties
 {

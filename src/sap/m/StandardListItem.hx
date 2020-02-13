@@ -16,7 +16,7 @@ extern class StandardListItem extends sap.m.ListItemBase
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.ListItemBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -94,6 +94,16 @@ Default value is <code>None</code>.
 	public function getInfoState( ):sap.ui.core.ValueState;
 
 	/**
+	* Gets current value of property {@link #getInfoStateInverted infoStateInverted}.
+
+Determines the inverted rendering behavior of the info text and the info state. The color defined by the <code>infoState</code> property is rendered as the background color for the info text, if this property is set to <code>true</code>.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>infoStateInverted</code>
+	*/
+	public function getInfoStateInverted( ):Bool;
+
+	/**
 	* Gets current value of property {@link #getInfoTextDirection infoTextDirection}.
 
 Defines the <code>info</code> directionality with enumerated options. By default, the control inherits text direction from the DOM.
@@ -107,7 +117,7 @@ Default value is <code>Inherit</code>.
 	* Returns a metadata object for class sap.m.StandardListItem.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getTitle title}.
@@ -238,6 +248,19 @@ Default value is <code>None</code>.
 	public function setInfoState( sInfoState:sap.ui.core.ValueState):sap.m.StandardListItem;
 
 	/**
+	* Sets a new value for property {@link #getInfoStateInverted infoStateInverted}.
+
+Determines the inverted rendering behavior of the info text and the info state. The color defined by the <code>infoState</code> property is rendered as the background color for the info text, if this property is set to <code>true</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bInfoStateInverted New value for property <code>infoStateInverted</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setInfoStateInverted( bInfoStateInverted:Bool):sap.m.StandardListItem;
+
+	/**
 	* Sets a new value for property {@link #getInfoTextDirection infoTextDirection}.
 
 Defines the <code>info</code> directionality with enumerated options. By default, the control inherits text direction from the DOM.
@@ -357,4 +380,9 @@ typedef StandardListItemArgs = sap.m.ListItemBase.ListItemBaseArgs & {
 In the desktop mode, initial rendering of the control contains 300 characters along with a button to expand and collapse the text whereas in the phone mode, the character limit is set to 100 characters.
 	*/
 	@:optional var wrapping:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Determines the inverted rendering behavior of the info text and the info state. The color defined by the <code>infoState</code> property is rendered as the background color for the info text, if this property is set to <code>true</code>.
+	*/
+	@:optional var infoStateInverted:haxe.extern.EitherType<String,Bool>;
 }

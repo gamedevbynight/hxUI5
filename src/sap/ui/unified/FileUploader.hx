@@ -81,6 +81,19 @@ Event is fired when the file is allowed for upload on client side.
 	public function attachFileAllowed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:fileEmpty fileEmpty} event of this <code>sap.ui.unified.FileUploader</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.unified.FileUploader</code> itself.
+
+Event is fired when the size of the file is 0
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachFileEmpty( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+
+	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:filenameLengthExceed filenameLengthExceed} event of this <code>sap.ui.unified.FileUploader</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.unified.FileUploader</code> itself.
@@ -226,6 +239,16 @@ The passed function and listener object must match the ones used for event regis
 	public function detachFileAllowed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:fileEmpty fileEmpty} event of this <code>sap.ui.unified.FileUploader</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachFileEmpty( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+
+	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:filenameLengthExceed filenameLengthExceed} event of this <code>sap.ui.unified.FileUploader</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -301,7 +324,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -456,7 +479,7 @@ This property is not supported by Internet Explorer 9.
 	* Returns a metadata object for class sap.ui.unified.FileUploader.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getMimeType mimeType}.
@@ -1302,6 +1325,11 @@ If not specified, the base or hovered icon is used. If an icon font icon is used
 	* Event is fired when the file is allowed for upload on client side.
 	*/
 	@:optional var fileAllowed:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* Event is fired when the size of the file is 0
+	*/
+	@:optional var fileEmpty:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
 	* Event is fired, if the filename of a chosen file is longer than the value specified with the <code>maximumFilenameLength</code> property.

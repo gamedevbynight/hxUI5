@@ -4,6 +4,11 @@ package sap.ui.test.matchers;
 
 /**
 * Checks if a control has a given descendant.
+
+As of version 1.72, it is available as a declarative matcher with the following syntax: <code><pre>{
+    descendant: "object" // where "object" is a declarative matcher for the descendant
+}
+</code></pre>
 */
 extern class Descendant
 {

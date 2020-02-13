@@ -112,7 +112,7 @@ This is only valid when called between <code>openStart/voidStart</code> and <cod
 	/**
 	* Cleans up the rendering state of the given control without rendering it.
 
-A control is responsible for the rendering of all its child controls. But in some cases it makes sense that a control only renders a subset of its children based on some criterion. For example, a typical carousel control might, for performance reasons, only render the currently visible children (and maybe some child before and after the visible area to facilitate slide-in / slide-out animations), but not all children. This leads to situations where a child had been rendered before, but shouldn't be rendered anymore after an update of the carousel's position. The DOM related state of that child then must be cleaned up correctly, e.g. by de-registering resize handlers or native event handlers. <code>cleanupControlWithoutRendering</code> helps with that task by triggering the same activities that the normal rendering triggers before the rendering of a control (e.g. it fire the <code>BeforeRendering</code> event). It just doesn't call the renderer and the control will not receive an <code>AfterRendering</code> event.
+A control is responsible for the rendering of all its child controls. But in some cases it makes sense that a control only renders a subset of its children based on some criterion. For example, a typical carousel control might, for performance reasons, only render the currently visible children (and maybe some child before and after the visible area to facilitate slide-in / slide-out animations), but not all children. This leads to situations where a child had been rendered before, but shouldn't be rendered anymore after an update of the carousel's position. The DOM related state of that child then must be cleaned up correctly, e.g. by de-registering resize handlers or native event handlers. <code>cleanupControlWithoutRendering</code> helps with that task by triggering the same activities that the normal rendering triggers before the rendering of a control (e.g. it fires the <code>BeforeRendering</code> event). It just doesn't call the renderer and the control will not receive an <code>AfterRendering</code> event.
 
 The following example shows how <code>renderControl</code> and <code>cleanupControlWithoutRendering</code> should be used:
 
@@ -121,13 +121,13 @@ The following example shows how <code>renderControl</code> and <code>cleanupCont
 
     ...
 
-    oCarousel.getPages().forEach( oPage ) {
+    oCarousel.getPages().forEach( function( oPage ) {
        if ( oCarousel.isPageToBeRendered( oPage ) ) {
           rm.renderControl( oPage ); // onBeforeRendering, render, later onAfterRendering
        } else {
           rm.cleanupControlWithoutRendering( oPage ); // onBeforeRendering
        }
-    }
+    });
 
     ...
 
@@ -216,7 +216,7 @@ Usage: <pre>
 	* @param	oControl the control that should be rendered
 	* @return	the renderer class for a given control instance
 	*/
-	public static function getRenderer( oControl:sap.ui.core.Control):()->Void;
+	public static function getRenderer( oControl:sap.ui.core.Control):Dynamic;
 	@:overload( function(sURI:sap.ui.core.URI, ?aClasses:Array<Dynamic>, ?mAttributes:Dynamic):sap.ui.core.RenderManager{ })
 
 	/**

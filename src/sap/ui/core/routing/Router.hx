@@ -265,7 +265,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.EventProvider.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -324,9 +324,9 @@ History entry example: <pre>
 	* Returns the URL for the route and replaces the placeholders with the values in <code>oParameters</code>.
 	* @param	sName Name of the route
 	* @param	oParameters Parameters for the route
-	* @return	The unencoded pattern with interpolated arguments
+	* @return	The unencoded pattern with interpolated arguments or <code>undefined</code> if no matching route can be determined
 	*/
-	public function getURL( sName:String, ?oParameters:Dynamic):String;
+	public function getURL( sName:String, ?oParameters:Dynamic):Dynamic;
 
 	/**
 	* Returns the <code>sap.ui.core.routing.Views</code> instance created by the router.
@@ -357,10 +357,10 @@ See {@link sap.ui.core.routing.HashChanger}.
 
 	/**
 	* Returns whether the given hash can be matched by any of the routes in the router.
-	* @param	Hash which will be tested by the Router
+	* @param	sHash which will be tested by the Router
 	* @return	Whether the hash can be matched
 	*/
-	public function match( Hash:String):Bool;
+	public function match( sHash:String):Bool;
 
 	/**
 	* Navigates to a specific route defining a set of parameters.
@@ -370,19 +370,20 @@ The parameters will be URI encoded - the characters ; , / ? : @ & = + $ are rese
 If the given route name can't be found, an error message is logged to the console and the hash will be changed to the empty string.
 	* @param	sName Name of the route
 	* @param	oParameters Parameters for the route
+	* @param	oComponentTargetInfo Information for route name and parameters of the router in nested components. When any target of the route which is specified with the <code>sName</code> parameter loads a component and a route of this component whose pattern is different than an empty string should be matched directly with this navTo call, the route name and its parameters can be given by using this parameter. Information for deeper nested component target can be given within the <code>componentTargetInfo</code> property which contains the same properties as the top level.
 	* @param	bReplace If set to <code>true</code>, the hash is replaced, and there will be no entry in the browser history, if set to <code>false</code>, the hash is set and the entry is stored in the browser history.
 	* @return	this for chaining.
 	*/
-	public function navTo( sName:String, ?oParameters:Dynamic, ?bReplace:Bool):sap.ui.core.routing.Router;
+	public function navTo( sName:String, ?oParameters:Dynamic, ?oComponentTargetInfo:Dynamic, ?bReplace:Bool):sap.ui.core.routing.Router;
 
 	/**
-	* Registers the router to access it from another context.
+	* Centrally register this router instance under a given name to be able to access it from another context, just by knowing the name.
 
-Use <code>sap.ui.routing.Router.getRouter()</code> to receive the instance.
-	* @param	sName Name of the router
-	* @return	Void
+Use {@link sap.ui.core.routing.Router.getRouter Router.getRouter()} to retrieve the instance.
+	* @param	sName Name of the router instance
+	* @return	The router instance
 	*/
-	public function register( sName:String):Void;
+	public function register( sName:String):sap.ui.core.routing.Router;
 
 	/**
 	* Stops to listen to the <code>hashChange</code> of the browser.

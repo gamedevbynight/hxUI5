@@ -70,7 +70,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Element.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -201,7 +201,7 @@ The menu used by the column. By default the {@link sap.ui.table.ColumnMenu} is u
 	* Returns a metadata object for class sap.ui.table.Column.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getMinWidth minWidth}.
@@ -224,7 +224,7 @@ Labels of the column which are displayed in the column header. Define a control 
 	/**
 	* Gets current value of property {@link #getName name}.
 
-The name of the column which is used in the column visibility menu item as text. If not set as a fallback the column menu tries to get the text from the nested Label.
+The name of the column which is used for the text representation of this column, for example, in menus. If not set, the text from the multiLabels aggregation or the label aggregation (in that order) is used as a fallback option.
 	* @return	Value of property <code>name</code>
 	*/
 	public function getName( ):String;
@@ -508,7 +508,7 @@ Default value is <code>0</code>.
 	/**
 	* Sets a new value for property {@link #getName name}.
 
-The name of the column which is used in the column visibility menu item as text. If not set as a fallback the column menu tries to get the text from the nested Label.
+The name of the column which is used for the text representation of this column, for example, in menus. If not set, the text from the multiLabels aggregation or the label aggregation (in that order) is used as a fallback option.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sName New value for property <code>name</code>
@@ -721,7 +721,7 @@ some..thing   between
 	@:optional var visible:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* The name of the column which is used in the column visibility menu item as text. If not set as a fallback the column menu tries to get the text from the nested Label.
+	* The name of the column which is used for the text representation of this column, for example, in menus. If not set, the text from the multiLabels aggregation or the label aggregation (in that order) is used as a fallback option.
 	*/
 	@:optional var name:String;
 

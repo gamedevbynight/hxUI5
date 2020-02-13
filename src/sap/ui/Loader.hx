@@ -36,6 +36,18 @@ The following code shows an example of what a UI5 loader configuration might loo
       }
     },
 
+    // define two bundles that consists of JS modules only
+    bundles: {
+      bundle1: ['module1', 'module2'],
+      bundle2: ['moduleX', 'moduleY']
+    },
+
+    // define a bundle that also contains non-JS resources
+    bundlesUI5: {
+      'all.js': ['Component.js', 'manifest.json',
+                 'App.controller.js', 'App.view.xml']
+    },
+
     // activate real async loading and module definitions
     async: true,
 

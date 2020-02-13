@@ -45,7 +45,7 @@ The context must not be used anymore after successful deletion.
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.Context.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -137,6 +137,8 @@ If you want {@link #requestObject} to read fresh data, call {@link #refresh} fir
 	/**
 	* Loads side effects for this context using the given "14.5.11 Expression edm:NavigationPropertyPath" or "14.5.13 Expression edm:PropertyPath" objects. Use this method to explicitly load side effects in case implicit loading is switched off via the binding-specific parameter <code>$$patchWithoutSideEffects</code>. The method can be called on <ul> <li> the bound context of a context binding, <li> the return value context of an operation binding, <li> a context of a list binding representing a single entity, <li> the header context of a list binding; side effects are loaded for the whole binding in this case. </ul> Key predicates must be available in this context's path. Avoid navigation properties as part of a binding's $select system query option as they may trigger pointless requests. There must be only context bindings between this context and its first ancestor binding which uses own data service requests.
 
+If the first ancestor binding has an empty path, it is a context binding. In this case, we look for the farthest ancestor binding with the following characteristics: It uses own data service requests, it can be reached via a sequence of only empty paths, and it is actually being used. This way, side effects are loaded also for siblings of that first ancestor binding which show the same data, but useless requests are avoided.
+
 By default, the request uses the update group ID for this context's binding; this way, it can easily be part of the same batch request as the corresponding update. <b>Caution:</b> If a dependent binding uses a different update group ID, it may lose its pending changes. The same will happen if a different group ID is provided, and the side effects affect properties for which there are pending changes.
 
 All failed updates or creates for the group ID are repeated within the same batch request. If the group ID has submit mode {@link sap.ui.model.odata.v4.SubmitMode.Auto} and there are currently running updates or creates this method first waits for them to be processed.
@@ -152,7 +154,7 @@ The events 'dataRequested' and 'dataReceived' are not fired. Whatever should hap
 	* Sets a new value for the property identified by the given path. The path is relative to this context and is expected to point to a structural property with primitive type.
 	* @param	sPath A relative path within the JSON structure
 	* @param	vValue The new value which must be primitive
-	* @param	sGroupId The group ID to be used for the PATCH request; if not specified, the update group ID for the context's binding is used, see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}.
+	* @param	sGroupId The group ID to be used for the PATCH request; if not specified, the update group ID for the context's binding is used, see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}. Since 1.74, you can use <code>null</code> to prevent the PATCH request.
 	* @return	A promise which is resolved without a result in case of success, or rejected with an instance of <code>Error</code> in case of failure
 	*/
 	public function setProperty( sPath:String, vValue:Dynamic, ?sGroupId:String):js.lib.Promise<Context>;

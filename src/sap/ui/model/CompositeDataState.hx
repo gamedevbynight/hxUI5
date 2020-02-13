@@ -40,7 +40,7 @@ public function new():Void;
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.DataState.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -54,17 +54,23 @@ public function new():Void;
 </pre> The map only contains the changed properties.
 	* @return	the changed of the data state
 	*/
-	public function getChanges( ):Dynamic;
+	public function getChanges( ):Map<String,{oldValue:any>;
+
+	/**
+	* Returns the array of state messages of the control.
+	* @return	The array of control messages
+	*/
+	public function getControlMessages( ):Array<sap.ui.core.Message>;
 
 	/**
 	* Returns the dirty value of a binding that was rejected by a type validation. This value was of an incorrect type and could not be applied to the model. If the value was not rejected it will return null. In this case the current model value can be accessed using the <code>getValue</code> method.
-	* @return	the value that was rejected or null
+	* @return	The value that was rejected
 	*/
 	public function getInvalidValue( ):Dynamic;
 
 	/**
-	* Returns the array of all state messages or null. This combines the model and control messages.
-	* @return	the array of all messages or null if no {link:sap.ui.core.messages.ModelManager ModelManager} is used.
+	* Returns the array of all state messages combining the model and control messages.
+	* @return	The array of all messages
 	*/
 	public function getMessages( ):Array<sap.ui.core.Message>;
 
@@ -75,26 +81,26 @@ public function new():Void;
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
-	* Returns the array of state messages of the model or undefined
-	* @return	the array of messages of the model or null if no {link:sap.ui.core.messages.ModelManager ModelManager} is used.
+	* Returns the array of state messages of the model or undefined.
+	* @return	The array of messages of the model
 	*/
 	public function getModelMessages( ):Array<sap.ui.core.Message>;
 
 	/**
 	* Returns whether the data state is dirty in the UI control. A data state is dirty in the UI control if the entered value did not yet pass the type validation.
-	* @return	true if the data state is dirty
+	* @return	Whether the control data state is dirty
 	*/
 	public function isControlDirty( ):Bool;
 
 	/**
 	* Returns whether the data state is dirty. A data state is dirty if the value was changed but is not yet confirmed by a server or the entered value did not yet pass the type validation.
-	* @return	true if the data state is dirty
+	* @return	Whether the data state is dirty
 	*/
 	public function isDirty( ):Bool;
 
 	/**
 	* Returns whether the data state is in laundering. If data is send to the server the data state becomes laundering until the data was accepted or rejected.
-	* @return	true if the data is laundering
+	* @return	Whether the data state is laundering
 	*/
 	public function isLaundering( ):Bool;
 }

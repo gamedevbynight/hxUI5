@@ -3,7 +3,25 @@ package sap.ui.core;
 @:native("sap.ui.core.ComponentContainer")
 
 /**
-* Container that embeds a UIComponent in a control tree.
+* Container that embeds a <code>sap/ui/core/UIComponent</code> in a control tree.
+
+<b>Concerning asynchronous component loading:</b>
+
+To activate a fully asynchronous loading behavior of components and their dependencies, the property <code>async</code> needs to be set to <code>true</code> and the <code>manifest</code> property needs to be set to a 'truthy' value, e.g. <code>true</code> or a URL to the manifest location. If both options are correctly set, the component factory will load and evaluate the component manifest first. In this way, the additional dependencies of the Component are already known before the Component preload/controller is loaded. Both the component preload/controller and the additional dependencies can thus be loaded asynchronously and in parallel.
+
+Sample usage of the ComponentContainer:
+
+<pre>
+    &lt;!-- inside XML view -->
+    ...
+    &lt;core:ComponentContainer
+        usage="someComponent"
+        manifest="true"
+        async="true"
+    />
+</pre>
+
+See also {@link sap.ui.core.ComponentSupport}.
 */
 extern class ComponentContainer extends sap.ui.core.Control
 {
@@ -62,7 +80,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -133,7 +151,7 @@ Controls when and from where to load the manifest for the Component. When set to
 	* Returns a metadata object for class sap.ui.core.ComponentContainer.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getName name}.

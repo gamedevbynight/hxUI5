@@ -15,10 +15,16 @@ public function new():Void;
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.Object.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+
+	/**
+	* Overrides the {@link sap.ui.base.Object#getInterface} to avoid creating an <code>Interface</code> object for types.
+	* @return	this
+	*/
+	public function getInterface( ):Dynamic;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.Type.
@@ -28,15 +34,13 @@ public function new():Void;
 
 	/**
 	* Returns the name of this type.
-	* @return	the name of this type
+	* @return	The name of this type
 	*/
 	public function getName( ):String;
 
 	/**
-	* Returns a simple string representation of this type.
-
-Mainly useful for tracing purposes.
-	* @return	a string description of this type
+	* Returns a simple string representation of this type. Mainly useful for tracing purposes.
+	* @return	A string description of this type
 	*/
 	public function toString( ):String;
 }

@@ -6,6 +6,8 @@ package sap.m;
 * SplitApp is another possible root element of an SAPUI5 mobile application besides {@link sap.m.App}. It contains two NavContainers if running on tablet or desktop, and one on phone. The display of master NavContainer depends on the portrait/landscape mode of the device and the mode of SplitApp. <h3>Structure</h3> The SplitApp divides the screen into two areas: <ul> <li>Master area - contains a list of available items where the user can search and filter.</li> <li>Details area - contains a control which shows further details on the item(s) selected from the master view.</li> </ul> Both areas have separate headers and footer bars with navigation and actions. <h3>Usage</h3> <h4>When to use</h4> <ul> <li>You need to review and process different items quickly with minimal navigation.</li> </ul> <h4>When not to use</h4> <ul> <li>You need to offer complex filters for the list of items.</li> <li>You need to see different attributes for each item in the list, and compare these values across items.</li> <li>You want to display a single object. Do not use the master list to display different facets of the same object.</li> </ul> <h3>Responsive Behavior</h3> On narrow screens for phones (or tablet devices in portrait mode), the master list and the details are split into two separate pages.
 
 The user can navigate between the list and details, and see all the available information for each area.
+
+<b>Note:</b> The SplitApp should be used only as a root element of an application. It cannot be used as a child control of some container.
 */
 extern class SplitApp extends sap.m.SplitContainer
 {
@@ -41,7 +43,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.SplitContainer.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -66,7 +68,7 @@ On Android, these icons may or may not be used by the device. Chances can be imp
 	* Returns a metadata object for class sap.m.SplitApp.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Sets a new value for property {@link #getHomeIcon homeIcon}.

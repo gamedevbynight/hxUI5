@@ -87,7 +87,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -180,7 +180,7 @@ Default value is <code>5</code>.
 	* Returns a metadata object for class sap.m.RatingIndicator.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getValue value}.
@@ -294,9 +294,13 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setIconSelected( sIconSelected:sap.ui.core.URI):sap.m.RatingIndicator;
 
 	/**
-	* Sets the icon size value. The method automatically updates the UI components if the control has been rendered before.
-	* @param	sIconSize The size of the icon
-	* @return	Returns <code>this</code> to facilitate method chaining.
+	* Sets a new value for property {@link #getIconSize iconSize}.
+
+The Size of the image or icon to be displayed. The default value depends on the theme. Please be sure that the size is corresponding to a full pixel value as some browsers don't support subpixel calculations. Recommended size is 1.375rem (22px) for normal, 1rem (16px) for small, and 2rem (32px) for large icons correspondingly.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sIconSize New value for property <code>iconSize</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIconSize( sIconSize:sap.ui.core.CSSSize):sap.m.RatingIndicator;
 

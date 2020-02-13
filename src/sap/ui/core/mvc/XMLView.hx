@@ -35,7 +35,7 @@ The <code>controller</code> property is optional and can hold a controller insta
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.mvc.View.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -44,7 +44,7 @@ The <code>controller</code> property is optional and can hold a controller insta
 	* Returns a metadata object for class sap.ui.core.mvc.XMLView.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 	@:overload( function(sType:String, vPreprocessor:String, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })
 	@:overload( function(sType:String, vPreprocessor:()->Void, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })
 	@:overload( function(sType:sap.ui.core.mvc.xmlview.PreprocessorType, vPreprocessor:String, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })

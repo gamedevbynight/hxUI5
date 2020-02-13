@@ -10,8 +10,8 @@ extern class Boolean extends sap.ui.model.SimpleType
 
 	/**
 	* 
-	* @param	oFormatOptions formatting options. Boolean doesn't support any specific format options
-	* @param	oConstraints value constraints. Boolean doesn't support additional constraints
+	* @param	oFormatOptions Format options as defined in the interface of {@link sap.ui.model.SimpleType}; this type ignores them, since it does not support any format options
+	* @param	oConstraints Constraints as defined in the interface of {@link sap.ui.model.SimpleType}; this type ignores them, since it does not support any constraints
 	* @return	Object
 	*/
 	public function new( ?oFormatOptions:Dynamic, ?oConstraints:Dynamic):Void;
@@ -22,7 +22,7 @@ extern class Boolean extends sap.ui.model.SimpleType
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.SimpleType.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;

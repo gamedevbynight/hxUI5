@@ -11,6 +11,15 @@ extern class ViewSettingsCustomItem extends sap.m.ViewSettingsItem
 	public function new(?mSettings:ViewSettingsCustomItemArgs):Void;
 
 	/**
+	* Creates a clone of the ViewSettingsCustomItem instance.
+	* @param	sIdSuffix a suffix to be appended to the cloned object id
+	* @param	aLocalIds an array of local IDs within the cloned hierarchy (internally used)
+	* @param	oOptions configuration object
+	* @return	reference to the newly created clone
+	*/
+	public function clone( ?sIdSuffix:String, ?aLocalIds:Array<String>, ?oOptions:Dynamic):sap.ui.base.ManagedObject;
+
+	/**
 	* Destroys the customControl in the aggregation {@link #getCustomControl customControl}.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -22,7 +31,7 @@ extern class ViewSettingsCustomItem extends sap.m.ViewSettingsItem
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.ViewSettingsItem.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -47,7 +56,7 @@ Default value is <code>0</code>.
 	* Returns a metadata object for class sap.m.ViewSettingsCustomItem.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Internally the control is handled as a managed object instead of an aggregation as this control is sometimes aggregated in other controls like a popover or a dialog.

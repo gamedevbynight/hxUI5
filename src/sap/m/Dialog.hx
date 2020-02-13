@@ -5,7 +5,7 @@ package sap.m;
 /**
 * A popup that interrupts the current processing and prompts the user for an action or an input in a modal mode. <h3>Overview</h3> The Dialog control is used to prompt the user for an action or a confirmation. It interrupts the current app processing as it is the only focused UI element and the main screen is dimmed/blocked. The content of the Dialog is fully customizable. <h3>Structure</h3> A Dialog consists of a title, optional subtitle, content area and a footer for action buttons. The Dialog is usually displayed at the center of the screen. Its size and position can be changed by the user. To enable this, you need to set the properties <code>resizable</code> and <code>draggable</code> accordingly.
 
-There are other specialized types of dialogs: <ul> <li>{@link sap.m.P13nDialog Personalization Dialog} - used for personalizing sorting, filtering and grouping in tables</li> <li>{@link sap.m.SelectDialog Select Dialog} - used to select one or more items from a comprehensive list</li> <li>{@link sap.m.TableSelectDialog Table Select Dialog} - used to make a selection from a comprehensive table containing multiple attributes or values</li> <li>{@link sap.ui.comp.valuehelpdialog.ValueHelpDialog Value Help Dialog} - used to help the user find and select single and multiple values</li> <li>{@link sap.m.ViewSettingsDialog View Settings Dialog} - used to sort, filter, or group data within a (master) list or a table</li> <li>{@link sap.m.BusyDialog Busy Dialog} - used to block the screen and inform the user about an ongoing operation</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You want to display a system message.</li> <li>You want to interrupt the user’s action.</li> <li>You want to show a message with a short and a long description.</li> </ul> <h4>When not to use:</h4> <ul> <li>You just want to confirm a successful action.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>If the <code>stretch</code> property is set to <code>true</code>, the Dialog displays on full screen.</li> <li>If the <code>contentWidth</code> and/or <code>contentHeight</code> properties are set, the Dialog will try to fill those sizes.</li> <li>If there is no specific sizing, the Dialog will try to adjust its size to its content.</li> </ul> <h4>Smartphones</h4> If the Dialog has one or two actions, they will cover the entire footer. If there are more actions, they will overflow. <h4>Tablets</h4> The action buttons in the toolbar are <b>right-aligned</b>. Use <b>cozy</b> mode on tablet devices. <h4>Desktop</h4> The action buttons in the toolbar are <b>right-aligned</b>. Use <b>compact</b> mode on desktop.
+There are other specialized types of dialogs: <ul> <li>{@link sap.m.P13nDialog Personalization Dialog} - used for personalizing sorting, filtering and grouping in tables</li> <li>{@link sap.m.SelectDialog Select Dialog} - used to select one or more items from a comprehensive list</li> <li>{@link sap.m.TableSelectDialog Table Select Dialog} - used to make a selection from a comprehensive table containing multiple attributes or values</li> <li>{@link sap.ui.comp.valuehelpdialog.ValueHelpDialog Value Help Dialog} - used to help the user find and select single and multiple values</li> <li>{@link sap.m.ViewSettingsDialog View Settings Dialog} - used to sort, filter, or group data within a (master) list or a table</li> <li>{@link sap.m.BusyDialog Busy Dialog} - used to block the screen and inform the user about an ongoing operation</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You want to display a system message.</li> <li>You want to interrupt the user’s action.</li> <li>You want to show a message with a short and a long description.</li> </ul> <h4>When not to use:</h4> <ul> <li>You just want to confirm a successful action.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>If the <code>stretch</code> property is set to <code>true</code>, the Dialog displays on full screen.</li> <li>If the <code>contentWidth</code> and/or <code>contentHeight</code> properties are set, the Dialog will try to fill those sizes.</li> <li>If there is no specific sizing, the Dialog will try to adjust its size to its content.</li> </ul> When using the <code>sap.m.Dialog</code> in SAP Quartz themes, the breakpoints and layout paddings could be determined by the Dialog's width. To enable this concept and add responsive paddings to an element of the Dialog control, you have to add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--subHeader</code>, <code>sapUiResponsivePadding--content</code>, <code>sapUiResponsivePadding--footer</code>. <h4>Smartphones</h4> If the Dialog has one or two actions, they will cover the entire footer. If there are more actions, they will overflow. <h4>Tablets</h4> The action buttons in the toolbar are <b>right-aligned</b>. Use <b>cozy</b> mode on tablet devices. <h4>Desktop</h4> The action buttons in the toolbar are <b>right-aligned</b>. Use <b>compact</b> mode on desktop.
 */
 extern class Dialog extends sap.ui.core.Control implements sap.ui.core.PopupInterface
 {
@@ -182,7 +182,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -214,6 +214,16 @@ Buttons can be added to the footer area of the Dialog through this aggregation. 
 	* @return	null
 	*/
 	public function getButtons( ):Array<sap.m.Button>;
+
+	/**
+	* Gets current value of property {@link #getCloseOnNavigation closeOnNavigation}.
+
+Indicates whether the Dialog will be closed automatically when a routing navigation occurs.
+
+Default value is <code>true</code>.
+	* @return	Value of property <code>closeOnNavigation</code>
+	*/
+	public function getCloseOnNavigation( ):Bool;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.
@@ -301,7 +311,7 @@ Icon displayed in the Dialog header. This <code>icon</code> is invisible on the 
 	* Returns a metadata object for class sap.m.Dialog.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getResizable resizable}.
@@ -358,6 +368,16 @@ Title text appears in the Dialog header.
 	* @return	Value of property <code>title</code>
 	*/
 	public function getTitle( ):String;
+
+	/**
+	* Gets current value of property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+Default value is <code>Auto</code>.
+	* @return	Value of property <code>titleAlignment</code>
+	*/
+	public function getTitleAlignment( ):sap.m.TitleAlignment;
 
 	/**
 	* Gets current value of property {@link #getType type}.
@@ -491,6 +511,19 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setBeginButton( oBeginButton:sap.m.Button):sap.m.Dialog;
+
+	/**
+	* Sets a new value for property {@link #getCloseOnNavigation closeOnNavigation}.
+
+Indicates whether the Dialog will be closed automatically when a routing navigation occurs.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bCloseOnNavigation New value for property <code>closeOnNavigation</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setCloseOnNavigation( bCloseOnNavigation:Bool):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getContentHeight contentHeight}.
@@ -655,6 +688,19 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setTitle( sTitle:String):sap.m.Dialog;
 
 	/**
+	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Auto</code>.
+	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.Dialog;
+
+	/**
 	* Sets a new value for property {@link #getType type}.
 
 The <code>type</code> of the Dialog. In some themes, the type Message will limit the Dialog width within 480px on tablet and desktop.
@@ -752,6 +798,16 @@ typedef DialogArgs = sap.ui.core.Control.ControlArgs & {
 	* Specifies the ARIA role of the Dialog. If the state of the control is "Error" or "Warning" the role will be "AlertDialog" regardless of what is set.
 	*/
 	@:optional var role:haxe.extern.EitherType<String,sap.m.DialogRoleType>;
+
+	/**
+	* Indicates whether the Dialog will be closed automatically when a routing navigation occurs.
+	*/
+	@:optional var closeOnNavigation:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+	*/
+	@:optional var titleAlignment:haxe.extern.EitherType<String,sap.m.TitleAlignment>;
 
     /**
     * The content inside the Dialog.<br/><b>Note:</b> When the content of the Dialog is comprised of controls that use <code>position: absolute</code>, such as <code>SplitContainer</code>, the Dialog has to have either <code>stretch: true</code> or <code>contentHeight</code> set.

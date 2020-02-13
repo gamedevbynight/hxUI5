@@ -32,7 +32,7 @@ extern class ProgressIndicator extends sap.ui.core.Control implements sap.ui.cor
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -48,6 +48,16 @@ extern class ProgressIndicator extends sap.ui.core.Control implements sap.ui.cor
 	* @return	null
 	*/
 	public function getAriaLabelledBy( ):Array<sap.ui.core.ID>;
+
+	/**
+	* Gets current value of property {@link #getDisplayAnimation displayAnimation}.
+
+Determines whether a percentage change is displayed with animation.
+
+Default value is <code>true</code>.
+	* @return	Value of property <code>displayAnimation</code>
+	*/
+	public function getDisplayAnimation( ):Bool;
 
 	/**
 	* Gets current value of property {@link #getDisplayOnly displayOnly}.
@@ -89,7 +99,7 @@ Specifies the height of the control. The default value depends on the theme. Sug
 	* Returns a metadata object for class sap.m.ProgressIndicator.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getPercentValue percentValue}.
@@ -172,6 +182,19 @@ Default value is <code>100%</code>.
 	* @return	The removed ariaLabelledBy or <code>null</code>
 	*/
 	public function removeAriaLabelledBy( vAriaLabelledBy:sap.ui.core.Control):sap.ui.core.ID;
+
+	/**
+	* Sets a new value for property {@link #getDisplayAnimation displayAnimation}.
+
+Determines whether a percentage change is displayed with animation.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bDisplayAnimation New value for property <code>displayAnimation</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setDisplayAnimation( bDisplayAnimation:Bool):sap.m.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getDisplayOnly displayOnly}.
@@ -337,6 +360,11 @@ typedef ProgressIndicatorArgs = sap.ui.core.Control.ControlArgs & {
 	* Determines whether the control is in display-only state where the control has different visualization and cannot be focused.
 	*/
 	@:optional var displayOnly:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Determines whether a percentage change is displayed with animation.
+	*/
+	@:optional var displayAnimation:haxe.extern.EitherType<String,Bool>;
 
 	/**
 	* Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).

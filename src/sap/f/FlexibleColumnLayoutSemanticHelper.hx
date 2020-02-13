@@ -44,6 +44,8 @@ extern class FlexibleColumnLayoutSemanticHelper
 
 <ul>The returned object has the following structure: <li>layout - the value of the <code>layout</code> property</li> <li>maxColumnsCount - the maximum number of columns that can be displayed at once based on the control width. See {@link sap.f.FlexibleColumnLayout#getMaxColumnsCount}</li> <li>columnsSizes - an object with fields <code>beginColumn, midColumn, endColumn</code>, representing the relative percentage sizes of the three columns as integers</li> <li>columnsVisibility - an object with fields <code>beginColumn, midColumn, endColumn</code>, representing the visibility of the three columns</li> <li>isFullScreen - <code>true</code> if only one column is visible at the moment, <code>false</code> otherwise <b>Note:</b> This may be due to small screen size (phone) or due to a layout, for which a single column takes up the whole width</li> <li>isLogicallyFullScreen - <code>true</code> if the current <code>layout</code> is one of the following: <code>sap.f.LayoutType.OneColumn, sap.f.LayoutType.MidColumnFullScreen, sap.f.LayoutType.EndColumnFullScreen</code>, <code>false</code> otherwise <b>Note:</b> While <code>isFullScreen</code> can be <code>true</code> for any layout, due to small screen size, <code>isLogicallyFullScreen</code> will only be <code>true</code> for the layout values, listed above.</li> <li>actionButtonsInfo - an object with fields <code>midColumn, endColumn</code>, each containing an object, telling whether action buttons should be shown in the <code>mid</code> and <code>end</code> columns, and what value of the <code>layout</code> property should be set upon clicking these buttons. Each of these objects has the following fields: <code>closeColumn, fullScreen, exitFullScreen</code>. If <code>null</code>, then the respective action button should not be shown, otherwise provides the value of <code>layout</code> property for the action button.</li></ul>
 
+<b>Note:</b> This method relies on the internal <code>FlexibleColumnLayout</code> reference to be rendered in the DOM tree. For convenience, use methods {@link sap.f.FlexibleColumnLayout#isDOMReady} and {@link sap.f.FlexibleColumnLayout#whenDOMReady}.
+
 Example value:
 
 <pre>
@@ -106,5 +108,29 @@ About the format of return value, see: {@link sap.f.FlexibleColumnLayoutSemantic
 	* @return	The object describing the next UI state
 	*/
 	public function getNextUIState( iNextLevel:Int):Dynamic;
+
+	/**
+	* Returns <code>true</code> if internal <code>FlexibleColumnLayout</code> reference is rendered in the DOM tree.
+	* @return	true if the associated <code>FlexibleColumnLayout</code> is rendered
+	*/
+	public function isDOMReady( ):Bool;
+
+	/**
+	* Abstract wrapper for {@link sap.f.FlexibleColumnLayout#isDOMReady}. Returns <code>true</code> if criteria are met for the APIs in this helper to be used.
+	* @return	true if this helper's API reliability criteria are met
+	*/
+	public function isReady( ):Bool;
+
+	/**
+	* Returns promise which can be used to find out when the internal <code>FlexibleColumnLayout</code> is rendered. This is needed because methods in <code>FlexibleColumnLayout</code> rely on the control being rendered.
+	* @return	A promise that resolves after <code>FlexibleColumnLayout</code> is rendered
+	*/
+	public function whenDOMReady( ):js.lib.Promise<FlexibleColumnLayoutSemanticHelper>;
+
+	/**
+	* Returns promise which can be used to find out when internal criteria for this helper's API reliability are met.
+	* @return	A promise that resolves after internal criteria are met
+	*/
+	public function whenReady( ):js.lib.Promise<FlexibleColumnLayoutSemanticHelper>;
 }
 

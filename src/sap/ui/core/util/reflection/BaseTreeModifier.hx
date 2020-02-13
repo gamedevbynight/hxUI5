@@ -101,14 +101,14 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	* @return	Aggregation content
 	*/
 	public static function getAggregation( vParent:js.html.Element, sName:String):Dynamic;
-	@:overload( function(vControl:sap.ui.base.ManagedObject):Dynamic{ })
+	@:overload( function(vControl:sap.ui.base.ManagedObject):Map<String,Dynamic>{ })
 
 	/**
 	* See {@link sap.ui.base.ManagedObjectMetadata#getAllAggregations} method.
 	* @param	vControl Control representation
 	* @return	Map of aggregation info objects keyed by aggregation names
 	*/
-	public static function getAllAggregations( vControl:js.html.Element):Dynamic;
+	public static function getAllAggregations( vControl:js.html.Element):Map<String,Dynamic>;
 	@:overload( function(vParent:sap.ui.base.ManagedObject, sName:String):Dynamic{ })
 
 	/**

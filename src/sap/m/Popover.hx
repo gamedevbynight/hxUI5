@@ -7,7 +7,7 @@ package sap.m;
 
 <h3>Overview</h3> The popover displays additional information for an object in a compact way and without leaving the page. The popover can contain various UI elements such as fields, tables, images, and charts. It can also include actions in the footer. <h3>Structure</h3> The popover has three main areas: <ul> <li>Header (optional) - with a back button and a title</li> <li>Content - holds all the controls</li> <li>Footer (optional) - with additional action buttons</li> </ul> <h4>Guidelines</h4> <ul> <li>Do not overlap popovers.</li> <li>You can determine the {@link sap.m.PlacementType placement} of the popover relative to the control that opens it.</li> <li>Ensure that the content has a basic design and shows only the most important information.</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to define your own structure of controls within the popover.</li> </ul> <h4>When not to use:</h4> <ul> <li>The {@link sap.m.QuickView QuickView} is more appropriate for your use case.</li> </ul> <h3>Responsive Behavior</h3> The popover is closed when the user clicks or taps outside the popover or selects an action within the popover. You can prevent this with the <code>modal</code> property. The popover can be resized when the <code>resizable</code> property is enabled.
 
-<ul> <li>{@link sap.m.Popover} is <u>not</u> responsive on mobile devices - it will always be rendered as a popover and you have to take care of its size and position.</li> <li>{@link sap.m.ResponsivePopover} is adaptive and responsive. It renders as a dialog with a close button in the header on phones, and as a popover on tablets.</li> </ul>
+When using the sap.m.Popover in Sap Quartz theme, the breakpoints and layout paddings could be determined by the container's width. To enable this concept and add responsive paddings to an element of the Popover control, you may add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--subHeader</code>, <code>sapUiResponsivePadding--content</code>, <code>sapUiResponsivePadding--footer</code>. <ul> <li>{@link sap.m.Popover} is <u>not</u> responsive on mobile devices - it will always be rendered as a popover and you have to take care of its size and position.</li> <li>{@link sap.m.ResponsivePopover} is adaptive and responsive. It renders as a dialog with a close button in the header on phones, and as a popover on tablets.</li> </ul>
 */
 extern class Popover extends sap.ui.core.Control implements sap.ui.core.PopupInterface
 {
@@ -177,7 +177,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -280,7 +280,7 @@ Default value is <code>true</code>.
 	* Returns a metadata object for class sap.m.Popover.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getModal modal}.
@@ -363,10 +363,20 @@ When subHeader is assigned to Popover, it's rendered directly after the main hea
 	/**
 	* Gets current value of property {@link #getTitle title}.
 
-Title text appears in the header. This property will be ignored when showHeader is set to false.
+Title text appears in the header. This property will be ignored when <code>showHeader</code> is set to <code>false</code>. If you want to show a header in the <code>sap.m.Popover</code>, don't forget to set the {@link #setShowHeader showHeader} property to <code>true</code>.
 	* @return	Value of property <code>title</code>
 	*/
 	public function getTitle( ):String;
+
+	/**
+	* Gets current value of property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+Default value is <code>Auto</code>.
+	* @return	Value of property <code>titleAlignment</code>
+	*/
+	public function getTitleAlignment( ):sap.m.TitleAlignment;
 
 	/**
 	* Gets current value of property {@link #getVerticalScrolling verticalScrolling}.
@@ -628,13 +638,28 @@ Default value is <code>true</code>.
 	public function setSubHeader( oSubHeader:sap.ui.core.Control):sap.m.Popover;
 
 	/**
-	* The setter of the title property.
+	* Sets a new value for property {@link #getTitle title}.
 
-If you want to show a header in the popover, don't forget to set the {@link #setShowHeader showHeader} property to true.
-	* @param	sTitle The title to be set
-	* @return	Reference to the control instance for chaining
+Title text appears in the header. This property will be ignored when <code>showHeader</code> is set to <code>false</code>. If you want to show a header in the <code>sap.m.Popover</code>, don't forget to set the {@link #setShowHeader showHeader} property to <code>true</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sTitle New value for property <code>title</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setTitle( sTitle:String):sap.m.Popover;
+
+	/**
+	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Auto</code>.
+	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.Popover;
 
 	/**
 	* Sets a new value for property {@link #getVerticalScrolling verticalScrolling}.
@@ -663,7 +688,7 @@ typedef PopoverArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var showHeader:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Title text appears in the header. This property will be ignored when showHeader is set to false.
+	* Title text appears in the header. This property will be ignored when <code>showHeader</code> is set to <code>false</code>. If you want to show a header in the <code>sap.m.Popover</code>, don't forget to set the {@link #setShowHeader showHeader} property to <code>true</code>.
 	*/
 	@:optional var title:String;
 
@@ -721,6 +746,11 @@ typedef PopoverArgs = sap.ui.core.Control.ControlArgs & {
 	* Specifies the aria-modal of the Popover.
 	*/
 	@:optional var ariaModal:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+	*/
+	@:optional var titleAlignment:haxe.extern.EitherType<String,sap.m.TitleAlignment>;
 
     /**
     * The content inside the popover.

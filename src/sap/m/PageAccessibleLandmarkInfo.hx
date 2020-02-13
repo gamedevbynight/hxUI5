@@ -16,7 +16,7 @@ extern class PageAccessibleLandmarkInfo extends sap.ui.core.Element
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Element.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -24,7 +24,7 @@ extern class PageAccessibleLandmarkInfo extends sap.ui.core.Element
 	/**
 	* Gets current value of property {@link #getContentLabel contentLabel}.
 
-Texts which describes the landmark of the content container of the corresponding <code>sap.m.Page</code> control.
+Texts that describe the landmark of the content container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 	* @return	Value of property <code>contentLabel</code>
@@ -46,7 +46,7 @@ Default value is <code>Main</code>.
 	/**
 	* Gets current value of property {@link #getFooterLabel footerLabel}.
 
-Texts which describes the landmark of the header container of the corresponding <code>sap.m.Page</code> control.
+Texts that describe the landmark of the footer container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 	* @return	Value of property <code>footerLabel</code>
@@ -68,7 +68,7 @@ Default value is <code>Region</code>.
 	/**
 	* Gets current value of property {@link #getHeaderLabel headerLabel}.
 
-Texts which describes the landmark of the header container of the corresponding <code>sap.m.Page</code> control.
+Texts that describe the landmark of the header container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 	* @return	Value of property <code>headerLabel</code>
@@ -91,12 +91,12 @@ Default value is <code>Region</code>.
 	* Returns a metadata object for class sap.m.PageAccessibleLandmarkInfo.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getRootLabel rootLabel}.
 
-Texts which describes the landmark of the root container of the corresponding <code>sap.m.Page</code> control.
+Texts that describe the landmark of the root container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 	* @return	Value of property <code>rootLabel</code>
@@ -118,7 +118,7 @@ Default value is <code>Region</code>.
 	/**
 	* Gets current value of property {@link #getSubHeaderLabel subHeaderLabel}.
 
-Texts which describes the landmark of the subheader container of the corresponding <code>sap.m.Page</code> control.
+Texts that describe the landmark of the subheader container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 	* @return	Value of property <code>subHeaderLabel</code>
@@ -140,7 +140,7 @@ Default value is <code>None</code>.
 	/**
 	* Sets a new value for property {@link #getContentLabel contentLabel}.
 
-Texts which describes the landmark of the content container of the corresponding <code>sap.m.Page</code> control.
+Texts that describe the landmark of the content container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 
@@ -168,7 +168,7 @@ Default value is <code>Main</code>.
 	/**
 	* Sets a new value for property {@link #getFooterLabel footerLabel}.
 
-Texts which describes the landmark of the header container of the corresponding <code>sap.m.Page</code> control.
+Texts that describe the landmark of the footer container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 
@@ -196,7 +196,7 @@ Default value is <code>Region</code>.
 	/**
 	* Sets a new value for property {@link #getHeaderLabel headerLabel}.
 
-Texts which describes the landmark of the header container of the corresponding <code>sap.m.Page</code> control.
+Texts that describe the landmark of the header container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 
@@ -224,7 +224,7 @@ Default value is <code>Region</code>.
 	/**
 	* Sets a new value for property {@link #getRootLabel rootLabel}.
 
-Texts which describes the landmark of the root container of the corresponding <code>sap.m.Page</code> control.
+Texts that describe the landmark of the root container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 
@@ -252,7 +252,7 @@ Default value is <code>Region</code>.
 	/**
 	* Sets a new value for property {@link #getSubHeaderLabel subHeaderLabel}.
 
-Texts which describes the landmark of the subheader container of the corresponding <code>sap.m.Page</code> control.
+Texts that describe the landmark of the subheader container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 
@@ -288,7 +288,7 @@ If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will
 	@:optional var rootRole:haxe.extern.EitherType<String,sap.ui.core.AccessibleLandmarkRole>;
 
 	/**
-	* Texts which describes the landmark of the root container of the corresponding <code>sap.m.Page</code> control.
+	* Texts that describe the landmark of the root container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 	*/
@@ -302,7 +302,7 @@ If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will
 	@:optional var contentRole:haxe.extern.EitherType<String,sap.ui.core.AccessibleLandmarkRole>;
 
 	/**
-	* Texts which describes the landmark of the content container of the corresponding <code>sap.m.Page</code> control.
+	* Texts that describe the landmark of the content container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 	*/
@@ -316,7 +316,7 @@ If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will
 	@:optional var headerRole:haxe.extern.EitherType<String,sap.ui.core.AccessibleLandmarkRole>;
 
 	/**
-	* Texts which describes the landmark of the header container of the corresponding <code>sap.m.Page</code> control.
+	* Texts that describe the landmark of the header container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 	*/
@@ -330,7 +330,7 @@ If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will
 	@:optional var subHeaderRole:haxe.extern.EitherType<String,sap.ui.core.AccessibleLandmarkRole>;
 
 	/**
-	* Texts which describes the landmark of the subheader container of the corresponding <code>sap.m.Page</code> control.
+	* Texts that describe the landmark of the subheader container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 	*/
@@ -344,7 +344,7 @@ If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will
 	@:optional var footerRole:haxe.extern.EitherType<String,sap.ui.core.AccessibleLandmarkRole>;
 
 	/**
-	* Texts which describes the landmark of the header container of the corresponding <code>sap.m.Page</code> control.
+	* Texts that describe the landmark of the footer container of the corresponding <code>sap.m.Page</code> control.
 
 If not set (and a landmark different than <code>sap.ui.core.AccessibleLandmarkRole.None</code> is defined), a predefined text is used.
 	*/

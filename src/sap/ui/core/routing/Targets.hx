@@ -22,10 +22,10 @@ extern class Targets extends sap.ui.base.EventProvider
 
 If there's already a target with the same name, the existing target is not overwritten and an error log will be written to the console.
 	* @param	sName Name of a target
-	* @param	oTarget Options of a target. The option names are the same as the ones in "oOptions.targets.anyName" of {@link #constructor}.
+	* @param	oTargetOptions Options of a target. The option names are the same as the ones in "oOptions.targets.anyName" of {@link #constructor}.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function addTarget( sName:String, oTarget:Dynamic):sap.ui.core.routing.Targets;
+	public function addTarget( sName:String, oTargetOptions:Dynamic):sap.ui.core.routing.Targets;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:display display} event of this <code>sap.ui.core.routing.Targets</code>.
@@ -91,7 +91,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.EventProvider.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;

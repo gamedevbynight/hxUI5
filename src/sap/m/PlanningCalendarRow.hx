@@ -164,7 +164,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Element.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -281,7 +281,15 @@ Defines the identifier of the row.
 	* Returns a metadata object for class sap.m.PlanningCalendarRow.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+
+	/**
+	* Gets current value of property {@link #getNoAppointmentsText noAppointmentsText}.
+
+Defines the text that is displayed when no {@link sap.ui.unified.CalendarAppointment CalendarAppointments} are assigned.
+	* @return	Value of property <code>noAppointmentsText</code>
+	*/
+	public function getNoAppointmentsText( ):String;
 
 	/**
 	* Gets current value of property {@link #getNonWorkingDays nonWorkingDays}.
@@ -561,6 +569,17 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setKey( sKey:String):sap.m.PlanningCalendarRow;
 
 	/**
+	* Sets a new value for property {@link #getNoAppointmentsText noAppointmentsText}.
+
+Defines the text that is displayed when no {@link sap.ui.unified.CalendarAppointment CalendarAppointments} are assigned.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sNoAppointmentsText New value for property <code>noAppointmentsText</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setNoAppointmentsText( sNoAppointmentsText:String):sap.m.PlanningCalendarRow;
+
+	/**
 	* Sets a new value for property {@link #getNonWorkingDays nonWorkingDays}.
 
 Determines whether the provided weekdays are displayed as non-working days. Valid values inside the array are from 0 to 6 (other values are ignored). If not set, the weekend defined in the locale settings is displayed as non-working days.
@@ -711,6 +730,11 @@ See {@link #property:enableAppointmentsResize enableAppointmentsResize} for the 
 <b>Notes:</b> In "One month" view, the appointments cannot be created on small screen (as there they are displayed as a list below the dates).
 	*/
 	@:optional var enableAppointmentsCreate:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Defines the text that is displayed when no {@link sap.ui.unified.CalendarAppointment CalendarAppointments} are assigned.
+	*/
+	@:optional var noAppointmentsText:String;
 
     /**
     * The appointments to be displayed in the row. Appointments that outside the visible time frame are not rendered.

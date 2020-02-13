@@ -16,7 +16,7 @@ extern class AnalyticalBinding extends sap.ui.model.TreeBinding
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.TreeBinding.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -200,7 +200,7 @@ If so, no further OData request is required to fetch any of them.
 	* @param	mGroupIdRanges specifies index ranges of child contexts to be loaded for multiple groups identified by their ID. A group index range is given by an object consisting of startIndex, length, threshold. For every group ID, the map holds an array of such range objects.
 	* @return	Void
 	*/
-	public function loadGroups( mGroupIdRanges:Dynamic):Void;
+	public function loadGroups( mGroupIdRanges:Map<String,Array<Dynamic>>):Void;
 
 	/**
 	* Determines if the binding has been configured to provide a grand total for the selected measure properties.

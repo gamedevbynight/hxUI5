@@ -90,12 +90,6 @@ Event is fired before popover or dialog is open.
 	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ResponsivePopover;
 
 	/**
-	* Creates a new instance of ResponsivePopover with the same settings as the ResponsivePopover on which the method is called
-	* @return	New instance of ResponsivePopover
-	*/
-	public function clone( ):sap.m.ResponsivePopover;
-
-	/**
 	* Closes the ResponsivePopover.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -177,7 +171,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -266,7 +260,7 @@ This property only takes effect on phone. Please see the documentation sap.m.Dia
 	* Returns a metadata object for class sap.m.ResponsivePopover.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getModal modal}.
@@ -357,6 +351,16 @@ This property is supported by both variants. Please see the documentation on sap
 	* @return	Value of property <code>title</code>
 	*/
 	public function getTitle( ):String;
+
+	/**
+	* Gets current value of property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+Default value is <code>Auto</code>.
+	* @return	Value of property <code>titleAlignment</code>
+	*/
+	public function getTitleAlignment( ):sap.m.TitleAlignment;
 
 	/**
 	* Gets current value of property {@link #getVerticalScrolling verticalScrolling}.
@@ -629,6 +633,19 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setTitle( sTitle:String):sap.m.ResponsivePopover;
 
 	/**
+	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
+
+Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Auto</code>.
+	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.ResponsivePopover;
+
+	/**
 	* Sets a new value for property {@link #getVerticalScrolling verticalScrolling}.
 
 This property is supported by both variants. Please see the documentation on sap.m.Popover#verticalScrolling and sap.m.Dialog#verticalScrolling
@@ -713,6 +730,11 @@ typedef ResponsivePopoverArgs = sap.ui.core.Control.ControlArgs & {
 	* Whether resize option is enabled.
 	*/
 	@:optional var resizable:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
+	*/
+	@:optional var titleAlignment:haxe.extern.EitherType<String,sap.m.TitleAlignment>;
 
     /**
     * Content is supported by both variants. Please see the documentation on sap.m.Popover#content and sap.m.Dialog#content

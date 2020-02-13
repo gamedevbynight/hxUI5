@@ -4,6 +4,8 @@ package sap.ui.model.odata.v2;
 
 /**
 * Model implementation based on the OData protocol.
+
+See chapter {@link topic:6c47b2b39db9404582994070ec3d57a2 OData V2 Model} for a general introduction.
 */
 extern class ODataModel extends sap.ui.model.Model
 {
@@ -95,7 +97,7 @@ extern class ODataModel extends sap.ui.model.Model
 	* @param	mParameters Map of parameters
 	* @return	The new context binding
 	*/
-	public function bindContext( sPath:String, oContext:sap.ui.model.Context, ?mParameters:Dynamic):sap.ui.model.ContextBinding;
+	public function bindContext( sPath:String, oContext:sap.ui.model.Context, ?mParameters:Map<String,Dynamic>):sap.ui.model.ContextBinding;
 	@:overload( function(sPath:String, ?oContext:sap.ui.model.Context, ?aSorters:sap.ui.model.Sorter, ?aFilters:sap.ui.model.Filter, ?mParameters:Dynamic):sap.ui.model.ListBinding{ })
 	@:overload( function(sPath:String, ?oContext:sap.ui.model.Context, ?aSorters:sap.ui.model.Sorter, ?aFilters:Array<sap.ui.model.Filter>, ?mParameters:Dynamic):sap.ui.model.ListBinding{ })
 	@:overload( function(sPath:String, ?oContext:sap.ui.model.Context, ?aSorters:Array<sap.ui.model.Sorter>, ?aFilters:sap.ui.model.Filter, ?mParameters:Dynamic):sap.ui.model.ListBinding{ })
@@ -118,7 +120,7 @@ extern class ODataModel extends sap.ui.model.Model
 	* @param	mParameters Map of optional parameters for the binding; the ODataModel (v2) currently supports no additional parameters
 	* @return	The new property binding
 	*/
-	public function bindProperty( sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic):sap.ui.model.PropertyBinding;
+	public function bindProperty( sPath:String, ?oContext:Dynamic, ?mParameters:Map<String,Dynamic>):sap.ui.model.PropertyBinding;
 	@:overload( function(sPath:String, ?oContext:sap.ui.model.Context, ?aFilters:sap.ui.model.Filter, ?mParameters:Dynamic, ?aSorters:Array<sap.ui.model.Sorter>):sap.ui.model.TreeBinding{ })
 
 	/**
@@ -289,7 +291,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.Model.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -305,9 +307,9 @@ ETag handling must be active so the force update will work.
 
 	/**
 	* Returns the definition of groups per entity type for two-way binding changes
-	* @return	mChangeGroups Definition of groups for two-way binding changes
+	* @return	Definition of groups for two-way binding changes, keyed by entity names.
 	*/
-	public function getChangeGroups( ):Dynamic;
+	public function getChangeGroups( ):map<string,sap.ui.model.odata.v2.odatamodel.ChangeGroupDefinition>;
 
 	/**
 	* Returns the default count mode for retrieving the count of collections
@@ -390,7 +392,7 @@ Note:<br> If <code>mParameters.select</code> is not specified, the returned obje
 In contrast to the two related functions {@link #hasPendingChanges} and {@link #resetChanges}, only client data changes are supported.
 	* @return	the pending changes in a map
 	*/
-	public function getPendingChanges( ):Dynamic;
+	public function getPendingChanges( ):Map<String,Dynamic>;
 
 	/**
 	* Returns the value for the property with the given <code>sPath</code>.
@@ -554,7 +556,7 @@ If <code>bAll</code> is set to <code>true</code>, also deferred requests trigger
 
 	/**
 	* Definition of groups per entity type for two-way binding changes.
-	* @param	mGroups A map containing the definition of batch groups for two-way binding changes. The map has the following format: <pre>
+	* @param	mGroups A map containing the definition of batch groups for two-way binding changes, keyed by entity names. The map has the following format: <pre>
 {
   "EntityTypeName": {
     groupId: "ID",
@@ -565,7 +567,7 @@ If <code>bAll</code> is set to <code>true</code>, also deferred requests trigger
 </pre> <ul> <li><code>groupId</code>: Defines the group for changes of the defined <i>EntityTypeName</i></li> <li><code>changeSetId</code>: ID of a <code>ChangeSet</code> which bundles the changes for the entity type.</li> <li><code>single</code>: Defines if every change will get an own change set (defaults to <code>true</code>)</li> </ul>
 	* @return	Void
 	*/
-	public function setChangeGroups( mGroups:Dynamic):Void;
+	public function setChangeGroups( mGroups:map<string,sap.ui.model.odata.v2.odatamodel.ChangeGroupDefinition>):Void;
 
 	/**
 	* Sets the default mode how to retrieve the item count for a collection in this model.
@@ -594,7 +596,7 @@ Requests that belong to a deferred group will be sent by explicitly calling {@li
 
 These headers are used for requests against the OData backend. Private headers which are set in the ODataModel cannot be modified. These private headers are: <code>accept, accept-language, x-csrf-token, MaxDataServiceVersion, DataServiceVersion</code>.
 
-To remove these custom headers simply set the <code>mCustomHeaders</code> parameter to null. Please also note that when calling this method again all previous custom headers are removed unless they are specified again in the <code>mCustomHeaders</code> parameter.
+To remove these custom headers simply set the <code>mHeaders</code> parameter to null. Please also note that when calling this method again, all previous custom headers are removed unless they are specified again in the <code>mHeaders</code> parameter.
 	* @param	mHeaders The header name/value map.
 	* @return	Void
 	*/
@@ -636,11 +638,11 @@ This flag can be overruled on request level by providing the <code>refreshAfterC
 	public function setUseBatch( ?bUseBatch:Bool):Void;
 
 	/**
-	* Submits the collected changes which were collected by the {@link #setProperty} method.
+	* Submits the collected changes which were collected by the {@link #setProperty} method and other deferred requests.
 
 The update method is defined by the global <code>defaultUpdateMethod</code> parameter which is <code>sap.ui.model.odata.UpdateMethod.Merge</code> by default. In case of a <code>sap.ui.model.odata.UpdateMethod.Merge</code> request only the changed properties will be updated. If a URI with a <code>$expand</code> query option was used then the expand entries will be removed from the collected changes. Changes to this entries should be done on the entry itself. So no deep updates are supported.
 
-<b>Important</b>: The success/error handler will only be called if batch support is enabled. If multiple batch groups are submitted the handlers will be called for every batch group.
+<b>Important</b>: The success/error handler will only be called if batch support is enabled. If multiple batch groups are submitted the handlers will be called for every batch group. If there are no changes/requests or all contained requests are aborted before a batch request returns, the success handler will be called with an empty response object. If the abort method on the return object is called, all contained batch requests will be aborted and the error handler will be called for each of them.
 	* @param	mParameters A map which contains the following parameter properties:
 	* @return	An object which has an <code>abort</code> function to abort the current request or requests
 	*/

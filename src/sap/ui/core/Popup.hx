@@ -37,7 +37,7 @@ extern class Popup extends sap.ui.base.ManagedObject
 	* @param	bAutoClose whether the popup should automatically close when the focus moves out of the popup
 	* @return	Object
 	*/
-	public function new( ?oContent:DOMNode, ?bModal:Bool, ?bShadow:Bool, ?bAutoClose:Bool):Void;
+	public function new( ?oContent:js.html.Element, ?bModal:Bool, ?bShadow:Bool, ?bAutoClose:Bool):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the static {@link #.blockLayerStateChange blockLayerStateChange} event.
@@ -131,7 +131,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.ManagedObject.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -153,32 +153,32 @@ The passed function and listener object must match the ones used for event regis
 	* @return	if a function was set it is returned otherwise a boolean value whether the follow of is activated
 	*/
 	public function getFollowOf( ):Dynamic;
-@:overload( function():Number{ })
+@:overload( function():String{ })
 
 	/**
 	* Returns the last z-index that has been handed out. does not increase the internal z-index counter.
 	* @return	null
 	*/
-	public static function getLastZIndex( ):Number;
+	public static function getLastZIndex( ):String;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.Popup.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.base.ManagedObjectMetadata;
 
 	/**
 	* Returns the value if a Popup is of modal type
 	* @return	{boolean] bModal whether the Popup is of modal type
 	*/
 	public function getModal( ):Dynamic;
-@:overload( function():Number{ })
+@:overload( function():String{ })
 
 	/**
 	* Returns the next available z-index on top of the existing/previous popups. Each call increases the internal z-index counter and the returned z-index.
 	* @return	the next z-index on top of the Popup stack
 	*/
-	public static function getNextZIndex( ):Number;
+	public static function getNextZIndex( ):String;
 
 	/**
 	* Returns whether the Popup is currently open, closed, or in a transition between these states.
@@ -272,7 +272,7 @@ If the Popup's OpenState is different from "CLOSED" (i.e. if the Popup is alread
 	* @param	iInitialZIndex is the initial z-index
 	* @return	Void
 	*/
-	public static function setInitialZIndex( iInitialZIndex:Number):Void;
+	public static function setInitialZIndex( iInitialZIndex:String):Void;
 
 	/**
 	* Used to specify whether the Popup should be modal. A modal popup will put some fading "block layer" over the background and prevent attempts to put the focus outside/below the popup. Setting this while the popup is open will change "block layer" immediately.

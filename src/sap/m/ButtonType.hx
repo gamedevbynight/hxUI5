@@ -4,31 +4,47 @@ package sap.m;
 @:enum extern abstract ButtonType(String)
 {
     /**
-    * accept type (green button)
+    * Accept type
     */
     var Accept= "Accept";
     /**
-    * back type (back navigation button for header)
+    * Back type (back navigation button for header)
     */
     var Back= "Back";
     /**
-    * default type (no special styling)
+    * Critical type
+    */
+    var Critical= "Critical";
+    /**
+    * Default type (no special styling)
     */
     var Default= "Default";
     /**
-    * emphasized type
+    * Emphasized type
     */
     var Emphasized= "Emphasized";
     /**
-    * ghost type
+    * Ghost type
     */
     var Ghost= "Ghost";
     /**
-    * reject style (red button)
+    * Negative type
+    */
+    var Negative= "Negative";
+    /**
+    * Neutral type
+    */
+    var Neutral= "Neutral";
+    /**
+    * Reject style
     */
     var Reject= "Reject";
     /**
-    * transparent type
+    * Success type
+    */
+    var Success= "Success";
+    /**
+    * Transparent type
     */
     var Transparent= "Transparent";
     /**
@@ -36,7 +52,7 @@ package sap.m;
     */
     var Unstyled= "Unstyled";
     /**
-    * up type (up navigation button for header)
+    * Up type (up navigation button for header)
     */
     var Up= "Up";
 }

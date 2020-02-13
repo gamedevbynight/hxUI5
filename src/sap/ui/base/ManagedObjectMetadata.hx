@@ -114,6 +114,22 @@ The returned map keys the association info objects by their name. In case of 0..
 	public function getAssociations( ):Map<String,Dynamic>;
 
 	/**
+	* Returns an info object for the default aggregation of the described class.
+
+If the class itself does not define a default aggregation, then the info object for the default aggregation of the parent class is returned.
+	* @return	An info object for the default aggregation
+	*/
+	public function getDefaultAggregation( ):Dynamic;
+
+	/**
+	* Returns the name of the default aggregation of the described class.
+
+If the class itself does not define a default aggregation, then the default aggregation of the parent is returned. If no class in the hierarchy defines a default aggregation, <code>undefined</code> is returned.
+	* @return	Name of the default aggregation
+	*/
+	public function getDefaultAggregationName( ):String;
+
+	/**
 	* Returns an info object for the named public event of the described class, no matter whether the event was defined by the class itself or by one of its ancestor classes.
 
 If neither the described class nor its ancestor classes define an event with the given name, <code>undefined</code> is returned.

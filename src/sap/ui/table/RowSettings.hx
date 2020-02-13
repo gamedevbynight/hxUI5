@@ -16,7 +16,7 @@ extern class RowSettings extends sap.ui.core.Element
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Element.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -49,7 +49,19 @@ Default value is <code>empty string</code>.
 	* Returns a metadata object for class sap.ui.table.RowSettings.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+
+	/**
+	* Gets current value of property {@link #getNavigated navigated}.
+
+The navigated state of a row.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the row. <b>Note:</b> The navigation indicator is only visible if row actions are available.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>navigated</code>
+	*/
+	public function getNavigated( ):Bool;
 
 	/**
 	* Sets a new value for property {@link #getHighlight highlight}.
@@ -80,6 +92,21 @@ Default value is <code>empty string</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHighlightText( sHighlightText:String):sap.ui.table.RowSettings;
+
+	/**
+	* Sets a new value for property {@link #getNavigated navigated}.
+
+The navigated state of a row.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the row. <b>Note:</b> The navigation indicator is only visible if row actions are available.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bNavigated New value for property <code>navigated</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setNavigated( bNavigated:Bool):sap.ui.table.RowSettings;
 }
 
 typedef RowSettingsArgs = sap.ui.core.Element.ElementArgs & {
@@ -97,4 +124,11 @@ Accessibility support is provided through the associated {@link sap.ui.table.Row
 	* Defines the semantics of the {@link sap.ui.table.RowSettings#setHighlight highlight} property for accessibility purposes.
 	*/
 	@:optional var highlightText:String;
+
+	/**
+	* The navigated state of a row.
+
+If set to <code>true</code>, a navigation indicator is displayed at the end of the row. <b>Note:</b> The navigation indicator is only visible if row actions are available.
+	*/
+	@:optional var navigated:haxe.extern.EitherType<String,Bool>;
 }

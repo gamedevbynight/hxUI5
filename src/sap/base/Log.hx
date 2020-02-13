@@ -7,7 +7,7 @@ extern class Log
 	/**
 	* Allows to add a new LogListener that will be notified for new log entries.
 
-The given object must provide method <code>onLogEntry</code> and can also be informed about <code>onDetachFromLog</code> and <code>onAttachToLog</code>
+The given object must provide method <code>onLogEntry</code> and can also be informed about <code>onDetachFromLog</code>, <code>onAttachToLog</code> and <code>onDiscardLogEntries</code>.
 	* @param	oListener The new listener object that should be informed
 	* @return	Void
 	*/
@@ -53,7 +53,7 @@ The given object must provide method <code>onLogEntry</code> and can also be inf
 	/**
 	* Returns the logged entries recorded so far as an array.
 
-Log entries are plain JavaScript objects with the following properties <ul> <li>timestamp {number} point in time when the entry was created <li>level {module:sap/base/Log.Level} LogLevel level of the entry <li>message {string} message text of the entry </ul>
+Log entries are plain JavaScript objects with the following properties <ul> <li>timestamp {number} point in time when the entry was created <li>level {module:sap/base/Log.Level} LogLevel level of the entry <li>message {string} message text of the entry </ul> The default amount of stored log entries is limited to 3000 entries.
 	* @return	an array containing the recorded log entries
 	*/
 	public static function getLogEntries( ):Array<Dynamic>;

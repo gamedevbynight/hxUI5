@@ -29,7 +29,7 @@ extern class VerticalLayout extends sap.ui.core.Control
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -56,7 +56,7 @@ Default value is <code>true</code>.
 	* Returns a metadata object for class sap.ui.layout.VerticalLayout.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getWidth width}.
@@ -112,11 +112,15 @@ Default value is <code>true</code>.
 	public function setEnabled( bEnabled:Bool):sap.ui.layout.VerticalLayout;
 
 	/**
-	* Sets the width of the Vertical Layout without rerendering of the whole control, and everything inside it.
-	* @param	width The new width
-	* @return	This pointer for chaining
+	* Sets a new value for property {@link #getWidth width}.
+
+Width of the <code>VerticalLayout</code>. If no width is set, the width of the content is used. If the content of the layout has a larger width than the layout, it is cut off. There is no scrolling inside the layout.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sWidth New value for property <code>width</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( width:sap.ui.core.CSSSize):sap.ui.layout.VerticalLayout;
+	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.layout.VerticalLayout;
 }
 
 typedef VerticalLayoutArgs = sap.ui.core.Control.ControlArgs & {

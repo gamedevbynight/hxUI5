@@ -29,22 +29,22 @@ extern class ODataListBinding extends sap.ui.model.ListBinding
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.ListBinding.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
-	@:overload( function(aFilters:sap.ui.model.Filter, sFilterType:sap.ui.model.FilterType, ?bReturnSuccess:Bool):sap.ui.model.ListBinding{ })
+	@:overload( function(aFilters:sap.ui.model.Filter, ?sFilterType:sap.ui.model.FilterType, ?bReturnSuccess:Bool):sap.ui.model.ListBinding{ })
 
 	/**
 	* Filters the list.
 
 When using <code>sap.ui.model.Filter</code> the filters are first grouped according to their binding path. All filters belonging to the same group are combined with OR and after that the results of all groups are combined with AND. Usually this means, all filters applied to a single table column are combined with OR, while filters on different table columns are combined with AND. Please note that a custom filter function is only supported with operation mode <code>sap.ui.model.odata.OperationMode.Client</code>.
 	* @param	aFilters Single filter or array of filter objects
-	* @param	sFilterType Type of the filter which should be adjusted. If it is not given, the standard behaviour applies
+	* @param	sFilterType Type of the filter which should be adjusted. If it is not given, type <code>Control</code> is assumed
 	* @param	bReturnSuccess Whether the success indicator should be returned instead of <code>this</code>
 	* @return	Reference to <code>this</code> to facilitate method chaining or a boolean success indicator
 	*/
-	public function filter( aFilters:Array<sap.ui.model.Filter>, sFilterType:sap.ui.model.FilterType, ?bReturnSuccess:Bool):sap.ui.model.ListBinding;
+	public function filter( aFilters:Array<sap.ui.model.Filter>, ?sFilterType:sap.ui.model.FilterType, ?bReturnSuccess:Bool):sap.ui.model.ListBinding;
 
 	/**
 	* Get a download URL with the specified format considering the sort/filter/custom parameters.

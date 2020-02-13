@@ -337,12 +337,6 @@ See {@link sap.ui.base.ManagedObject#bindAggregation ManagedObject.bindAggregati
 	public function destroyRowSettingsTemplate( ):sap.ui.table.Table;
 
 	/**
-	* Destroys the title in the aggregation {@link #getTitle title}.
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function destroyTitle( ):sap.ui.table.Table;
-
-	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeOpenContextMenu beforeOpenContextMenu} event of this <code>sap.ui.table.Table</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -498,18 +492,18 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
-	* Filter the given column by the given value.
+	* Filters a column by a value. If no filter value is passed, the filter value equals an empty string, and the filter for this column is removed.
 	* @param	oColumn Column to be filtered
 	* @param	sValue Filter value as string (will be converted)
 	* @return	Void
 	*/
-	public function filter( oColumn:sap.ui.table.Column, sValue:String):Void;
+	public function filter( oColumn:sap.ui.table.Column, ?sValue:String):Void;
 
 	/**
 	* Gets current value of property {@link #getAlternateRowColors alternateRowColors}.
@@ -571,7 +565,7 @@ Defines the context menu for the table.
 
 <b>Note:</b> The context menu will also be available for the row selectors as well as in the row actions cell of the table control.
 
-The custom context menu will not be shown in the group header rows and the sum row of the <code>AnalyticalTable</code> control.
+The custom context menu will not be shown in group header and summary rows.
 
 If this aggregation is set, then the <code>enableCellFilter</code> property will have no effect.
 	* @return	null
@@ -736,7 +730,7 @@ Control or text of footer section of the Table (if not set it will be hidden)
 	* Returns a metadata object for class sap.ui.table.Table.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getMinAutoRowCount minAutoRowCount}.
@@ -801,7 +795,11 @@ If no value is set (includes 0), a default height is applied based on the conten
 	/**
 	* Gets content of aggregation {@link #getRows rows}.
 
-Rows of the Table
+This aggregation is managed by the table itself. It can only be used with data binding, is read-only, and does not support templates or factories.
+
+Rows are created and rendered only for a subset of the available data and reused for performance reasons. When scrolling, only the binding contexts are updated to show the correct section of the data. This makes it possible to bind the rows to large data sets. But you must not change rows and their children programmatically, as these changes might get lost when the table updates the rows the next time. Also, properties must not be set to static values, as these would not change when scrolling.
+
+The cells of rows can be defined with the {@link sap.ui.table.Column#setTemplate template} aggregation of the columns in the {@link sap.ui.table.Table#setColumns columns} aggregation of the table. The actions of rows can be defined with the {@link sap.ui.table.Table#setRowActionTemplate rowActionTemplate} aggregation of the table. Furthermore, row-specific settings can be defined with the {@link sap.ui.table.Table#setRowSettingsTemplate rowSettingsTemplate} aggregation of the table.
 	* @return	null
 	*/
 	public function getRows( ):Array<sap.ui.table.Row>;
@@ -885,14 +883,6 @@ Default value is <code>100</code>.
 	* @return	Value of property <code>threshold</code>
 	*/
 	public function getThreshold( ):Int;
-
-	/**
-	* Gets content of aggregation {@link #getTitle title}.
-
-Control or text of title section of the Table (if not set it will be hidden)
-	* @return	null
-	*/
-	public function getTitle( ):Dynamic;
 
 	/**
 	* Gets current value of property {@link #getVisibleRowCount visibleRowCount}.
@@ -1461,14 +1451,6 @@ Default value is <code>false</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setThreshold( iThreshold:Int):sap.ui.table.Table;
-	@:overload( function(vTitle:sap.ui.core.Control):sap.ui.table.Table{ })
-
-	/**
-	* Sets the aggregated {@link #getTitle title}.
-	* @param	vTitle The title to set
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setTitle( vTitle:String):sap.ui.table.Table;
 	@:overload( function(vTooltip:String):sap.ui.table.Table{ })
 
 	/**
@@ -1706,11 +1688,6 @@ In the <code>"Interactive"</code> mode, the table has as many rows as defined in
 	@:optional var alternateRowColors:haxe.extern.EitherType<String,Bool>;
 
     /**
-    * Control or text of title section of the Table (if not set it will be hidden)
-    */
-	@:optional var title:haxe.extern.EitherType<String,sap.ui.core.Control>;
-
-    /**
     * Control or text of footer section of the Table (if not set it will be hidden)
     */
 	@:optional var footer:haxe.extern.EitherType<String,sap.ui.core.Control>;
@@ -1726,7 +1703,11 @@ In the <code>"Interactive"</code> mode, the table has as many rows as defined in
 	@:optional var columns:Array<haxe.extern.EitherType<String,sap.ui.table.Column>>;
 
     /**
-    * Rows of the Table
+    * This aggregation is managed by the table itself. It can only be used with data binding, is read-only, and does not support templates or factories.
+
+Rows are created and rendered only for a subset of the available data and reused for performance reasons. When scrolling, only the binding contexts are updated to show the correct section of the data. This makes it possible to bind the rows to large data sets. But you must not change rows and their children programmatically, as these changes might get lost when the table updates the rows the next time. Also, properties must not be set to static values, as these would not change when scrolling.
+
+The cells of rows can be defined with the {@link sap.ui.table.Column#setTemplate template} aggregation of the columns in the {@link sap.ui.table.Table#setColumns columns} aggregation of the table. The actions of rows can be defined with the {@link sap.ui.table.Table#setRowActionTemplate rowActionTemplate} aggregation of the table. Furthermore, row-specific settings can be defined with the {@link sap.ui.table.Table#setRowSettingsTemplate rowSettingsTemplate} aggregation of the table.
     */
 	@:optional var rows:Array<haxe.extern.EitherType<String,sap.ui.table.Row>>;
 
@@ -1760,7 +1741,7 @@ In the <code>"Interactive"</code> mode, the table has as many rows as defined in
 
 <b>Note:</b> The context menu will also be available for the row selectors as well as in the row actions cell of the table control.
 
-The custom context menu will not be shown in the group header rows and the sum row of the <code>AnalyticalTable</code> control.
+The custom context menu will not be shown in group header and summary rows.
 
 If this aggregation is set, then the <code>enableCellFilter</code> property will have no effect.
     */
@@ -1772,6 +1753,11 @@ If this aggregation is set, then the <code>enableCellFilter</code> property will
 The following restrictions apply: <ul> <li>If a selection plugin is applied to the table, the table's selection API must not be used. Instead, use the API of the plugin.</li> <li>Only one MultiSelectionPlugin can be applied. No other plugins can be applied.</li> </ul>
     */
 	@:optional var plugins:Array<haxe.extern.EitherType<String,sap.ui.table.plugins.SelectionPlugin>>;
+
+    /**
+    * Defines the message strip to display binding-related messages.
+    */
+	@:optional var _messageStrip:haxe.extern.EitherType<String,sap.ui.core.Control>;
 
 	/**
 	* The column by which the table is grouped. Grouping will only be performed if <code>enableGrouping</code> is set to <code>true</code>. Setting <code>groupBy</code> in the view does not work and throws an error. It can only be set if the column by which the table is grouped is already part of the <code>columns</code> aggregation of the table.

@@ -22,6 +22,10 @@ The controls inherits from {@link sap.m.InputBase} which controls the core prope
 <b>When to use:</b> Use the control for short inputs like emails, phones, passwords, fields for assisted value selection.
 
 <b>When not to use:</b> Don't use the control for long texts, dates, designated search fields, fields for multiple selection.
+
+<h3>Known Limitations</h3>
+
+If <code>showValueHelp</code> or if <code>showSuggestion</code> is <code>true</code>, the native browser autofill will not fire a change event.
 */
 extern class Input extends sap.m.InputBase
 {
@@ -60,7 +64,9 @@ extern class Input extends sap.m.InputBase
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.Input</code> itself.
 
-This event is fired when the value of the input is changed - e.g. at each keypress
+Fired when the value of the input is changed by user interaction - each keystroke, delete, paste, etc.
+
+<b>Note:</b> Browsing autocomplete suggestions does not fires the event.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Input</code> itself
@@ -232,7 +238,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.InputBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -298,7 +304,7 @@ Default value is <code>0</code>.
 	/**
 	* Gets current value of property {@link #getMaxSuggestionWidth maxSuggestionWidth}.
 
-If set, the value of this parameter will control the horizontal size of the suggestion list to display more data. This allows suggestion lists to be wider than the input field if there is enough space available. By default, the suggestion list is always as wide as the input field. Note: The value will be ignored if the actual width of the input field is larger than the specified parameter value.
+If set, the value of this parameter will control the horizontal size of the suggestion list to display more data. This allows suggestion lists to be wider than the input field if there is enough space available. By default, the suggestion list is always as wide as the input field. <b>Note:</b> The value will be ignored if the actual width of the input field is larger than the specified parameter value.
 	* @return	Value of property <code>maxSuggestionWidth</code>
 	*/
 	public function getMaxSuggestionWidth( ):sap.ui.core.CSSSize;
@@ -307,7 +313,7 @@ If set, the value of this parameter will control the horizontal size of the sugg
 	* Returns a metadata object for class sap.m.Input.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* ID of the element which is the current target of the association {@link #getSelectedItem selectedItem}, or <code>null</code>.
@@ -348,7 +354,7 @@ Default value is <code>false</code>.
 
 For tabular suggestions, this flag will show/hide the button at the end of the suggestion table that triggers the event "valueHelpRequest" when pressed. The default value is true.
 
-NOTE: If suggestions are not tabular or no suggestions are used, the button will not be displayed and this flag is without effect.
+<b>Note:</b> If suggestions are not tabular or no suggestions are used, the button will not be displayed and this flag is without effect.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>showTableSuggestionValueHelp</code>
@@ -376,7 +382,9 @@ Default value is <code>true</code>
 	/**
 	* Gets current value of property {@link #getStartSuggestion startSuggestion}.
 
-Minimum length of the entered text in input before suggest event is fired. The default value is 1 which means the suggest event is fired after user types in input. When it's set to 0, suggest event is fired when input with no text gets focus.
+Minimum length of the entered text in input before suggest event is fired. The default value is 1 which means the suggest event is fired after user types in input.
+
+<b>Note:</b> When it's set to 0, suggest event is fired when input with no text gets focus. In this case no suggestion popup will open.
 
 Default value is <code>1</code>.
 	* @return	Value of property <code>startSuggestion</code>
@@ -413,7 +421,7 @@ To display suggestions with two text values, add <code>sap.ui.core.ListItem</cod
 	/**
 	* Gets content of aggregation {@link #getSuggestionRows suggestionRows}.
 
-The suggestionColumns and suggestionRows are for tabular input suggestions. This aggregation allows for binding the table cells. The items of this aggregation are to be bound directly or to set in the suggest event method. Note: If this aggregation is filled, the aggregation suggestionItems will be ignored.
+The suggestionColumns and suggestionRows are for tabular input suggestions. This aggregation allows for binding the table cells. The items of this aggregation are to be bound directly or to set in the suggest event method. <b>Note:</b> If this aggregation is filled, the aggregation suggestionItems will be ignored.
 	* @return	null
 	*/
 	public function getSuggestionRows( ):Dynamic;
@@ -555,6 +563,13 @@ Default value is empty/<code>undefined</code>
 	* @return	Void
 	*/
 	public function onBeforeRendering( ):Void;
+
+	/**
+	* Event handler for browsers' <code>change</code> event.
+	* @param	oEvent The event.
+	* @return	Void
+	*/
+	public function onchange( oEvent:jquery.Event):Void;
 
 	/**
 	* Event handler for the onFocusIn event.
@@ -734,7 +749,7 @@ Default value is <code>0</code>.
 	/**
 	* Sets a new value for property {@link #getMaxSuggestionWidth maxSuggestionWidth}.
 
-If set, the value of this parameter will control the horizontal size of the suggestion list to display more data. This allows suggestion lists to be wider than the input field if there is enough space available. By default, the suggestion list is always as wide as the input field. Note: The value will be ignored if the actual width of the input field is larger than the specified parameter value.
+If set, the value of this parameter will control the horizontal size of the suggestion list to display more data. This allows suggestion lists to be wider than the input field if there is enough space available. By default, the suggestion list is always as wide as the input field. <b>Note:</b> The value will be ignored if the actual width of the input field is larger than the specified parameter value.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sMaxSuggestionWidth New value for property <code>maxSuggestionWidth</code>
@@ -780,11 +795,19 @@ Default value is an empty string <code>""</code> or <code>undefined</code>.
 	public function setShowSuggestion( bValue:Bool):sap.m.Input;
 
 	/**
-	* Shows value help suggestions in table.
-	* @param	bValue Show suggestions.
-	* @return	this Input instance for chaining.
+	* Sets a new value for property {@link #getShowTableSuggestionValueHelp showTableSuggestionValueHelp}.
+
+For tabular suggestions, this flag will show/hide the button at the end of the suggestion table that triggers the event "valueHelpRequest" when pressed. The default value is true.
+
+<b>Note:</b> If suggestions are not tabular or no suggestions are used, the button will not be displayed and this flag is without effect.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bShowTableSuggestionValueHelp New value for property <code>showTableSuggestionValueHelp</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowTableSuggestionValueHelp( bValue:Bool):sap.m.Input;
+	public function setShowTableSuggestionValueHelp( bShowTableSuggestionValueHelp:Bool):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getShowValueHelp showValueHelp}.
@@ -809,7 +832,9 @@ Default value is <code>false</code>.
 	/**
 	* Sets a new value for property {@link #getStartSuggestion startSuggestion}.
 
-Minimum length of the entered text in input before suggest event is fired. The default value is 1 which means the suggest event is fired after user types in input. When it's set to 0, suggest event is fired when input with no text gets focus.
+Minimum length of the entered text in input before suggest event is fired. The default value is 1 which means the suggest event is fired after user types in input.
+
+<b>Note:</b> When it's set to 0, suggest event is fired when input with no text gets focus. In this case no suggestion popup will open.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -921,13 +946,6 @@ Default value is <code>false</code>.
 	public function setValueStateText( ?sValueStateText:String):sap.m.InputBase;
 
 	/**
-	* Defines the width of the input. Default value is 100%.
-	* @param	sWidth The new width of the input.
-	* @return	Sets the width of the Input.
-	*/
-	public function setWidth( sWidth:String):Dynamic;
-
-	/**
 	* Opens the <code>SuggestionsPopover</code> with the available items.
 	* @param	fnFilter Function to filter the items shown in the SuggestionsPopover
 	* @return	Void
@@ -986,19 +1004,21 @@ typedef InputArgs = sap.m.InputBase.InputBaseArgs & {
 	@:optional var filterSuggests:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* If set, the value of this parameter will control the horizontal size of the suggestion list to display more data. This allows suggestion lists to be wider than the input field if there is enough space available. By default, the suggestion list is always as wide as the input field. Note: The value will be ignored if the actual width of the input field is larger than the specified parameter value.
+	* If set, the value of this parameter will control the horizontal size of the suggestion list to display more data. This allows suggestion lists to be wider than the input field if there is enough space available. By default, the suggestion list is always as wide as the input field. <b>Note:</b> The value will be ignored if the actual width of the input field is larger than the specified parameter value.
 	*/
 	@:optional var maxSuggestionWidth:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
 	/**
-	* Minimum length of the entered text in input before suggest event is fired. The default value is 1 which means the suggest event is fired after user types in input. When it's set to 0, suggest event is fired when input with no text gets focus.
+	* Minimum length of the entered text in input before suggest event is fired. The default value is 1 which means the suggest event is fired after user types in input.
+
+<b>Note:</b> When it's set to 0, suggest event is fired when input with no text gets focus. In this case no suggestion popup will open.
 	*/
 	@:optional var startSuggestion:haxe.extern.EitherType<String,Int>;
 
 	/**
 	* For tabular suggestions, this flag will show/hide the button at the end of the suggestion table that triggers the event "valueHelpRequest" when pressed. The default value is true.
 
-NOTE: If suggestions are not tabular or no suggestions are used, the button will not be displayed and this flag is without effect.
+<b>Note:</b> If suggestions are not tabular or no suggestions are used, the button will not be displayed and this flag is without effect.
 	*/
 	@:optional var showTableSuggestionValueHelp:haxe.extern.EitherType<String,Bool>;
 
@@ -1064,7 +1084,7 @@ To display suggestions with two text values, add <code>sap.ui.core.ListItem</cod
 	@:optional var suggestionColumns:Array<haxe.extern.EitherType<String,sap.m.Column>>;
 
     /**
-    * The suggestionColumns and suggestionRows are for tabular input suggestions. This aggregation allows for binding the table cells. The items of this aggregation are to be bound directly or to set in the suggest event method. Note: If this aggregation is filled, the aggregation suggestionItems will be ignored.
+    * The suggestionColumns and suggestionRows are for tabular input suggestions. This aggregation allows for binding the table cells. The items of this aggregation are to be bound directly or to set in the suggest event method. <b>Note:</b> If this aggregation is filled, the aggregation suggestionItems will be ignored.
     */
 	@:optional var suggestionRows:Array<haxe.extern.EitherType<String,sap.m.ColumnListItem>>;
 
@@ -1089,7 +1109,9 @@ To display suggestions with two text values, add <code>sap.ui.core.ListItem</cod
 	@:optional var selectedRow:haxe.extern.EitherType<String,sap.m.ColumnListItem>;
 
 	/**
-	* This event is fired when the value of the input is changed - e.g. at each keypress
+	* Fired when the value of the input is changed by user interaction - each keystroke, delete, paste, etc.
+
+<b>Note:</b> Browsing autocomplete suggestions does not fires the event.
 	*/
 	@:optional var liveChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 

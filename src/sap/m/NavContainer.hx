@@ -161,7 +161,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -189,7 +189,7 @@ Default value is <code>true</code>.
 	/**
 	* Gets current value of property {@link #getDefaultTransitionName defaultTransitionName}.
 
-The type of the transition/animation to apply when "to()" is called without defining a transition type to use. The default is "slide". Other options are: "fade", "flip" and "show" - and the names of any registered custom transitions.
+The type of the transition/animation to apply when "to()" is called without defining a transition type to use. The default is "slide". Other options are: "baseSlide", "fade", "flip" and "show" - and the names of any registered custom transitions.
 
 Default value is <code>slide</code>.
 	* @return	Value of property <code>defaultTransitionName</code>
@@ -216,7 +216,7 @@ Default value is <code>100%</code>.
 	* Returns a metadata object for class sap.m.NavContainer.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Returns the control with the given ID from the "pages" aggregation (if available).
@@ -315,7 +315,7 @@ Default value is <code>true</code>.
 	/**
 	* Sets a new value for property {@link #getDefaultTransitionName defaultTransitionName}.
 
-The type of the transition/animation to apply when "to()" is called without defining a transition type to use. The default is "slide". Other options are: "fade", "flip" and "show" - and the names of any registered custom transitions.
+The type of the transition/animation to apply when "to()" is called without defining a transition type to use. The default is "slide". Other options are: "baseSlide", "fade", "flip" and "show" - and the names of any registered custom transitions.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -377,11 +377,11 @@ Default value is <code>100%</code>.
 
 Note that any modifications to the target page (like setting its title, or anything else that could cause a re-rendering) should be done BEFORE calling to(), in order to avoid unwanted side effects, e.g. related to the page animation.
 
-Available transitions currently include "slide" (default), "fade", "flip", and "show". None of these is currently making use of any given transitionParameters.
+Available transitions currently include "slide" (default), "baseSlide", "fade", "flip", and "show". None of these is currently making use of any given transitionParameters.
 
 Calling this navigation method triggers first the (cancelable) "navigate" event on the NavContainer, then the "beforeHide" pseudo event on the source page and "beforeFirstShow" (if applicable) and"beforeShow" on the target page. Later - after the transition has completed - the "afterShow" pseudo event is triggered on the target page and "afterHide" on the page which has been left. The given data object is available in the "beforeFirstShow", "beforeShow" and "afterShow" event object as "data" property.
 	* @param	pageId The screen to which drilldown should happen. The ID or the control itself can be given.
-	* @param	transitionName The type of the transition/animation to apply. This parameter can be omitted; then the default is "slide" (horizontal movement from the right). Other options are: "fade", "flip", and "show" and the names of any registered custom transitions.
+	* @param	transitionName The type of the transition/animation to apply. This parameter can be omitted; then the default is "slide" (horizontal movement from the right). Other options are: "baseSlide", "fade", "flip", and "show" and the names of any registered custom transitions.
 
 None of the standard transitions is currently making use of any given transition parameters.
 	* @param	data Since version 1.7.1. This optional object can carry any payload data which should be made available to the target page. The "beforeShow" event on the target page will contain this data object as "data" property. Use case: in scenarios where the entity triggering the navigation can or should not directly initialize the target page, it can fill this object and the target page itself (or a listener on it) can take over the initialization, using the given data.
@@ -391,7 +391,7 @@ When the "transitionParameters" object is used, this "data" object must also be 
 
 For a proper parameter order, the "data" parameter must be given when the "transitionParameters" parameter is used. (it can be given as "null")
 
-NOTE: it depends on the transition function how the object should be structured and which parameters are actually used to influence the transition. The "show", "slide" and "fade" transitions do not use any parameter.
+NOTE: it depends on the transition function how the object should be structured and which parameters are actually used to influence the transition. The "show", "slide", "baseSlide" and "fade" transitions do not use any parameter.
 	* @return	The <code>sap.m.NavContainer</code> instance
 	*/
 	public function to( pageId:String, transitionName:String, data:Dynamic, oTransitionParameters:Dynamic):sap.m.NavContainer;
@@ -422,7 +422,7 @@ typedef NavContainerArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var visible:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* The type of the transition/animation to apply when "to()" is called without defining a transition type to use. The default is "slide". Other options are: "fade", "flip" and "show" - and the names of any registered custom transitions.
+	* The type of the transition/animation to apply when "to()" is called without defining a transition type to use. The default is "slide". Other options are: "baseSlide", "fade", "flip" and "show" - and the names of any registered custom transitions.
 	*/
 	@:optional var defaultTransitionName:String;
 
