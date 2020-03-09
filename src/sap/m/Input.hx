@@ -22,6 +22,10 @@ The controls inherits from {@link sap.m.InputBase} which controls the core prope
 <b>When to use:</b> Use the control for short inputs like emails, phones, passwords, fields for assisted value selection.
 
 <b>When not to use:</b> Don't use the control for long texts, dates, designated search fields, fields for multiple selection.
+
+<h3>Known Limitations</h3>
+
+If <code>showValueHelp</code> or if <code>showSuggestion</code> is <code>true</code>, the native browser autofill will not fire a change event.
 */
 extern class Input extends sap.m.InputBase
 {
@@ -75,9 +79,9 @@ Fired when the value of the input is changed by user interaction - each keystrok
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.Input</code> itself.
 
-This event is fired when user presses the <code>Enter</code> key on the input.
+This event is fired when user presses the <kbd>Enter</kbd> key on the input.
 
-<b>Notes:</b> <ul> <li>The event is fired independent of whether there was a change before or not. If a change was performed, the event is fired after the change event.</li> <li>The event is also fired when an item of the select list is selected via <code>Enter</code>.</li> <li>The event is only fired on an input which allows text input (<code>editable</code>, <code>enabled</code> and not <code>valueHelpOnly</code>).</li> </ul>
+<b>Notes:</b> <ul> <li>The event is fired independent of whether there was a change before or not. If a change was performed, the event is fired after the change event.</li> <li>The event is also fired when an item of the select list is selected via <kbd>Enter</kbd>.</li> <li>The event is only fired on an input which allows text input (<code>editable</code>, <code>enabled</code> and not <code>valueHelpOnly</code>).</li> </ul>
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Input</code> itself
@@ -234,7 +238,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.InputBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -242,7 +246,7 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getAutocomplete autocomplete}.
 
-Specifies whether autocomplete is enabled. Works only if "showSuggestion" property is set to true.
+Specifies whether autocomplete is enabled. Works only if "showSuggestion" property is set to true. <b>Note:</b> The autocomplete feature is disabled on Android devices due to a OS specific issue.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>autocomplete</code>
@@ -309,7 +313,7 @@ If set, the value of this parameter will control the horizontal size of the sugg
 	* Returns a metadata object for class sap.m.Input.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* ID of the element which is the current target of the association {@link #getSelectedItem selectedItem}, or <code>null</code>.
@@ -483,6 +487,8 @@ Default value is <code>false</code>.
 
 Indicates when the value gets updated with the user changes: At each keystroke (true) or first when the user presses enter or tabs out (false).
 
+<b>Note:</b> When set to true and the value of the Input control is bound to a model, the change event becomes obsolete and will not be fired, as the value in the model will be updated each time the user provides input. In such cases, subscription to the liveChange event is more appropriate, as it corresponds to the way the underlying model gets updated.
+
 Default value is <code>false</code>.
 	* @return	Value of property <code>valueLiveUpdate</code>
 	*/
@@ -559,6 +565,13 @@ Default value is empty/<code>undefined</code>
 	* @return	Void
 	*/
 	public function onBeforeRendering( ):Void;
+
+	/**
+	* Event handler for browsers' <code>change</code> event.
+	* @param	oEvent The event.
+	* @return	Void
+	*/
+	public function onchange( oEvent:jquery.Event):Void;
 
 	/**
 	* Event handler for the onFocusIn event.
@@ -655,7 +668,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	/**
 	* Sets a new value for property {@link #getAutocomplete autocomplete}.
 
-Specifies whether autocomplete is enabled. Works only if "showSuggestion" property is set to true.
+Specifies whether autocomplete is enabled. Works only if "showSuggestion" property is set to true. <b>Note:</b> The autocomplete feature is disabled on Android devices due to a OS specific issue.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -904,6 +917,8 @@ Default value is <code>false</code>.
 
 Indicates when the value gets updated with the user changes: At each keystroke (true) or first when the user presses enter or tabs out (false).
 
+<b>Note:</b> When set to true and the value of the Input control is bound to a model, the change event becomes obsolete and will not be fired, as the value in the model will be updated each time the user provides input. In such cases, subscription to the liveChange event is more appropriate, as it corresponds to the way the underlying model gets updated.
+
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>false</code>.
@@ -925,13 +940,6 @@ Default value is <code>false</code>.
 	* @return	this for chaining
 	*/
 	public function setValueStateText( ?sValueStateText:String):sap.m.InputBase;
-
-	/**
-	* Defines the width of the input. Default value is 100%.
-	* @param	sWidth The new width of the input.
-	* @return	Sets the width of the Input.
-	*/
-	public function setWidth( sWidth:String):Dynamic;
 
 	/**
 	* Opens the <code>SuggestionsPopover</code> with the available items.
@@ -1022,6 +1030,8 @@ typedef InputArgs = sap.m.InputBase.InputBaseArgs & {
 
 	/**
 	* Indicates when the value gets updated with the user changes: At each keystroke (true) or first when the user presses enter or tabs out (false).
+
+<b>Note:</b> When set to true and the value of the Input control is bound to a model, the change event becomes obsolete and will not be fired, as the value in the model will be updated each time the user provides input. In such cases, subscription to the liveChange event is more appropriate, as it corresponds to the way the underlying model gets updated.
 	*/
 	@:optional var valueLiveUpdate:haxe.extern.EitherType<String,Bool>;
 
@@ -1053,7 +1063,7 @@ typedef InputArgs = sap.m.InputBase.InputBaseArgs & {
 	@:optional var enableSuggestionsHighlighting:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Specifies whether autocomplete is enabled. Works only if "showSuggestion" property is set to true.
+	* Specifies whether autocomplete is enabled. Works only if "showSuggestion" property is set to true. <b>Note:</b> The autocomplete feature is disabled on Android devices due to a OS specific issue.
 	*/
 	@:optional var autocomplete:haxe.extern.EitherType<String,Bool>;
 
@@ -1104,9 +1114,9 @@ To display suggestions with two text values, add <code>sap.ui.core.ListItem</cod
 	@:optional var liveChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event is fired when user presses the <code>Enter</code> key on the input.
+	* This event is fired when user presses the <kbd>Enter</kbd> key on the input.
 
-<b>Notes:</b> <ul> <li>The event is fired independent of whether there was a change before or not. If a change was performed, the event is fired after the change event.</li> <li>The event is also fired when an item of the select list is selected via <code>Enter</code>.</li> <li>The event is only fired on an input which allows text input (<code>editable</code>, <code>enabled</code> and not <code>valueHelpOnly</code>).</li> </ul>
+<b>Notes:</b> <ul> <li>The event is fired independent of whether there was a change before or not. If a change was performed, the event is fired after the change event.</li> <li>The event is also fired when an item of the select list is selected via <kbd>Enter</kbd>.</li> <li>The event is only fired on an input which allows text input (<code>editable</code>, <code>enabled</code> and not <code>valueHelpOnly</code>).</li> </ul>
 	*/
 	@:optional var submit:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 

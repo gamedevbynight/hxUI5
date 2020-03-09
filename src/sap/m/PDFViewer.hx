@@ -110,7 +110,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -118,7 +118,7 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getDisplayType displayType}.
 
-Defines how the PDF viewer should be displayed. <ul> <li>If set to <code>Link</code>, the PDF viewer appears as a toolbar with a download button that can be used to download the PDF file.<br> When the {@link #open} method is called, the user can either open the PDF file in a new tab or download it.</li> <li>If set to <code>Embedded</code>, the PDF viewer appears embedded in the parent container and displays either the PDF document or the message defined by the <code>errorPlaceholderMessage</code> property.</li> <li>If set to <code>Auto</code>, the appearance of the PDF viewer depends on the device being used: <ul> <li>On mobile devices (phones, tablets), the the PDF viewer appears as a toolbar with a download button.</li> <li>On desktop devices, the PDF viewer is embedded in its parent container.</li> </ul> </li> </ul>
+Defines how the PDF viewer should be displayed. <ul> <li>If set to <code>Link</code>, the PDF viewer appears as a toolbar with a download button that can be used to download the PDF file.<br> When the {@link #open} method is called, the user can either open the PDF file in a new tab or download it.</li> <li>If set to <code>Embedded</code>, the PDF viewer appears embedded in the parent container and displays either the PDF document or the message defined by the <code>errorPlaceholderMessage</code> property.</li> <li>If set to <code>Auto</code>, the appearance of the PDF viewer depends on the device being used: <ul> <li>On mobile devices (phones, tablets), the PDF viewer appears as a toolbar with a download button.</li> <li>On desktop devices, the PDF viewer is embedded in its parent container.</li> </ul> </li> </ul>
 
 Default value is <code>Auto</code>.
 	* @return	Value of property <code>displayType</code>
@@ -155,7 +155,7 @@ Default value is <code>100%</code>.
 	* Returns a metadata object for class sap.m.PDFViewer.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets content of aggregation {@link #getPopupButtons popupButtons}.
@@ -249,7 +249,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	/**
 	* Sets a new value for property {@link #getDisplayType displayType}.
 
-Defines how the PDF viewer should be displayed. <ul> <li>If set to <code>Link</code>, the PDF viewer appears as a toolbar with a download button that can be used to download the PDF file.<br> When the {@link #open} method is called, the user can either open the PDF file in a new tab or download it.</li> <li>If set to <code>Embedded</code>, the PDF viewer appears embedded in the parent container and displays either the PDF document or the message defined by the <code>errorPlaceholderMessage</code> property.</li> <li>If set to <code>Auto</code>, the appearance of the PDF viewer depends on the device being used: <ul> <li>On mobile devices (phones, tablets), the the PDF viewer appears as a toolbar with a download button.</li> <li>On desktop devices, the PDF viewer is embedded in its parent container.</li> </ul> </li> </ul>
+Defines how the PDF viewer should be displayed. <ul> <li>If set to <code>Link</code>, the PDF viewer appears as a toolbar with a download button that can be used to download the PDF file.<br> When the {@link #open} method is called, the user can either open the PDF file in a new tab or download it.</li> <li>If set to <code>Embedded</code>, the PDF viewer appears embedded in the parent container and displays either the PDF document or the message defined by the <code>errorPlaceholderMessage</code> property.</li> <li>If set to <code>Auto</code>, the appearance of the PDF viewer depends on the device being used: <ul> <li>On mobile devices (phones, tablets), the PDF viewer appears as a toolbar with a download button.</li> <li>On desktop devices, the PDF viewer is embedded in its parent container.</li> </ul> </li> </ul>
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -372,7 +372,7 @@ typedef PDFViewerArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var showDownloadButton:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Defines how the PDF viewer should be displayed. <ul> <li>If set to <code>Link</code>, the PDF viewer appears as a toolbar with a download button that can be used to download the PDF file.<br> When the {@link #open} method is called, the user can either open the PDF file in a new tab or download it.</li> <li>If set to <code>Embedded</code>, the PDF viewer appears embedded in the parent container and displays either the PDF document or the message defined by the <code>errorPlaceholderMessage</code> property.</li> <li>If set to <code>Auto</code>, the appearance of the PDF viewer depends on the device being used: <ul> <li>On mobile devices (phones, tablets), the the PDF viewer appears as a toolbar with a download button.</li> <li>On desktop devices, the PDF viewer is embedded in its parent container.</li> </ul> </li> </ul>
+	* Defines how the PDF viewer should be displayed. <ul> <li>If set to <code>Link</code>, the PDF viewer appears as a toolbar with a download button that can be used to download the PDF file.<br> When the {@link #open} method is called, the user can either open the PDF file in a new tab or download it.</li> <li>If set to <code>Embedded</code>, the PDF viewer appears embedded in the parent container and displays either the PDF document or the message defined by the <code>errorPlaceholderMessage</code> property.</li> <li>If set to <code>Auto</code>, the appearance of the PDF viewer depends on the device being used: <ul> <li>On mobile devices (phones, tablets), the PDF viewer appears as a toolbar with a download button.</li> <li>On desktop devices, the PDF viewer is embedded in its parent container.</li> </ul> </li> </ul>
 	*/
 	@:optional var displayType:haxe.extern.EitherType<String,sap.m.PDFViewerDisplayType>;
 

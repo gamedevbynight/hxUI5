@@ -76,7 +76,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -110,6 +110,12 @@ Default value is <code>auto</code>.
 	public function getHeight( ):sap.ui.core.CSSSize;
 
 	/**
+	* ID of the element which is the current target of the association {@link #getHost host}, or <code>null</code>.
+	* @return	null
+	*/
+	public function getHost( ):sap.ui.core.ID;
+
+	/**
 	* ID of the element which is the current target of the association {@link #getHostConfigurationId hostConfigurationId}, or <code>null</code>.
 	* @return	null
 	*/
@@ -125,7 +131,7 @@ Default value is <code>auto</code>.
 	* Returns a metadata object for class sap.ui.integration.widgets.Card.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Overwrites getter for card parameters.
@@ -148,6 +154,14 @@ Default value is <code>100%</code>.
 	* @return	If the card is ready or not.
 	*/
 	public function isReady( ):Bool;
+
+	/**
+	* Loads the module designtime/Card.designtime or the module given in "sap.card": { "designtime": "designtime/Own.designtime" } This file should contain the designtime configuration for the card.
+
+Returns a promise that resolves with an object { designtime: the designtime modules response manifest: the complete manifest json } The promise is rejected if the module cannot be loaded with an object: { error: "Card.designtime not found" }
+	* @return	Promise resolves after the designtime configuration is loaded.
+	*/
+	public function loadDesigntime( ):js.lib.Promise<Card>;
 
 	/**
 	* Refreshes the card by re-applying the manifest settings and triggering all data requests.
@@ -185,6 +199,14 @@ Default value is <code>auto</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.integration.widgets.Card;
+	@:overload( function(oHost:sap.ui.core.ID):sap.ui.integration.widgets.Card{ })
+
+	/**
+	* Sets the associated {@link #getHost host}.
+	* @param	oHost ID of an element which becomes the new target of this host association; alternatively, an element instance may be given
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setHost( oHost:sap.ui.core.Control):sap.ui.integration.widgets.Card;
 	@:overload( function(oHostConfigurationId:sap.ui.core.ID):sap.ui.integration.widgets.Card{ })
 
 	/**
@@ -278,6 +300,11 @@ typedef CardArgs = sap.ui.core.Control.ControlArgs & {
 	* The ID of the host configuration.
 	*/
 	@:optional var hostConfigurationId:haxe.extern.EitherType<String,sap.ui.core.Control>;
+
+	/**
+	* The host.
+	*/
+	@:optional var host:haxe.extern.EitherType<String,sap.ui.core.Control>;
 
 	/**
 	* Fired when an action is triggered on the card.

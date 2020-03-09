@@ -237,7 +237,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -394,7 +394,7 @@ Default value is <code>Navigation</code>.
 	* Returns a metadata object for class sap.m.ListBase.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getMode mode}.
@@ -492,7 +492,7 @@ Defines the section of the control that remains fixed at the top of the page dur
 
 There is limited browser support. Browsers that do not support this feature are listed below: <ul> <li>IE</li> <li>Edge lower than version 41 (EdgeHTML 16)</li> <li>Firefox lower than version 59</li> </ul>
 
-There are also some known limitations. A few are given below: <ul> <li>If the control is placed in layout containers that have the <code>overflow: hidden</code> or <code>overflow: auto</code> style definition, this can prevent the sticky elements of the control from becoming fixed at the top of the viewport.</li> <li>If sticky column headers are enabled in the <code>sap.m.Table</code> control, setting focus on the column headers will let the table scroll to the top.</li> <li>A transparent toolbar design is not supported for sticky bars. The toolbar will automatically get an intransparent background color.</li> <li>This feature supports only the default height of the toolbar control.<li> </ul>
+There are also some known limitations. A few are given below: <ul> <li>If the control is placed in layout containers that have the <code>overflow: hidden</code> or <code>overflow: auto</code> style definition, this can prevent the sticky elements of the control from becoming fixed at the top of the viewport.</li> <li>If sticky column headers are enabled in the <code>sap.m.Table</code> control, setting focus on the column headers will let the table scroll to the top.</li> <li>A transparent toolbar design is not supported for sticky bars. The toolbar will automatically get an intransparent background color.</li> <li>This feature supports only the default height of the toolbar control.</li> </ul>
 	* @return	Value of property <code>sticky</code>
 	*/
 	public function getSticky( ):Array<sap.m.Sticky>;
@@ -863,7 +863,7 @@ Defines the section of the control that remains fixed at the top of the page dur
 
 There is limited browser support. Browsers that do not support this feature are listed below: <ul> <li>IE</li> <li>Edge lower than version 41 (EdgeHTML 16)</li> <li>Firefox lower than version 59</li> </ul>
 
-There are also some known limitations. A few are given below: <ul> <li>If the control is placed in layout containers that have the <code>overflow: hidden</code> or <code>overflow: auto</code> style definition, this can prevent the sticky elements of the control from becoming fixed at the top of the viewport.</li> <li>If sticky column headers are enabled in the <code>sap.m.Table</code> control, setting focus on the column headers will let the table scroll to the top.</li> <li>A transparent toolbar design is not supported for sticky bars. The toolbar will automatically get an intransparent background color.</li> <li>This feature supports only the default height of the toolbar control.<li> </ul>
+There are also some known limitations. A few are given below: <ul> <li>If the control is placed in layout containers that have the <code>overflow: hidden</code> or <code>overflow: auto</code> style definition, this can prevent the sticky elements of the control from becoming fixed at the top of the viewport.</li> <li>If sticky column headers are enabled in the <code>sap.m.Table</code> control, setting focus on the column headers will let the table scroll to the top.</li> <li>A transparent toolbar design is not supported for sticky bars. The toolbar will automatically get an intransparent background color.</li> <li>This feature supports only the default height of the toolbar control.</li> </ul>
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sSticky New value for property <code>sticky</code>
@@ -1027,7 +1027,7 @@ typedef ListBaseArgs = sap.ui.core.Control.ControlArgs & {
 
 There is limited browser support. Browsers that do not support this feature are listed below: <ul> <li>IE</li> <li>Edge lower than version 41 (EdgeHTML 16)</li> <li>Firefox lower than version 59</li> </ul>
 
-There are also some known limitations. A few are given below: <ul> <li>If the control is placed in layout containers that have the <code>overflow: hidden</code> or <code>overflow: auto</code> style definition, this can prevent the sticky elements of the control from becoming fixed at the top of the viewport.</li> <li>If sticky column headers are enabled in the <code>sap.m.Table</code> control, setting focus on the column headers will let the table scroll to the top.</li> <li>A transparent toolbar design is not supported for sticky bars. The toolbar will automatically get an intransparent background color.</li> <li>This feature supports only the default height of the toolbar control.<li> </ul>
+There are also some known limitations. A few are given below: <ul> <li>If the control is placed in layout containers that have the <code>overflow: hidden</code> or <code>overflow: auto</code> style definition, this can prevent the sticky elements of the control from becoming fixed at the top of the viewport.</li> <li>If sticky column headers are enabled in the <code>sap.m.Table</code> control, setting focus on the column headers will let the table scroll to the top.</li> <li>A transparent toolbar design is not supported for sticky bars. The toolbar will automatically get an intransparent background color.</li> <li>This feature supports only the default height of the toolbar control.</li> </ul>
 	*/
 	@:optional var sticky:Array<haxe.extern.EitherType<String,sap.m.Sticky>>;
 
@@ -1055,6 +1055,11 @@ There are also some known limitations. A few are given below: <ul> <li>If the co
     * Defines the context menu of the items.
     */
 	@:optional var contextMenu:haxe.extern.EitherType<String,sap.ui.core.IContextMenu>;
+
+    /**
+    * Defines the message strip to display binding-related messages.
+    */
+	@:optional var _messageStrip:haxe.extern.EitherType<String,sap.m.MessageStrip>;
 
 	/**
 	* Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledby).

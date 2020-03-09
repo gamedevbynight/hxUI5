@@ -3,15 +3,15 @@ package sap.ui.model.type;
 @:native("sap.ui.model.type.Currency")
 
 /**
-* This class represents the currency composite type.
+* This class represents the composite type <code>Currency</code>, which consists of the parts "amount" (of type <code>number</code> or <code>string</code>) and "currency" (of type <code>string</code>). In case the amount is a <code>string</code>, it must be the JavaScript representation of the corresponding number. If the <code>source</code> format option is given, the composite type has only one part of type <code>string</code>, holding both amount and currency in the source format.
 */
 extern class Currency extends sap.ui.model.CompositeType
 {
 
 	/**
 	* 
-	* @param	oFormatOptions Formatting options. For a list of all available options, see {@link sap.ui.core.format.NumberFormat#constructor NumberFormat}.
-	* @param	oConstraints Value constraints
+	* @param	oFormatOptions Format options; for a list of all available options, see {@link sap.ui.core.format.NumberFormat.getCurrencyInstance}.
+	* @param	oConstraints Constraints for the value part
 	* @return	Object
 	*/
 	public function new( ?oFormatOptions:Dynamic, ?oConstraints:Dynamic):Void;
@@ -22,19 +22,19 @@ extern class Currency extends sap.ui.model.CompositeType
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.CompositeType.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
-	@:overload( function(vValue:Array<Dynamic>, sInternalType:String):Dynamic{ })
+	@:overload( function(vValue:Array<Dynamic>, sTargetType:String):String{ })
 
 	/**
-	* Format the given array containing amount and currency code to an output value of type string. Other internal types than 'string' are not supported by the Currency type. If a source format has been defined for this type, the formatValue does also accept a string value as input, which will be parsed into an array using the source format. If aValues is not defined or null, null will be returned.
-	* @param	vValue the array of values or string value to be formatted
-	* @param	sInternalType the target type
-	* @return	the formatted output value
+	* Formats the given value to the given target type.
+	* @param	vValue The array containing amount and currency code in case the <code>source</code> format option is not given; otherwise, a string representation of the value which is parsed using the source format
+	* @param	sTargetType The target type; must be "string", or a type with "string" as its {@link sap.ui.base.DataType#getPrimitiveType primitive type}
+	* @return	The formatted output value; the values <code>undefined</code> or <code>null</code> or an amount <code>undefined</code> or <code>null</code> are formatted to <code>null</code>
 	*/
-	public function formatValue( vValue:String, sInternalType:String):Dynamic;
+	public function formatValue( vValue:String, sTargetType:String):String;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.type.Currency.
@@ -43,12 +43,12 @@ extern class Currency extends sap.ui.model.CompositeType
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
-	* Parse a string value to an array containing amount and currency. Parsing of other internal types than 'string' is not supported by the Currency type. In case a source format has been defined, after parsing the currency is formatted using the source format and a string value is returned instead.
-	* @param	vValue the value to be parsed
-	* @param	sInternalType the source type
-	* @param	aCurrentValues the current values of all binding parts
-	* @return	the parse result array
+	* Parses a string value.
+	* @param	sValue The value to be parsed
+	* @param	sSourceType The source type (the expected type of <code>sValue</code>); must be "string", or a type with "string" as its {@link sap.ui.base.DataType#getPrimitiveType primitive type}.
+	* @param	aCurrentValues The current values of all binding parts
+	* @return	If the <code>source</code> format option is not set, the method returns an array containing amount and currency: the amount is a <code>string</code> if the format option <code>parseAsString</code> is set and a <code>number</code> otherwise, the currency is always a <code>string</code>. If the <code>source</code> format option is set, the method returns a string representation of amount and currency in the given source format.
 	*/
-	public function parseValue( vValue:Dynamic, sInternalType:String, aCurrentValues:Array<Dynamic>):Dynamic;
+	public function parseValue( sValue:String, sSourceType:String, aCurrentValues:Array<Dynamic>):Dynamic;
 }
 

@@ -41,7 +41,7 @@ Each argument must be either a matrix layout cell, which is added to the row "as
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -76,7 +76,7 @@ Default value is <code>true</code>.
 	* Returns a metadata object for class sap.ui.commons.layout.MatrixLayout.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets content of aggregation {@link #getRows rows}.

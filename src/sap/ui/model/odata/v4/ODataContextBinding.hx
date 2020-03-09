@@ -88,7 +88,7 @@ If a return value context is created, it must be used instead of <code>this.getB
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.ContextBinding.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -104,6 +104,12 @@ If a return value context is created, it must be used instead of <code>this.getB
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.base.Metadata;
+
+	/**
+	* Returns the context pointing to the parameters of a deferred operation binding.
+	* @return	The parameter context
+	*/
+	public function getParameterContext( ):sap.ui.model.odata.v4.Context;
 
 	/**
 	* Returns the root binding of this binding's hierarchy, see binding {@link topic:54e0ddf695af4a6c978472cecb01c64d Initialization and Read Requests}.
@@ -154,7 +160,7 @@ If you want {@link #requestObject} to read fresh data, call <code>oBinding.refre
 	public function resetChanges( ):js.lib.Promise<ODataContextBinding>;
 
 	/**
-	* Resumes this binding. The binding can again fire change events and trigger data service requests. Before 1.53.0, this method was not supported and threw an error.
+	* Resumes this binding. The binding can then again fire change events and trigger data service requests. Before 1.53.0, this method was not supported and threw an error.
 	* @return	Void
 	*/
 	public function resume( ):Void;

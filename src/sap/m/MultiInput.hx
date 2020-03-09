@@ -20,11 +20,11 @@ extern class MultiInput extends sap.m.Input
 	public function addToken( oToken:sap.m.Token):sap.m.MultiInput;
 
 	/**
-	* Function adds a validation callback called before any new token gets added to the tokens aggregation
-	* @param	fValidator The validation callback whose parameter contains the following properties:
+	* Function adds a validation callback called before any new token gets added to the tokens aggregation.
+	* @param	fnValidator The validation callback
 	* @return	Void
 	*/
-	public function addValidator( fValidator:()->Void):Void;
+	public function addValidator( fnValidator:sap.m.multiinput.fnValidator):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:tokenUpdate tokenUpdate} event of this <code>sap.m.MultiInput</code>.
@@ -43,7 +43,7 @@ Fired when the tokens aggregation changed due to a user interaction (add / remov
 	* Clones the <code>sap.m.MultiInput</code> control.
 	* @return	reference to the newly created clone
 	*/
-	public function clone( ):sap.ui.core.Element;
+	public function clone( ):sap.m.MultiInput;
 
 	/**
 	* Destroys all the tokens in the aggregation {@link #getTokens tokens}.
@@ -67,7 +67,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.Input.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -84,7 +84,7 @@ The max number of tokens that is allowed in MultiInput.
 	* Returns a metadata object for class sap.m.MultiInput.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Function returns domref which acts as reference point for the opening suggestion menu
@@ -161,10 +161,10 @@ Additionally, it unregisters them from the hosting UIArea.
 
 	/**
 	* Function removes a validation callback
-	* @param	fValidator The validation callback to be removed
+	* @param	fnValidator The validation callback to be removed
 	* @return	Void
 	*/
-	public function removeValidator( fValidator:()->Void):Void;
+	public function removeValidator( fnValidator:sap.m.multiinput.fnValidator):Void;
 
 	/**
 	* Sets a new value for property {@link #getMaxTokens maxTokens}.

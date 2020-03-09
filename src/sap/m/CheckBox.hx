@@ -77,7 +77,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -142,7 +142,7 @@ Default value is <code>true</code>.
 	* Returns a metadata object for class sap.m.CheckBox.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getName name}.
@@ -542,6 +542,11 @@ When this property is set to <code>true</code>, the control is displayed as sele
 	* Accepts the core enumeration ValueState.type that supports 'None', 'Error', 'Warning', 'Success' and 'Information'.
 	*/
 	@:optional var valueState:haxe.extern.EitherType<String,sap.ui.core.ValueState>;
+
+	/**
+	* Defines the text that appears in the tooltip of the <code>CheckBox</code>. If this is not specified, a default text is shown from the resource bundle.
+	*/
+	@:optional var valueStateText:String;
 
 	/**
 	* Determines whether the <code>CheckBox</code> is in display only state.

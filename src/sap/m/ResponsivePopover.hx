@@ -90,12 +90,6 @@ Event is fired before popover or dialog is open.
 	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ResponsivePopover;
 
 	/**
-	* Creates a new instance of ResponsivePopover with the same settings as the ResponsivePopover on which the method is called
-	* @return	New instance of ResponsivePopover
-	*/
-	public function clone( ):sap.m.ResponsivePopover;
-
-	/**
 	* Closes the ResponsivePopover.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -177,7 +171,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -266,7 +260,7 @@ This property only takes effect on phone. Please see the documentation sap.m.Dia
 	* Returns a metadata object for class sap.m.ResponsivePopover.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getModal modal}.

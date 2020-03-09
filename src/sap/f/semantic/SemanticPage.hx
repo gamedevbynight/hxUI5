@@ -312,7 +312,7 @@ extern class SemanticPage extends sap.ui.core.Control
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -434,6 +434,18 @@ A semantic-specific button which is placed in the <code>IconActions</code> area 
 	public function getFavoriteAction( ):sap.f.semantic.FavoriteAction;
 
 	/**
+	* Gets current value of property {@link #getFitContent fitContent}.
+
+Optimizes <code>SemanticPage</code> responsiveness on small screens and behavior when expanding/collapsing the <code>SemanticPageHeader</code>.
+
+<b>Note:</b> It is recommended to use this property when displaying content of adaptive controls that stretch to fill the available space. Such controls may be {@link sap.ui.table.Table} and {@link sap.ui.table.AnalyticalTable} depending on their settings.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>fitContent</code>
+	*/
+	public function getFitContent( ):Bool;
+
+	/**
 	* Gets content of aggregation {@link #getFlagAction flagAction}.
 
 A semantic-specific button which is placed in the <code>IconActions</code> area of the <code>SemanticPage</code> title.
@@ -525,7 +537,7 @@ A semantic-specific button which is placed in the <code>FooterLeft</code> area o
 	* Returns a metadata object for class sap.f.semantic.SemanticPage.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets content of aggregation {@link #getNegativeAction negativeAction}.
@@ -1090,6 +1102,21 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function setFavoriteAction( oFavoriteAction:sap.f.semantic.FavoriteAction):sap.f.semantic.SemanticPage;
 
 	/**
+	* Sets a new value for property {@link #getFitContent fitContent}.
+
+Optimizes <code>SemanticPage</code> responsiveness on small screens and behavior when expanding/collapsing the <code>SemanticPageHeader</code>.
+
+<b>Note:</b> It is recommended to use this property when displaying content of adaptive controls that stretch to fill the available space. Such controls may be {@link sap.ui.table.Table} and {@link sap.ui.table.AnalyticalTable} depending on their settings.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bFitContent New value for property <code>fitContent</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setFitContent( bFitContent:Bool):sap.f.semantic.SemanticPage;
+
+	/**
 	* Sets the aggregated {@link #getFlagAction flagAction}.
 	* @param	oFlagAction The flagAction to set
 	* @return	Reference to <code>this</code> in order to allow method chaining
@@ -1361,6 +1388,13 @@ If all the areas have assigned values greater than 1, the numbers are scaled so 
 <Note:> When this property is set the <code>titlePrimaryArea</code> property has no effect.
 	*/
 	@:optional var titleAreaShrinkRatio:haxe.extern.EitherType<String,sap.f.DynamicPageTitleShrinkRatio>;
+
+	/**
+	* Optimizes <code>SemanticPage</code> responsiveness on small screens and behavior when expanding/collapsing the <code>SemanticPageHeader</code>.
+
+<b>Note:</b> It is recommended to use this property when displaying content of adaptive controls that stretch to fill the available space. Such controls may be {@link sap.ui.table.Table} and {@link sap.ui.table.AnalyticalTable} depending on their settings.
+	*/
+	@:optional var fitContent:haxe.extern.EitherType<String,Bool>;
 
     /**
     * The <code>SemanticPage</code> heading.

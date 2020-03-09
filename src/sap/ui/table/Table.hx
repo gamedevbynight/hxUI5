@@ -492,18 +492,18 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
-	* Filter the given column by the given value.
+	* Filters a column by a value. If no filter value is passed, the filter value equals an empty string, and the filter for this column is removed.
 	* @param	oColumn Column to be filtered
 	* @param	sValue Filter value as string (will be converted)
 	* @return	Void
 	*/
-	public function filter( oColumn:sap.ui.table.Column, sValue:String):Void;
+	public function filter( oColumn:sap.ui.table.Column, ?sValue:String):Void;
 
 	/**
 	* Gets current value of property {@link #getAlternateRowColors alternateRowColors}.
@@ -565,7 +565,7 @@ Defines the context menu for the table.
 
 <b>Note:</b> The context menu will also be available for the row selectors as well as in the row actions cell of the table control.
 
-The custom context menu will not be shown in the group header rows and the sum row of the <code>AnalyticalTable</code> control.
+The custom context menu will not be shown in group header and summary rows.
 
 If this aggregation is set, then the <code>enableCellFilter</code> property will have no effect.
 	* @return	null
@@ -730,7 +730,7 @@ Control or text of footer section of the Table (if not set it will be hidden)
 	* Returns a metadata object for class sap.ui.table.Table.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getMinAutoRowCount minAutoRowCount}.
@@ -1741,7 +1741,7 @@ The cells of rows can be defined with the {@link sap.ui.table.Column#setTemplate
 
 <b>Note:</b> The context menu will also be available for the row selectors as well as in the row actions cell of the table control.
 
-The custom context menu will not be shown in the group header rows and the sum row of the <code>AnalyticalTable</code> control.
+The custom context menu will not be shown in group header and summary rows.
 
 If this aggregation is set, then the <code>enableCellFilter</code> property will have no effect.
     */
@@ -1753,6 +1753,16 @@ If this aggregation is set, then the <code>enableCellFilter</code> property will
 The following restrictions apply: <ul> <li>If a selection plugin is applied to the table, the table's selection API must not be used. Instead, use the API of the plugin.</li> <li>Only one MultiSelectionPlugin can be applied. No other plugins can be applied.</li> </ul>
     */
 	@:optional var plugins:Array<haxe.extern.EitherType<String,sap.ui.table.plugins.SelectionPlugin>>;
+
+    /**
+    * Defines the message strip to display binding-related messages.
+    */
+	@:optional var _messageStrip:haxe.extern.EitherType<String,sap.ui.core.Control>;
+
+    /**
+    * Hidden dependents are dependents that are not cloned. But like for normal dependents, their data binding context and lifecycle are bound to the table.
+    */
+	@:optional var _hiddenDependents:Array<haxe.extern.EitherType<String,sap.ui.core.Element>>;
 
 	/**
 	* The column by which the table is grouped. Grouping will only be performed if <code>enableGrouping</code> is set to <code>true</code>. Setting <code>groupBy</code> in the view does not work and throws an error. It can only be set if the column by which the table is grouped is already part of the <code>columns</code> aggregation of the table.

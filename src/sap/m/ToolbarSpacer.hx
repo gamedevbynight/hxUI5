@@ -5,7 +5,7 @@ package sap.m;
 /**
 * Adds horizontal space between the items used within a {@link sap.m.Toolbar}.
 
-<b>Note:</b> <code>ToolbarSpacer</code> should not be used together with {@link sap.m.ToolbarLayoutData}.
+<b>Note:</b> The <code>sap.m.ToolbarSpacer</code> is a flex control that is intended to control its own behavior, thus {@link sap.m.ToolbarLayoutData} is not supported as value for the <code>layoutData</code> aggregation of <code>sap.m.ToolbarSpacer</code> and if set it's ignored.
 */
 extern class ToolbarSpacer extends sap.ui.core.Control
 {
@@ -18,7 +18,7 @@ extern class ToolbarSpacer extends sap.ui.core.Control
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -27,7 +27,7 @@ extern class ToolbarSpacer extends sap.ui.core.Control
 	* Returns a metadata object for class sap.m.ToolbarSpacer.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getWidth width}.

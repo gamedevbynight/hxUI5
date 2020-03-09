@@ -3,9 +3,9 @@ package sap.m;
 @:native("sap.m.TableSelectDialog")
 
 /**
-* A dialog to select items in a table containing multiple values and attributes. <h3>Overview</h3> The table select dialog helps users select items in a table-like structure with several attributes and values per item. A search fields helps narrow down the results. <h3>Structure</h3> The table select dialog consists of the following elements: <ul> <li> Search field - used to search enter search terms for a specific item.</li> <li> Info toolbar (only in multi-select mode) - displays the number of currently selected items.</li> <li> Content - the table with the items.</li> <li> Footer (optional) - a toolbar for actions.</li> </ul> Table select dialog supports multi-selection when the <code>multiSelect</code> property is set.
+* A dialog to select items in a table containing multiple values and attributes. <h3>Overview</h3> The table select dialog helps users select items in a table-like structure with several attributes and values per item. A search fields helps narrow down the results. <h3>Structure</h3> The table select dialog consists of the following elements: <ul> <li> Search field - used to search enter search terms for a specific item.</li> <li> Info toolbar (only in multi-select mode) - displays the number of currently selected items.</li> <li> Content - the table with the items.</li> <li> Footer (optional) - a toolbar for actions.</li> </ul> Table Select Dialog supports multi-selection when the <code>multiSelect</code> property is set to <code>true</code>.
 
-The selected items can be stored for later editing when the <code>rememberSelections</code> property is set. <b>Note:</b> This property has to be set before the dialog is opened. <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to select one or more items from a comprehensive list that contains multiple attributes or values.</li> </ul> <h4>When not to use:</h4> <ul> <li>You need to select only one item from a predefined list of single-value options. Use the {@link sap.m.Select Select} control instead.</li> <li>You need to display complex content without having the user navigate away from the current page or you want to prompt the user for an action. Use the {@link sap.m.Dialog Dialog} control instead.</li> <li>You need to select items within a query-based range. Use the {@link https://experience.sap.com/fiori-design-web/value-help-dialog/ Value Help Dialog} control instead.</li> <li>You need to filter a set of items without any selection. Use the {@link https://experience.sap.com/fiori-design-web/filter-bar/ Filter Bar} control instead.</li> </ul> <h4>Notes:</h4> <ul> <li>The property <code>growing</code> must not be used together with two-way binding. <li>When the property <code>growing</code> is set to <code>true</code> (default value), the features <code>selected count</code> in info bar, <code>search</code> and <code>select/deselect all</code>, if present, work only for the currently loaded items. To make sure that all items in the table are loaded at once and the above features work properly, set the property to <code>false</code>. <li>Since version 1.58, the columns headers and the info toolbar are sticky (remain fixed on top when scrolling). This feature is not supported in all browsers. <li>The TableSelectDialog is usually displayed at the center of the screen. Its size and position can be changed by the user. To enable this you need to set the <code>resizable</code> and <code>draggable</code> properties. Both properties are available only in desktop mode.</li> For more information on browser support limitations, you can refer to the {@link sap.m.ListBase sap.m.ListBase} <code>sticky</code> property. </ul> <h3>Responsive Behavior</h3> <ul> <li>On smaller screens, the columns of the table wrap and build a list that shows all the information.</li> </ul>
+The selected items can be stored for later editing when the <code>rememberSelections</code> property is set. <b>Note:</b> This property has to be set before the dialog is opened. <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to select one or more items from a comprehensive list that contains multiple attributes or values.</li> </ul> <h4>When not to use:</h4> <ul> <li>You need to select only one item from a predefined list of single-value options. Use the {@link sap.m.Select Select} control instead.</li> <li>You need to display complex content without having the user navigate away from the current page or you want to prompt the user for an action. Use the {@link sap.m.Dialog Dialog} control instead.</li> <li>You need to select items within a query-based range. Use the {@link https://experience.sap.com/fiori-design-web/value-help-dialog/ Value Help Dialog} control instead.</li> <li>You need to filter a set of items without any selection. Use the {@link https://experience.sap.com/fiori-design-web/filter-bar/ Filter Bar} control instead.</li> </ul> <h4>Notes:</h4> <ul> <li>The property <code>growing</code> must not be used together with two-way binding. <li>When the property <code>growing</code> is set to <code>true</code> (default value), the features <code>selected count</code> in info bar, <code>search</code> and <code>select/deselect all</code>, if present, work only for the currently loaded items. To make sure that all items in the table are loaded at once and the above features work properly, set the property to <code>false</code>. <li>Since version 1.58, the columns headers and the info toolbar are sticky (remain fixed on top when scrolling). This feature is not supported in all browsers. <li>The TableSelectDialog is usually displayed at the center of the screen. Its size and position can be changed by the user. To enable this you need to set the <code>resizable</code> and <code>draggable</code> properties. Both properties are available only in desktop mode.</li> For more information on browser support limitations, you can refer to the {@link sap.m.ListBase sap.m.ListBase} <code>sticky</code> property. </ul> <h3>Responsive Behavior</h3> <ul> <li>On smaller screens, the columns of the table wrap and build a list that shows all the information.</li> </ul> When using the <code>sap.m.TableSelectDialog</code> in SAP Quartz themes, the breakpoints and layout paddings could be determined by the dialog's width. To enable this concept and add responsive paddings to an element of the control, you have to add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--subHeader</code>, <code>sapUiResponsivePadding--content</code>, <code>sapUiResponsivePadding--footer</code>.
 */
 extern class TableSelectDialog extends sap.ui.core.Control
 {
@@ -160,7 +160,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -182,7 +182,7 @@ The columns bindings.
 	/**
 	* Gets current value of property {@link #getConfirmButtonText confirmButtonText}.
 
-Overwrites the default text for the confirmation button.
+Overwrites the default text for the confirmation button. Note: This property applies only when the property <code>multiSelect</code> is set to <code>true</code>.
 	* @return	Value of property <code>confirmButtonText</code>
 	*/
 	public function getConfirmButtonText( ):String;
@@ -208,7 +208,7 @@ Overwrites the default text for the confirmation button.
 	/**
 	* Gets current value of property {@link #getDraggable draggable}.
 
-When set to <code>true</code>, the TableSelectDialog is draggable by its header. The default value is <code>false</code>. <b>Note</b>: The SelectDialog can be draggable only in desktop mode.
+When set to <code>true</code>, the TableSelectDialog is draggable by its header. The default value is <code>false</code>. <b>Note</b>: The TableSelectDialog can be draggable only in desktop mode.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>draggable</code>
@@ -245,7 +245,7 @@ The items of the table.
 	* Returns a metadata object for class sap.m.TableSelectDialog.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getMultiSelect multiSelect}.
@@ -276,7 +276,7 @@ Default value is <code>false</code>.
 	/**
 	* Gets current value of property {@link #getResizable resizable}.
 
-When set to <code>true</code>, the TableSelectDialog will have a resize handler in its bottom right corner. The default value is <code>false</code>. <b>Note</b>: The SelectDialog can be resizable only in desktop mode.
+When set to <code>true</code>, the TableSelectDialog will have a resize handler in its bottom right corner. The default value is <code>false</code>. <b>Note</b>: The TableSelectDialog can be resizable only in desktop mode.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>resizable</code>
@@ -590,17 +590,17 @@ Optional: In case <code>multiSelect</code> is set to <code>true</code>, the sele
 	@:optional var showClearButton:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Overwrites the default text for the confirmation button.
+	* Overwrites the default text for the confirmation button. Note: This property applies only when the property <code>multiSelect</code> is set to <code>true</code>.
 	*/
 	@:optional var confirmButtonText:String;
 
 	/**
-	* When set to <code>true</code>, the TableSelectDialog is draggable by its header. The default value is <code>false</code>. <b>Note</b>: The SelectDialog can be draggable only in desktop mode.
+	* When set to <code>true</code>, the TableSelectDialog is draggable by its header. The default value is <code>false</code>. <b>Note</b>: The TableSelectDialog can be draggable only in desktop mode.
 	*/
 	@:optional var draggable:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* When set to <code>true</code>, the TableSelectDialog will have a resize handler in its bottom right corner. The default value is <code>false</code>. <b>Note</b>: The SelectDialog can be resizable only in desktop mode.
+	* When set to <code>true</code>, the TableSelectDialog will have a resize handler in its bottom right corner. The default value is <code>false</code>. <b>Note</b>: The TableSelectDialog can be resizable only in desktop mode.
 	*/
 	@:optional var resizable:haxe.extern.EitherType<String,Bool>;
 

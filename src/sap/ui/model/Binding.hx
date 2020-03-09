@@ -84,10 +84,18 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.EventProvider.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+
+	/**
+	* Returns the model context in which this binding will be resolved.
+
+If the binding path is absolute, the context is not relevant.
+	* @return	Context object
+	*/
+	public function getContext( ):sap.ui.model.Context;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.Binding.
@@ -96,20 +104,34 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
+	* Returns the model to which this binding belongs.
+	* @return	Model to which this binding belongs
+	*/
+	public function getModel( ):sap.ui.model.Model;
+
+	/**
+	* Returns the model path to which this binding binds.
+
+Might be a relative or absolute path. If it is relative, it will be resolved relative to the context as returned by {@link getContext()}.
+	* @return	Binding path
+	*/
+	public function getPath( ):String;
+
+	/**
 	* Returns whether the binding is initial, which means it did not get an initial value yet
-	* @return	whether binding is initial
+	* @return	Whether binding is initial
 	*/
 	public function isInitial( ):Bool;
 
 	/**
-	* Returns whether the binding is relative, which means it did not start with a /
-	* @return	whether binding is relative
+	* Returns whether the binding is relative, which means its path does not start with a slash ('/')
+	* @return	Whether binding is relative
 	*/
 	public function isRelative( ):Bool;
 
 	/**
 	* Returns true if the binding is suspended or false if not.
-	* @return	whether binding is suspended
+	* @return	Whether binding is suspended
 	*/
 	public function isSuspended( ):Bool;
 
@@ -123,7 +145,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	/**
 	* Resumes the binding update. Change events will be fired again.
 
-When the binding is resumed, a change event will be fired immediately, if the data has changed while the binding was suspended. For serverside models, a request to the server will be triggered, if a refresh was requested while the binding was suspended.
+When the binding is resumed, a change event will be fired immediately, if the data has changed while the binding was suspended. For server-side models, a request to the server will be triggered, if a refresh was requested while the binding was suspended.
 	* @return	Void
 	*/
 	public function resume( ):Void;

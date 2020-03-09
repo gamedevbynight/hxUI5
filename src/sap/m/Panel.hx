@@ -66,7 +66,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -169,7 +169,7 @@ This aggregation allows the use of a custom Toolbar as information bar for the P
 	* Returns a metadata object for class sap.m.Panel.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getWidth width}.
@@ -197,6 +197,20 @@ Default value is <code>100%</code>.
 	public function insertContent( oContent:sap.ui.core.Control, iIndex:Int):sap.m.Panel;
 
 	/**
+	* Sets the accessibleRole property of the control.
+	* @param	sRole Defines the aria role of the control.
+	* @return	Pointer to the control instance to allow method chaining.
+	*/
+	public function onBeforeRendering( sRole:sap.m.PanelAccessibleRole):sap.m.Panel;
+
+	/**
+	* Sets the height of the panel.
+	* @param	sHeight The height of the panel as CSS size.
+	* @return	Pointer to the control instance to allow method chaining.
+	*/
+	public function onThemeChanged( sHeight:sap.ui.core.CSSSize):sap.m.Panel;
+
+	/**
 	* Removes all the controls from the aggregation {@link #getContent content}.
 
 Additionally, it unregisters them from the hosting UIArea.
@@ -214,11 +228,17 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeContent( vContent:sap.ui.core.Control):sap.ui.core.Control;
 
 	/**
-	* Sets the accessibleRole property of the control.
-	* @param	sRole Defines the aria role of the control.
-	* @return	Pointer to the control instance to allow method chaining.
+	* Sets a new value for property {@link #getAccessibleRole accessibleRole}.
+
+This property is used to set the accessible aria role of the Panel. Depending on the usage you can change the role from the default <code>Form</code> to <code>Region</code> or <code>Complementary</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Form</code>.
+	* @param	sAccessibleRole New value for property <code>accessibleRole</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAccessibleRole( sRole:sap.m.PanelAccessibleRole):sap.m.Panel;
+	public function setAccessibleRole( sAccessibleRole:sap.m.PanelAccessibleRole):sap.m.Panel;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
@@ -234,9 +254,15 @@ Default value is <code>Translucent</code>.
 	public function setBackgroundDesign( sBackgroundDesign:sap.m.BackgroundDesign):sap.m.Panel;
 
 	/**
-	* Sets the expandable property of the control.
-	* @param	bExpandable Defines whether the control is expandable or not.
-	* @return	Pointer to the control instance to allow method chaining.
+	* Sets a new value for property {@link #getExpandable expandable}.
+
+Specifies whether the control is expandable. This allows for collapsing or expanding the infoToolbar (if available) and content of the Panel. Note: If expandable is set to false, the Panel will always be rendered expanded.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bExpandable New value for property <code>expandable</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setExpandable( bExpandable:Bool):sap.m.Panel;
 
@@ -281,9 +307,15 @@ Default value is <code>empty string</code>.
 	public function setHeaderToolbar( oHeaderToolbar:sap.m.Toolbar):sap.m.Panel;
 
 	/**
-	* Sets the height of the panel.
-	* @param	sHeight The height of the panel as CSS size.
-	* @return	Pointer to the control instance to allow method chaining.
+	* Sets a new value for property {@link #getHeight height}.
+
+Determines the Panel height.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>auto</code>.
+	* @param	sHeight New value for property <code>height</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.Panel;
 
@@ -295,9 +327,15 @@ Default value is <code>empty string</code>.
 	public function setInfoToolbar( oInfoToolbar:sap.m.Toolbar):sap.m.Panel;
 
 	/**
-	* Sets the width of the panel.
-	* @param	sWidth The width of the Panel as CSS size.
-	* @return	Pointer to the control instance to allow method chaining.
+	* Sets a new value for property {@link #getWidth width}.
+
+Determines the Panel width.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>100%</code>.
+	* @param	sWidth New value for property <code>width</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Panel;
 }

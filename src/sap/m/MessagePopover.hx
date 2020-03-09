@@ -3,9 +3,13 @@ package sap.m;
 @:native("sap.m.MessagePopover")
 
 /**
-* <h3>Overview</h3> A <code>MessagePopover</code> is used to display a summarized list of different types of messages (error, warning, success, and information messages). It provides a handy and systemized way to navigate and explore details for every message. It is adaptive and responsive. It renders as a dialog with a Close button in the header on phones, and as a popover on tablets and higher resolution devices. It also exposes an event {@link sap.m.MessagePopover#event:activeTitlePress}, which can be used for navigation from a message to the source of the issue. <h3>Notes:</h3> <ul> <li> Messages can have descriptions pre-formatted with HTML markup. In this case, the <code>markupDescription</code> has to be set to <code>true</code>.</li> <li> If the message cannot be fully displayed or includes a long description, the message popover provides navigation to the detailed description.</li> </ul> <h3>Structure</h3> The message popover stores all messages in an aggregation of type {@link sap.m.MessageItem} named <code>items</code>.
+* A <code>MessagePopover</code> is used to display a summarized list of different types of messages (error, warning, success, and information messages).
 
-A set of properties determines how the items are rendered: <ul> <li> counter - An integer that is used to indicate the number of errors for each type </li> <li> type - The type of message </li> <li> title/subtitle - The title and subtitle of the message</li> <li> description - The long text description of the message</li> <li> activeTitle - Determines whether the title of the item is interactive</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>When you want to make sure that all content is visible on any device.</li> <li>When you want a way to centrally manage messages and show them to the user without additional work for the developer. The message popover is triggered from a messaging button in the footer toolbar. If an error has occurred at any validation point, the total number of messages should be incremented, but the user's work shouldn't be interrupted. Navigation between the message item and the source of the error can be created, if needed by the application. This can be done by setting the <code>activeTitle</code> property to true and providing a handler for the <code>activeTitlePress</code> event. In addition, you can achieve the same functionality inside a different container using the {@link sap.m.MessageView} control.</li> </ul> <h3>Responsive Behavior</h3> On mobile phones, the message popover is automatically shown in full screen mode.<br> On desktop and tablet, the message popover opens in a popover.<br> On desktop the opened popover is resizable if it is placed in a {@link sap.m.Toolbar}, {@link sap.m.Bar} or used in {@link sap.m.semantic.SemanticPage}
+<h3>Overview</h3>
+
+It provides a handy and systematized way to navigate and explore details for every message. It is adaptive and responsive. It renders as a dialog with a Close button in the header on phones, and as a popover on tablets and higher resolution devices. It also exposes an event {@link sap.m.MessagePopover#event:activeTitlePress}, which can be used for navigation from a message to the source of the issue. <h3>Notes:</h3> <ul> <li> If your application changes its model between two interactions with the <code>MessagePopover</code>, this could lead to outdated messages being shown. To avoid this, you need to call <code>navigateBack</code> when the model is updated.</li> <li> Messages can have descriptions preformatted with HTML markup. In this case, the <code>markupDescription</code> has to be set to <code>true</code>.</li> <li> If the message cannot be fully displayed or includes a long description, the <code>MessagePopover</code> provides navigation to the detailed description.</li> </ul> <h3>Structure</h3> The <code>MessagePopover</code> stores all messages in an aggregation of type {@link sap.m.MessageItem} named <code>items</code>.
+
+A set of properties determines how the items are rendered: <ul> <li> counter - An integer that is used to indicate the number of errors for each type. </li> <li> type - The type of message. </li> <li> title/subtitle - The title and subtitle of the message.</li> <li> description - The long text description of the message.</li> <li> activeTitle - Determines whether the title of the item is interactive.</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>When you want to make sure that all content is visible on any device.</li> <li>When you want a way to centrally manage messages and show them to the user without additional work for the developer. The <code>MessagePopover</code> is triggered from a messaging button in the footer toolbar. If an error has occurred at any validation point, the total number of messages should be incremented, but the user's work shouldn't be interrupted. Navigation between the message item and the source of the error can be created, if needed by the application. This can be done by setting the <code>activeTitle</code> property to <code>true</code> and providing a handler for the <code>activeTitlePress</code> event. In addition, you can achieve the same functionality inside a different container using the {@link sap.m.MessageView} control.</li> </ul> <h3>Responsive Behavior</h3> On mobile phones, the <code>MessagePopover</code> is automatically shown in full screen mode.<br> On desktop and tablet, the message popover opens in a popover.<br> On desktop the opened popover is resizable, if it is placed in a {@link sap.m.Toolbar}, {@link sap.m.Bar}, or used in {@link sap.m.semantic.SemanticPage}.
 */
 extern class MessagePopover extends sap.ui.core.Control
 {
@@ -25,7 +29,7 @@ extern class MessagePopover extends sap.ui.core.Control
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessagePopover</code> itself.
 
-This event will be fired when an active title of a MessageItem is clicked
+Event fired when an active title of a <code>MessageItem</code> is clicked.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
@@ -38,7 +42,7 @@ This event will be fired when an active title of a MessageItem is clicked
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessagePopover</code> itself.
 
-This event will be fired after the popover is closed
+Event fired after the popover is closed.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
@@ -51,7 +55,7 @@ This event will be fired after the popover is closed
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessagePopover</code> itself.
 
-This event will be fired after the popover is opened
+Event fired after the popover is opened.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
@@ -64,7 +68,7 @@ This event will be fired after the popover is opened
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessagePopover</code> itself.
 
-This event will be fired before the popover is closed
+Event fired before the popover is closed.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
@@ -77,7 +81,7 @@ This event will be fired before the popover is closed
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessagePopover</code> itself.
 
-This event will be fired before the popover is opened
+Event fired before the popover is opened.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
@@ -90,7 +94,7 @@ This event will be fired before the popover is opened
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessagePopover</code> itself.
 
-This event will be fired when description is shown
+Event fired when description is shown.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
@@ -103,7 +107,7 @@ This event will be fired when description is shown
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessagePopover</code> itself.
 
-This event will be fired when one of the lists is shown when (not) filtered by type
+Event fired when one of the lists is shown when (not) filtered by type.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
@@ -116,7 +120,7 @@ This event will be fired when one of the lists is shown when (not) filtered by t
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessagePopover</code> itself.
 
-This event will be fired when the long text description data from a remote URL is loaded
+Event fired when the long text description data from a remote URL is loaded.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
@@ -129,7 +133,7 @@ This event will be fired when the long text description data from a remote URL i
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessagePopover</code> itself.
 
-This event will be fired when a validation of a URL from long text description is ready
+Event fired when a validation of a URL from long text description is ready.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
@@ -251,7 +255,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -259,7 +263,7 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getAsyncDescriptionHandler asyncDescriptionHandler}.
 
-Callback function for resolving a promise after description has been asynchronously loaded inside this function
+Callback function for resolving a promise after description has been asynchronously loaded inside this function. You can use this function in order to validate the description before displaying it.
 	* @return	Value of property <code>asyncDescriptionHandler</code>
 	*/
 	public function getAsyncDescriptionHandler( ):Dynamic;
@@ -267,15 +271,25 @@ Callback function for resolving a promise after description has been asynchronou
 	/**
 	* Gets current value of property {@link #getAsyncURLHandler asyncURLHandler}.
 
-Callback function for resolving a promise after a link has been asynchronously validated inside this function
+Callback function for resolving a promise after a link has been asynchronously validated inside this function. You can use this function in order to validate URLs before displaying them inside the description.
 	* @return	Value of property <code>asyncURLHandler</code>
 	*/
 	public function getAsyncURLHandler( ):Dynamic;
 
 	/**
+	* Gets current value of property {@link #getGroupItems groupItems}.
+
+Defines whether the MessageItems are grouped or not.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>groupItems</code>
+	*/
+	public function getGroupItems( ):Bool;
+
+	/**
 	* Gets content of aggregation {@link #getHeaderButton headerButton}.
 
-A custom header button
+Sets a custom header button.
 	* @return	null
 	*/
 	public function getHeaderButton( ):sap.m.Button;
@@ -293,7 +307,7 @@ Default value is <code>true</code>.
 	/**
 	* Gets content of aggregation {@link #getItems items}.
 
-A list with message items
+A list with message items.
 	* @return	null
 	*/
 	public function getItems( ):Dynamic;
@@ -302,12 +316,12 @@ A list with message items
 	* Returns a metadata object for class sap.m.MessagePopover.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getPlacement placement}.
 
-Determines the position, where the control will appear on the screen. Possible values are: sap.m.VerticalPlacementType.Top, sap.m.VerticalPlacementType.Bottom and sap.m.VerticalPlacementType.Vertical. The default value is sap.m.VerticalPlacementType.Vertical. Setting this property while the control is open, will not cause any re-rendering and changing of the position. Changes will only be applied with the next interaction.
+Determines the position, where the control will appear on the screen. The default value is <code>sap.m.VerticalPlacementType.Vertical</code>. Setting this property while the control is open, will not cause any re-rendering and changing of the position. Changes will only be applied with the next interaction.
 
 Default value is <code>Vertical</code>.
 	* @return	Value of property <code>placement</code>
@@ -338,6 +352,12 @@ Default value is <code>Vertical</code>.
 	public function isOpen( ):Bool;
 
 	/**
+	* Navigates back to the list page.
+	* @return	Void
+	*/
+	public function navigateBack( ):Void;
+
+	/**
 	* Opens the MessagePopover
 	* @param	oControl Control which opens the MessagePopover
 	* @return	Reference to the 'this' for chaining purposes
@@ -365,7 +385,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	/**
 	* Sets a new value for property {@link #getAsyncDescriptionHandler asyncDescriptionHandler}.
 
-Callback function for resolving a promise after description has been asynchronously loaded inside this function
+Callback function for resolving a promise after description has been asynchronously loaded inside this function. You can use this function in order to validate the description before displaying it.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	oAsyncDescriptionHandler New value for property <code>asyncDescriptionHandler</code>
@@ -376,13 +396,26 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getAsyncURLHandler asyncURLHandler}.
 
-Callback function for resolving a promise after a link has been asynchronously validated inside this function
+Callback function for resolving a promise after a link has been asynchronously validated inside this function. You can use this function in order to validate URLs before displaying them inside the description.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	oAsyncURLHandler New value for property <code>asyncURLHandler</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setAsyncURLHandler( oAsyncURLHandler:Dynamic):sap.m.MessagePopover;
+
+	/**
+	* Sets a new value for property {@link #getGroupItems groupItems}.
+
+Defines whether the MessageItems are grouped or not.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bGroupItems New value for property <code>groupItems</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setGroupItems( bGroupItems:Bool):sap.m.MessagePopover;
 
 	/**
 	* Sets the aggregated {@link #getHeaderButton headerButton}.
@@ -405,11 +438,17 @@ Default value is <code>true</code>.
 	public function setInitiallyExpanded( bInitiallyExpanded:Bool):sap.m.MessagePopover;
 
 	/**
-	* The method sets the placement position of the MessagePopover. Only accepted Values are: sap.m.PlacementType.Top, sap.m.PlacementType.Bottom and sap.m.PlacementType.Vertical
-	* @param	sPlacement Placement type
-	* @return	Reference to the 'this' for chaining purposes
+	* Sets a new value for property {@link #getPlacement placement}.
+
+Determines the position, where the control will appear on the screen. The default value is <code>sap.m.VerticalPlacementType.Vertical</code>. Setting this property while the control is open, will not cause any re-rendering and changing of the position. Changes will only be applied with the next interaction.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Vertical</code>.
+	* @param	sPlacement New value for property <code>placement</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlacement( sPlacement:sap.m.PlacementType):sap.m.MessagePopover;
+	public function setPlacement( sPlacement:sap.m.VerticalPlacementType):sap.m.MessagePopover;
 
 	/**
 	* This method toggles between open and closed state of the MessagePopover instance. oControl parameter is mandatory in the same way as in 'openBy' method
@@ -422,17 +461,17 @@ Default value is <code>true</code>.
 typedef MessagePopoverArgs = sap.ui.core.Control.ControlArgs & {
 
 	/**
-	* Callback function for resolving a promise after description has been asynchronously loaded inside this function
+	* Callback function for resolving a promise after description has been asynchronously loaded inside this function. You can use this function in order to validate the description before displaying it.
 	*/
 	@:optional var asyncDescriptionHandler:Dynamic;
 
 	/**
-	* Callback function for resolving a promise after a link has been asynchronously validated inside this function
+	* Callback function for resolving a promise after a link has been asynchronously validated inside this function. You can use this function in order to validate URLs before displaying them inside the description.
 	*/
 	@:optional var asyncURLHandler:Dynamic;
 
 	/**
-	* Determines the position, where the control will appear on the screen. Possible values are: sap.m.VerticalPlacementType.Top, sap.m.VerticalPlacementType.Bottom and sap.m.VerticalPlacementType.Vertical. The default value is sap.m.VerticalPlacementType.Vertical. Setting this property while the control is open, will not cause any re-rendering and changing of the position. Changes will only be applied with the next interaction.
+	* Determines the position, where the control will appear on the screen. The default value is <code>sap.m.VerticalPlacementType.Vertical</code>. Setting this property while the control is open, will not cause any re-rendering and changing of the position. Changes will only be applied with the next interaction.
 	*/
 	@:optional var placement:haxe.extern.EitherType<String,sap.m.VerticalPlacementType>;
 
@@ -441,58 +480,63 @@ typedef MessagePopoverArgs = sap.ui.core.Control.ControlArgs & {
 	*/
 	@:optional var initiallyExpanded:haxe.extern.EitherType<String,Bool>;
 
+	/**
+	* Defines whether the MessageItems are grouped or not.
+	*/
+	@:optional var groupItems:haxe.extern.EitherType<String,Bool>;
+
     /**
-    * A list with message items
+    * A list with message items.
     */
 	@:optional var items:Array<haxe.extern.EitherType<String,sap.m.MessageItem>>;
 
     /**
-    * A custom header button
+    * Sets a custom header button.
     */
 	@:optional var headerButton:haxe.extern.EitherType<String,sap.m.Button>;
 
 	/**
-	* This event will be fired when an active title of a MessageItem is clicked
+	* Event fired when an active title of a <code>MessageItem</code> is clicked.
 	*/
 	@:optional var activeTitlePress:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired after the popover is closed
+	* Event fired after the popover is closed.
 	*/
 	@:optional var afterClose:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired after the popover is opened
+	* Event fired after the popover is opened.
 	*/
 	@:optional var afterOpen:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired before the popover is closed
+	* Event fired before the popover is closed.
 	*/
 	@:optional var beforeClose:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired before the popover is opened
+	* Event fired before the popover is opened.
 	*/
 	@:optional var beforeOpen:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired when description is shown
+	* Event fired when description is shown.
 	*/
 	@:optional var itemSelect:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired when one of the lists is shown when (not) filtered by type
+	* Event fired when one of the lists is shown when (not) filtered by type.
 	*/
 	@:optional var listSelect:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired when the long text description data from a remote URL is loaded
+	* Event fired when the long text description data from a remote URL is loaded.
 	*/
 	@:optional var longtextLoaded:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired when a validation of a URL from long text description is ready
+	* Event fired when a validation of a URL from long text description is ready.
 	*/
 	@:optional var urlValidated:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

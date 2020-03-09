@@ -5,7 +5,7 @@ package sap.m;
 /**
 * A popup that interrupts the current processing and prompts the user for an action or an input in a modal mode. <h3>Overview</h3> The Dialog control is used to prompt the user for an action or a confirmation. It interrupts the current app processing as it is the only focused UI element and the main screen is dimmed/blocked. The content of the Dialog is fully customizable. <h3>Structure</h3> A Dialog consists of a title, optional subtitle, content area and a footer for action buttons. The Dialog is usually displayed at the center of the screen. Its size and position can be changed by the user. To enable this, you need to set the properties <code>resizable</code> and <code>draggable</code> accordingly.
 
-There are other specialized types of dialogs: <ul> <li>{@link sap.m.P13nDialog Personalization Dialog} - used for personalizing sorting, filtering and grouping in tables</li> <li>{@link sap.m.SelectDialog Select Dialog} - used to select one or more items from a comprehensive list</li> <li>{@link sap.m.TableSelectDialog Table Select Dialog} - used to make a selection from a comprehensive table containing multiple attributes or values</li> <li>{@link sap.ui.comp.valuehelpdialog.ValueHelpDialog Value Help Dialog} - used to help the user find and select single and multiple values</li> <li>{@link sap.m.ViewSettingsDialog View Settings Dialog} - used to sort, filter, or group data within a (master) list or a table</li> <li>{@link sap.m.BusyDialog Busy Dialog} - used to block the screen and inform the user about an ongoing operation</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You want to display a system message.</li> <li>You want to interrupt the user’s action.</li> <li>You want to show a message with a short and a long description.</li> </ul> <h4>When not to use:</h4> <ul> <li>You just want to confirm a successful action.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>If the <code>stretch</code> property is set to <code>true</code>, the Dialog displays on full screen.</li> <li>If the <code>contentWidth</code> and/or <code>contentHeight</code> properties are set, the Dialog will try to fill those sizes.</li> <li>If there is no specific sizing, the Dialog will try to adjust its size to its content.</li> </ul> <h4>Smartphones</h4> If the Dialog has one or two actions, they will cover the entire footer. If there are more actions, they will overflow. <h4>Tablets</h4> The action buttons in the toolbar are <b>right-aligned</b>. Use <b>cozy</b> mode on tablet devices. <h4>Desktop</h4> The action buttons in the toolbar are <b>right-aligned</b>. Use <b>compact</b> mode on desktop.
+There are other specialized types of dialogs: <ul> <li>{@link sap.m.P13nDialog Personalization Dialog} - used for personalizing sorting, filtering and grouping in tables</li> <li>{@link sap.m.SelectDialog Select Dialog} - used to select one or more items from a comprehensive list</li> <li>{@link sap.m.TableSelectDialog Table Select Dialog} - used to make a selection from a comprehensive table containing multiple attributes or values</li> <li>{@link sap.ui.comp.valuehelpdialog.ValueHelpDialog Value Help Dialog} - used to help the user find and select single and multiple values</li> <li>{@link sap.m.ViewSettingsDialog View Settings Dialog} - used to sort, filter, or group data within a (master) list or a table</li> <li>{@link sap.m.BusyDialog Busy Dialog} - used to block the screen and inform the user about an ongoing operation</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You want to display a system message.</li> <li>You want to interrupt the user’s action.</li> <li>You want to show a message with a short and a long description.</li> </ul> <h4>When not to use:</h4> <ul> <li>You just want to confirm a successful action.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>If the <code>stretch</code> property is set to <code>true</code>, the Dialog displays on full screen.</li> <li>If the <code>contentWidth</code> and/or <code>contentHeight</code> properties are set, the Dialog will try to fill those sizes.</li> <li>If there is no specific sizing, the Dialog will try to adjust its size to its content.</li> </ul> When using the <code>sap.m.Dialog</code> in SAP Quartz themes, the breakpoints and layout paddings could be determined by the Dialog's width. To enable this concept and add responsive paddings to an element of the Dialog control, you have to add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--subHeader</code>, <code>sapUiResponsivePadding--content</code>, <code>sapUiResponsivePadding--footer</code>. <h4>Smartphones</h4> If the Dialog has one or two actions, they will cover the entire footer. If there are more actions, they will overflow. <h4>Tablets</h4> The action buttons in the toolbar are <b>right-aligned</b>. Use <b>cozy</b> mode on tablet devices. <h4>Desktop</h4> The action buttons in the toolbar are <b>right-aligned</b>. Use <b>compact</b> mode on desktop.
 */
 extern class Dialog extends sap.ui.core.Control implements sap.ui.core.PopupInterface
 {
@@ -182,7 +182,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -311,7 +311,7 @@ Icon displayed in the Dialog header. This <code>icon</code> is invisible on the 
 	* Returns a metadata object for class sap.m.Dialog.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getResizable resizable}.
@@ -433,7 +433,7 @@ Default value is <code>true</code>.
 	* The method checks if the Dialog is open. It returns <code>true</code> when the Dialog is currently open (this includes opening and closing animations), otherwise it returns <code>false</code>.
 	* @return	boolean
 	*/
-	public function isOpen( ):Bool;
+	public function isOpen( ):Dynamic;
 
 	/**
 	* Open the dialog.
@@ -597,17 +597,6 @@ Default value is <code>true</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHorizontalScrolling( bHorizontalScrolling:Bool):sap.m.Dialog;
-
-	/**
-	* Sets a new value for property {@link #getIcon icon}.
-
-Icon displayed in the Dialog header. This <code>icon</code> is invisible on the iOS platform and it is density-aware. You can use the density convention (@2, @1.5, etc.) to provide higher resolution image for higher density screen.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-	* @param	sIcon New value for property <code>icon</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.Dialog;
 	@:overload( function(oInitialFocus:sap.ui.core.ID):sap.m.Dialog{ })
 
 	/**
@@ -642,19 +631,6 @@ Default value is <code>true</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setShowHeader( bShowHeader:Bool):sap.m.Dialog;
-
-	/**
-	* Sets a new value for property {@link #getState state}.
-
-Affects the <code>icon</code> and the <code>title</code> color. If other than <code>none</code> is set, a predefined icon will be added to the Dialog. Setting the <code>icon</code> property will overwrite the predefined icon. The default value is <code>none</code> which doesn't add any icon to the Dialog control. This property is by now only supported by the blue crystal theme.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>None</code>.
-	* @param	sState New value for property <code>state</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setState( sState:sap.ui.core.ValueState):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getStretch stretch}.
@@ -843,11 +819,6 @@ typedef DialogArgs = sap.ui.core.Control.ControlArgs & {
     * The hidden aggregation for internal maintained <code>header</code>.
     */
 	@:optional var _header:haxe.extern.EitherType<String,sap.ui.core.Control>;
-
-    /**
-    * The hidden aggregation for internal maintained <code>title</code> control.
-    */
-	@:optional var _title:haxe.extern.EitherType<String,sap.ui.core.Control>;
 
     /**
     * The hidden aggregation for internal maintained <code>icon</code> control.

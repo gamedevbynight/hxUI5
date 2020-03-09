@@ -55,6 +55,13 @@ Event is fired when user has finished a selection of items in a list box and lis
 	public function attachSelectionFinish( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MultiComboBox;
 
 	/**
+	* Clones the <code>sap.m.MultiComboBox</code> control.
+	* @param	sIdSuffix Suffix to be added to the ids of the new control and its internal objects.
+	* @return	The cloned <code>sap.m.MultiComboBox</code> control.
+	*/
+	public function clone( sIdSuffix:String):sap.m.ComboBox;
+
+	/**
 	* Destroys all the items in the aggregation named <code>items</code>.
 	* @return	<code>this</code> to allow method chaining.
 	*/
@@ -86,7 +93,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.ComboBoxBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -95,7 +102,7 @@ The passed function and listener object must match the ones used for event regis
 	* Returns a metadata object for class sap.m.MultiComboBox.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Retrieves the selected item objects from the association named <code>selectedItems</code>.

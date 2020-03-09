@@ -21,7 +21,7 @@ extern class LocaleData extends sap.ui.base.Object
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.Object.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -233,6 +233,13 @@ The empty Id ("") might be used to retrieve the interval format fallback.
 	* @return	map of locale specific language names
 	*/
 	public function getLanguages( ):Dynamic;
+
+	/**
+	* Get lenient number symbols for "plusSign" or "minusSign".
+	* @param	sType the required type of symbol
+	* @return	the selected lenient number symbols, e.g. "-‒⁻₋−➖﹣"
+	*/
+	public function getLenientNumberSymbols( sType:String):String;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.LocaleData.

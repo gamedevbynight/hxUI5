@@ -75,7 +75,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -207,7 +207,7 @@ Default value is <code>100%</code>.
 	* Returns a metadata object for class sap.m.Select.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getName name}.
@@ -224,6 +224,16 @@ Default value is <code>empty string</code>.
 	* @return	Configuration information for the <code>sap.m.IOverflowToolbarContent</code> interface.
 	*/
 	public function getOverflowToolbarConfig( ):Dynamic;
+
+	/**
+	* Gets current value of property {@link #getRequired required}.
+
+Indicates that user input is required. This property is only needed for accessibility purposes when a single relationship between the field and a label (see aggregation <code>labelFor</code> of <code>sap.m.Label</code>) cannot be established (e.g. one label should label multiple fields).
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>required</code>
+	*/
+	public function getRequired( ):Bool;
 
 	/**
 	* Gets the selected item object from the aggregation named <code>items</code>.
@@ -246,7 +256,7 @@ Default value is <code>empty string</code>.
 
 Key of the selected item.
 
-<b>Notes:</b> <ul> <li> If duplicate keys exist, the first item matching the key is used.</li> <li> If invalid or none <code>selectedKey</code> is used, the first item is being selected.</li> <li> Invalid or missing <code>selectedKey</code> leads to severe functional issues in <code>sap.m.Table</code>, when the <code>sap.m.Select</code> is used inside a <code>sap.m.Table</code> column.</li> </ul>
+<b>Notes:</b> <ul> <li> If duplicate keys exist, the first item matching the key is used.</li> <li> If invalid or none <code>selectedKey</code> is used, the first item is being selected.</li> <li> Invalid or missing <code>selectedKey</code> leads to severe functional issues in <code>sap.ui.table.Table</code>, when the <code>sap.m.Select</code> is used inside a <code>sap.ui.table.Table</code> column.</li> </ul>
 
 Default value is <code>empty string</code>.
 	* @return	Value of property <code>selectedKey</code>
@@ -482,6 +492,19 @@ Default value is <code>empty string</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setName( sName:String):sap.m.Select;
+
+	/**
+	* Sets a new value for property {@link #getRequired required}.
+
+Indicates that user input is required. This property is only needed for accessibility purposes when a single relationship between the field and a label (see aggregation <code>labelFor</code> of <code>sap.m.Label</code>) cannot be established (e.g. one label should label multiple fields).
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bRequired New value for property <code>required</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setRequired( bRequired:Bool):sap.m.Select;
 	@:overload( function(vItem:String):sap.m.Select{ })
 	@:overload( function(vItem:sap.ui.core.Item):sap.m.Select{ })
 
@@ -660,7 +683,7 @@ typedef SelectArgs = sap.ui.core.Control.ControlArgs & {
 	/**
 	* Key of the selected item.
 
-<b>Notes:</b> <ul> <li> If duplicate keys exist, the first item matching the key is used.</li> <li> If invalid or none <code>selectedKey</code> is used, the first item is being selected.</li> <li> Invalid or missing <code>selectedKey</code> leads to severe functional issues in <code>sap.m.Table</code>, when the <code>sap.m.Select</code> is used inside a <code>sap.m.Table</code> column.</li> </ul>
+<b>Notes:</b> <ul> <li> If duplicate keys exist, the first item matching the key is used.</li> <li> If invalid or none <code>selectedKey</code> is used, the first item is being selected.</li> <li> Invalid or missing <code>selectedKey</code> leads to severe functional issues in <code>sap.ui.table.Table</code>, when the <code>sap.m.Select</code> is used inside a <code>sap.ui.table.Table</code> column.</li> </ul>
 	*/
 	@:optional var selectedKey:String;
 
@@ -718,6 +741,11 @@ typedef SelectArgs = sap.ui.core.Control.ControlArgs & {
 	* Determines whether the text in the items wraps on multiple lines when the available width is not enough.
 	*/
 	@:optional var wrapItemsText:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Indicates that user input is required. This property is only needed for accessibility purposes when a single relationship between the field and a label (see aggregation <code>labelFor</code> of <code>sap.m.Label</code>) cannot be established (e.g. one label should label multiple fields).
+	*/
+	@:optional var required:haxe.extern.EitherType<String,Bool>;
 
     /**
     * Defines the items contained within this control.

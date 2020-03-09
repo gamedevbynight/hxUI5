@@ -45,7 +45,7 @@ The context must not be used anymore after successful deletion.
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.Context.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -154,7 +154,7 @@ The events 'dataRequested' and 'dataReceived' are not fired. Whatever should hap
 	* Sets a new value for the property identified by the given path. The path is relative to this context and is expected to point to a structural property with primitive type.
 	* @param	sPath A relative path within the JSON structure
 	* @param	vValue The new value which must be primitive
-	* @param	sGroupId The group ID to be used for the PATCH request; if not specified, the update group ID for the context's binding is used, see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}.
+	* @param	sGroupId The group ID to be used for the PATCH request; if not specified, the update group ID for the context's binding is used, see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}. Since 1.74, you can use <code>null</code> to prevent the PATCH request.
 	* @return	A promise which is resolved without a result in case of success, or rejected with an instance of <code>Error</code> in case of failure
 	*/
 	public function setProperty( sPath:String, vValue:Dynamic, ?sGroupId:String):js.lib.Promise<Context>;

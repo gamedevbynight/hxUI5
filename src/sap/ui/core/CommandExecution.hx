@@ -38,7 +38,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Element.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -65,7 +65,7 @@ Default value is <code>true</code>.
 	* Returns a metadata object for class sap.ui.core.CommandExecution.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getVisible visible}.
@@ -78,17 +78,11 @@ Default value is <code>true</code>.
 	public function getVisible( ):Bool;
 
 	/**
-	* Sets a new value for property {@link #getEnabled enabled}.
-
-Whether the CommandExecution is enabled or not. By default, it is enabled
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>true</code>.
-	* @param	bEnabled New value for property <code>enabled</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
+	* Sets whether the <code>CommandExecution</code> is enabled, or not. If set to false, the <code>CommandExecution</code> will still register the shortcut. This will block the default behavior for that shortcut.
+	* @param	bValue Whether the CommandExecution is enabled, or not.
+	* @return	The CommandExecution
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.core.CommandExecution;
+	public function setEnabled( bValue:Bool):sap.ui.core.Element;
 
 	/**
 	* Sets whether the <code>CommandExecution</code> is visible, or not. If set to false, the <code>CommandExecution</code> will unregister the shortcut. If not visible, the CommandExecution will not be triggered even if it is enabled.

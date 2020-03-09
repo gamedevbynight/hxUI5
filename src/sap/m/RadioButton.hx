@@ -65,7 +65,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -126,7 +126,7 @@ Default value is <code>sapMRbDefaultGroup</code>.
 	* Returns a metadata object for class sap.m.RadioButton.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getSelected selected}.
@@ -245,13 +245,6 @@ Default value is <code>true</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setActiveHandling( bActiveHandling:Bool):sap.m.RadioButton;
-
-	/**
-	* Method to set a RadioButton's state to active or inactive.
-	* @param	bActive Sets the active state to true or false
-	* @return	Void
-	*/
-	public function setActiveState( bActive:Bool):Void;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -421,6 +414,11 @@ typedef RadioButtonArgs = sap.ui.core.Control.ControlArgs & {
 	* Specifies if the RadioButton should be editable. This property meant to be used by parent controls (e.g. RadioButtoGroup).
 	*/
 	@:optional var editableParent:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Defines the text that appears in the tooltip of the <code>RadioButton</code>. If this is not specified, a default text is shown from the resource bundle.
+	*/
+	@:optional var valueStateText:String;
 
 	/**
 	* Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).

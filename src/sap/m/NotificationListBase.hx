@@ -5,7 +5,11 @@ package sap.m;
 /**
 * The NotificationListBase is the abstract base class for {@link sap.m.NotificationListItem} and {@link sap.m.NotificationListGroup}.
 
-The NotificationList controls are designed for the SAP Fiori notification center. <h4>Overview</h4> NotificationListBase defines the general structure of a notification item. Most of the behavioral logic is defined for the single items or groups. <h4>Structure</h4> The base holds properties for the following elements: <ul> <li>Author name</li> <li>Author picture</li> <li>Time stamp</li> <li>Priority</li> <li>Title</li> </ul> Additionally, by setting these properties you can determine if buttons are shown: <ul> <li><code>showButtons</code> - action buttons visibility</li> <li><code>showCloseButton</code> - close button visibility</li> </ul>
+The NotificationList controls are designed for the SAP Fiori notification center. <h4>Overview</h4> NotificationListBase defines the general structure of a notification item. Most of the behavioral logic is defined for the single items or groups.
+
+<h4>Structure</h4> The base holds properties for the following elements: <ul> <li>Author name</li> <li>Author picture</li> <li>Time stamp</li> <li>Priority</li> <li>Title</li> </ul> Additionally, by setting these properties you can determine if buttons are shown: <ul> <li><code>showButtons</code> - action buttons visibility</li> <li><code>showCloseButton</code> - close button visibility</li> </ul>
+
+<h4>Note</h4> There are several properties, that are inherited from <code>ListItemBase</code> and have no visual representation in the Notifications - <code>counter</code>, <code>highlight</code>, <code>highlightText</code>, <code>navigated</code>, <code>selected</code>, <code>type</code>
 */
 extern class NotificationListBase extends sap.m.ListItemBase
 {
@@ -60,7 +64,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.ListItemBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -68,7 +72,7 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getAuthorName authorName}.
 
-Determines the notification group's author name.
+Determines the notification author name.
 
 Default value is <code>empty string</code>.
 	* @return	Value of property <code>authorName</code>
@@ -78,7 +82,7 @@ Default value is <code>empty string</code>.
 	/**
 	* Gets current value of property {@link #getAuthorPicture authorPicture}.
 
-Determines the URL of the notification group's author picture.
+Determines the URL of the notification author picture.
 	* @return	Value of property <code>authorPicture</code>
 	*/
 	public function getAuthorPicture( ):sap.ui.core.URI;
@@ -94,7 +98,7 @@ Action buttons.
 	/**
 	* Gets current value of property {@link #getDatetime datetime}.
 
-Determines the due date of the NotificationListItem.
+The time stamp of the Notification.
 
 Default value is <code>empty string</code>.
 	* @return	Value of property <code>datetime</code>
@@ -105,7 +109,7 @@ Default value is <code>empty string</code>.
 	* Returns a metadata object for class sap.m.NotificationListBase.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getPriority priority}.
@@ -121,6 +125,8 @@ Default value is <code>None</code>.
 	* Gets current value of property {@link #getShowButtons showButtons}.
 
 Determines the action buttons visibility.
+
+<b>Note:</b> Action buttons are not shown when Notification List Groups are collapsed.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>showButtons</code>
@@ -180,16 +186,22 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeButton( vButton:sap.m.Button):sap.m.Button;
 
 	/**
-	* Overwrites the authorName property.
-	* @param	authorName The author name in string format.
-	* @return	The set author name.
+	* Sets a new value for property {@link #getAuthorName authorName}.
+
+Determines the notification author name.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sAuthorName New value for property <code>authorName</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAuthorName( authorName:String):String;
+	public function setAuthorName( sAuthorName:String):sap.m.NotificationListBase;
 
 	/**
 	* Sets a new value for property {@link #getAuthorPicture authorPicture}.
 
-Determines the URL of the notification group's author picture.
+Determines the URL of the notification author picture.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sAuthorPicture New value for property <code>authorPicture</code>
@@ -198,11 +210,17 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	public function setAuthorPicture( sAuthorPicture:sap.ui.core.URI):sap.m.NotificationListBase;
 
 	/**
-	* Overwrites the setter for the datetime property.
-	* @param	dateTime The datetime in string format.
-	* @return	The set datetime value.
+	* Sets a new value for property {@link #getDatetime datetime}.
+
+The time stamp of the Notification.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sDatetime New value for property <code>datetime</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDatetime( dateTime:String):String;
+	public function setDatetime( sDatetime:String):sap.m.NotificationListBase;
 
 	/**
 	* Sets a new value for property {@link #getPriority priority}.
@@ -221,6 +239,8 @@ Default value is <code>None</code>.
 	* Sets a new value for property {@link #getShowButtons showButtons}.
 
 Determines the action buttons visibility.
+
+<b>Note:</b> Action buttons are not shown when Notification List Groups are collapsed.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -244,11 +264,17 @@ Default value is <code>true</code>.
 	public function setShowCloseButton( bShowCloseButton:Bool):sap.m.NotificationListBase;
 
 	/**
-	* Overwrites the setter of the title property.
-	* @param	title Title.
-	* @return	NotificationListBase reference for chaining.
+	* Sets a new value for property {@link #getTitle title}.
+
+Determines the title of the NotificationListBase item.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sTitle New value for property <code>title</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( title:String):sap.m.NotificationListBase;
+	public function setTitle( sTitle:String):sap.m.NotificationListBase;
 }
 
 typedef NotificationListBaseArgs = sap.m.ListItemBase.ListItemBaseArgs & {
@@ -264,12 +290,14 @@ typedef NotificationListBaseArgs = sap.m.ListItemBase.ListItemBaseArgs & {
 	@:optional var title:String;
 
 	/**
-	* Determines the due date of the NotificationListItem.
+	* The time stamp of the Notification.
 	*/
 	@:optional var datetime:String;
 
 	/**
 	* Determines the action buttons visibility.
+
+<b>Note:</b> Action buttons are not shown when Notification List Groups are collapsed.
 	*/
 	@:optional var showButtons:haxe.extern.EitherType<String,Bool>;
 
@@ -279,12 +307,12 @@ typedef NotificationListBaseArgs = sap.m.ListItemBase.ListItemBaseArgs & {
 	@:optional var showCloseButton:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Determines the notification group's author name.
+	* Determines the notification author name.
 	*/
 	@:optional var authorName:String;
 
 	/**
-	* Determines the URL of the notification group's author picture.
+	* Determines the URL of the notification author picture.
 	*/
 	@:optional var authorPicture:haxe.extern.EitherType<String,sap.ui.core.URI>;
 
@@ -294,39 +322,14 @@ typedef NotificationListBaseArgs = sap.m.ListItemBase.ListItemBaseArgs & {
 	@:optional var buttons:Array<haxe.extern.EitherType<String,sap.m.Button>>;
 
     /**
-    * The title control that holds the datetime text of the NotificationListBase item.
-    */
-	@:optional var _headerTitle:haxe.extern.EitherType<String,sap.m.Text>;
-
-    /**
-    * The timestamp string that will be displayed in the NotificationListBase item.
-    */
-	@:optional var _dateTime:haxe.extern.EitherType<String,sap.m.Text>;
-
-    /**
-    * The sap.m.Text that holds the author name.
-    */
-	@:optional var _authorName:haxe.extern.EitherType<String,sap.m.Text>;
-
-    /**
-    * The sap.m.Image or sap.ui.core.Control control that holds the author image or icon.
-    */
-	@:optional var _authorImage:haxe.extern.EitherType<String,sap.ui.core.Control>;
-
-    /**
-    * The OverflowToolbar control that holds the footer buttons.
+    * The overflow toolbar.
     */
 	@:optional var _overflowToolbar:haxe.extern.EitherType<String,sap.m.OverflowToolbar>;
 
     /**
-    * The close button of the notification item/group.
+    * The priority icon.
     */
-	@:optional var _closeButton:haxe.extern.EitherType<String,sap.m.Button>;
-
-    /**
-    * The collapse button of the notification item/group.
-    */
-	@:optional var _collapseButton:haxe.extern.EitherType<String,sap.m.Button>;
+	@:optional var _priorityIcon:haxe.extern.EitherType<String,sap.ui.core.Icon>;
 
 	/**
 	* Fired when the close button of the notification is pressed.<br><b>Note:</b> Pressing the close button doesn't destroy the notification automatically.

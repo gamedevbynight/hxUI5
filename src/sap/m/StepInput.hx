@@ -83,7 +83,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -182,7 +182,7 @@ Sets the maximum possible value of the defined range.
 	* Returns a metadata object for class sap.m.StepInput.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getMin min}.
@@ -407,28 +407,6 @@ Default value is <code>2</code>.
 	public function setLargerStep( fLargerStep:Float):sap.m.StepInput;
 
 	/**
-	* Sets a new value for property {@link #getMax max}.
-
-Sets the maximum possible value of the defined range.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-	* @param	fMax New value for property <code>max</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setMax( fMax:Float):sap.m.StepInput;
-
-	/**
-	* Sets a new value for property {@link #getMin min}.
-
-Sets the minimum possible value of the defined range.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-	* @param	fMin New value for property <code>min</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setMin( fMin:Float):sap.m.StepInput;
-
-	/**
 	* Sets a new value for property {@link #getName name}.
 
 Defines the name of the control for the purposes of form submission.
@@ -503,19 +481,6 @@ Default value is <code>End</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.StepInput;
-
-	/**
-	* Sets a new value for property {@link #getValidationMode validationMode}.
-
-Defines when the validation of the typed value will happen. By default this happens on focus out.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>FocusOut</code>.
-	* @param	sValidationMode New value for property <code>validationMode</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setValidationMode( sValidationMode:sap.m.StepInputValidationMode):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.

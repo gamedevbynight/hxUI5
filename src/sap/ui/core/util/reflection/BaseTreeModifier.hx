@@ -64,16 +64,17 @@ extern class BaseTreeModifier
 	* @return	Element or promise with element of the control that is created
 	*/
 	public static function createControl( sClassName:String, ?oAppComponent:sap.ui.core.UIComponent, ?oView:js.html.Element, ?oSelector:Dynamic, ?mSettings:Dynamic, bAsync:Bool):Dynamic;
-	@:overload( function(vControl:sap.ui.base.ManagedObject):Void{ })
+	@:overload( function(vControl:sap.ui.base.ManagedObject, ?bSuppressInvalidate:Bool):Void{ })
 
 	/**
 	* Cleans up the resources associated with this object and all its aggregated children. See {@link sap.ui.base.ManagedObject#destroy} method.
 
 After an object has been destroyed, it can no longer be used! Applications should call this method if they don't need the object any longer.
 	* @param	vControl Control representation
+	* @param	bSuppressInvalidate if true, this ManagedObject is not marked as changed
 	* @return	Void
 	*/
-	public static function destroy( vControl:js.html.Element):Void;
+	public static function destroy( vControl:js.html.Element, ?bSuppressInvalidate:Bool):Void;
 	@:overload( function(vControl:sap.ui.base.ManagedObject, sEventName:String, sFunctionPath:String):Void{ })
 
 	/**
@@ -101,14 +102,14 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	* @return	Aggregation content
 	*/
 	public static function getAggregation( vParent:js.html.Element, sName:String):Dynamic;
-	@:overload( function(vControl:sap.ui.base.ManagedObject):Dynamic{ })
+	@:overload( function(vControl:sap.ui.base.ManagedObject):Map<String,Dynamic>{ })
 
 	/**
 	* See {@link sap.ui.base.ManagedObjectMetadata#getAllAggregations} method.
 	* @param	vControl Control representation
 	* @return	Map of aggregation info objects keyed by aggregation names
 	*/
-	public static function getAllAggregations( vControl:js.html.Element):Dynamic;
+	public static function getAllAggregations( vControl:js.html.Element):Map<String,Dynamic>;
 	@:overload( function(vParent:sap.ui.base.ManagedObject, sName:String):Dynamic{ })
 
 	/**

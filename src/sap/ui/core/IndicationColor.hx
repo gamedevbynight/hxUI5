@@ -23,4 +23,16 @@ package sap.ui.core;
     * Indication Color 5
     */
     var Indication05= "Indication05";
+    /**
+    * Indication Color 6
+    */
+    var Indication06= "Indication06";
+    /**
+    * Indication Color 7
+    */
+    var Indication07= "Indication07";
+    /**
+    * Indication Color 8
+    */
+    var Indication08= "Indication08";
 }

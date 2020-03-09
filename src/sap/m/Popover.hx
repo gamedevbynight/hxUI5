@@ -177,7 +177,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -280,7 +280,7 @@ Default value is <code>true</code>.
 	* Returns a metadata object for class sap.m.Popover.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getModal modal}.
@@ -363,7 +363,7 @@ When subHeader is assigned to Popover, it's rendered directly after the main hea
 	/**
 	* Gets current value of property {@link #getTitle title}.
 
-Title text appears in the header. This property will be ignored when showHeader is set to false.
+Title text appears in the header. This property will be ignored when <code>showHeader</code> is set to <code>false</code>. If you want to show a header in the <code>sap.m.Popover</code>, don't forget to set the {@link #setShowHeader showHeader} property to <code>true</code>.
 	* @return	Value of property <code>title</code>
 	*/
 	public function getTitle( ):String;
@@ -638,11 +638,13 @@ Default value is <code>true</code>.
 	public function setSubHeader( oSubHeader:sap.ui.core.Control):sap.m.Popover;
 
 	/**
-	* The setter of the title property.
+	* Sets a new value for property {@link #getTitle title}.
 
-If you want to show a header in the popover, don't forget to set the {@link #setShowHeader showHeader} property to true.
-	* @param	sTitle The title to be set
-	* @return	Reference to the control instance for chaining
+Title text appears in the header. This property will be ignored when <code>showHeader</code> is set to <code>false</code>. If you want to show a header in the <code>sap.m.Popover</code>, don't forget to set the {@link #setShowHeader showHeader} property to <code>true</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sTitle New value for property <code>title</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setTitle( sTitle:String):sap.m.Popover;
 
@@ -686,7 +688,7 @@ typedef PopoverArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var showHeader:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Title text appears in the header. This property will be ignored when showHeader is set to false.
+	* Title text appears in the header. This property will be ignored when <code>showHeader</code> is set to <code>false</code>. If you want to show a header in the <code>sap.m.Popover</code>, don't forget to set the {@link #setShowHeader showHeader} property to <code>true</code>.
 	*/
 	@:optional var title:String;
 

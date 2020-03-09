@@ -35,7 +35,7 @@ extern class FormElement extends sap.ui.core.Element
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Element.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -49,6 +49,12 @@ Form controls that belong together to be displayed in one row of a <code>Form</c
 	* @return	null
 	*/
 	public function getFields( ):Array<sap.ui.core.Control>;
+
+	/**
+	* Determines what fields must be rendered.
+	* @return	Array of fields to be rendered
+	*/
+	public function getFieldsForRendering( ):Array<sap.ui.core.Control>;
 
 	/**
 	* Gets content of aggregation {@link #getLabel label}.
@@ -68,7 +74,7 @@ Label of the fields. Can either be a <code>Label</code> control or a string. If 
 	* Returns a metadata object for class sap.ui.layout.form.FormElement.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getVisible visible}.
@@ -148,6 +154,11 @@ typedef FormElementArgs = sap.ui.core.Element.ElementArgs & {
 	* If set to <code>false</code>, the <code>FormElement</code> is not rendered.
 	*/
 	@:optional var visible:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Internal property for the <code>editable</code> state of the internal <code>FormElement</code>.
+	*/
+	@:optional var _editable:haxe.extern.EitherType<String,Bool>;
 
     /**
     * Label of the fields. Can either be a <code>Label</code> control or a string. If a <code>Label</code> control is used, the properties of the <code>Label</code> can be set. If no assignment between <code>Label</code> and the fields is set via (<code>labelFor</code> property of the <code>Label</code>), it will be done automatically by the <code>FormElement</code>. In this case the <code>Label</code> is assigned to the fields of the <code>FormElement</code>.

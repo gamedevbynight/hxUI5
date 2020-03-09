@@ -16,7 +16,7 @@ extern class DragDropBase extends sap.ui.core.Element
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Element.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -43,7 +43,20 @@ Defines the name of the group to which this object belongs. If <code>groupName</
 	* Returns a metadata object for class sap.ui.core.dnd.DragDropBase.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+
+	/**
+	* Sets a new value for property {@link #getEnabled enabled}.
+
+Indicates whether this configuration is active or not.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bEnabled New value for property <code>enabled</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setEnabled( bEnabled:Bool):sap.ui.core.dnd.DragDropBase;
 
 	/**
 	* Sets a new value for property {@link #getGroupName groupName}.

@@ -62,7 +62,7 @@ extern class DynamicPage extends sap.ui.core.Control
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -153,14 +153,14 @@ If not set, no landmarks will be written.
 	* Returns a metadata object for class sap.f.DynamicPage.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getPreserveHeaderStateOnScroll preserveHeaderStateOnScroll}.
 
 Preserves the current header state when scrolling. For example, if the user expands the header by clicking on the title and then scrolls down the page, the header will remain expanded.
 
-<b>Note:</b> Based on internal rules, the value of the property is not always taken into account - for example, when the control is rendered on tablet or mobile and the control`s title and header are with height larger than the given threshold.
+<b>Note:</b> Based on internal rules, the value of the property is not always taken into account - for example, when the control`s title and header are with height larger than the given threshold.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>preserveHeaderStateOnScroll</code>
@@ -281,7 +281,7 @@ Default value is <code>true</code>.
 
 Preserves the current header state when scrolling. For example, if the user expands the header by clicking on the title and then scrolls down the page, the header will remain expanded.
 
-<b>Note:</b> Based on internal rules, the value of the property is not always taken into account - for example, when the control is rendered on tablet or mobile and the control`s title and header are with height larger than the given threshold.
+<b>Note:</b> Based on internal rules, the value of the property is not always taken into account - for example, when the control`s title and header are with height larger than the given threshold.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -340,7 +340,7 @@ typedef DynamicPageArgs = sap.ui.core.Control.ControlArgs & {
 	/**
 	* Preserves the current header state when scrolling. For example, if the user expands the header by clicking on the title and then scrolls down the page, the header will remain expanded.
 
-<b>Note:</b> Based on internal rules, the value of the property is not always taken into account - for example, when the control is rendered on tablet or mobile and the control`s title and header are with height larger than the given threshold.
+<b>Note:</b> Based on internal rules, the value of the property is not always taken into account - for example, when the control`s title and header are with height larger than the given threshold.
 	*/
 	@:optional var preserveHeaderStateOnScroll:haxe.extern.EitherType<String,Bool>;
 

@@ -6,8 +6,6 @@ package sap.ui.layout.cssgrid;
 * Represents a layout which displays variable number of columns, depending on available screen size. With that it achieves flexible layouts and line breaks for large, medium, and small-sized screens, such as desktop, tablet, and mobile.
 
 Grid row's height is dynamically determined by the height of the highest grid element on this row.
-
-<b>Note:</b> This layout is not supported by Microsoft Internet Explorer.
 */
 extern class ResponsiveColumnLayout extends sap.ui.layout.cssgrid.GridLayoutBase
 {
@@ -43,7 +41,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.layout.cssgrid.GridLayoutBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -52,7 +50,7 @@ The passed function and listener object must match the ones used for event regis
 	* Returns a metadata object for class sap.ui.layout.cssgrid.ResponsiveColumnLayout.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.base.ManagedObjectMetadata;
 
 	/**
 	* Returns if the Grid Layout is responsive.

@@ -120,7 +120,7 @@ Note: The binding must have the parameter <code>$count : true</code> when creati
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.ListBinding.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -149,6 +149,16 @@ Filters are case sensitive unless the property <code>caseSensitive</code> is set
 	* @return	Void
 	*/
 	public function getDistinctValues( ):Void;
+
+	/**
+	* Returns a URL by which the complete content of the list can be downloaded in JSON format. The request delivers all entities considering the binding's query options (such as filters or sorters).
+
+The returned URL does not specify <code>$skip</code> and <code>$top</code> and leaves it up to the server how many rows it delivers. Many servers tend to choose a small limit without <code>$skip</code> and <code>$top</code>, so it might be wise to add an appropriate value for <code>$top</code> at least.
+
+Additionally, you must be aware of server-driven paging and be ready to send a follow-up request if the response contains <code>@odata.nextlink</code>.
+	* @return	The download URL
+	*/
+	public function getDownloadUrl( ):String;
 
 	/**
 	* Returns the header context which allows binding to <code>$count</code>. If known, the value of such a binding is the sum of the element count of the collection on the server and the number of transient entities created on the client. Otherwise it is <code>undefined</code>. The value is a number and its type is <code>Edm.Int64</code>.
@@ -228,13 +238,23 @@ Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or applic
 	public function requestContexts( ?iStart:String, ?iLength:String, ?sGroupId:String):Array<js.lib.Promise<sap.ui.model.odata.v4.Context>>;
 
 	/**
+	* Returns a URL by which the complete content of the list can be downloaded in JSON format. The request delivers all entities considering the binding's query options (such as filters or sorters).
+
+The returned URL does not specify <code>$skip</code> and <code>$top</code> and leaves it up to the server how many rows it delivers. Many servers tend to choose a small limit without <code>$skip</code> and <code>$top</code>, so it might be wise to add an appropriate value for <code>$top</code> at least.
+
+Additionally, you must be aware of server-driven paging and be ready to send a follow-up request if the response contains <code>@odata.nextlink</code>.
+	* @return	A promise that is resolved with the download URL
+	*/
+	public function requestDownloadUrl( ):js.lib.Promise<String>;
+
+	/**
 	* Resets all pending changes of this binding, see {@link #hasPendingChanges}. Resets also invalid user input.
 	* @return	A promise which is resolved without a defined result as soon as all changes in the binding itself and all dependent bindings are canceled (since 1.72.0)
 	*/
 	public function resetChanges( ):js.lib.Promise<ODataListBinding>;
 
 	/**
-	* Resumes this binding. The binding can again fire change events and trigger data service requests. Before 1.53.0, this method was not supported and threw an error.
+	* Resumes this binding. The binding can then again fire change events and trigger data service requests. Before 1.53.0, this method was not supported and threw an error.
 	* @return	Void
 	*/
 	public function resume( ):Void;

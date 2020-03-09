@@ -24,7 +24,7 @@ public function new():Void;
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.Object.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -92,6 +92,12 @@ If any user preferences for date, time or number formatting have been set, and i
 	* @return	Void
 	*/
 	public function getTimePattern( ):Void;
+
+	/**
+	* Returns current trailingCurrencyCode configuration for new NumberFormatter instances
+	* @return	Whether currency codes shall always be placed after the numeric value
+	*/
+	public function getTrailingCurrencyCode( ):Bool;
 
 	/**
 	* Sets custom currencies and replaces existing entries.
@@ -210,5 +216,16 @@ After changing the time pattern, the framework tries to update localization spec
 	* @return	Returns <code>this</code> to allow method chaining
 	*/
 	public function setTimePattern( sStyle:String, sPattern:String):sap.ui.core.configuration.FormatSettings;
+
+	/**
+	* Define whether the NumberFormatter shall always place the currency code after the numeric value, with the only exception of right-to-left locales, where the currency code shall be placed before the numeric value. Default configuration setting is <code>true</code>.
+
+When set to <code>false</code> the placement of the currency code is done dynamically, depending on the configured locale using data provided by the Unicode Common Locale Data Repository (CLDR).
+
+Each currency instance ({@link sap.ui.core.format.NumberFormat#getCurrencyInstance}) will be created with this setting unless overwritten on instance level.
+	* @param	bTrailingCurrencyCode Whether currency codes shall always be placed after the numeric value
+	* @return	Returns <code>this</code> to allow method chaining
+	*/
+	public function setTrailingCurrencyCode( bTrailingCurrencyCode:Bool):sap.ui.core.configuration.FormatSettings;
 }
 

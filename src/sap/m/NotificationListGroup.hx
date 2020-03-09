@@ -3,7 +3,7 @@ package sap.m;
 @:native("sap.m.NotificationListGroup")
 
 /**
-* The NotificationListItemGroup control is used for grouping {@link sap.m.NotificationListItem notification items} of the same type. <h4>Behavior</h4> The group handles specific behavior for different usecases: <ul> <li><code>autoPriority</code> - sets the group priority to the highest priority of an item in the group.</li> <li><code>enableCollapseButtonWhenEmpty</code> - displays a collapse button for an empty group.</li> <li><code>showEmptyGroup</code> - determines if the header/footer of an empty group is displayed.</li> </ul>
+* The <code>NotificationListGroup</code> control is used for grouping {@link sap.m.NotificationListItem notification items} of the same type. <h4>Behavior</h4> The group handles specific behavior for different use cases: <ul> <li><code>autoPriority</code> - determines the group priority to the highest priority of an item in the group.</li> <li><code>enableCollapseButtonWhenEmpty</code> - determines if the collapse/expand button for an empty group is displayed.</li> <li><code>showEmptyGroup</code> - determines if the header/footer of an empty group is displayed.</li> </ul>
 */
 extern class NotificationListGroup extends sap.m.NotificationListBase
 {
@@ -22,7 +22,7 @@ extern class NotificationListGroup extends sap.m.NotificationListBase
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.NotificationListGroup</code> itself.
 
-This event is called when collapse property value is changed
+<code>onCollapse</code> event is called when collapse property value is changed
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.NotificationListGroup</code> itself
@@ -52,7 +52,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.NotificationListBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -60,7 +60,7 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getAutoPriority autoPriority}.
 
-Determines if the group will automatically set the priority based on the highest priority of its notifications or get its priority from the developer.
+Determines if the group will automatically set the priority based on the highest priority of its notifications or get its priority from the <code>priority</code> property.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>autoPriority</code>
@@ -80,7 +80,7 @@ Default value is <code>false</code>.
 	/**
 	* Gets current value of property {@link #getEnableCollapseButtonWhenEmpty enableCollapseButtonWhenEmpty}.
 
-Determines if the collapse/expand button should be enabled for an empty group.
+Determines if the collapse/expand button for an empty group is displayed.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>enableCollapseButtonWhenEmpty</code>
@@ -99,7 +99,7 @@ The NotificationListItems inside the group.
 	* Returns a metadata object for class sap.m.NotificationListGroup.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getShowEmptyGroup showEmptyGroup}.
@@ -110,6 +110,18 @@ Default value is <code>false</code>.
 	* @return	Value of property <code>showEmptyGroup</code>
 	*/
 	public function getShowEmptyGroup( ):Bool;
+
+	/**
+	* Gets current value of property {@link #getShowItemsCounter showItemsCounter}.
+
+Determines if the items counter inside the group header will be visible.
+
+<b>Note:</b> Counter value represents the number of currently visible (loaded) items inside the group.
+
+Default value is <code>true</code>.
+	* @return	Value of property <code>showItemsCounter</code>
+	*/
+	public function getShowItemsCounter( ):Bool;
 
 	/**
 	* Checks for the provided <code>sap.m.NotificationListItem</code> in the aggregation {@link #getItems items}. and returns its index if found or -1 otherwise.
@@ -125,12 +137,6 @@ Default value is <code>false</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function insertItem( oItem:sap.m.NotificationListItem, iIndex:Int):sap.m.NotificationListGroup;
-
-	/**
-	* Overwrites the onBeforeRendering.
-	* @return	Void
-	*/
-	public function onBeforeRendering( ):Void;
 
 	/**
 	* Removes all the controls from the aggregation {@link #getItems items}.
@@ -152,7 +158,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	/**
 	* Sets a new value for property {@link #getAutoPriority autoPriority}.
 
-Determines if the group will automatically set the priority based on the highest priority of its notifications or get its priority from the developer.
+Determines if the group will automatically set the priority based on the highest priority of its notifications or get its priority from the <code>priority</code> property.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -163,16 +169,22 @@ Default value is <code>true</code>.
 	public function setAutoPriority( bAutoPriority:Bool):sap.m.NotificationListGroup;
 
 	/**
-	* Sets a new value for property {@link #collapsed}. Determines if the group is collapsed or expanded.
-	* @param	bCollapsed New value for property <code>collapsed</code>.
-	* @return	this NotificationListGroup reference for chaining.
+	* Sets a new value for property {@link #getCollapsed collapsed}.
+
+Determines if the group is collapsed or expanded.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bCollapsed New value for property <code>collapsed</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setCollapsed( bCollapsed:Bool):sap.m.NotificationListGroup;
 
 	/**
 	* Sets a new value for property {@link #getEnableCollapseButtonWhenEmpty enableCollapseButtonWhenEmpty}.
 
-Determines if the collapse/expand button should be enabled for an empty group.
+Determines if the collapse/expand button for an empty group is displayed.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -194,6 +206,21 @@ Default value is <code>false</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setShowEmptyGroup( bShowEmptyGroup:Bool):sap.m.NotificationListGroup;
+
+	/**
+	* Sets a new value for property {@link #getShowItemsCounter showItemsCounter}.
+
+Determines if the items counter inside the group header will be visible.
+
+<b>Note:</b> Counter value represents the number of currently visible (loaded) items inside the group.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bShowItemsCounter New value for property <code>showItemsCounter</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setShowItemsCounter( bShowItemsCounter:Bool):sap.m.NotificationListGroup;
 }
 
 typedef NotificationListGroupArgs = sap.m.NotificationListBase.NotificationListBaseArgs & {
@@ -204,7 +231,7 @@ typedef NotificationListGroupArgs = sap.m.NotificationListBase.NotificationListB
 	@:optional var collapsed:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Determines if the group will automatically set the priority based on the highest priority of its notifications or get its priority from the developer.
+	* Determines if the group will automatically set the priority based on the highest priority of its notifications or get its priority from the <code>priority</code> property.
 	*/
 	@:optional var autoPriority:haxe.extern.EitherType<String,Bool>;
 
@@ -214,9 +241,16 @@ typedef NotificationListGroupArgs = sap.m.NotificationListBase.NotificationListB
 	@:optional var showEmptyGroup:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Determines if the collapse/expand button should be enabled for an empty group.
+	* Determines if the collapse/expand button for an empty group is displayed.
 	*/
 	@:optional var enableCollapseButtonWhenEmpty:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Determines if the items counter inside the group header will be visible.
+
+<b>Note:</b> Counter value represents the number of currently visible (loaded) items inside the group.
+	*/
+	@:optional var showItemsCounter:haxe.extern.EitherType<String,Bool>;
 
     /**
     * The NotificationListItems inside the group.
@@ -224,12 +258,12 @@ typedef NotificationListGroupArgs = sap.m.NotificationListBase.NotificationListB
 	@:optional var items:Array<haxe.extern.EitherType<String,sap.m.NotificationListItem>>;
 
     /**
-    * The details of the NotificationListGroup that will be used to implement the ARIA specification
+    * The collapse/expand button.
     */
-	@:optional var _ariaDetailsText:haxe.extern.EitherType<String,sap.ui.core.InvisibleText>;
+	@:optional var _collapseButton:haxe.extern.EitherType<String,sap.m.Button>;
 
 	/**
-	* This event is called when collapse property value is changed
+	* <code>onCollapse</code> event is called when collapse property value is changed
 	*/
 	@:optional var onCollapse:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

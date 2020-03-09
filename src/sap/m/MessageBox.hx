@@ -120,6 +120,7 @@ sap.m.MessageBox.show("This message should appear in the message box", {
     icon: sap.m.MessageBox.Icon.NONE,                    // default
     title: "",                                           // default
     actions: sap.m.MessageBox.Action.OK,                 // default
+    emphasizedAction: sap.m.MessageBox.Action.OK,        // default
     onClose: null,                                       // default
     styleClass: "",                                      // default
     initialFocus: null,                                  // default

@@ -266,7 +266,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.Object.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -512,15 +512,6 @@ Lock should be called before and after the DOM is modified for rendering, roundt
 	public function notifyContentDensityChanged( ):Void;
 
 	/**
-	* Registers a Plugin to the <code>sap.ui.core.Core</code>, which lifecycle will be managed (start and stop).
-
-Plugin object need to implement two methods: <ul> <li><code>startPlugin(oCore)</code>: will be invoked, when the Plugin should start (as parameter the reference to the Core will be provided</li> <li><code>stopPlugin()</code>: will be invoked, when the Plugin should stop</li> </ul>
-	* @param	oPlugin reference to a Plugin object
-	* @return	Void
-	*/
-	public function registerPlugin( oPlugin:Dynamic):Void;
-
-	/**
 	* Sets or unsets a model for the given model name.
 
 The <code>sName</code> must either be <code>undefined</code> (or omitted) or a non-empty string. When the name is omitted, the default model is set/unset.
@@ -577,12 +568,5 @@ Browser events are dispatched to the controls again after this method is called.
 	* @return	Void
 	*/
 	public function unlock( ):Void;
-
-	/**
-	* Unregisters a Plugin out of the <code>sap.ui.core.Core</code>
-	* @param	oPlugin reference to a Plugin object
-	* @return	Void
-	*/
-	public function unregisterPlugin( oPlugin:Dynamic):Void;
 }
 

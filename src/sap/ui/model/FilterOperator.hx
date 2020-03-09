@@ -18,7 +18,7 @@ This filter operator is only supported in OData V4 models.
     /**
     * FilterOperator between
 
-Used to filter all entries between the given boundaries. The filter result contains the boundaries, but no entries before or further. The order of the entries in the filter results is based on their occurence in the input list.
+Used to filter all entries between the given boundaries. The filter result contains the boundaries, but no entries before or further. The order of the entries in the filter results is based on their occurrence in the input list.
 
 <b>Note, when used on strings:</b> The String comparison is based on lexicographical ordering. Characters are ranked in their alphabetical order. Words with the same preceding substring are ordered based on their length e.g. "Chris" comes before "Christian".
 
@@ -56,7 +56,7 @@ The filtering includes the right boundary, but no strings further in the lexicog
     /**
     * FilterOperator "Not Between"
 
-Used to filter all entries, which are not between the given boundaries. The filter result does not contains the boundaries, but only entries outside of the boundaries. The order of the entries in the filter results is based on their occurence in the input list.
+Used to filter all entries, which are not between the given boundaries. The filter result does not contains the boundaries, but only entries outside of the boundaries. The order of the entries in the filter results is based on their occurrence in the input list.
 
 <b>Note, when used on strings:</b> The String comparison is based on lexicographical ordering. Characters are ranked in their alphabetical order. Words with the same preceding substring are ordered based on their length e.g. "Chris" comes before "Christian".
     */

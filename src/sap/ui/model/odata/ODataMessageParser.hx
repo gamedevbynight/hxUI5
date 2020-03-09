@@ -15,7 +15,7 @@ public function new():Void;
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.message.MessageParser.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -40,7 +40,7 @@ public function new():Void;
 	* @param	mChangeEntities A map containing the entities changed on the back-end as keys
 	* @return	Void
 	*/
-	public function parse( oResponse:Dynamic, oRequest:Dynamic, mGetEntities:Dynamic, mChangeEntities:Dynamic):Void;
+	public function parse( oResponse:Dynamic, oRequest:Dynamic, mGetEntities:Map<String,Dynamic>, mChangeEntities:Map<String,Dynamic>):Void;
 
 	/**
 	* Sets the header field name that should be used for parsing the JSON messages

@@ -7,7 +7,7 @@ package sap.ui.core;
 
 Controls provide the following features: <ul> <li><b>Rendering</b>: the <code>RenderManager</code> only expects instances of class <code>Control</code> in its {@link sap.ui.core.RenderManager#renderControl renderControl} method. By convention, each control class has an associated static class that takes care of rendering the control (its 'Renderer').</li> <li><b>show / hide</b>: a control can be hidden, although it is still part of the control tree, see property {@link #getVisible visible}</li> <li><b>local busy indicator</b>: marks a control visually as 'busy', see properties {@link #getBusy busy} and {@link #getBusyIndicatorDelay busyIndicatorDelay}</li> <li><b>field groups</b>: by assigning the same group ID to a set of editable controls, they form a group which can be validated together. See property {@link #getFieldGroupIds fieldGroupIds} and event {@link #event:validateFieldGroup validateFieldGroup}. The term <i>field</i> was chosen as most often this feature will be used to group editable fields in a form.</li> See the documentation for {@link topic:5b0775397e394b1fb973fa207554003e Field Groups} for more details. <li><b>custom style classes</b>: all controls allow to add custom CSS classes to their rendered DOM without modifying their renderer code. See methods {@link #addStyleClass addStyleClass}, {@link #removeStyleClass removeStyleClass}, {@link #toggleStyleClass toggleStyleClass} and {@link #hasStyleClass hasStyleClass}.</br> The necessary implementation is encapsulated in {@link sap.ui.core.CustomStyleClassSupport CustomStyleClassSupport} and can be applied to selected element classes as well.</li> <li><b>browser events</b>: by calling the methods {@link #attachBrowserEvent attachBrowserEvent} and {@link #detachBrowserEvent detachBrowserEvent}, consumers can let the control class take care of registering / de-registering a given set of event listeners to the control's root DOM node. The framework will adapt the registration whenever the DOM node changes (e.g. before or after rendering or when the control is destroyed).</li> </ul>
 
-See section "{@link topic:91f1703b6f4d1014b6dd926db0e91070 Developing OpenUI5/SAPUI5 Controls}" in the documentation for an introduction to control development.
+See section "{@link topic:8dcab0011d274051808f959800cabf9f Developing Controls}" in the documentation for an introduction to control development.
 */
 extern class Control extends sap.ui.core.Element
 {
@@ -68,9 +68,11 @@ Use {@link #detachBrowserEvent} to remove the event handler(s) again.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.core.Control</code> itself.
 
-Event is fired if a logical field group defined by <code>fieldGroupIds</code> of a control was left or the user explicitly pressed a key combination that triggers validation.
+Event is fired if a logical field group defined by <code>fieldGroupIds</code> of a control was left or when the user explicitly pressed the key combination that triggers validation.
 
-Listen to this event to validate data of the controls belonging to a field group. See {@link #setFieldGroupIds}.
+By default, the <code>RETURN</code> key without any modifier keys triggers validation, see {@link #triggerValidateFieldGroup}.
+
+Listen to this event to validate data of the controls belonging to a field group. See {@link #setFieldGroupIds}, or consult the {@link topic:5b0775397e394b1fb973fa207554003e Field Group} documentation.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.Control</code> itself
@@ -91,6 +93,16 @@ Note that a string value for <code>vFieldGroupIds</code> (comma separated list) 
 	* @return	Whether the field group IDs defined for the control match the given ones
 	*/
 	public function checkFieldGroupIds( ?vFieldGroupIds:Array<String>):Bool;
+
+	/**
+	* Overrides {@link sap.ui.core.Element#clone Element.clone} to clone additional internal state.
+
+The additionally cloned information contains: <ul> <li>browser event handlers attached with {@link #attachBrowserEvent}</li> <li>text selection behavior</li> <li>style classes added with {@link #addStyleClass}</li> </ul>
+	* @param	sIdSuffix a suffix to be appended to the cloned element id
+	* @param	aLocalIds an array of local IDs within the cloned hierarchy (internally used)
+	* @return	reference to the newly created clone
+	*/
+	public function clone( ?sIdSuffix:String, ?aLocalIds:Array<String>):sap.ui.core.Control;
 
 	/**
 	* Removes event handlers which have been previously attached using {@link #attachBrowserEvent}.
@@ -204,7 +216,7 @@ By default, this is the Id of the control itself.
 	* Returns a metadata object for class sap.ui.core.Control.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getVisible visible}.
@@ -285,7 +297,7 @@ Default value is <code>Medium</code>.
 
 The IDs of a logical field group that this control belongs to.
 
-All fields in a logical field group should share the same <code>fieldGroupId</code>. Once a logical field group is left, the <code>validateFieldGroup</code> event is raised.
+All fields in a logical field group should share the same <code>fieldGroupId</code>. Once a logical field group is left, the <code>validateFieldGroup</code> event is fired.
 
 For backward compatibility with older releases, field group IDs are syntactically not limited, but it is suggested to use only valid {@link sap.ui.core.ID}s.
 
@@ -329,7 +341,9 @@ See addStyleClass and removeStyleClass for further documentation.
 	/**
 	* Triggers the <code>validateFieldGroup</code> event for this control.
 
-Called by <code>sap.ui.core.UIArea</code> if a field group should be validated after it lost the focus or when the key combination was pressed that was configured to trigger validation (defined in the UI area member <code>UIArea._oFieldGroupValidationKey</code>).
+Called by <code>sap.ui.core.UIArea</code> if a field group should be validated after it lost the focus or when the key combination was pressed that was configured to trigger validation.
+
+By default, the <code>RETURN</code> key without any modifier keys triggers validation. There's no public API to change that key combination.
 
 See {@link #attachValidateFieldGroup}.
 	* @return	Void
@@ -366,7 +380,7 @@ Also see {@link module:sap/ui/core/InvisibleRenderer InvisibleRenderer}.
 	/**
 	* The IDs of a logical field group that this control belongs to.
 
-All fields in a logical field group should share the same <code>fieldGroupId</code>. Once a logical field group is left, the <code>validateFieldGroup</code> event is raised.
+All fields in a logical field group should share the same <code>fieldGroupId</code>. Once a logical field group is left, the <code>validateFieldGroup</code> event is fired.
 
 For backward compatibility with older releases, field group IDs are syntactically not limited, but it is suggested to use only valid {@link sap.ui.core.ID}s.
 
@@ -375,9 +389,11 @@ See {@link #attachValidateFieldGroup} or consult the {@link topic:5b0775397e394b
 	@:optional var fieldGroupIds:Array<String>;
 
 	/**
-	* Event is fired if a logical field group defined by <code>fieldGroupIds</code> of a control was left or the user explicitly pressed a key combination that triggers validation.
+	* Event is fired if a logical field group defined by <code>fieldGroupIds</code> of a control was left or when the user explicitly pressed the key combination that triggers validation.
 
-Listen to this event to validate data of the controls belonging to a field group. See {@link #setFieldGroupIds}.
+By default, the <code>RETURN</code> key without any modifier keys triggers validation, see {@link #triggerValidateFieldGroup}.
+
+Listen to this event to validate data of the controls belonging to a field group. See {@link #setFieldGroupIds}, or consult the {@link topic:5b0775397e394b1fb973fa207554003e Field Group} documentation.
 	*/
 	@:optional var validateFieldGroup:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

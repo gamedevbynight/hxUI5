@@ -9,7 +9,7 @@ It allows the controls to be aligned to other DOM elements using the {@link sap.
 
 In the case that the popup has no space to show itself in the view port of the current window, it tries to open itself to the inverted direction.
 
-<strong>Since 1.12.3</strong>, it is possible to add further DOM-element-IDs that can get the focus when <code>autoclose</code> is enabled. E.g. the <code>RichTextEditor</code> with running TinyMCE uses this method to be able to focus the popups of the TinyMCE if the <code>RichTextEditor</code> runs within a <code>Popup</code>/<code>Dialog</code> etc.
+<strong>Since 1.12.3</strong>, it is possible to add further DOM-element-IDs that can get the focus when <code>autoclose</code> or <code>modal</code> is enabled. E.g. the <code>RichTextEditor</code> with running TinyMCE uses this method to be able to focus the popups of the TinyMCE if the <code>RichTextEditor</code> runs within a <code>Popup</code>/<code>Dialog</code> etc.
 
 To provide an additional DOM element that can get the focus the following should be done: <pre>
   // create an object with the corresponding DOM-ID
@@ -23,6 +23,8 @@ To provide an additional DOM element that can get the focus the following should
   // fire the event with the created event-ID and the object with the DOM-ID
   sap.ui.getCore().getEventBus().publish("sap.ui", sEventId, oObject);
 </pre>
+
+<strong>Since 1.75</strong>, DOM elements which have the attribute <code>data-sap-ui-integration-popup-content</code> are considered to be part of all opened popups. Those DOM elements can get the focus without causing the autoclose popup to be closed or the modal popup to take the focus back to itself. Additionally, a further DOM query selector can be provided by using {@link sap.ui.core.Popup.addExternalContent} to make the DOM elements which match the selector be considered as part of all opened popups. Please be aware that the Popup implementation only checks if a DOM element is marked with the attribute <code>data-sap-ui-integration-popup-content</code>. The actual attribute value is not checked. To prevent a DOM element from matching, you must remove the attribute itself. Setting the attribute to a falsy value is not enough in this case.
 */
 extern class Popup extends sap.ui.base.ManagedObject
 {
@@ -37,7 +39,19 @@ extern class Popup extends sap.ui.base.ManagedObject
 	* @param	bAutoClose whether the popup should automatically close when the focus moves out of the popup
 	* @return	Object
 	*/
-	public function new( ?oContent:DOMNode, ?bModal:Bool, ?bShadow:Bool, ?bAutoClose:Bool):Void;
+	public function new( ?oContent:js.html.Element, ?bModal:Bool, ?bShadow:Bool, ?bAutoClose:Bool):Void;
+	@:overload( function(vSelectors:Array<String>):Void{ })
+
+	/**
+	* Adds a DOM query selector for determining additional external popup content.
+
+When the browser focus is switched from the main popup content (which is set by calling {@link #setContent}) to another DOM element, this DOM element is tested against the selector to determine:
+
+<ul> <li>Autoclose popup: whether the popup should be kept open</li> <li>Modal popup: whether the focus is allowed to be taken away</li> </ul>
+	* @param	vSelectors One query selector or an array of query selectors to be added
+	* @return	Void
+	*/
+	public static function addExternalContent( vSelectors:String):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the static {@link #.blockLayerStateChange blockLayerStateChange} event.
@@ -131,7 +145,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.ManagedObject.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -153,32 +167,32 @@ The passed function and listener object must match the ones used for event regis
 	* @return	if a function was set it is returned otherwise a boolean value whether the follow of is activated
 	*/
 	public function getFollowOf( ):Dynamic;
-@:overload( function():Number{ })
+@:overload( function():String{ })
 
 	/**
 	* Returns the last z-index that has been handed out. does not increase the internal z-index counter.
 	* @return	null
 	*/
-	public static function getLastZIndex( ):Number;
+	public static function getLastZIndex( ):String;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.Popup.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.base.ManagedObjectMetadata;
 
 	/**
 	* Returns the value if a Popup is of modal type
 	* @return	{boolean] bModal whether the Popup is of modal type
 	*/
 	public function getModal( ):Dynamic;
-@:overload( function():Number{ })
+@:overload( function():String{ })
 
 	/**
 	* Returns the next available z-index on top of the existing/previous popups. Each call increases the internal z-index counter and the returned z-index.
 	* @return	the next z-index on top of the Popup stack
 	*/
-	public static function getNextZIndex( ):Number;
+	public static function getNextZIndex( ):String;
 
 	/**
 	* Returns whether the Popup is currently open, closed, or in a transition between these states.
@@ -210,6 +224,16 @@ If the Popup's OpenState is different from "CLOSED" (i.e. if the Popup is alread
 	* @return	Void
 	*/
 	public function open( ?iDuration:Int, ?my:sap.ui.core.popup.Dock, ?at:sap.ui.core.popup.Dock, ?of:jquery.Event, ?offset:String, ?collision:String, ?followOf:Bool):Void;
+	@:overload( function(vSelectors:Array<String>):Void{ })
+
+	/**
+	* Removes a DOM query selector which has been added by {@link sap.ui.core.Popup.addExternalContent}.
+
+The default query selector <code>[data-sap-ui-integration-popup-content]</code> can't be deleted.
+	* @param	vSelectors One query selector or an array of query selectors to be deleted
+	* @return	Void
+	*/
+	public static function removeExternalContent( vSelectors:String):Void;
 
 	/**
 	* Sets the animation functions to use for opening and closing the Popup. Any null value will be ignored and not change the respective animation function. When called, the animation functions receive three parameters: - the jQuery object wrapping the DomRef of the popup - the requested animation duration - a function that MUST be called once the animation has completed
@@ -220,20 +244,11 @@ If the Popup's OpenState is different from "CLOSED" (i.e. if the Popup is alread
 	public function setAnimations( fnOpen:()->Void, fnClose:()->Void):sap.ui.core.Popup;
 
 	/**
-	* Used to specify whether the Popup should close as soon as - for non-touch environment: the focus leaves - for touch environment: user clicks the area which is outside the popup itself, the DOM element which popup aligns to (except document), and one of the autoCloseAreas set by calling setAutoCloseAreas.
+	* Used to specify whether the Popup should close as soon as - for non-touch environment: the focus leaves - for touch environment: user clicks the area which is outside the popup itself, the DOM element which the popup aligns to (except document), and any extra popup content set by calling setExtraContent.
 	* @param	bAutoClose whether the Popup should close as soon as the focus leaves
 	* @return	<code>this</code> to allow method chaining
 	*/
 	public function setAutoClose( bAutoClose:Bool):sap.ui.core.Popup;
-	@:overload( function(aAutoCloseAreas:Array<js.html.Element>):sap.ui.core.Popup{ })
-	@:overload( function(aAutoCloseAreas:Array<sap.ui.core.Element>):sap.ui.core.Popup{ })
-
-	/**
-	* Sets the additional areas in the page that are considered part of the Popup when autoclose is enabled. - non-touch environment: if the focus leaves the Popup but immediately enters one of these areas, the Popup does NOT close. - touch environment: if user clicks one of these areas, the Popup does NOT close.
-	* @param	aAutoCloseAreas an array containing DOM elements, sap.ui.core.Element or an ID which are considered part of the Popup; a value of null removes all previous areas
-	* @return	<code>this</code> to allow method chaining
-	*/
-	public function setAutoCloseAreas( aAutoCloseAreas:Array<String>):sap.ui.core.Popup;
 	@:overload( function(oContent:sap.ui.core.Control):sap.ui.core.Popup{ })
 
 	/**
@@ -250,6 +265,19 @@ If the Popup's OpenState is different from "CLOSED" (i.e. if the Popup is alread
 	* @return	<code>this</code> to allow method chaining
 	*/
 	public function setDurations( iOpenDuration:Int, iCloseDuration:Int):sap.ui.core.Popup;
+	@:overload( function(aContent:Array<js.html.Element>):sap.ui.core.Popup{ })
+	@:overload( function(aContent:Array<sap.ui.core.Element>):sap.ui.core.Popup{ })
+
+	/**
+	* Sets additional content that are considered part of the Popup.
+
+A popup with autoclose {@link #setAutoClose} enabled allows the focus to be moved into the extra content without closing itself.
+
+A popup with modal {@link #setModal} enabled allows the focus to be shifted into the extra content without taking it back to the previous focused element in the popup.
+	* @param	aContent An array containing DOM elements, sap.ui.core.Element or an ID which are considered to be part of the Popup; a value of null removes all previous content
+	* @return	<code>this</code> to allow method chaining
+	*/
+	public function setExtraContent( aContent:Array<String>):sap.ui.core.Popup;
 	@:overload( function(followOf:Bool):Void{ })
 	@:overload( function(followOf:()->Void):Void{ })
 
@@ -272,7 +300,7 @@ If the Popup's OpenState is different from "CLOSED" (i.e. if the Popup is alread
 	* @param	iInitialZIndex is the initial z-index
 	* @return	Void
 	*/
-	public static function setInitialZIndex( iInitialZIndex:Number):Void;
+	public static function setInitialZIndex( iInitialZIndex:String):Void;
 
 	/**
 	* Used to specify whether the Popup should be modal. A modal popup will put some fading "block layer" over the background and prevent attempts to put the focus outside/below the popup. Setting this while the popup is open will change "block layer" immediately.

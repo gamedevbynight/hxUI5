@@ -77,6 +77,8 @@ If the target type specified in the corresponding control property's binding inf
 	* Changes the HTTP headers used for data and metadata requests sent by this model.
 
 If batch requests are used, the headers will be set for the batch itself, as well as for the individual requests within the batch. The headers are changed according to the given map of headers: Headers with an <code>undefined</code> value are removed, the other headers are set, and missing headers remain unchanged. The following headers must not be used: <ul> <li> OData V4 requests headers as specified in "8.1 Common Headers" and "8.2 Request Headers" of the specification "OData Version 4.0 Part 1: Protocol" <li> OData V2 request headers as specified in "2.2.5 HTTP Header Fields" of the specification "OData Version 2 v10.1" <li> The headers "Content-Id" and "Content-Transfer-Encoding" <li> The header "SAP-ContextId" </ul> Note: The "X-CSRF-Token" header will not be used for metadata requests.
+
+If not <code>undefined</code>, a header value must conform to the following rules: <ul> <li> It must be a non-empty string. <li> It must be completely in the US-ASCII character set. <li> It must not contain control characters. </ul>
 	* @param	mHeaders Map of HTTP header names to their values
 	* @return	Void
 	*/
@@ -122,10 +124,16 @@ Examples: <ul> <li><code>/Products('42')/Name##@com.sap.vocabularies.Common.v1.L
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.Model.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+
+	/**
+	* Returns the model's bindings.
+	* @return	A copy of an array with all bindings, or an empty array if there are no bindings
+	*/
+	public function getAllBindings( ):Array<sap.ui.model.Binding>;
 
 	/**
 	* Returns the model's group ID.

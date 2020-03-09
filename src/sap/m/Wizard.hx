@@ -6,8 +6,10 @@ package sap.m;
 * Enables users to accomplish a single goal which consists of multiple dependable sub-tasks. <h3>Overview</h3> The sap.m.Wizard helps users complete a complex and unfamiliar task by dividing it into sections and guiding the user through it. The wizard has two main areas - a navigation area at the top showing the step sequence and a content area below it. <h3>Structure</h3> <h4>Navigation Area</h4> The top most area of the wizard is occupied by the navigation area. It shows the sequence of {@link sap.m.WizardStep wizard steps}. <ul> <li>The minimum number of steps is 3 and the maximum is 8 and are stored in the <code>steps</code> aggregation.</li> <li>Steps can be branching depending on choices the user made in their input - this is set by the <code>enableBranching</code> property. </li> <li>Steps can have different visual representations - numbers or icons. You can add labels for better readability </li> </ul> <h4>Content</h4> The content occupies the main part of the page. It can hold any type of input controls. The content is kept in {@link sap.m.WizardStep wizard steps}. <h4>Next Step Button</h4> The next step button is displayed below the content. It can be hidden by setting <code>showNextButton</code> to <code>false</code> and displayed, for example, only after the user has filled all mandatory fields. <h3>Usage</h3> <h4>When to use:</h4> When the user has to accomplish a long or unfamiliar task. <h4>When not to use:</h4> When the user has to accomplish a routine task that is clear and familiar. When the task has only two steps or less. <h3>Responsive Behavior</h3> On mobile devices the steps in the StepNavigator are grouped together and overlap. Tapping on them will show a popover to select the step to navigate to.
 
 When using the sap.m.Wizard in SAP Quartz theme, the breakpoints and layout paddings could be determined by the container's width. To enable this concept and add responsive paddings to the navigation area and to the content of the Wizard control, you may add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--content</code>.
+
+As the <code>sap.m.Wizard</code> is a layout control, when used in the {@link sap.f.DynamicPage}, the {@link sap.f.DynamicPage}'s <code>fitContent</code> property needs to be set to 'true' so that the scroll handling is left to the <code>sap.m.Wizard</code> control. Also, in order to achieve the target Fiori design, the <code>sapUiNoContentPadding</code> class needs to be added to the {@link sap.f.DynamicPage} as well as <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--content</code> to the <code>sap.m.Wizard</code>.
 */
-extern class Wizard extends sap.ui.core.Control
+extern class Wizard extends sap.ui.core.Control implements sap.f.IDynamicPageStickyContent
 {
 	@:overload(function(?sId:String, ?mSettings:WizardArgs):Void {})
 	public function new(?mSettings:WizardArgs):Void;
@@ -85,7 +87,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -136,7 +138,7 @@ Default value is <code>100%</code>.
 	* Returns a metadata object for class sap.m.Wizard.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Returns the number of the last activated step in the Wizard.
@@ -240,11 +242,17 @@ Default value is <code>false</code>.
 	public function setEnableBranching( bEnableBranching:Bool):sap.m.Wizard;
 
 	/**
-	* Sets the text for the finish button. By default it is "Review".
-	* @param	sValue The text of the finish button.
-	* @return	Reference to the control instance for chaining.
+	* Sets a new value for property {@link #getFinishButtonText finishButtonText}.
+
+Changes the text of the finish button for the last step. This property can be used only if <code>showNextButton</code> is set to true. By default the text of the button is "Review".
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Review</code>.
+	* @param	sFinishButtonText New value for property <code>finishButtonText</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFinishButtonText( sValue:String):sap.m.Wizard;
+	public function setFinishButtonText( sFinishButtonText:String):sap.m.Wizard;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.

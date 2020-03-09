@@ -45,7 +45,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -82,7 +82,7 @@ Default value is <code>Default</code>.
 	* Returns a metadata object for class sap.m.ColorPalettePopover.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getShowDefaultColorButton showDefaultColorButton}.
@@ -103,6 +103,16 @@ Default value is <code>true</code>.
 	* @return	Value of property <code>showMoreColorsButton</code>
 	*/
 	public function getShowMoreColorsButton( ):Bool;
+
+	/**
+	* Gets current value of property {@link #getShowRecentColorsSection showRecentColorsSection}.
+
+Indicates if the Recent Colors section is available
+
+Default value is <code>true</code>.
+	* @return	Value of property <code>showRecentColorsSection</code>
+	*/
+	public function getShowRecentColorsSection( ):Bool;
 
 	/**
 	* Sets a new value for property {@link #getColors colors}.
@@ -166,6 +176,19 @@ Default value is <code>true</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setShowMoreColorsButton( bShowMoreColorsButton:Bool):sap.m.ColorPalettePopover;
+
+	/**
+	* Sets a new value for property {@link #getShowRecentColorsSection showRecentColorsSection}.
+
+Indicates if the Recent Colors section is available
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bShowRecentColorsSection New value for property <code>showRecentColorsSection</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setShowRecentColorsSection( bShowRecentColorsSection:Bool):sap.m.ColorPalettePopover;
 }
 
 typedef ColorPalettePopoverArgs = sap.ui.core.Control.ControlArgs & {
@@ -189,6 +212,11 @@ typedef ColorPalettePopoverArgs = sap.ui.core.Control.ControlArgs & {
 	* Denotes if the color has been chosen by selecting the "Default Color" button (true or false)
 	*/
 	@:optional var showMoreColorsButton:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Indicates if the Recent Colors section is available
+	*/
+	@:optional var showRecentColorsSection:haxe.extern.EitherType<String,Bool>;
 
 	/**
 	* Determines the <code>displayMode</code> of the <code>ColorPicker</code> among three types - Default, Large and Simplified

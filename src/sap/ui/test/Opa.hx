@@ -88,8 +88,8 @@ The default values are: <ul> <li>arrangements: A new Opa instance</li> <li>actio
 
 If you are using Opa5, waitFor takes additional parameters. They can be found here: {@link sap.ui.test.Opa5#waitFor}. Waits for a check condition to return true, in which case a success function will be called. If the timeout is reached before the check returns true, an error function will be called.
 	* @param	options These contain check, success and error functions
-	* @return	A promise that gets resolved on success. If an error occurs, the promise is rejected with the options object. A detailed error message containing the stack trace and Opa logs is available in options.errorMessage.
+	* @return	an object extending a jQuery promise. The object is essentially a jQuery promise with an additional "and" method that can be used for chaining waitFor statements. The promise is resolved when the waitFor completes successfully. The promise is rejected with the options object, if an error occurs. In this case, options.errorMessage will contain a detailed error message containing the stack trace and Opa logs.
 	*/
-	public function waitFor( options:Dynamic):jquery.promise;
+	public function waitFor( options:Dynamic):Dynamic;
 }
 

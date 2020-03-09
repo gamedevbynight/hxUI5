@@ -66,7 +66,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.List.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -75,6 +75,8 @@ The passed function and listener object must match the ones used for event regis
 	* Gets current value of property {@link #getActive active}.
 
 Indicates that the list is displayed as a button when the FacetFilter type is set to <code>Simple</code>.
+
+<b>Note:</b> Set the <code>showPersonalization</code> property of the <code>FacetFilter</code> to <code>true</code> when this property is set to <code>false</code>. This is needed, as the non-active lists are not displayed, and without a personalization button they can't be selected by the user.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>active</code>
@@ -121,7 +123,7 @@ Unique identifier for this filter list.
 	* Returns a metadata object for class sap.m.FacetFilterList.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getRetainListSequence retainListSequence}.
@@ -195,6 +197,8 @@ Default value is <code>false</code>.
 	* Sets a new value for property {@link #getActive active}.
 
 Indicates that the list is displayed as a button when the FacetFilter type is set to <code>Simple</code>.
+
+<b>Note:</b> Set the <code>showPersonalization</code> property of the <code>FacetFilter</code> to <code>true</code> when this property is set to <code>false</code>. This is needed, as the non-active lists are not displayed, and without a personalization button they can't be selected by the user.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -344,6 +348,8 @@ typedef FacetFilterListArgs = sap.m.List.ListArgs & {
 
 	/**
 	* Indicates that the list is displayed as a button when the FacetFilter type is set to <code>Simple</code>.
+
+<b>Note:</b> Set the <code>showPersonalization</code> property of the <code>FacetFilter</code> to <code>true</code> when this property is set to <code>false</code>. This is needed, as the non-active lists are not displayed, and without a personalization button they can't be selected by the user.
 	*/
 	@:optional var active:haxe.extern.EitherType<String,Bool>;
 

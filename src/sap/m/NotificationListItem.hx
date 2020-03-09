@@ -3,18 +3,12 @@ package sap.m;
 @:native("sap.m.NotificationListItem")
 
 /**
-* The NotificationListItem control shows notifications to the user. <h4>Structure</h4> The notification item holds properties for the following elements: <ul> <li><code>description</code> - additional detail text.</li> <li><code>hideShowMoreButton</code> - visibility of the "Show More" button.</li> <li><code>truncate</code> - determines if title and description are truncated to the first two lines (usually needed on mobile devices).</li> </ul> For each item you can set some additional status information about the item processing by adding a {@link sap.m.MessageStrip} to the <code>processingMessage</code> aggregation.
+* The NotificationListItem control shows notification to the user. <h4>Structure</h4> The notification item holds properties for the following elements: <ul> <li><code>description</code> - additional detail text.</li> <li><code>hideShowMoreButton</code> - visibility of the "Show More" button.</li> <li><code>truncate</code> - determines if title and description are truncated to the first two lines (usually needed on mobile devices).</li> </ul> For each item you can set some additional status information about the item processing by adding a {@link sap.m.MessageStrip} to the <code>processingMessage</code> aggregation.
 */
 extern class NotificationListItem extends sap.m.NotificationListBase
 {
 	@:overload(function(?sId:String, ?mSettings:NotificationListItemArgs):Void {})
 	public function new(?mSettings:NotificationListItemArgs):Void;
-
-	/**
-	* Registers resize handler.
-	* @return	Void
-	*/
-	public function _registerResize( ):Void;
 
 	/**
 	* Destroys the processingMessage in the aggregation {@link #getProcessingMessage processingMessage}.
@@ -28,10 +22,30 @@ extern class NotificationListItem extends sap.m.NotificationListBase
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.NotificationListBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+
+	/**
+	* Gets current value of property {@link #getAuthorAvatarColor authorAvatarColor}.
+
+Determines the background color of the avatar of the author.
+
+<b>Note:</b> By using background colors from the predefined sets, your colors can later be customized from the Theme Designer.
+
+Default value is <code>Accent6</code>.
+	* @return	Value of property <code>authorAvatarColor</code>
+	*/
+	public function getAuthorAvatarColor( ):sap.m.AvatarColor;
+
+	/**
+	* Gets current value of property {@link #getAuthorInitials authorInitials}.
+
+Defines the displayed author initials.
+	* @return	Value of property <code>authorInitials</code>
+	*/
+	public function getAuthorInitials( ):String;
 
 	/**
 	* Gets current value of property {@link #getDescription description}.
@@ -57,7 +71,7 @@ Default value is <code>false</code>.
 	* Returns a metadata object for class sap.m.NotificationListItem.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets content of aggregation {@link #getProcessingMessage processingMessage}.
@@ -78,44 +92,43 @@ Default value is <code>true</code>.
 	public function getTruncate( ):Bool;
 
 	/**
-	* Sets initial values for the control.
-	* @return	Void
+	* Sets a new value for property {@link #getAuthorAvatarColor authorAvatarColor}.
+
+Determines the background color of the avatar of the author.
+
+<b>Note:</b> By using background colors from the predefined sets, your colors can later be customized from the Theme Designer.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Accent6</code>.
+	* @param	sAuthorAvatarColor New value for property <code>authorAvatarColor</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function init( ):Void;
+	public function setAuthorAvatarColor( sAuthorAvatarColor:sap.m.AvatarColor):sap.m.NotificationListItem;
 
 	/**
-	* Overwrites onAfterRendering
-	* @return	Void
+	* Sets a new value for property {@link #getAuthorInitials authorInitials}.
+
+Defines the displayed author initials.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sAuthorInitials New value for property <code>authorInitials</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function onAfterRendering( ):Void;
+	public function setAuthorInitials( sAuthorInitials:String):sap.m.NotificationListItem;
 
 	/**
-	* Overwrites onBeforeRendering
-	* @return	Void
-	*/
-	public function onBeforeRendering( ):Void;
+	* Sets a new value for property {@link #getDescription description}.
 
-	/**
-	* Sets the author picture for list item.
-	* @param	authorPicture Picture url in string format.
-	* @param	suppressInvalidation Indication for suppressing invalidation.
-	* @return	NotificationListItem reference for chaining.
-	*/
-	public function setAuthorPicture( authorPicture:String, suppressInvalidation:Bool):sap.m.NotificationListItem;
+Determines the description of the NotificationListItem.
 
-	/**
-	* Sets the DateTime.
-	* @param	dateTime DateTime.
-	* @return	NotificationListBase reference for chaining.
-	*/
-	public function setDatetime( dateTime:Dynamic):sap.m.NotificationListBase;
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-	/**
-	* Sets the description.
-	* @param	description Description.
-	* @return	NotificationListItem reference for chaining.
+Default value is <code>empty string</code>.
+	* @param	sDescription New value for property <code>description</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDescription( description:String):sap.m.NotificationListItem;
+	public function setDescription( sDescription:String):sap.m.NotificationListItem;
 
 	/**
 	* Sets a new value for property {@link #getHideShowMoreButton hideShowMoreButton}.
@@ -129,14 +142,6 @@ Default value is <code>false</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHideShowMoreButton( bHideShowMoreButton:Bool):sap.m.NotificationListItem;
-
-	/**
-	* Sets the priority of the list item.
-	* @param	priority Priority of the list item.
-	* @param	suppressInvalidation Indication for suppressing invalidation.
-	* @return	NotificationListItem reference for chaining.
-	*/
-	public function setPriority( priority:String, suppressInvalidation:Bool):sap.m.NotificationListItem;
 
 	/**
 	* Sets the aggregated {@link #getProcessingMessage processingMessage}.
@@ -157,13 +162,6 @@ Default value is <code>true</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setTruncate( bTruncate:Bool):sap.m.NotificationListItem;
-
-	/**
-	* Sets the unread text.
-	* @param	unread Indication of unread list item.
-	* @return	NotificationListItem reference for chaining.
-	*/
-	public function setUnread( unread:Bool):sap.m.NotificationListItem;
 }
 
 typedef NotificationListItemArgs = sap.m.NotificationListBase.NotificationListBaseArgs & {
@@ -172,6 +170,11 @@ typedef NotificationListItemArgs = sap.m.NotificationListBase.NotificationListBa
 	* Determines the description of the NotificationListItem.
 	*/
 	@:optional var description:String;
+
+	/**
+	* Defines the displayed author initials.
+	*/
+	@:optional var authorInitials:String;
 
 	/**
 	* Determines if the text in the title and the description of the notification are truncated to the first two lines.
@@ -183,13 +186,20 @@ typedef NotificationListItemArgs = sap.m.NotificationListBase.NotificationListBa
 	*/
 	@:optional var hideShowMoreButton:haxe.extern.EitherType<String,Bool>;
 
+	/**
+	* Determines the background color of the avatar of the author.
+
+<b>Note:</b> By using background colors from the predefined sets, your colors can later be customized from the Theme Designer.
+	*/
+	@:optional var authorAvatarColor:haxe.extern.EitherType<String,sap.m.AvatarColor>;
+
     /**
     * The sap.m.MessageStrip control that holds the information about any error that may occur when pressing the notification buttons
     */
 	@:optional var processingMessage:haxe.extern.EitherType<String,sap.m.MessageStrip>;
 
     /**
-    * The text control that holds the description text of the NotificationListItem.
+    * The "Show More" button of the notification item.
     */
-	@:optional var _bodyText:haxe.extern.EitherType<String,sap.m.Text>;
+	@:optional var _showMoreButton:haxe.extern.EitherType<String,sap.m.Link>;
 }

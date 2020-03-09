@@ -7,7 +7,7 @@ package sap.tnt;
 
 <h3>Overview</h3>
 
-The control visualizes text information without user interaction. The text inside the control is always in upper case. It can have smaller or larger side paddings which can be specified by the <code>renderMode</code> property. The text-background color pair can be changed by setting a digit between 1 and 9 that corresponds to the 9 predefined color combinations of the <code>colorScheme</code> property. The control is designed to be vertically aligned with UI5 Input and Button control families. When using <code>InfoLabel</code> in non-editable <code>Forms</code>, <code>Tables</code>, etc., set <code>displayOnly=true</code> for best visual results.
+The control visualizes text information without user interaction. The text inside the control is always in upper case. It can have smaller or larger side paddings which can be specified by the <code>renderMode</code> property. The text-background color pair can be changed by setting a number between 1 and 10 that corresponds to the 10 predefined color combinations of the <code>colorScheme</code> property. The control is designed to be vertically aligned with UI5 Input and Button control families. When using <code>InfoLabel</code> in non-editable <code>Forms</code>, <code>Tables</code>, etc., set <code>displayOnly=true</code> for best visual results.
 
 <h3>Usage Guidelines</h3> <ul> <li>If the text is longer than the width of the control, it doesn’t wrap. Instead, it’s represented as ellipsis. </li> <li>When truncated, the full text in the control is not visible. Therefore, it’s recommended to make more space for longer items to be fully displayed.</li> <li>Colors are not semantic and have no visual representation in sap_belize_hcb and sap_belize_hcw themes.</li> <li>The control shows plain text only, formatting is not visualized.</li> </ul>
 */
@@ -31,7 +31,7 @@ See {@link sap.ui.base.ManagedObject#bindProperty ManagedObject.bindProperty} fo
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -39,7 +39,7 @@ See {@link sap.ui.base.ManagedObject#bindProperty ManagedObject.bindProperty} fo
 	/**
 	* Gets current value of property {@link #getColorScheme colorScheme}.
 
-Specifies the fill and text color of the control. Accepts a digit as a value. You can choose from 10 predefined background and text color combinations. The color schemes are non-semantic, you can select them according to your own preferences. ColorScheme 10 is available only in Fiori 3 theme. The default <code>colorScheme</code> is 7.
+Specifies the fill and text color of the control. Accepts a number between 1 and 10 as a value. You can choose from 10 predefined background and text color combinations. The color schemes are non-semantic, you can select them according to your own preferences. <b>Note:</b> ColorScheme 10 is available only in Fiori 3 theme. The default <code>colorScheme</code> is 7.
 
 Default value is <code>7</code>.
 	* @return	Value of property <code>colorScheme</code>
@@ -57,10 +57,20 @@ Default value is <code>false</code>.
 	public function getDisplayOnly( ):Bool;
 
 	/**
+	* Gets current value of property {@link #getIcon icon}.
+
+Defines the icon to be displayed as graphical element within the <code>InfoLabel</code>. It can be an icon from the icon font.
+
+Default value is <code>empty string</code>.
+	* @return	Value of property <code>icon</code>
+	*/
+	public function getIcon( ):sap.ui.core.URI;
+
+	/**
 	* Returns a metadata object for class sap.tnt.InfoLabel.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getRenderMode renderMode}.
@@ -103,7 +113,7 @@ Specifies the width of the <code>InfoLabel</code> control. By default, the <code
 	/**
 	* Sets a new value for property {@link #getColorScheme colorScheme}.
 
-Specifies the fill and text color of the control. Accepts a digit as a value. You can choose from 10 predefined background and text color combinations. The color schemes are non-semantic, you can select them according to your own preferences. ColorScheme 10 is available only in Fiori 3 theme. The default <code>colorScheme</code> is 7.
+Specifies the fill and text color of the control. Accepts a number between 1 and 10 as a value. You can choose from 10 predefined background and text color combinations. The color schemes are non-semantic, you can select them according to your own preferences. <b>Note:</b> ColorScheme 10 is available only in Fiori 3 theme. The default <code>colorScheme</code> is 7.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -125,6 +135,19 @@ Default value is <code>false</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setDisplayOnly( bDisplayOnly:Bool):sap.tnt.InfoLabel;
+
+	/**
+	* Sets a new value for property {@link #getIcon icon}.
+
+Defines the icon to be displayed as graphical element within the <code>InfoLabel</code>. It can be an icon from the icon font.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sIcon New value for property <code>icon</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setIcon( sIcon:sap.ui.core.URI):sap.tnt.InfoLabel;
 
 	/**
 	* Sets a new value for property {@link #getRenderMode renderMode}.
@@ -196,7 +219,7 @@ typedef InfoLabelArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var renderMode:haxe.extern.EitherType<String,sap.tnt.RenderMode>;
 
 	/**
-	* Specifies the fill and text color of the control. Accepts a digit as a value. You can choose from 10 predefined background and text color combinations. The color schemes are non-semantic, you can select them according to your own preferences. ColorScheme 10 is available only in Fiori 3 theme. The default <code>colorScheme</code> is 7.
+	* Specifies the fill and text color of the control. Accepts a number between 1 and 10 as a value. You can choose from 10 predefined background and text color combinations. The color schemes are non-semantic, you can select them according to your own preferences. <b>Note:</b> ColorScheme 10 is available only in Fiori 3 theme. The default <code>colorScheme</code> is 7.
 	*/
 	@:optional var colorScheme:haxe.extern.EitherType<String,Int>;
 
@@ -214,4 +237,9 @@ typedef InfoLabelArgs = sap.ui.core.Control.ControlArgs & {
 	* Available options for the text direction are LTR and RTL. By default the control inherits the text direction from its parent control.
 	*/
 	@:optional var textDirection:haxe.extern.EitherType<String,sap.ui.core.TextDirection>;
+
+	/**
+	* Defines the icon to be displayed as graphical element within the <code>InfoLabel</code>. It can be an icon from the icon font.
+	*/
+	@:optional var icon:haxe.extern.EitherType<String,sap.ui.core.URI>;
 }

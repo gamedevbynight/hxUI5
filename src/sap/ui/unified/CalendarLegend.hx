@@ -29,7 +29,7 @@ extern class CalendarLegend extends sap.ui.core.Control
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -56,12 +56,12 @@ Items to be displayed.
 	* Returns a metadata object for class sap.ui.unified.CalendarLegend.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getStandardItems standardItems}.
 
-Determines the standard items related to the calendar days, such as, today, selected, working and non-working. Values must be one of <code>sap.ui.unified.StandardCalendarLegendItem</code>. Note: for versions 1.50 and 1.52, this property was defined in the the subclass <code>sap.m.PlanningCalendarLegend</code>
+Determines the standard items related to the calendar days, such as, today, selected, working and non-working. Values must be one of <code>sap.ui.unified.StandardCalendarLegendItem</code>. Note: for versions 1.50 and 1.52, this property was defined in the subclass <code>sap.m.PlanningCalendarLegend</code>
 
 Default value is <code>Today,Selected,WorkingDay,NonWorkingDay</code>.
 	* @return	Value of property <code>standardItems</code>
@@ -116,7 +116,7 @@ Default value is <code>120px</code>.
 	/**
 	* Sets a new value for property {@link #getStandardItems standardItems}.
 
-Determines the standard items related to the calendar days, such as, today, selected, working and non-working. Values must be one of <code>sap.ui.unified.StandardCalendarLegendItem</code>. Note: for versions 1.50 and 1.52, this property was defined in the the subclass <code>sap.m.PlanningCalendarLegend</code>
+Determines the standard items related to the calendar days, such as, today, selected, working and non-working. Values must be one of <code>sap.ui.unified.StandardCalendarLegendItem</code>. Note: for versions 1.50 and 1.52, this property was defined in the subclass <code>sap.m.PlanningCalendarLegend</code>
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -130,7 +130,7 @@ Default value is <code>Today,Selected,WorkingDay,NonWorkingDay</code>.
 typedef CalendarLegendArgs = sap.ui.core.Control.ControlArgs & {
 
 	/**
-	* Determines the standard items related to the calendar days, such as, today, selected, working and non-working. Values must be one of <code>sap.ui.unified.StandardCalendarLegendItem</code>. Note: for versions 1.50 and 1.52, this property was defined in the the subclass <code>sap.m.PlanningCalendarLegend</code>
+	* Determines the standard items related to the calendar days, such as, today, selected, working and non-working. Values must be one of <code>sap.ui.unified.StandardCalendarLegendItem</code>. Note: for versions 1.50 and 1.52, this property was defined in the subclass <code>sap.m.PlanningCalendarLegend</code>
 	*/
 	@:optional var standardItems:Array<String>;
 

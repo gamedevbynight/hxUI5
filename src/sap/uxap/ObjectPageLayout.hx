@@ -75,6 +75,19 @@ The event is fired when the selected section is changed using the navigation.
 	public function attachNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:sectionChange sectionChange} event of this <code>sap.uxap.ObjectPageLayout</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.uxap.ObjectPageLayout</code> itself.
+
+Fired when the current section is changed by scrolling.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.ObjectPageLayout</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachSectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+
+	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:toggleAnchorBar toggleAnchorBar} event of this <code>sap.uxap.ObjectPageLayout</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.uxap.ObjectPageLayout</code> itself.
@@ -138,6 +151,16 @@ The passed function and listener object must match the ones used for event regis
 	public function detachNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:sectionChange sectionChange} event of this <code>sap.uxap.ObjectPageLayout</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachSectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+
+	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:toggleAnchorBar toggleAnchorBar} event of this <code>sap.uxap.ObjectPageLayout</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -153,7 +176,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -274,7 +297,7 @@ If not set, no landmarks will be written.
 	* Returns a metadata object for class sap.uxap.ObjectPageLayout.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getPreserveHeaderStateOnScroll preserveHeaderStateOnScroll}.
@@ -1050,6 +1073,11 @@ If not set, no landmarks will be written.
 	* The event is fired when the selected section is changed using the navigation.
 	*/
 	@:optional var navigate:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* Fired when the current section is changed by scrolling.
+	*/
+	@:optional var sectionChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
 	* The event is fired when the Anchor bar is switched from moving to fixed or the other way round.

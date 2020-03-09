@@ -3,7 +3,9 @@ package sap.m;
 @:native("sap.m.MessageView")
 
 /**
-* <h3>Overview</h3> A <code>MessageView</code> is used to display a summarized list of different types of messages (error, warning, success, and information messages). It is meant to be embedded into container controls (such as {@link sap.m.Popover}, {@link sap.m.ResponsivePopover}, {@link sap.m.Dialog}). It provides a handy and systemized way to navigate and explore details for every message. If the MessageView contains only one item, which has either description, markupDescription or longTextUrl, its details page will be displayed initially. It also exposes an event {@link sap.m.MessageView#event:activeTitlePress}, which can be used for navigation from a message to its source. <h3>Notes:</h3> <ul> <li>If your application changes its model between two interactions with the MessageView, this could lead to outdated messages being shown. To avoid this, you need to call <code>navigateBack</code> on the MessageView BEFORE opening its container.</li> <li> Messages can have descriptions pre-formatted with HTML markup. In this case, the <code>markupDescription</code> has to be set to <code>true</code>. </li> <li> If the message cannot be fully displayed or includes a long description, the MessageView provides navigation to the detailed description. </li> </ul> <h3>Structure</h3> The MessageView stores all messages in an association of type {@link sap.m.MessageItem} named <code>items</code>. <br> A set of properties determines how the items are rendered: <ul> <li> counter - An integer that is used to indicate the number of errors for each type </li> <li> type - The type of message </li> <li> title/subtitle - The title and subtitle of the message</li> <li> description - The long text description of the message</li> <li> activeTitle - Determines whether the title of the item is interactive</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>When you want a way to centrally manage messages and show them to the user without additional work for the developer. Navigation between the message item and the source of the error can be created, if needed by the application. This can be done by setting the <code>activeTitle</code> property to true and providing a handler for the <code>activeTitlePress</code> event.</li> </ul>
+* It is used to display a summarized list of different types of messages (error, warning, success, and information messages).
+
+<h3>Overview</h3> It is meant to be embedded into container controls (such as {@link sap.m.Popover}, {@link sap.m.ResponsivePopover}, {@link sap.m.Dialog}). It provides a handy and systematized way to navigate and explore details for every message. If the <code>MessageView</code> contains only one item, which has either description, markupDescription or longTextUrl, its details page will be displayed initially. It also exposes the {@link sap.m.MessageView#event:activeTitlePress} event, which can be used for navigation from a message to its source. <h3>Notes:</h3> <ul> <li>If your application changes its model between two interactions with the <code>MessageView</code>, this could lead to outdated messages being shown. To avoid this, you need to call <code>navigateBack</code> on the <code>MessageView</code> BEFORE opening its container.</li> <li> Messages can have descriptions preformatted with HTML markup. In this case, the <code>markupDescription</code> has to be set to <code>true</code>. </li> <li> If the message cannot be fully displayed, or includes a long description, the <code>MessageView</code> provides navigation to the detailed description. </li> </ul> <h3>Structure</h3> The <code>MessageView</code> stores all messages in an association of type {@link sap.m.MessageItem}, named <code>items</code>. <br> A set of properties determines how the items are rendered: <ul> <li> counter - An integer that is used to indicate the number of errors for each type. </li> <li> type - The type of message. </li> <li> title/subtitle - The title and subtitle of the message.</li> <li> description - The long text description of the message.</li> <li> activeTitle - Determines whether the title of the item is interactive.</li> </ul> <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>When you want a way to centrally manage messages and show them to the user without additional work for the developer. If needed the navigation between the message item and the source of the error can be created by the application. This can be done by setting the <code>activeTitle</code> property to true and providing a handler for the <code>activeTitlePress</code> event.</li> </ul>
 */
 extern class MessageView extends sap.ui.core.Control
 {
@@ -22,7 +24,7 @@ extern class MessageView extends sap.ui.core.Control
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessageView</code> itself.
 
-This event will be fired when an active title of a MessageItem is pressed
+Event fired when an activeTitle of a MessageItem is pressed.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
@@ -35,7 +37,7 @@ This event will be fired when an active title of a MessageItem is pressed
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessageView</code> itself.
 
-This event will be fired when description is shown
+Event fired when description is shown.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
@@ -48,7 +50,7 @@ This event will be fired when description is shown
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessageView</code> itself.
 
-This event will be fired when one of the lists is shown when (not) filtered by type
+Event fired when one of the lists is shown when (not) filtered by type.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
@@ -61,7 +63,7 @@ This event will be fired when one of the lists is shown when (not) filtered by t
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessageView</code> itself.
 
-This event will be fired when the long text description data from a remote URL is loaded
+Event fired when the long text description data from a remote URL is loaded.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
@@ -74,7 +76,7 @@ This event will be fired when the long text description data from a remote URL i
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.MessageView</code> itself.
 
-This event will be fired when a validation of a URL from long text description is ready
+Event fired when a validation of a URL from long text description is ready.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
@@ -150,7 +152,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -158,7 +160,7 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getAsyncDescriptionHandler asyncDescriptionHandler}.
 
-Callback function for resolving a promise after description has been asynchronously loaded inside this function
+Callback function for resolving a promise after description has been asynchronously loaded inside this function.
 	* @return	Value of property <code>asyncDescriptionHandler</code>
 	*/
 	public function getAsyncDescriptionHandler( ):Dynamic;
@@ -166,7 +168,7 @@ Callback function for resolving a promise after description has been asynchronou
 	/**
 	* Gets current value of property {@link #getAsyncURLHandler asyncURLHandler}.
 
-Callback function for resolving a promise after a link has been asynchronously validated inside this function
+Callback function for resolving a promise after a link has been asynchronously validated inside this function.
 	* @return	Value of property <code>asyncURLHandler</code>
 	*/
 	public function getAsyncURLHandler( ):Dynamic;
@@ -174,7 +176,7 @@ Callback function for resolving a promise after a link has been asynchronously v
 	/**
 	* Gets current value of property {@link #getGroupItems groupItems}.
 
-Defines whether the MessageItems are grouped or not
+Defines whether the MessageItems are grouped or not.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>groupItems</code>
@@ -184,7 +186,7 @@ Default value is <code>false</code>.
 	/**
 	* Gets content of aggregation {@link #getHeaderButton headerButton}.
 
-A custom header button
+Sets a custom header button.
 	* @return	null
 	*/
 	public function getHeaderButton( ):sap.m.Button;
@@ -201,12 +203,12 @@ A list with message items. If only one item is provided, the initial page will b
 	* Returns a metadata object for class sap.m.MessageView.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getShowDetailsPageHeader showDetailsPageHeader}.
 
-Defines whether the header of details page will be shown
+Defines whether the header of details page will be shown.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>showDetailsPageHeader</code>
@@ -254,7 +256,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	/**
 	* Sets a new value for property {@link #getAsyncDescriptionHandler asyncDescriptionHandler}.
 
-Callback function for resolving a promise after description has been asynchronously loaded inside this function
+Callback function for resolving a promise after description has been asynchronously loaded inside this function.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	oAsyncDescriptionHandler New value for property <code>asyncDescriptionHandler</code>
@@ -265,7 +267,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getAsyncURLHandler asyncURLHandler}.
 
-Callback function for resolving a promise after a link has been asynchronously validated inside this function
+Callback function for resolving a promise after a link has been asynchronously validated inside this function.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	oAsyncURLHandler New value for property <code>asyncURLHandler</code>
@@ -276,7 +278,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getGroupItems groupItems}.
 
-Defines whether the MessageItems are grouped or not
+Defines whether the MessageItems are grouped or not.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -296,7 +298,7 @@ Default value is <code>false</code>.
 	/**
 	* Sets a new value for property {@link #getShowDetailsPageHeader showDetailsPageHeader}.
 
-Defines whether the header of details page will be shown
+Defines whether the header of details page will be shown.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -310,22 +312,22 @@ Default value is <code>true</code>.
 typedef MessageViewArgs = sap.ui.core.Control.ControlArgs & {
 
 	/**
-	* Callback function for resolving a promise after description has been asynchronously loaded inside this function
+	* Callback function for resolving a promise after description has been asynchronously loaded inside this function.
 	*/
 	@:optional var asyncDescriptionHandler:Dynamic;
 
 	/**
-	* Callback function for resolving a promise after a link has been asynchronously validated inside this function
+	* Callback function for resolving a promise after a link has been asynchronously validated inside this function.
 	*/
 	@:optional var asyncURLHandler:Dynamic;
 
 	/**
-	* Defines whether the MessageItems are grouped or not
+	* Defines whether the MessageItems are grouped or not.
 	*/
 	@:optional var groupItems:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Defines whether the header of details page will be shown
+	* Defines whether the header of details page will be shown.
 	*/
 	@:optional var showDetailsPageHeader:haxe.extern.EitherType<String,Bool>;
 
@@ -335,37 +337,37 @@ typedef MessageViewArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var items:Array<haxe.extern.EitherType<String,sap.m.MessageItem>>;
 
     /**
-    * A custom header button
+    * Sets a custom header button.
     */
 	@:optional var headerButton:haxe.extern.EitherType<String,sap.m.Button>;
 
     /**
-    * A navContainer that contains both details and list pages
+    * A navContainer that contains both details and list pages.
     */
 	@:optional var _navContainer:haxe.extern.EitherType<String,sap.m.NavContainer>;
 
 	/**
-	* This event will be fired when an active title of a MessageItem is pressed
+	* Event fired when an activeTitle of a MessageItem is pressed.
 	*/
 	@:optional var activeTitlePress:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired when description is shown
+	* Event fired when description is shown.
 	*/
 	@:optional var itemSelect:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired when one of the lists is shown when (not) filtered by type
+	* Event fired when one of the lists is shown when (not) filtered by type.
 	*/
 	@:optional var listSelect:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired when the long text description data from a remote URL is loaded
+	* Event fired when the long text description data from a remote URL is loaded.
 	*/
 	@:optional var longtextLoaded:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* This event will be fired when a validation of a URL from long text description is ready
+	* Event fired when a validation of a URL from long text description is ready.
 	*/
 	@:optional var urlValidated:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

@@ -11,15 +11,36 @@ extern class FormattedText extends sap.ui.core.Control
 	public function new(?mSettings:FormattedTextArgs):Void;
 
 	/**
+	* Adds some control to the aggregation {@link #getControls controls}.
+	* @param	oControl The control to add; if empty, nothing is inserted
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function addControl( oControl:sap.m.Link):sap.m.FormattedText;
+
+	/**
+	* Destroys all the controls in the aggregation {@link #getControls controls}.
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function destroyControls( ):sap.m.FormattedText;
+
+	/**
 	* Creates a new subclass of class sap.m.FormattedText with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
 
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+
+	/**
+	* Gets content of aggregation {@link #getControls controls}.
+
+List of <code>sap.m.Link</code> controls that will be used to replace the placeholders in the text. Placeholders are replaced according to their indexes. The placeholder with index %%0 will be replaced by the first link in the aggregation, etc.
+	* @return	null
+	*/
+	public function getControls( ):Array<sap.m.Link>;
 
 	/**
 	* Gets current value of property {@link #getConvertedLinksDefaultTarget convertedLinksDefaultTarget}.
@@ -67,7 +88,7 @@ Default value is <code>empty string</code>.
 	* Returns a metadata object for class sap.m.FormattedText.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getWidth width}.
@@ -76,6 +97,38 @@ Optional width of the control in CSS units.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
+
+	/**
+	* Checks for the provided <code>sap.m.Link</code> in the aggregation {@link #getControls controls}. and returns its index if found or -1 otherwise.
+	* @param	oControl The control whose index is looked for
+	* @return	The index of the provided control in the aggregation if found, or -1 otherwise
+	*/
+	public function indexOfControl( oControl:sap.m.Link):Int;
+
+	/**
+	* Inserts a control into the aggregation {@link #getControls controls}.
+	* @param	oControl The control to insert; if empty, nothing is inserted
+	* @param	iIndex The <code>0</code>-based index the control should be inserted at; for a negative value of <code>iIndex</code>, the control is inserted at position 0; for a value greater than the current size of the aggregation, the control is inserted at the last position
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function insertControl( oControl:sap.m.Link, iIndex:Int):sap.m.FormattedText;
+
+	/**
+	* Removes all the controls from the aggregation {@link #getControls controls}.
+
+Additionally, it unregisters them from the hosting UIArea.
+	* @return	An array of the removed elements (might be empty)
+	*/
+	public function removeAllControls( ):Array<sap.m.Link>;
+	@:overload( function(vControl:Int):sap.m.Link{ })
+	@:overload( function(vControl:String):sap.m.Link{ })
+
+	/**
+	* Removes a control from the aggregation {@link #getControls controls}.
+	* @param	vControl The control to remove or its index or id
+	* @return	The removed control or <code>null</code>
+	*/
+	public function removeControl( vControl:sap.m.Link):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getConvertedLinksDefaultTarget convertedLinksDefaultTarget}.
@@ -165,4 +218,9 @@ typedef FormattedTextArgs = sap.ui.core.Control.ControlArgs & {
 	* Optional height of the control in CSS units.
 	*/
 	@:optional var height:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
+
+    /**
+    * List of <code>sap.m.Link</code> controls that will be used to replace the placeholders in the text. Placeholders are replaced according to their indexes. The placeholder with index %%0 will be replaced by the first link in the aggregation, etc.
+    */
+	@:optional var controls:Array<haxe.extern.EitherType<String,sap.m.Link>>;
 }

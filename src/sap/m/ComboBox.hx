@@ -3,7 +3,7 @@ package sap.m;
 @:native("sap.m.ComboBox")
 
 /**
-* A drop-down list for selecting and filtering values. <h3>Overview</h3> The control represents a drop-down menu with a list of the available options and a text input field to narrow down the options. <h3>Structure</h3> The combo-box consists of the following elements: <ul> <li> Input field - displays the selected option or a custom user entry. Users can type to narrow down the list or enter their own value.</li> <li> Drop-down arrow - expands\collapses the option list.</li> <li> Option list - the list of available options.</li> </ul> By setting the <code>showSecondaryValues</code> property, the combo box can display an additional value for each option (if there is one). <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to select only one item in a long list of options (between 13 and 200) or your custom user input.</li> </ul> <h4>When not to use:</h4> <ul> <li>You need to select between only two options. Use a {@link sap.m.Switch switch} control instead.</li> <li>You need to select between up to 12 options. Use a {@link sap.m.Select select} control instead.</li> <li>You need to select between more than 200 options. Use a {@link sap.m.Input input} control with value help instead.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>The width of the option list adapts to its content. The minimum width is the input field plus the drop-down arrow.</li> <li>There is no horizontal scrolling in the option list. Entries in the list that are too long will be truncated.</li> <li>On phone devices the combo box option list opens a dialog.</li> </ul>
+* A drop-down list for selecting and filtering values. <h3>Overview</h3> The control represents a drop-down menu with a list of the available options and a text input field to narrow down the options. <h3>Structure</h3> The combo-box consists of the following elements: <ul> <li> Input field - displays the selected option or a custom user entry. Users can type to narrow down the list or enter their own value.</li> <li> Drop-down arrow - expands\collapses the option list.</li> <li> Option list - the list of available options.</li> </ul> By setting the <code>showSecondaryValues</code> property, the combo box can display an additional value for each option (if there is one). <b>Note:</b> The typeahead feature is not available on Android devices due to a OS specific issue. <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to select only one item in a long list of options (between 13 and 200) or your custom user input.</li> </ul> <h4>When not to use:</h4> <ul> <li>You need to select between only two options. Use a {@link sap.m.Switch switch} control instead.</li> <li>You need to select between up to 12 options. Use a {@link sap.m.Select select} control instead.</li> <li>You need to select between more than 200 options. Use a {@link sap.m.Input input} control with value help instead.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>The width of the option list adapts to its content. The minimum width is the input field plus the drop-down arrow.</li> <li>There is no horizontal scrolling in the option list. Entries in the list that are too long will be truncated.</li> <li>On phone devices the combo box option list opens a dialog.</li> </ul>
 */
 extern class ComboBox extends sap.m.ComboBoxBase
 {
@@ -17,9 +17,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 
 This event is fired when the value in the text input field is changed in combination with one of the following actions:
 
-<ul> <li>The focus leaves the text input field</li> <li>The <i>Enter</i> key is pressed</li> </ul>
-
-In addition, this event is also fired when an item in the list is selected.
+<ul> <li>The focus leaves the text input field</li> <li>The <i>Enter</i> key is pressed</li> <li>An item in the list is selected</li> </ul>
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ComboBox</code> itself
@@ -39,6 +37,13 @@ This event is fired when the user types something that matches with an item in t
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function attachSelectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ComboBox;
+
+	/**
+	* Clones the <code>sap.m.ComboBox</code> control.
+	* @param	sIdSuffix Suffix to be added to the ids of the new control and its internal objects.
+	* @return	The cloned <code>sap.m.ComboBox</code> control.
+	*/
+	public function clone( sIdSuffix:String):sap.m.ComboBox;
 
 	/**
 	* Closes the control's picker popup and focus input field.
@@ -78,7 +83,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.ComboBoxBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -97,7 +102,7 @@ Default value is <code>false</code>.
 	* Returns a metadata object for class sap.m.ComboBox.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets the selected item object from the aggregation named <code>items</code>.
@@ -213,9 +218,7 @@ typedef ComboBoxArgs = sap.m.ComboBoxBase.ComboBoxBaseArgs & {
 	/**
 	* This event is fired when the value in the text input field is changed in combination with one of the following actions:
 
-<ul> <li>The focus leaves the text input field</li> <li>The <i>Enter</i> key is pressed</li> </ul>
-
-In addition, this event is also fired when an item in the list is selected.
+<ul> <li>The focus leaves the text input field</li> <li>The <i>Enter</i> key is pressed</li> <li>An item in the list is selected</li> </ul>
 	*/
 	@:optional var change:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 

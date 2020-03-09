@@ -13,9 +13,9 @@ extern class CustomData extends sap.ui.core.Element
 	public function new(?mSettings:CustomDataArgs):Void;
 
 	/**
-	* Creates a new subclass of class sap.ui.core.CustomData with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
+	* Creates a new subclass of <code>CustomData</code> with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
 
-<code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Element.extend}.
+<code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Element.extend Element.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
@@ -32,10 +32,10 @@ The key of the data in this CustomData object. When the data is just stored, it 
 	public function getKey( ):String;
 
 	/**
-	* Returns a metadata object for class sap.ui.core.CustomData.
+	* Returns a metadata object for class <code>sap.ui.core.CustomData</code>.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getValue value}.
@@ -50,7 +50,9 @@ The data stored in this CustomData object. When the data is just stored, it can 
 
 If set to "true" and the value is of type "string" and the key conforms to the documented restrictions, this custom data is written to the HTML root element of the control as a "data-*" attribute. If the key is "abc" and the value is "cde", the HTML will look as follows:
 
-&lt;SomeTag ... data-abc="cde" ... &gt;
+<pre>
+  &lt;SomeTag ... data-abc="cde" ... &gt;
+</pre>
 
 Thus the application can provide stable attributes by data binding which can be used for styling or identification purposes.
 
@@ -88,7 +90,9 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 
 If set to "true" and the value is of type "string" and the key conforms to the documented restrictions, this custom data is written to the HTML root element of the control as a "data-*" attribute. If the key is "abc" and the value is "cde", the HTML will look as follows:
 
-&lt;SomeTag ... data-abc="cde" ... &gt;
+<pre>
+  &lt;SomeTag ... data-abc="cde" ... &gt;
+</pre>
 
 Thus the application can provide stable attributes by data binding which can be used for styling or identification purposes.
 
@@ -118,7 +122,9 @@ typedef CustomDataArgs = sap.ui.core.Element.ElementArgs & {
 	/**
 	* If set to "true" and the value is of type "string" and the key conforms to the documented restrictions, this custom data is written to the HTML root element of the control as a "data-*" attribute. If the key is "abc" and the value is "cde", the HTML will look as follows:
 
-&lt;SomeTag ... data-abc="cde" ... &gt;
+<pre>
+  &lt;SomeTag ... data-abc="cde" ... &gt;
+</pre>
 
 Thus the application can provide stable attributes by data binding which can be used for styling or identification purposes.
 

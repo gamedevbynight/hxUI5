@@ -22,7 +22,7 @@ extern class GridDropInfo extends sap.ui.core.dnd.DropInfo implements sap.ui.cor
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.dnd.DropInfo.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -47,7 +47,7 @@ The callback receives <code>draggedControl</code> as parameter and must return a
 	* Returns a metadata object for class sap.f.dnd.GridDropInfo.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Sets a new value for property {@link #getDropIndicatorSize dropIndicatorSize}.

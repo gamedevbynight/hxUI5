@@ -21,7 +21,7 @@ extern class MessageModel extends sap.ui.model.ClientModel
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.model.ClientModel.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -48,12 +48,11 @@ extern class MessageModel extends sap.ui.model.ClientModel
 	public function setData( oData:Dynamic):Void;
 
 	/**
-	* Sets a new value for the given property <code>sPropertyName</code> in the model. If the model value changed all interested parties are informed.
-	* @param	sPath path of the property to set
-	* @param	oValue value to set the property to
-	* @param	oContext the context which will be used to set the property
+	* Unsupported operation.
+
+Other models provide this method to set a new value for a specific property. <code>MessageModel</code> does not support it as it supports the <code>OneWay</code> mode only.
 	* @return	Void
 	*/
-	public function setProperty( sPath:String, oValue:Dynamic, ?oContext:Dynamic):Void;
+	public function setProperty( ):Void;
 }
 

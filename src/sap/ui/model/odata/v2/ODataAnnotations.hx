@@ -21,8 +21,8 @@ extern class ODataAnnotations extends sap.ui.base.EventProvider
 
 	/**
 	* Adds one or several sources to the annotation loader. Sources will be loaded instantly but merged only after the previously added source has either been successfully merged or failed.
-	* @param	vSource One or several annotation source(s). Can be either a string or a map of the type <code>sap.ui.model.odata.v2.ODataAnnotations.Source</code> or an array containing several (either strings or source objects).
-	* @return	The promise to (load,) parse and merge the given source(s). The Promise resolves on success with an array of maps containing properties <code>source</code> and <code>data</code>. See the parameters of the <code>success</code> event for more details. The promise fails in case at least one source could not be (loaded,) parsed or merged with an array of objects containing Errors and/or Success objects.
+	* @param	vSource One or several Annotation source or array of annotation sources; an annotation source is either a string containing a URL or an object of type {@link sap.ui.model.odata.v2.ODataAnnotations.Source}.
+	* @return	The promise to (load,) parse and merge the given source(s). The Promise resolves with an array of maps containing the properties <code>source</code> and <code>data</code>; see the parameters of the <code>success</code> event for more details. In case at least one source could not be (loaded,) parsed or merged, the promise fails with an array of objects containing Errors and/or Success objects.
 	*/
 	public function addSource( vSource:Array<sap.ui.model.odata.v2.odataannotations.Source>):js.lib.Promise<ODataAnnotations>;
 
@@ -94,7 +94,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	/**
 	* Attaches the given callback to the {@link #event:success success} event, which is fired whenever a source has been successfully (loaded,) parsed and merged into the annotation data.
 
-The following parameters will be set on the event object that is given to the callback function: <code>source</code> - A map containing the properties <code>type</code> - containing either "url" or "xml" - and <code>data</code> containing the data given as source, either a URL or an XML string depending on how the source was added.
+The following parameters are set on the event object that is given to the callback function: <code>source</code> - A map containing the properties <code>type</code> - containing either "url" or "xml" - and <code>data</code> containing the data given as source, either a URL or an XML string depending on how the source was added.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.ui.model.odata.v2.ODataAnnotations</code> itself.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
@@ -170,14 +170,14 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.EventProvider.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
-	* Returns the parsed and merged annotation data object
-	* @return	returns annotations data
+	* Returns the parsed and merged annotation data object.
+	* @return	The annotation data
 	*/
 	public function getData( ):Dynamic;
 
@@ -185,7 +185,7 @@ The passed function and listener object must match the ones used for event regis
 	* Returns a map of custom headers that are sent with every request to an annotation URL.
 	* @return	A map of all custom headers.
 	*/
-	public function getHeaders( ):Dynamic;
+	public function getHeaders( ):Map<String,String>;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.odata.v2.ODataAnnotations.
@@ -194,18 +194,18 @@ The passed function and listener object must match the ones used for event regis
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
-	* Returns a promise that resolves when the annotation sources that were added up to this point were successfully (loaded,) parsed and merged
-	* @return	The Promise that resolves/rejects after the last added sources have been processed
+	* Returns a promise that resolves when the added annotation sources were successfully processed.
+	* @return	A promise that resolves after the last added sources have been processed
 	*/
 	public function loaded( ):js.lib.Promise<ODataAnnotations>;
 
 	/**
 	* Set custom headers which are provided in a key/value map. These headers are used for all requests. The "Accept-Language" header cannot be modified and is set using the core's language setting.
 
-To remove these headers, simply set the <code>mHeaders</code> parameter to <code>{}</code>. Please also note that when calling this method again all previous custom headers are removed unless they are specified again in the <code>mCustomHeaders</code> parameter.
+To remove these headers, simply set the <code>mHeaders</code> parameter to <code>{}</code>. Note that when calling this method again, all previous custom headers are removed, unless they are specified again in the <code>mCustomHeaders</code> parameter.
 	* @param	mHeaders the header name/value map.
 	* @return	Void
 	*/
-	public function setHeaders( mHeaders:Dynamic):Void;
+	public function setHeaders( mHeaders:Map<String,String>):Void;
 }
 

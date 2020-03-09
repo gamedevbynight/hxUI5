@@ -17,7 +17,7 @@ You can add a visual separator between the preceding and succeeding {@link sap.m
 
 To add horizontal space between the <code>Toolbar</code> items, use the {@link sap.m.ToolbarSpacer}. You can define the width of the horizontal space or make it flexible to cover the remaining space between the <code>Toolbar</code> items (for example, to to push an item to the edge of the <code>Toolbar</code>.
 
-<b>Note:</b> {@link sap.m.ToolbarLayoutData} should not be used together with {@link sap.m.ToolbarSpacer}.
+<b>Note:</b> The {@link sap.m.ToolbarSpacer} is a flex control that is intended to control its own behavior, thus {@link sap.m.ToolbarLayoutData} is not supported as value for the <code>layoutData</code> aggregation of {@link sap.m.ToolbarSpacer} and if set it's ignored.
 */
 extern class Toolbar extends sap.ui.core.Control implements sap.ui.core.Toolbar implements sap.m.IBar
 {
@@ -74,7 +74,7 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.Control.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
-	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
+	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
@@ -141,7 +141,7 @@ Default value is <code>empty string</code>.
 	* Returns a metadata object for class sap.m.Toolbar.
 	* @return	Metadata object describing this class
 	*/
-	public static function getMetadata( ):sap.ui.base.Metadata;
+	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
 	* Gets current value of property {@link #getStyle style}.
