@@ -119,6 +119,18 @@ Additional controls to display when the Show more / See all / (...) button is pr
 	public function getMoreBlocks( ):Array<sap.ui.core.Control>;
 
 	/**
+	* Gets current value of property {@link #getShowTitle showTitle}.
+
+Determines whether to display the <code>SubSection</code> title or not.
+
+<b>Note:</b> If a subsection is the only one (or the only one visible) within a section, its title is displayed instead of the section title even if this property is set to <code>false</code>. To hide the title of a subsection which is the only one (or the only one visible), you need to set the <code>showTitle</code> properties to <code>false</code> for both the section and its subsection.
+
+Default value is <code>true</code>.
+	* @return	Value of property <code>showTitle</code>
+	*/
+	public function getShowTitle( ):Bool;
+
+	/**
 	* Gets current value of property {@link #getTitleUppercase titleUppercase}.
 
 Determines whether the Subsection title is displayed in upper case.
@@ -239,7 +251,22 @@ Default value is <code>Collapsed</code>.
 	* @param	sMode New value for property <code>mode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMode( sMode:sap.uxap.ObjectPageSubSectionMode):sap.uxap.ObjectPageSubSection;
+	public function setMode( ?sMode:sap.uxap.ObjectPageSubSectionMode):sap.uxap.ObjectPageSubSection;
+
+	/**
+	* Sets a new value for property {@link #getShowTitle showTitle}.
+
+Determines whether to display the <code>SubSection</code> title or not.
+
+<b>Note:</b> If a subsection is the only one (or the only one visible) within a section, its title is displayed instead of the section title even if this property is set to <code>false</code>. To hide the title of a subsection which is the only one (or the only one visible), you need to set the <code>showTitle</code> properties to <code>false</code> for both the section and its subsection.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bShowTitle New value for property <code>showTitle</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setShowTitle( ?bShowTitle:Bool):sap.uxap.ObjectPageSubSection;
 
 	/**
 	* Sets a new value for property {@link #getTitleUppercase titleUppercase}.
@@ -252,10 +279,17 @@ Default value is <code>false</code>.
 	* @param	bTitleUppercase New value for property <code>titleUppercase</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleUppercase( bTitleUppercase:Bool):sap.uxap.ObjectPageSubSection;
+	public function setTitleUppercase( ?bTitleUppercase:Bool):sap.uxap.ObjectPageSubSection;
 }
 
 typedef ObjectPageSubSectionArgs = sap.uxap.ObjectPageSectionBase.ObjectPageSectionBaseArgs & {
+
+	/**
+	* Determines whether to display the <code>SubSection</code> title or not.
+
+<b>Note:</b> If a subsection is the only one (or the only one visible) within a section, its title is displayed instead of the section title even if this property is set to <code>false</code>. To hide the title of a subsection which is the only one (or the only one visible), you need to set the <code>showTitle</code> properties to <code>false</code> for both the section and its subsection.
+	*/
+	@:optional var showTitle:haxe.extern.EitherType<String,Bool>;
 
 	/**
 	* A mode property that will be passed to the controls in the blocks and moreBlocks aggregations. Only relevant if these aggregations use Object page blocks.

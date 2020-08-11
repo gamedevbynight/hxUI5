@@ -78,6 +78,14 @@ Default value is <code>true</code>.
 	public function getHasExpander( ):Bool;
 
 	/**
+	* Gets current value of property {@link #getHref href}.
+
+Defines the link target URI. Supports standard hyperlink behavior. If a JavaScript action should be triggered, this should not be set, but instead an event handler for the <code>select</code> event should be registered.
+	* @return	Value of property <code>href</code>
+	*/
+	public function getHref( ):sap.ui.core.URI;
+
+	/**
 	* Gets current value of property {@link #getIcon icon}.
 
 Specifies the icon for the item.
@@ -100,6 +108,16 @@ The sub items.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+
+	/**
+	* Gets current value of property {@link #getTarget target}.
+
+Specifies the browsing context where the linked content will open.
+
+Options are the standard values for window.open() supported by browsers: <code>_self</code>, <code>_top</code>, <code>_blank</code>, <code>_parent</code>, <code>_search</code>. Alternatively, a frame name can be entered. This property is only used when the <code>href</code> property is set.
+	* @return	Value of property <code>target</code>
+	*/
+	public function getTarget( ):String;
 
 	/**
 	* Gets current value of property {@link #getVisible visible}.
@@ -154,7 +172,7 @@ Default value is <code>true</code>.
 	* @param	bExpanded New value for property <code>expanded</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExpanded( bExpanded:Bool):sap.tnt.NavigationListItem;
+	public function setExpanded( ?bExpanded:Bool):sap.tnt.NavigationListItem;
 
 	/**
 	* Sets a new value for property {@link #getHasExpander hasExpander}.
@@ -167,7 +185,18 @@ Default value is <code>true</code>.
 	* @param	bHasExpander New value for property <code>hasExpander</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHasExpander( bHasExpander:Bool):sap.tnt.NavigationListItem;
+	public function setHasExpander( ?bHasExpander:Bool):sap.tnt.NavigationListItem;
+
+	/**
+	* Sets a new value for property {@link #getHref href}.
+
+Defines the link target URI. Supports standard hyperlink behavior. If a JavaScript action should be triggered, this should not be set, but instead an event handler for the <code>select</code> event should be registered.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sHref New value for property <code>href</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setHref( sHref:sap.ui.core.URI):sap.tnt.NavigationListItem;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -177,10 +206,23 @@ Specifies the icon for the item.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon New value for property <code>icon</code>
+	* @param	sIcon= New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.tnt.NavigationListItem;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.tnt.NavigationListItem;
+
+	/**
+	* Sets a new value for property {@link #getTarget target}.
+
+Specifies the browsing context where the linked content will open.
+
+Options are the standard values for window.open() supported by browsers: <code>_self</code>, <code>_top</code>, <code>_blank</code>, <code>_parent</code>, <code>_search</code>. Alternatively, a frame name can be entered. This property is only used when the <code>href</code> property is set.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sTarget New value for property <code>target</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setTarget( sTarget:String):sap.tnt.NavigationListItem;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -193,7 +235,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.tnt.NavigationListItem;
+	public function setVisible( ?bVisible:Bool):sap.tnt.NavigationListItem;
 }
 
 typedef NavigationListItemArgs = sap.ui.core.Item.ItemArgs & {
@@ -217,6 +259,18 @@ typedef NavigationListItemArgs = sap.ui.core.Item.ItemArgs & {
 	* Specifies if the item should be shown.
 	*/
 	@:optional var visible:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Defines the link target URI. Supports standard hyperlink behavior. If a JavaScript action should be triggered, this should not be set, but instead an event handler for the <code>select</code> event should be registered.
+	*/
+	@:optional var href:haxe.extern.EitherType<String,sap.ui.core.URI>;
+
+	/**
+	* Specifies the browsing context where the linked content will open.
+
+Options are the standard values for window.open() supported by browsers: <code>_self</code>, <code>_top</code>, <code>_blank</code>, <code>_parent</code>, <code>_search</code>. Alternatively, a frame name can be entered. This property is only used when the <code>href</code> property is set.
+	*/
+	@:optional var target:String;
 
     /**
     * The sub items.

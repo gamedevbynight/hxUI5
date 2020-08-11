@@ -3,7 +3,7 @@ package sap.m;
 @:native("sap.m.ComboBox")
 
 /**
-* A drop-down list for selecting and filtering values. <h3>Overview</h3> The control represents a drop-down menu with a list of the available options and a text input field to narrow down the options. <h3>Structure</h3> The combo-box consists of the following elements: <ul> <li> Input field - displays the selected option or a custom user entry. Users can type to narrow down the list or enter their own value.</li> <li> Drop-down arrow - expands\collapses the option list.</li> <li> Option list - the list of available options.</li> </ul> By setting the <code>showSecondaryValues</code> property, the combo box can display an additional value for each option (if there is one). <b>Note:</b> The typeahead feature is not available on Android devices due to a OS specific issue. <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to select only one item in a long list of options (between 13 and 200) or your custom user input.</li> </ul> <h4>When not to use:</h4> <ul> <li>You need to select between only two options. Use a {@link sap.m.Switch switch} control instead.</li> <li>You need to select between up to 12 options. Use a {@link sap.m.Select select} control instead.</li> <li>You need to select between more than 200 options. Use a {@link sap.m.Input input} control with value help instead.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>The width of the option list adapts to its content. The minimum width is the input field plus the drop-down arrow.</li> <li>There is no horizontal scrolling in the option list. Entries in the list that are too long will be truncated.</li> <li>On phone devices the combo box option list opens a dialog.</li> </ul>
+* A drop-down list for selecting and filtering values. <h3>Overview</h3> The control represents a drop-down menu with a list of the available options and a text input field to narrow down the options. <h3>Structure</h3> The combo-box consists of the following elements: <ul> <li> Input field - displays the selected option or a custom user entry. Users can type to narrow down the list or enter their own value.</li> <li> Drop-down arrow - expands\collapses the option list.</li> <li> Option list - the list of available options.</li> </ul> By setting the <code>showSecondaryValues</code> property, the combo box can display an additional value for each option (if there is one). <b>Note:</b> The typeahead feature is not available on Android devices due to a OS specific issue. <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to select only one item in a long list of options (between 13 and 200) or your custom user input.</li> </ul> <h4>When not to use:</h4> <ul> <li>You need to select between only two options. Use a {@link sap.m.Switch switch} control instead.</li> <li>You need to select between up to 12 options. Use a {@link sap.m.Select select} control instead.</li> <li>You need to select between more than 200 options. Use a {@link sap.m.Input input} control with value help instead.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>As the <code>sap.m.ComboBox</code> control allows free text, as well as has <code>selectedKey</code> / <code>selectedItem</code> properties, here is brief explanation of how they are updated during model change:</li> <ul> <li>If the ComboBox has <code>selectedKey</code> and <code>selectedItem</code> set, the model changes and the item key is no longer amongst the newly added items, the value of the ComboBox will remain the same and the <code>selectedKey</code> and <code>selectedItem</code> properties <strong>will not</strong> be changed.</li> <li>If the ComboBox has <code>selectedKey</code> and <code>selectedItem</code> set, the model changes and the item key corresponds to newly added item, with different text, the value of the ComboBox <strong>will</strong> be updated with the text of the newly corresponding item.</li> <li>If the ComboBox has only value, but no <code>selectedKey</code> and <code>selectedItem</code> set, the model changes, the value <strong>will</strong> remain the same and the <code>selectedKey</code> and <code>selectedItem</code> properties <strong>will not</strong> be changed.</li> </ul> <li>The width of the option list adapts to its content. The minimum width is the input field plus the drop-down arrow.</li> <li>There is no horizontal scrolling in the option list. Entries in the list that are too long will be truncated.</li> <li>On phone devices the combo box option list opens a dialog.</li> </ul>
 */
 extern class ComboBox extends sap.m.ComboBoxBase
 {
@@ -44,12 +44,6 @@ This event is fired when the user types something that matches with an item in t
 	* @return	The cloned <code>sap.m.ComboBox</code> control.
 	*/
 	public function clone( sIdSuffix:String):sap.m.ComboBox;
-
-	/**
-	* Closes the control's picker popup and focus input field.
-	* @return	<code>this</code> to allow method chaining.
-	*/
-	public function close( ):sap.m.ComboBox;
 
 	/**
 	* Destroys all the items in the aggregation named <code>items</code>.
@@ -133,6 +127,13 @@ Default value is <code>empty string</code>.
 	public function getSelectedKey( ):String;
 
 	/**
+	* Called when the <code>ComboBox</code> is clicked or tapped.
+	* @param	oEvent The event object.
+	* @return	Void
+	*/
+	public function ontap( oEvent:jquery.Event):Void;
+
+	/**
 	* Removes all the controls in the aggregation named <code>items</code>. Additionally unregisters them from the hosting UIArea and clears the selection.
 	* @return	An array of the removed items (might be empty).
 	*/
@@ -158,7 +159,7 @@ Default value is <code>false</code>.
 	* @param	bFilterSecondaryValues New value for property <code>filterSecondaryValues</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFilterSecondaryValues( bFilterSecondaryValues:Bool):sap.m.ComboBox;
+	public function setFilterSecondaryValues( ?bFilterSecondaryValues:Bool):sap.m.ComboBox;
 	@:overload( function(vItem:String):sap.m.ComboBox{ })
 	@:overload( function(vItem:sap.ui.core.Item):sap.m.ComboBox{ })
 

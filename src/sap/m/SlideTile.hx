@@ -171,7 +171,7 @@ Default value is <code>5000</code>.
 	* @param	iDisplayTime New value for property <code>displayTime</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayTime( iDisplayTime:Int):sap.m.SlideTile;
+	public function setDisplayTime( ?iDisplayTime:Int):sap.m.SlideTile;
 
 	/**
 	* Sets a new value for property {@link #getScope scope}.
@@ -184,7 +184,7 @@ Default value is <code>Display</code>.
 	* @param	sScope New value for property <code>scope</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScope( sScope:sap.m.GenericTileScope):sap.m.SlideTile;
+	public function setScope( ?sScope:sap.m.GenericTileScope):sap.m.SlideTile;
 
 	/**
 	* Sets a new value for property {@link #getSizeBehavior sizeBehavior}.
@@ -197,7 +197,7 @@ Default value is <code>Responsive</code>.
 	* @param	sSizeBehavior New value for property <code>sizeBehavior</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSizeBehavior( sSizeBehavior:sap.m.TileSizeBehavior):sap.m.SlideTile;
+	public function setSizeBehavior( ?sSizeBehavior:sap.m.TileSizeBehavior):sap.m.SlideTile;
 
 	/**
 	* Sets a new value for property {@link #getTransitionTime transitionTime}.
@@ -210,7 +210,7 @@ Default value is <code>500</code>.
 	* @param	iTransitionTime New value for property <code>transitionTime</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTransitionTime( iTransitionTime:Int):sap.m.SlideTile;
+	public function setTransitionTime( ?iTransitionTime:Int):sap.m.SlideTile;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

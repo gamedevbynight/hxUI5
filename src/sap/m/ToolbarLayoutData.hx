@@ -92,7 +92,7 @@ Default value is <code>false</code>.
 	* @param	bShrinkable New value for property <code>shrinkable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShrinkable( bShrinkable:Bool):sap.m.ToolbarLayoutData;
+	public function setShrinkable( ?bShrinkable:Bool):sap.m.ToolbarLayoutData;
 }
 
 typedef ToolbarLayoutDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {

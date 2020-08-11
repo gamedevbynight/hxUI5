@@ -185,7 +185,7 @@ Default value is <code>BlockColumns</code>.
 	* @param	sFormAdjustment New value for property <code>formAdjustment</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFormAdjustment( sFormAdjustment:sap.uxap.BlockBaseFormAdjustment):sap.uxap.BlockBase;
+	public function setFormAdjustment( ?sFormAdjustment:sap.uxap.BlockBaseFormAdjustment):sap.uxap.BlockBase;
 
 	/**
 	* Set the view mode for this particular block.
@@ -215,13 +215,20 @@ Default value is <code>false</code>.
 	* @param	bShowSubSectionMore New value for property <code>showSubSectionMore</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSubSectionMore( bShowSubSectionMore:Bool):sap.uxap.BlockBase;
+	public function setShowSubSectionMore( ?bShowSubSectionMore:Bool):sap.uxap.BlockBase;
 
 	/**
-	* Setter for the visibility of the block.
-	* @return	Void
+	* Sets a new value for property {@link #getVisible visible}.
+
+Determines the visibility of the block.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bVisible New value for property <code>visible</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( ):Void;
+	public function setVisible( ?bVisible:Bool):sap.uxap.BlockBase;
 }
 
 typedef BlockBaseArgs = sap.ui.core.Control.ControlArgs & {

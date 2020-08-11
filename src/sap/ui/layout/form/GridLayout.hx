@@ -58,7 +58,7 @@ Default value is <code>false</code>.
 	* @param	bSingleColumn New value for property <code>singleColumn</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSingleColumn( bSingleColumn:Bool):sap.ui.layout.form.GridLayout;
+	public function setSingleColumn( ?bSingleColumn:Bool):sap.ui.layout.form.GridLayout;
 }
 
 typedef GridLayoutArgs = sap.ui.layout.form.FormLayout.FormLayoutArgs & {

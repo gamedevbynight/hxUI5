@@ -197,7 +197,7 @@ Default value is <code>3</code>.
 	* @param	iColumns New value for property <code>columns</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumns( iColumns:Int):sap.ui.unified.calendar.MonthPicker;
+	public function setColumns( ?iColumns:Int):sap.ui.unified.calendar.MonthPicker;
 
 	/**
 	* Sets a new value for property {@link #getIntervalSelection intervalSelection}.
@@ -210,7 +210,7 @@ Default value is <code>false</code>.
 	* @param	bIntervalSelection New value for property <code>intervalSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervalSelection( bIntervalSelection:Bool):sap.ui.unified.calendar.MonthPicker;
+	public function setIntervalSelection( ?bIntervalSelection:Bool):sap.ui.unified.calendar.MonthPicker;
 
 	/**
 	* sets a minimum and maximum month
@@ -231,7 +231,7 @@ Default value is <code>0</code>.
 	* @param	iMonth New value for property <code>month</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMonth( iMonth:Int):sap.ui.unified.calendar.MonthPicker;
+	public function setMonth( ?iMonth:Int):sap.ui.unified.calendar.MonthPicker;
 
 	/**
 	* Sets a new value for property {@link #getMonths months}.
@@ -244,7 +244,7 @@ Default value is <code>12</code>.
 	* @param	iMonths New value for property <code>months</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMonths( iMonths:Int):sap.ui.unified.calendar.MonthPicker;
+	public function setMonths( ?iMonths:Int):sap.ui.unified.calendar.MonthPicker;
 
 	/**
 	* Sets a new value for property {@link #getPrimaryCalendarType primaryCalendarType}.

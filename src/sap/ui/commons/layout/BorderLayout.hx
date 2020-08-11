@@ -246,7 +246,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.commons.layout.BorderLayout;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.layout.BorderLayout;
 
 	/**
 	* Sets the aggregated {@link #getTop top}.
@@ -266,7 +266,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.layout.BorderLayout;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.layout.BorderLayout;
 }
 
 typedef BorderLayoutArgs = sap.ui.core.Control.ControlArgs & {

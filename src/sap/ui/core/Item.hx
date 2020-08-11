@@ -76,7 +76,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.core.Item;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.core.Item;
 
 	/**
 	* Sets a new value for property {@link #getKey key}.
@@ -100,7 +100,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.core.Item;
+	public function setText( ?sText:String):sap.ui.core.Item;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -113,7 +113,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.ui.core.Item;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.ui.core.Item;
 }
 
 typedef ItemArgs = sap.ui.core.Element.ElementArgs & {

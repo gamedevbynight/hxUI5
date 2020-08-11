@@ -148,7 +148,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.commons.ResponsiveContainer;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.ResponsiveContainer;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -161,7 +161,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.ResponsiveContainer;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.ResponsiveContainer;
 }
 
 typedef ResponsiveContainerArgs = sap.ui.core.Control.ControlArgs & {

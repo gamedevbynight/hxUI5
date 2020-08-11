@@ -3,7 +3,7 @@ package sap.ui.core;
 @:native("sap.ui.core.Component")
 
 /**
-* Base Class for Component.
+* Base Class for Components. Components are independent and reusable parts of UI5 applications. They facilitate the encapsulation of closely related parts of an application, thus enabling developers to structure and maintain their applications more easily.
 */
 extern class Component extends sap.ui.base.ManagedObject
 {
@@ -12,6 +12,8 @@ extern class Component extends sap.ui.base.ManagedObject
 
 	/**
 	* Asynchronously creates a new component instance from the given configuration.
+
+If the component class does not already exists, the component class is loaded and afterwards the new component instance is created.
 
 To optimize the loading process, additional <code>asyncHints</code> can be provided. The structure of these hints and how they impact the loading of components is an internal feature of this API and reserved for UI5 internal use only. Code that wants to be safe wrt. version updates, should not use the <code>asyncHints</code> property.
 
@@ -77,6 +79,12 @@ The properties can also be defined in the descriptor. These properties can be ov
 	* @return	Component instance or <code>undefined</code> when no component with the given ID exists.
 	*/
 	public static function get( sId:String):sap.ui.core.Component;
+
+	/**
+	* Returns the list of active terminologies. See the {@link sap.ui.core.Component.create Component.create} factory API documentation for more detail.
+	* @return	List of active terminologies
+	*/
+	public function getActiveTerminologies( ):Dynamic;
 
 	/**
 	* Returns user specific data object

@@ -293,7 +293,7 @@ Default value is <code>[]</code>.
 	* Getter for custom appointments sorter (if any).
 	* @return	null
 	*/
-	public function getCustomAppointmentsSorterCallback( ):sap.m.planningcalendar.appointmentsSorterCallback;
+	public function getCustomAppointmentsSorterCallback( ):sap.m.PlanningCalendar.appointmentsSorterCallback;
 
 	/**
 	* Gets current value of property {@link #getGroupAppointmentsMode groupAppointmentsMode}.
@@ -682,7 +682,7 @@ Default value is <code>false</code>.
 	* @param	bAppointmentsReducedHeight New value for property <code>appointmentsReducedHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAppointmentsReducedHeight( bAppointmentsReducedHeight:Bool):sap.m.PlanningCalendar;
+	public function setAppointmentsReducedHeight( ?bAppointmentsReducedHeight:Bool):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getAppointmentsVisualization appointmentsVisualization}.
@@ -695,7 +695,7 @@ Default value is <code>Standard</code>.
 	* @param	sAppointmentsVisualization New value for property <code>appointmentsVisualization</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAppointmentsVisualization( sAppointmentsVisualization:sap.ui.unified.CalendarAppointmentVisualization):sap.m.PlanningCalendar;
+	public function setAppointmentsVisualization( ?sAppointmentsVisualization:sap.ui.unified.CalendarAppointmentVisualization):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getBuiltInViews builtInViews}.
@@ -712,14 +712,14 @@ Default value is <code>[]</code>.
 	* @param	sBuiltInViews New value for property <code>builtInViews</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBuiltInViews( sBuiltInViews:Array<String>):sap.m.PlanningCalendar;
+	public function setBuiltInViews( ?sBuiltInViews:Array<String>):sap.m.PlanningCalendar;
 
 	/**
 	* Setter for custom sorting of appointments. If not used, the appointments will be sorted according to their duration vertically. For example, the start time and order to the X axis won't change.
 	* @param	fnSorter null
 	* @return	<code>this</code> for chaining
 	*/
-	public function setCustomAppointmentsSorterCallback( fnSorter:sap.m.planningcalendar.appointmentsSorterCallback):sap.m.PlanningCalendar;
+	public function setCustomAppointmentsSorterCallback( fnSorter:sap.m.PlanningCalendar.appointmentsSorterCallback):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getGroupAppointmentsMode groupAppointmentsMode}.
@@ -734,7 +734,7 @@ Default value is <code>Collapsed</code>.
 	* @param	sGroupAppointmentsMode New value for property <code>groupAppointmentsMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGroupAppointmentsMode( sGroupAppointmentsMode:sap.ui.unified.GroupAppointmentsMode):sap.m.PlanningCalendar;
+	public function setGroupAppointmentsMode( ?sGroupAppointmentsMode:sap.ui.unified.GroupAppointmentsMode):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -803,7 +803,7 @@ Default value is <code>false</code>.
 	* @param	bShowDayNamesLine New value for property <code>showDayNamesLine</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowDayNamesLine( bShowDayNamesLine:Bool):sap.m.PlanningCalendar;
+	public function setShowDayNamesLine( ?bShowDayNamesLine:Bool):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getShowEmptyIntervalHeaders showEmptyIntervalHeaders}.
@@ -818,7 +818,7 @@ Default value is <code>true</code>.
 	* @param	bShowEmptyIntervalHeaders New value for property <code>showEmptyIntervalHeaders</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowEmptyIntervalHeaders( bShowEmptyIntervalHeaders:Bool):sap.m.PlanningCalendar;
+	public function setShowEmptyIntervalHeaders( ?bShowEmptyIntervalHeaders:Bool):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getShowIntervalHeaders showIntervalHeaders}.
@@ -833,7 +833,7 @@ Default value is <code>true</code>.
 	* @param	bShowIntervalHeaders New value for property <code>showIntervalHeaders</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowIntervalHeaders( bShowIntervalHeaders:Bool):sap.m.PlanningCalendar;
+	public function setShowIntervalHeaders( ?bShowIntervalHeaders:Bool):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getShowRowHeaders showRowHeaders}.
@@ -846,7 +846,7 @@ Default value is <code>true</code>.
 	* @param	bShowRowHeaders New value for property <code>showRowHeaders</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowRowHeaders( bShowRowHeaders:Bool):sap.m.PlanningCalendar;
+	public function setShowRowHeaders( ?bShowRowHeaders:Bool):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getShowWeekNumbers showWeekNumbers}.
@@ -859,7 +859,7 @@ Default value is <code>false</code>.
 	* @param	bShowWeekNumbers New value for property <code>showWeekNumbers</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowWeekNumbers( bShowWeekNumbers:Bool):sap.m.PlanningCalendar;
+	public function setShowWeekNumbers( ?bShowWeekNumbers:Bool):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getSingleSelection singleSelection}.
@@ -872,7 +872,7 @@ Default value is <code>true</code>.
 	* @param	bSingleSelection New value for property <code>singleSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSingleSelection( bSingleSelection:Bool):sap.m.PlanningCalendar;
+	public function setSingleSelection( ?bSingleSelection:Bool):sap.m.PlanningCalendar;
 
 	/**
 	* Sets the given date as start date. The current date is used as default. Depending on the current view the start date may be adjusted (for example, the week view shows always the first weekday of the same week as the given date).
@@ -901,7 +901,7 @@ Default value is <code>sap.ui.unified.CalendarIntervalType.Hour</code>.
 	* @param	sViewKey New value for property <code>viewKey</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setViewKey( sViewKey:String):sap.m.PlanningCalendar;
+	public function setViewKey( ?sViewKey:String):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

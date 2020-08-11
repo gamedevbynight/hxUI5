@@ -67,7 +67,7 @@ Default value is <code>true</code>.
 	* @param	bDisplayVisualSeparator New value for property <code>displayVisualSeparator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayVisualSeparator( bDisplayVisualSeparator:Bool):sap.ui.commons.ToolbarSeparator;
+	public function setDisplayVisualSeparator( ?bDisplayVisualSeparator:Bool):sap.ui.commons.ToolbarSeparator;
 }
 
 typedef ToolbarSeparatorArgs = sap.ui.core.Element.ElementArgs & {

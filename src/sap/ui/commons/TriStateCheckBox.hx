@@ -127,7 +127,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.commons.TriStateCheckBox;
+	public function setEditable( ?bEditable:Bool):sap.ui.commons.TriStateCheckBox;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -140,7 +140,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.TriStateCheckBox;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.TriStateCheckBox;
 
 	/**
 	* Sets a new value for property {@link #getSelectionState selectionState}.
@@ -153,7 +153,7 @@ Default value is <code>Unchecked</code>.
 	* @param	sSelectionState New value for property <code>selectionState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelectionState( sSelectionState:sap.ui.commons.TriStateCheckBoxState):sap.ui.commons.TriStateCheckBox;
+	public function setSelectionState( ?sSelectionState:sap.ui.commons.TriStateCheckBoxState):sap.ui.commons.TriStateCheckBox;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -177,7 +177,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.TriStateCheckBox;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.TriStateCheckBox;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -190,7 +190,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.ui.commons.TriStateCheckBox;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.ui.commons.TriStateCheckBox;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

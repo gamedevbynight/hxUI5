@@ -98,7 +98,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.SegmentedButtonItem;
+	public function setVisible( ?bVisible:Bool):sap.m.SegmentedButtonItem;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

@@ -285,7 +285,7 @@ Default value is <code>true</code>.
 	* @param	bDecorative New value for property <code>decorative</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDecorative( bDecorative:Bool):sap.ui.core.Icon;
+	public function setDecorative( ?bDecorative:Bool):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -335,7 +335,7 @@ Default value is <code>false</code>.
 	* @param	bNoTabStop New value for property <code>noTabStop</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNoTabStop( bNoTabStop:Bool):sap.ui.core.Icon;
+	public function setNoTabStop( ?bNoTabStop:Bool):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getSize size}.
@@ -370,7 +370,7 @@ Default value is <code>true</code>.
 	* @param	bUseIconTooltip New value for property <code>useIconTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUseIconTooltip( bUseIconTooltip:Bool):sap.ui.core.Icon;
+	public function setUseIconTooltip( ?bUseIconTooltip:Bool):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

@@ -150,7 +150,7 @@ Default value is <code>false</code>.
 	* @param	bDisplaySecondaryValues New value for property <code>displaySecondaryValues</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplaySecondaryValues( bDisplaySecondaryValues:Bool):sap.ui.commons.ComboBox;
+	public function setDisplaySecondaryValues( ?bDisplaySecondaryValues:Bool):sap.ui.commons.ComboBox;
 	@:overload( function(oListBox:sap.ui.core.ID):sap.ui.commons.ComboBox{ })
 
 	/**
@@ -171,7 +171,7 @@ Default value is <code>10</code>.
 	* @param	iMaxPopupItems New value for property <code>maxPopupItems</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxPopupItems( iMaxPopupItems:Int):sap.ui.commons.ComboBox;
+	public function setMaxPopupItems( ?iMaxPopupItems:Int):sap.ui.commons.ComboBox;
 
 	/**
 	* Sets a new value for property {@link #getSelectedItemId selectedItemId}.

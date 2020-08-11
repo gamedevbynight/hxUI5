@@ -685,6 +685,8 @@ Default value is <code>0</code>.
 
 Number of rows that are fix on the bottom. When you use a vertical scrollbar, only the rows which are not fixed, will scroll.
 
+This property is only supported if the <code>rows</code> aggregation is bound to a {@link sap.ui.model.ClientModel client model}.
+
 Default value is <code>0</code>.
 	* @return	Value of property <code>fixedBottomRowCount</code>
 	*/
@@ -706,6 +708,8 @@ Default value is <code>0</code>.
 	* Gets current value of property {@link #getFixedRowCount fixedRowCount}.
 
 Number of rows that are fix on the top. When you use a vertical scrollbar, only the rows which are not fixed, will scroll.
+
+This property is only supported if the <code>rows</code> aggregation is bound to a {@link sap.ui.model.ClientModel client model}.
 
 Default value is <code>0</code>.
 	* @return	Value of property <code>fixedRowCount</code>
@@ -1095,7 +1099,7 @@ Default value is <code>false</code>.
 	* @param	bAlternateRowColors New value for property <code>alternateRowColors</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAlternateRowColors( bAlternateRowColors:Bool):sap.ui.table.Table;
+	public function setAlternateRowColors( ?bAlternateRowColors:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getColumnHeaderHeight columnHeaderHeight}.
@@ -1121,7 +1125,7 @@ Default value is <code>true</code>.
 	* @param	bColumnHeaderVisible New value for property <code>columnHeaderVisible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnHeaderVisible( bColumnHeaderVisible:Bool):sap.ui.table.Table;
+	public function setColumnHeaderVisible( ?bColumnHeaderVisible:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets the aggregated {@link #getContextMenu contextMenu}.
@@ -1141,7 +1145,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.table.Table;
+	public function setEditable( ?bEditable:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getEnableBusyIndicator enableBusyIndicator}.
@@ -1154,7 +1158,7 @@ Default value is <code>false</code>.
 	* @param	bEnableBusyIndicator New value for property <code>enableBusyIndicator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableBusyIndicator( bEnableBusyIndicator:Bool):sap.ui.table.Table;
+	public function setEnableBusyIndicator( ?bEnableBusyIndicator:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getEnableCellFilter enableCellFilter}.
@@ -1167,7 +1171,7 @@ Default value is <code>false</code>.
 	* @param	bEnableCellFilter New value for property <code>enableCellFilter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableCellFilter( bEnableCellFilter:Bool):sap.ui.table.Table;
+	public function setEnableCellFilter( ?bEnableCellFilter:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getEnableColumnFreeze enableColumnFreeze}.
@@ -1180,7 +1184,7 @@ Default value is <code>false</code>.
 	* @param	bEnableColumnFreeze New value for property <code>enableColumnFreeze</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableColumnFreeze( bEnableColumnFreeze:Bool):sap.ui.table.Table;
+	public function setEnableColumnFreeze( ?bEnableColumnFreeze:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getEnableColumnReordering enableColumnReordering}.
@@ -1193,7 +1197,7 @@ Default value is <code>true</code>.
 	* @param	bEnableColumnReordering New value for property <code>enableColumnReordering</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableColumnReordering( bEnableColumnReordering:Bool):sap.ui.table.Table;
+	public function setEnableColumnReordering( ?bEnableColumnReordering:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getEnableCustomFilter enableCustomFilter}.
@@ -1206,7 +1210,7 @@ Default value is <code>false</code>.
 	* @param	bEnableCustomFilter New value for property <code>enableCustomFilter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableCustomFilter( bEnableCustomFilter:Bool):sap.ui.table.Table;
+	public function setEnableCustomFilter( ?bEnableCustomFilter:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getEnableGrouping enableGrouping}.
@@ -1221,7 +1225,7 @@ Default value is <code>false</code>.
 	* @param	bEnableGrouping New value for property <code>enableGrouping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableGrouping( bEnableGrouping:Bool):sap.ui.table.Table;
+	public function setEnableGrouping( ?bEnableGrouping:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getEnableSelectAll enableSelectAll}.
@@ -1234,7 +1238,7 @@ Default value is <code>true</code>.
 	* @param	bEnableSelectAll New value for property <code>enableSelectAll</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableSelectAll( bEnableSelectAll:Bool):sap.ui.table.Table;
+	public function setEnableSelectAll( ?bEnableSelectAll:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getFirstVisibleRow firstVisibleRow}.
@@ -1247,12 +1251,14 @@ Default value is <code>0</code>.
 	* @param	iFirstVisibleRow New value for property <code>firstVisibleRow</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFirstVisibleRow( iFirstVisibleRow:Int):sap.ui.table.Table;
+	public function setFirstVisibleRow( ?iFirstVisibleRow:Int):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getFixedBottomRowCount fixedBottomRowCount}.
 
 Number of rows that are fix on the bottom. When you use a vertical scrollbar, only the rows which are not fixed, will scroll.
+
+This property is only supported if the <code>rows</code> aggregation is bound to a {@link sap.ui.model.ClientModel client model}.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -1260,7 +1266,7 @@ Default value is <code>0</code>.
 	* @param	iFixedBottomRowCount New value for property <code>fixedBottomRowCount</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFixedBottomRowCount( iFixedBottomRowCount:Int):sap.ui.table.Table;
+	public function setFixedBottomRowCount( ?iFixedBottomRowCount:Int):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getFixedColumnCount fixedColumnCount}.
@@ -1275,12 +1281,14 @@ Default value is <code>0</code>.
 	* @param	iFixedColumnCount New value for property <code>fixedColumnCount</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFixedColumnCount( iFixedColumnCount:Int):sap.ui.table.Table;
+	public function setFixedColumnCount( ?iFixedColumnCount:Int):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getFixedRowCount fixedRowCount}.
 
 Number of rows that are fix on the top. When you use a vertical scrollbar, only the rows which are not fixed, will scroll.
+
+This property is only supported if the <code>rows</code> aggregation is bound to a {@link sap.ui.model.ClientModel client model}.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -1288,7 +1296,7 @@ Default value is <code>0</code>.
 	* @param	iFixedRowCount New value for property <code>fixedRowCount</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFixedRowCount( iFixedRowCount:Int):sap.ui.table.Table;
+	public function setFixedRowCount( ?iFixedRowCount:Int):sap.ui.table.Table;
 	@:overload( function(vFooter:sap.ui.core.Control):sap.ui.table.Table{ })
 
 	/**
@@ -1317,7 +1325,7 @@ Default value is <code>5</code>.
 	* @param	iMinAutoRowCount New value for property <code>minAutoRowCount</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinAutoRowCount( iMinAutoRowCount:Int):sap.ui.table.Table;
+	public function setMinAutoRowCount( ?iMinAutoRowCount:Int):sap.ui.table.Table;
 	@:overload( function(vNoData:sap.ui.core.Control):sap.ui.table.Table{ })
 
 	/**
@@ -1338,7 +1346,7 @@ Default value is <code>0</code>.
 	* @param	iRowActionCount New value for property <code>rowActionCount</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRowActionCount( iRowActionCount:Int):sap.ui.table.Table;
+	public function setRowActionCount( ?iRowActionCount:Int):sap.ui.table.Table;
 
 	/**
 	* Sets the aggregated {@link #getRowActionTemplate rowActionTemplate}.
@@ -1389,7 +1397,7 @@ Default value is <code>RowSelector</code>.
 	* @param	sSelectionBehavior New value for property <code>selectionBehavior</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelectionBehavior( sSelectionBehavior:sap.ui.table.SelectionBehavior):sap.ui.table.Table;
+	public function setSelectionBehavior( ?sSelectionBehavior:sap.ui.table.SelectionBehavior):sap.ui.table.Table;
 
 	/**
 	* Sets the given selection interval as selection. In case of a single selection, only <code>iIndexTo</code> is selected.
@@ -1417,7 +1425,7 @@ Default value is <code>false</code>.
 	* @param	bShowColumnVisibilityMenu New value for property <code>showColumnVisibilityMenu</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowColumnVisibilityMenu( bShowColumnVisibilityMenu:Bool):sap.ui.table.Table;
+	public function setShowColumnVisibilityMenu( ?bShowColumnVisibilityMenu:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getShowNoData showNoData}.
@@ -1430,7 +1438,7 @@ Default value is <code>true</code>.
 	* @param	bShowNoData New value for property <code>showNoData</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowNoData( bShowNoData:Bool):sap.ui.table.Table;
+	public function setShowNoData( ?bShowNoData:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getShowOverlay showOverlay}.
@@ -1443,7 +1451,7 @@ Default value is <code>false</code>.
 	* @param	bShowOverlay New value for property <code>showOverlay</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowOverlay( bShowOverlay:Bool):sap.ui.table.Table;
+	public function setShowOverlay( ?bShowOverlay:Bool):sap.ui.table.Table;
 
 	/**
 	* Sets the threshold value, which will be added to all data requests in case the Table is bound against an OData service.
@@ -1475,7 +1483,7 @@ Default value is <code>10</code>.
 	* @param	iVisibleRowCount New value for property <code>visibleRowCount</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleRowCount( iVisibleRowCount:Int):sap.ui.table.Table;
+	public function setVisibleRowCount( ?iVisibleRowCount:Int):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getVisibleRowCountMode visibleRowCountMode}.
@@ -1494,7 +1502,7 @@ Default value is <code>Fixed</code>.
 	* @param	sVisibleRowCountMode New value for property <code>visibleRowCountMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleRowCountMode( sVisibleRowCountMode:sap.ui.table.VisibleRowCountMode):sap.ui.table.Table;
+	public function setVisibleRowCountMode( ?sVisibleRowCountMode:sap.ui.table.VisibleRowCountMode):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -1507,7 +1515,7 @@ Default value is <code>auto</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.table.Table;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.table.Table;
 	@:overload( function(oColumn:sap.ui.table.Column, oSortOrder:sap.ui.table.SortOrder, bAdd:Bool):Void{ })
 
 	/**
@@ -1639,11 +1647,15 @@ In the <code>"Interactive"</code> mode, the table has as many rows as defined in
 
 	/**
 	* Number of rows that are fix on the top. When you use a vertical scrollbar, only the rows which are not fixed, will scroll.
+
+This property is only supported if the <code>rows</code> aggregation is bound to a {@link sap.ui.model.ClientModel client model}.
 	*/
 	@:optional var fixedRowCount:haxe.extern.EitherType<String,Int>;
 
 	/**
 	* Number of rows that are fix on the bottom. When you use a vertical scrollbar, only the rows which are not fixed, will scroll.
+
+This property is only supported if the <code>rows</code> aggregation is bound to a {@link sap.ui.model.ClientModel client model}.
 	*/
 	@:optional var fixedBottomRowCount:haxe.extern.EitherType<String,Int>;
 

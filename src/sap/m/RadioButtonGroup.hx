@@ -274,7 +274,7 @@ Default value is <code>1</code>.
 	* @param	iColumns New value for property <code>columns</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumns( iColumns:Int):sap.m.RadioButtonGroup;
+	public function setColumns( ?iColumns:Int):sap.m.RadioButtonGroup;
 
 	/**
 	* Sets the editable property of the RadioButtonGroup. Single buttons preserve the value of their editable property. If the group is set to editable=false the buttons are also displayed and function as read only. Non editable radio buttons can still obtain focus.
@@ -315,14 +315,20 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.RadioButtonGroup;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.RadioButtonGroup;
 
 	/**
-	* Sets ValueState of all radio buttons in the group.
-	* @param	sValueState The value state of the radio group - none, success, warning, error.
-	* @return	Pointer to the control instance for chaining.
+	* Sets a new value for property {@link #getValueState valueState}.
+
+The value state to be displayed for the radio button. Possible values are: sap.ui.core.ValueState.Error, sap.ui.core.ValueState.Warning, sap.ui.core.ValueState.Success and sap.ui.core.ValueState.None. Note: Setting this attribute to sap.ui.core.ValueState.Error when the accessibility feature is enabled, sets the value of the invalid property for the whole RadioButtonGroup to "true".
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>None</code>.
+	* @param	sValueState New value for property <code>valueState</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:String):sap.m.RadioButtonGroup;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.m.RadioButtonGroup;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

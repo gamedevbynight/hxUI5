@@ -76,7 +76,7 @@ Default value is <code>2</code>.
 	* @param	sColumnsL New value for property <code>columnsL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnsL( sColumnsL:sap.ui.layout.form.ColumnsL):sap.ui.layout.form.ColumnContainerData;
+	public function setColumnsL( ?sColumnsL:sap.ui.layout.form.ColumnsL):sap.ui.layout.form.ColumnContainerData;
 
 	/**
 	* Sets a new value for property {@link #getColumnsM columnsM}.
@@ -89,7 +89,7 @@ Default value is <code>1</code>.
 	* @param	sColumnsM New value for property <code>columnsM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnsM( sColumnsM:sap.ui.layout.form.ColumnsM):sap.ui.layout.form.ColumnContainerData;
+	public function setColumnsM( ?sColumnsM:sap.ui.layout.form.ColumnsM):sap.ui.layout.form.ColumnContainerData;
 
 	/**
 	* Sets a new value for property {@link #getColumnsXL columnsXL}.
@@ -104,7 +104,7 @@ Default value is <code>2</code>.
 	* @param	sColumnsXL New value for property <code>columnsXL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnsXL( sColumnsXL:sap.ui.layout.form.ColumnsXL):sap.ui.layout.form.ColumnContainerData;
+	public function setColumnsXL( ?sColumnsXL:sap.ui.layout.form.ColumnsXL):sap.ui.layout.form.ColumnContainerData;
 }
 
 typedef ColumnContainerDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {

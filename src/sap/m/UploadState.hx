@@ -4,7 +4,7 @@ package sap.m;
 @:enum extern abstract UploadState(String)
 {
     /**
-    * The file has been uploaded successfuly.
+    * The file has been uploaded successfully.
     */
     var Complete= "Complete";
     /**

@@ -20,7 +20,7 @@ extern class Context extends sap.ui.model.Context
 As long as the promise is not yet resolved or rejected, the entity represented by this context is transient.
 
 Once the promise is resolved, {@link #getPath} returns a path including the key predicate of the new entity. This requires that all key properties are available.
-	* @return	A promise that is resolved without data when the entity represented by this context has been created in the backend. It is rejected with an <code>Error</code> instance where <code>oError.canceled === true</code> if the transient entity is deleted before it is created in the backend, for example via {@link sap.ui.model.odata.v4.Context#delete}, {@link sap.ui.model.odata.v4.ODataListBinding#resetChanges} or {@link sap.ui.model.odata.v4.ODataModel#resetChanges}. Returns <code>undefined</code> if the context has not been created using {@link sap.ui.model.odata.v4.ODataListBinding#create}.
+	* @return	A promise that is resolved without data when the entity represented by this context has been created in the backend. It is rejected with an <code>Error</code> instance where <code>oError.canceled === true</code> if the transient entity is deleted before it is created in the backend, for example via {@link sap.ui.model.odata.v4.Context#delete}, {@link sap.ui.model.odata.v4.ODataListBinding#resetChanges} or {@link sap.ui.model.odata.v4.ODataModel#resetChanges}. It is rejected with an <code>Error</code> instance without <code>oError.canceled</code> if loading of $metadata fails. Returns <code>undefined</code> if the context has not been created using {@link sap.ui.model.odata.v4.ODataListBinding#create}.
 	*/
 	public function created( ):js.lib.Promise<Context>;
 
@@ -38,6 +38,12 @@ The context must not be used anymore after successful deletion.
 	* @return	Void
 	*/
 	public function destroy( ):Void;
+
+	/**
+	* Expands the group node that this context points to.
+	* @return	Void
+	*/
+	public function expand( ):Void;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.odata.v4.Context with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -78,24 +84,30 @@ The context must not be used anymore after successful deletion.
 	* Returns the value for the given path relative to this context. The function allows access to the complete data the context points to (if <code>sPath</code> is "") or any part thereof. The data is a JSON structure as described in <a href="http://docs.oasis-open.org/odata/odata-json-format/v4.0/odata-json-format-v4.0.html"> "OData JSON Format Version 4.0"</a>. Note that the function clones the result. Modify values via {@link sap.ui.model.odata.v4.ODataPropertyBinding#setValue}.
 
 Returns <code>undefined</code> if the data is not (yet) available; no request is triggered. Use {@link #requestObject} for asynchronous access.
-	* @param	sPath A relative path within the JSON structure
+	* @param	sPath A path relative to this context
 	* @return	The requested value
 	*/
 	public function getObject( ?sPath:String):Dynamic;
 
 	/**
 	* Returns the property value for the given path relative to this context. The path is expected to point to a structural property with primitive type. Returns <code>undefined</code> if the data is not (yet) available; no request is triggered. Use {@link #requestProperty} for asynchronous access.
-	* @param	sPath A relative path within the JSON structure
+	* @param	sPath A path relative to this context
 	* @param	bExternalFormat If <code>true</code>, the value is returned in external format using a UI5 type for the given property path that formats corresponding to the property's EDM type and constraints. If the type is not yet available, <code>undefined</code> is returned.
 	* @return	The requested property value
 	*/
 	public function getProperty( sPath:String, ?bExternalFormat:Bool):Dynamic;
 
 	/**
-	* Returns whether there are pending changes for bindings dependent on this context, or for unresolved bindings which were dependent on this context at the time the pending change was created. This includes the context itself being transient (see {@link #isTransient}).
+	* Returns whether there are pending changes for bindings dependent on this context, or for unresolved bindings (see {@link sap.ui.model.Binding#isResolved}) which were dependent on this context at the time the pending change was created. This includes the context itself being transient (see {@link #isTransient}).
 	* @return	Whether there are pending changes
 	*/
 	public function hasPendingChanges( ):Bool;
+
+	/**
+	* Tells whether the group node that this context points to is expanded.
+	* @return	Whether the group node that this context points to is expanded, or <code>undefined</code> if the node is not expandable
+	*/
+	public function isExpanded( ):Dynamic;
 
 	/**
 	* For a context created using {@link sap.ui.model.odata.v4.ODataListBinding#create}, the method returns <code>true</code> if the context is transient, meaning that the promise returned by {@link #created} is not yet resolved or rejected, and returns <code>false</code> if the context is not transient. The result of this function can also be accessed via instance annotation "@$ui5.context.isTransient" at the entity.
@@ -121,14 +133,14 @@ Returns <code>undefined</code> if the data is not (yet) available; no request is
 	* Returns a promise on the value for the given path relative to this context. The function allows access to the complete data the context points to (if <code>sPath</code> is "") or any part thereof. The data is a JSON structure as described in <a href="http://docs.oasis-open.org/odata/odata-json-format/v4.0/odata-json-format-v4.0.html"> "OData JSON Format Version 4.0"</a>. Note that the function clones the result. Modify values via {@link sap.ui.model.odata.v4.Context#setProperty}.
 
 If you want {@link #requestObject} to read fresh data, call {@link #refresh} first.
-	* @param	sPath A relative path within the JSON structure
+	* @param	sPath A path relative to this context
 	* @return	A promise on the requested value
 	*/
 	public function requestObject( ?sPath:String):js.lib.Promise<Context>;
 
 	/**
 	* Returns a promise on the property value for the given path relative to this context. The path is expected to point to a structural property with primitive type.
-	* @param	sPath A relative path within the JSON structure
+	* @param	sPath A path relative to this context
 	* @param	bExternalFormat If <code>true</code>, the value is returned in external format using a UI5 type for the given property path that formats corresponding to the property's EDM type and constraints.
 	* @return	A promise on the requested value; it is rejected if the value is not primitive
 	*/
@@ -144,7 +156,7 @@ By default, the request uses the update group ID for this context's binding; thi
 All failed updates or creates for the group ID are repeated within the same batch request. If the group ID has submit mode {@link sap.ui.model.odata.v4.SubmitMode.Auto} and there are currently running updates or creates this method first waits for them to be processed.
 
 The events 'dataRequested' and 'dataReceived' are not fired. Whatever should happen in the event handler attached to... <ul> <li>'dataRequested', can instead be done before calling {@link #requestSideEffects}.</li> <li>'dataReceived', can instead be done once the <code>oPromise</code> returned by {@link #requestSideEffects} fulfills or rejects (using <code>oPromise.then(function () {...}, function () {...})</code>).</li> </ul>
-	* @param	aPathExpressions The "14.5.11 Expression edm:NavigationPropertyPath" or "14.5.13 Expression edm:PropertyPath" objects describing which properties need to be loaded because they may have changed due to side effects of a previous update, for example <code>[{$PropertyPath : "TEAM_ID"}, {$NavigationPropertyPath : "EMPLOYEE_2_MANAGER"}, {$PropertyPath : "EMPLOYEE_2_TEAM/Team_Id"}]</code>
+	* @param	aPathExpressions The "14.5.11 Expression edm:NavigationPropertyPath" or "14.5.13 Expression edm:PropertyPath" objects describing which properties need to be loaded because they may have changed due to side effects of a previous update, for example <code>[{$PropertyPath : "TEAM_ID"}, {$NavigationPropertyPath : "EMPLOYEE_2_MANAGER"}, {$PropertyPath : "EMPLOYEE_2_TEAM/Team_Id"}]</code>. An empty navigation property path means that the whole entity may have changed, including its navigation properties. Since 1.75, a property path may end with a "*" segment to indicate that all structural properties may have changed, but no navigation properties (unless listed explicitly), for example <code>[{$PropertyPath : "*"}, {$NavigationPropertyPath : "EMPLOYEE_2_MANAGER"}]</code> or <code>[{$PropertyPath : "EMPLOYEE_2_MANAGER/*"}]</code>.
 	* @param	sGroupId The group ID to be used (since 1.69.0); if not specified, the update group ID for the context's binding is used, see "$$updateGroupId" at {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}. If a different group ID is specified, make sure that {@link #requestSideEffects} is called after the corresponding updates have been successfully processed by the server and that there are no pending changes for the affected properties.
 	* @return	Promise resolved with <code>undefined</code>, or rejected with an error if loading of side effects fails. Use it to set fields affected by side effects to read-only before {@link #requestSideEffects} and make them editable again when the promise resolves; in the error handler, you can repeat the loading of side effects.
 	*/
@@ -152,7 +164,7 @@ The events 'dataRequested' and 'dataReceived' are not fired. Whatever should hap
 
 	/**
 	* Sets a new value for the property identified by the given path. The path is relative to this context and is expected to point to a structural property with primitive type.
-	* @param	sPath A relative path within the JSON structure
+	* @param	sPath A path relative to this context
 	* @param	vValue The new value which must be primitive
 	* @param	sGroupId The group ID to be used for the PATCH request; if not specified, the update group ID for the context's binding is used, see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}. Since 1.74, you can use <code>null</code> to prevent the PATCH request.
 	* @return	A promise which is resolved without a result in case of success, or rejected with an instance of <code>Error</code> in case of failure

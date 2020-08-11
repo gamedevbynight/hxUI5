@@ -151,7 +151,7 @@ Default value is <code>Standard</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.ui.commons.TextViewDesign):sap.ui.commons.InPlaceEdit;
+	public function setDesign( ?sDesign:sap.ui.commons.TextViewDesign):sap.ui.commons.InPlaceEdit;
 	@:overload( function(oTooltip:String):sap.ui.commons.InPlaceEdit{ })
 
 	/**
@@ -176,7 +176,7 @@ Default value is <code>true</code>.
 	* @param	bUndoEnabled New value for property <code>undoEnabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUndoEnabled( bUndoEnabled:Bool):sap.ui.commons.InPlaceEdit;
+	public function setUndoEnabled( ?bUndoEnabled:Bool):sap.ui.commons.InPlaceEdit;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -189,7 +189,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.ui.commons.InPlaceEdit;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.ui.commons.InPlaceEdit;
 }
 
 typedef InPlaceEditArgs = sap.ui.core.Control.ControlArgs & {

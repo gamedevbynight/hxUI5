@@ -304,7 +304,7 @@ Default value is <code>empty string</code>.
 The profile avatar.
 	* @return	null
 	*/
-	public function getProfile( ):sap.f.Avatar;
+	public function getProfile( ):sap.m.Avatar;
 
 	/**
 	* Gets content of aggregation {@link #getSearchManager searchManager}.
@@ -436,10 +436,10 @@ Defines the URI to the home icon, such as company or product logo.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sHomeIcon New value for property <code>homeIcon</code>
+	* @param	sHomeIcon= New value for property <code>homeIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHomeIcon( sHomeIcon:sap.ui.core.URI):sap.f.ShellBar;
+	public function setHomeIcon( ?sHomeIcon:sap.ui.core.URI):sap.f.ShellBar;
 
 	/**
 	* Sets a new value for property {@link #getHomeIconTooltip homeIconTooltip}.
@@ -452,7 +452,7 @@ Default value is <code>empty string</code>.
 	* @param	sHomeIconTooltip New value for property <code>homeIconTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHomeIconTooltip( sHomeIconTooltip:String):sap.f.ShellBar;
+	public function setHomeIconTooltip( ?sHomeIconTooltip:String):sap.f.ShellBar;
 
 	/**
 	* Sets the aggregated {@link #getMenu menu}.
@@ -466,7 +466,7 @@ Default value is <code>empty string</code>.
 	* @param	oProfile The profile to set
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setProfile( oProfile:sap.f.Avatar):sap.f.ShellBar;
+	public function setProfile( oProfile:sap.m.Avatar):sap.f.ShellBar;
 
 	/**
 	* Sets the aggregated {@link #getSearchManager searchManager}.
@@ -486,7 +486,7 @@ Default value is <code>empty string</code>.
 	* @param	sSecondTitle New value for property <code>secondTitle</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSecondTitle( sSecondTitle:String):sap.f.ShellBar;
+	public function setSecondTitle( ?sSecondTitle:String):sap.f.ShellBar;
 
 	/**
 	* Sets a new value for property {@link #getShowCopilot showCopilot}.
@@ -499,7 +499,7 @@ Default value is <code>false</code>.
 	* @param	bShowCopilot New value for property <code>showCopilot</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowCopilot( bShowCopilot:Bool):sap.f.ShellBar;
+	public function setShowCopilot( ?bShowCopilot:Bool):sap.f.ShellBar;
 
 	/**
 	* Sets a new value for property {@link #getShowMenuButton showMenuButton}.
@@ -512,7 +512,7 @@ Default value is <code>false</code>.
 	* @param	bShowMenuButton New value for property <code>showMenuButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowMenuButton( bShowMenuButton:Bool):sap.f.ShellBar;
+	public function setShowMenuButton( ?bShowMenuButton:Bool):sap.f.ShellBar;
 
 	/**
 	* Sets a new value for property {@link #getShowNavButton showNavButton}.
@@ -525,7 +525,7 @@ Default value is <code>false</code>.
 	* @param	bShowNavButton New value for property <code>showNavButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowNavButton( bShowNavButton:Bool):sap.f.ShellBar;
+	public function setShowNavButton( ?bShowNavButton:Bool):sap.f.ShellBar;
 
 	/**
 	* Sets a new value for property {@link #getShowNotifications showNotifications}.
@@ -538,7 +538,7 @@ Default value is <code>false</code>.
 	* @param	bShowNotifications New value for property <code>showNotifications</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowNotifications( bShowNotifications:Bool):sap.f.ShellBar;
+	public function setShowNotifications( ?bShowNotifications:Bool):sap.f.ShellBar;
 
 	/**
 	* Sets a new value for property {@link #getShowProductSwitcher showProductSwitcher}.
@@ -551,7 +551,7 @@ Default value is <code>false</code>.
 	* @param	bShowProductSwitcher New value for property <code>showProductSwitcher</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowProductSwitcher( bShowProductSwitcher:Bool):sap.f.ShellBar;
+	public function setShowProductSwitcher( ?bShowProductSwitcher:Bool):sap.f.ShellBar;
 
 	/**
 	* Sets a new value for property {@link #getShowSearch showSearch}.
@@ -564,7 +564,7 @@ Default value is <code>false</code>.
 	* @param	bShowSearch New value for property <code>showSearch</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSearch( bShowSearch:Bool):sap.f.ShellBar;
+	public function setShowSearch( ?bShowSearch:Bool):sap.f.ShellBar;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -577,7 +577,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.f.ShellBar;
+	public function setTitle( ?sTitle:String):sap.f.ShellBar;
 }
 
 typedef ShellBarArgs = sap.ui.core.Control.ControlArgs & {
@@ -652,7 +652,7 @@ typedef ShellBarArgs = sap.ui.core.Control.ControlArgs & {
     /**
     * The profile avatar.
     */
-	@:optional var profile:haxe.extern.EitherType<String,sap.f.Avatar>;
+	@:optional var profile:haxe.extern.EitherType<String,sap.m.Avatar>;
 
     /**
     * Additional content to be displayed in the control.
@@ -665,6 +665,11 @@ typedef ShellBarArgs = sap.ui.core.Control.ControlArgs & {
     * Holds the internally created OverflowToolbar.
     */
 	@:optional var _overflowToolbar:haxe.extern.EitherType<String,sap.m.OverflowToolbar>;
+
+    /**
+    * Holds the internally created HBox with text content.
+    */
+	@:optional var _additionalBox:haxe.extern.EitherType<String,sap.m.HBox>;
 
 	/**
 	* Fired when the profile avatar is pressed.

@@ -40,7 +40,7 @@ extern class Popup extends sap.ui.base.ManagedObject
 	* @return	Object
 	*/
 	public function new( ?oContent:js.html.Element, ?bModal:Bool, ?bShadow:Bool, ?bAutoClose:Bool):Void;
-	@:overload( function(vSelectors:Array<String>):Void{ })
+	@:overload( function(vSelectors:Array<String>, ?bMarkAsSelectable:Bool):Void{ })
 
 	/**
 	* Adds a DOM query selector for determining additional external popup content.
@@ -49,9 +49,10 @@ When the browser focus is switched from the main popup content (which is set by 
 
 <ul> <li>Autoclose popup: whether the popup should be kept open</li> <li>Modal popup: whether the focus is allowed to be taken away</li> </ul>
 	* @param	vSelectors One query selector or an array of query selectors to be added
+	* @param	bMarkAsSelectable Whether the external content should be marked instantly as user selectable. If the external content which matches the given or default selector is added after a modal popup is opened, this parameter needs to be set to <code>true</code> to make the external content user selectable.
 	* @return	Void
 	*/
-	public static function addExternalContent( vSelectors:String):Void;
+	public static function addExternalContent( vSelectors:String, ?bMarkAsSelectable:Bool):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the static {@link #.blockLayerStateChange blockLayerStateChange} event.
@@ -92,7 +93,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* Closes the popup.
 
 If the Popup is already closed or in the process of closing, calling this method does nothing. If the Popup is in the process of being opened and closed with a duration of 0, calling this method does nothing. If the Popup is in the process of being opened and closed with an animation duration, the animation will be chained, but this functionality is dangerous, may lead to inconsistent behavior and is thus not recommended and may even be removed.
-	* @param	iDuration animation duration in milliseconds; default is the jQuery preset "fast". For iDuration == 0 the closing happens synchronously without animation.
+	* @param	iDuration Animation duration in milliseconds. For <code>iDuration</code> == 0 the closing happens synchronously without animation.
 	* @return	Void
 	*/
 	public function close( ?iDuration:Int):Void;
@@ -205,16 +206,28 @@ The passed function and listener object must match the ones used for event regis
 	* @return	whether the Popup is opened (or currently being opened or closed)
 	*/
 	public function isOpen( ):Bool;
-	@:overload( function(?iDuration:Int, ?my:sap.ui.core.popup.Dock, ?at:sap.ui.core.popup.Dock, ?of:String, ?offset:String, ?collision:String, ?followOf:Bool):Void{ })
-	@:overload( function(?iDuration:Int, ?my:sap.ui.core.popup.Dock, ?at:sap.ui.core.popup.Dock, ?of:sap.ui.core.Element, ?offset:String, ?collision:String, ?followOf:Bool):Void{ })
-	@:overload( function(?iDuration:Int, ?my:sap.ui.core.popup.Dock, ?at:sap.ui.core.popup.Dock, ?of:js.html.Element, ?offset:String, ?collision:String, ?followOf:Bool):Void{ })
-	@:overload( function(?iDuration:Int, ?my:sap.ui.core.popup.Dock, ?at:sap.ui.core.popup.Dock, ?of:Dynamic, ?offset:String, ?collision:String, ?followOf:Bool):Void{ })
+
+	/**
+	* Marks the external content as not user selectable
+	* @return	Void
+	*/
+	public static function markExternalContentAsNotSelectable( ):Void;
+
+	/**
+	* Marks the external content as user selectable
+	* @return	Void
+	*/
+	public static function markExternalContentAsSelectable( ):Void;
+	@:overload( function(?iDuration:Int, ?my:sap.ui.core.Popup.Dock, ?at:sap.ui.core.Popup.Dock, ?of:String, ?offset:String, ?collision:String, ?followOf:Bool):Void{ })
+	@:overload( function(?iDuration:Int, ?my:sap.ui.core.Popup.Dock, ?at:sap.ui.core.Popup.Dock, ?of:sap.ui.core.Element, ?offset:String, ?collision:String, ?followOf:Bool):Void{ })
+	@:overload( function(?iDuration:Int, ?my:sap.ui.core.Popup.Dock, ?at:sap.ui.core.Popup.Dock, ?of:js.html.Element, ?offset:String, ?collision:String, ?followOf:Bool):Void{ })
+	@:overload( function(?iDuration:Int, ?my:sap.ui.core.Popup.Dock, ?at:sap.ui.core.Popup.Dock, ?of:Dynamic, ?offset:String, ?collision:String, ?followOf:Bool):Void{ })
 
 	/**
 	* Opens the popup's content at the position either specified here or beforehand via {@link #setPosition}. Content must be capable of being positioned via "position:absolute;" All parameters are optional (open() may be called without any parameters). iDuration may just be omitted, but if any of "at", "of", "offset", "collision" is given, also the preceding positioning parameters ("my", at",...) must be given.
 
 If the Popup's OpenState is different from "CLOSED" (i.e. if the Popup is already open, opening or closing), the call is ignored.
-	* @param	iDuration animation duration in milliseconds; default is the jQuery preset "fast". For iDuration == 0 the opening happens synchronously without animation.
+	* @param	iDuration animation duration in milliseconds. For <code>iDuration</code> == 0 the opening happens synchronously without animation.
 	* @param	my the popup content's reference position for docking
 	* @param	at the "of" element's reference point for docking to
 	* @param	of specifies the reference element to which the given content should dock to
@@ -223,17 +236,18 @@ If the Popup's OpenState is different from "CLOSED" (i.e. if the Popup is alread
 	* @param	followOf defines whether the popup should follow the dock reference when the reference changes its position.
 	* @return	Void
 	*/
-	public function open( ?iDuration:Int, ?my:sap.ui.core.popup.Dock, ?at:sap.ui.core.popup.Dock, ?of:jquery.Event, ?offset:String, ?collision:String, ?followOf:Bool):Void;
-	@:overload( function(vSelectors:Array<String>):Void{ })
+	public function open( ?iDuration:Int, ?my:sap.ui.core.Popup.Dock, ?at:sap.ui.core.Popup.Dock, ?of:jquery.Event, ?offset:String, ?collision:String, ?followOf:Bool):Void;
+	@:overload( function(vSelectors:Array<String>, ?bMarkAsNotSelectable:Bool):Void{ })
 
 	/**
 	* Removes a DOM query selector which has been added by {@link sap.ui.core.Popup.addExternalContent}.
 
 The default query selector <code>[data-sap-ui-integration-popup-content]</code> can't be deleted.
 	* @param	vSelectors One query selector or an array of query selectors to be deleted
+	* @param	bMarkAsNotSelectable Whether the external content should be marked instantly as not user selectable. If the selector is removed while a modal popup is still open, this parameter needs to be set to <code>true</code> to make the external content not user selectable.
 	* @return	Void
 	*/
-	public static function removeExternalContent( vSelectors:String):Void;
+	public static function removeExternalContent( vSelectors:String, ?bMarkAsNotSelectable:Bool):Void;
 
 	/**
 	* Sets the animation functions to use for opening and closing the Popup. Any null value will be ignored and not change the respective animation function. When called, the animation functions receive three parameters: - the jQuery object wrapping the DomRef of the popup - the requested animation duration - a function that MUST be called once the animation has completed
@@ -259,12 +273,12 @@ The default query selector <code>[data-sap-ui-integration-popup-content]</code> 
 	public function setContent( oContent:js.html.Element):sap.ui.core.Popup;
 
 	/**
-	* Sets the durations for opening and closing animations. Null values and values < 0 are ignored. A duration of 0 means no animation. Default value is "fast" which is the jQuery constant for "200 ms".
+	* Sets the durations for opening and closing animations. Null values and values < 0 are ignored. A duration of 0 means no animation.
 	* @param	iOpenDuration in milliseconds
 	* @param	iCloseDuration in milliseconds
 	* @return	<code>this</code> to allow method chaining
 	*/
-	public function setDurations( iOpenDuration:Int, iCloseDuration:Int):sap.ui.core.Popup;
+	public function setDurations( ?iOpenDuration:Int, ?iCloseDuration:Int):sap.ui.core.Popup;
 	@:overload( function(aContent:Array<js.html.Element>):sap.ui.core.Popup{ })
 	@:overload( function(aContent:Array<sap.ui.core.Element>):sap.ui.core.Popup{ })
 
@@ -309,15 +323,15 @@ A popup with modal {@link #setModal} enabled allows the focus to be shifted into
 	* @return	<code>this</code> to allow method chaining
 	*/
 	public function setModal( bModal:Bool, ?sModalCSSClass:String):sap.ui.core.Popup;
-	@:overload( function(my:sap.ui.core.popup.Dock, at:sap.ui.core.popup.Dock, ?of:String, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
-	@:overload( function(my:sap.ui.core.popup.Dock, at:sap.ui.core.popup.Dock, ?of:sap.ui.core.Element, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
-	@:overload( function(my:sap.ui.core.popup.Dock, at:sap.ui.core.popup.Dock, ?of:js.html.Element, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
-	@:overload( function(my:sap.ui.core.popup.Dock, at:sap.ui.core.popup.Dock, ?of:Dynamic, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
-	@:overload( function(my:sap.ui.core.popup.Dock, at:sap.ui.core.popup.Dock, ?of:jquery.Event, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
-	@:overload( function(my:sap.ui.core.popup.Dock, at:Dynamic, ?of:String, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
-	@:overload( function(my:sap.ui.core.popup.Dock, at:Dynamic, ?of:sap.ui.core.Element, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
-	@:overload( function(my:sap.ui.core.popup.Dock, at:Dynamic, ?of:js.html.Element, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
-	@:overload( function(my:sap.ui.core.popup.Dock, at:Dynamic, ?of:Dynamic, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
+	@:overload( function(my:sap.ui.core.Popup.Dock, at:sap.ui.core.Popup.Dock, ?of:String, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
+	@:overload( function(my:sap.ui.core.Popup.Dock, at:sap.ui.core.Popup.Dock, ?of:sap.ui.core.Element, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
+	@:overload( function(my:sap.ui.core.Popup.Dock, at:sap.ui.core.Popup.Dock, ?of:js.html.Element, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
+	@:overload( function(my:sap.ui.core.Popup.Dock, at:sap.ui.core.Popup.Dock, ?of:Dynamic, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
+	@:overload( function(my:sap.ui.core.Popup.Dock, at:sap.ui.core.Popup.Dock, ?of:jquery.Event, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
+	@:overload( function(my:sap.ui.core.Popup.Dock, at:Dynamic, ?of:String, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
+	@:overload( function(my:sap.ui.core.Popup.Dock, at:Dynamic, ?of:sap.ui.core.Element, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
+	@:overload( function(my:sap.ui.core.Popup.Dock, at:Dynamic, ?of:js.html.Element, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
+	@:overload( function(my:sap.ui.core.Popup.Dock, at:Dynamic, ?of:Dynamic, ?offset:String, ?collision:String):sap.ui.core.Popup{ })
 
 	/**
 	* Sets the position of the Popup (if you refer to a Control as anchor then do not use the DOMRef of the control which might change after re-renderings). Optional parameters can only be omitted when all subsequent parameters are omitted as well.
@@ -328,7 +342,7 @@ A popup with modal {@link #setModal} enabled allows the focus to be shifted into
 	* @param	collision defines how the position of an element should be adjusted in case it overflows the window in some direction. The valid values that refer to jQuery-UI's position parameters are "flip", "fit" and "none".
 	* @return	<code>this</code> to allow method chaining
 	*/
-	public function setPosition( my:sap.ui.core.popup.Dock, at:Dynamic, ?of:jquery.Event, ?offset:String, ?collision:String):sap.ui.core.Popup;
+	public function setPosition( my:sap.ui.core.Popup.Dock, at:Dynamic, ?of:jquery.Event, ?offset:String, ?collision:String):sap.ui.core.Popup;
 
 	/**
 	* Determines whether the Popup should have a shadow (in supporting browsers). This also affects a currently open popup.

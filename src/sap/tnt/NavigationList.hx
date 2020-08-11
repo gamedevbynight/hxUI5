@@ -204,7 +204,7 @@ Default value is <code>true</code>.
 	* @param	bExpanded New value for property <code>expanded</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExpanded( bExpanded:Bool):sap.tnt.NavigationList;
+	public function setExpanded( ?bExpanded:Bool):sap.tnt.NavigationList;
 	@:overload( function(selectedItem:String):Dynamic{ })
 
 	/**

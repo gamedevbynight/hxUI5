@@ -123,7 +123,7 @@ Default value is <code>Full</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.m.GenericTagDesign):sap.m.GenericTag;
+	public function setDesign( ?sDesign:sap.m.GenericTagDesign):sap.m.GenericTag;
 
 	/**
 	* Sets the <code>status</code> property.
@@ -145,7 +145,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.GenericTag;
+	public function setText( ?sText:String):sap.m.GenericTag;
 
 	/**
 	* Sets the aggregated {@link #getValue value}.
@@ -167,7 +167,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.m.GenericTagValueState):sap.m.GenericTag;
+	public function setValueState( ?sValueState:sap.m.GenericTagValueState):sap.m.GenericTag;
 }
 
 typedef GenericTagArgs = sap.ui.core.Control.ControlArgs & {

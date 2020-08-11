@@ -18,10 +18,23 @@ extern class IconTabFilter extends sap.ui.core.Item implements sap.m.IconTab imp
 	public function addContent( oContent:sap.ui.core.Control):sap.m.IconTabFilter;
 
 	/**
+	* Adds some item to the aggregation {@link #getItems items}.
+	* @param	oItem The item to add; if empty, nothing is inserted
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function addItem( oItem:sap.m.IconTab):sap.m.IconTabFilter;
+
+	/**
 	* Destroys all the content in the aggregation {@link #getContent content}.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function destroyContent( ):sap.m.IconTabFilter;
+
+	/**
+	* Destroys all the items in the aggregation {@link #getItems items}.
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function destroyItems( ):sap.m.IconTabFilter;
 
 	/**
 	* Creates a new subclass of class sap.m.IconTabFilter with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -99,6 +112,14 @@ Default value is <code>true</code>.
 	public function getIconDensityAware( ):Bool;
 
 	/**
+	* Gets content of aggregation {@link #getItems items}.
+
+The sub items of this filter (optional).
+	* @return	null
+	*/
+	public function getItems( ):Array<sap.m.IconTab>;
+
+	/**
 	* Returns a metadata object for class sap.m.IconTabFilter.
 	* @return	Metadata object describing this class
 	*/
@@ -132,6 +153,13 @@ Default value is <code>true</code>.
 	public function indexOfContent( oContent:sap.ui.core.Control):Int;
 
 	/**
+	* Checks for the provided <code>sap.m.IconTab</code> in the aggregation {@link #getItems items}. and returns its index if found or -1 otherwise.
+	* @param	oItem The item whose index is looked for
+	* @return	The index of the provided control in the aggregation if found, or -1 otherwise
+	*/
+	public function indexOfItem( oItem:sap.m.IconTab):Int;
+
+	/**
 	* Inserts a content into the aggregation {@link #getContent content}.
 	* @param	oContent The content to insert; if empty, nothing is inserted
 	* @param	iIndex The <code>0</code>-based index the content should be inserted at; for a negative value of <code>iIndex</code>, the content is inserted at position 0; for a value greater than the current size of the aggregation, the content is inserted at the last position
@@ -140,12 +168,28 @@ Default value is <code>true</code>.
 	public function insertContent( oContent:sap.ui.core.Control, iIndex:Int):sap.m.IconTabFilter;
 
 	/**
+	* Inserts a item into the aggregation {@link #getItems items}.
+	* @param	oItem The item to insert; if empty, nothing is inserted
+	* @param	iIndex The <code>0</code>-based index the item should be inserted at; for a negative value of <code>iIndex</code>, the item is inserted at position 0; for a value greater than the current size of the aggregation, the item is inserted at the last position
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function insertItem( oItem:sap.m.IconTab, iIndex:Int):sap.m.IconTabFilter;
+
+	/**
 	* Removes all the controls from the aggregation {@link #getContent content}.
 
 Additionally, it unregisters them from the hosting UIArea.
 	* @return	An array of the removed elements (might be empty)
 	*/
 	public function removeAllContent( ):Array<sap.ui.core.Control>;
+
+	/**
+	* Removes all the controls from the aggregation {@link #getItems items}.
+
+Additionally, it unregisters them from the hosting UIArea.
+	* @return	An array of the removed elements (might be empty)
+	*/
+	public function removeAllItems( ):Array<sap.m.IconTab>;
 	@:overload( function(vContent:Int):sap.ui.core.Control{ })
 	@:overload( function(vContent:String):sap.ui.core.Control{ })
 
@@ -155,6 +199,15 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @return	The removed content or <code>null</code>
 	*/
 	public function removeContent( vContent:sap.ui.core.Control):sap.ui.core.Control;
+	@:overload( function(vItem:Int):sap.m.IconTab{ })
+	@:overload( function(vItem:String):sap.m.IconTab{ })
+
+	/**
+	* Removes a item from the aggregation {@link #getItems items}.
+	* @param	vItem The item to remove or its index or id
+	* @return	The removed item or <code>null</code>
+	*/
+	public function removeItem( vItem:sap.m.IconTab):sap.m.IconTab;
 
 	/**
 	* Sets a new value for property {@link #getCount count}.
@@ -167,7 +220,7 @@ Default value is <code>empty string</code>.
 	* @param	sCount New value for property <code>count</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCount( sCount:String):sap.m.IconTabFilter;
+	public function setCount( ?sCount:String):sap.m.IconTabFilter;
 
 	/**
 	* Sets a new value for property {@link #getDesign design}.
@@ -180,7 +233,7 @@ Default value is <code>Vertical</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.m.IconTabFilterDesign):sap.m.IconTabFilter;
+	public function setDesign( ?sDesign:sap.m.IconTabFilterDesign):sap.m.IconTabFilter;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -190,10 +243,10 @@ Specifies the icon to be displayed for the tab filter.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon New value for property <code>icon</code>
+	* @param	sIcon= New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.IconTabFilter;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.IconTabFilter;
 
 	/**
 	* Sets a new value for property {@link #getIconColor iconColor}.
@@ -208,7 +261,7 @@ Default value is <code>Default</code>.
 	* @param	sIconColor New value for property <code>iconColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconColor( sIconColor:sap.ui.core.IconColor):sap.m.IconTabFilter;
+	public function setIconColor( ?sIconColor:sap.ui.core.IconColor):sap.m.IconTabFilter;
 
 	/**
 	* Sets a new value for property {@link #getIconDensityAware iconDensityAware}.
@@ -223,7 +276,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.IconTabFilter;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.IconTabFilter;
 
 	/**
 	* Sets a new value for property {@link #getShowAll showAll}.
@@ -236,7 +289,7 @@ Default value is <code>false</code>.
 	* @param	bShowAll New value for property <code>showAll</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowAll( bShowAll:Bool):sap.m.IconTabFilter;
+	public function setShowAll( ?bShowAll:Bool):sap.m.IconTabFilter;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -249,7 +302,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.IconTabFilter;
+	public function setVisible( ?bVisible:Bool):sap.m.IconTabFilter;
 }
 
 typedef IconTabFilterArgs = sap.ui.core.Item.ItemArgs & {
@@ -299,4 +352,14 @@ If bandwidth is key for the application, set this value to false.
 If this content is set, it is displayed instead of the general content inside the IconTabBar.
     */
 	@:optional var content:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
+
+    /**
+    * The sub items of this filter (optional).
+    */
+	@:optional var items:Array<haxe.extern.EitherType<String,sap.m.IconTab>>;
+
+    /**
+    * The expand icon if there are sub filters
+    */
+	@:optional var _expandButton:haxe.extern.EitherType<String,sap.m.Button>;
 }

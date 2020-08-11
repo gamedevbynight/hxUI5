@@ -125,7 +125,7 @@ Default value is <code>4</code>.
 	* @param	iTruncateValueTo New value for property <code>truncateValueTo</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTruncateValueTo( iTruncateValueTo:Int):sap.m.FeedContent;
+	public function setTruncateValueTo( ?iTruncateValueTo:Int):sap.m.FeedContent;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.

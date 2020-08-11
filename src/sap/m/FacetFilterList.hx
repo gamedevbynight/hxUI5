@@ -41,6 +41,21 @@ Fired before the filter list is opened.
 	public function attachListOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:search search} event of this <code>sap.m.FacetFilterList</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.FacetFilterList</code> itself.
+
+Triggered after the Search button is pressed or by pressing Enter in search input field.
+
+The default filtering behavior of the control can be prevented by calling <code>sap.ui.base.Event.prototype.preventDefault</code> function in the <code>search</code> event handler function. Preventing the default behavior is useful in cases when items aggregation could be taking long time fetching from the OData model. As a result, no list items are loaded initially. If the default filtering behavior is prevented then filtering behavior has to be defined at application level inside the <code>search</code> event handler function.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.FacetFilterList</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachSearch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
+
+	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:listClose listClose} event of this <code>sap.m.FacetFilterList</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -59,6 +74,16 @@ The passed function and listener object must match the ones used for event regis
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachListOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
+
+	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:search search} event of this <code>sap.m.FacetFilterList</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachSearch( fnFunction:()->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
 
 	/**
 	* Creates a new subclass of class sap.m.FacetFilterList with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -206,7 +231,7 @@ Default value is <code>true</code>.
 	* @param	bActive New value for property <code>active</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActive( bActive:Bool):sap.m.FacetFilterList;
+	public function setActive( ?bActive:Bool):sap.m.FacetFilterList;
 
 	/**
 	* Sets a new value for property {@link #getAllCount allCount}.
@@ -230,7 +255,7 @@ Default value is <code>String</code>.
 	* @param	sDataType New value for property <code>dataType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDataType( sDataType:sap.m.FacetFilterListDataType):sap.m.FacetFilterList;
+	public function setDataType( ?sDataType:sap.m.FacetFilterListDataType):sap.m.FacetFilterList;
 
 	/**
 	* Sets a new value for property {@link #getEnableCaseInsensitiveSearch enableCaseInsensitiveSearch}.
@@ -243,7 +268,7 @@ Default value is <code>false</code>.
 	* @param	bEnableCaseInsensitiveSearch New value for property <code>enableCaseInsensitiveSearch</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableCaseInsensitiveSearch( bEnableCaseInsensitiveSearch:Bool):sap.m.FacetFilterList;
+	public function setEnableCaseInsensitiveSearch( ?bEnableCaseInsensitiveSearch:Bool):sap.m.FacetFilterList;
 
 	/**
 	* Sets a new value for property {@link #getKey key}.
@@ -274,7 +299,7 @@ Default value is <code>false</code>.
 	* @param	bRetainListSequence New value for property <code>retainListSequence</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRetainListSequence( bRetainListSequence:Bool):sap.m.FacetFilterList;
+	public function setRetainListSequence( ?bRetainListSequence:Bool):sap.m.FacetFilterList;
 
 	/**
 	* Used to pre-select FacetFilterItems, such as when restoring FacetFilterList selections from a variant. Keys are cached separately from the actual FacetFilterItems so that they remain even when the physical items are removed by filtering or sorting. If aKeys is <code>undefined</code>, <code>null</code>, or {} (empty object) then all keys are deleted. After this method completes, only those items with matching keys will be selected. All other items in the list will be deselected.
@@ -294,7 +319,7 @@ Default value is <code>-1</code>.
 	* @param	iSequence New value for property <code>sequence</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSequence( iSequence:Int):sap.m.FacetFilterList;
+	public function setSequence( ?iSequence:Int):sap.m.FacetFilterList;
 
 	/**
 	* Sets a new value for property {@link #getShowRemoveFacetIcon showRemoveFacetIcon}.
@@ -307,7 +332,7 @@ Default value is <code>true</code>.
 	* @param	bShowRemoveFacetIcon New value for property <code>showRemoveFacetIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowRemoveFacetIcon( bShowRemoveFacetIcon:Bool):sap.m.FacetFilterList;
+	public function setShowRemoveFacetIcon( ?bShowRemoveFacetIcon:Bool):sap.m.FacetFilterList;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -331,7 +356,7 @@ Default value is <code>false</code>.
 	* @param	bWordWrap New value for property <code>wordWrap</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWordWrap( bWordWrap:Bool):sap.m.FacetFilterList;
+	public function setWordWrap( ?bWordWrap:Bool):sap.m.FacetFilterList;
 }
 
 typedef FacetFilterListArgs = sap.m.List.ListArgs & {
@@ -397,4 +422,11 @@ typedef FacetFilterListArgs = sap.m.List.ListArgs & {
 	* Fired before the filter list is opened.
 	*/
 	@:optional var listOpen:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* Triggered after the Search button is pressed or by pressing Enter in search input field.
+
+The default filtering behavior of the control can be prevented by calling <code>sap.ui.base.Event.prototype.preventDefault</code> function in the <code>search</code> event handler function. Preventing the default behavior is useful in cases when items aggregation could be taking long time fetching from the OData model. As a result, no list items are loaded initially. If the default filtering behavior is prevented then filtering behavior has to be defined at application level inside the <code>search</code> event handler function.
+	*/
+	@:optional var search:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

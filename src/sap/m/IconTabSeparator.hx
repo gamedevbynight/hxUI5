@@ -67,10 +67,10 @@ The icon to display for this separator. If no icon is given, a separator line is
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon New value for property <code>icon</code>
+	* @param	sIcon= New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.IconTabSeparator;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.IconTabSeparator;
 
 	/**
 	* Sets a new value for property {@link #getIconDensityAware iconDensityAware}.
@@ -85,7 +85,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.IconTabSeparator;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.IconTabSeparator;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -98,7 +98,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.IconTabSeparator;
+	public function setVisible( ?bVisible:Bool):sap.m.IconTabSeparator;
 }
 
 typedef IconTabSeparatorArgs = sap.ui.core.Element.ElementArgs & {

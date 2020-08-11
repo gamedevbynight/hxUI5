@@ -140,10 +140,10 @@ Additionally, it unregisters them from the hosting UIArea.
 	* Scrolls to the given position. When called while the control is not rendered (yet), the scrolling position is still applied, but there is no animation.
 	* @param	x The horizontal pixel position to scroll to. Scrolling to the right happens with positive values. In right-to-left mode scrolling starts at the right side and higher values scroll to the left. If only vertical scrolling is enabled, give 0 as value.
 	* @param	y The vertical pixel position to scroll to. Scrolling down happens with positive values. If only horizontal scrolling is enabled, give 0 as value.
-	* @param	time The duration of animated scrolling. To scroll immediately without animation, give 0 as value. 0 is also the default value, when this optional parameter is omitted.
+	* @param	time The duration of animated scrolling in milliseconds. The value <code>0</code> results in immediate scrolling without animation.
 	* @return	<code>this</code> to facilitate method chaining
 	*/
-	public function scrollTo( x:Int, y:Int, time:Int):sap.m.ScrollContainer;
+	public function scrollTo( x:Int, y:Int, ?time:Int):sap.m.ScrollContainer;
 	@:overload( function(element:js.html.HtmlElement, ?time:Int):sap.m.ScrollContainer{ })
 
 	/**
@@ -167,7 +167,7 @@ Default value is <code>false</code>.
 	* @param	bFocusable New value for property <code>focusable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFocusable( bFocusable:Bool):sap.m.ScrollContainer;
+	public function setFocusable( ?bFocusable:Bool):sap.m.ScrollContainer;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -182,7 +182,7 @@ Default value is <code>auto</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.ScrollContainer;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.ScrollContainer;
 
 	/**
 	* Sets a new value for property {@link #getHorizontal horizontal}.
@@ -195,7 +195,7 @@ Default value is <code>true</code>.
 	* @param	bHorizontal New value for property <code>horizontal</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHorizontal( bHorizontal:Bool):sap.m.ScrollContainer;
+	public function setHorizontal( ?bHorizontal:Bool):sap.m.ScrollContainer;
 
 	/**
 	* Sets a new value for property {@link #getVertical vertical}.
@@ -210,7 +210,7 @@ Default value is <code>false</code>.
 	* @param	bVertical New value for property <code>vertical</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVertical( bVertical:Bool):sap.m.ScrollContainer;
+	public function setVertical( ?bVertical:Bool):sap.m.ScrollContainer;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -223,7 +223,7 @@ Default value is <code>auto</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.ScrollContainer;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.ScrollContainer;
 }
 
 typedef ScrollContainerArgs = sap.ui.core.Control.ControlArgs & {

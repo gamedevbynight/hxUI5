@@ -17,14 +17,14 @@ extern class ODataAnnotations extends sap.ui.base.EventProvider
 	public function new( ?oMetadata:sap.ui.model.odata.ODataMetadata, ?mOptions:Dynamic):Void;
 	@:overload( function(vSource:String):js.lib.Promise<ODataAnnotations>{ })
 	@:overload( function(vSource:Array<String>):js.lib.Promise<ODataAnnotations>{ })
-	@:overload( function(vSource:sap.ui.model.odata.v2.odataannotations.Source):js.lib.Promise<ODataAnnotations>{ })
+	@:overload( function(vSource:sap.ui.model.odata.v2.ODataAnnotations.Source):js.lib.Promise<ODataAnnotations>{ })
 
 	/**
 	* Adds one or several sources to the annotation loader. Sources will be loaded instantly but merged only after the previously added source has either been successfully merged or failed.
 	* @param	vSource One or several Annotation source or array of annotation sources; an annotation source is either a string containing a URL or an object of type {@link sap.ui.model.odata.v2.ODataAnnotations.Source}.
 	* @return	The promise to (load,) parse and merge the given source(s). The Promise resolves with an array of maps containing the properties <code>source</code> and <code>data</code>; see the parameters of the <code>success</code> event for more details. In case at least one source could not be (loaded,) parsed or merged, the promise fails with an array of objects containing Errors and/or Success objects.
 	*/
-	public function addSource( vSource:Array<sap.ui.model.odata.v2.odataannotations.Source>):js.lib.Promise<ODataAnnotations>;
+	public function addSource( vSource:Array<sap.ui.model.odata.v2.ODataAnnotations.Source>):js.lib.Promise<ODataAnnotations>;
 
 	/**
 	* Attaches the given callback to the <code>allFailed</code> event.

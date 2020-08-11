@@ -95,7 +95,7 @@ Default value is <code>false</code>.
 	* @param	bInResult New value for property <code>inResult</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInResult( bInResult:Bool):sap.ui.table.AnalyticalColumn;
+	public function setInResult( ?bInResult:Bool):sap.ui.table.AnalyticalColumn;
 
 	/**
 	* Sets a new value for property {@link #getLeadingProperty leadingProperty}.
@@ -119,7 +119,7 @@ Default value is <code>false</code>.
 	* @param	bShowIfGrouped New value for property <code>showIfGrouped</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowIfGrouped( bShowIfGrouped:Bool):sap.ui.table.AnalyticalColumn;
+	public function setShowIfGrouped( ?bShowIfGrouped:Bool):sap.ui.table.AnalyticalColumn;
 
 	/**
 	* Sets a new value for property {@link #getSummed summed}.
@@ -132,7 +132,7 @@ Default value is <code>false</code>.
 	* @param	bSummed New value for property <code>summed</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSummed( bSummed:Bool):sap.ui.table.AnalyticalColumn;
+	public function setSummed( ?bSummed:Bool):sap.ui.table.AnalyticalColumn;
 }
 
 typedef AnalyticalColumnArgs = sap.ui.table.Column.ColumnArgs & {

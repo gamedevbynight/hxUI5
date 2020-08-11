@@ -4,7 +4,7 @@ package sap.m;
 @:enum extern abstract FlexAlignItems(String)
 {
     /**
-    * If the flex item's inline axes are the same as the cross axis, this value is identical to "Start".
+    * If the flex item`s inline axes are the same as the cross axis, this value is identical to "Start".
 
 Otherwise, it participates in baseline alignment: all participating box items on the line are aligned such that their baselines align, and the item with the largest distance between its baseline and its cross-start margin edge is placed flush against the cross-start edge of the line.
     */

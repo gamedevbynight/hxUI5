@@ -93,7 +93,7 @@ Default value is <code>true</code>.
 	* @param	bAutoSave New value for property <code>autoSave</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAutoSave( bAutoSave:Bool):sap.ui.table.TablePersoController;
+	public function setAutoSave( ?bAutoSave:Bool):sap.ui.table.TablePersoController;
 
 	/**
 	* Sets a new value for property {@link #getCustomDataKey customDataKey}.
@@ -106,7 +106,7 @@ Default value is <code>persoKey</code>.
 	* @param	sCustomDataKey New value for property <code>customDataKey</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomDataKey( sCustomDataKey:String):sap.ui.table.TablePersoController;
+	public function setCustomDataKey( ?sCustomDataKey:String):sap.ui.table.TablePersoController;
 
 	/**
 	* Sets a new value for property {@link #getPersoService persoService}.

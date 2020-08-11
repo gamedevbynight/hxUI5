@@ -241,7 +241,7 @@ Default value is <code>auto</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.commons.Tree;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.Tree;
 
 	/**
 	* Sets a new value for property {@link #getMinWidth minWidth}.
@@ -265,7 +265,7 @@ Default value is <code>Legacy</code>.
 	* @param	sSelectionMode New value for property <code>selectionMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelectionMode( sSelectionMode:sap.ui.commons.TreeSelectionMode):sap.ui.commons.Tree;
+	public function setSelectionMode( ?sSelectionMode:sap.ui.commons.TreeSelectionMode):sap.ui.commons.Tree;
 
 	/**
 	* Sets a new value for property {@link #getShowHeader showHeader}.
@@ -278,7 +278,7 @@ Default value is <code>true</code>.
 	* @param	bShowHeader New value for property <code>showHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHeader( bShowHeader:Bool):sap.ui.commons.Tree;
+	public function setShowHeader( ?bShowHeader:Bool):sap.ui.commons.Tree;
 
 	/**
 	* Sets a new value for property {@link #getShowHeaderIcons showHeaderIcons}.
@@ -291,7 +291,7 @@ Default value is <code>true</code>.
 	* @param	bShowHeaderIcons New value for property <code>showHeaderIcons</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHeaderIcons( bShowHeaderIcons:Bool):sap.ui.commons.Tree;
+	public function setShowHeaderIcons( ?bShowHeaderIcons:Bool):sap.ui.commons.Tree;
 
 	/**
 	* Sets a new value for property {@link #getShowHorizontalScrollbar showHorizontalScrollbar}.
@@ -304,7 +304,7 @@ Default value is <code>false</code>.
 	* @param	bShowHorizontalScrollbar New value for property <code>showHorizontalScrollbar</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHorizontalScrollbar( bShowHorizontalScrollbar:Bool):sap.ui.commons.Tree;
+	public function setShowHorizontalScrollbar( ?bShowHorizontalScrollbar:Bool):sap.ui.commons.Tree;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -328,7 +328,7 @@ Default value is <code>auto</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.Tree;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.Tree;
 
 	/**
 	* Unbinds aggregation {@link #getNodes nodes} from model data.

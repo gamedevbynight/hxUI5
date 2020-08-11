@@ -191,7 +191,7 @@ Default value is <code>true</code>.
 	* @param	bAdaptiveFontSize New value for property <code>adaptiveFontSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAdaptiveFontSize( bAdaptiveFontSize:Bool):sap.m.NumericContent;
+	public function setAdaptiveFontSize( ?bAdaptiveFontSize:Bool):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getAnimateTextChange animateTextChange}.
@@ -204,7 +204,7 @@ Default value is <code>true</code>.
 	* @param	bAnimateTextChange New value for property <code>animateTextChange</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAnimateTextChange( bAnimateTextChange:Bool):sap.m.NumericContent;
+	public function setAnimateTextChange( ?bAnimateTextChange:Bool):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getFormatterValue formatterValue}.
@@ -217,7 +217,7 @@ Default value is <code>false</code>.
 	* @param	bFormatterValue New value for property <code>formatterValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFormatterValue( bFormatterValue:Bool):sap.m.NumericContent;
+	public function setFormatterValue( ?bFormatterValue:Bool):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -252,7 +252,7 @@ Default value is <code>None</code>.
 	* @param	sIndicator New value for property <code>indicator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIndicator( sIndicator:sap.m.DeviationIndicator):sap.m.NumericContent;
+	public function setIndicator( ?sIndicator:sap.m.DeviationIndicator):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getNullifyValue nullifyValue}.
@@ -265,7 +265,7 @@ Default value is <code>true</code>.
 	* @param	bNullifyValue New value for property <code>nullifyValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNullifyValue( bNullifyValue:Bool):sap.m.NumericContent;
+	public function setNullifyValue( ?bNullifyValue:Bool):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getScale scale}.
@@ -289,7 +289,7 @@ Default value is <code>Loaded</code>.
 	* @param	sState New value for property <code>state</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setState( sState:sap.m.LoadState):sap.m.NumericContent;
+	public function setState( ?sState:sap.m.LoadState):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getTruncateValueTo truncateValueTo}.
@@ -326,7 +326,7 @@ Default value is <code>Neutral</code>.
 	* @param	sValueColor New value for property <code>valueColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueColor( sValueColor:sap.m.ValueColor):sap.m.NumericContent;
+	public function setValueColor( ?sValueColor:sap.m.ValueColor):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -350,7 +350,7 @@ Default value is <code>true</code>.
 	* @param	bWithMargin New value for property <code>withMargin</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWithMargin( bWithMargin:Bool):sap.m.NumericContent;
+	public function setWithMargin( ?bWithMargin:Bool):sap.m.NumericContent;
 }
 
 typedef NumericContentArgs = sap.ui.core.Control.ControlArgs & {

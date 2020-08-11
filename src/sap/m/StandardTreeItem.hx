@@ -67,7 +67,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.StandardTreeItem;
+	public function setTitle( ?sTitle:String):sap.m.StandardTreeItem;
 }
 
 typedef StandardTreeItemArgs = sap.m.TreeItemBase.TreeItemBaseArgs & {

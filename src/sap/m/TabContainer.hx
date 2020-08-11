@@ -213,7 +213,7 @@ Default value is <code>List</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.PageBackgroundDesign):sap.m.TabContainer;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.PageBackgroundDesign):sap.m.TabContainer;
 	@:overload( function(oSelectedItem:sap.ui.core.ID):sap.m.TabContainer{ })
 
 	/**
@@ -234,7 +234,7 @@ Default value is <code>false</code>.
 	* @param	bShowAddNewButton New value for property <code>showAddNewButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowAddNewButton( bShowAddNewButton:Bool):sap.m.TabContainer;
+	public function setShowAddNewButton( ?bShowAddNewButton:Bool):sap.m.TabContainer;
 
 	/**
 	* Unbinds aggregation {@link #getItems items} from model data.

@@ -163,7 +163,7 @@ Default value is <code>Main</code>.
 	* @param	sContentRole New value for property <code>contentRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentRole( sContentRole:sap.ui.core.AccessibleLandmarkRole):sap.m.PageAccessibleLandmarkInfo;
+	public function setContentRole( ?sContentRole:sap.ui.core.AccessibleLandmarkRole):sap.m.PageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getFooterLabel footerLabel}.
@@ -191,7 +191,7 @@ Default value is <code>Region</code>.
 	* @param	sFooterRole New value for property <code>footerRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFooterRole( sFooterRole:sap.ui.core.AccessibleLandmarkRole):sap.m.PageAccessibleLandmarkInfo;
+	public function setFooterRole( ?sFooterRole:sap.ui.core.AccessibleLandmarkRole):sap.m.PageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getHeaderLabel headerLabel}.
@@ -219,7 +219,7 @@ Default value is <code>Region</code>.
 	* @param	sHeaderRole New value for property <code>headerRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderRole( sHeaderRole:sap.ui.core.AccessibleLandmarkRole):sap.m.PageAccessibleLandmarkInfo;
+	public function setHeaderRole( ?sHeaderRole:sap.ui.core.AccessibleLandmarkRole):sap.m.PageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getRootLabel rootLabel}.
@@ -247,7 +247,7 @@ Default value is <code>Region</code>.
 	* @param	sRootRole New value for property <code>rootRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRootRole( sRootRole:sap.ui.core.AccessibleLandmarkRole):sap.m.PageAccessibleLandmarkInfo;
+	public function setRootRole( ?sRootRole:sap.ui.core.AccessibleLandmarkRole):sap.m.PageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getSubHeaderLabel subHeaderLabel}.
@@ -275,7 +275,7 @@ Default value is <code>None</code>.
 	* @param	sSubHeaderRole New value for property <code>subHeaderRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSubHeaderRole( sSubHeaderRole:sap.ui.core.AccessibleLandmarkRole):sap.m.PageAccessibleLandmarkInfo;
+	public function setSubHeaderRole( ?sSubHeaderRole:sap.ui.core.AccessibleLandmarkRole):sap.m.PageAccessibleLandmarkInfo;
 }
 
 typedef PageAccessibleLandmarkInfoArgs = sap.ui.core.Element.ElementArgs & {

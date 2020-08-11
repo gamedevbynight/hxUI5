@@ -283,11 +283,11 @@ Default value is <code>100%</code>.
 
 This can be used for deep-linking when the user directly reached a drilldown detail page using a bookmark and then wants to navigate up in the drilldown hierarchy. Normally such a back navigation would not be possible because there is no previous page in the NavContainer's history stack.
 	* @param	pageId The ID of the control/page/screen which is inserted into the history stack. The respective control must be aggregated by the NavContainer, otherwise this will cause an error.
-	* @param	transitionName The type of the transition/animation which would have been used to navigate from the (inserted) previous page to the current page. When navigating back, the inverse animation will be applied. This parameter can be omitted; then the default is "slide" (horizontal movement from the right).
+	* @param	transitionName The type of the transition/animation which would have been used to navigate from the (inserted) previous page to the current page. When navigating back, the inverse animation will be applied. Options are "slide" (horizontal movement from the right), "baseSlide", "fade", "flip", and "show" and the names of any registered custom transitions.
 	* @param	data This optional object can carry any payload data which would have been given to the inserted previous page if the user would have done a normal forward navigation to it.
 	* @return	The <code>sap.m.NavContainer</code> instance
 	*/
-	public function insertPreviousPage( pageId:String, transitionName:String, data:Dynamic):sap.m.NavContainer;
+	public function insertPreviousPage( pageId:String, ?transitionName:String, data:Dynamic):sap.m.NavContainer;
 
 	/**
 	* Removes all the controls from the aggregation {@link #getPages pages}.
@@ -310,7 +310,7 @@ Default value is <code>true</code>.
 	* @param	bAutoFocus New value for property <code>autoFocus</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAutoFocus( bAutoFocus:Bool):sap.m.NavContainer;
+	public function setAutoFocus( ?bAutoFocus:Bool):sap.m.NavContainer;
 
 	/**
 	* Sets a new value for property {@link #getDefaultTransitionName defaultTransitionName}.
@@ -323,7 +323,7 @@ Default value is <code>slide</code>.
 	* @param	sDefaultTransitionName New value for property <code>defaultTransitionName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultTransitionName( sDefaultTransitionName:String):sap.m.NavContainer;
+	public function setDefaultTransitionName( ?sDefaultTransitionName:String):sap.m.NavContainer;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -336,7 +336,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.NavContainer;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.NavContainer;
 	@:overload( function(oInitialPage:sap.ui.core.ID):sap.m.NavContainer{ })
 
 	/**
@@ -357,7 +357,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.NavContainer;
+	public function setVisible( ?bVisible:Bool):sap.m.NavContainer;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -370,7 +370,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.NavContainer;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.NavContainer;
 
 	/**
 	* Navigates to the next page (with drill-down semantic) with the given (or default) animation. This creates a new history item inside the NavContainer and allows going back.
@@ -381,7 +381,7 @@ Available transitions currently include "slide" (default), "baseSlide", "fade", 
 
 Calling this navigation method triggers first the (cancelable) "navigate" event on the NavContainer, then the "beforeHide" pseudo event on the source page and "beforeFirstShow" (if applicable) and"beforeShow" on the target page. Later - after the transition has completed - the "afterShow" pseudo event is triggered on the target page and "afterHide" on the page which has been left. The given data object is available in the "beforeFirstShow", "beforeShow" and "afterShow" event object as "data" property.
 	* @param	pageId The screen to which drilldown should happen. The ID or the control itself can be given.
-	* @param	transitionName The type of the transition/animation to apply. This parameter can be omitted; then the default is "slide" (horizontal movement from the right). Other options are: "baseSlide", "fade", "flip", and "show" and the names of any registered custom transitions.
+	* @param	transitionName The type of the transition/animation to apply. Options are "slide" (horizontal movement from the right), "baseSlide", "fade", "flip", and "show" and the names of any registered custom transitions.
 
 None of the standard transitions is currently making use of any given transition parameters.
 	* @param	data Since version 1.7.1. This optional object can carry any payload data which should be made available to the target page. The "beforeShow" event on the target page will contain this data object as "data" property. Use case: in scenarios where the entity triggering the navigation can or should not directly initialize the target page, it can fill this object and the target page itself (or a listener on it) can take over the initialization, using the given data.
@@ -394,7 +394,7 @@ For a proper parameter order, the "data" parameter must be given when the "trans
 NOTE: it depends on the transition function how the object should be structured and which parameters are actually used to influence the transition. The "show", "slide", "baseSlide" and "fade" transitions do not use any parameter.
 	* @return	The <code>sap.m.NavContainer</code> instance
 	*/
-	public function to( pageId:String, transitionName:String, data:Dynamic, oTransitionParameters:Dynamic):sap.m.NavContainer;
+	public function to( pageId:String, ?transitionName:String, data:Dynamic, oTransitionParameters:Dynamic):sap.m.NavContainer;
 }
 
 typedef NavContainerArgs = sap.ui.core.Control.ControlArgs & {

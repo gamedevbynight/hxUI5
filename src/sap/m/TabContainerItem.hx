@@ -168,7 +168,7 @@ Default value is <code>empty string</code>.
 	* @param	sAdditionalText New value for property <code>additionalText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAdditionalText( sAdditionalText:String):sap.m.TabContainerItem;
+	public function setAdditionalText( ?sAdditionalText:String):sap.m.TabContainerItem;
 
 	/**
 	* Property setter for the icon
@@ -210,7 +210,7 @@ Default value is <code>false</code>.
 	* @param	bModified New value for property <code>modified</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setModified( bModified:Bool):sap.m.TabContainerItem;
+	public function setModified( ?bModified:Bool):sap.m.TabContainerItem;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -223,7 +223,7 @@ Default value is <code>empty string</code>.
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.m.TabContainerItem;
+	public function setName( ?sName:String):sap.m.TabContainerItem;
 	@:overload( function(sName:String, vValue:Bool, bSuppressInvalidation:Bool):sap.m.TabContainerItem{ })
 	@:overload( function(sName:String, vValue:String, bSuppressInvalidation:Bool):sap.m.TabContainerItem{ })
 

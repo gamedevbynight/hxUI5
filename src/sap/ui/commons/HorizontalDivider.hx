@@ -68,7 +68,7 @@ Default value is <code>Medium</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.commons.HorizontalDividerHeight):sap.ui.commons.HorizontalDivider;
+	public function setHeight( ?sHeight:sap.ui.commons.HorizontalDividerHeight):sap.ui.commons.HorizontalDivider;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -81,7 +81,7 @@ Default value is <code>Area</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.ui.commons.HorizontalDividerType):sap.ui.commons.HorizontalDivider;
+	public function setType( ?sType:sap.ui.commons.HorizontalDividerType):sap.ui.commons.HorizontalDivider;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -94,7 +94,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.HorizontalDivider;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.HorizontalDivider;
 }
 
 typedef HorizontalDividerArgs = sap.ui.core.Control.ControlArgs & {

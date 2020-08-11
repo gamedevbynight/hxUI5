@@ -129,7 +129,7 @@ Default value is <code>Inherit</code>.
 	* @param	sLabelTextDirection New value for property <code>labelTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabelTextDirection( sLabelTextDirection:sap.ui.core.TextDirection):sap.m.InputListItem;
+	public function setLabelTextDirection( ?sLabelTextDirection:sap.ui.core.TextDirection):sap.m.InputListItem;
 
 	/**
 	* Unbinds aggregation {@link #getContent content} from model data.

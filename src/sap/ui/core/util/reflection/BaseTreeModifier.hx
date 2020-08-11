@@ -45,7 +45,7 @@ extern class BaseTreeModifier
 	public static function bindProperty( vControl:js.html.Element, sPropertyName:String, vBindingInfos:Dynamic):Void;
 
 	/**
-	* Function determining the control targeted by the change. The function distinguishes between local IDs generated starting with 1.40 and the global IDs generated in previous versions.
+	* Function determining the control targeted by the change.
 	* @param	oSelector Target of a flexibility change
 	* @param	oAppComponent Application component
 	* @param	oView For XML processing only: XML node of the view
@@ -144,6 +144,14 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	* @return	Control type
 	*/
 	public static function getControlType( vControl:js.html.Element):String;
+	@:overload( function(vControl:sap.ui.base.ManagedObject):sap.ui.core.util.reflection.FlexDelegateInfo{ })
+
+	/**
+	* Gets the flexibility delegate information placed at a control.
+	* @param	vControl Control representation
+	* @return	Delegate information
+	*/
+	public static function getFlexDelegate( vControl:js.html.Element):sap.ui.core.util.reflection.FlexDelegateInfo;
 	@:overload( function(vControl:sap.ui.base.ManagedObject):String{ })
 
 	/**
@@ -202,7 +210,7 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	@:overload( function(vControl:js.html.Element, oAppComponent:sap.ui.core.Component, ?mAdditionalSelectorInformation:Dynamic):Dynamic{ })
 
 	/**
-	* Function for determining the selector that is used later to apply a change for a given control. The function distinguishes between local IDs generated starting with 1.40 and the global IDs generated in previous versions.
+	* Function for determining the selector that is used later to apply a change for a given control.
 	* @param	vControl Control or ID string for which the selector should be determined
 	* @param	oAppComponent Application component, needed only if <code>vControl</code> is a string or XML node
 	* @param	mAdditionalSelectorInformation Additional mapped data which is added to the selector
@@ -340,6 +348,15 @@ After an object has been destroyed, it can no longer be used! Applications shoul
 	* @return	Void
 	*/
 	public static function setVisible( vControl:js.html.Element, bVisible:Bool):Void;
+
+	/**
+	* Loads a fragment, processes the XML templating and turns the result into an array of nodes or controls. See {@link sap.ui.core.util.XMLPreprocessor#process}
+	* @param	sFragmentName XML fragment name (e.g. some.path.fragmentName)
+	* @param	mPreprocessorSettings Map/JSON object with initial property values, etc.
+	* @param	oView View for the fragment, only needed on JS side
+	* @return	Array with the nodes/instances of the controls of the fragment
+	*/
+	public static function templateControlFragment( sFragmentName:String, ?mPreprocessorSettings:Dynamic, oView:sap.ui.core.mvc.View):Dynamic;
 	@:overload( function(vControl:sap.ui.base.ManagedObject, sAggregationName:String):Void{ })
 
 	/**

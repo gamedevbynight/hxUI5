@@ -1114,7 +1114,7 @@ Default value is <code>false</code>.
 	* @param	bFitContent New value for property <code>fitContent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFitContent( bFitContent:Bool):sap.f.semantic.SemanticPage;
+	public function setFitContent( ?bFitContent:Bool):sap.f.semantic.SemanticPage;
 
 	/**
 	* Sets the aggregated {@link #getFlagAction flagAction}.
@@ -1152,7 +1152,7 @@ Default value is <code>true</code>.
 	* @param	bHeaderExpanded New value for property <code>headerExpanded</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderExpanded( bHeaderExpanded:Bool):sap.f.semantic.SemanticPage;
+	public function setHeaderExpanded( ?bHeaderExpanded:Bool):sap.f.semantic.SemanticPage;
 
 	/**
 	* Sets a new value for property {@link #getHeaderPinnable headerPinnable}.
@@ -1165,7 +1165,7 @@ Default value is <code>true</code>.
 	* @param	bHeaderPinnable New value for property <code>headerPinnable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderPinnable( bHeaderPinnable:Bool):sap.f.semantic.SemanticPage;
+	public function setHeaderPinnable( ?bHeaderPinnable:Bool):sap.f.semantic.SemanticPage;
 
 	/**
 	* Sets the aggregated {@link #getLandmarkInfo landmarkInfo}.
@@ -1210,7 +1210,7 @@ Default value is <code>false</code>.
 	* @param	bPreserveHeaderStateOnScroll New value for property <code>preserveHeaderStateOnScroll</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPreserveHeaderStateOnScroll( bPreserveHeaderStateOnScroll:Bool):sap.f.semantic.SemanticPage;
+	public function setPreserveHeaderStateOnScroll( ?bPreserveHeaderStateOnScroll:Bool):sap.f.semantic.SemanticPage;
 
 	/**
 	* Sets the aggregated {@link #getPrintAction printAction}.
@@ -1258,7 +1258,7 @@ Default value is <code>false</code>.
 	* @param	bShowFooter New value for property <code>showFooter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowFooter( bShowFooter:Bool):sap.f.semantic.SemanticPage;
+	public function setShowFooter( ?bShowFooter:Bool):sap.f.semantic.SemanticPage;
 
 	/**
 	* Sets a new value for property {@link #getTitleAreaShrinkRatio titleAreaShrinkRatio}.
@@ -1279,7 +1279,7 @@ Default value is <code>1:1.6:1.6</code>.
 	* @param	sTitleAreaShrinkRatio New value for property <code>titleAreaShrinkRatio</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleAreaShrinkRatio( sTitleAreaShrinkRatio:sap.f.DynamicPageTitleShrinkRatio):sap.f.semantic.SemanticPage;
+	public function setTitleAreaShrinkRatio( ?sTitleAreaShrinkRatio:sap.f.DynamicPageTitleShrinkRatio):sap.f.semantic.SemanticPage;
 
 	/**
 	* Sets the aggregated {@link #getTitleBreadcrumbs titleBreadcrumbs}.
@@ -1336,7 +1336,7 @@ Default value is <code>true</code>.
 	* @param	bToggleHeaderOnTitleClick New value for property <code>toggleHeaderOnTitleClick</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setToggleHeaderOnTitleClick( bToggleHeaderOnTitleClick:Bool):sap.f.semantic.SemanticPage;
+	public function setToggleHeaderOnTitleClick( ?bToggleHeaderOnTitleClick:Bool):sap.f.semantic.SemanticPage;
 }
 
 typedef SemanticPageArgs = sap.ui.core.Control.ControlArgs & {

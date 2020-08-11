@@ -120,7 +120,7 @@ Default value is <code>Auto</code>.
 	* @param	sLevel New value for property <code>level</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLevel( sLevel:sap.ui.core.TitleLevel):sap.m.Title;
+	public function setLevel( ?sLevel:sap.ui.core.TitleLevel):sap.m.Title;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -144,7 +144,7 @@ Default value is <code>Initial</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.Title;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.Title;
 	@:overload( function(vTitle:sap.m.Title):sap.m.Title{ })
 
 	/**
@@ -165,7 +165,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleStyle New value for property <code>titleStyle</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleStyle( sTitleStyle:sap.ui.core.TitleLevel):sap.m.Title;
+	public function setTitleStyle( ?sTitleStyle:sap.ui.core.TitleLevel):sap.m.Title;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -189,7 +189,7 @@ Default value is <code>false</code>.
 	* @param	bWrapping New value for property <code>wrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrapping( bWrapping:Bool):sap.m.Title;
+	public function setWrapping( ?bWrapping:Bool):sap.m.Title;
 
 	/**
 	* Sets a new value for property {@link #getWrappingType wrappingType}.
@@ -204,7 +204,7 @@ Default value is <code>Normal</code>.
 	* @param	sWrappingType New value for property <code>wrappingType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrappingType( sWrappingType:sap.m.WrappingType):sap.m.Title;
+	public function setWrappingType( ?sWrappingType:sap.m.WrappingType):sap.m.Title;
 }
 
 typedef TitleArgs = sap.ui.core.Control.ControlArgs & {

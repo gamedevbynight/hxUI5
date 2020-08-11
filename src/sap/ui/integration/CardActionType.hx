@@ -4,11 +4,15 @@ package sap.ui.integration;
 @:enum extern abstract CardActionType(String)
 {
     /**
+    * Used for custom actions
+    */
+    var Custom= "Custom";
+    /**
     * Used for navigation actions
     */
     var Navigation= "Navigation";
     /**
-    * Used for navigation actions
+    * Used for submit actions
     */
     var Submit= "Submit";
 }

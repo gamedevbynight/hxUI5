@@ -78,7 +78,7 @@ Default value is <code>1</code>.
 	* @param	iLSize New value for property <code>lSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLSize( iLSize:Int):sap.ui.layout.BlockLayoutCellData;
+	public function setLSize( ?iLSize:Int):sap.ui.layout.BlockLayoutCellData;
 
 	/**
 	* Sets a new value for property {@link #getMSize mSize}.
@@ -91,7 +91,7 @@ Default value is <code>1</code>.
 	* @param	iMSize New value for property <code>mSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMSize( iMSize:Int):sap.ui.layout.BlockLayoutCellData;
+	public function setMSize( ?iMSize:Int):sap.ui.layout.BlockLayoutCellData;
 
 	/**
 	* Sets width of the cell to all sizes if the width is specified.
@@ -111,7 +111,7 @@ Default value is <code>1</code>.
 	* @param	iSSize New value for property <code>sSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSSize( iSSize:Int):sap.ui.layout.BlockLayoutCellData;
+	public function setSSize( ?iSSize:Int):sap.ui.layout.BlockLayoutCellData;
 
 	/**
 	* Sets a new value for property {@link #getXlSize xlSize}.
@@ -124,7 +124,7 @@ Default value is <code>1</code>.
 	* @param	iXlSize New value for property <code>xlSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setXlSize( iXlSize:Int):sap.ui.layout.BlockLayoutCellData;
+	public function setXlSize( ?iXlSize:Int):sap.ui.layout.BlockLayoutCellData;
 }
 
 typedef BlockLayoutCellDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {

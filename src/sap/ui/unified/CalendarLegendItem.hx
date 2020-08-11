@@ -86,7 +86,7 @@ Default value is <code>None</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.ui.unified.CalendarDayType):sap.ui.unified.CalendarLegendItem;
+	public function setType( ?sType:sap.ui.unified.CalendarDayType):sap.ui.unified.CalendarLegendItem;
 }
 
 typedef CalendarLegendItemArgs = sap.ui.core.Element.ElementArgs & {

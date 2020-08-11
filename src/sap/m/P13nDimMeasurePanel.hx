@@ -209,7 +209,7 @@ Default value is <code>empty string</code>.
 	* @param	sChartTypeKey New value for property <code>chartTypeKey</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setChartTypeKey( sChartTypeKey:String):sap.m.P13nDimMeasurePanel;
+	public function setChartTypeKey( ?sChartTypeKey:String):sap.m.P13nDimMeasurePanel;
 
 	/**
 	* Unbinds aggregation {@link #getDimMeasureItems dimMeasureItems} from model data.

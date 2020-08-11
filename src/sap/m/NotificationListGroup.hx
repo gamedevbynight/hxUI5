@@ -166,7 +166,7 @@ Default value is <code>true</code>.
 	* @param	bAutoPriority New value for property <code>autoPriority</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAutoPriority( bAutoPriority:Bool):sap.m.NotificationListGroup;
+	public function setAutoPriority( ?bAutoPriority:Bool):sap.m.NotificationListGroup;
 
 	/**
 	* Sets a new value for property {@link #getCollapsed collapsed}.
@@ -179,7 +179,7 @@ Default value is <code>false</code>.
 	* @param	bCollapsed New value for property <code>collapsed</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCollapsed( bCollapsed:Bool):sap.m.NotificationListGroup;
+	public function setCollapsed( ?bCollapsed:Bool):sap.m.NotificationListGroup;
 
 	/**
 	* Sets a new value for property {@link #getEnableCollapseButtonWhenEmpty enableCollapseButtonWhenEmpty}.
@@ -192,7 +192,7 @@ Default value is <code>false</code>.
 	* @param	bEnableCollapseButtonWhenEmpty New value for property <code>enableCollapseButtonWhenEmpty</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableCollapseButtonWhenEmpty( bEnableCollapseButtonWhenEmpty:Bool):sap.m.NotificationListGroup;
+	public function setEnableCollapseButtonWhenEmpty( ?bEnableCollapseButtonWhenEmpty:Bool):sap.m.NotificationListGroup;
 
 	/**
 	* Sets a new value for property {@link #getShowEmptyGroup showEmptyGroup}.
@@ -205,7 +205,7 @@ Default value is <code>false</code>.
 	* @param	bShowEmptyGroup New value for property <code>showEmptyGroup</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowEmptyGroup( bShowEmptyGroup:Bool):sap.m.NotificationListGroup;
+	public function setShowEmptyGroup( ?bShowEmptyGroup:Bool):sap.m.NotificationListGroup;
 
 	/**
 	* Sets a new value for property {@link #getShowItemsCounter showItemsCounter}.
@@ -220,7 +220,7 @@ Default value is <code>true</code>.
 	* @param	bShowItemsCounter New value for property <code>showItemsCounter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowItemsCounter( bShowItemsCounter:Bool):sap.m.NotificationListGroup;
+	public function setShowItemsCounter( ?bShowItemsCounter:Bool):sap.m.NotificationListGroup;
 }
 
 typedef NotificationListGroupArgs = sap.m.NotificationListBase.NotificationListBaseArgs & {

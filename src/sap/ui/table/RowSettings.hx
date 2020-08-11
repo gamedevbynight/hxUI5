@@ -78,7 +78,7 @@ Default value is <code>None</code>.
 	* @param	sHighlight New value for property <code>highlight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHighlight( sHighlight:String):sap.ui.table.RowSettings;
+	public function setHighlight( ?sHighlight:String):sap.ui.table.RowSettings;
 
 	/**
 	* Sets a new value for property {@link #getHighlightText highlightText}.
@@ -91,7 +91,7 @@ Default value is <code>empty string</code>.
 	* @param	sHighlightText New value for property <code>highlightText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHighlightText( sHighlightText:String):sap.ui.table.RowSettings;
+	public function setHighlightText( ?sHighlightText:String):sap.ui.table.RowSettings;
 
 	/**
 	* Sets a new value for property {@link #getNavigated navigated}.
@@ -106,7 +106,7 @@ Default value is <code>false</code>.
 	* @param	bNavigated New value for property <code>navigated</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNavigated( bNavigated:Bool):sap.ui.table.RowSettings;
+	public function setNavigated( ?bNavigated:Bool):sap.ui.table.RowSettings;
 }
 
 typedef RowSettingsArgs = sap.ui.core.Element.ElementArgs & {

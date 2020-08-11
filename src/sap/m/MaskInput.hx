@@ -120,7 +120,7 @@ Default value is <code>_</code>.
 	* @param	sPlaceholderSymbol New value for property <code>placeholderSymbol</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholderSymbol( sPlaceholderSymbol:String):sap.m.MaskInput;
+	public function setPlaceholderSymbol( ?sPlaceholderSymbol:String):sap.m.MaskInput;
 }
 
 typedef MaskInputArgs = sap.m.InputBase.InputBaseArgs & {

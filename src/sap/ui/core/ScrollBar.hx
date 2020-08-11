@@ -166,7 +166,7 @@ Default value is <code>true</code>.
 	* @param	bVertical New value for property <code>vertical</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVertical( bVertical:Bool):sap.ui.core.ScrollBar;
+	public function setVertical( ?bVertical:Bool):sap.ui.core.ScrollBar;
 
 	/**
 	* Unbinds the mouse wheel scroll event of the control that has the scrollbar

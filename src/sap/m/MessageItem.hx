@@ -136,7 +136,7 @@ Default value is <code>false</code>.
 	* @param	bActiveTitle New value for property <code>activeTitle</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveTitle( bActiveTitle:Bool):sap.m.MessageItem;
+	public function setActiveTitle( ?bActiveTitle:Bool):sap.m.MessageItem;
 
 	/**
 	* Sets a new value for property {@link #getCounter counter}.
@@ -160,7 +160,7 @@ Default value is <code>empty string</code>.
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDescription( sDescription:String):sap.m.MessageItem;
+	public function setDescription( ?sDescription:String):sap.m.MessageItem;
 
 	/**
 	* Sets a new value for property {@link #getGroupName groupName}.
@@ -173,7 +173,7 @@ Default value is <code>empty string</code>.
 	* @param	sGroupName New value for property <code>groupName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGroupName( sGroupName:String):sap.m.MessageItem;
+	public function setGroupName( ?sGroupName:String):sap.m.MessageItem;
 
 	/**
 	* Sets the aggregated {@link #getLink link}.
@@ -204,7 +204,7 @@ Default value is <code>false</code>.
 	* @param	bMarkupDescription New value for property <code>markupDescription</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMarkupDescription( bMarkupDescription:Bool):sap.m.MessageItem;
+	public function setMarkupDescription( ?bMarkupDescription:Bool):sap.m.MessageItem;
 
 	/**
 	* Sets a new value for property {@link #getSubtitle subtitle}.
@@ -228,7 +228,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.MessageItem;
+	public function setTitle( ?sTitle:String):sap.m.MessageItem;
 
 	/**
 	* Sets type of the MessageItem. <b>Note:</b> if you set the type to None it will be handled and rendered as Information.

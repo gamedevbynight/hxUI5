@@ -16,9 +16,9 @@ extern class IconPool
 
 	/**
 	* Creates an instance of {@link sap.ui.core.Icon} if the given URI is an icon URI, otherwise the given constructor is called. The given URI is set to the src property of the control.
-	* @param	setting contains the properties which will be used to instantiate the returned control. It should contain at least a property named src. If it's given with a string type, it will be taken as the value of src property.
-	* @param	constructor the constructor function which is called when the given URI isn't an icon URI
-	* @return	either an instance of sap.ui.core.Icon or instance created by calling the given constructor
+	* @param	setting Contains the properties which will be used to instantiate the returned control. All properties of the associated constructor can be used. Unknown properties are ignored. It should contain at least a property named src. If it's given with a string type, it will be taken as the value of src property.
+	* @param	constructor The constructor function which is called when the given URI isn't an icon URI
+	* @return	Either an instance of sap.ui.core.Icon or instance created by calling the given constructor
 	*/
 	public static function createControlByURI( setting:Dynamic, constructor:()->Void):sap.ui.core.Control;
 
@@ -50,7 +50,7 @@ Instead of giving name and collection, a complete icon-URI can be provided as <c
 The returned info object has the following properties: <ul> <li><code>string: name</code> Name of the icon</li> <li><code>string: collection</code> Name of the collection that contains the icon or <code>undefined</code> in case of the default collection</li> <li><code>string: uri</code> Icon URI that identifies the icon</li> <li><code>string: fontFamily</code> CSS font family to use for this icon</li> <li><code>string: content</code> Character sequence that represents the icon in the icon font</li> <li><code>string: text</code> Alternative text describing the icon (optional, might be empty)</li> <li><code>boolean: suppressMirroring</code> Whether the icon needs no mirroring in right-to-left mode</li> </ul>
 	* @param	iconName Name of the icon, or a complete icon-URI with icon collection and icon name; must not be empty
 	* @param	collectionName Name of the icon collection; to access built-in icons, omit the collection name
-	* @param	loadingMode The approach for loading the icon info, if it is not already available: sync (default) - font metadata is loaded synchronously and the icon info is returned immediately async - a promise is returned that returns the icon info when the font metadata is loaded mixed - until the font metadata is loaded a promise is returned, afterwards the icon info
+	* @param	loadingMode The approach for loading the icon info, if it is not already available: sync - font metadata is loaded synchronously and the icon info is returned immediately async - a promise is returned that returns the icon info when the font metadata is loaded mixed - until the font metadata is loaded a promise is returned, afterwards the icon info
 	* @return	Info object or Promise for the icon depending on the loadingMode or <code>undefined</code> when the icon can't be found or no icon name was given.
 	*/
 	public static function getIconInfo( iconName:String, ?collectionName:String, ?loadingMode:String):Dynamic;

@@ -56,7 +56,7 @@ Default value is <code>json</code>.
 	* @param	sSuggestType New value for property <code>suggestType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSuggestType( sSuggestType:String):sap.ui.core.search.OpenSearchProvider;
+	public function setSuggestType( ?sSuggestType:String):sap.ui.core.search.OpenSearchProvider;
 
 	/**
 	* Sets a new value for property {@link #getSuggestUrl suggestUrl}.

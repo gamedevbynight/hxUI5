@@ -153,7 +153,7 @@ Default value is <code>empty string</code>.
 	* @param	sAdditionalInfo New value for property <code>additionalInfo</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAdditionalInfo( sAdditionalInfo:String):sap.m.ObjectMarker;
+	public function setAdditionalInfo( ?sAdditionalInfo:String):sap.m.ObjectMarker;
 
 	/**
 	* Sets a new value for property {@link #getType type}.

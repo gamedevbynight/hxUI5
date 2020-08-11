@@ -239,7 +239,7 @@ Default value is <code>false</code>.
 	* @param	bEnableBranching New value for property <code>enableBranching</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableBranching( bEnableBranching:Bool):sap.m.Wizard;
+	public function setEnableBranching( ?bEnableBranching:Bool):sap.m.Wizard;
 
 	/**
 	* Sets a new value for property {@link #getFinishButtonText finishButtonText}.
@@ -252,7 +252,7 @@ Default value is <code>Review</code>.
 	* @param	sFinishButtonText New value for property <code>finishButtonText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFinishButtonText( sFinishButtonText:String):sap.m.Wizard;
+	public function setFinishButtonText( ?sFinishButtonText:String):sap.m.Wizard;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -265,7 +265,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.Wizard;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.Wizard;
 
 	/**
 	* Sets the visibility of the next button.
@@ -285,7 +285,7 @@ Default value is <code>auto</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Wizard;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Wizard;
 
 	/**
 	* Validates the given step.

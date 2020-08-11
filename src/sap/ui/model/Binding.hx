@@ -112,26 +112,32 @@ If the binding path is absolute, the context is not relevant.
 	/**
 	* Returns the model path to which this binding binds.
 
-Might be a relative or absolute path. If it is relative, it will be resolved relative to the context as returned by {@link getContext()}.
+Might be a relative or absolute path. If it is relative, it will be resolved relative to the context as returned by {@link #getContext}.
 	* @return	Binding path
 	*/
 	public function getPath( ):String;
 
 	/**
 	* Returns whether the binding is initial, which means it did not get an initial value yet
-	* @return	Whether binding is initial
+	* @return	Whether the binding is initial
 	*/
 	public function isInitial( ):Bool;
 
 	/**
 	* Returns whether the binding is relative, which means its path does not start with a slash ('/')
-	* @return	Whether binding is relative
+	* @return	Whether the binding is relative
 	*/
 	public function isRelative( ):Bool;
 
 	/**
+	* Returns whether the binding is resolved, which means the binding's path is absolute or the binding has a model context.
+	* @return	Whether the binding is resolved
+	*/
+	public function isResolved( ):Bool;
+
+	/**
 	* Returns true if the binding is suspended or false if not.
-	* @return	Whether binding is suspended
+	* @return	Whether the binding is suspended
 	*/
 	public function isSuspended( ):Bool;
 

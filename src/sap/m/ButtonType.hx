@@ -8,11 +8,17 @@ package sap.m;
     */
     var Accept= "Accept";
     /**
+    * Attention type
+    */
+    var Attention= "Attention";
+    /**
     * Back type (back navigation button for header)
     */
     var Back= "Back";
     /**
     * Critical type
+
+<b>Note:</b> To be used only in controls of type <code>sap.m.Button</code>. When the button opens a <code>sap.m.MessagePopover</code> list, use this <code>ButtonType</code> if the message with the highest severity is <code>Warning</code> type.
     */
     var Critical= "Critical";
     /**
@@ -29,10 +35,14 @@ package sap.m;
     var Ghost= "Ghost";
     /**
     * Negative type
+
+<b>Note:</b> To be used only in controls of type <code>sap.m.Button</code>. When the button opens a <code>sap.m.MessagePopover</code> list, use this <code>ButtonType</code> if the message with the highest severity is <code>Error</code> type.
     */
     var Negative= "Negative";
     /**
     * Neutral type
+
+<b>Note:</b> To be used only in controls of type <code>sap.m.Button</code>. When the button opens a <code>sap.m.MessagePopover</code> list, use this <code>ButtonType</code> if the message with the highest severity is <code>Information</code> type.
     */
     var Neutral= "Neutral";
     /**
@@ -41,6 +51,8 @@ package sap.m;
     var Reject= "Reject";
     /**
     * Success type
+
+<b>Note:</b> To be used only in controls of type <code>sap.m.Button</code>. When the button opens a <code>sap.m.MessagePopover</code> list, use this <code>ButtonType</code> if the message with the highest severity is <code>Success</code> type.
     */
     var Success= "Success";
     /**

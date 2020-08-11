@@ -12,6 +12,8 @@ sap.m.MessageBox.alert("This message should appear in the alert", {
     title: "Alert",                                      // default
     onClose: null,                                       // default
     styleClass: "",                                      // default
+    actions: sap.m.MessageBox.Action.OK,                 // default
+    emphasizedAction: sap.m.MessageBox.Action.OK,        // default
     initialFocus: null,                                  // default
     textDirection: sap.ui.core.TextDirection.Inherit     // default
 });
@@ -40,6 +42,9 @@ sap.m.MessageBox.confirm("This message should appear in the confirmation", {
     title: "Confirm",                                    // default
     onClose: null,                                       // default
     styleClass: "",                                      // default
+    actions: [ sap.m.MessageBox.Action.OK,
+               sap.m.MessageBox.Action.Cancel ],         // default
+    emphasizedAction: sap.m.MessageBox.Action.OK,        // default
     initialFocus: null,                                  // default
     textDirection: sap.ui.core.TextDirection.Inherit     // default
 });
@@ -68,6 +73,8 @@ sap.m.MessageBox.error("This message should appear in the error message box", {
     title: "Error",                                      // default
     onClose: null,                                       // default
     styleClass: "",                                      // default
+    actions: sap.m.MessageBox.Action.Close,              // default
+    emphasizedAction: null,                              // default
     initialFocus: null,                                  // default
     textDirection: sap.ui.core.TextDirection.Inherit     // default
 });
@@ -94,6 +101,8 @@ sap.m.MessageBox.information("This message should appear in the information mess
     title: "Information",                                // default
     onClose: null,                                       // default
     styleClass: "",                                      // default
+    actions: sap.m.MessageBox.Action.OK,                 // default
+    emphasizedAction: sap.m.MessageBox.Action.OK,        // default
     initialFocus: null,                                  // default
     textDirection: sap.ui.core.TextDirection.Inherit     // default
 });
@@ -151,6 +160,8 @@ sap.m.MessageBox.success("This message should appear in the success message box"
     title: "Success",                                    // default
     onClose: null,                                       // default
     styleClass: "",                                      // default
+    actions: sap.m.MessageBox.Action.OK,                 // default
+    emphasizedAction: sap.m.MessageBox.Action.OK,        // default
     initialFocus: null,                                  // default
     textDirection: sap.ui.core.TextDirection.Inherit     // default
 });
@@ -177,6 +188,8 @@ sap.m.MessageBox.warning("This message should appear in the warning message box"
     title: "Warning",                                    // default
     onClose: null,                                       // default
     styleClass: "",                                      // default
+    actions: sap.m.MessageBox.Action.OK,                 // default
+    emphasizedAction: sap.m.MessageBox.Action.OK,        // default
     initialFocus: null,                                  // default
     textDirection: sap.ui.core.TextDirection.Inherit     // default
 });

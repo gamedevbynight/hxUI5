@@ -177,7 +177,7 @@ Default value is <code>span</code>.
 	* @param	sTag New value for property <code>tag</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTag( sTag:String):sap.ui.core.tmpl.DOMElement;
+	public function setTag( ?sTag:String):sap.ui.core.tmpl.DOMElement;
 
 	/**
 	* Sets a new value for property {@link #getText text}.

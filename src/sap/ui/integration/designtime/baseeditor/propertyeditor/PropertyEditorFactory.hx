@@ -1,6 +1,6 @@
 package sap.ui.integration.designtime.baseeditor.propertyeditor;
 
-@:native("sap.ui.integration.designtime.baseeditor.propertyeditor.PropertyEditorFactory")
+@:native("sap.ui.integration.designtime.baseEditor.propertyEditor.PropertyEditorFactory")
 extern class PropertyEditorFactory
 {
 
@@ -9,7 +9,7 @@ extern class PropertyEditorFactory
 	* @param	sPropertyType Type of the property editor to create
 	* @return	Promise resolving to the created editor
 	*/
-	public static function create( sPropertyType:String):js.lib.Promise<PropertyEditorFactory>;
+	public static function create( sPropertyType:String):js.lib.Promise<sap.ui.integration.designtime.baseeditor.propertyeditor.BasePropertyEditor>;
 
 	/**
 	* Deregisters all editor types and removes the loaded classes.
@@ -29,6 +29,6 @@ extern class PropertyEditorFactory
 	* @param	mTypes Map containing pairs of editor type and the path to load the class from
 	* @return	Void
 	*/
-	public static function registerTypes( mTypes:Map<String,Dynamic>):Void;
+	public static function registerTypes( mTypes:Map<String,String>):Void;
 }
 

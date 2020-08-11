@@ -172,7 +172,7 @@ Default value is <code>false</code>.
 	* @param	bActive New value for property <code>active</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActive( bActive:Bool):sap.m.ObjectStatus;
+	public function setActive( ?bActive:Bool):sap.m.ObjectStatus;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -198,7 +198,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.ObjectStatus;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.ObjectStatus;
 
 	/**
 	* Sets a new value for property {@link #getInverted inverted}.
@@ -211,7 +211,7 @@ Default value is <code>false</code>.
 	* @param	bInverted New value for property <code>inverted</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInverted( bInverted:Bool):sap.m.ObjectStatus;
+	public function setInverted( ?bInverted:Bool):sap.m.ObjectStatus;
 
 	/**
 	* Sets value for the <code>state</code> property. The default value is <code>ValueState.None</code>.
@@ -242,7 +242,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.ObjectStatus;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.ObjectStatus;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.

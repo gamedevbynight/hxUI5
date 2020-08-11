@@ -145,7 +145,7 @@ Default value is <code>auto</code>.
 	* @param	sFixContentSize New value for property <code>fixContentSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFixContentSize( sFixContentSize:sap.ui.core.CSSSize):sap.ui.layout.FixFlex;
+	public function setFixContentSize( ?sFixContentSize:sap.ui.core.CSSSize):sap.ui.layout.FixFlex;
 
 	/**
 	* Sets a new value for property {@link #getFixFirst fixFirst}.
@@ -158,7 +158,7 @@ Default value is <code>true</code>.
 	* @param	bFixFirst New value for property <code>fixFirst</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFixFirst( bFixFirst:Bool):sap.ui.layout.FixFlex;
+	public function setFixFirst( ?bFixFirst:Bool):sap.ui.layout.FixFlex;
 
 	/**
 	* Sets the aggregated {@link #getFlexContent flexContent}.
@@ -178,7 +178,7 @@ Default value is <code>0</code>.
 	* @param	iMinFlexSize New value for property <code>minFlexSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinFlexSize( iMinFlexSize:Int):sap.ui.layout.FixFlex;
+	public function setMinFlexSize( ?iMinFlexSize:Int):sap.ui.layout.FixFlex;
 
 	/**
 	* Sets a new value for property {@link #getVertical vertical}.
@@ -191,7 +191,7 @@ Default value is <code>true</code>.
 	* @param	bVertical New value for property <code>vertical</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVertical( bVertical:Bool):sap.ui.layout.FixFlex;
+	public function setVertical( ?bVertical:Bool):sap.ui.layout.FixFlex;
 }
 
 typedef FixFlexArgs = sap.ui.core.Control.ControlArgs & {

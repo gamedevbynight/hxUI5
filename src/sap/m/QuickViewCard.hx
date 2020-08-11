@@ -48,7 +48,7 @@ Default value is <code>true</code>.
 	* @param	bShowVerticalScrollBar New value for property <code>showVerticalScrollBar</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowVerticalScrollBar( bShowVerticalScrollBar:Bool):sap.m.QuickViewCard;
+	public function setShowVerticalScrollBar( ?bShowVerticalScrollBar:Bool):sap.m.QuickViewCard;
 }
 
 typedef QuickViewCardArgs = sap.m.QuickViewBase.QuickViewBaseArgs & {

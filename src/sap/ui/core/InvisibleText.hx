@@ -62,7 +62,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.core.InvisibleText;
+	public function setText( ?sText:String):sap.ui.core.InvisibleText;
 
 	/**
 	* Adds <code>this</code> control into the static, hidden area UI area container.

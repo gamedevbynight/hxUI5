@@ -1,5 +1,6 @@
 package sap.ui.base;
 
+@:native("sap.ui.base.Metadata")
 
 /**
 * Metadata for a class.

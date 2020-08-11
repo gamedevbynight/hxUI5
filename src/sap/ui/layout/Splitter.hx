@@ -3,15 +3,17 @@ package sap.ui.layout;
 @:native("sap.ui.layout.Splitter")
 
 /**
-* A layout that contains several content areas. The content that is added to the splitter should contain LayoutData of the type SplitterLayoutData that defines its size and size contraints.
+* <h3>Overview</h3> A layout that contains several content areas. The content that is added to the splitter should contain <code>layoutData</code> of type {@link sap.ui.layout.SplitterLayoutData SplitterLayoutData} which defines its size and size constraints. If such <code>layoutData</code> is not defined, it will be generated automatically.
 
-By adding or changing SplitterLayoutData to the controls that make up the content areas, the size can be changed programatically. Additionally the contents can be made non-resizable individually and a minimal size (in px) can be set.
+By adding or changing the <code>layoutData</code> to the controls that make up the content areas, the size can be changed programmatically. Additionally the content areas can be made non-resizable individually and a minimal size (in px) can be set.
 
-The orientation of the splitter can be set to horizontal (default) or vertical. All content areas of the splitter will be arranged in that way. In order to split vertically and horizontally at the same time, Splitters need to be nested.
+The orientation of the splitter can be set to horizontal (default) or vertical. All content areas of the splitter will be arranged in that way. In order to split vertically and horizontally at the same time, splitters need to be nested.
 
-The splitter bars can be focused to enable resizing of the content areas via keyboard. The contents size can be manipulated when the splitter bar is focused and Shift-Left/Down/Right/Up are pressed. When Shift-Home/End are pressed, the contents are set their minimum or maximum size (keep in mind though, that resizing an auto-size content-area next to another auto-size one might lead to the effect that the former does not take its maximum size but only the maximum size before recalculating auto sizes).
+The splitter bars are focusable to enable resizing of the content areas via keyboard. The size of the content areas can be manipulated when the splitter bar is focused and Shift-Left/Down/Right/Up are pressed. When Shift-Home/End are pressed, the content areas are resized to their minimum or maximum size (Note, that resizing one auto-size content area next to another auto-size content area, might lead to the effect that the former does not take its maximum size but only the maximum size before recalculating the auto-sizes).
 
-The splitter bars used for resizing the contents by the user can be set to different widths (or heights in vertical mode) and the splitter will automatically resize the other contents accordingly. In case the splitter bar is resized after the splitter has rendered, a manual resize has to be triggered by invoking triggerResize() on the Splitter.
+The splitter bars used for resizing the content areas by the user can be set to different widths (or heights in vertical mode) and the splitter will automatically resize the other content areas accordingly. In case the splitter bar is resized after the splitter has been rendered, a manual resize has to be triggered by invoking triggerResize() on the splitter.
+
+<h3>Responsive Behavior</h3> On touch-enabled devices the bars of the splitter can be moved by touching the grip.
 */
 extern class Splitter extends sap.ui.core.Control
 {
@@ -142,6 +144,12 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeContentArea( vContentArea:sap.ui.core.Control):sap.ui.core.Control;
 
 	/**
+	* Resets the size (width or height) of each of the content areas.
+	* @return	Void
+	*/
+	public function resetContentAreasSizes( ):Void;
+
+	/**
 	* Sets a new value for property {@link #getHeight height}.
 
 The height of the control
@@ -152,7 +160,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.layout.Splitter;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.layout.Splitter;
 
 	/**
 	* Sets a new value for property {@link #getOrientation orientation}.
@@ -165,7 +173,7 @@ Default value is <code>Horizontal</code>.
 	* @param	sOrientation New value for property <code>orientation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOrientation( sOrientation:sap.ui.core.Orientation):sap.ui.layout.Splitter;
+	public function setOrientation( ?sOrientation:sap.ui.core.Orientation):sap.ui.layout.Splitter;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -178,7 +186,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.layout.Splitter;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.layout.Splitter;
 
 	/**
 	* This method triggers a resize on the Splitter - meaning it forces the Splitter to recalculate all sizes. This method should only be used in rare cases, for example when the CSS that defines the sizes of the splitter bars changes without triggering a rerendering of the splitter.

@@ -141,6 +141,12 @@ Default value is <code>true</code>.
 	public function getEditable( ):Bool;
 
 	/**
+	* Gets the count of hidden tokens that will be used for the n-More indicator. If the count is 0, there is no n-More indicator shown.
+	* @return	The number of hidden tokens
+	*/
+	public function getHiddenTokensCount( ):String;
+
+	/**
 	* Gets current value of property {@link #getMaxWidth maxWidth}.
 
 Defines the maximum width of the Tokenizer.
@@ -155,6 +161,16 @@ Default value is <code>100%</code>.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+
+	/**
+	* Gets current value of property {@link #getRenderMode renderMode}.
+
+Defines the mode that the Tokenizer will use: <ul> <li><code>sap.m.TokenizerRenderMode.Loose</code> mode shows all tokens, no matter the width of the Tokenizer</li> <li><code>sap.m.TokenizerRenderMode.Narrow</code> mode forces the Tokenizer to show only as much tokens as possible in its width and add an n-More indicator</li> </ul>
+
+Default value is <code>sap.m.TokenizerRenderMode.Loose</code>.
+	* @return	Value of property <code>renderMode</code>
+	*/
+	public function getRenderMode( ):String;
 
 	/**
 	* Function returns the internally used scroll delegate.
@@ -292,11 +308,17 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function setEditable( bEditable:Bool):sap.m.Tokenizer;
 
 	/**
-	* Function sets the maximum width of the Tokenizer.
-	* @param	sWidth The new maximal width
-	* @return	this instance for method chaining
+	* Sets a new value for property {@link #getMaxWidth maxWidth}.
+
+Defines the maximum width of the Tokenizer.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>100%</code>.
+	* @param	sMaxWidth New value for property <code>maxWidth</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxWidth( sWidth:String):sap.m.Tokenizer;
+	public function setMaxWidth( ?sMaxWidth:sap.ui.core.CSSSize):sap.m.Tokenizer;
 
 	/**
 	* Function sets the tokenizer's width in pixels.
@@ -304,6 +326,19 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @return	Void
 	*/
 	public function setPixelWidth( nWidth:String):Void;
+
+	/**
+	* Sets a new value for property {@link #getRenderMode renderMode}.
+
+Defines the mode that the Tokenizer will use: <ul> <li><code>sap.m.TokenizerRenderMode.Loose</code> mode shows all tokens, no matter the width of the Tokenizer</li> <li><code>sap.m.TokenizerRenderMode.Narrow</code> mode forces the Tokenizer to show only as much tokens as possible in its width and add an n-More indicator</li> </ul>
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>sap.m.TokenizerRenderMode.Loose</code>.
+	* @param	sRenderMode New value for property <code>renderMode</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setRenderMode( ?sRenderMode:String):sap.m.Tokenizer;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -333,6 +368,16 @@ typedef TokenizerArgs = sap.ui.core.Control.ControlArgs & {
 	* Defines the maximum width of the Tokenizer.
 	*/
 	@:optional var maxWidth:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
+
+	/**
+	* Defines the mode that the Tokenizer will use: <ul> <li><code>sap.m.TokenizerRenderMode.Loose</code> mode shows all tokens, no matter the width of the Tokenizer</li> <li><code>sap.m.TokenizerRenderMode.Narrow</code> mode forces the Tokenizer to show only as much tokens as possible in its width and add an n-More indicator</li> </ul>
+	*/
+	@:optional var renderMode:String;
+
+	/**
+	* Defines the count of hidden tokens if any. If this property is set to 0, the n-More indicator will not be shown.
+	*/
+	@:optional var hiddenTokensCount:haxe.extern.EitherType<String,Int>;
 
     /**
     * the currently displayed tokens

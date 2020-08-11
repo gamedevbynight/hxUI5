@@ -556,11 +556,11 @@ Default value is <code>ShowHideMode</code>.
 
 This can be used for deep-linking when the user directly reached a drilldown detail page using a bookmark and then wants to navigate up in the drilldown hierarchy. Normally, such a back navigation would not be possible as there is no previous page in the SplitContainer's history stack.
 	* @param	sPageId The ID of the control/page/screen, which is inserted into the history stack. The respective control must be aggregated by the SplitContainer, otherwise this will cause an error.
-	* @param	sTransitionName The type of the transition/animation, which would have been used to navigate from the (inserted) previous page to the current page. When navigating back, the inverse animation will be applied. This parameter can be omitted; then the default value is "slide" (horizontal movement from the right).
+	* @param	transitionName The type of the transition/animation which would have been used to navigate from the (inserted) previous page to the current page. When navigating back, the inverse animation will be applied. Options are "slide" (horizontal movement from the right), "baseSlide", "fade", "flip", and "show" and the names of any registered custom transitions.
 	* @param	oData This optional object can carry any payload data which would have been given to the inserted previous page if the user would have done a normal forward navigation to it.
 	* @return	null
 	*/
-	public function insertPreviousPage( sPageId:String, sTransitionName:String, oData:Dynamic):sap.m.SplitContainer;
+	public function insertPreviousPage( sPageId:String, ?transitionName:String, oData:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Returns whether master area is currently displayed on the screen. In desktop browser or tablet, this method returns true when master area is displayed on the screen, regardless if in portrait or landscape mode. On mobile phone devices, this method returns true when the currently displayed page is from the pages, which are added to the master area, otherwise, it returns false.
@@ -635,7 +635,7 @@ Default value is <code>1</code>.
 	* @param	fBackgroundOpacity New value for property <code>backgroundOpacity</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundOpacity( fBackgroundOpacity:Float):sap.m.SplitContainer;
+	public function setBackgroundOpacity( ?fBackgroundOpacity:Float):sap.m.SplitContainer;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundRepeat backgroundRepeat}.
@@ -648,7 +648,7 @@ Default value is <code>false</code>.
 	* @param	bBackgroundRepeat New value for property <code>backgroundRepeat</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundRepeat( bBackgroundRepeat:Bool):sap.m.SplitContainer;
+	public function setBackgroundRepeat( ?bBackgroundRepeat:Bool):sap.m.SplitContainer;
 
 	/**
 	* Sets a new value for property {@link #getDefaultTransitionNameDetail defaultTransitionNameDetail}.
@@ -661,7 +661,7 @@ Default value is <code>slide</code>.
 	* @param	sDefaultTransitionNameDetail New value for property <code>defaultTransitionNameDetail</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultTransitionNameDetail( sDefaultTransitionNameDetail:String):sap.m.SplitContainer;
+	public function setDefaultTransitionNameDetail( ?sDefaultTransitionNameDetail:String):sap.m.SplitContainer;
 
 	/**
 	* Sets a new value for property {@link #getDefaultTransitionNameMaster defaultTransitionNameMaster}.
@@ -674,7 +674,7 @@ Default value is <code>slide</code>.
 	* @param	sDefaultTransitionNameMaster New value for property <code>defaultTransitionNameMaster</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultTransitionNameMaster( sDefaultTransitionNameMaster:String):sap.m.SplitContainer;
+	public function setDefaultTransitionNameMaster( ?sDefaultTransitionNameMaster:String):sap.m.SplitContainer;
 	@:overload( function(oInitialDetail:sap.ui.core.ID):sap.m.SplitContainer{ })
 
 	/**
@@ -725,7 +725,7 @@ Default value is <code>ShowHideMode</code>.
 	* @param	sMode New value for property <code>mode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMode( sMode:sap.m.SplitAppMode):sap.m.SplitContainer;
+	public function setMode( ?sMode:sap.m.SplitAppMode):sap.m.SplitContainer;
 
 	/**
 	* Used to make the master page visible when in ShowHideMode and the device is in portrait mode.
@@ -736,7 +736,7 @@ Default value is <code>ShowHideMode</code>.
 	/**
 	* Navigates to the given page inside the SplitContainer. The navigation is done inside the master area if the page has been added, otherwise, it tries to do the page navigation in the detail area.
 	* @param	sPageId The screen to which we are navigating to. The ID or the control itself can be given.
-	* @param	sTransitionName The type of the transition/animation to apply. This parameter can be omitted; then the default value is "slide" (horizontal movement from the right). Other options are: "fade", "flip", and "show" and the names of any registered custom transitions.
+	* @param	transitionName The type of the transition/animation to apply. Options are "slide" (horizontal movement from the right), "baseSlide", "fade", "flip", and "show" and the names of any registered custom transitions.
 
 None of the standard transitions is currently making use of any given transition parameters.
 	* @param	oData This optional object can carry any payload data which should be made available to the target page. The beforeShow event on the target page will contain this data object as data property.
@@ -751,12 +751,12 @@ For a proper parameter order, the "data" parameter must be given when the transi
 NOTE: It depends on the transition function how the object should be structured and which parameters are actually used to influence the transition. The "show", "slide" and "fade" transitions do not use any parameter.
 	* @return	null
 	*/
-	public function to( sPageId:String, sTransitionName:String, oData:Dynamic, oTransitionParameters:Dynamic):sap.m.SplitContainer;
+	public function to( sPageId:String, ?transitionName:String, oData:Dynamic, oTransitionParameters:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Navigates to a given detail page.
 	* @param	sPageId null
-	* @param	sTransitionName The type of the transition/animation to apply. This parameter can be omitted; then the default is "slide" (horizontal movement from the right). Other options are: "fade", "flip", and "show" and the names of any registered custom transitions.
+	* @param	sTransitionName The type of the transition/animation to apply. Options are "slide" (horizontal movement from the right), "baseSlide", "fade", "flip", and "show" and the names of any registered custom transitions.
 
 None of the standard transitions is currently making use of any given transition parameters.
 	* @param	oData This optional object can carry any payload data which should be made available to the target page. The beforeShow event on the target page will contain this data object as data property.
@@ -776,7 +776,7 @@ NOTE: it depends on the transition function how the object should be structured 
 	/**
 	* Navigates to a given master page.
 	* @param	sPageId The screen to which drilldown should happen. The ID or the control itself can be given.
-	* @param	sTransitionName The type of the transition/animation to apply. This parameter can be omitted; then the default value is "slide" (horizontal movement from the right). Other options are: "fade", "flip", and "show" and the names of any registered custom transitions.
+	* @param	sTransitionName The type of the transition/animation to apply. Options are "slide" (horizontal movement from the right), "baseSlide", "fade", "flip", and "show" and the names of any registered custom transitions.
 
 None of the standard transitions is currently making use of any given transition parameters.
 	* @param	oData Since version 1.7.1. This optional object can carry any payload data which should be made available to the target page. The beforeShow event on the target page will contain this data object as data property.

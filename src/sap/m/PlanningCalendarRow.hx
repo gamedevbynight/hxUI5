@@ -492,7 +492,7 @@ Default value is <code>false</code>.
 	* @param	bEnableAppointmentsCreate New value for property <code>enableAppointmentsCreate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableAppointmentsCreate( bEnableAppointmentsCreate:Bool):sap.m.PlanningCalendarRow;
+	public function setEnableAppointmentsCreate( ?bEnableAppointmentsCreate:Bool):sap.m.PlanningCalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getEnableAppointmentsDragAndDrop enableAppointmentsDragAndDrop}.
@@ -519,7 +519,7 @@ Default value is <code>false</code>.
 	* @param	bEnableAppointmentsDragAndDrop New value for property <code>enableAppointmentsDragAndDrop</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableAppointmentsDragAndDrop( bEnableAppointmentsDragAndDrop:Bool):sap.m.PlanningCalendarRow;
+	public function setEnableAppointmentsDragAndDrop( ?bEnableAppointmentsDragAndDrop:Bool):sap.m.PlanningCalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getEnableAppointmentsResize enableAppointmentsResize}.
@@ -544,7 +544,7 @@ Default value is <code>false</code>.
 	* @param	bEnableAppointmentsResize New value for property <code>enableAppointmentsResize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableAppointmentsResize( bEnableAppointmentsResize:Bool):sap.m.PlanningCalendarRow;
+	public function setEnableAppointmentsResize( ?bEnableAppointmentsResize:Bool):sap.m.PlanningCalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -618,7 +618,7 @@ Default value is <code>false</code>.
 	* @param	bSelected New value for property <code>selected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelected( bSelected:Bool):sap.m.PlanningCalendarRow;
+	public function setSelected( ?bSelected:Bool):sap.m.PlanningCalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getText text}.

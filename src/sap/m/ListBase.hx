@@ -87,6 +87,8 @@ Fires when selection is changed via user interaction inside the control.
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.ListBase</code> itself.
 
 Fires after user's swipe action and before the <code>swipeContent</code> is shown. On the <code>swipe</code> event handler, <code>swipeContent</code> can be changed according to the swiped item. Calling the <code>preventDefault</code> method of the event cancels the swipe action.
+
+<b>Note:</b> There is no accessible alternative provided by the control for swiping. Applications that use this functionality must provide an accessible alternative UI to perform the same action.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ListBase</code> itself
@@ -500,7 +502,7 @@ There are also some known limitations. A few are given below: <ul> <li>If the co
 	/**
 	* Gets content of aggregation {@link #getSwipeContent swipeContent}.
 
-User can swipe to bring in this control on the right hand side of an item. <b>Note:</b> For non-touch devices, this functionality is ignored.
+User can swipe to bring in this control on the right hand side of an item. <b>Note:</b> <ul> <li>For non-touch screen devices, this functionality is ignored.</li> <li>There is no accessible alternative provided by the control for swiping. Applications that use this functionality must provide an accessible alternative UI to perform the same action.</li> <ul>
 	* @return	null
 	*/
 	public function getSwipeContent( ):sap.ui.core.Control;
@@ -586,7 +588,18 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeSelections( bAll:Bool):sap.m.ListBase;
 
 	/**
+	* Scrolls the list so that the item with the given index is in the viewport. If the index is -1, it scrolls to the bottom of the list. If the growing feature is enabled, the list is scrolled to the last available item.
+
+Growing in combination with <code>growingScrollToLoad=true</code> can result in loading of new items when scrolling to the bottom of the list.
+	* @param	iIndex The list item index that must be scrolled into the viewport
+	* @return	Void
+	*/
+	public function scrollToIndex( iIndex:String):Void;
+
+	/**
 	* Select all items in "MultiSelection" mode.
+
+<b>Note:</b> In case <code>growing</code> is enabled, only the visible items in the list will be selected.
 	* @return	null
 	*/
 	public function selectAll( ):sap.m.ListBase;
@@ -609,7 +622,7 @@ Default value is <code>true</code>.
 	* @param	bEnableBusyIndicator New value for property <code>enableBusyIndicator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableBusyIndicator( bEnableBusyIndicator:Bool):sap.m.ListBase;
+	public function setEnableBusyIndicator( ?bEnableBusyIndicator:Bool):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getFooterText footerText}.
@@ -633,7 +646,7 @@ Default value is <code>false</code>.
 	* @param	bGrowing New value for property <code>growing</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGrowing( bGrowing:Bool):sap.m.ListBase;
+	public function setGrowing( ?bGrowing:Bool):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getGrowingDirection growingDirection}.
@@ -646,7 +659,7 @@ Default value is <code>Downwards</code>.
 	* @param	sGrowingDirection New value for property <code>growingDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGrowingDirection( sGrowingDirection:sap.m.ListGrowingDirection):sap.m.ListBase;
+	public function setGrowingDirection( ?sGrowingDirection:sap.m.ListGrowingDirection):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getGrowingScrollToLoad growingScrollToLoad}.
@@ -659,7 +672,7 @@ Default value is <code>false</code>.
 	* @param	bGrowingScrollToLoad New value for property <code>growingScrollToLoad</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGrowingScrollToLoad( bGrowingScrollToLoad:Bool):sap.m.ListBase;
+	public function setGrowingScrollToLoad( ?bGrowingScrollToLoad:Bool):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getGrowingThreshold growingThreshold}.
@@ -672,7 +685,7 @@ Default value is <code>20</code>.
 	* @param	iGrowingThreshold New value for property <code>growingThreshold</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGrowingThreshold( iGrowingThreshold:Int):sap.m.ListBase;
+	public function setGrowingThreshold( ?iGrowingThreshold:Int):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getGrowingTriggerText growingTriggerText}.
@@ -714,7 +727,7 @@ Default value is <code>false</code>.
 	* @param	bIncludeItemInSelection New value for property <code>includeItemInSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIncludeItemInSelection( bIncludeItemInSelection:Bool):sap.m.ListBase;
+	public function setIncludeItemInSelection( ?bIncludeItemInSelection:Bool):sap.m.ListBase;
 
 	/**
 	* Sets the aggregated {@link #getInfoToolbar infoToolbar}.
@@ -734,7 +747,7 @@ Default value is <code>false</code>.
 	* @param	bInset New value for property <code>inset</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInset( bInset:Bool):sap.m.ListBase;
+	public function setInset( ?bInset:Bool):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getKeyboardMode keyboardMode}.
@@ -747,7 +760,7 @@ Default value is <code>Navigation</code>.
 	* @param	sKeyboardMode New value for property <code>keyboardMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKeyboardMode( sKeyboardMode:sap.m.ListKeyboardMode):sap.m.ListBase;
+	public function setKeyboardMode( ?sKeyboardMode:sap.m.ListKeyboardMode):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getMode mode}.
@@ -760,7 +773,7 @@ Default value is <code>None</code>.
 	* @param	sMode New value for property <code>mode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMode( sMode:sap.m.ListMode):sap.m.ListBase;
+	public function setMode( ?sMode:sap.m.ListMode):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getModeAnimationOn modeAnimationOn}.
@@ -773,7 +786,7 @@ Default value is <code>true</code>.
 	* @param	bModeAnimationOn New value for property <code>modeAnimationOn</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setModeAnimationOn( bModeAnimationOn:Bool):sap.m.ListBase;
+	public function setModeAnimationOn( ?bModeAnimationOn:Bool):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getNoDataText noDataText}.
@@ -797,23 +810,23 @@ Default value is <code>true</code>.
 	* @param	bRememberSelections New value for property <code>rememberSelections</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRememberSelections( bRememberSelections:Bool):sap.m.ListBase;
+	public function setRememberSelections( ?bRememberSelections:Bool):sap.m.ListBase;
 
 	/**
 	* Selects or deselects the given list item.
 	* @param	oListItem The list item whose selection to be changed. This parameter is mandatory.
-	* @param	bSelect Sets selected status of the list item. Default value is true.
+	* @param	bSelect Sets selected status of the list item
 	* @return	null
 	*/
-	public function setSelectedItem( oListItem:sap.m.ListItemBase, bSelect:Bool):sap.m.ListBase;
+	public function setSelectedItem( oListItem:sap.m.ListItemBase, ?bSelect:Bool):sap.m.ListBase;
 
 	/**
 	* Sets a list item to be selected by id. In single mode the method removes the previous selection.
 	* @param	sId The id of the list item whose selection to be changed.
-	* @param	bSelect Sets selected status of the list item. Default value is true.
+	* @param	bSelect Sets selected status of the list item
 	* @return	null
 	*/
-	public function setSelectedItemById( sId:String, bSelect:Bool):sap.m.ListBase;
+	public function setSelectedItemById( sId:String, ?bSelect:Bool):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getShowNoData showNoData}.
@@ -826,7 +839,7 @@ Default value is <code>true</code>.
 	* @param	bShowNoData New value for property <code>showNoData</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowNoData( bShowNoData:Bool):sap.m.ListBase;
+	public function setShowNoData( ?bShowNoData:Bool):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getShowSeparators showSeparators}.
@@ -839,7 +852,7 @@ Default value is <code>All</code>.
 	* @param	sShowSeparators New value for property <code>showSeparators</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSeparators( sShowSeparators:sap.m.ListSeparators):sap.m.ListBase;
+	public function setShowSeparators( ?sShowSeparators:sap.m.ListSeparators):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getShowUnread showUnread}.
@@ -852,7 +865,7 @@ Default value is <code>false</code>.
 	* @param	bShowUnread New value for property <code>showUnread</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowUnread( bShowUnread:Bool):sap.m.ListBase;
+	public function setShowUnread( ?bShowUnread:Bool):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getSticky sticky}.
@@ -889,7 +902,7 @@ Default value is <code>Both</code>.
 	* @param	sSwipeDirection New value for property <code>swipeDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSwipeDirection( sSwipeDirection:sap.m.SwipeDirection):sap.m.ListBase;
+	public function setSwipeDirection( ?sSwipeDirection:sap.m.SwipeDirection):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -902,7 +915,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.ListBase;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.ListBase;
 
 	/**
 	* After swipeContent is shown, user can interact with this control(e.g Tap). After interaction is done, you can/should use this method to hide swipeContent from screen. Note: If users try to tap inside of the list but outside of the swipeContent then control hides automatically.
@@ -1037,7 +1050,7 @@ There are also some known limitations. A few are given below: <ul> <li>If the co
 	@:optional var items:Array<haxe.extern.EitherType<String,sap.m.ListItemBase>>;
 
     /**
-    * User can swipe to bring in this control on the right hand side of an item. <b>Note:</b> For non-touch devices, this functionality is ignored.
+    * User can swipe to bring in this control on the right hand side of an item. <b>Note:</b> <ul> <li>For non-touch screen devices, this functionality is ignored.</li> <li>There is no accessible alternative provided by the control for swiping. Applications that use this functionality must provide an accessible alternative UI to perform the same action.</li> <ul>
     */
 	@:optional var swipeContent:haxe.extern.EitherType<String,sap.ui.core.Control>;
 
@@ -1088,6 +1101,8 @@ There are also some known limitations. A few are given below: <ul> <li>If the co
 
 	/**
 	* Fires after user's swipe action and before the <code>swipeContent</code> is shown. On the <code>swipe</code> event handler, <code>swipeContent</code> can be changed according to the swiped item. Calling the <code>preventDefault</code> method of the event cancels the swipe action.
+
+<b>Note:</b> There is no accessible alternative provided by the control for swiping. Applications that use this functionality must provide an accessible alternative UI to perform the same action.
 	*/
 	@:optional var swipe:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 

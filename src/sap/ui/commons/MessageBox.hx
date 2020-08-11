@@ -39,9 +39,9 @@ The confirmation dialog box opened by this method is modal and it is processed a
 	* @return	Void
 	*/
 	public static function confirm( vMessage:sap.ui.core.Control, ?fnCallback:()->Void, ?sTitle:String, ?sDialogId:String):Void;
-	@:overload( function(vMessage:String, ?oIcon:sap.ui.commons.messagebox.Icon, ?sTitle:String, ?vActions:sap.ui.commons.messagebox.Action, ?fnCallback:()->Void, ?oDefaultAction:sap.ui.commons.messagebox.Action, ?sDialogId:String):Void{ })
-	@:overload( function(vMessage:String, ?oIcon:sap.ui.commons.messagebox.Icon, ?sTitle:String, ?vActions:Array<sap.ui.commons.messagebox.Action>, ?fnCallback:()->Void, ?oDefaultAction:sap.ui.commons.messagebox.Action, ?sDialogId:String):Void{ })
-	@:overload( function(vMessage:sap.ui.core.Control, ?oIcon:sap.ui.commons.messagebox.Icon, ?sTitle:String, ?vActions:sap.ui.commons.messagebox.Action, ?fnCallback:()->Void, ?oDefaultAction:sap.ui.commons.messagebox.Action, ?sDialogId:String):Void{ })
+	@:overload( function(vMessage:String, ?oIcon:sap.ui.commons.MessageBox.Icon, ?sTitle:String, ?vActions:sap.ui.commons.MessageBox.Action, ?fnCallback:()->Void, ?oDefaultAction:sap.ui.commons.MessageBox.Action, ?sDialogId:String):Void{ })
+	@:overload( function(vMessage:String, ?oIcon:sap.ui.commons.MessageBox.Icon, ?sTitle:String, ?vActions:Array<sap.ui.commons.MessageBox.Action>, ?fnCallback:()->Void, ?oDefaultAction:sap.ui.commons.MessageBox.Action, ?sDialogId:String):Void{ })
+	@:overload( function(vMessage:sap.ui.core.Control, ?oIcon:sap.ui.commons.MessageBox.Icon, ?sTitle:String, ?vActions:sap.ui.commons.MessageBox.Action, ?fnCallback:()->Void, ?oDefaultAction:sap.ui.commons.MessageBox.Action, ?sDialogId:String):Void{ })
 
 	/**
 	* Creates and displays a simple message box with the given text and buttons, and optionally other parts. After the user has selected a button or closed the message box using the close icon, the <code>callback</code> function is invoked when given.
@@ -66,6 +66,6 @@ where <code>oAction</code> is the button that the user has pressed. When the use
 	* @param	sDialogId ID to be used for the dialog. Intended for test scenarios, not recommended for productive apps
 	* @return	Void
 	*/
-	public static function show( vMessage:sap.ui.core.Control, ?oIcon:sap.ui.commons.messagebox.Icon, ?sTitle:String, ?vActions:Array<sap.ui.commons.messagebox.Action>, ?fnCallback:()->Void, ?oDefaultAction:sap.ui.commons.messagebox.Action, ?sDialogId:String):Void;
+	public static function show( vMessage:sap.ui.core.Control, ?oIcon:sap.ui.commons.MessageBox.Icon, ?sTitle:String, ?vActions:Array<sap.ui.commons.MessageBox.Action>, ?fnCallback:()->Void, ?oDefaultAction:sap.ui.commons.MessageBox.Action, ?sDialogId:String):Void;
 }
 

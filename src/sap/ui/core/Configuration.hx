@@ -46,6 +46,12 @@ The <code>mSettings</code> can contain any property <code><i>xyz</i></code> for 
 	public function getAccessibility( ):Bool;
 
 	/**
+	* Returns the list of active terminologies defined via the Configuration.
+	* @return	if no active terminologies are set, the default value <code>undefined</code> is returned.
+	*/
+	public function getActiveTerminologies( ):Array<String>;
+
+	/**
 	* Returns the current animation mode.
 	* @return	The current animationMode
 	*/
@@ -74,7 +80,7 @@ The <code>mSettings</code> can contain any property <code><i>xyz</i></code> for 
 	* @param	sFeature the key of desired feature
 	* @return	the used compatibility version
 	*/
-	public function getCompatibilityVersion( sFeature:String):jquery.sap.Version;
+	public function getCompatibilityVersion( sFeature:String):sap.base.util.Version;
 
 	/**
 	* Returns whether the page runs in debug mode.
@@ -215,7 +221,7 @@ If no mode has been explicitly set (neither <code>true</code> nor <code>false</c
 Similar to <code>sap.ui.version</code>.
 	* @return	the version
 	*/
-	public function getVersion( ):jquery.sap.Version;
+	public function getVersion( ):sap.base.util.Version;
 
 	/**
 	* URL of the whitelist service.

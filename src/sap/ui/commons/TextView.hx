@@ -212,7 +212,7 @@ Default value is <code>Standard</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.ui.commons.TextViewDesign):sap.ui.commons.TextView;
+	public function setDesign( ?sDesign:sap.ui.commons.TextViewDesign):sap.ui.commons.TextView;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -225,7 +225,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.TextView;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.TextView;
 
 	/**
 	* Sets a new value for property {@link #getHelpId helpId}.
@@ -238,7 +238,7 @@ Default value is <code>empty string</code>.
 	* @param	sHelpId New value for property <code>helpId</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHelpId( sHelpId:String):sap.ui.commons.TextView;
+	public function setHelpId( ?sHelpId:String):sap.ui.commons.TextView;
 
 	/**
 	* Sets a new value for property {@link #getSemanticColor semanticColor}.
@@ -251,7 +251,7 @@ Default value is <code>Default</code>.
 	* @param	sSemanticColor New value for property <code>semanticColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSemanticColor( sSemanticColor:sap.ui.commons.TextViewColor):sap.ui.commons.TextView;
+	public function setSemanticColor( ?sSemanticColor:sap.ui.commons.TextViewColor):sap.ui.commons.TextView;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -264,7 +264,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.commons.TextView;
+	public function setText( ?sText:String):sap.ui.commons.TextView;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -277,7 +277,7 @@ Default value is <code>Begin</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.ui.commons.TextView;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.ui.commons.TextView;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -290,7 +290,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.TextView;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.TextView;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -314,7 +314,7 @@ Default value is <code>true</code>.
 	* @param	bWrapping New value for property <code>wrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrapping( bWrapping:Bool):sap.ui.commons.TextView;
+	public function setWrapping( ?bWrapping:Bool):sap.ui.commons.TextView;
 
 	/**
 	* Unbinds property {@link #getText text} from model data.

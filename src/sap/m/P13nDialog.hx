@@ -222,7 +222,7 @@ Default value is <code>false</code>.
 	* @param	bShowReset New value for property <code>showReset</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowReset( bShowReset:Bool):sap.m.P13nDialog;
+	public function setShowReset( ?bShowReset:Bool):sap.m.P13nDialog;
 
 	/**
 	* Sets a new value for property {@link #getShowResetEnabled showResetEnabled}.
@@ -235,7 +235,7 @@ Default value is <code>false</code>.
 	* @param	bShowResetEnabled New value for property <code>showResetEnabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowResetEnabled( bShowResetEnabled:Bool):sap.m.P13nDialog;
+	public function setShowResetEnabled( ?bShowResetEnabled:Bool):sap.m.P13nDialog;
 
 	/**
 	* Sets a new value for property {@link #getValidationExecutor validationExecutor}.

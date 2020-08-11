@@ -90,6 +90,16 @@ The passed function and listener object must match the ones used for event regis
 	public function getFirstItem( ):sap.ui.core.Item;
 
 	/**
+	* Gets current value of property {@link #getFormattedTextFocused formattedTextFocused}.
+
+Indicates whether the formatted text is focused.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>formattedTextFocused</code>
+	*/
+	public function getFormattedTextFocused( ):Bool;
+
+	/**
 	* Gets the item from the aggregation named <code>items</code> at the given 0-based index.
 	* @param	iIndex Index of the item to return.
 	* @return	Item at the given index, or null if none.
@@ -122,6 +132,16 @@ Defines the items contained within this control.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+
+	/**
+	* Gets current value of property {@link #getOpen open}.
+
+Indicates whether the picker is opened.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>open</code>
+	*/
+	public function getOpen( ):Bool;
 
 	/**
 	* Gets current value of property {@link #getShowSecondaryValues showSecondaryValues}.
@@ -177,6 +197,32 @@ Default value is <code>false</code>.
 	public function setFilterFunction( fnFilter:()->Void):sap.m.ComboBoxBase;
 
 	/**
+	* Sets a new value for property {@link #getFormattedTextFocused formattedTextFocused}.
+
+Indicates whether the formatted text is focused.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bFormattedTextFocused New value for property <code>formattedTextFocused</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setFormattedTextFocused( ?bFormattedTextFocused:Bool):sap.m.ComboBoxBase;
+
+	/**
+	* Sets a new value for property {@link #getOpen open}.
+
+Indicates whether the picker is opened.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bOpen New value for property <code>open</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setOpen( ?bOpen:Bool):sap.m.ComboBoxBase;
+
+	/**
 	* Sets a new value for property {@link #getShowSecondaryValues showSecondaryValues}.
 
 Indicates whether the text values of the <code>additionalText</code> property of a {@link sap.ui.core.ListItem} are shown.
@@ -187,28 +233,7 @@ Default value is <code>false</code>.
 	* @param	bShowSecondaryValues New value for property <code>showSecondaryValues</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSecondaryValues( bShowSecondaryValues:Bool):sap.m.ComboBoxBase;
-
-	/**
-	* Sets whether the value state message should be shown or not
-	* @param	bShow The new value state text
-	* @return	this for chaining
-	*/
-	public function setShowValueStateMessage( ?bShow:Bool):sap.m.InputBase;
-
-	/**
-	* Sets the visualization of the validation state of the control, e.g. <code>Error</code>, <code>Warning</code>, <code>Success</code>.
-	* @param	sValueState The new value state
-	* @return	this for chaining
-	*/
-	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.m.InputBase;
-
-	/**
-	* Sets the value state text
-	* @param	sValueStateText The new value state text
-	* @return	this for chaining
-	*/
-	public function setValueStateText( ?sValueStateText:String):sap.m.InputBase;
+	public function setShowSecondaryValues( ?bShowSecondaryValues:Bool):sap.m.ComboBoxBase;
 
 	/**
 	* Opens the <code>SuggestionsPopover</code> with the available items.
@@ -230,6 +255,16 @@ typedef ComboBoxBaseArgs = sap.m.ComboBoxTextField.ComboBoxTextFieldArgs & {
 	* Indicates whether the text values of the <code>additionalText</code> property of a {@link sap.ui.core.ListItem} are shown.
 	*/
 	@:optional var showSecondaryValues:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Indicates whether the formatted text is focused.
+	*/
+	@:optional var formattedTextFocused:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Indicates whether the picker is opened.
+	*/
+	@:optional var open:haxe.extern.EitherType<String,Bool>;
 
     /**
     * Defines the items contained within this control.

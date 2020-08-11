@@ -133,7 +133,7 @@ Default value is <code>true</code>.
 	* @param	bMultiSelect New value for property <code>multiSelect</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMultiSelect( bMultiSelect:Bool):sap.m.ViewSettingsFilterItem;
+	public function setMultiSelect( ?bMultiSelect:Bool):sap.m.ViewSettingsFilterItem;
 
 	/**
 	* Unbinds aggregation {@link #getItems items} from model data.

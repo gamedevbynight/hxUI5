@@ -3,7 +3,7 @@ package sap.f.cards;
 @:native("sap.f.cards.NumericHeader")
 
 /**
-* Displays general information in the header of the {@link sap.f.Card} and allows the configuration of a numeric value visualization..
+* Displays general information in the header of the {@link sap.f.Card} and allows the configuration of a numeric value visualization.
 
 You can configure the title, subtitle, status text and icon, using the provided properties. To add more side number indicators, use the <code>sideIndicators</code> aggregation.
 
@@ -183,12 +183,6 @@ General unit of measurement for the header. Displayed as side information to the
 	public function insertSideIndicator( oSideIndicator:sap.f.cards.NumericSideIndicator, iIndex:Int):sap.f.cards.NumericHeader;
 
 	/**
-	* null
-	* @return	If the header is ready or not.
-	*/
-	public function isReady( ):Bool;
-
-	/**
 	* Removes all the controls from the aggregation {@link #getSideIndicators sideIndicators}.
 
 Additionally, it unregisters them from the hosting UIArea.
@@ -244,7 +238,7 @@ Default value is <code>empty string</code>.
 	* @param	sStatusText New value for property <code>statusText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStatusText( sStatusText:String):sap.f.cards.NumericHeader;
+	public function setStatusText( ?sStatusText:String):sap.f.cards.NumericHeader;
 
 	/**
 	* Sets the subtitle.

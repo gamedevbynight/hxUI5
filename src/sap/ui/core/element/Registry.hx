@@ -1,8 +1,15 @@
 package sap.ui.core.element;
 
-@:native("sap.ui.core.element.registry")
+@:native("sap.ui.core.Element.registry")
 extern class Registry
 {
+
+	/**
+	* Number of existing elements.
+	*/
+	 public static var size:Int;
+
+
 
 	/**
 	* Return an object with all instances of <code>sap.ui.core.Element</code>, keyed by their ID.
@@ -12,7 +19,7 @@ Each call creates a new snapshot object. Depending on the size of the UI, this o
 <b>Note</b>: The returned object is created by a call to <code>Object.create(null)</code>, and therefore lacks all methods of <code>Object.prototype</code>, e.g. <code>toString</code> etc.
 	* @return	Object with all elements, keyed by their ID
 	*/
-	public static function all( ):map<sap.ui.core.id,sap.ui.core.Element>;
+	public static function all( ):Map<sap.ui.core.ID,sap.ui.core.Element>;
 
 	/**
 	* Returns an array with elements for which the given <code>callback</code> returns a value that coerces to <code>true</code>.
@@ -57,6 +64,6 @@ When the ID is <code>null</code> or <code>undefined</code> or when there's no el
 	* @param	id ID of the element to retrieve
 	* @return	Element with the given ID or <code>undefined</code>
 	*/
-	public static function get( id:sap.ui.core.ID):sap.ui.core.Element;
+	public static function get( id:sap.ui.core.ID):Dynamic;
 }
 

@@ -68,7 +68,7 @@ Default value is <code>false</code>.
 	* @param	bClosable New value for property <code>closable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setClosable( bClosable:Bool):sap.ui.commons.Tab;
+	public function setClosable( ?bClosable:Bool):sap.ui.commons.Tab;
 
 	/**
 	* Sets a new value for property {@link #getHorizontalScrolling horizontalScrolling}.
@@ -81,7 +81,7 @@ Default value is <code>None</code>.
 	* @param	sHorizontalScrolling New value for property <code>horizontalScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHorizontalScrolling( sHorizontalScrolling:sap.ui.core.Scrolling):sap.ui.commons.Tab;
+	public function setHorizontalScrolling( ?sHorizontalScrolling:sap.ui.core.Scrolling):sap.ui.commons.Tab;
 
 	/**
 	* Sets a new value for property {@link #getVerticalScrolling verticalScrolling}.
@@ -94,7 +94,7 @@ Default value is <code>None</code>.
 	* @param	sVerticalScrolling New value for property <code>verticalScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVerticalScrolling( sVerticalScrolling:sap.ui.core.Scrolling):sap.ui.commons.Tab;
+	public function setVerticalScrolling( ?sVerticalScrolling:sap.ui.core.Scrolling):sap.ui.commons.Tab;
 }
 
 typedef TabArgs = sap.ui.commons.Panel.PanelArgs & {

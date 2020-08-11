@@ -1,5 +1,6 @@
 package sap.ui.base;
 
+@:native("sap.ui.base.DataType")
 
 /**
 * Represents the type of properties in a <code>ManagedObject</code> class.

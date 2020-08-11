@@ -137,7 +137,7 @@ Default value is <code>3</code>.
 	* @param	iMaxPrecision New value for property <code>maxPrecision</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxPrecision( iMaxPrecision:Int):sap.ui.unified.Currency;
+	public function setMaxPrecision( ?iMaxPrecision:Int):sap.ui.unified.Currency;
 
 	/**
 	* Sets a new value for property {@link #getStringValue stringValue}.
@@ -165,7 +165,7 @@ Default value is <code>true</code>.
 	* @param	bUseSymbol New value for property <code>useSymbol</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUseSymbol( bUseSymbol:Bool):sap.ui.unified.Currency;
+	public function setUseSymbol( ?bUseSymbol:Bool):sap.ui.unified.Currency;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -178,7 +178,7 @@ Default value is <code>0</code>.
 	* @param	fValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( fValue:Float):sap.ui.unified.Currency;
+	public function setValue( ?fValue:Float):sap.ui.unified.Currency;
 }
 
 typedef CurrencyArgs = sap.ui.core.Control.ControlArgs & {

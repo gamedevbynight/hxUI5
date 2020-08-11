@@ -92,7 +92,7 @@ Default value is <code>1</code>.
 	* @param	iMinutesStep New value for property <code>minutesStep</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinutesStep( iMinutesStep:Int):sap.m.DateTimePicker;
+	public function setMinutesStep( ?iMinutesStep:Int):sap.m.DateTimePicker;
 
 	/**
 	* Sets a new value for property {@link #getSecondsStep secondsStep}.
@@ -105,7 +105,7 @@ Default value is <code>1</code>.
 	* @param	iSecondsStep New value for property <code>secondsStep</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSecondsStep( iSecondsStep:Int):sap.m.DateTimePicker;
+	public function setSecondsStep( ?iSecondsStep:Int):sap.m.DateTimePicker;
 }
 
 typedef DateTimePickerArgs = sap.m.DatePicker.DatePickerArgs & {

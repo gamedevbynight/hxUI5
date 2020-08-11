@@ -69,7 +69,7 @@ Default value is <code>1500</code>.
 	* @param	iMinDisplayTime New value for property <code>minDisplayTime</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinDisplayTime( iMinDisplayTime:Int):sap.m.DraftIndicator;
+	public function setMinDisplayTime( ?iMinDisplayTime:Int):sap.m.DraftIndicator;
 
 	/**
 	* Sets a new value for property {@link #getState state}.
@@ -82,7 +82,7 @@ Default value is <code>Clear</code>.
 	* @param	sState New value for property <code>state</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setState( sState:sap.m.DraftIndicatorState):sap.m.DraftIndicator;
+	public function setState( ?sState:sap.m.DraftIndicatorState):sap.m.DraftIndicator;
 
 	/**
 	* Sets the indicator in "Saved" state

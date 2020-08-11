@@ -304,7 +304,7 @@ Default value is <code>Check the filter settings.</code>.
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDescription( sDescription:String):sap.m.MessagePage;
+	public function setDescription( ?sDescription:String):sap.m.MessagePage;
 
 	/**
 	* Sets a new value for property {@link #getEnableFormattedText enableFormattedText}.
@@ -319,7 +319,7 @@ Default value is <code>false</code>.
 	* @param	bEnableFormattedText New value for property <code>enableFormattedText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableFormattedText( bEnableFormattedText:Bool):sap.m.MessagePage;
+	public function setEnableFormattedText( ?bEnableFormattedText:Bool):sap.m.MessagePage;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -332,7 +332,7 @@ Default value is <code>sap-icon://documents</code>.
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.MessagePage;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.MessagePage;
 
 	/**
 	* Sets a new value for property {@link #getIconAlt iconAlt}.
@@ -356,7 +356,7 @@ Default value is <code>true</code>.
 	* @param	bShowHeader New value for property <code>showHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHeader( bShowHeader:Bool):sap.m.MessagePage;
+	public function setShowHeader( ?bShowHeader:Bool):sap.m.MessagePage;
 
 	/**
 	* Sets a new value for property {@link #getShowNavButton showNavButton}.
@@ -369,7 +369,7 @@ Default value is <code>false</code>.
 	* @param	bShowNavButton New value for property <code>showNavButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowNavButton( bShowNavButton:Bool):sap.m.MessagePage;
+	public function setShowNavButton( ?bShowNavButton:Bool):sap.m.MessagePage;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -382,7 +382,7 @@ Default value is <code>No matching items found.</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.MessagePage;
+	public function setText( ?sText:String):sap.m.MessagePage;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -395,7 +395,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.MessagePage;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.MessagePage;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.

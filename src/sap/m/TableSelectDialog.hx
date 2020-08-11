@@ -5,7 +5,7 @@ package sap.m;
 /**
 * A dialog to select items in a table containing multiple values and attributes. <h3>Overview</h3> The table select dialog helps users select items in a table-like structure with several attributes and values per item. A search fields helps narrow down the results. <h3>Structure</h3> The table select dialog consists of the following elements: <ul> <li> Search field - used to search enter search terms for a specific item.</li> <li> Info toolbar (only in multi-select mode) - displays the number of currently selected items.</li> <li> Content - the table with the items.</li> <li> Footer (optional) - a toolbar for actions.</li> </ul> Table Select Dialog supports multi-selection when the <code>multiSelect</code> property is set to <code>true</code>.
 
-The selected items can be stored for later editing when the <code>rememberSelections</code> property is set. <b>Note:</b> This property has to be set before the dialog is opened. <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to select one or more items from a comprehensive list that contains multiple attributes or values.</li> </ul> <h4>When not to use:</h4> <ul> <li>You need to select only one item from a predefined list of single-value options. Use the {@link sap.m.Select Select} control instead.</li> <li>You need to display complex content without having the user navigate away from the current page or you want to prompt the user for an action. Use the {@link sap.m.Dialog Dialog} control instead.</li> <li>You need to select items within a query-based range. Use the {@link https://experience.sap.com/fiori-design-web/value-help-dialog/ Value Help Dialog} control instead.</li> <li>You need to filter a set of items without any selection. Use the {@link https://experience.sap.com/fiori-design-web/filter-bar/ Filter Bar} control instead.</li> </ul> <h4>Notes:</h4> <ul> <li>The property <code>growing</code> must not be used together with two-way binding. <li>When the property <code>growing</code> is set to <code>true</code> (default value), the features <code>selected count</code> in info bar, <code>search</code> and <code>select/deselect all</code>, if present, work only for the currently loaded items. To make sure that all items in the table are loaded at once and the above features work properly, set the property to <code>false</code>. <li>Since version 1.58, the columns headers and the info toolbar are sticky (remain fixed on top when scrolling). This feature is not supported in all browsers. <li>The TableSelectDialog is usually displayed at the center of the screen. Its size and position can be changed by the user. To enable this you need to set the <code>resizable</code> and <code>draggable</code> properties. Both properties are available only in desktop mode.</li> For more information on browser support limitations, you can refer to the {@link sap.m.ListBase sap.m.ListBase} <code>sticky</code> property. </ul> <h3>Responsive Behavior</h3> <ul> <li>On smaller screens, the columns of the table wrap and build a list that shows all the information.</li> </ul> When using the <code>sap.m.TableSelectDialog</code> in SAP Quartz themes, the breakpoints and layout paddings could be determined by the dialog's width. To enable this concept and add responsive paddings to an element of the control, you have to add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--subHeader</code>, <code>sapUiResponsivePadding--content</code>, <code>sapUiResponsivePadding--footer</code>.
+The selected items can be stored for later editing when the <code>rememberSelections</code> property is set. <b>Note:</b> This property has to be set before the dialog is opened. <h3>Usage</h3> <h4>When to use:</h4> <ul> <li>You need to select one or more items from a comprehensive list that contains multiple attributes or values.</li> </ul> <h4>When not to use:</h4> <ul> <li>You need to select only one item from a predefined list of single-value options. Use the {@link sap.m.Select Select} control instead.</li> <li>You need to display complex content without having the user navigate away from the current page or you want to prompt the user for an action. Use the {@link sap.m.Dialog Dialog} control instead.</li> <li>You need to select items within a query-based range. Use the {@link https://experience.sap.com/fiori-design-web/value-help-dialog/ Value Help Dialog} control instead.</li> <li>You need to filter a set of items without any selection. Use the {@link https://experience.sap.com/fiori-design-web/filter-bar/ Filter Bar} control instead.</li> </ul> <h4>Notes:</h4> <ul> <li>The property <code>growing</code> must not be used together with two-way binding. <li>When the property <code>growing</code> is set to <code>true</code> (default value), selected count (if present) and search, will work for currently loaded items only. To make sure that all items in the table are loaded at once and the above features work properly, set the property to <code>false</code>. <li>Since version 1.58, the columns headers and the info toolbar are sticky (remain fixed on top when scrolling). This feature is not supported in all browsers. <li>The TableSelectDialog is usually displayed at the center of the screen. Its size and position can be changed by the user. To enable this you need to set the <code>resizable</code> and <code>draggable</code> properties. Both properties are available only in desktop mode.</li> For more information on browser support limitations, you can refer to the {@link sap.m.ListBase sap.m.ListBase} <code>sticky</code> property. </ul> <h3>Responsive Behavior</h3> <ul> <li>On smaller screens, the columns of the table wrap and build a list that shows all the information.</li> </ul> When using the <code>sap.m.TableSelectDialog</code> in SAP Quartz themes, the breakpoints and layout paddings could be determined by the dialog's width. To enable this concept and add responsive paddings to an element of the control, you have to add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--subHeader</code>, <code>sapUiResponsivePadding--content</code>, <code>sapUiResponsivePadding--footer</code>.
 */
 extern class TableSelectDialog extends sap.ui.core.Control
 {
@@ -218,7 +218,7 @@ Default value is <code>false</code>.
 	/**
 	* Gets current value of property {@link #getGrowing growing}.
 
-Determines the progressive loading. When set to <code>true</code>, enables the growing feature of the control to load more items by requesting from the bound model. <b>Note:</b> This feature only works when an <code>items</code> aggregation is bound. Growing must not be used together with two-way binding. <b>Note:</b> If the property is set to true, the features <code>selected count</code> in info bar, <code>search</code> and <code>select/deselect all</code>, if present, work only for the currently loaded items. To make sure that all items in the table are loaded at once and the above features work properly, we recommend setting the <code>growing</code> property to false.
+Determines the progressive loading. When set to <code>true</code>, enables the growing feature of the control to load more items by requesting from the bound model. <b>Note:</b> This feature only works when an <code>items</code> aggregation is bound. Growing must not be used together with two-way binding. <b>Note:</b> If the property is set to <code>true</code>, selected count (if present) and search, will work for currently loaded items only. To make sure that all items in the table are loaded at once and the above features work properly, we recommend setting the <code>growing</code> property to <code>false</code>.
 
 Default value is <code>true</code>.
 	* @return	Value of property <code>growing</code>
@@ -266,7 +266,7 @@ Default value is <code>false</code>.
 	/**
 	* Gets current value of property {@link #getRememberSelections rememberSelections}.
 
-Controls whether the dialog clears the selection or not. When the dialog is opened multiple times in the same context to allow for corrections of previous user inputs, set this flag to "true". When the dialog should reset the selection to allow for a new selection each time set it to "false" Note: This property must be set before the Dialog is opened to have an effect.
+Controls whether the dialog clears the selection or not. When the dialog is opened multiple times in the same context to allow for corrections of previous user inputs, set this flag to <code>true</code>. When the dialog should reset the selection to allow for a new selection each time set it to <code>false</code> Note: This property must be set before the Dialog is opened to have an effect.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>rememberSelections</code>
@@ -473,7 +473,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	/**
 	* Sets a new value for property {@link #getRememberSelections rememberSelections}.
 
-Controls whether the dialog clears the selection or not. When the dialog is opened multiple times in the same context to allow for corrections of previous user inputs, set this flag to "true". When the dialog should reset the selection to allow for a new selection each time set it to "false" Note: This property must be set before the Dialog is opened to have an effect.
+Controls whether the dialog clears the selection or not. When the dialog is opened multiple times in the same context to allow for corrections of previous user inputs, set this flag to <code>true</code>. When the dialog should reset the selection to allow for a new selection each time set it to <code>false</code> Note: This property must be set before the Dialog is opened to have an effect.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -481,7 +481,7 @@ Default value is <code>false</code>.
 	* @param	bRememberSelections New value for property <code>rememberSelections</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRememberSelections( bRememberSelections:Bool):sap.m.TableSelectDialog;
+	public function setRememberSelections( ?bRememberSelections:Bool):sap.m.TableSelectDialog;
 
 	/**
 	* Sets the resizable property.
@@ -515,7 +515,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.TableSelectDialog;
+	public function setTitleAlignment( ?sTitleAlignment:sap.m.TitleAlignment):sap.m.TableSelectDialog;
 
 	/**
 	* Transfers method to the inner dialog: toggleStyleClass
@@ -554,7 +554,7 @@ typedef TableSelectDialogArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var multiSelect:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Determines the progressive loading. When set to <code>true</code>, enables the growing feature of the control to load more items by requesting from the bound model. <b>Note:</b> This feature only works when an <code>items</code> aggregation is bound. Growing must not be used together with two-way binding. <b>Note:</b> If the property is set to true, the features <code>selected count</code> in info bar, <code>search</code> and <code>select/deselect all</code>, if present, work only for the currently loaded items. To make sure that all items in the table are loaded at once and the above features work properly, we recommend setting the <code>growing</code> property to false.
+	* Determines the progressive loading. When set to <code>true</code>, enables the growing feature of the control to load more items by requesting from the bound model. <b>Note:</b> This feature only works when an <code>items</code> aggregation is bound. Growing must not be used together with two-way binding. <b>Note:</b> If the property is set to <code>true</code>, selected count (if present) and search, will work for currently loaded items only. To make sure that all items in the table are loaded at once and the above features work properly, we recommend setting the <code>growing</code> property to <code>false</code>.
 	*/
 	@:optional var growing:haxe.extern.EitherType<String,Bool>;
 
@@ -569,7 +569,7 @@ typedef TableSelectDialogArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var contentWidth:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
 	/**
-	* Controls whether the dialog clears the selection or not. When the dialog is opened multiple times in the same context to allow for corrections of previous user inputs, set this flag to "true". When the dialog should reset the selection to allow for a new selection each time set it to "false" Note: This property must be set before the Dialog is opened to have an effect.
+	* Controls whether the dialog clears the selection or not. When the dialog is opened multiple times in the same context to allow for corrections of previous user inputs, set this flag to <code>true</code>. When the dialog should reset the selection to allow for a new selection each time set it to <code>false</code> Note: This property must be set before the Dialog is opened to have an effect.
 	*/
 	@:optional var rememberSelections:haxe.extern.EitherType<String,Bool>;
 

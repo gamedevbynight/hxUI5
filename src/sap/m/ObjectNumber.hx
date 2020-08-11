@@ -127,7 +127,7 @@ Default value is <code>true</code>.
 	* @param	bEmphasized New value for property <code>emphasized</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEmphasized( bEmphasized:Bool):sap.m.ObjectNumber;
+	public function setEmphasized( ?bEmphasized:Bool):sap.m.ObjectNumber;
 
 	/**
 	* Sets a new value for property {@link #getNumber number}.
@@ -151,7 +151,7 @@ Default value is <code>None</code>.
 	* @param	sState New value for property <code>state</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setState( sState:sap.ui.core.ValueState):sap.m.ObjectNumber;
+	public function setState( ?sState:sap.ui.core.ValueState):sap.m.ObjectNumber;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -164,7 +164,7 @@ Default value is <code>Begin</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.ObjectNumber;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.ObjectNumber;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -177,7 +177,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.ObjectNumber;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.ObjectNumber;
 
 	/**
 	* Sets a new value for property {@link #getUnit unit}.

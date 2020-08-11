@@ -52,7 +52,7 @@ Default value is <code>80</code>.
 	* @param	fValue2 New value for property <code>value2</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue2( fValue2:Float):sap.ui.commons.RangeSlider;
+	public function setValue2( ?fValue2:Float):sap.ui.commons.RangeSlider;
 }
 
 typedef RangeSliderArgs = sap.ui.commons.Slider.SliderArgs & {

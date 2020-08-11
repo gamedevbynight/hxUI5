@@ -1,5 +1,6 @@
 package sap.ui.base;
 
+@:native("sap.ui.base.ManagedObjectMetadata")
 
 /**
 * <strong>Note about Info Objects</strong>

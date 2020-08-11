@@ -84,10 +84,10 @@ Defines the icon of the {@link sap.ui.core.IconPool sap.ui.core.IconPool} or an 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon New value for property <code>icon</code>
+	* @param	sIcon= New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.ui.unified.MenuItem;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.ui.unified.MenuItem;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -100,7 +100,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.unified.MenuItem;
+	public function setText( ?sText:String):sap.ui.unified.MenuItem;
 }
 
 typedef MenuItemArgs = sap.ui.unified.MenuItemBase.MenuItemBaseArgs & {

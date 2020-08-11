@@ -108,7 +108,7 @@ Default value is <code>empty string</code>.
 	* @param	sAnchorID New value for property <code>anchorID</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAnchorID( sAnchorID:String):sap.ui.commons.MessageBar;
+	public function setAnchorID( ?sAnchorID:String):sap.ui.commons.MessageBar;
 
 	/**
 	* Sets a new value for property {@link #getAnchorSnapPoint anchorSnapPoint}.
@@ -121,7 +121,7 @@ Default value is <code>begin top</code>.
 	* @param	sAnchorSnapPoint New value for property <code>anchorSnapPoint</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAnchorSnapPoint( sAnchorSnapPoint:String):sap.ui.commons.MessageBar;
+	public function setAnchorSnapPoint( ?sAnchorSnapPoint:String):sap.ui.commons.MessageBar;
 
 	/**
 	* Sets a new value for property {@link #getMaxListed maxListed}.
@@ -134,7 +134,7 @@ Default value is <code>7</code>.
 	* @param	iMaxListed New value for property <code>maxListed</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxListed( iMaxListed:Int):sap.ui.commons.MessageBar;
+	public function setMaxListed( ?iMaxListed:Int):sap.ui.commons.MessageBar;
 
 	/**
 	* Sets a new value for property {@link #getMaxToasted maxToasted}.
@@ -147,7 +147,7 @@ Default value is <code>3</code>.
 	* @param	iMaxToasted New value for property <code>maxToasted</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxToasted( iMaxToasted:Int):sap.ui.commons.MessageBar;
+	public function setMaxToasted( ?iMaxToasted:Int):sap.ui.commons.MessageBar;
 
 	/**
 	* Setter for property <code>visible</code>.

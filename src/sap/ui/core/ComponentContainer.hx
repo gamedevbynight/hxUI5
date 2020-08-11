@@ -21,7 +21,7 @@ Sample usage of the ComponentContainer:
     />
 </pre>
 
-See also {@link sap.ui.core.ComponentSupport}.
+See also {@link module:sap/ui/core/ComponentSupport}.
 */
 extern class ComponentContainer extends sap.ui.core.Control
 {
@@ -190,7 +190,13 @@ The URL of the component. This property can only be applied initially.
 	/**
 	* Gets current value of property {@link #getUsage usage}.
 
-The component usage. If the ComponentContainer is used inside a Component, this Component can define a usage which will be used for creating the Component. This property can only be applied initially.
+The name of a component usage as configured in the app descriptor of the component owning this <code>ComponentContainer</code>.
+
+The configuration from the named usage will be used to create a component instance for this <code>ComponentContainer</code>. If there's no owning component or if its app descriptor does not contain a usage with the given name, an error will be logged.
+
+See {@link topic:346599f0890d4dfaaa11c6b4ffa96312 Using and Nesting Components} for more information about component usages.
+
+This property can only be applied initially.
 	* @return	Value of property <code>usage</code>
 	*/
 	public function getUsage( ):String;
@@ -214,7 +220,7 @@ Default value is <code>false</code>.
 	* @param	bAsync New value for property <code>async</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAsync( bAsync:Bool):sap.ui.core.ComponentContainer;
+	public function setAsync( ?bAsync:Bool):sap.ui.core.ComponentContainer;
 
 	/**
 	* Sets a new value for property {@link #getAutoPrefixId autoPrefixId}.
@@ -227,7 +233,7 @@ Default value is <code>false</code>.
 	* @param	bAutoPrefixId New value for property <code>autoPrefixId</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAutoPrefixId( bAutoPrefixId:Bool):sap.ui.core.ComponentContainer;
+	public function setAutoPrefixId( ?bAutoPrefixId:Bool):sap.ui.core.ComponentContainer;
 	@:overload( function(vComponent:String):sap.ui.core.ComponentContainer{ })
 
 	/**
@@ -250,7 +256,7 @@ Default value is <code>false</code>.
 	* @param	bHandleValidation New value for property <code>handleValidation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHandleValidation( bHandleValidation:Bool):sap.ui.core.ComponentContainer;
+	public function setHandleValidation( ?bHandleValidation:Bool):sap.ui.core.ComponentContainer;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -274,7 +280,7 @@ Default value is <code>Legacy</code>.
 	* @param	sLifecycle New value for property <code>lifecycle</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLifecycle( sLifecycle:sap.ui.core.ComponentLifecycle):sap.ui.core.ComponentContainer;
+	public function setLifecycle( ?sLifecycle:sap.ui.core.ComponentLifecycle):sap.ui.core.ComponentContainer;
 
 	/**
 	* Sets a new value for property {@link #getManifest manifest}.
@@ -309,7 +315,7 @@ Default value is <code>false</code>.
 	* @param	bPropagateModel New value for property <code>propagateModel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPropagateModel( bPropagateModel:Bool):sap.ui.core.ComponentContainer;
+	public function setPropagateModel( ?bPropagateModel:Bool):sap.ui.core.ComponentContainer;
 
 	/**
 	* Sets a new value for property {@link #getSettings settings}.
@@ -336,7 +342,13 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getUsage usage}.
 
-The component usage. If the ComponentContainer is used inside a Component, this Component can define a usage which will be used for creating the Component. This property can only be applied initially.
+The name of a component usage as configured in the app descriptor of the component owning this <code>ComponentContainer</code>.
+
+The configuration from the named usage will be used to create a component instance for this <code>ComponentContainer</code>. If there's no owning component or if its app descriptor does not contain a usage with the given name, an error will be logged.
+
+See {@link topic:346599f0890d4dfaaa11c6b4ffa96312 Using and Nesting Components} for more information about component usages.
+
+This property can only be applied initially.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sUsage New value for property <code>usage</code>
@@ -409,7 +421,13 @@ typedef ComponentContainerArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var autoPrefixId:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* The component usage. If the ComponentContainer is used inside a Component, this Component can define a usage which will be used for creating the Component. This property can only be applied initially.
+	* The name of a component usage as configured in the app descriptor of the component owning this <code>ComponentContainer</code>.
+
+The configuration from the named usage will be used to create a component instance for this <code>ComponentContainer</code>. If there's no owning component or if its app descriptor does not contain a usage with the given name, an error will be logged.
+
+See {@link topic:346599f0890d4dfaaa11c6b4ffa96312 Using and Nesting Components} for more information about component usages.
+
+This property can only be applied initially.
 	*/
 	@:optional var usage:String;
 

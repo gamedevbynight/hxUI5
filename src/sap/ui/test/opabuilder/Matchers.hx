@@ -1,8 +1,34 @@
 package sap.ui.test.opabuilder;
 
-@:native("sap.ui.test.opabuilder.Matchers")
 extern class Matchers
 {
+
+	/**
+	* A matcher function that always returns <code>false</code>.
+
+<code> <pre>var fnFalsyMatcher = OpaBuilder.Matchers.FALSE;</pre> </code>
+	*/
+	 public static var FALSE:()->Void;
+
+	/**
+	* A matcher function that always returns <code>true</code>.
+
+<code> <pre>var fnTruthyMatcher = OpaBuilder.Matchers.TRUE;</pre> </code>
+	*/
+	 public static var TRUE:()->Void;
+
+
+	@:overload( function(sAggregationName:String, ?vMatchers:sap.ui.test.matchers.Matcher):()->Void{ })
+	@:overload( function(sAggregationName:String, ?vMatchers:()->Void):()->Void{ })
+	@:overload( function(sAggregationName:String, ?vMatchers:Array<Dynamic>):()->Void{ })
+
+	/**
+	* Creates a matcher function that returns all aggregation items fulfilling given matcher(s). The result will always be an array, even if it is a non-multiple aggregation.
+	* @param	sAggregationName the aggregation name
+	* @param	vMatchers the matchers to filter aggregation items
+	* @return	matcher function returning all matching aggregation items
+	*/
+	public static function aggregation( sAggregationName:String, ?vMatchers:Dynamic):()->Void;
 
 	/**
 	* Creates a matcher function that returns an aggregation element of a control at a given index.
@@ -55,6 +81,30 @@ extern class Matchers
 	* @return	the matcher function checks all path in the properties object against the binding context
 	*/
 	public static function bindingProperties( sModelName:String, oProperties:Dynamic):()->Void;
+	@:overload( function(?vBuilderOrMatcher:sap.ui.test.matchers.Matcher, ?bDirect:Bool):()->Void{ })
+	@:overload( function(?vBuilderOrMatcher:()->Void, ?bDirect:Bool):()->Void{ })
+	@:overload( function(?vBuilderOrMatcher:Array<Dynamic>, ?bDirect:Bool):()->Void{ })
+	@:overload( function(?vBuilderOrMatcher:Dynamic, ?bDirect:Bool):()->Void{ })
+
+	/**
+	* Creates a matcher function that returns all children fulfilling given matcher(s). The result will always be an array, even if only one child was found.
+	* @param	vBuilderOrMatcher the matchers to filter aggregation items
+	* @param	bDirect specifies if the ancestor should be a direct ancestor (parent)
+	* @return	matcher function returning all matching children
+	*/
+	public static function children( ?vBuilderOrMatcher:sap.ui.test.OpaBuilder, ?bDirect:Bool):()->Void;
+	@:overload( function(?vBuilderOrMatcher:sap.ui.test.matchers.Matcher, ?bDirect:Bool):()->Void{ })
+	@:overload( function(?vBuilderOrMatcher:()->Void, ?bDirect:Bool):()->Void{ })
+	@:overload( function(?vBuilderOrMatcher:Array<Dynamic>, ?bDirect:Bool):()->Void{ })
+	@:overload( function(?vBuilderOrMatcher:Dynamic, ?bDirect:Bool):()->Void{ })
+
+	/**
+	* Creates a matcher function that checks whether one children fulfilling given matcher(s).
+	* @param	vBuilderOrMatcher the matchers to filter aggregation items
+	* @param	bDirect specifies if the ancestor should be a direct ancestor (parent)
+	* @return	matcher function
+	*/
+	public static function childrenMatcher( ?vBuilderOrMatcher:sap.ui.test.OpaBuilder, ?bDirect:Bool):()->Void;
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:sap.ui.test.matchers.Matcher):()->Void{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:()->Void):()->Void{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Array<Dynamic>):()->Void{ })
@@ -189,6 +239,23 @@ extern class Matchers
 	* @return	the matcher function returns the result of the matcher chain
 	*/
 	public static function match( ?vMatchers:Dynamic):()->Void;
+	@:overload( function(?vMatchers:sap.ui.test.matchers.Matcher):()->Void{ })
+	@:overload( function(?vMatchers:()->Void):()->Void{ })
+	@:overload( function(?vMatchers:Array<Dynamic>):()->Void{ })
+
+	/**
+	* Creates a matcher function which is negating the result of provided matchers. The matcher function returns a boolean value but never a control.
+
+Example usage for only matching controls without a certain text: <code> <pre>new OpaBuilder().hasType("sap.m.Text").has(
+             OpaBuilder.Matchers.not(
+                 OpaBuilder.Matchers.properties({ text: "Ignore controls with this text"})
+            )
+        );
+    </pre> </code>
+	* @param	vMatchers the matchers that will actually be executed
+	* @return	the matcher function returns the negated result of the matcher chain
+	*/
+	public static function not( ?vMatchers:Dynamic):()->Void;
 
 	/**
 	* Creates a {@link sap.ui.test.matchers.Properties} matcher.

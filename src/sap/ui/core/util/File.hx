@@ -19,7 +19,7 @@ extern class File
 	* @param	sFileExtension file extension
 	* @param	sMimeType file mime-type
 	* @param	sCharset file charset
-	* @param	bByteOrderMark Whether to prepend a unicode byte order mark (only applies for utf-8 charset). Default is <code>false</code> except when <code>sFileExtension</code> = <code>csv</code> it is <code>true</code> (compatibility reasons).
+	* @param	bByteOrderMark Whether to prepend a unicode byte order mark (only applies for utf-8 charset). Default is <code>false</code> except when <code>sFileExtension</code> === 'csv' and <code>sCharset</code> === 'utf-8' it is <code>true</code> (compatibility reasons).
 	* @return	Void
 	*/
 	public static function save( sData:String, sFileName:String, sFileExtension:String, sMimeType:String, sCharset:String, ?bByteOrderMark:Bool):Void;

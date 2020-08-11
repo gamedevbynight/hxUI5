@@ -85,6 +85,12 @@ See {@link sap.ui.base.ManagedObject#bindAggregation ManagedObject.bindAggregati
 	public function destroyFilterItems( ):sap.m.P13nFilterPanel;
 
 	/**
+	* Destroys the messageStrip in the aggregation {@link #getMessageStrip messageStrip}.
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function destroyMessageStrip( ):sap.m.P13nFilterPanel;
+
+	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:addFilterItem addFilterItem} event of this <code>sap.m.P13nFilterPanel</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -212,6 +218,14 @@ Default value is <code>-1</code>.
 	public function getMaxIncludes( ):String;
 
 	/**
+	* Gets content of aggregation {@link #getMessageStrip messageStrip}.
+
+Defines an optional message strip to be displayed in the content area
+	* @return	null
+	*/
+	public function getMessageStrip( ):sap.m.MessageStrip;
+
+	/**
 	* Returns a metadata object for class sap.m.P13nFilterPanel.
 	* @return	Metadata object describing this class
 	*/
@@ -279,7 +293,7 @@ Default value is <code>false</code>.
 	* @param	bContainerQuery New value for property <code>containerQuery</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContainerQuery( bContainerQuery:Bool):sap.m.P13nFilterPanel;
+	public function setContainerQuery( ?bContainerQuery:Bool):sap.m.P13nFilterPanel;
 
 	/**
 	* Sets a new value for property {@link #getEnableEmptyOperations enableEmptyOperations}.
@@ -292,7 +306,7 @@ Default value is <code>false</code>.
 	* @param	bEnableEmptyOperations New value for property <code>enableEmptyOperations</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableEmptyOperations( bEnableEmptyOperations:Bool):sap.m.P13nFilterPanel;
+	public function setEnableEmptyOperations( ?bEnableEmptyOperations:Bool):sap.m.P13nFilterPanel;
 
 	/**
 	* Setter for the supported exclude operations array.
@@ -332,7 +346,7 @@ Default value is <code>-1</code>.
 	* @param	sMaxExcludes New value for property <code>maxExcludes</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxExcludes( sMaxExcludes:String):sap.m.P13nFilterPanel;
+	public function setMaxExcludes( ?sMaxExcludes:String):sap.m.P13nFilterPanel;
 
 	/**
 	* Sets a new value for property {@link #getMaxIncludes maxIncludes}.
@@ -345,7 +359,14 @@ Default value is <code>-1</code>.
 	* @param	sMaxIncludes New value for property <code>maxIncludes</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxIncludes( sMaxIncludes:String):sap.m.P13nFilterPanel;
+	public function setMaxIncludes( ?sMaxIncludes:String):sap.m.P13nFilterPanel;
+
+	/**
+	* Sets the aggregated {@link #getMessageStrip messageStrip}.
+	* @param	oMessageStrip The messageStrip to set
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setMessageStrip( oMessageStrip:sap.m.MessageStrip):sap.m.P13nFilterPanel;
 
 	/**
 	* Unbinds aggregation {@link #getFilterItems filterItems} from model data.
@@ -396,6 +417,11 @@ typedef P13nFilterPanelArgs = sap.m.P13nPanel.P13nPanelArgs & {
     * Defines filter items.
     */
 	@:optional var filterItems:Array<haxe.extern.EitherType<String,sap.m.P13nFilterItem>>;
+
+    /**
+    * Defines an optional message strip to be displayed in the content area
+    */
+	@:optional var messageStrip:haxe.extern.EitherType<String,sap.m.MessageStrip>;
 
 	/**
 	* Event raised if a filter item has been added.

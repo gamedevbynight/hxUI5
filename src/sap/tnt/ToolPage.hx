@@ -134,10 +134,10 @@ Additionally, it unregisters them from the hosting UIArea.
 
 	/**
 	* Sets the expand/collapse state of the SideContent.
-	* @param	isSideExpanded defines whether the SideNavigation is expanded.
+	* @param	bSideExpanded defines whether the SideNavigation is expanded.
 	* @return	Pointer to the control instance for chaining
 	*/
-	public function setSideExpanded( isSideExpanded:Bool):sap.tnt.ToolPage;
+	public function setSideExpanded( bSideExpanded:Bool):sap.tnt.ToolPage;
 
 	/**
 	* Toggles the expand/collapse state of the SideContent.

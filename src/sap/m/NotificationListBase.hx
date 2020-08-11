@@ -196,7 +196,7 @@ Default value is <code>empty string</code>.
 	* @param	sAuthorName New value for property <code>authorName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAuthorName( sAuthorName:String):sap.m.NotificationListBase;
+	public function setAuthorName( ?sAuthorName:String):sap.m.NotificationListBase;
 
 	/**
 	* Sets a new value for property {@link #getAuthorPicture authorPicture}.
@@ -220,7 +220,7 @@ Default value is <code>empty string</code>.
 	* @param	sDatetime New value for property <code>datetime</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDatetime( sDatetime:String):sap.m.NotificationListBase;
+	public function setDatetime( ?sDatetime:String):sap.m.NotificationListBase;
 
 	/**
 	* Sets a new value for property {@link #getPriority priority}.
@@ -233,7 +233,7 @@ Default value is <code>None</code>.
 	* @param	sPriority New value for property <code>priority</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPriority( sPriority:sap.ui.core.Priority):sap.m.NotificationListBase;
+	public function setPriority( ?sPriority:sap.ui.core.Priority):sap.m.NotificationListBase;
 
 	/**
 	* Sets a new value for property {@link #getShowButtons showButtons}.
@@ -248,7 +248,7 @@ Default value is <code>true</code>.
 	* @param	bShowButtons New value for property <code>showButtons</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowButtons( bShowButtons:Bool):sap.m.NotificationListBase;
+	public function setShowButtons( ?bShowButtons:Bool):sap.m.NotificationListBase;
 
 	/**
 	* Sets a new value for property {@link #getShowCloseButton showCloseButton}.
@@ -261,7 +261,7 @@ Default value is <code>true</code>.
 	* @param	bShowCloseButton New value for property <code>showCloseButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowCloseButton( bShowCloseButton:Bool):sap.m.NotificationListBase;
+	public function setShowCloseButton( ?bShowCloseButton:Bool):sap.m.NotificationListBase;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -274,7 +274,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.NotificationListBase;
+	public function setTitle( ?sTitle:String):sap.m.NotificationListBase;
 }
 
 typedef NotificationListBaseArgs = sap.m.ListItemBase.ListItemBaseArgs & {
@@ -320,6 +320,11 @@ typedef NotificationListBaseArgs = sap.m.ListItemBase.ListItemBaseArgs & {
     * Action buttons.
     */
 	@:optional var buttons:Array<haxe.extern.EitherType<String,sap.m.Button>>;
+
+    /**
+    * Close button.
+    */
+	@:optional var _closeButton:haxe.extern.EitherType<String,sap.m.Button>;
 
     /**
     * The overflow toolbar.

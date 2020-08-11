@@ -470,7 +470,7 @@ Default value is <code>Text</code>.
 	* Gets the input value.
 	* @return	Value of the input.
 	*/
-	public function getValue( ):sap.m.Input;
+	public function getValue( ):String;
 
 	/**
 	* Gets current value of property {@link #getValueHelpOnly valueHelpOnly}.
@@ -501,12 +501,6 @@ Default value is empty/<code>undefined</code>
 	* @return	the value of property <code>valueStateText</code>
 	*/
 	public function getValueStateText( ):String;
-
-	/**
-	* Returns the width of the input.
-	* @return	The current width or 100% as default.
-	*/
-	public function getWidth( ):String;
 
 	/**
 	* Checks for the provided <code>sap.m.Column</code> in the aggregation {@link #getSuggestionColumns suggestionColumns}. and returns its index if found or -1 otherwise.
@@ -553,12 +547,6 @@ Default value is empty/<code>undefined</code>
 	* @return	this Input instance for chaining.
 	*/
 	public function insertSuggestionRow( oItem:sap.ui.core.Item, iIndex:Int):sap.m.Input;
-
-	/**
-	* Overwrites the onAfterRendering.
-	* @return	Void
-	*/
-	public function onAfterRendering( ):Void;
 
 	/**
 	* Overwrites the onBeforeRendering.
@@ -676,7 +664,7 @@ Default value is <code>true</code>.
 	* @param	bAutocomplete New value for property <code>autocomplete</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAutocomplete( bAutocomplete:Bool):sap.m.Input;
+	public function setAutocomplete( ?bAutocomplete:Bool):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getDescription description}.
@@ -700,7 +688,7 @@ Default value is <code>true</code>.
 	* @param	bEnableSuggestionsHighlighting New value for property <code>enableSuggestionsHighlighting</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableSuggestionsHighlighting( bEnableSuggestionsHighlighting:Bool):sap.m.Input;
+	public function setEnableSuggestionsHighlighting( ?bEnableSuggestionsHighlighting:Bool):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getFieldWidth fieldWidth}.
@@ -713,7 +701,7 @@ Default value is <code>50%</code>.
 	* @param	sFieldWidth New value for property <code>fieldWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFieldWidth( sFieldWidth:sap.ui.core.CSSSize):sap.m.Input;
+	public function setFieldWidth( ?sFieldWidth:sap.ui.core.CSSSize):sap.m.Input;
 
 	/**
 	* Sets a custom filter function for suggestions. The default is to check whether the first item text begins with the typed value. For one and two-value suggestions this callback function will operate on sap.ui.core.Item types, for tabular suggestions the function will operate on sap.m.ColumnListItem types.
@@ -733,7 +721,7 @@ Default value is <code>true</code>.
 	* @param	bFilterSuggests New value for property <code>filterSuggests</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFilterSuggests( bFilterSuggests:Bool):sap.m.Input;
+	public function setFilterSuggests( ?bFilterSuggests:Bool):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getMaxLength maxLength}.
@@ -746,7 +734,7 @@ Default value is <code>0</code>.
 	* @param	iMaxLength New value for property <code>maxLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxLength( iMaxLength:Int):sap.m.Input;
+	public function setMaxLength( ?iMaxLength:Int):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getMaxSuggestionWidth maxSuggestionWidth}.
@@ -768,10 +756,10 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 
 	/**
 	* Sets the <code>selectedItem</code> association.
-	* @param	oItem New value for the <code>selectedItem</code> association. Default value is <code>null</code>. If an ID of a <code>sap.ui.core.Item</code> is given, the item with this ID becomes the <code>selectedItem</code> association. Alternatively, a <code>sap.ui.core.Item</code> instance may be given or <code>null</code> to clear the selection.
+	* @param	oItem New value for the <code>selectedItem</code> association. If an ID of a <code>sap.ui.core.Item</code> is given, the item with this ID becomes the <code>selectedItem</code> association. Alternatively, a <code>sap.ui.core.Item</code> instance may be given or <code>null</code> to clear the selection.
 	* @return	<code>this</code> to allow method chaining.
 	*/
-	public function setSelectedItem( oItem:sap.ui.core.Item):sap.m.Input;
+	public function setSelectedItem( ?oItem:sap.ui.core.Item):sap.m.Input;
 
 	/**
 	* Sets the <code>selectedKey</code> property.
@@ -814,14 +802,16 @@ Default value is <code>false</code>.
 	* @param	bShowValueHelp New value for property <code>showValueHelp</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowValueHelp( bShowValueHelp:Bool):sap.m.Input;
+	public function setShowValueHelp( ?bShowValueHelp:Bool):sap.m.Input;
 
 	/**
-	* Sets whether the value state message should be shown or not
-	* @param	bShow The new value state text
-	* @return	this for chaining
+	* Setter for property <code>showValueStateMessage</code>.
+
+Default value is <code>true</code>
+	* @param	bShowValueStateMessage new value for property <code>showValueStateMessage</code>
+	* @return	<code>this</code> to allow method chaining
 	*/
-	public function setShowValueStateMessage( ?bShow:Bool):sap.m.InputBase;
+	public function setShowValueStateMessage( bShowValueStateMessage:Bool):sap.m.InputBase;
 
 	/**
 	* Sets a new value for property {@link #getStartSuggestion startSuggestion}.
@@ -836,7 +826,7 @@ Default value is <code>1</code>.
 	* @param	iStartSuggestion New value for property <code>startSuggestion</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStartSuggestion( iStartSuggestion:Int):sap.m.Input;
+	public function setStartSuggestion( ?iStartSuggestion:Int):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getSuggestionRowValidator suggestionRowValidator}.
@@ -846,10 +836,10 @@ Defines the validation callback function called when a suggestion row gets selec
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	oSuggestionRowValidator New value for property <code>suggestionRowValidator</code>
+	* @param	oSuggestionRowValidator= New value for property <code>suggestionRowValidator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSuggestionRowValidator( oSuggestionRowValidator:Dynamic):sap.m.Input;
+	public function setSuggestionRowValidator( ?oSuggestionRowValidator:Dynamic):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getTextFormatMode textFormatMode}.
@@ -862,7 +852,7 @@ Default value is <code>Value</code>.
 	* @param	sTextFormatMode New value for property <code>textFormatMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextFormatMode( sTextFormatMode:sap.m.InputTextFormatMode):sap.m.Input;
+	public function setTextFormatMode( ?sTextFormatMode:sap.m.InputTextFormatMode):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getTextFormatter textFormatter}.
@@ -872,10 +862,10 @@ Defines the display text formatter function.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	oTextFormatter New value for property <code>textFormatter</code>
+	* @param	oTextFormatter= New value for property <code>textFormatter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextFormatter( oTextFormatter:Dynamic):sap.m.Input;
+	public function setTextFormatter( ?oTextFormatter:Dynamic):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -888,7 +878,7 @@ Default value is <code>Text</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.InputType):sap.m.Input;
+	public function setType( ?sType:sap.m.InputType):sap.m.Input;
 
 	/**
 	* Setter for property <code>value</code>.
@@ -910,7 +900,7 @@ Default value is <code>false</code>.
 	* @param	bValueHelpOnly New value for property <code>valueHelpOnly</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueHelpOnly( bValueHelpOnly:Bool):sap.m.Input;
+	public function setValueHelpOnly( ?bValueHelpOnly:Bool):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getValueLiveUpdate valueLiveUpdate}.
@@ -925,21 +915,16 @@ Default value is <code>false</code>.
 	* @param	bValueLiveUpdate New value for property <code>valueLiveUpdate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueLiveUpdate( bValueLiveUpdate:Bool):sap.m.Input;
+	public function setValueLiveUpdate( ?bValueLiveUpdate:Bool):sap.m.Input;
 
 	/**
-	* Sets the visualization of the validation state of the control, e.g. <code>Error</code>, <code>Warning</code>, <code>Success</code>.
-	* @param	sValueState The new value state
-	* @return	this for chaining
-	*/
-	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.m.InputBase;
+	* Setter for property <code>valueStateText</code>.
 
-	/**
-	* Sets the value state text
-	* @param	sValueStateText The new value state text
-	* @return	this for chaining
+Default value is empty/<code>undefined</code>
+	* @param	sValueStateText new value for property <code>valueStateText</code>
+	* @return	<code>this</code> to allow method chaining
 	*/
-	public function setValueStateText( ?sValueStateText:String):sap.m.InputBase;
+	public function setValueStateText( sValueStateText:String):sap.m.InputBase;
 
 	/**
 	* Opens the <code>SuggestionsPopover</code> with the available items.

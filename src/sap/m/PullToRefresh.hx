@@ -129,7 +129,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.PullToRefresh;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.PullToRefresh;
 
 	/**
 	* Sets a new value for property {@link #getShowIcon showIcon}.
@@ -142,7 +142,7 @@ Default value is <code>false</code>.
 	* @param	bShowIcon New value for property <code>showIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowIcon( bShowIcon:Bool):sap.m.PullToRefresh;
+	public function setShowIcon( ?bShowIcon:Bool):sap.m.PullToRefresh;
 }
 
 typedef PullToRefreshArgs = sap.ui.core.Control.ControlArgs & {

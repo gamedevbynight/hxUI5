@@ -1,6 +1,5 @@
 package sap.ui.test.recordreplay;
 
-@:native("sap.ui.test.RecordReplay.InteractionType")
 @:enum extern abstract InteractionType(String)
 {
     /**

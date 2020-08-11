@@ -202,7 +202,7 @@ Default value is <code>0</code>.
 	* @param	fAverageValue New value for property <code>averageValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAverageValue( fAverageValue:Float):sap.ui.commons.RatingIndicator;
+	public function setAverageValue( ?fAverageValue:Float):sap.ui.commons.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -215,7 +215,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.commons.RatingIndicator;
+	public function setEditable( ?bEditable:Bool):sap.ui.commons.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getIconHovered iconHovered}.
@@ -270,7 +270,7 @@ Default value is <code>0</code>.
 	* @param	fValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( fValue:Float):sap.ui.commons.RatingIndicator;
+	public function setValue( ?fValue:Float):sap.ui.commons.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getVisualMode visualMode}.
@@ -283,7 +283,7 @@ Default value is <code>Half</code>.
 	* @param	sVisualMode New value for property <code>visualMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisualMode( sVisualMode:sap.ui.commons.RatingIndicatorVisualMode):sap.ui.commons.RatingIndicator;
+	public function setVisualMode( ?sVisualMode:sap.ui.commons.RatingIndicatorVisualMode):sap.ui.commons.RatingIndicator;
 
 	/**
 	* Unbinds property {@link #getValue value} from model data.

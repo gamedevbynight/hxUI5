@@ -271,7 +271,7 @@ Default value is <code>On</code>.
 	* @param	sMaskMode New value for property <code>maskMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaskMode( sMaskMode:sap.m.TimePickerMaskMode):sap.m.TimePicker;
+	public function setMaskMode( ?sMaskMode:sap.m.TimePickerMaskMode):sap.m.TimePicker;
 
 	/**
 	* Sets the minutes slider step.
@@ -291,7 +291,7 @@ Default value is <code>_</code>.
 	* @param	sPlaceholderSymbol New value for property <code>placeholderSymbol</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholderSymbol( sPlaceholderSymbol:String):sap.m.TimePicker;
+	public function setPlaceholderSymbol( ?sPlaceholderSymbol:String):sap.m.TimePicker;
 
 	/**
 	* Sets the seconds slider step.

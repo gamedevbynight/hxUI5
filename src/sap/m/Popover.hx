@@ -490,10 +490,10 @@ Sets the minimum width of the content area inside popover.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sContentMinWidth New value for property <code>contentMinWidth</code>
+	* @param	sContentMinWidth= New value for property <code>contentMinWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentMinWidth( sContentMinWidth:sap.ui.core.CSSSize):sap.m.Popover;
+	public function setContentMinWidth( ?sContentMinWidth:sap.ui.core.CSSSize):sap.m.Popover;
 
 	/**
 	* Sets a new value for property {@link #getContentWidth contentWidth}.
@@ -538,7 +538,7 @@ Default value is <code>true</code>.
 	* @param	bHorizontalScrolling New value for property <code>horizontalScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHorizontalScrolling( bHorizontalScrolling:Bool):sap.m.Popover;
+	public function setHorizontalScrolling( ?bHorizontalScrolling:Bool):sap.m.Popover;
 	@:overload( function(oInitialFocus:sap.ui.core.ID):sap.m.Popover{ })
 
 	/**
@@ -569,7 +569,7 @@ Default value is <code>0</code>.
 	* @param	iOffsetX New value for property <code>offsetX</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOffsetX( iOffsetX:Int):sap.m.Popover;
+	public function setOffsetX( ?iOffsetX:Int):sap.m.Popover;
 
 	/**
 	* Sets a new value for property {@link #getOffsetY offsetY}.
@@ -582,7 +582,7 @@ Default value is <code>0</code>.
 	* @param	iOffsetY New value for property <code>offsetY</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOffsetY( iOffsetY:Int):sap.m.Popover;
+	public function setOffsetY( ?iOffsetY:Int):sap.m.Popover;
 
 	/**
 	* Set the placement of the Popover.
@@ -602,7 +602,7 @@ Default value is <code>false</code>.
 	* @param	bResizable New value for property <code>resizable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setResizable( bResizable:Bool):sap.m.Popover;
+	public function setResizable( ?bResizable:Bool):sap.m.Popover;
 
 	/**
 	* Sets a new value for property {@link #getShowArrow showArrow}.
@@ -615,7 +615,7 @@ Default value is <code>true</code>.
 	* @param	bShowArrow New value for property <code>showArrow</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowArrow( bShowArrow:Bool):sap.m.Popover;
+	public function setShowArrow( ?bShowArrow:Bool):sap.m.Popover;
 
 	/**
 	* Sets a new value for property {@link #getShowHeader showHeader}.
@@ -628,7 +628,7 @@ Default value is <code>true</code>.
 	* @param	bShowHeader New value for property <code>showHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHeader( bShowHeader:Bool):sap.m.Popover;
+	public function setShowHeader( ?bShowHeader:Bool):sap.m.Popover;
 
 	/**
 	* Sets the aggregated {@link #getSubHeader subHeader}.
@@ -659,7 +659,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.Popover;
+	public function setTitleAlignment( ?sTitleAlignment:sap.m.TitleAlignment):sap.m.Popover;
 
 	/**
 	* Sets a new value for property {@link #getVerticalScrolling verticalScrolling}.
@@ -672,7 +672,7 @@ Default value is <code>true</code>.
 	* @param	bVerticalScrolling New value for property <code>verticalScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVerticalScrolling( bVerticalScrolling:Bool):sap.m.Popover;
+	public function setVerticalScrolling( ?bVerticalScrolling:Bool):sap.m.Popover;
 }
 
 typedef PopoverArgs = sap.ui.core.Control.ControlArgs & {
@@ -751,6 +751,13 @@ typedef PopoverArgs = sap.ui.core.Control.ControlArgs & {
 	* Specifies the Title alignment (theme specific). If set to <code>TitleAlignment.Auto</code>, the Title will be aligned as it is set in the theme (if not set, the default value is <code>center</code>); Other possible values are <code>TitleAlignment.Start</code> (left or right depending on LTR/RTL), and <code>TitleAlignment.Center</code> (centered)
 	*/
 	@:optional var titleAlignment:haxe.extern.EitherType<String,sap.m.TitleAlignment>;
+
+	/**
+	* Specifies if the Popover should be set ARIA role 'application'. This property does not respect the avoidAriaApplicationRole core configuration, because it is expected to be used explicitly when role application is required for a specific Popover instance, no matter if the application role is present on the html body.
+
+<b>Note:</b> If this property should become public in the future, the property will have to be set on a level that will encapsulate the header and the footer of the popover as well.
+	*/
+	@:optional var ariaRoleApplication:haxe.extern.EitherType<String,Bool>;
 
     /**
     * The content inside the popover.

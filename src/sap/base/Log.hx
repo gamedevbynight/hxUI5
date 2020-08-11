@@ -1,6 +1,6 @@
 package sap.base;
 
-@:native("sap.base.Log")
+@:native("module:sap/base/Log")
 extern class Log
 {
 

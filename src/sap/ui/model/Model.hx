@@ -200,6 +200,13 @@ The passed function and listener object must match the ones used for event regis
 	public function getDefaultBindingMode( ):sap.ui.model.BindingMode;
 
 	/**
+	* Returns messages of this model associated with the given context, that is messages belonging to the object referred to by this context or a child object of that object. The messages are sorted by their {@link sap.ui.core.message.Message#getType type} according to the type's severity in a way that messages with highest severity come first.
+	* @param	oContext The context to retrieve messages for
+	* @return	The messages associated with this context sorted by severity; empty array in case no messages exist
+	*/
+	public function getMessages( oContext:sap.ui.model.Context):Array<sap.ui.core.message.Message>;
+
+	/**
 	* Returns a metadata object for class sap.ui.model.Model.
 	* @return	Metadata object describing this class
 	*/
@@ -234,9 +241,9 @@ The original value is the value that was last responded by a server if using a s
 	* Implement in inheriting classes.
 	* @param	sPath the path to where to read the attribute value
 	* @param	oContext the context with which the path should be resolved
-	* @return	Void
+	* @return	Value of the addressed property
 	*/
-	public function getProperty( sPath:String, ?oContext:Dynamic):Void;
+	public function getProperty( sPath:String, ?oContext:Dynamic):Dynamic;
 
 	/**
 	* Check if the specified binding mode is supported by the model.
@@ -279,11 +286,11 @@ This defines, whether relative bindings, which do not have a defined binding con
 	public function setLegacySyntax( bLegacySyntax:Bool):Void;
 
 	/**
-	* Sets messages.
-	* @param	mMessages Messages for this model
+	* Sets the messages for this model and notifies the bindings if the new messages differ from the current model messages.
+	* @param	mMessages The new messages for the model, mapping a binding path to an array of {@link sap.ui.core.message.Message} objects
 	* @return	Void
 	*/
-	public function setMessages( mMessages:Dynamic):Void;
+	public function setMessages( ?mMessages:Map<String,Array<sap.ui.core.message.Message>>):Void;
 
 	/**
 	* Set the maximum number of entries which are used for list bindings.

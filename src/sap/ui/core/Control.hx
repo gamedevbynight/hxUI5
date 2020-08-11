@@ -131,21 +131,22 @@ The passed function and listener object must match the ones used for event regis
 <code>oClassInfo</code> can contain the same information that {@link sap.ui.core.Element.extend} already accepts, plus the following <code>renderer</code> property:
 
 Example: <pre>
-Control.extend('sap.mylib.MyControl', {
+Control.extend("sap.mylib.MyControl", {
   metadata : {
-    library : 'sap.mylib',
+    library : "sap.mylib",
     properties : {
-      text : 'string',
-      width : 'sap.ui.core.CSSSize'
-    },
-    renderer: {
-      render: function(oRM, oControl) {
-        oRM.openTag("div", oControl);
-        oRM.style("width", oControl.getWidth());
-        oRM.openEnd();
-        oRM.text(oControl.getText());
-        oRM.closeTag("div");
-      }
+      text : "string",
+      width : "sap.ui.core.CSSSize"
+    }
+  },
+  renderer: {
+    apiVersion: 2,
+    render: function(oRM, oControl) {
+      oRM.openStart("div", oControl);
+      oRM.style("width", oControl.getWidth());
+      oRM.openEnd();
+      oRM.text(oControl.getText());
+      oRM.close("div");
     }
   }
 });
@@ -154,6 +155,8 @@ Control.extend('sap.mylib.MyControl', {
 There are multiple ways how a renderer can be specified: <ul> <li>As a <b>plain object</b>: The object will be used to create a new renderer by using {@link sap.ui.core.Renderer.extend} to extend the renderer of the base class of this control. The new renderer will have the same global name as this control class with the additional suffix 'Renderer'.<br> <b>Note:</b> The <code>Renderer.extend</code> method expects a plain object (no prototype chain).</li> <li>As a <b>function</b>: The given function will be used as <code>render</code> function of a new renderer; the renderer will be created in the same way as described for the <i>plain object</i> case.</li> <li>As a <b>ready-made renderer</b>, e.g. imported from the corresponding renderer module. As renderers are simple objects (not instances of a specific class), some heuristic is used to distinguish renderers from the <i>plain object</i> case above: An object is assumed to be a ready-made renderer when it has a <code>render</code> function and either is already exposed under the expected global name or has an <code>extend</code> method.</li> <li>As a <b>fully qualified name</b>: The name will be looked up as a global property. If not defined, a module name will be derived from the global name (dots replaced by slashes), the module will be required and provides the renderer, either as AMD export or via the named global property.</li> <li><b>Omitting the <code>renderer</code> property</b> or setting it to <code>undefined</code>: The fully qualified name of the renderer will be derived from the fully qualified name of the control by adding the suffix "Renderer". The renderer then is retrieved in the same way as described for the <i>fully qualified name</i> case.</li> <li><b><code>null</code> or empty string</b>: The control will have no renderer, a call to <code>oControl.getMetadata().getRenderer()</code> will return <code>undefined</code>.</li> </ul>
 
 If the resulting renderer is incomplete (has no <code>render</code> function) or if it cannot be found at all, rendering of the control will be skipped.
+
+<b>Note:</b> The <code>apiVersion: 2</code> flag is required to enable in-place rendering technology. Before setting this property, please ensure that the constraints documented in section "Contract for Renderer.apiVersion 2" of the {@link sap.ui.core.RenderManager RenderManager} API documentation are fulfilled.
 	* @param	sClassName fully qualified name of the class that is described by this metadata object
 	* @param	oStaticInfo static info to construct the metadata from
 	* @return	Constructor of the newly created class
@@ -267,6 +270,8 @@ The <code>oPosition</code> can be one of the following:
 
 	/**
 	* Set the controls busy state.
+
+<b>Note:</b> The busy state can't be set on controls (e.g. sap.m.ColumnListItem) which renderings have the following tags as DOM root element: area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr|tr
 	* @param	bBusy The new busy state to be set
 	* @return	<code>this</code> to allow method chaining
 	*/
@@ -290,7 +295,7 @@ Default value is <code>Medium</code>.
 	* @param	sBusyIndicatorSize New value for property <code>busyIndicatorSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBusyIndicatorSize( sBusyIndicatorSize:sap.ui.core.BusyIndicatorSize):sap.ui.core.Control;
+	public function setBusyIndicatorSize( ?sBusyIndicatorSize:sap.ui.core.BusyIndicatorSize):sap.ui.core.Control;
 
 	/**
 	* Sets a new value for property {@link #getFieldGroupIds fieldGroupIds}.
@@ -309,7 +314,7 @@ Default value is <code>[]</code>.
 	* @param	sFieldGroupIds New value for property <code>fieldGroupIds</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFieldGroupIds( sFieldGroupIds:Array<String>):sap.ui.core.Control;
+	public function setFieldGroupIds( ?sFieldGroupIds:Array<String>):sap.ui.core.Control;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -326,7 +331,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.ui.core.Control;
+	public function setVisible( ?bVisible:Bool):sap.ui.core.Control;
 
 	/**
 	* The string given as "sStyleClass" will be be either added to or removed from the "class" attribute of this control's root HTML element, depending on the value of "bAdd": if bAdd is true, sStyleClass will be added. If bAdd is not given, sStyleClass will be removed if it is currently present and will be added if not present. If sStyleClass is null or empty string, the call is ignored.

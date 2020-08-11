@@ -98,7 +98,7 @@ Default value is <code>NEUTRAL</code>.
 	* @param	sBarColor New value for property <code>barColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBarColor( sBarColor:sap.ui.core.BarColor):sap.ui.commons.ProgressIndicator;
+	public function setBarColor( ?sBarColor:sap.ui.core.BarColor):sap.ui.commons.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getDisplayValue displayValue}.
@@ -111,7 +111,7 @@ Default value is <code>0%</code>.
 	* @param	sDisplayValue New value for property <code>displayValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayValue( sDisplayValue:String):sap.ui.commons.ProgressIndicator;
+	public function setDisplayValue( ?sDisplayValue:String):sap.ui.commons.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -124,7 +124,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.ProgressIndicator;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.ProgressIndicator;
 
 	/**
 	* Sets the new percent value which the ProgressIndicator should display. A new rendering is not necessary, only the bar has to be moved.
@@ -144,7 +144,7 @@ Default value is <code>true</code>.
 	* @param	bShowValue New value for property <code>showValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowValue( bShowValue:Bool):sap.ui.commons.ProgressIndicator;
+	public function setShowValue( ?bShowValue:Bool):sap.ui.commons.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -157,7 +157,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.ProgressIndicator;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.ProgressIndicator;
 }
 
 typedef ProgressIndicatorArgs = sap.ui.core.Control.ControlArgs & {

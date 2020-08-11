@@ -104,7 +104,7 @@ Default value is <code>false</code>.
 	* @param	bWriteToDom New value for property <code>writeToDom</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWriteToDom( bWriteToDom:Bool):sap.ui.core.CustomData;
+	public function setWriteToDom( ?bWriteToDom:Bool):sap.ui.core.CustomData;
 }
 
 typedef CustomDataArgs = sap.ui.core.Element.ElementArgs & {

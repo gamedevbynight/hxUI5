@@ -120,7 +120,7 @@ Default value is <code>empty string</code>.
 	* @param	sHeading New value for property <code>heading</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeading( sHeading:String):sap.m.QuickViewGroup;
+	public function setHeading( ?sHeading:String):sap.m.QuickViewGroup;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -133,7 +133,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.QuickViewGroup;
+	public function setVisible( ?bVisible:Bool):sap.m.QuickViewGroup;
 
 	/**
 	* Unbinds aggregation {@link #getElements elements} from model data.

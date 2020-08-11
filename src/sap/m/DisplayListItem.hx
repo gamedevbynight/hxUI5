@@ -86,7 +86,7 @@ Default value is <code>Inherit</code>.
 	* @param	sValueTextDirection New value for property <code>valueTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueTextDirection( sValueTextDirection:sap.ui.core.TextDirection):sap.m.DisplayListItem;
+	public function setValueTextDirection( ?sValueTextDirection:sap.ui.core.TextDirection):sap.m.DisplayListItem;
 }
 
 typedef DisplayListItemArgs = sap.m.ListItemBase.ListItemBaseArgs & {

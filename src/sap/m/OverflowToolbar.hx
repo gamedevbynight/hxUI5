@@ -69,7 +69,7 @@ extern class OverflowToolbar extends sap.m.Toolbar implements sap.ui.core.Toolba
 
 Defines whether the <code>OverflowToolbar</code> works in async mode.
 
-<b>Note:</b> When this property is set to <code>true</code>, the <code>OverflowToolbar</code> makes its layout recalculations asynchronously. This way it is not blocking the thread immediately after re-rendering or resizing.
+<b>Note:</b> When this property is set to <code>true</code>, the <code>OverflowToolbar</code> makes its layout recalculations asynchronously. This way it is not blocking the thread immediately after re-rendering or resizing. However, it may lead to flickering, when there is a change in the width of the content of the <code>OverflowToolbar</code>.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>asyncMode</code>
@@ -95,7 +95,7 @@ typedef OverflowToolbarArgs = sap.m.Toolbar.ToolbarArgs & {
 	/**
 	* Defines whether the <code>OverflowToolbar</code> works in async mode.
 
-<b>Note:</b> When this property is set to <code>true</code>, the <code>OverflowToolbar</code> makes its layout recalculations asynchronously. This way it is not blocking the thread immediately after re-rendering or resizing.
+<b>Note:</b> When this property is set to <code>true</code>, the <code>OverflowToolbar</code> makes its layout recalculations asynchronously. This way it is not blocking the thread immediately after re-rendering or resizing. However, it may lead to flickering, when there is a change in the width of the content of the <code>OverflowToolbar</code>.
 	*/
 	@:optional var asyncMode:haxe.extern.EitherType<String,Bool>;
 

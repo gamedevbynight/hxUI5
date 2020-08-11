@@ -33,7 +33,7 @@ extern class ODataPropertyBinding extends sap.ui.model.PropertyBinding
 
 	/**
 	* Returns the root binding of this binding's hierarchy, see binding {@link topic:54e0ddf695af4a6c978472cecb01c64d Initialization and Read Requests}.
-	* @return	The root binding or <code>undefined</code> if this binding is not yet resolved.
+	* @return	The root binding or <code>undefined</code> if this binding is unresolved (see {@link sap.ui.model.Binding#isResolved}).
 	*/
 	public function getRootBinding( ):Dynamic;
 
@@ -50,8 +50,10 @@ extern class ODataPropertyBinding extends sap.ui.model.PropertyBinding
 	public function getValueListType( ):sap.ui.model.odata.v4.ValueListType;
 
 	/**
-	* Returns <code>true</code> if this binding or its dependent bindings have pending changes, meaning updates that have not yet been successfully sent to the server.
-	* @return	<code>true</code> if the binding has pending changes
+	* Returns <code>true</code> if this binding or its dependent bindings have pending property changes or created entities which have not been sent successfully to the server. This function does not take into account the deletion of entities (see {@link sap.ui.model.odata.v4.Context#delete}) and the execution of OData operations (see {@link sap.ui.model.odata.v4.ODataContextBinding#execute}).
+
+Note: If this binding is relative, its data is cached separately for each parent context path. This method returns <code>true</code> if there are pending changes for the current parent context path of this binding. If this binding is unresolved (see {@link sap.ui.model.Binding#isResolved}), it returns <code>false</code>.
+	* @return	<code>true</code> if the binding is resolved and has pending changes
 	*/
 	public function hasPendingChanges( ):Bool;
 
@@ -85,13 +87,7 @@ Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or applic
 	/**
 	* Requests information to retrieve a value list for this property.
 	* @param	bAutoExpandSelect The value of the parameter <code>autoExpandSelect</code> for value list models created by this method. If the value list model is this binding's model, this flag has no effect. Supported since 1.68.0
-	* @return	A promise which is resolved with a map of qualifier to value list mapping objects structured as defined by <code>com.sap.vocabularies.Common.v1.ValueListMappingType</code>; the map entry with key "" represents the mapping without qualifier. Each entry has an additional property "$model" which is the {@link sap.ui.model.odata.v4.ODataModel} instance to read value list data via this mapping.
-
-For fixed values, only one mapping is expected and the qualifier is ignored. The mapping is available with key "".
-
-The promise is rejected with an error if there is no value list information available for this property. Use {@link #getValueListType} to determine if value list information exists. It is also rejected with an error if the value list metadata is inconsistent.
-
-An inconsistency can result from one of the following reasons: <ul> <li> There is a reference, but the referenced service does not contain mappings for the property. <li> The referenced service contains annotation targets in the namespace of the data service that are not mappings for the property. <li> Two different referenced services contain a mapping using the same qualifier. <li> A service is referenced twice. <li> No mappings have been found. </ul>
+	* @return	See {@link sap.ui.model.odata.v4.ODataMetaModel#requestValueListInfo}
 	*/
 	public function requestValueListInfo( ?bAutoExpandSelect:Bool):js.lib.Promise<ODataPropertyBinding>;
 

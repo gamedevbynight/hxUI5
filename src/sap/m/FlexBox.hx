@@ -166,12 +166,6 @@ Default value is <code>NoWrap</code>.
 	public function indexOfItem( oItem:sap.ui.core.Control):Int;
 
 	/**
-	* Initializes the control.
-	* @return	Void
-	*/
-	public function init( ):Void;
-
-	/**
 	* Inserts single item.
 	* @param	oItem Inserted item.
 	* @param	iIndex Index of the inserted item.
@@ -193,60 +187,108 @@ Default value is <code>NoWrap</code>.
 	public function removeItem( vItem:Dynamic):Dynamic;
 
 	/**
-	* Sets the alignment of content in the FlexBox.
-	* @param	sValue Align content.
-	* @return	this FlexBox reference for chaining.
+	* Sets a new value for property {@link #getAlignContent alignContent}.
+
+Determines the layout behavior of container lines when there's extra space along the cross-axis.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Stretch</code>.
+	* @param	sAlignContent New value for property <code>alignContent</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAlignContent( sValue:String):sap.m.FlexBox;
+	public function setAlignContent( ?sAlignContent:sap.m.FlexAlignContent):sap.m.FlexBox;
 
 	/**
-	* Sets the alignment of items in the FlexBox.
-	* @param	sValue Align items.
-	* @return	this FlexBox reference for chaining.
+	* Sets a new value for property {@link #getAlignItems alignItems}.
+
+Determines the layout behavior of items along the cross-axis.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Stretch</code>.
+	* @param	sAlignItems New value for property <code>alignItems</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAlignItems( sValue:String):sap.m.FlexBox;
+	public function setAlignItems( ?sAlignItems:sap.m.FlexAlignItems):sap.m.FlexBox;
 
 	/**
-	* Sets the background design.
-	* @param	sValue Background design in string format.
-	* @return	this FlexBox for reference chaining.
+	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
+
+Defines the background style of the <code>sap.m.FlexBox</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Transparent</code>.
+	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sValue:String):sap.m.FlexBox;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.BackgroundDesign):sap.m.FlexBox;
 
 	/**
-	* Sets direction for the FlexBox. It could be row, row-reverse, column or column-reverse.
-	* @param	sValue FlexBox direction in string format.
-	* @return	<code>this</code> FlexBox reference for chaining.
+	* Sets a new value for property {@link #getDirection direction}.
+
+Determines the direction of the layout of child elements.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Row</code>.
+	* @param	sDirection New value for property <code>direction</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDirection( sValue:String):sap.m.FlexBox;
+	public function setDirection( ?sDirection:sap.m.FlexDirection):sap.m.FlexBox;
 
 	/**
-	* Sets display inline for nested or contained FlexBox.
-	* @param	bInline Indication for display inline.
-	* @return	<code>this</code> FlexBox reference for chaining.
+	* Sets a new value for property {@link #getDisplayInline displayInline}.
+
+Determines whether the <code>sap.m.FlexBox</code> is in block or inline mode.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bDisplayInline New value for property <code>displayInline</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayInline( bInline:Bool):sap.m.FlexBox;
+	public function setDisplayInline( ?bDisplayInline:Bool):sap.m.FlexBox;
 
 	/**
-	* Sets <code>fitContainer</code> so you can have nested FlexBox containers in columns or rows.
-	* @param	sValue Fit container in string format.
-	* @return	<code>this</code> FlexBox reference for chaining.
+	* Sets a new value for property {@link #getFitContainer fitContainer}.
+
+Determines whether the <code>sap.m.FlexBox</code> will be sized to completely fill its container. If the <code>sap.m.FlexBox</code> is inserted into a Page, the property 'enableScrolling' of the Page needs to be set to 'false' for the FlexBox to fit the entire viewport.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bFitContainer New value for property <code>fitContainer</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFitContainer( sValue:String):sap.m.FlexBox;
+	public function setFitContainer( ?bFitContainer:Bool):sap.m.FlexBox;
 
 	/**
-	* Sets the FlexBox height.
-	* @param	sValue Height in string format.
-	* @return	this FlexBox reference for chaining.
+	* Sets a new value for property {@link #getHeight height}.
+
+The height of the <code>sap.m.FlexBox</code>. Note that when a percentage is given, for the height to work as expected, the height of the surrounding container must be defined.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sHeight= New value for property <code>height</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sValue:String):sap.m.FlexBox;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.FlexBox;
 
 	/**
-	* Sets the <code>justifyContent</code> - it can be flex-start, flex-end, center, space-between, space-around, space-evenly.
-	* @param	sValue Justify content;
-	* @return	this FlexBox reference for chaining.
+	* Sets a new value for property {@link #getJustifyContent justifyContent}.
+
+Determines the layout behavior along the main axis.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Start</code>.
+	* @param	sJustifyContent New value for property <code>justifyContent</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setJustifyContent( sValue:String):sap.m.FlexBox;
+	public function setJustifyContent( ?sJustifyContent:sap.m.FlexJustifyContent):sap.m.FlexBox;
 
 	/**
 	* Sets the render type of the FlexBox.
@@ -256,18 +298,30 @@ Default value is <code>NoWrap</code>.
 	public function setRenderType( sValue:String):sap.m.FlexBox;
 
 	/**
-	* Sets the FlexBox width.
-	* @param	sValue Width in string format.
-	* @return	this FlexBox reference for chaining.
+	* Sets a new value for property {@link #getWidth width}.
+
+The width of the <code>sap.m.FlexBox</code>. Note that when a percentage is given, for the width to work as expected, the width of the surrounding container must be defined.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sWidth= New value for property <code>width</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sValue:String):sap.m.FlexBox;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.FlexBox;
 
 	/**
-	* Sets the wrapping.
-	* @param	sValue Wrapping in the flexbox.
-	* @return	<code>this</code> FlexBox reference for chaining.
+	* Sets a new value for property {@link #getWrap wrap}.
+
+Determines the wrapping behavior of the flex container. This property has no effect in older browsers, e.g. Android Native 4.3 and below.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>NoWrap</code>.
+	* @param	sWrap New value for property <code>wrap</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrap( sValue:String):sap.m.FlexBox;
+	public function setWrap( ?sWrap:sap.m.FlexWrap):sap.m.FlexBox;
 }
 
 typedef FlexBoxArgs = sap.ui.core.Control.ControlArgs & {

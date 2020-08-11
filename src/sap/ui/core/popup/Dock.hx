@@ -1,6 +1,5 @@
 package sap.ui.core.popup;
 
-@:native("sap.ui.core.Popup.Dock")
 @:enum extern abstract Dock(String)
 {
     /**

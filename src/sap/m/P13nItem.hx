@@ -271,7 +271,7 @@ Default value is <code>false</code>.
 	* @param	bIsDefault New value for property <code>isDefault</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIsDefault( bIsDefault:Bool):sap.m.P13nItem;
+	public function setIsDefault( ?bIsDefault:Bool):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getMaxLength maxLength}.
@@ -295,7 +295,7 @@ Default value is <code>false</code>.
 	* @param	bNullable New value for property <code>nullable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNullable( bNullable:Bool):sap.m.P13nItem;
+	public function setNullable( ?bNullable:Bool):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getPrecision precision}.
@@ -363,7 +363,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.P13nItem;
+	public function setText( ?sText:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -376,7 +376,7 @@ Default value is <code>text</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:String):sap.m.P13nItem;
+	public function setType( ?sType:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getTypeInstance typeInstance}.

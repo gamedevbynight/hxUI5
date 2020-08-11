@@ -72,7 +72,7 @@ Default value is <code>undefined</code>.
 	* @param	bByteOrderMark New value for property <code>byteOrderMark</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setByteOrderMark( bByteOrderMark:Bool):sap.ui.core.util.ExportType;
+	public function setByteOrderMark( ?bByteOrderMark:Bool):sap.ui.core.util.ExportType;
 
 	/**
 	* Sets a new value for property {@link #getCharset charset}.

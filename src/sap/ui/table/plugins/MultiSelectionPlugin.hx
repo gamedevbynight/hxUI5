@@ -17,9 +17,10 @@ public function new():Void;
 If the number of indices in the range is greater than the value of the <code>limit</code> property, only n=limit indices, starting from <code>iIndexFrom</code>, are selected. The table is scrolled to display the index last selected.
 	* @param	iIndexFrom Index from which the selection starts
 	* @param	iIndexTo Index up to which to select
-	* @return	Void
+	* @param	oEventPayload If the function call triggers a {@link #event:selectionChange selectionChange} event, this object is transferred to the event in the <code>customPayload</code> parameter
+	* @return	A Promise that resolves after the selection has been completed or is rejected with an error
 	*/
-	public function addSelectionInterval( iIndexFrom:Int, iIndexTo:Int):Void;
+	public function addSelectionInterval( iIndexFrom:Int, iIndexTo:Int, ?oEventPayload:Dynamic):js.lib.Promise<MultiSelectionPlugin>;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:selectionChange selectionChange} event of this <code>sap.ui.table.plugins.MultiSelectionPlugin</code>.
@@ -36,9 +37,10 @@ This event is fired when the selection is changed.
 
 	/**
 	* Removes the complete selection.
+	* @param	oEventPayload If the function call triggers a {@link #event:selectionChange selectionChange} event, this object is transferred to the event in the <code>customPayload</code> parameter
 	* @return	Void
 	*/
-	public function clearSelection( ):Void;
+	public function clearSelection( ?oEventPayload:Dynamic):Void;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:selectionChange selectionChange} event of this <code>sap.ui.table.plugins.MultiSelectionPlugin</code>.
@@ -124,15 +126,17 @@ Default value is <code>true</code>.
 	* Removes the given selection interval from the selection. In case of single selection, only <code>iIndexTo</code> is removed from the selection.
 	* @param	iIndexFrom Index from which the deselection starts
 	* @param	iIndexTo Index up to which to deselect
+	* @param	oEventPayload If the function call triggers a {@link #event:selectionChange selectionChange} event, this object is transferred to the event in the <code>customPayload</code> parameter
 	* @return	Void
 	*/
-	public function removeSelectionInterval( iIndexFrom:Int, iIndexTo:Int):Void;
+	public function removeSelectionInterval( iIndexFrom:Int, iIndexTo:Int, ?oEventPayload:Dynamic):Void;
 
 	/**
-	* Requests the binding contexts and adds all indices to the selection if the limit is disabled.
-	* @return	Void
+	* Requests the binding contexts and adds all indices to the selection if the limit is disabled or the binding length is smaller then the limit.
+	* @param	oEventPayload If the function call triggers a {@link #event:selectionChange selectionChange} event, this object is transferred to the event in the <code>customPayload</code> parameter
+	* @return	A Promise that resolves after the selection has been completed or is rejected with an error
 	*/
-	public function selectAll( ):Void;
+	public function selectAll( ?oEventPayload:Dynamic):js.lib.Promise<MultiSelectionPlugin>;
 
 	/**
 	* Sets a new value for property {@link #getEnableNotification enableNotification}.
@@ -145,7 +149,7 @@ Default value is <code>false</code>.
 	* @param	bEnableNotification New value for property <code>enableNotification</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableNotification( bEnableNotification:Bool):sap.ui.table.plugins.MultiSelectionPlugin;
+	public function setEnableNotification( ?bEnableNotification:Bool):sap.ui.table.plugins.MultiSelectionPlugin;
 
 	/**
 	* Sets a new value for property {@link #getLimit limit}.
@@ -158,14 +162,15 @@ Default value is <code>200</code>.
 	* @param	iLimit New value for property <code>limit</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLimit( iLimit:Int):sap.ui.table.plugins.MultiSelectionPlugin;
+	public function setLimit( ?iLimit:Int):sap.ui.table.plugins.MultiSelectionPlugin;
 
 	/**
 	* Requests the context and sets the selected index to <code>iIndex</code>.
 	* @param	iIndex The index to select
-	* @return	Void
+	* @param	oEventPayload If the function call triggers a {@link #event:selectionChange selectionChange} event, this object is transferred to the event in the <code>customPayload</code> parameter
+	* @return	A Promise that resolves after the selection has been completed or is rejected with an error
 	*/
-	public function setSelectedIndex( iIndex:Int):Void;
+	public function setSelectedIndex( iIndex:Int, ?oEventPayload:Dynamic):js.lib.Promise<MultiSelectionPlugin>;
 
 	/**
 	* Sets the given selection interval as the selection and requests the corresponding binding contexts. In single-selection mode it requests the context and sets the selected index to <code>iIndexTo</code>.
@@ -173,9 +178,10 @@ Default value is <code>200</code>.
 If the number of indices in the range is greater than the value of the <code>limit</code> property, only n=limit indices, starting from <code>iIndexFrom</code>, are selected. The table is scrolled to display the index last selected.
 	* @param	iIndexFrom Index from which the selection starts
 	* @param	iIndexTo Index up to which to select
-	* @return	Void
+	* @param	oEventPayload If the function call triggers a {@link #event:selectionChange selectionChange} event, this object is transferred to the event in the <code>customPayload</code> parameter
+	* @return	A Promise that resolves after the selection has been completed or is rejected with an error
 	*/
-	public function setSelectionInterval( iIndexFrom:Int, iIndexTo:Int):Void;
+	public function setSelectionInterval( iIndexFrom:Int, iIndexTo:Int, ?oEventPayload:Dynamic):js.lib.Promise<MultiSelectionPlugin>;
 
 	/**
 	* Sets a new value for property {@link #getSelectionMode selectionMode}.
@@ -188,7 +194,7 @@ Default value is <code>MultiToggle</code>.
 	* @param	sSelectionMode New value for property <code>selectionMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelectionMode( sSelectionMode:sap.ui.table.SelectionMode):sap.ui.table.plugins.MultiSelectionPlugin;
+	public function setSelectionMode( ?sSelectionMode:sap.ui.table.SelectionMode):sap.ui.table.plugins.MultiSelectionPlugin;
 
 	/**
 	* Sets a new value for property {@link #getShowHeaderSelector showHeaderSelector}.
@@ -201,6 +207,6 @@ Default value is <code>true</code>.
 	* @param	bShowHeaderSelector New value for property <code>showHeaderSelector</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHeaderSelector( bShowHeaderSelector:Bool):sap.ui.table.plugins.MultiSelectionPlugin;
+	public function setShowHeaderSelector( ?bShowHeaderSelector:Bool):sap.ui.table.plugins.MultiSelectionPlugin;
 }
 

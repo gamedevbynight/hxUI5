@@ -112,6 +112,28 @@ Default value is <code>Accent6</code>.
 	public function getBackgroundColor( ):sap.m.AvatarColor;
 
 	/**
+	* Gets current value of property {@link #getBadgeIcon badgeIcon}.
+
+Defines what type of icon is displayed as visual affordance. It can be predefined or custom.
+
+The predefined icons are recommended for: <ul> <li>Suggesting a zooming action: <code>sap-icon://zoom-in</code></li> <li>Suggesting an image change: <code>sap-icon://camera</code></li> <li>Suggesting an editing action: <code>sap-icon://edit</code></li> </ul>
+
+Default value is <code>empty string</code>.
+	* @return	Value of property <code>badgeIcon</code>
+	*/
+	public function getBadgeIcon( ):sap.ui.core.URI;
+
+	/**
+	* Gets current value of property {@link #getBadgeTooltip badgeTooltip}.
+
+Defines a custom tooltip for the <code>badgeIcon</code>. If set, it overrides the available default values.
+
+If not set, default tooltips are used as follows: <ul> <li>Specific default tooltips are displayed for each of the predefined <code>badgeIcons</code>.</li> <li>For any other icons, the displayed tooltip is the same as the main control tooltip.</li> <ul>
+	* @return	Value of property <code>badgeTooltip</code>
+	*/
+	public function getBadgeTooltip( ):String;
+
+	/**
 	* Gets current value of property {@link #getCustomDisplaySize customDisplaySize}.
 
 Specifies custom display size of the <code>Avatar</code>.
@@ -260,7 +282,35 @@ Default value is <code>Accent6</code>.
 	* @param	sBackgroundColor New value for property <code>backgroundColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundColor( sBackgroundColor:sap.m.AvatarColor):sap.m.Avatar;
+	public function setBackgroundColor( ?sBackgroundColor:sap.m.AvatarColor):sap.m.Avatar;
+
+	/**
+	* Sets a new value for property {@link #getBadgeIcon badgeIcon}.
+
+Defines what type of icon is displayed as visual affordance. It can be predefined or custom.
+
+The predefined icons are recommended for: <ul> <li>Suggesting a zooming action: <code>sap-icon://zoom-in</code></li> <li>Suggesting an image change: <code>sap-icon://camera</code></li> <li>Suggesting an editing action: <code>sap-icon://edit</code></li> </ul>
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sBadgeIcon= New value for property <code>badgeIcon</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setBadgeIcon( ?sBadgeIcon:sap.ui.core.URI):sap.m.Avatar;
+
+	/**
+	* Sets a new value for property {@link #getBadgeTooltip badgeTooltip}.
+
+Defines a custom tooltip for the <code>badgeIcon</code>. If set, it overrides the available default values.
+
+If not set, default tooltips are used as follows: <ul> <li>Specific default tooltips are displayed for each of the predefined <code>badgeIcons</code>.</li> <li>For any other icons, the displayed tooltip is the same as the main control tooltip.</li> <ul>
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sBadgeTooltip New value for property <code>badgeTooltip</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setBadgeTooltip( sBadgeTooltip:String):sap.m.Avatar;
 
 	/**
 	* Sets a new value for property {@link #getCustomDisplaySize customDisplaySize}.
@@ -275,7 +325,7 @@ Default value is <code>3rem</code>.
 	* @param	sCustomDisplaySize New value for property <code>customDisplaySize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomDisplaySize( sCustomDisplaySize:sap.ui.core.CSSSize):sap.m.Avatar;
+	public function setCustomDisplaySize( ?sCustomDisplaySize:sap.ui.core.CSSSize):sap.m.Avatar;
 
 	/**
 	* Sets a new value for property {@link #getCustomFontSize customFontSize}.
@@ -290,7 +340,7 @@ Default value is <code>1.125rem</code>.
 	* @param	sCustomFontSize New value for property <code>customFontSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomFontSize( sCustomFontSize:sap.ui.core.CSSSize):sap.m.Avatar;
+	public function setCustomFontSize( ?sCustomFontSize:sap.ui.core.CSSSize):sap.m.Avatar;
 	@:overload( function(oLightBox:sap.m.LightBox):Dynamic{ })
 
 	/**
@@ -311,7 +361,7 @@ Default value is <code>Circle</code>.
 	* @param	sDisplayShape New value for property <code>displayShape</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayShape( sDisplayShape:sap.m.AvatarShape):sap.m.Avatar;
+	public function setDisplayShape( ?sDisplayShape:sap.m.AvatarShape):sap.m.Avatar;
 
 	/**
 	* Sets a new value for property {@link #getDisplaySize displaySize}.
@@ -324,7 +374,7 @@ Default value is <code>S</code>.
 	* @param	sDisplaySize New value for property <code>displaySize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplaySize( sDisplaySize:sap.m.AvatarSize):sap.m.Avatar;
+	public function setDisplaySize( ?sDisplaySize:sap.m.AvatarSize):sap.m.Avatar;
 
 	/**
 	* Sets a new value for property {@link #getFallbackIcon fallbackIcon}.
@@ -350,7 +400,7 @@ Default value is <code>Cover</code>.
 	* @param	sImageFitType New value for property <code>imageFitType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setImageFitType( sImageFitType:sap.m.AvatarImageFitType):sap.m.Avatar;
+	public function setImageFitType( ?sImageFitType:sap.m.AvatarImageFitType):sap.m.Avatar;
 
 	/**
 	* Sets a new value for property {@link #getInitials initials}.
@@ -374,7 +424,7 @@ Default value is <code>false</code>.
 	* @param	bShowBorder New value for property <code>showBorder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowBorder( bShowBorder:Bool):sap.m.Avatar;
+	public function setShowBorder( ?bShowBorder:Bool):sap.m.Avatar;
 
 	/**
 	* Sets a new value for property {@link #getSrc src}.
@@ -454,12 +504,31 @@ typedef AvatarArgs = sap.ui.core.Control.ControlArgs & {
 	*/
 	@:optional var showBorder:haxe.extern.EitherType<String,Bool>;
 
+	/**
+	* Defines what type of icon is displayed as visual affordance. It can be predefined or custom.
+
+The predefined icons are recommended for: <ul> <li>Suggesting a zooming action: <code>sap-icon://zoom-in</code></li> <li>Suggesting an image change: <code>sap-icon://camera</code></li> <li>Suggesting an editing action: <code>sap-icon://edit</code></li> </ul>
+	*/
+	@:optional var badgeIcon:haxe.extern.EitherType<String,sap.ui.core.URI>;
+
+	/**
+	* Defines a custom tooltip for the <code>badgeIcon</code>. If set, it overrides the available default values.
+
+If not set, default tooltips are used as follows: <ul> <li>Specific default tooltips are displayed for each of the predefined <code>badgeIcons</code>.</li> <li>For any other icons, the displayed tooltip is the same as the main control tooltip.</li> <ul>
+	*/
+	@:optional var badgeTooltip:String;
+
     /**
     * A <code>sap.m.LightBox</code> instance, that will be opened automatically when the user interacts with the <code>Avatar</code> control.
 
 The <code>press</code> event will still be fired.
     */
 	@:optional var detailBox:haxe.extern.EitherType<String,sap.m.LightBox>;
+
+    /**
+    * A <code>sap.ui.core.Icon</code> instance that shows the badge icon of the <code>Avatar</code> control.
+    */
+	@:optional var _badge:haxe.extern.EitherType<String,sap.ui.core.Icon>;
 
 	/**
 	* Association to controls / ids which describe this control (see WAI-ARIA attribute aria-describedby).

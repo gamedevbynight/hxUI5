@@ -47,7 +47,7 @@ The <code>controller</code> property is optional and can hold a controller insta
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 	@:overload( function(sType:String, vPreprocessor:String, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })
 	@:overload( function(sType:String, vPreprocessor:()->Void, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })
-	@:overload( function(sType:sap.ui.core.mvc.xmlview.PreprocessorType, vPreprocessor:String, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })
+	@:overload( function(sType:sap.ui.core.mvc.XMLView.PreprocessorType, vPreprocessor:String, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })
 
 	/**
 	* Register a preprocessor for all views of a specific type.
@@ -64,7 +64,7 @@ It can be either a module name as string of an implementation of {@link sap.ui.c
 	* @param	mSettings optional configuration for preprocessor
 	* @return	Void
 	*/
-	public static function registerPreprocessor( sType:sap.ui.core.mvc.xmlview.PreprocessorType, vPreprocessor:()->Void, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void;
+	public static function registerPreprocessor( sType:sap.ui.core.mvc.XMLView.PreprocessorType, vPreprocessor:()->Void, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void;
 }
 
 typedef XMLViewArgs = sap.ui.core.mvc.View.ViewArgs & {

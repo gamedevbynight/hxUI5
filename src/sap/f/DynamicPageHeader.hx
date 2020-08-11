@@ -138,7 +138,7 @@ Default value is <code>true</code>.
 	* @param	bPinnable New value for property <code>pinnable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPinnable( bPinnable:Bool):sap.f.DynamicPageHeader;
+	public function setPinnable( ?bPinnable:Bool):sap.f.DynamicPageHeader;
 }
 
 typedef DynamicPageHeaderArgs = sap.ui.core.Control.ControlArgs & {

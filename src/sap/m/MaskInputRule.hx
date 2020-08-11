@@ -58,7 +58,7 @@ Default value is <code>*</code>.
 	* @param	sMaskFormatSymbol New value for property <code>maskFormatSymbol</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaskFormatSymbol( sMaskFormatSymbol:String):sap.m.MaskInputRule;
+	public function setMaskFormatSymbol( ?sMaskFormatSymbol:String):sap.m.MaskInputRule;
 
 	/**
 	* Sets a new value for property {@link #getRegex regex}.
@@ -71,7 +71,7 @@ Default value is <code>[a-zA-Z0-9]</code>.
 	* @param	sRegex New value for property <code>regex</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRegex( sRegex:String):sap.m.MaskInputRule;
+	public function setRegex( ?sRegex:String):sap.m.MaskInputRule;
 }
 
 typedef MaskInputRuleArgs = sap.ui.core.Element.ElementArgs & {

@@ -197,13 +197,6 @@ Default value is <code>100%</code>.
 	public function insertContent( oContent:sap.ui.core.Control, iIndex:Int):sap.m.Panel;
 
 	/**
-	* Sets the accessibleRole property of the control.
-	* @param	sRole Defines the aria role of the control.
-	* @return	Pointer to the control instance to allow method chaining.
-	*/
-	public function onBeforeRendering( sRole:sap.m.PanelAccessibleRole):sap.m.Panel;
-
-	/**
 	* Sets the height of the panel.
 	* @param	sHeight The height of the panel as CSS size.
 	* @return	Pointer to the control instance to allow method chaining.
@@ -238,7 +231,7 @@ Default value is <code>Form</code>.
 	* @param	sAccessibleRole New value for property <code>accessibleRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAccessibleRole( sAccessibleRole:sap.m.PanelAccessibleRole):sap.m.Panel;
+	public function setAccessibleRole( ?sAccessibleRole:sap.m.PanelAccessibleRole):sap.m.Panel;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
@@ -251,7 +244,7 @@ Default value is <code>Translucent</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.BackgroundDesign):sap.m.Panel;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.BackgroundDesign):sap.m.Panel;
 
 	/**
 	* Sets a new value for property {@link #getExpandable expandable}.
@@ -264,7 +257,7 @@ Default value is <code>false</code>.
 	* @param	bExpandable New value for property <code>expandable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExpandable( bExpandable:Bool):sap.m.Panel;
+	public function setExpandable( ?bExpandable:Bool):sap.m.Panel;
 
 	/**
 	* Sets a new value for property {@link #getExpandAnimation expandAnimation}.
@@ -277,7 +270,7 @@ Default value is <code>true</code>.
 	* @param	bExpandAnimation New value for property <code>expandAnimation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExpandAnimation( bExpandAnimation:Bool):sap.m.Panel;
+	public function setExpandAnimation( ?bExpandAnimation:Bool):sap.m.Panel;
 
 	/**
 	* Sets the expanded property of the control.
@@ -297,7 +290,7 @@ Default value is <code>empty string</code>.
 	* @param	sHeaderText New value for property <code>headerText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderText( sHeaderText:String):sap.m.Panel;
+	public function setHeaderText( ?sHeaderText:String):sap.m.Panel;
 
 	/**
 	* Sets the aggregated {@link #getHeaderToolbar headerToolbar}.
@@ -317,7 +310,7 @@ Default value is <code>auto</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.Panel;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.Panel;
 
 	/**
 	* Sets the aggregated {@link #getInfoToolbar infoToolbar}.
@@ -337,7 +330,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Panel;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Panel;
 }
 
 typedef PanelArgs = sap.ui.core.Control.ControlArgs & {

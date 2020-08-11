@@ -36,9 +36,21 @@ extern class Column extends sap.ui.core.Element
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
+	* Gets current value of property {@link #getAutoPopinWidth autoPopinWidth}.
+
+Defines the auto pop-in width for the column.
+
+If the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>, then the <code>autoPopinWidth</code> property is used to calculate the <code>minScreenWidth</code> property of the column in case a fixed width is not set for the column. See {@link sap.m.Column#getWidth} and {@link sap.m.Table#getAutoPopinMode}. <b>Note:</b> A float value is set for the <code>autoPopinWidth</code> property which is internally treated as a rem value.
+
+Default value is <code>8</code>.
+	* @return	Value of property <code>autoPopinWidth</code>
+	*/
+	public function getAutoPopinWidth( ):Float;
+
+	/**
 	* Gets current value of property {@link #getDemandPopin demandPopin}.
 
-According to your minScreenWidth settings, the column can be hidden in different screen sizes. Setting this property to true, shows this column as pop-in instead of hiding it.
+According to your minScreenWidth settings, the column can be hidden in different screen sizes. Setting this property to true, shows this column as pop-in instead of hiding it. <b>Note:</b> This property gets overwritten if the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>. See {@link sap.m.Table#getAutoPopinMode}
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>demandPopin</code>
@@ -74,9 +86,23 @@ Control to be displayed in the column header.
 	public function getHeader( ):sap.ui.core.Control;
 
 	/**
+	* Gets current value of property {@link #getImportance importance}.
+
+Defines the column importance.
+
+If the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>, then the column importance is taken into consideration for calculating the <code>minScreenWidth</code> property and for setting the <code>demandPopin</code> property of the column. See {@link sap.m.Table#getAutoPopinMode}
+
+Default value is <code>None</code>.
+	* @return	Value of property <code>importance</code>
+	*/
+	public function getImportance( ):sap.ui.core.Priority;
+
+	/**
 	* Gets current value of property {@link #getMergeDuplicates mergeDuplicates}.
 
-Set <code>true</code> to merge repeating/duplicate cells into one cell block. See <code>mergeFunctionName</code> property to customize. <b>Note:</b> Merging only happens at the rendering of the <code>sap.m.Table</code> control, subsequent changes on the cell or item do not have any effect on the merged state of the cells, therefore this feature should not be used together with two-way binding. This property is ignored if any column is configured to be shown as a pop-in.
+Set <code>true</code> to merge repeating/duplicate cells into one cell block. See <code>mergeFunctionName</code> property to customize.
+
+<b>Note:</b> Merging only happens when rendering the <code>sap.m.Table</code> control, subsequent changes on the cell or item do not have any effect on the merged state of the cells, therefore this feature should not be used together with two-way binding. This property is ignored if any column is configured to be shown as a pop-in. Merging is not supported if the <code>items</code> aggregation of the <code>sap.m.Table</code> control is bound to an {@link sap.ui.model.odata.v4.ODataModel OData V4 model}.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>mergeDuplicates</code>
@@ -102,7 +128,7 @@ Default value is <code>getText</code>.
 	/**
 	* Gets current value of property {@link #getMinScreenWidth minScreenWidth}.
 
-Defines the minimum screen width to show or hide this column. By default column is always shown. The responsive behavior of the <code>sap.m.Table</code> is determined by this property. As an example by setting <code>minScreenWidth</code> property to "40em" (or "640px" or "Tablet") shows this column on tablet (and desktop) but hides on mobile. As you can give specific CSS sizes (e.g: "480px" or "40em"), you can also use the {@link sap.m.ScreenSize} enumeration (e.g: "Phone", "Tablet", "Desktop", "Small", "Medium", "Large", ....). Please also see <code>demandPopin</code> property for further responsive design options.
+Defines the minimum screen width to show or hide this column. By default column is always shown. The responsive behavior of the <code>sap.m.Table</code> is determined by this property. As an example by setting <code>minScreenWidth</code> property to "40em" (or "640px" or "Tablet") shows this column on tablet (and desktop) but hides on mobile. As you can give specific CSS sizes (e.g: "480px" or "40em"), you can also use the {@link sap.m.ScreenSize} enumeration (e.g: "Phone", "Tablet", "Desktop", "Small", "Medium", "Large", ....). Please also see <code>demandPopin</code> property for further responsive design options. <b>Note:</b> This property gets overwritten if the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>. See {@link sap.m.Table#getAutoPopinMode}
 	* @return	Value of property <code>minScreenWidth</code>
 	*/
 	public function getMinScreenWidth( ):String;
@@ -160,15 +186,30 @@ Default value is <code>true</code>.
 	/**
 	* Gets current value of property {@link #getWidth width}.
 
-Defines the width of the column. If you leave it empty then this column covers the remaining space.
+Defines the width of the column. If you leave it empty then this column covers the remaining space. <b>Note:</b> When setting <code>autoPopinMode=true</code> on the table, the columns with a fixed width must either be in px, rem, or em as the table internally calculates the <code>minScreenWidth</code> property for the column. If a column has a fixed width, then this width is used to calculate the <code>minScreenWidth</code> for the <code>autoPopinMode</code>. If a column has a flexible width, such as % or auto, the <code>autoPopinWidth</code> property is used to calculate the <code>minScreenWidth</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
 
 	/**
+	* Sets a new value for property {@link #getAutoPopinWidth autoPopinWidth}.
+
+Defines the auto pop-in width for the column.
+
+If the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>, then the <code>autoPopinWidth</code> property is used to calculate the <code>minScreenWidth</code> property of the column in case a fixed width is not set for the column. See {@link sap.m.Column#getWidth} and {@link sap.m.Table#getAutoPopinMode}. <b>Note:</b> A float value is set for the <code>autoPopinWidth</code> property which is internally treated as a rem value.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>8</code>.
+	* @param	fAutoPopinWidth New value for property <code>autoPopinWidth</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setAutoPopinWidth( ?fAutoPopinWidth:Float):sap.m.Column;
+
+	/**
 	* Sets a new value for property {@link #getDemandPopin demandPopin}.
 
-According to your minScreenWidth settings, the column can be hidden in different screen sizes. Setting this property to true, shows this column as pop-in instead of hiding it.
+According to your minScreenWidth settings, the column can be hidden in different screen sizes. Setting this property to true, shows this column as pop-in instead of hiding it. <b>Note:</b> This property gets overwritten if the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>. See {@link sap.m.Table#getAutoPopinMode}
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -176,7 +217,7 @@ Default value is <code>false</code>.
 	* @param	bDemandPopin New value for property <code>demandPopin</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDemandPopin( bDemandPopin:Bool):sap.m.Column;
+	public function setDemandPopin( ?bDemandPopin:Bool):sap.m.Column;
 
 	/**
 	* Sets the aggregated {@link #getFooter footer}.
@@ -198,7 +239,7 @@ Default value is <code>Begin</code>.
 	* @param	sHAlign New value for property <code>hAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHAlign( sHAlign:sap.ui.core.TextAlign):sap.m.Column;
+	public function setHAlign( ?sHAlign:sap.ui.core.TextAlign):sap.m.Column;
 
 	/**
 	* Sets the aggregated {@link #getHeader header}.
@@ -208,9 +249,26 @@ Default value is <code>Begin</code>.
 	public function setHeader( oHeader:sap.ui.core.Control):sap.m.Column;
 
 	/**
+	* Sets a new value for property {@link #getImportance importance}.
+
+Defines the column importance.
+
+If the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>, then the column importance is taken into consideration for calculating the <code>minScreenWidth</code> property and for setting the <code>demandPopin</code> property of the column. See {@link sap.m.Table#getAutoPopinMode}
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>None</code>.
+	* @param	sImportance New value for property <code>importance</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setImportance( ?sImportance:sap.ui.core.Priority):sap.m.Column;
+
+	/**
 	* Sets a new value for property {@link #getMergeDuplicates mergeDuplicates}.
 
-Set <code>true</code> to merge repeating/duplicate cells into one cell block. See <code>mergeFunctionName</code> property to customize. <b>Note:</b> Merging only happens at the rendering of the <code>sap.m.Table</code> control, subsequent changes on the cell or item do not have any effect on the merged state of the cells, therefore this feature should not be used together with two-way binding. This property is ignored if any column is configured to be shown as a pop-in.
+Set <code>true</code> to merge repeating/duplicate cells into one cell block. See <code>mergeFunctionName</code> property to customize.
+
+<b>Note:</b> Merging only happens when rendering the <code>sap.m.Table</code> control, subsequent changes on the cell or item do not have any effect on the merged state of the cells, therefore this feature should not be used together with two-way binding. This property is ignored if any column is configured to be shown as a pop-in. Merging is not supported if the <code>items</code> aggregation of the <code>sap.m.Table</code> control is bound to an {@link sap.ui.model.odata.v4.ODataModel OData V4 model}.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -218,7 +276,7 @@ Default value is <code>false</code>.
 	* @param	bMergeDuplicates New value for property <code>mergeDuplicates</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMergeDuplicates( bMergeDuplicates:Bool):sap.m.Column;
+	public function setMergeDuplicates( ?bMergeDuplicates:Bool):sap.m.Column;
 
 	/**
 	* Sets a new value for property {@link #getMergeFunctionName mergeFunctionName}.
@@ -231,12 +289,12 @@ Default value is <code>getText</code>.
 	* @param	sMergeFunctionName New value for property <code>mergeFunctionName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMergeFunctionName( sMergeFunctionName:String):sap.m.Column;
+	public function setMergeFunctionName( ?sMergeFunctionName:String):sap.m.Column;
 
 	/**
 	* Sets a new value for property {@link #getMinScreenWidth minScreenWidth}.
 
-Defines the minimum screen width to show or hide this column. By default column is always shown. The responsive behavior of the <code>sap.m.Table</code> is determined by this property. As an example by setting <code>minScreenWidth</code> property to "40em" (or "640px" or "Tablet") shows this column on tablet (and desktop) but hides on mobile. As you can give specific CSS sizes (e.g: "480px" or "40em"), you can also use the {@link sap.m.ScreenSize} enumeration (e.g: "Phone", "Tablet", "Desktop", "Small", "Medium", "Large", ....). Please also see <code>demandPopin</code> property for further responsive design options.
+Defines the minimum screen width to show or hide this column. By default column is always shown. The responsive behavior of the <code>sap.m.Table</code> is determined by this property. As an example by setting <code>minScreenWidth</code> property to "40em" (or "640px" or "Tablet") shows this column on tablet (and desktop) but hides on mobile. As you can give specific CSS sizes (e.g: "480px" or "40em"), you can also use the {@link sap.m.ScreenSize} enumeration (e.g: "Phone", "Tablet", "Desktop", "Small", "Medium", "Large", ....). Please also see <code>demandPopin</code> property for further responsive design options. <b>Note:</b> This property gets overwritten if the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>. See {@link sap.m.Table#getAutoPopinMode}
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sMinScreenWidth New value for property <code>minScreenWidth</code>
@@ -255,7 +313,7 @@ Default value is <code>Block</code>.
 	* @param	sPopinDisplay New value for property <code>popinDisplay</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPopinDisplay( sPopinDisplay:sap.m.PopinDisplay):sap.m.Column;
+	public function setPopinDisplay( ?sPopinDisplay:sap.m.PopinDisplay):sap.m.Column;
 
 	/**
 	* Sets a new value for property {@link #getSortIndicator sortIndicator}.
@@ -270,7 +328,7 @@ Default value is <code>None</code>.
 	* @param	sSortIndicator New value for property <code>sortIndicator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSortIndicator( sSortIndicator:sap.ui.core.SortOrder):sap.m.Column;
+	public function setSortIndicator( ?sSortIndicator:sap.ui.core.SortOrder):sap.m.Column;
 
 	/**
 	* Sets a new value for property {@link #getStyleClass styleClass}.
@@ -294,7 +352,7 @@ Default value is <code>Inherit</code>.
 	* @param	sVAlign New value for property <code>vAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVAlign( sVAlign:sap.ui.core.VerticalAlign):sap.m.Column;
+	public function setVAlign( ?sVAlign:sap.ui.core.VerticalAlign):sap.m.Column;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -307,12 +365,12 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.Column;
+	public function setVisible( ?bVisible:Bool):sap.m.Column;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
 
-Defines the width of the column. If you leave it empty then this column covers the remaining space.
+Defines the width of the column. If you leave it empty then this column covers the remaining space. <b>Note:</b> When setting <code>autoPopinMode=true</code> on the table, the columns with a fixed width must either be in px, rem, or em as the table internally calculates the <code>minScreenWidth</code> property for the column. If a column has a fixed width, then this width is used to calculate the <code>minScreenWidth</code> for the <code>autoPopinMode</code>. If a column has a flexible width, such as % or auto, the <code>autoPopinWidth</code> property is used to calculate the <code>minScreenWidth</code>.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sWidth New value for property <code>width</code>
@@ -324,7 +382,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 typedef ColumnArgs = sap.ui.core.Element.ElementArgs & {
 
 	/**
-	* Defines the width of the column. If you leave it empty then this column covers the remaining space.
+	* Defines the width of the column. If you leave it empty then this column covers the remaining space. <b>Note:</b> When setting <code>autoPopinMode=true</code> on the table, the columns with a fixed width must either be in px, rem, or em as the table internally calculates the <code>minScreenWidth</code> property for the column. If a column has a fixed width, then this width is used to calculate the <code>minScreenWidth</code> for the <code>autoPopinMode</code>. If a column has a flexible width, such as % or auto, the <code>autoPopinWidth</code> property is used to calculate the <code>minScreenWidth</code>.
 	*/
 	@:optional var width:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
@@ -351,12 +409,12 @@ typedef ColumnArgs = sap.ui.core.Element.ElementArgs & {
 	@:optional var visible:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Defines the minimum screen width to show or hide this column. By default column is always shown. The responsive behavior of the <code>sap.m.Table</code> is determined by this property. As an example by setting <code>minScreenWidth</code> property to "40em" (or "640px" or "Tablet") shows this column on tablet (and desktop) but hides on mobile. As you can give specific CSS sizes (e.g: "480px" or "40em"), you can also use the {@link sap.m.ScreenSize} enumeration (e.g: "Phone", "Tablet", "Desktop", "Small", "Medium", "Large", ....). Please also see <code>demandPopin</code> property for further responsive design options.
+	* Defines the minimum screen width to show or hide this column. By default column is always shown. The responsive behavior of the <code>sap.m.Table</code> is determined by this property. As an example by setting <code>minScreenWidth</code> property to "40em" (or "640px" or "Tablet") shows this column on tablet (and desktop) but hides on mobile. As you can give specific CSS sizes (e.g: "480px" or "40em"), you can also use the {@link sap.m.ScreenSize} enumeration (e.g: "Phone", "Tablet", "Desktop", "Small", "Medium", "Large", ....). Please also see <code>demandPopin</code> property for further responsive design options. <b>Note:</b> This property gets overwritten if the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>. See {@link sap.m.Table#getAutoPopinMode}
 	*/
 	@:optional var minScreenWidth:String;
 
 	/**
-	* According to your minScreenWidth settings, the column can be hidden in different screen sizes. Setting this property to true, shows this column as pop-in instead of hiding it.
+	* According to your minScreenWidth settings, the column can be hidden in different screen sizes. Setting this property to true, shows this column as pop-in instead of hiding it. <b>Note:</b> This property gets overwritten if the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>. See {@link sap.m.Table#getAutoPopinMode}
 	*/
 	@:optional var demandPopin:haxe.extern.EitherType<String,Bool>;
 
@@ -366,7 +424,9 @@ typedef ColumnArgs = sap.ui.core.Element.ElementArgs & {
 	@:optional var popinDisplay:haxe.extern.EitherType<String,sap.m.PopinDisplay>;
 
 	/**
-	* Set <code>true</code> to merge repeating/duplicate cells into one cell block. See <code>mergeFunctionName</code> property to customize. <b>Note:</b> Merging only happens at the rendering of the <code>sap.m.Table</code> control, subsequent changes on the cell or item do not have any effect on the merged state of the cells, therefore this feature should not be used together with two-way binding. This property is ignored if any column is configured to be shown as a pop-in.
+	* Set <code>true</code> to merge repeating/duplicate cells into one cell block. See <code>mergeFunctionName</code> property to customize.
+
+<b>Note:</b> Merging only happens when rendering the <code>sap.m.Table</code> control, subsequent changes on the cell or item do not have any effect on the merged state of the cells, therefore this feature should not be used together with two-way binding. This property is ignored if any column is configured to be shown as a pop-in. Merging is not supported if the <code>items</code> aggregation of the <code>sap.m.Table</code> control is bound to an {@link sap.ui.model.odata.v4.ODataModel OData V4 model}.
 	*/
 	@:optional var mergeDuplicates:haxe.extern.EitherType<String,Bool>;
 
@@ -381,6 +441,20 @@ typedef ColumnArgs = sap.ui.core.Element.ElementArgs & {
 <b>Note:</b> Defining this property does not trigger the sorting.
 	*/
 	@:optional var sortIndicator:haxe.extern.EitherType<String,sap.ui.core.SortOrder>;
+
+	/**
+	* Defines the column importance.
+
+If the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>, then the column importance is taken into consideration for calculating the <code>minScreenWidth</code> property and for setting the <code>demandPopin</code> property of the column. See {@link sap.m.Table#getAutoPopinMode}
+	*/
+	@:optional var importance:haxe.extern.EitherType<String,sap.ui.core.Priority>;
+
+	/**
+	* Defines the auto pop-in width for the column.
+
+If the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>, then the <code>autoPopinWidth</code> property is used to calculate the <code>minScreenWidth</code> property of the column in case a fixed width is not set for the column. See {@link sap.m.Column#getWidth} and {@link sap.m.Table#getAutoPopinMode}. <b>Note:</b> A float value is set for the <code>autoPopinWidth</code> property which is internally treated as a rem value.
+	*/
+	@:optional var autoPopinWidth:haxe.extern.EitherType<String,Float>;
 
     /**
     * Control to be displayed in the column header.

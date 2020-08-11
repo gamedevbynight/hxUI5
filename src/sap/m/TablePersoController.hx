@@ -17,7 +17,7 @@ This method should be called when the table to be personalized knows its columns
  onInit: function () {
 
 		// set explored app's demo model on this sample
-		var oModel = new JSONModel(jQuery.sap.getModulePath("sap.ui.demo.mock", "/products.json"));
+		var oModel = new JSONModel(sap.ui.require.toUrl("sap/ui/demo/mock/products.json"));
 		var oGroupingModel = new JSONModel({ hasGrouping: false});
 		this.getView().setModel(oModel);
 		this.getView().setModel(oGroupingModel, 'Grouping');
@@ -98,8 +98,6 @@ Available options for the text direction are LTR and RTL. By default the control
 
 	/**
 	* Gets current value of property {@link #getContentHeight contentHeight}.
-
-Default value is <code>20rem</code>.
 	* @return	Value of property <code>contentHeight</code>
 	*/
 	public function getContentHeight( ):sap.ui.core.CSSSize;

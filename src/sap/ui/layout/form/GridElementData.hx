@@ -72,7 +72,7 @@ Default value is <code>auto</code>.
 	* @param	sHCells New value for property <code>hCells</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHCells( sHCells:sap.ui.layout.form.GridElementCells):sap.ui.layout.form.GridElementData;
+	public function setHCells( ?sHCells:sap.ui.layout.form.GridElementCells):sap.ui.layout.form.GridElementData;
 
 	/**
 	* Sets a new value for property {@link #getVCells vCells}.
@@ -87,7 +87,7 @@ Default value is <code>1</code>.
 	* @param	iVCells New value for property <code>vCells</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVCells( iVCells:Int):sap.ui.layout.form.GridElementData;
+	public function setVCells( ?iVCells:Int):sap.ui.layout.form.GridElementData;
 }
 
 typedef GridElementDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {

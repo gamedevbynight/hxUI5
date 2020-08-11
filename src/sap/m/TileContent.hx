@@ -114,7 +114,7 @@ Default value is <code>false</code>.
 	* @param	bDisabled New value for property <code>disabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisabled( bDisabled:Bool):sap.m.TileContent;
+	public function setDisabled( ?bDisabled:Bool):sap.m.TileContent;
 
 	/**
 	* Sets a new value for property {@link #getFooter footer}.
@@ -138,7 +138,7 @@ Default value is <code>Neutral</code>.
 	* @param	sFooterColor New value for property <code>footerColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFooterColor( sFooterColor:sap.m.ValueColor):sap.m.TileContent;
+	public function setFooterColor( ?sFooterColor:sap.m.ValueColor):sap.m.TileContent;
 
 	/**
 	* Sets a new value for property {@link #getFrameType frameType}.
@@ -151,7 +151,7 @@ Default value is <code>Auto</code>.
 	* @param	sFrameType New value for property <code>frameType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFrameType( sFrameType:sap.m.FrameType):sap.m.TileContent;
+	public function setFrameType( ?sFrameType:sap.m.FrameType):sap.m.TileContent;
 
 	/**
 	* Sets a new value for property {@link #getUnit unit}.

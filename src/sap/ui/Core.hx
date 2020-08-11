@@ -4,6 +4,8 @@ package sap.ui;
 extern class Core
 {
 
+
+
 	/**
 	* Applies the support for custom style classes on the prototype of a <code>sap.ui.core.Element</code>.
 

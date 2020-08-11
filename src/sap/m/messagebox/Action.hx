@@ -1,6 +1,5 @@
 package sap.m.messagebox;
 
-@:native("sap.m.MessageBox.Action")
 @:enum extern abstract Action(String)
 {
     /**

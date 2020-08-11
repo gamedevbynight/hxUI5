@@ -101,7 +101,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.ui.table.RowAction;
+	public function setVisible( ?bVisible:Bool):sap.ui.table.RowAction;
 }
 
 typedef RowActionArgs = sap.ui.core.Control.ControlArgs & {

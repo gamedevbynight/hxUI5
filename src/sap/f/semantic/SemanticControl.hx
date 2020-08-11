@@ -48,7 +48,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.f.semantic.SemanticControl;
+	public function setVisible( ?bVisible:Bool):sap.f.semantic.SemanticControl;
 }
 
 typedef SemanticControlArgs = sap.ui.core.Element.ElementArgs & {

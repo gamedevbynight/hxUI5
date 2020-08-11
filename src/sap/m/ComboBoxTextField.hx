@@ -66,7 +66,7 @@ Default value is <code>100%</code>.
 	* @param	sMaxWidth New value for property <code>maxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxWidth( sMaxWidth:sap.ui.core.CSSSize):sap.m.ComboBoxTextField;
+	public function setMaxWidth( ?sMaxWidth:sap.ui.core.CSSSize):sap.m.ComboBoxTextField;
 
 	/**
 	* Sets a new value for property {@link #getShowButton showButton}.
@@ -79,7 +79,7 @@ Default value is <code>true</code>.
 	* @param	bShowButton New value for property <code>showButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowButton( bShowButton:Bool):sap.m.ComboBoxTextField;
+	public function setShowButton( ?bShowButton:Bool):sap.m.ComboBoxTextField;
 }
 
 typedef ComboBoxTextFieldArgs = sap.m.InputBase.InputBaseArgs & {

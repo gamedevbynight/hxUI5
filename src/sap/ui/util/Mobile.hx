@@ -1,6 +1,6 @@
 package sap.ui.util;
 
-@:native("sap.ui.util.Mobile")
+@:native("module:sap/ui/util/Mobile")
 extern class Mobile
 {
 

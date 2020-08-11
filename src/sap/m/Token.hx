@@ -240,7 +240,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.m.Token;
+	public function setEditable( ?bEditable:Bool):sap.m.Token;
 
 	/**
 	* Sets a new value for property {@link #getKey key}.
@@ -253,7 +253,7 @@ Default value is <code>empty string</code>.
 	* @param	sKey New value for property <code>key</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKey( sKey:String):sap.m.Token;
+	public function setKey( ?sKey:String):sap.m.Token;
 
 	/**
 	* Sets a new value for property {@link #getSelected selected}.
@@ -266,7 +266,7 @@ Default value is <code>false</code>.
 	* @param	bSelected New value for property <code>selected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelected( bSelected:Bool):sap.m.Token;
+	public function setSelected( ?bSelected:Bool):sap.m.Token;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -279,7 +279,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.Token;
+	public function setText( ?sText:String):sap.m.Token;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -292,7 +292,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.Token;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.Token;
 }
 
 typedef TokenArgs = sap.ui.core.Control.ControlArgs & {
@@ -326,6 +326,11 @@ typedef TokenArgs = sap.ui.core.Control.ControlArgs & {
 	* Indicates the editable status of the token's parent (Tokenizer). If it is set to <code>true</code>, the ARIA attributes of the token are updated accordingly.
 	*/
 	@:optional var editableParent:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Indicates if the token's text should be truncated.
+	*/
+	@:optional var truncated:haxe.extern.EitherType<String,Bool>;
 
     /**
     * The delete icon.

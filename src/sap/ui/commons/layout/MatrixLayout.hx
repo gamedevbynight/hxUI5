@@ -167,7 +167,7 @@ Default value is <code>true</code>.
 	* @param	bLayoutFixed New value for property <code>layoutFixed</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLayoutFixed( bLayoutFixed:Bool):sap.ui.commons.layout.MatrixLayout;
+	public function setLayoutFixed( ?bLayoutFixed:Bool):sap.ui.commons.layout.MatrixLayout;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

@@ -436,7 +436,7 @@ Default value is <code>Standard</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.ui.commons.RowRepeaterDesign):sap.ui.commons.RowRepeater;
+	public function setDesign( ?sDesign:sap.ui.commons.RowRepeaterDesign):sap.ui.commons.RowRepeater;
 
 	/**
 	* Sets a new value for property {@link #getFixedRowHeight fixedRowHeight}.
@@ -446,10 +446,10 @@ Row height adapts to rendered content. If a fixed height is specified the cells 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sFixedRowHeight New value for property <code>fixedRowHeight</code>
+	* @param	sFixedRowHeight= New value for property <code>fixedRowHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFixedRowHeight( sFixedRowHeight:sap.ui.core.CSSSize):sap.ui.commons.RowRepeater;
+	public function setFixedRowHeight( ?sFixedRowHeight:sap.ui.core.CSSSize):sap.ui.commons.RowRepeater;
 
 	/**
 	* Sets the aggregated {@link #getNoData noData}.

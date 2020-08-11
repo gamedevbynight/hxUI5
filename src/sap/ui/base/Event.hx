@@ -1,5 +1,6 @@
 package sap.ui.base;
 
+@:native("sap.ui.base.Event")
 
 /**
 * An Event object consisting of an ID, a source and a map of parameters. Implements {@link sap.ui.base.Poolable} and therefore an event object in the event handler will be reset by {@link sap.ui.base.ObjectPool} after the event handler is done.

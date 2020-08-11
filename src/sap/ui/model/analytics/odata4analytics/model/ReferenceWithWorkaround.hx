@@ -1,6 +1,5 @@
 package sap.ui.model.analytics.odata4analytics.model;
 
-@:native("sap.ui.model.analytics.odata4analytics.Model.ReferenceWithWorkaround")
 
 /**
 * Handle to an already instantiated SAPUI5 OData model.

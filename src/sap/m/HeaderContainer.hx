@@ -206,7 +206,7 @@ Default value is <code>Transparent</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.BackgroundDesign):sap.m.HeaderContainer;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.BackgroundDesign):sap.m.HeaderContainer;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -230,7 +230,7 @@ Default value is <code>Horizontal</code>.
 	* @param	sOrientation New value for property <code>orientation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOrientation( sOrientation:sap.ui.core.Orientation):sap.m.HeaderContainer;
+	public function setOrientation( ?sOrientation:sap.ui.core.Orientation):sap.m.HeaderContainer;
 
 	/**
 	* Sets a new value for property {@link #getScrollStep scrollStep}.
@@ -243,7 +243,7 @@ Default value is <code>300</code>.
 	* @param	iScrollStep New value for property <code>scrollStep</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScrollStep( iScrollStep:Int):sap.m.HeaderContainer;
+	public function setScrollStep( ?iScrollStep:Int):sap.m.HeaderContainer;
 
 	/**
 	* Sets a new value for property {@link #getScrollStepByItem scrollStepByItem}.
@@ -256,7 +256,7 @@ Default value is <code>1</code>.
 	* @param	iScrollStepByItem New value for property <code>scrollStepByItem</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScrollStepByItem( iScrollStepByItem:Int):sap.m.HeaderContainer;
+	public function setScrollStepByItem( ?iScrollStepByItem:Int):sap.m.HeaderContainer;
 
 	/**
 	* Sets a new value for property {@link #getScrollTime scrollTime}.
@@ -269,7 +269,7 @@ Default value is <code>500</code>.
 	* @param	iScrollTime New value for property <code>scrollTime</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScrollTime( iScrollTime:Int):sap.m.HeaderContainer;
+	public function setScrollTime( ?iScrollTime:Int):sap.m.HeaderContainer;
 
 	/**
 	* Sets a new value for property {@link #getShowDividers showDividers}.
@@ -282,7 +282,7 @@ Default value is <code>true</code>.
 	* @param	bShowDividers New value for property <code>showDividers</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowDividers( bShowDividers:Bool):sap.m.HeaderContainer;
+	public function setShowDividers( ?bShowDividers:Bool):sap.m.HeaderContainer;
 
 	/**
 	* Sets a new value for property {@link #getShowOverflowItem showOverflowItem}.
@@ -295,7 +295,7 @@ Default value is <code>true</code>.
 	* @param	bShowOverflowItem New value for property <code>showOverflowItem</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowOverflowItem( bShowOverflowItem:Bool):sap.m.HeaderContainer;
+	public function setShowOverflowItem( ?bShowOverflowItem:Bool):sap.m.HeaderContainer;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

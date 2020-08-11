@@ -129,7 +129,7 @@ Default value is <code>true</code>.
 	* @param	bShowPopupIndicator New value for property <code>showPopupIndicator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowPopupIndicator( bShowPopupIndicator:Bool):sap.ui.unified.ShellHeadUserItem;
+	public function setShowPopupIndicator( ?bShowPopupIndicator:Bool):sap.ui.unified.ShellHeadUserItem;
 
 	/**
 	* Sets a new value for property {@link #getUsername username}.
@@ -142,7 +142,7 @@ Default value is <code>empty string</code>.
 	* @param	sUsername New value for property <code>username</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUsername( sUsername:String):sap.ui.unified.ShellHeadUserItem;
+	public function setUsername( ?sUsername:String):sap.ui.unified.ShellHeadUserItem;
 }
 
 typedef ShellHeadUserItemArgs = sap.ui.core.Element.ElementArgs & {

@@ -179,7 +179,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.Link;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.Link;
 
 	/**
 	* Sets a new value for property {@link #getHelpId helpId}.
@@ -192,7 +192,7 @@ Default value is <code>empty string</code>.
 	* @param	sHelpId New value for property <code>helpId</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHelpId( sHelpId:String):sap.ui.commons.Link;
+	public function setHelpId( ?sHelpId:String):sap.ui.commons.Link;
 
 	/**
 	* Sets a new value for property {@link #getHref href}.
@@ -227,7 +227,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.commons.Link;
+	public function setText( ?sText:String):sap.ui.commons.Link;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

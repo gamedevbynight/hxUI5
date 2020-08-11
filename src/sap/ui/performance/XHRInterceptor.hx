@@ -1,6 +1,6 @@
 package sap.ui.performance;
 
-@:native("sap.ui.performance.XHRInterceptor")
+@:native("module:sap/ui/performance/XHRInterceptor")
 extern class XHRInterceptor
 {
 

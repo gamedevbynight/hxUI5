@@ -194,7 +194,7 @@ Default value is <code>true</code>.
 	* @param	bDisplayAnimation New value for property <code>displayAnimation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayAnimation( bDisplayAnimation:Bool):sap.m.ProgressIndicator;
+	public function setDisplayAnimation( ?bDisplayAnimation:Bool):sap.m.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getDisplayOnly displayOnly}.
@@ -207,7 +207,7 @@ Default value is <code>false</code>.
 	* @param	bDisplayOnly New value for property <code>displayOnly</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayOnly( bDisplayOnly:Bool):sap.m.ProgressIndicator;
+	public function setDisplayOnly( ?bDisplayOnly:Bool):sap.m.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getDisplayValue displayValue}.
@@ -231,7 +231,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.ProgressIndicator;
+	public function setEnabled( ?bEnabled:Bool):sap.m.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -257,7 +257,7 @@ Default value is <code>0</code>.
 	* @param	fPercentValue New value for property <code>percentValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPercentValue( fPercentValue:Float):sap.m.ProgressIndicator;
+	public function setPercentValue( ?fPercentValue:Float):sap.m.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getShowValue showValue}.
@@ -270,7 +270,7 @@ Default value is <code>true</code>.
 	* @param	bShowValue New value for property <code>showValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowValue( bShowValue:Bool):sap.m.ProgressIndicator;
+	public function setShowValue( ?bShowValue:Bool):sap.m.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getState state}.
@@ -283,7 +283,7 @@ Default value is <code>None</code>.
 	* @param	sState New value for property <code>state</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setState( sState:sap.ui.core.ValueState):sap.m.ProgressIndicator;
+	public function setState( ?sState:sap.ui.core.ValueState):sap.m.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -296,7 +296,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.ProgressIndicator;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -309,7 +309,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.ProgressIndicator;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.ProgressIndicator;
 }
 
 typedef ProgressIndicatorArgs = sap.ui.core.Control.ControlArgs & {

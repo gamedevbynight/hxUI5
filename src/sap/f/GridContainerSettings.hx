@@ -125,7 +125,7 @@ Default value is <code>80px</code>.
 	* @param	sColumnSize New value for property <code>columnSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnSize( sColumnSize:sap.ui.core.CSSSize):sap.f.GridContainerSettings;
+	public function setColumnSize( ?sColumnSize:sap.ui.core.CSSSize):sap.f.GridContainerSettings;
 
 	/**
 	* Sets a new value for property {@link #getGap gap}.
@@ -140,7 +140,7 @@ Default value is <code>16px</code>.
 	* @param	sGap New value for property <code>gap</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGap( sGap:sap.ui.core.CSSSize):sap.f.GridContainerSettings;
+	public function setGap( ?sGap:sap.ui.core.CSSSize):sap.f.GridContainerSettings;
 
 	/**
 	* Sets a new value for property {@link #getMaxColumnSize maxColumnSize}.
@@ -185,7 +185,7 @@ Default value is <code>80px</code>.
 	* @param	sRowSize New value for property <code>rowSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRowSize( sRowSize:sap.ui.core.CSSSize):sap.f.GridContainerSettings;
+	public function setRowSize( ?sRowSize:sap.ui.core.CSSSize):sap.f.GridContainerSettings;
 }
 
 typedef GridContainerSettingsArgs = sap.ui.base.ManagedObject.ManagedObjectArgs & {

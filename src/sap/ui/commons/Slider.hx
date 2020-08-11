@@ -264,7 +264,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.commons.Slider;
+	public function setEditable( ?bEditable:Bool):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -277,7 +277,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.Slider;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -290,7 +290,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.commons.Slider;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getLabels labels}.
@@ -318,7 +318,7 @@ Default value is <code>100</code>.
 	* @param	fMax New value for property <code>max</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMax( fMax:Float):sap.ui.commons.Slider;
+	public function setMax( ?fMax:Float):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getMin min}.
@@ -333,7 +333,7 @@ Default value is <code>0</code>.
 	* @param	fMin New value for property <code>min</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMin( fMin:Float):sap.ui.commons.Slider;
+	public function setMin( ?fMin:Float):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getSmallStepWidth smallStepWidth}.
@@ -357,7 +357,7 @@ Default value is <code>false</code>.
 	* @param	bStepLabels New value for property <code>stepLabels</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStepLabels( bStepLabels:Bool):sap.ui.commons.Slider;
+	public function setStepLabels( ?bStepLabels:Bool):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getTotalUnits totalUnits}.
@@ -383,7 +383,7 @@ Default value is <code>50</code>.
 	* @param	fValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( fValue:Float):sap.ui.commons.Slider;
+	public function setValue( ?fValue:Float):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getVertical vertical}.
@@ -396,7 +396,7 @@ Default value is <code>false</code>.
 	* @param	bVertical New value for property <code>vertical</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVertical( bVertical:Bool):sap.ui.commons.Slider;
+	public function setVertical( ?bVertical:Bool):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -409,7 +409,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.Slider;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.Slider;
 }
 
 typedef SliderArgs = sap.ui.core.Control.ControlArgs & {

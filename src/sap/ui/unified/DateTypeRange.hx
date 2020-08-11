@@ -22,6 +22,14 @@ extern class DateTypeRange extends sap.ui.unified.DateRange
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
+	* Gets current value of property {@link #getColor color}.
+
+Background color of the <code>Calendar</code> <code>specialDates</code> aggregation. If set, this color will override the default background color defined in <code>Calendar</code> <code>specialDates</code> aggregation
+	* @return	Value of property <code>color</code>
+	*/
+	public function getColor( ):sap.ui.core.CSSColor;
+
+	/**
 	* Returns a metadata object for class sap.ui.unified.DateTypeRange.
 	* @return	Metadata object describing this class
 	*/
@@ -38,6 +46,17 @@ Default value is <code>Type01</code>.
 	public function getType( ):sap.ui.unified.CalendarDayType;
 
 	/**
+	* Sets a new value for property {@link #getColor color}.
+
+Background color of the <code>Calendar</code> <code>specialDates</code> aggregation. If set, this color will override the default background color defined in <code>Calendar</code> <code>specialDates</code> aggregation
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sColor New value for property <code>color</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setColor( sColor:sap.ui.core.CSSColor):sap.ui.unified.DateTypeRange;
+
+	/**
 	* Sets a new value for property {@link #getType type}.
 
 Type of the date range.
@@ -48,7 +67,7 @@ Default value is <code>Type01</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.ui.unified.CalendarDayType):sap.ui.unified.DateTypeRange;
+	public function setType( ?sType:sap.ui.unified.CalendarDayType):sap.ui.unified.DateTypeRange;
 }
 
 typedef DateTypeRangeArgs = sap.ui.unified.DateRange.DateRangeArgs & {
@@ -57,4 +76,9 @@ typedef DateTypeRangeArgs = sap.ui.unified.DateRange.DateRangeArgs & {
 	* Type of the date range.
 	*/
 	@:optional var type:haxe.extern.EitherType<String,sap.ui.unified.CalendarDayType>;
+
+	/**
+	* Background color of the <code>Calendar</code> <code>specialDates</code> aggregation. If set, this color will override the default background color defined in <code>Calendar</code> <code>specialDates</code> aggregation
+	*/
+	@:optional var color:haxe.extern.EitherType<String,sap.ui.core.CSSColor>;
 }

@@ -671,7 +671,7 @@ Default value is <code>true</code>.
 	* @param	bInstantUpload New value for property <code>instantUpload</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInstantUpload( bInstantUpload:Bool):sap.m.UploadCollection;
+	public function setInstantUpload( ?bInstantUpload:Bool):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getMaximumFilenameLength maximumFilenameLength}.
@@ -717,7 +717,7 @@ Default value is <code>None</code>.
 	* @param	sMode New value for property <code>mode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMode( sMode:sap.m.ListMode):sap.m.UploadCollection;
+	public function setMode( ?sMode:sap.m.ListMode):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getMultiple multiple}.
@@ -732,7 +732,7 @@ Default value is <code>false</code>.
 	* @param	bMultiple New value for property <code>multiple</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMultiple( bMultiple:Bool):sap.m.UploadCollection;
+	public function setMultiple( ?bMultiple:Bool):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getNoDataDescription noDataDescription}.
@@ -778,23 +778,23 @@ Default value is <code>false</code>.
 	* @param	bSameFilenameAllowed New value for property <code>sameFilenameAllowed</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSameFilenameAllowed( bSameFilenameAllowed:Bool):sap.m.UploadCollection;
+	public function setSameFilenameAllowed( ?bSameFilenameAllowed:Bool):sap.m.UploadCollection;
 
 	/**
 	* Selects or deselects the given list item.
 	* @param	uploadCollectionItem The item whose selection is to be changed. This parameter is mandatory.
-	* @param	select The selection state of the item. Default value is true.
+	* @param	select The selection state of the item.
 	* @return	this to allow method chaining
 	*/
-	public function setSelectedItem( uploadCollectionItem:sap.m.UploadCollectionItem, select:Bool):sap.m.UploadCollection;
+	public function setSelectedItem( uploadCollectionItem:sap.m.UploadCollectionItem, ?select:Bool):sap.m.UploadCollection;
 
 	/**
 	* Sets an UploadCollectionItem to be selected by ID. In single selection mode, the method removes the previous selection.
 	* @param	id The ID of the item whose selection is to be changed.
-	* @param	select The selection state of the item. Default value is true.
+	* @param	select The selection state of the item.
 	* @return	this to allow method chaining
 	*/
-	public function setSelectedItemById( id:String, select:Bool):sap.m.UploadCollection;
+	public function setSelectedItemById( id:String, ?select:Bool):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getShowSeparators showSeparators}.
@@ -807,7 +807,7 @@ Default value is <code>All</code>.
 	* @param	sShowSeparators New value for property <code>showSeparators</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSeparators( sShowSeparators:sap.m.ListSeparators):sap.m.UploadCollection;
+	public function setShowSeparators( ?sShowSeparators:sap.m.ListSeparators):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getTerminationEnabled terminationEnabled}.
@@ -820,7 +820,7 @@ Default value is <code>true</code>.
 	* @param	bTerminationEnabled New value for property <code>terminationEnabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTerminationEnabled( bTerminationEnabled:Bool):sap.m.UploadCollection;
+	public function setTerminationEnabled( ?bTerminationEnabled:Bool):sap.m.UploadCollection;
 
 	/**
 	* Sets the aggregated {@link #getToolbar toolbar}.
@@ -840,7 +840,7 @@ Default value is <code>false</code>.
 	* @param	bUploadButtonInvisible New value for property <code>uploadButtonInvisible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUploadButtonInvisible( bUploadButtonInvisible:Bool):sap.m.UploadCollection;
+	public function setUploadButtonInvisible( ?bUploadButtonInvisible:Bool):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getUploadEnabled uploadEnabled}.
@@ -853,7 +853,7 @@ Default value is <code>true</code>.
 	* @param	bUploadEnabled New value for property <code>uploadEnabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUploadEnabled( bUploadEnabled:Bool):sap.m.UploadCollection;
+	public function setUploadEnabled( ?bUploadEnabled:Bool):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getUploadUrl uploadUrl}.
@@ -866,7 +866,7 @@ Default value is <code>../../../upload</code>.
 	* @param	sUploadUrl New value for property <code>uploadUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUploadUrl( sUploadUrl:String):sap.m.UploadCollection;
+	public function setUploadUrl( ?sUploadUrl:String):sap.m.UploadCollection;
 
 	/**
 	* Unbinds aggregation {@link #getItems items} from model data.

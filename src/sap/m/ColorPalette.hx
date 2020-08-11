@@ -71,6 +71,13 @@ Default value is <code>gold,darkorange,indianred,darkmagenta,cornflowerblue,deep
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
+	* Sets a selected color for the ColorPicker control.
+	* @param	color the selected color
+	* @return	<code>this</code> for method chaining
+	*/
+	public function setColorPickerSelectedColor( color:sap.ui.core.CSSColor):sap.m.ColorPalette;
+
+	/**
 	* Sets a new value for property {@link #getColors colors}.
 
 Defines the List of colors displayed in the palette. Minimum is 2 colors, maximum is 15 colors.
@@ -81,7 +88,7 @@ Default value is <code>gold,darkorange,indianred,darkmagenta,cornflowerblue,deep
 	* @param	sColors New value for property <code>colors</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColors( sColors:Array<sap.ui.core.CSSColor>):sap.m.ColorPalette;
+	public function setColors( ?sColors:Array<sap.ui.core.CSSColor>):sap.m.ColorPalette;
 }
 
 typedef ColorPaletteArgs = sap.ui.core.Control.ControlArgs & {

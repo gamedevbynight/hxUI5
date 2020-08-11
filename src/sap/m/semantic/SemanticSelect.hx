@@ -149,7 +149,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.semantic.SemanticSelect;
+	public function setEnabled( ?bEnabled:Bool):sap.m.semantic.SemanticSelect;
 	@:overload( function(oSelectedItem:sap.ui.core.ID):sap.m.semantic.SemanticSelect{ })
 
 	/**
@@ -170,7 +170,7 @@ Default value is <code>empty string</code>.
 	* @param	sSelectedKey New value for property <code>selectedKey</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelectedKey( sSelectedKey:String):sap.m.semantic.SemanticSelect;
+	public function setSelectedKey( ?sSelectedKey:String):sap.m.semantic.SemanticSelect;
 
 	/**
 	* Unbinds aggregation {@link #getItems items} from model data.

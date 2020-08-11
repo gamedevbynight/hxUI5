@@ -101,7 +101,7 @@ Default value is <code>1</code>.
 	* @param	iCount New value for property <code>count</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCount( iCount:Int):sap.m.PagingButton;
+	public function setCount( ?iCount:Int):sap.m.PagingButton;
 
 	/**
 	* Sets a new value for property {@link #getNextButtonTooltip nextButtonTooltip}.
@@ -114,7 +114,7 @@ Default value is <code>empty string</code>.
 	* @param	sNextButtonTooltip New value for property <code>nextButtonTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNextButtonTooltip( sNextButtonTooltip:String):sap.m.PagingButton;
+	public function setNextButtonTooltip( ?sNextButtonTooltip:String):sap.m.PagingButton;
 
 	/**
 	* Sets a new value for property {@link #getPosition position}.
@@ -127,7 +127,7 @@ Default value is <code>1</code>.
 	* @param	iPosition New value for property <code>position</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPosition( iPosition:Int):sap.m.PagingButton;
+	public function setPosition( ?iPosition:Int):sap.m.PagingButton;
 
 	/**
 	* Sets a new value for property {@link #getPreviousButtonTooltip previousButtonTooltip}.
@@ -140,7 +140,7 @@ Default value is <code>empty string</code>.
 	* @param	sPreviousButtonTooltip New value for property <code>previousButtonTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPreviousButtonTooltip( sPreviousButtonTooltip:String):sap.m.PagingButton;
+	public function setPreviousButtonTooltip( ?sPreviousButtonTooltip:String):sap.m.PagingButton;
 }
 
 typedef PagingButtonArgs = sap.ui.core.Control.ControlArgs & {

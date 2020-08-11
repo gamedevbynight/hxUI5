@@ -13,6 +13,13 @@ extern class RadioButton extends sap.ui.core.Control implements sap.ui.core.IFor
 {
 	@:overload(function(?sId:String, ?mSettings:RadioButtonArgs):Void {})
 	public function new(?mSettings:RadioButtonArgs):Void;
+
+	/**
+	* Maintains the RadioButton's internal Label's text property.
+	* @param	sText The text to be set
+	* @return	Reference to the control instance for chaining
+	*/
+	public function _updateLabelProperties( sText:String):sap.m.RadioButton;
 	@:overload( function(vAriaDescribedBy:sap.ui.core.ID):sap.m.RadioButton{ })
 
 	/**
@@ -244,7 +251,7 @@ Default value is <code>true</code>.
 	* @param	bActiveHandling New value for property <code>activeHandling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveHandling( bActiveHandling:Bool):sap.m.RadioButton;
+	public function setActiveHandling( ?bActiveHandling:Bool):sap.m.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -257,7 +264,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.m.RadioButton;
+	public function setEditable( ?bEditable:Bool):sap.m.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -270,14 +277,20 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.RadioButton;
+	public function setEnabled( ?bEnabled:Bool):sap.m.RadioButton;
 
 	/**
-	* Sets RadioButton's groupName. Only one radioButton from the same group can be selected
-	* @param	sGroupName Name of the group to which the RadioButton will belong.
-	* @return	Reference to the control instance for chaining
+	* Sets a new value for property {@link #getGroupName groupName}.
+
+Name of the radio button group the current radio button belongs to. You can define a new name for the group. If no new name is specified, this radio button belongs to the sapMRbDefaultGroup per default. Default behavior of a radio button in a group is that when one of the radio buttons in a group is selected, all others are unselected.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>sapMRbDefaultGroup</code>.
+	* @param	sGroupName New value for property <code>groupName</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGroupName( sGroupName:String):sap.m.RadioButton;
+	public function setGroupName( ?sGroupName:String):sap.m.RadioButton;
 
 	/**
 	* Sets the state of the RadioButton to selected.
@@ -287,9 +300,13 @@ Default value is <code>true</code>.
 	public function setSelected( bSelected:Bool):sap.m.RadioButton;
 
 	/**
-	* Sets the text for the RadioButton's label.
-	* @param	sText The text to be set
-	* @return	Reference to the control instance for chaining
+	* Sets a new value for property {@link #getText text}.
+
+Specifies the text displayed next to the RadioButton
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sText New value for property <code>text</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setText( sText:String):sap.m.RadioButton;
 
@@ -304,14 +321,20 @@ Default value is <code>Begin</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.RadioButton;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.RadioButton;
 
 	/**
-	* Sets the text direction for the RadioButton's label.
-	* @param	sDirection Text direction to be set to RadioButton's label
-	* @return	Reference to the control instance for chaining
+	* Sets a new value for property {@link #getTextDirection textDirection}.
+
+Options for the text direction are RTL and LTR. Alternatively, the control can inherit the text direction from its parent container.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Inherit</code>.
+	* @param	sTextDirection New value for property <code>textDirection</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sDirection:String):sap.m.RadioButton;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getUseEntireWidth useEntireWidth}.
@@ -324,7 +347,7 @@ Default value is <code>false</code>.
 	* @param	bUseEntireWidth New value for property <code>useEntireWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUseEntireWidth( bUseEntireWidth:Bool):sap.m.RadioButton;
+	public function setUseEntireWidth( ?bUseEntireWidth:Bool):sap.m.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -337,7 +360,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.m.RadioButton;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.m.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -347,10 +370,10 @@ Width of the RadioButton or it's label depending on the useEntireWidth property.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth New value for property <code>width</code>
+	* @param	sWidth= New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.RadioButton;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.RadioButton;
 }
 
 typedef RadioButtonArgs = sap.ui.core.Control.ControlArgs & {

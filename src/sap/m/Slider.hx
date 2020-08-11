@@ -322,7 +322,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.Slider;
+	public function setEnabled( ?bEnabled:Bool):sap.m.Slider;
 
 	/**
 	* Sets a new value for property {@link #getEnableTickmarks enableTickmarks}.
@@ -335,7 +335,7 @@ Default value is <code>false</code>.
 	* @param	bEnableTickmarks New value for property <code>enableTickmarks</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableTickmarks( bEnableTickmarks:Bool):sap.m.Slider;
+	public function setEnableTickmarks( ?bEnableTickmarks:Bool):sap.m.Slider;
 
 	/**
 	* Sets a new value for property {@link #getInputsAsTooltips inputsAsTooltips}.
@@ -348,7 +348,7 @@ Default value is <code>false</code>.
 	* @param	bInputsAsTooltips New value for property <code>inputsAsTooltips</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInputsAsTooltips( bInputsAsTooltips:Bool):sap.m.Slider;
+	public function setInputsAsTooltips( ?bInputsAsTooltips:Bool):sap.m.Slider;
 
 	/**
 	* Sets a new value for property {@link #getMax max}.
@@ -361,7 +361,7 @@ Default value is <code>100</code>.
 	* @param	fMax New value for property <code>max</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMax( fMax:Float):sap.m.Slider;
+	public function setMax( ?fMax:Float):sap.m.Slider;
 
 	/**
 	* Sets a new value for property {@link #getMin min}.
@@ -374,7 +374,7 @@ Default value is <code>0</code>.
 	* @param	fMin New value for property <code>min</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMin( fMin:Float):sap.m.Slider;
+	public function setMin( ?fMin:Float):sap.m.Slider;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -387,7 +387,7 @@ Default value is <code>empty string</code>.
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.m.Slider;
+	public function setName( ?sName:String):sap.m.Slider;
 
 	/**
 	* Sets a new value for property {@link #getProgress progress}.
@@ -400,7 +400,7 @@ Default value is <code>true</code>.
 	* @param	bProgress New value for property <code>progress</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setProgress( bProgress:Bool):sap.m.Slider;
+	public function setProgress( ?bProgress:Bool):sap.m.Slider;
 
 	/**
 	* Sets the aggregated {@link #getScale scale}.
@@ -420,7 +420,7 @@ Default value is <code>false</code>.
 	* @param	bShowAdvancedTooltip New value for property <code>showAdvancedTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowAdvancedTooltip( bShowAdvancedTooltip:Bool):sap.m.Slider;
+	public function setShowAdvancedTooltip( ?bShowAdvancedTooltip:Bool):sap.m.Slider;
 
 	/**
 	* Sets a new value for property {@link #getShowHandleTooltip showHandleTooltip}.
@@ -433,7 +433,7 @@ Default value is <code>true</code>.
 	* @param	bShowHandleTooltip New value for property <code>showHandleTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHandleTooltip( bShowHandleTooltip:Bool):sap.m.Slider;
+	public function setShowHandleTooltip( ?bShowHandleTooltip:Bool):sap.m.Slider;
 
 	/**
 	* Sets a new value for property {@link #getStep step}.
@@ -450,7 +450,7 @@ Default value is <code>1</code>.
 	* @param	fStep New value for property <code>step</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStep( fStep:Float):sap.m.Slider;
+	public function setStep( ?fStep:Float):sap.m.Slider;
 
 	/**
 	* Sets the property <code>value</code>.
@@ -473,7 +473,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Slider;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Slider;
 
 	/**
 	* Decrements the value by multiplying the step the <code>step</code> with the given parameter.

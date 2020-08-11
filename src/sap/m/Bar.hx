@@ -250,7 +250,7 @@ Default value is <code>Auto</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.m.BarDesign):sap.m.Bar;
+	public function setDesign( ?sDesign:sap.m.BarDesign):sap.m.Bar;
 }
 
 typedef BarArgs = sap.ui.core.Control.ControlArgs & {

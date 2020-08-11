@@ -60,18 +60,6 @@ Please also take notice of the fact, that "addSelectionInterval" does not change
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
-	* Gets current value of property {@link #getCollapseRecursive collapseRecursive}.
-
-Setting collapseRecursive to true means, that when collapsing a node all subsequent child nodes will also be collapsed.
-
-Calling the setter of this property only has an effect when the tables <code>rows</code> aggregation is already bound and the binding supports this feature.
-
-Default value is <code>true</code>.
-	* @return	Value of property <code>collapseRecursive</code>
-	*/
-	public function getCollapseRecursive( ):Bool;
-
-	/**
 	* Gets current value of property {@link #getColumnVisibilityMenuSorter columnVisibilityMenuSorter}.
 
 Functions which is used to sort the column visibility menu entries e.g.: function(ColumnA, ColumnB) { return 0 = equals, <0 lower, >0 greater }; Other values than functions will be ignored.
@@ -93,10 +81,12 @@ Functions which is used to sort the column visibility menu entries e.g.: functio
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
-	* Retrieves the lead selection index. The lead selection index is, among other things, used to determine the start/end of a selection range, when using Shift-Click to select multiple entries at once.
-	* @return	an array containing all selected indices (ascending ordered integers)
+	* Retrieves the lead selection index.
+
+The lead selection index is, among other things, used to determine the start/end of a selection range, when using Shift-Click to select multiple entries at once.
+	* @return	Current lead selection index.
 	*/
-	public function getSelectedIndex( ):Array<Int>;
+	public function getSelectedIndex( ):Int;
 
 	/**
 	* Returns an array containing the row indices of all selected tree nodes (in ascending order).
@@ -143,21 +133,6 @@ Explanation of the SelectAll function and what to expect from its behavior: All 
 	public function selectAll( ):sap.ui.table.AnalyticalTable;
 
 	/**
-	* Sets a new value for property {@link #getCollapseRecursive collapseRecursive}.
-
-Setting collapseRecursive to true means, that when collapsing a node all subsequent child nodes will also be collapsed.
-
-Calling the setter of this property only has an effect when the tables <code>rows</code> aggregation is already bound and the binding supports this feature.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>true</code>.
-	* @param	bCollapseRecursive New value for property <code>collapseRecursive</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setCollapseRecursive( bCollapseRecursive:Bool):sap.ui.table.AnalyticalTable;
-
-	/**
 	* Sets a new value for property {@link #getColumnVisibilityMenuSorter columnVisibilityMenuSorter}.
 
 Functions which is used to sort the column visibility menu entries e.g.: function(ColumnA, ColumnB) { return 0 = equals, <0 lower, >0 greater }; Other values than functions will be ignored.
@@ -192,11 +167,4 @@ typedef AnalyticalTableArgs = sap.ui.table.Table.TableArgs & {
 	* Functions which is used to sort the column visibility menu entries e.g.: function(ColumnA, ColumnB) { return 0 = equals, <0 lower, >0 greater }; Other values than functions will be ignored.
 	*/
 	@:optional var columnVisibilityMenuSorter:Dynamic;
-
-	/**
-	* Setting collapseRecursive to true means, that when collapsing a node all subsequent child nodes will also be collapsed.
-
-Calling the setter of this property only has an effect when the tables <code>rows</code> aggregation is already bound and the binding supports this feature.
-	*/
-	@:optional var collapseRecursive:haxe.extern.EitherType<String,Bool>;
 }

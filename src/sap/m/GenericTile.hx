@@ -187,6 +187,14 @@ The content of the tile.
 	public function getTileContent( ):Array<sap.m.TileContent>;
 
 	/**
+	* Gets current value of property {@link #getUrl url}.
+
+Renders the given link as root element and therefore enables the open in new tab / window functionality
+	* @return	Value of property <code>url</code>
+	*/
+	public function getUrl( ):sap.ui.core.URI;
+
+	/**
 	* Gets current value of property {@link #getWidth width}.
 
 Width of the control.
@@ -280,7 +288,7 @@ Default value is <code>OneByOne</code>.
 	* @param	sFrameType New value for property <code>frameType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFrameType( sFrameType:sap.m.FrameType):sap.m.GenericTile;
+	public function setFrameType( ?sFrameType:sap.m.FrameType):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getHeader header}.
@@ -326,7 +334,7 @@ Default value is <code>ContentMode</code>.
 	* @param	sMode New value for property <code>mode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMode( sMode:sap.m.GenericTileMode):sap.m.GenericTile;
+	public function setMode( ?sMode:sap.m.GenericTileMode):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getScope scope}.
@@ -339,7 +347,7 @@ Default value is <code>Display</code>.
 	* @param	sScope New value for property <code>scope</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScope( sScope:sap.m.GenericTileScope):sap.m.GenericTile;
+	public function setScope( ?sScope:sap.m.GenericTileScope):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getSizeBehavior sizeBehavior}.
@@ -352,7 +360,7 @@ Default value is <code>Responsive</code>.
 	* @param	sSizeBehavior New value for property <code>sizeBehavior</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSizeBehavior( sSizeBehavior:sap.m.TileSizeBehavior):sap.m.GenericTile;
+	public function setSizeBehavior( ?sSizeBehavior:sap.m.TileSizeBehavior):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getState state}.
@@ -365,7 +373,7 @@ Default value is <code>Loaded</code>.
 	* @param	sState New value for property <code>state</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setState( sState:sap.m.LoadState):sap.m.GenericTile;
+	public function setState( ?sState:sap.m.LoadState):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getSubheader subheader}.
@@ -377,6 +385,17 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setSubheader( sSubheader:String):sap.m.GenericTile;
+
+	/**
+	* Sets a new value for property {@link #getUrl url}.
+
+Renders the given link as root element and therefore enables the open in new tab / window functionality
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sUrl New value for property <code>url</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setUrl( sUrl:sap.ui.core.URI):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -400,7 +419,7 @@ Default value is <code>Normal</code>.
 	* @param	sWrappingType New value for property <code>wrappingType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrappingType( sWrappingType:sap.m.WrappingType):sap.m.GenericTile;
+	public function setWrappingType( ?sWrappingType:sap.m.WrappingType):sap.m.GenericTile;
 
 	/**
 	* Unbinds aggregation {@link #getTileContent tileContent} from model data.
@@ -470,6 +489,11 @@ typedef GenericTileArgs = sap.ui.core.Control.ControlArgs & {
 	* Additional description for aria-label. The aria-label is rendered before the standard aria-label.
 	*/
 	@:optional var ariaLabel:String;
+
+	/**
+	* Renders the given link as root element and therefore enables the open in new tab / window functionality
+	*/
+	@:optional var url:haxe.extern.EitherType<String,sap.ui.core.URI>;
 
 	/**
 	* Defines the type of text wrapping to be used (hyphenated or normal).

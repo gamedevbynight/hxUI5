@@ -66,7 +66,7 @@ Default value is <code>8</code>.
 	* @param	sCellsLarge New value for property <code>cellsLarge</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCellsLarge( sCellsLarge:sap.ui.layout.form.ColumnCells):sap.ui.layout.form.ColumnElementData;
+	public function setCellsLarge( ?sCellsLarge:sap.ui.layout.form.ColumnCells):sap.ui.layout.form.ColumnElementData;
 
 	/**
 	* Sets a new value for property {@link #getCellsSmall cellsSmall}.
@@ -81,7 +81,7 @@ Default value is <code>12</code>.
 	* @param	sCellsSmall New value for property <code>cellsSmall</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCellsSmall( sCellsSmall:sap.ui.layout.form.ColumnCells):sap.ui.layout.form.ColumnElementData;
+	public function setCellsSmall( ?sCellsSmall:sap.ui.layout.form.ColumnCells):sap.ui.layout.form.ColumnElementData;
 }
 
 typedef ColumnElementDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {

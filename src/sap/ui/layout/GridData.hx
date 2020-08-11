@@ -293,7 +293,7 @@ Default value is <code>false</code>.
 	* @param	bLinebreak New value for property <code>linebreak</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLinebreak( bLinebreak:Bool):sap.ui.layout.GridData;
+	public function setLinebreak( ?bLinebreak:Bool):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getLinebreakL linebreakL}.
@@ -306,7 +306,7 @@ Default value is <code>false</code>.
 	* @param	bLinebreakL New value for property <code>linebreakL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLinebreakL( bLinebreakL:Bool):sap.ui.layout.GridData;
+	public function setLinebreakL( ?bLinebreakL:Bool):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getLinebreakM linebreakM}.
@@ -319,7 +319,7 @@ Default value is <code>false</code>.
 	* @param	bLinebreakM New value for property <code>linebreakM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLinebreakM( bLinebreakM:Bool):sap.ui.layout.GridData;
+	public function setLinebreakM( ?bLinebreakM:Bool):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getLinebreakS linebreakS}.
@@ -332,7 +332,7 @@ Default value is <code>false</code>.
 	* @param	bLinebreakS New value for property <code>linebreakS</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLinebreakS( bLinebreakS:Bool):sap.ui.layout.GridData;
+	public function setLinebreakS( ?bLinebreakS:Bool):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getLinebreakXL linebreakXL}.
@@ -345,7 +345,7 @@ Default value is <code>false</code>.
 	* @param	bLinebreakXL New value for property <code>linebreakXL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLinebreakXL( bLinebreakXL:Bool):sap.ui.layout.GridData;
+	public function setLinebreakXL( ?bLinebreakXL:Bool):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getMoveBackwards moveBackwards}.
@@ -439,7 +439,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleL New value for property <code>visibleL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleL( bVisibleL:Bool):sap.ui.layout.GridData;
+	public function setVisibleL( ?bVisibleL:Bool):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getVisibleM visibleM}.
@@ -452,7 +452,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleM New value for property <code>visibleM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleM( bVisibleM:Bool):sap.ui.layout.GridData;
+	public function setVisibleM( ?bVisibleM:Bool):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getVisibleS visibleS}.
@@ -465,7 +465,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleS New value for property <code>visibleS</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleS( bVisibleS:Bool):sap.ui.layout.GridData;
+	public function setVisibleS( ?bVisibleS:Bool):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getVisibleXL visibleXL}.
@@ -478,7 +478,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleXL New value for property <code>visibleXL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleXL( bVisibleXL:Bool):sap.ui.layout.GridData;
+	public function setVisibleXL( ?bVisibleXL:Bool):sap.ui.layout.GridData;
 }
 
 typedef GridDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {

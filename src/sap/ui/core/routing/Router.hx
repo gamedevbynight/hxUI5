@@ -110,7 +110,7 @@ Since the xmlTarget does not specify its viewType, XML is taken from the config 
         path: "my.application.namespace",
         viewType: "XML"
     },
-    // You should only use this constructor when you are not using a router with a component.
+    // You should only use this constructor when you are using a router without a component.
     // Please use the metadata of a component to define your routes and targets.
     // The documentation can be found here: {@link sap.ui.core.UIComponent.extend}.
     null,
@@ -383,6 +383,12 @@ See {@link sap.ui.core.routing.HashChanger}.
 The parameters will be URI encoded - the characters ; , / ? : @ & = + $ are reserved and will not be encoded. If you want to use special characters in your <code>oParameters</code>, you have to encode them (encodeURIComponent).
 
 If the given route name can't be found, an error message is logged to the console and the hash will be changed to the empty string.
+
+This method excecutes following steps: 1. Interpolates the pattern with the given parameters 2. Sets the interpolated pattern to the browser's hash 3. Reacts to the browser's <code>hashchange</code> event to find out the route which matches the hash
+
+If there are multiple routes that have the same pattern, the call of navTo with a specific route won't necessarily trigger the matching process of this route. In the end, the first route in the router configuration list that matches the browser hash will be chosen.
+
+If the browser hash is already set with the interpolated pattern from the navTo call, nothing will happen because the browser won't fire <code>hashchange</code> event in this case.
 	* @param	sName The name of the route
 	* @param	oParameters The parameters for the route. As of Version 1.75 the recommendation is naming the query parameter with a leading "?" character, which is identical to the definition in the route's pattern. The old syntax without a leading "?" character is deprecated. e.g. <b>Route:</b> <code>{parameterName1}/:parameterName2:/{?queryParameterName}</code> <b>Parameter:</b> <pre>
 				{
@@ -409,7 +415,7 @@ Use {@link sap.ui.core.routing.Router.getRouter Router.getRouter()} to retrieve 
 	public function register( sName:String):sap.ui.core.routing.Router;
 
 	/**
-	* Stops to listen to the <code>hashChange</code> of the browser.
+	* Stops to listen to the <code>hashchange</code> of the browser.
 
 If you want the router to start again, call {@link #initialize} again.
 	* @return	this for chaining.

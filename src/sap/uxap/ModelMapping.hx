@@ -86,7 +86,7 @@ Default value is <code>Model</code>.
 	* @param	sInternalModelName New value for property <code>internalModelName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInternalModelName( sInternalModelName:String):sap.uxap.ModelMapping;
+	public function setInternalModelName( ?sInternalModelName:String):sap.uxap.ModelMapping;
 }
 
 typedef ModelMappingArgs = sap.ui.core.Element.ElementArgs & {

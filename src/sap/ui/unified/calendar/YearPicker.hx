@@ -201,7 +201,7 @@ Default value is <code>4</code>.
 	* @param	iColumns New value for property <code>columns</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumns( iColumns:Int):sap.ui.unified.calendar.YearPicker;
+	public function setColumns( ?iColumns:Int):sap.ui.unified.calendar.YearPicker;
 
 	/**
 	* Sets a new value for property {@link #getDate date}.
@@ -225,7 +225,7 @@ Default value is <code>false</code>.
 	* @param	bIntervalSelection New value for property <code>intervalSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervalSelection( bIntervalSelection:Bool):sap.ui.unified.calendar.YearPicker;
+	public function setIntervalSelection( ?bIntervalSelection:Bool):sap.ui.unified.calendar.YearPicker;
 
 	/**
 	* Sets a new value for property {@link #getPrimaryCalendarType primaryCalendarType}.
@@ -249,7 +249,7 @@ Default value is <code>20</code>.
 	* @param	iYears New value for property <code>years</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setYears( iYears:Int):sap.ui.unified.calendar.YearPicker;
+	public function setYears( ?iYears:Int):sap.ui.unified.calendar.YearPicker;
 }
 
 typedef YearPickerArgs = sap.ui.core.Control.ControlArgs & {

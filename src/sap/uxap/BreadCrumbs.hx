@@ -128,7 +128,7 @@ Default value is <code>true</code>.
 	* @param	bShowCurrentLocation New value for property <code>showCurrentLocation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowCurrentLocation( bShowCurrentLocation:Bool):sap.uxap.BreadCrumbs;
+	public function setShowCurrentLocation( ?bShowCurrentLocation:Bool):sap.uxap.BreadCrumbs;
 }
 
 typedef BreadCrumbsArgs = sap.ui.core.Control.ControlArgs & {

@@ -86,7 +86,7 @@ Default value is <code>false</code>.
 	* @param	bShowIfGrouped New value for property <code>showIfGrouped</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowIfGrouped( bShowIfGrouped:Bool):sap.m.P13nGroupItem;
+	public function setShowIfGrouped( ?bShowIfGrouped:Bool):sap.m.P13nGroupItem;
 }
 
 typedef P13nGroupItemArgs = sap.ui.core.Item.ItemArgs & {

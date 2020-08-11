@@ -173,7 +173,7 @@ Default value is <code>true</code>.
 	* @param	bAdaptTitleSize New value for property <code>adaptTitleSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAdaptTitleSize( bAdaptTitleSize:Bool):sap.m.StandardListItem;
+	public function setAdaptTitleSize( ?bAdaptTitleSize:Bool):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getDescription description}.
@@ -208,7 +208,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.StandardListItem;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getIconInset iconInset}.
@@ -221,7 +221,7 @@ Default value is <code>true</code>.
 	* @param	bIconInset New value for property <code>iconInset</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconInset( bIconInset:Bool):sap.m.StandardListItem;
+	public function setIconInset( ?bIconInset:Bool):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getInfo info}.
@@ -245,7 +245,7 @@ Default value is <code>None</code>.
 	* @param	sInfoState New value for property <code>infoState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInfoState( sInfoState:sap.ui.core.ValueState):sap.m.StandardListItem;
+	public function setInfoState( ?sInfoState:sap.ui.core.ValueState):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getInfoStateInverted infoStateInverted}.
@@ -258,7 +258,7 @@ Default value is <code>false</code>.
 	* @param	bInfoStateInverted New value for property <code>infoStateInverted</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInfoStateInverted( bInfoStateInverted:Bool):sap.m.StandardListItem;
+	public function setInfoStateInverted( ?bInfoStateInverted:Bool):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getInfoTextDirection infoTextDirection}.
@@ -271,7 +271,7 @@ Default value is <code>Inherit</code>.
 	* @param	sInfoTextDirection New value for property <code>infoTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInfoTextDirection( sInfoTextDirection:sap.ui.core.TextDirection):sap.m.StandardListItem;
+	public function setInfoTextDirection( ?sInfoTextDirection:sap.ui.core.TextDirection):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -295,7 +295,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTitleTextDirection New value for property <code>titleTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleTextDirection( sTitleTextDirection:sap.ui.core.TextDirection):sap.m.StandardListItem;
+	public function setTitleTextDirection( ?sTitleTextDirection:sap.ui.core.TextDirection):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getWrapping wrapping}.
@@ -312,7 +312,7 @@ Default value is <code>false</code>.
 	* @param	bWrapping New value for property <code>wrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrapping( bWrapping:Bool):sap.m.StandardListItem;
+	public function setWrapping( ?bWrapping:Bool):sap.m.StandardListItem;
 }
 
 typedef StandardListItemArgs = sap.m.ListItemBase.ListItemBaseArgs & {

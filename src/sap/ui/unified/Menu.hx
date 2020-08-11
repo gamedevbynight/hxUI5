@@ -210,7 +210,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.unified.Menu;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.unified.Menu;
 
 	/**
 	* Sets a new value for property {@link #getMaxVisibleItems maxVisibleItems}.
@@ -223,7 +223,7 @@ Default value is <code>0</code>.
 	* @param	iMaxVisibleItems New value for property <code>maxVisibleItems</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxVisibleItems( iMaxVisibleItems:Int):sap.ui.unified.Menu;
+	public function setMaxVisibleItems( ?iMaxVisibleItems:Int):sap.ui.unified.Menu;
 
 	/**
 	* Sets a new value for property {@link #getPageSize pageSize}.
@@ -236,7 +236,7 @@ Default value is <code>5</code>.
 	* @param	iPageSize New value for property <code>pageSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPageSize( iPageSize:Int):sap.ui.unified.Menu;
+	public function setPageSize( ?iPageSize:Int):sap.ui.unified.Menu;
 }
 
 typedef MenuArgs = sap.ui.core.Control.ControlArgs & {

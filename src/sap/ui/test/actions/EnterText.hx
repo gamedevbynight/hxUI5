@@ -52,6 +52,14 @@ Default value is <code>false</code>.
 	public static function getMetadata( ):sap.ui.base.ManagedObjectMetadata;
 
 	/**
+	* Gets current value of property {@link #getPressEnterKey pressEnterKey}.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>pressEnterKey</code>
+	*/
+	public function getPressEnterKey( ):Bool;
+
+	/**
 	* Gets current value of property {@link #getText text}.
 
 The Text that is going to be typed to the control. If you are entering an empty string, the value will be cleared.
@@ -70,7 +78,7 @@ Default value is <code>true</code>.
 	* @param	bClearTextFirst New value for property <code>clearTextFirst</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setClearTextFirst( bClearTextFirst:Bool):sap.ui.test.actions.EnterText;
+	public function setClearTextFirst( ?bClearTextFirst:Bool):sap.ui.test.actions.EnterText;
 
 	/**
 	* Sets a new value for property {@link #getKeepFocus keepFocus}.
@@ -81,7 +89,18 @@ Default value is <code>false</code>.
 	* @param	bKeepFocus New value for property <code>keepFocus</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKeepFocus( bKeepFocus:Bool):sap.ui.test.actions.EnterText;
+	public function setKeepFocus( ?bKeepFocus:Bool):sap.ui.test.actions.EnterText;
+
+	/**
+	* Sets a new value for property {@link #getPressEnterKey pressEnterKey}.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bPressEnterKey New value for property <code>pressEnterKey</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setPressEnterKey( ?bPressEnterKey:Bool):sap.ui.test.actions.EnterText;
 
 	/**
 	* Sets a new value for property {@link #getText text}.

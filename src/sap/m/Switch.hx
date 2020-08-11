@@ -5,7 +5,7 @@ package sap.m;
 /**
 * A switch is a user interface control on mobile devices that is used for change between binary states. The user can also drag the button handle or tap to change the state.
 */
-extern class Switch extends sap.ui.core.Control implements sap.ui.core.IFormContent
+extern class Switch extends sap.ui.core.Control implements sap.ui.core.IFormContent implements sap.m.IOverflowToolbarContent
 {
 	@:overload(function(?sId:String, ?mSettings:SwitchArgs):Void {})
 	public function new(?mSettings:SwitchArgs):Void;
@@ -156,7 +156,7 @@ Default value is <code>empty string</code>.
 	* @param	sCustomTextOff New value for property <code>customTextOff</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomTextOff( sCustomTextOff:String):sap.m.Switch;
+	public function setCustomTextOff( ?sCustomTextOff:String):sap.m.Switch;
 
 	/**
 	* Sets a new value for property {@link #getCustomTextOn customTextOn}.
@@ -171,7 +171,7 @@ Default value is <code>empty string</code>.
 	* @param	sCustomTextOn New value for property <code>customTextOn</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomTextOn( sCustomTextOn:String):sap.m.Switch;
+	public function setCustomTextOn( ?sCustomTextOn:String):sap.m.Switch;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -184,7 +184,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.Switch;
+	public function setEnabled( ?bEnabled:Bool):sap.m.Switch;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -197,7 +197,7 @@ Default value is <code>empty string</code>.
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.m.Switch;
+	public function setName( ?sName:String):sap.m.Switch;
 
 	/**
 	* Sets a new value for property {@link #getState state}.
@@ -210,7 +210,7 @@ Default value is <code>false</code>.
 	* @param	bState New value for property <code>state</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setState( bState:Bool):sap.m.Switch;
+	public function setState( ?bState:Bool):sap.m.Switch;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -223,7 +223,7 @@ Default value is <code>Default</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.SwitchType):sap.m.Switch;
+	public function setType( ?sType:sap.m.SwitchType):sap.m.Switch;
 }
 
 typedef SwitchArgs = sap.ui.core.Control.ControlArgs & {

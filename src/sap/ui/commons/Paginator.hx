@@ -79,7 +79,7 @@ Default value is <code>1</code>.
 	* @param	iCurrentPage New value for property <code>currentPage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCurrentPage( iCurrentPage:Int):sap.ui.commons.Paginator;
+	public function setCurrentPage( ?iCurrentPage:Int):sap.ui.commons.Paginator;
 
 	/**
 	* Sets a new value for property {@link #getNumberOfPages numberOfPages}.

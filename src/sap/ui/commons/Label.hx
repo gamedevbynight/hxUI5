@@ -130,7 +130,7 @@ Default value is <code>Standard</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.ui.commons.LabelDesign):sap.ui.commons.Label;
+	public function setDesign( ?sDesign:sap.ui.commons.LabelDesign):sap.ui.commons.Label;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -162,7 +162,7 @@ Default value is <code>false</code>.
 	* @param	bRequired New value for property <code>required</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRequired( bRequired:Bool):sap.ui.commons.Label;
+	public function setRequired( ?bRequired:Bool):sap.ui.commons.Label;
 
 	/**
 	* Sets a new value for property {@link #getRequiredAtBegin requiredAtBegin}.
@@ -186,7 +186,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.commons.Label;
+	public function setText( ?sText:String):sap.ui.commons.Label;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -199,7 +199,7 @@ Default value is <code>Begin</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.ui.commons.Label;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.ui.commons.Label;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -212,7 +212,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.Label;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.Label;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -222,10 +222,10 @@ Determines the control width as common CSS-size (for example, px or % as unit).
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth New value for property <code>width</code>
+	* @param	sWidth= New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.Label;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.Label;
 
 	/**
 	* Sets a new value for property {@link #getWrapping wrapping}.
@@ -238,7 +238,7 @@ Default value is <code>false</code>.
 	* @param	bWrapping New value for property <code>wrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrapping( bWrapping:Bool):sap.ui.commons.Label;
+	public function setWrapping( ?bWrapping:Bool):sap.ui.commons.Label;
 }
 
 typedef LabelArgs = sap.ui.core.Control.ControlArgs & {

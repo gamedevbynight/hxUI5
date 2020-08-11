@@ -358,7 +358,7 @@ Default value is <code>false</code>.
 	* @param	bAutoResizable New value for property <code>autoResizable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAutoResizable( bAutoResizable:Bool):sap.ui.table.Column;
+	public function setAutoResizable( ?bAutoResizable:Bool):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getDefaultFilterOperator defaultFilterOperator}.
@@ -382,7 +382,7 @@ Default value is <code>false</code>.
 	* @param	bFiltered New value for property <code>filtered</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFiltered( bFiltered:Bool):sap.ui.table.Column;
+	public function setFiltered( ?bFiltered:Bool):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getFilterOperator filterOperator}.
@@ -449,7 +449,7 @@ Default value is <code>false</code>.
 	* @param	bGrouped New value for property <code>grouped</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGrouped( bGrouped:Bool):sap.ui.table.Column;
+	public function setGrouped( ?bGrouped:Bool):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getHAlign hAlign}.
@@ -462,7 +462,7 @@ Default value is <code>Begin</code>.
 	* @param	sHAlign New value for property <code>hAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHAlign( sHAlign:sap.ui.core.HorizontalAlign):sap.ui.table.Column;
+	public function setHAlign( ?sHAlign:sap.ui.core.HorizontalAlign):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getHeaderSpan headerSpan}.
@@ -475,7 +475,7 @@ Default value is <code>1</code>.
 	* @param	oHeaderSpan New value for property <code>headerSpan</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderSpan( oHeaderSpan:Dynamic):sap.ui.table.Column;
+	public function setHeaderSpan( ?oHeaderSpan:Dynamic):sap.ui.table.Column;
 	@:overload( function(vLabel:sap.ui.core.Control):sap.ui.table.Column{ })
 
 	/**
@@ -503,7 +503,7 @@ Default value is <code>0</code>.
 	* @param	iMinWidth New value for property <code>minWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinWidth( iMinWidth:Int):sap.ui.table.Column;
+	public function setMinWidth( ?iMinWidth:Int):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -527,7 +527,7 @@ Default value is <code>true</code>.
 	* @param	bResizable New value for property <code>resizable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setResizable( bResizable:Bool):sap.ui.table.Column;
+	public function setResizable( ?bResizable:Bool):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getShowFilterMenuEntry showFilterMenuEntry}.
@@ -540,7 +540,7 @@ Default value is <code>true</code>.
 	* @param	bShowFilterMenuEntry New value for property <code>showFilterMenuEntry</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowFilterMenuEntry( bShowFilterMenuEntry:Bool):sap.ui.table.Column;
+	public function setShowFilterMenuEntry( ?bShowFilterMenuEntry:Bool):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getShowSortMenuEntry showSortMenuEntry}.
@@ -553,7 +553,7 @@ Default value is <code>true</code>.
 	* @param	bShowSortMenuEntry New value for property <code>showSortMenuEntry</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSortMenuEntry( bShowSortMenuEntry:Bool):sap.ui.table.Column;
+	public function setShowSortMenuEntry( ?bShowSortMenuEntry:Bool):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getSorted sorted}.
@@ -566,7 +566,7 @@ Default value is <code>false</code>.
 	* @param	bSorted New value for property <code>sorted</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSorted( bSorted:Bool):sap.ui.table.Column;
+	public function setSorted( ?bSorted:Bool):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getSortOrder sortOrder}.
@@ -579,7 +579,7 @@ Default value is <code>Ascending</code>.
 	* @param	sSortOrder New value for property <code>sortOrder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSortOrder( sSortOrder:sap.ui.table.SortOrder):sap.ui.table.Column;
+	public function setSortOrder( ?sSortOrder:sap.ui.table.SortOrder):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getSortProperty sortProperty}.
@@ -613,7 +613,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.ui.table.Column;
+	public function setVisible( ?bVisible:Bool):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

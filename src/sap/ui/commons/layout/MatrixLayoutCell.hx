@@ -204,7 +204,7 @@ Default value is <code>Transparent</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.ui.commons.layout.BackgroundDesign):sap.ui.commons.layout.MatrixLayoutCell;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.ui.commons.layout.BackgroundDesign):sap.ui.commons.layout.MatrixLayoutCell;
 
 	/**
 	* Sets a new value for property {@link #getColSpan colSpan}.
@@ -217,7 +217,7 @@ Default value is <code>1</code>.
 	* @param	iColSpan New value for property <code>colSpan</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColSpan( iColSpan:Int):sap.ui.commons.layout.MatrixLayoutCell;
+	public function setColSpan( ?iColSpan:Int):sap.ui.commons.layout.MatrixLayoutCell;
 
 	/**
 	* Sets a new value for property {@link #getHAlign hAlign}.
@@ -230,7 +230,7 @@ Default value is <code>Begin</code>.
 	* @param	sHAlign New value for property <code>hAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHAlign( sHAlign:sap.ui.commons.layout.HAlign):sap.ui.commons.layout.MatrixLayoutCell;
+	public function setHAlign( ?sHAlign:sap.ui.commons.layout.HAlign):sap.ui.commons.layout.MatrixLayoutCell;
 
 	/**
 	* Sets a new value for property {@link #getPadding padding}.
@@ -243,7 +243,7 @@ Default value is <code>End</code>.
 	* @param	sPadding New value for property <code>padding</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPadding( sPadding:sap.ui.commons.layout.Padding):sap.ui.commons.layout.MatrixLayoutCell;
+	public function setPadding( ?sPadding:sap.ui.commons.layout.Padding):sap.ui.commons.layout.MatrixLayoutCell;
 
 	/**
 	* Sets a new value for property {@link #getRowSpan rowSpan}.
@@ -256,7 +256,7 @@ Default value is <code>1</code>.
 	* @param	iRowSpan New value for property <code>rowSpan</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRowSpan( iRowSpan:Int):sap.ui.commons.layout.MatrixLayoutCell;
+	public function setRowSpan( ?iRowSpan:Int):sap.ui.commons.layout.MatrixLayoutCell;
 
 	/**
 	* Sets a new value for property {@link #getSeparation separation}.
@@ -269,7 +269,7 @@ Default value is <code>None</code>.
 	* @param	sSeparation New value for property <code>separation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSeparation( sSeparation:sap.ui.commons.layout.Separation):sap.ui.commons.layout.MatrixLayoutCell;
+	public function setSeparation( ?sSeparation:sap.ui.commons.layout.Separation):sap.ui.commons.layout.MatrixLayoutCell;
 
 	/**
 	* Sets a new value for property {@link #getVAlign vAlign}.
@@ -282,7 +282,7 @@ Default value is <code>Middle</code>.
 	* @param	sVAlign New value for property <code>vAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVAlign( sVAlign:sap.ui.commons.layout.VAlign):sap.ui.commons.layout.MatrixLayoutCell;
+	public function setVAlign( ?sVAlign:sap.ui.commons.layout.VAlign):sap.ui.commons.layout.MatrixLayoutCell;
 }
 
 typedef MatrixLayoutCellArgs = sap.ui.core.Element.ElementArgs & {

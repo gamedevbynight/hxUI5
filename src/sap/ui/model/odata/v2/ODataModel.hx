@@ -13,7 +13,7 @@ extern class ODataModel extends sap.ui.model.Model
 
 	/**
 	* 
-	* @param	serviceUrl Base URI of the service to request data from; additional URL parameters appended here will be appended to every request. If you pass an object it will be interpreted as the parameter object (second parameter). Then <code>mParameters.serviceUrl</code> becomes a mandatory parameter.
+	* @param	serviceUrl Base URI of the service to request data from; additional URL parameters appended here will be appended to every request. If you pass an object, it will be interpreted as the parameter object (second parameter). Then <code>mParameters.serviceUrl</code> becomes a mandatory parameter.
 	* @param	mParameters Map which contains the following parameter properties:
 	* @return	Object
 	*/
@@ -186,9 +186,11 @@ The optional parameter <code>mParameters.properties</code> can be used as follow
 If there are no values specified, the properties will have <code>undefined</code> values.
 
 Please note that deep creates (including data defined by navigation properties) are not supported.
-	* @param	sPath Name of the path to the EntitySet
+
+The parameter <code>expand</code> is supported since 1.78.0. If this parameter is set, the given navigation properties are expanded automatically with the same $batch request in which the POST request for the creation is contained. Ensure that the batch mode is used and the back-end service supports GET requests relative to a Content ID outside the changeset. The success and error callback functions are called only once, even if there are two requests in the <code>$batch</code> related to a single call of {@link #createEntry}: <ul> <li>a POST request for creating an entity,</li> <li>a GET request for requesting the navigation properties for the just created entity. </li> </ul> The following outcomes are possible: <ul> <li>If both requests succeed, the success handler is called with the merged data of the POST and the GET request and with the response of the POST request.</li> <li>If the POST request fails, the GET request also fails. In that case the error callback handler is called with the error response of the POST request.</li> <li>If the POST request succeeds but the GET request for the navigation properties fails, the success handler is called with the data and the response of the POST request. The response object of the success handler call and the response parameter of the corresponding <code>requestFailed</code> and <code>requestCompleted</code> events have an additional property <code>expandAfterCreateFailed</code> set to <code>true</code>. </li> </ul>
+	* @param	sPath The path to the EntitySet
 	* @param	mParameters A map of the following parameters:
-	* @return	A Context object that points to the new created entry.
+	* @return	A Context object that points to the newly created entry.
 	*/
 	public function createEntry( sPath:String, mParameters:Dynamic):sap.ui.model.Context;
 
@@ -309,7 +311,7 @@ ETag handling must be active so the force update will work.
 	* Returns the definition of groups per entity type for two-way binding changes
 	* @return	Definition of groups for two-way binding changes, keyed by entity names.
 	*/
-	public function getChangeGroups( ):map<string,sap.ui.model.odata.v2.odatamodel.ChangeGroupDefinition>;
+	public function getChangeGroups( ):Map<String,sap.ui.model.odata.v2.ODataModel.ChangeGroupDefinition>;
 
 	/**
 	* Returns the default count mode for retrieving the count of collections
@@ -346,6 +348,12 @@ ETag handling must be active so the force update will work.
 	* @return	Key of the entry or <code>undefined</code>
 	*/
 	public function getKey( vValue:sap.ui.model.Context):String;
+
+	/**
+	* Returns this model's message scope.
+	* @return	The message scope
+	*/
+	public function getMessageScope( ):sap.ui.model.odata.MessageScope;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.odata.v2.ODataModel.
@@ -415,7 +423,7 @@ If the path points to a navigation property which has been loaded via <code>$exp
 	* Returns the current security token.
 
 If the token has not been requested from the server it will be requested first (synchronously).
-	* @return	The CSRF security token
+	* @return	The security token
 	*/
 	public function getSecurityToken( ):String;
 
@@ -487,14 +495,27 @@ Mark the selected entry in the model cache as invalid. Next time a context bindi
 	public function isMetadataLoadingFailed( ):Bool;
 
 	/**
+	* Checks whether the service has set the OData V2 annotation "message-scope-supported" on the <code>EntityContainer</code> with the value <code>true</code>. This is a a precondition for the setting of {@link sap.ui.model.odata.MessageScope.BusinessObject} via {@link #setMessageScope}.
+	* @return	A promise resolving with <code>true</code> if the OData V2 annotation "message-scope-supported" on the <code>EntityContainer</code> is set to <code>true</code>
+	*/
+	public function messageScopeSupported( ):js.lib.Promise<ODataModel>;
+
+	/**
 	* Returns a promise for the loaded state of the metadata.
 
-The promise won't get rejected in case the metadata loading failed but is only resolved if the metadata is loaded successfully. If <code>refreshMetadata</code> function is called after this promise is already resolved you should rely on the promise returned by <code>refreshMetadata</code> to get information about the refreshed metadata loaded state.
+The metadata needs to be loaded prior to performing OData calls. Chaining to the returned promise ensures that all required parameters have been loaded, e.g. the security token, see {@link #getSecurityToken}.
 
-The Metadata needs to be loaded prior to performing OData calls. Chaining to the returned promise ensures that all required parameters have been loaded, e.g. authentication token.
+The returned promise depends on the optional parameter <code>bRejectOnFailure</code>.
+
+<code>bRejectOnFailure=false</code>: The promise won't get rejected in case the metadata or annotation loading failed but is only resolved if <ol> <li>the metadata are loaded successfully,</li> <li>the annotations are processed, provided the model parameter <code>loadAnnotationsJoined</code> has been set.</li> </ol> Use this promise for delaying OData calls until all required information is available, i.e. this promise is resolved.
+
+<code>bRejectOnFailure=true</code>: Since 1.79, the parameter <code>bRejectOnFailure</code> allows to request a promise that is rejected when one of the following fails: <ul> <li>the loading of the metadata,</li> <li>the loading of the annotations, provided the model parameter <code>loadAnnotationsJoined</code> has been set.</li> </ul> The promise is fulfilled upon successful loading of both. This promise can be used to start processing OData calls when it is fulfilled and to display an error message when it is rejected. See also the example below.
+
+If the method <code>refreshMetadata</code> is called after the returned promise is already resolved or rejected, you should use the promise returned by <code>refreshMetadata</code> to get information about the refreshed state.
+	* @param	bRejectOnFailure Determines since 1.79 whether the returned promise is rejected when the initial loading of the metadata fails. In case the model parameter <code>loadAnnotationsJoined</code> is set, the returned promise fails also if loading the annotations fails.
 	* @return	A promise on metadata loaded state
 	*/
-	public function metadataLoaded( ):js.lib.Promise<ODataModel>;
+	public function metadataLoaded( ?bRejectOnFailure:Bool):js.lib.Promise<ODataModel>;
 
 	/**
 	* Trigger a <code>GET</code> request to the OData service that was specified in the model constructor.
@@ -550,7 +571,7 @@ If <code>bAll</code> is set to <code>true</code>, also deferred requests trigger
 
 	/**
 	* Returns a promise, which will resolve with the security token as soon as it is available.
-	* @return	A promise on the CSRF security token
+	* @return	A promise on the security token
 	*/
 	public function securityTokenAvailable( ):js.lib.Promise<ODataModel>;
 
@@ -567,7 +588,7 @@ If <code>bAll</code> is set to <code>true</code>, also deferred requests trigger
 </pre> <ul> <li><code>groupId</code>: Defines the group for changes of the defined <i>EntityTypeName</i></li> <li><code>changeSetId</code>: ID of a <code>ChangeSet</code> which bundles the changes for the entity type.</li> <li><code>single</code>: Defines if every change will get an own change set (defaults to <code>true</code>)</li> </ul>
 	* @return	Void
 	*/
-	public function setChangeGroups( mGroups:map<string,sap.ui.model.odata.v2.odatamodel.ChangeGroupDefinition>):Void;
+	public function setChangeGroups( mGroups:Map<String,sap.ui.model.odata.v2.ODataModel.ChangeGroupDefinition>):Void;
 
 	/**
 	* Sets the default mode how to retrieve the item count for a collection in this model.
@@ -603,6 +624,13 @@ To remove these custom headers simply set the <code>mHeaders</code> parameter to
 	public function setHeaders( mHeaders:Dynamic):Void;
 
 	/**
+	* Sets this model's message scope.
+	* @param	sMessageScope The message scope
+	* @return	Void
+	*/
+	public function setMessageScope( sMessageScope:sap.ui.model.odata.MessageScope):Void;
+
+	/**
 	* Sets a new value for the given property <code>sPath</code> in the model.
 
 If the <code>changeBatchGroup</code> for the changed entity type is set to {@link #setDeferredGroups deferred}, changes could be submitted with {@link #submitChanges}. Otherwise the change will be submitted directly.
@@ -624,7 +652,7 @@ This flag can be overruled on request level by providing the <code>refreshAfterC
 	public function setRefreshAfterChange( bRefreshAfterChange:Bool):Void;
 
 	/**
-	* Enable/Disable XCSRF-Token handling.
+	* Enable/Disable security token handling.
 	* @param	bTokenHandling Whether to use token handling or not
 	* @return	Void
 	*/

@@ -83,7 +83,7 @@ Default value is <code>-1</code>.
 	* @param	iIndex New value for property <code>index</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIndex( iIndex:Int):sap.m.P13nDimMeasureItem;
+	public function setIndex( ?iIndex:Int):sap.m.P13nDimMeasureItem;
 
 	/**
 	* Sets a new value for property {@link #getRole role}.

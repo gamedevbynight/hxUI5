@@ -1,5 +1,6 @@
 package sap.ui.base;
 
+@:native("sap.ui.base.EventProvider")
 
 /**
 * Provides eventing capabilities for objects like attaching or detaching event handlers for events which are notified when events are fired.

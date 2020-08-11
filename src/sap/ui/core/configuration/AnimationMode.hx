@@ -1,6 +1,5 @@
 package sap.ui.core.configuration;
 
-@:native("sap.ui.core.Configuration.AnimationMode")
 @:enum extern abstract AnimationMode(String)
 {
     /**

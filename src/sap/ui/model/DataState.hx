@@ -64,8 +64,8 @@ public function new():Void;
 	public function getInvalidValue( ):Dynamic;
 
 	/**
-	* Returns the array of all state messages combining the model and control messages.
-	* @return	The array of all messages
+	* Returns the array of this data state's messages combining the model and control messages. The array is sorted descendingly by message severity.
+	* @return	The sorted array of all messages
 	*/
 	public function getMessages( ):Array<sap.ui.core.Message>;
 

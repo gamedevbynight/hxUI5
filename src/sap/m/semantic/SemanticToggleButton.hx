@@ -48,7 +48,7 @@ Default value is <code>false</code>.
 	* @param	bPressed New value for property <code>pressed</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPressed( bPressed:Bool):sap.m.semantic.SemanticToggleButton;
+	public function setPressed( ?bPressed:Bool):sap.m.semantic.SemanticToggleButton;
 }
 
 typedef SemanticToggleButtonArgs = sap.m.semantic.SemanticButton.SemanticButtonArgs & {

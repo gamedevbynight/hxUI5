@@ -1,6 +1,6 @@
 package sap.ui.util;
 
-@:native("sap.ui.util.XMLHelper")
+@:native("module:sap/ui/util/XMLHelper")
 extern class XMLHelper
 {
 

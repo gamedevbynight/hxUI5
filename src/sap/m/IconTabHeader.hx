@@ -58,6 +58,16 @@ The passed function and listener object must match the ones used for event regis
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
+	* Gets current value of property {@link #getAriaTexts ariaTexts}.
+
+Specifies optional texts for the screen reader.
+
+The given object can contain the following keys: <code>headerLabel</code> - text to serve as a label for the header, <code>headerDescription</code> - text to serve as a description for the header.
+	* @return	Value of property <code>ariaTexts</code>
+	*/
+	public function getAriaTexts( ):Dynamic;
+
+	/**
 	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
 
 Specifies the background color of the header.
@@ -88,6 +98,16 @@ The items displayed in the IconTabHeader.
 	public function getItems( ):Array<sap.m.IconTab>;
 
 	/**
+	* Gets current value of property {@link #getMaxNestingLevel maxNestingLevel}.
+
+Specifies the allowed level of tabs nesting within one another using drag and drop. Default value is 0 which means nesting via interaction is not allowed. Maximum value is 100. This property allows nesting via user interaction only, and does not restrict adding items to the <code>items</code> aggregation of {@link sap.m.IconTabFilter sap.m.IconTabFilter}.
+
+Default value is <code>0</code>.
+	* @return	Value of property <code>maxNestingLevel</code>
+	*/
+	public function getMaxNestingLevel( ):Int;
+
+	/**
 	* Returns a metadata object for class sap.m.IconTabHeader.
 	* @return	Metadata object describing this class
 	*/
@@ -112,18 +132,6 @@ If the key has no corresponding aggregated item, no changes will apply. If dupli
 	* @return	Value of property <code>selectedKey</code>
 	*/
 	public function getSelectedKey( ):String;
-
-	/**
-	* Gets current value of property {@link #getShowOverflowSelectList showOverflowSelectList}.
-
-Specifies if the overflow select list is displayed.
-
-The overflow select list represents a list, where all tab filters are displayed, so the user can select specific tab filter easier.
-
-Default value is <code>false</code>.
-	* @return	Value of property <code>showOverflowSelectList</code>
-	*/
-	public function getShowOverflowSelectList( ):Bool;
 
 	/**
 	* Gets current value of property {@link #getTabDensityMode tabDensityMode}.
@@ -180,6 +188,19 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeItem( vItem:sap.m.IconTab):sap.m.IconTab;
 
 	/**
+	* Sets a new value for property {@link #getAriaTexts ariaTexts}.
+
+Specifies optional texts for the screen reader.
+
+The given object can contain the following keys: <code>headerLabel</code> - text to serve as a label for the header, <code>headerDescription</code> - text to serve as a description for the header.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	oAriaTexts New value for property <code>ariaTexts</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setAriaTexts( oAriaTexts:Dynamic):sap.m.IconTabHeader;
+
+	/**
 	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
 
 Specifies the background color of the header.
@@ -192,7 +213,7 @@ Default value is <code>Solid</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.BackgroundDesign):sap.m.IconTabHeader;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.BackgroundDesign):sap.m.IconTabHeader;
 
 	/**
 	* Sets a new value for property {@link #getEnableTabReordering enableTabReordering}.
@@ -205,7 +226,20 @@ Default value is <code>false</code>.
 	* @param	bEnableTabReordering New value for property <code>enableTabReordering</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableTabReordering( bEnableTabReordering:Bool):sap.m.IconTabHeader;
+	public function setEnableTabReordering( ?bEnableTabReordering:Bool):sap.m.IconTabHeader;
+
+	/**
+	* Sets a new value for property {@link #getMaxNestingLevel maxNestingLevel}.
+
+Specifies the allowed level of tabs nesting within one another using drag and drop. Default value is 0 which means nesting via interaction is not allowed. Maximum value is 100. This property allows nesting via user interaction only, and does not restrict adding items to the <code>items</code> aggregation of {@link sap.m.IconTabFilter sap.m.IconTabFilter}.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>0</code>.
+	* @param	iMaxNestingLevel New value for property <code>maxNestingLevel</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setMaxNestingLevel( ?iMaxNestingLevel:Int):sap.m.IconTabHeader;
 
 	/**
 	* Sets a new value for property {@link #getMode mode}.
@@ -218,7 +252,7 @@ Default value is <code>Standard</code>.
 	* @param	sMode New value for property <code>mode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMode( sMode:sap.m.IconTabHeaderMode):sap.m.IconTabHeader;
+	public function setMode( ?sMode:sap.m.IconTabHeaderMode):sap.m.IconTabHeader;
 
 	/**
 	* Sets the selected item based on key.
@@ -226,21 +260,6 @@ Default value is <code>Standard</code>.
 	* @return	this pointer for chaining
 	*/
 	public function setSelectedKey( sKey:String):sap.m.IconTabHeader;
-
-	/**
-	* Sets a new value for property {@link #getShowOverflowSelectList showOverflowSelectList}.
-
-Specifies if the overflow select list is displayed.
-
-The overflow select list represents a list, where all tab filters are displayed, so the user can select specific tab filter easier.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>false</code>.
-	* @param	bShowOverflowSelectList New value for property <code>showOverflowSelectList</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setShowOverflowSelectList( bShowOverflowSelectList:Bool):sap.m.IconTabHeader;
 
 	/**
 	* Sets a new value for property {@link #getTabDensityMode tabDensityMode}.
@@ -255,7 +274,7 @@ Default value is <code>Cozy</code>.
 	* @param	sTabDensityMode New value for property <code>tabDensityMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTabDensityMode( sTabDensityMode:sap.m.IconTabDensityMode):sap.m.IconTabHeader;
+	public function setTabDensityMode( ?sTabDensityMode:sap.m.IconTabDensityMode):sap.m.IconTabHeader;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -268,7 +287,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.IconTabHeader;
+	public function setVisible( ?bVisible:Bool):sap.m.IconTabHeader;
 }
 
 typedef IconTabHeaderArgs = sap.ui.core.Control.ControlArgs & {
@@ -291,13 +310,6 @@ If the key has no corresponding aggregated item, no changes will apply. If dupli
 	@:optional var mode:haxe.extern.EitherType<String,sap.m.IconTabHeaderMode>;
 
 	/**
-	* Specifies if the overflow select list is displayed.
-
-The overflow select list represents a list, where all tab filters are displayed, so the user can select specific tab filter easier.
-	*/
-	@:optional var showOverflowSelectList:haxe.extern.EitherType<String,Bool>;
-
-	/**
 	* Specifies the background color of the header.
 
 Depending on the theme, you can change the state of the background color to "Solid", "Translucent", or "Transparent". Default is "Solid".
@@ -310,11 +322,23 @@ Depending on the theme, you can change the state of the background color to "Sol
 	@:optional var enableTabReordering:haxe.extern.EitherType<String,Bool>;
 
 	/**
+	* Specifies the allowed level of tabs nesting within one another using drag and drop. Default value is 0 which means nesting via interaction is not allowed. Maximum value is 100. This property allows nesting via user interaction only, and does not restrict adding items to the <code>items</code> aggregation of {@link sap.m.IconTabFilter sap.m.IconTabFilter}.
+	*/
+	@:optional var maxNestingLevel:haxe.extern.EitherType<String,Int>;
+
+	/**
 	* Specifies the visual density mode of the tabs.
 
 The values that can be applied are <code>Cozy</code>, <code>Compact</code> and <code>Inherit</code>. <code>Cozy</code> and <code>Compact</code> render the control in one of these modes independent of the global density settings. The <code>Inherit</code> value follows the global density settings which are applied. For compatibility reasons, the default value is <code>Cozy</code>.
 	*/
 	@:optional var tabDensityMode:haxe.extern.EitherType<String,sap.m.IconTabDensityMode>;
+
+	/**
+	* Specifies optional texts for the screen reader.
+
+The given object can contain the following keys: <code>headerLabel</code> - text to serve as a label for the header, <code>headerDescription</code> - text to serve as a description for the header.
+	*/
+	@:optional var ariaTexts:haxe.extern.EitherType<String,Dynamic>;
 
     /**
     * The items displayed in the IconTabHeader.
@@ -322,19 +346,9 @@ The values that can be applied are <code>Cozy</code>, <code>Compact</code> and <
 	@:optional var items:Array<haxe.extern.EitherType<String,sap.m.IconTab>>;
 
     /**
-    * Internal aggregation for managing the overflow button.
+    * Internal aggregation for managing the overflow tab.
     */
-	@:optional var _overflowButton:haxe.extern.EitherType<String,sap.m.Button>;
-
-    /**
-    * Internal aggregation for managing the scroll back button.
-    */
-	@:optional var _leftArrowButton:haxe.extern.EitherType<String,sap.m.Button>;
-
-    /**
-    * Internal aggregation for managing the scroll forward button.
-    */
-	@:optional var _rightArrowButton:haxe.extern.EitherType<String,sap.m.Button>;
+	@:optional var _overflow:haxe.extern.EitherType<String,sap.m.IconTabFilter>;
 
 	/**
 	* Fires when an item is selected.

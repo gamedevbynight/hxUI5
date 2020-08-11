@@ -5,7 +5,7 @@ package sap.ui.layout;
 /**
 * PaneContainer is an abstraction of Splitter.
 
-Could be used as an aggregation of ResponsiveSplitter or other PaneContainers.
+Could be used as an aggregation of ResponsiveSplitter or nested in other PaneContainers.
 */
 extern class PaneContainer extends sap.ui.core.Element
 {
@@ -55,7 +55,7 @@ Default value is <code>Horizontal</code>.
 	/**
 	* Gets content of aggregation {@link #getPanes panes}.
 
-The Pane that will be shown when there is no suitable pane for ResponsiveSplitter's current width.
+The panes to be split. The control will show n-1 splitter bars between n controls in this aggregation.
 	* @return	null
 	*/
 	public function getPanes( ):Array<sap.ui.core.Element>;
@@ -113,7 +113,7 @@ typedef PaneContainerArgs = sap.ui.core.Element.ElementArgs & {
 	@:optional var orientation:haxe.extern.EitherType<String,sap.ui.core.Orientation>;
 
     /**
-    * The Pane that will be shown when there is no suitable pane for ResponsiveSplitter's current width.
+    * The panes to be split. The control will show n-1 splitter bars between n controls in this aggregation.
     */
 	@:optional var panes:Array<haxe.extern.EitherType<String,sap.ui.core.Element>>;
 }

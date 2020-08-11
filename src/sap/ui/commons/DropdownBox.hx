@@ -121,7 +121,7 @@ Default value is <code>0</code>.
 	* @param	iMaxHistoryItems New value for property <code>maxHistoryItems</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxHistoryItems( iMaxHistoryItems:Int):sap.ui.commons.DropdownBox;
+	public function setMaxHistoryItems( ?iMaxHistoryItems:Int):sap.ui.commons.DropdownBox;
 
 	/**
 	* Overwrite of Setter for property <code>searchHelpAdditionalText</code>.

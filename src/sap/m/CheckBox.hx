@@ -291,7 +291,7 @@ Default value is <code>true</code>.
 	* @param	bActiveHandling New value for property <code>activeHandling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveHandling( bActiveHandling:Bool):sap.m.CheckBox;
+	public function setActiveHandling( ?bActiveHandling:Bool):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getDisplayOnly displayOnly}.
@@ -308,7 +308,7 @@ Default value is <code>false</code>.
 	* @param	bDisplayOnly New value for property <code>displayOnly</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayOnly( bDisplayOnly:Bool):sap.m.CheckBox;
+	public function setDisplayOnly( ?bDisplayOnly:Bool):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -321,7 +321,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.m.CheckBox;
+	public function setEditable( ?bEditable:Bool):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -334,7 +334,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.CheckBox;
+	public function setEnabled( ?bEnabled:Bool):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -360,7 +360,7 @@ Default value is <code>false</code>.
 	* @param	bPartiallySelected New value for property <code>partiallySelected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPartiallySelected( bPartiallySelected:Bool):sap.m.CheckBox;
+	public function setPartiallySelected( ?bPartiallySelected:Bool):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getSelected selected}.
@@ -375,7 +375,7 @@ Default value is <code>false</code>.
 	* @param	bSelected New value for property <code>selected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelected( bSelected:Bool):sap.m.CheckBox;
+	public function setSelected( ?bSelected:Bool):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -399,7 +399,7 @@ Default value is <code>Begin</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.CheckBox;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -412,7 +412,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.CheckBox;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getUseEntireWidth useEntireWidth}.
@@ -427,7 +427,7 @@ Default value is <code>false</code>.
 	* @param	bUseEntireWidth New value for property <code>useEntireWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUseEntireWidth( bUseEntireWidth:Bool):sap.m.CheckBox;
+	public function setUseEntireWidth( ?bUseEntireWidth:Bool):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -440,7 +440,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.m.CheckBox;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -452,10 +452,10 @@ Determines the total width of the control or the width of its label only, depend
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth New value for property <code>width</code>
+	* @param	sWidth= New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.CheckBox;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getWrapping wrapping}.
@@ -470,7 +470,7 @@ Default value is <code>false</code>.
 	* @param	bWrapping New value for property <code>wrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrapping( bWrapping:Bool):sap.m.CheckBox;
+	public function setWrapping( ?bWrapping:Bool):sap.m.CheckBox;
 }
 
 typedef CheckBoxArgs = sap.ui.core.Control.ControlArgs & {

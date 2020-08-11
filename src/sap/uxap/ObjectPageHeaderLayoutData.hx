@@ -100,7 +100,7 @@ Default value is <code>false</code>.
 	* @param	bShowSeparatorAfter New value for property <code>showSeparatorAfter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSeparatorAfter( bShowSeparatorAfter:Bool):sap.uxap.ObjectPageHeaderLayoutData;
+	public function setShowSeparatorAfter( ?bShowSeparatorAfter:Bool):sap.uxap.ObjectPageHeaderLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getShowSeparatorBefore showSeparatorBefore}.
@@ -113,7 +113,7 @@ Default value is <code>false</code>.
 	* @param	bShowSeparatorBefore New value for property <code>showSeparatorBefore</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSeparatorBefore( bShowSeparatorBefore:Bool):sap.uxap.ObjectPageHeaderLayoutData;
+	public function setShowSeparatorBefore( ?bShowSeparatorBefore:Bool):sap.uxap.ObjectPageHeaderLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getVisibleL visibleL}.
@@ -126,7 +126,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleL New value for property <code>visibleL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleL( bVisibleL:Bool):sap.uxap.ObjectPageHeaderLayoutData;
+	public function setVisibleL( ?bVisibleL:Bool):sap.uxap.ObjectPageHeaderLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getVisibleM visibleM}.
@@ -139,7 +139,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleM New value for property <code>visibleM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleM( bVisibleM:Bool):sap.uxap.ObjectPageHeaderLayoutData;
+	public function setVisibleM( ?bVisibleM:Bool):sap.uxap.ObjectPageHeaderLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getVisibleS visibleS}.
@@ -152,7 +152,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleS New value for property <code>visibleS</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleS( bVisibleS:Bool):sap.uxap.ObjectPageHeaderLayoutData;
+	public function setVisibleS( ?bVisibleS:Bool):sap.uxap.ObjectPageHeaderLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -165,7 +165,7 @@ Default value is <code>auto</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.uxap.ObjectPageHeaderLayoutData;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.uxap.ObjectPageHeaderLayoutData;
 }
 
 typedef ObjectPageHeaderLayoutDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {

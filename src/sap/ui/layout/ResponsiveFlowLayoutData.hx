@@ -88,7 +88,7 @@ Default value is <code>false</code>.
 	* @param	bLinebreak New value for property <code>linebreak</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLinebreak( bLinebreak:Bool):sap.ui.layout.ResponsiveFlowLayoutData;
+	public function setLinebreak( ?bLinebreak:Bool):sap.ui.layout.ResponsiveFlowLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getLinebreakable linebreakable}.
@@ -101,7 +101,7 @@ Default value is <code>true</code>.
 	* @param	bLinebreakable New value for property <code>linebreakable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLinebreakable( bLinebreakable:Bool):sap.ui.layout.ResponsiveFlowLayoutData;
+	public function setLinebreakable( ?bLinebreakable:Bool):sap.ui.layout.ResponsiveFlowLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getMargin margin}.
@@ -114,7 +114,7 @@ Default value is <code>true</code>.
 	* @param	bMargin New value for property <code>margin</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMargin( bMargin:Bool):sap.ui.layout.ResponsiveFlowLayoutData;
+	public function setMargin( ?bMargin:Bool):sap.ui.layout.ResponsiveFlowLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getMinWidth minWidth}.
@@ -127,7 +127,7 @@ Default value is <code>100</code>.
 	* @param	iMinWidth New value for property <code>minWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinWidth( iMinWidth:Int):sap.ui.layout.ResponsiveFlowLayoutData;
+	public function setMinWidth( ?iMinWidth:Int):sap.ui.layout.ResponsiveFlowLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getWeight weight}.
@@ -140,7 +140,7 @@ Default value is <code>1</code>.
 	* @param	iWeight New value for property <code>weight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWeight( iWeight:Int):sap.ui.layout.ResponsiveFlowLayoutData;
+	public function setWeight( ?iWeight:Int):sap.ui.layout.ResponsiveFlowLayoutData;
 }
 
 typedef ResponsiveFlowLayoutDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {

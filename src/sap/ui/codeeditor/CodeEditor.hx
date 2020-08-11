@@ -208,11 +208,17 @@ Default value is <code>100%</code>.
 	public function setColorTheme( sTheme:String):sap.ui.codeeditor.CodeEditor;
 
 	/**
-	* Sets whether the code editor is editable or not
-	* @param	bValue true to allow editing, otherwise false
-	* @return	Returns <code>this</code> to allow method chaining
+	* Sets a new value for property {@link #getEditable editable}.
+
+Sets whether the code in the editor can be changed by the user
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bEditable New value for property <code>editable</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bValue:Bool):sap.ui.codeeditor.CodeEditor;
+	public function setEditable( ?bEditable:Bool):sap.ui.codeeditor.CodeEditor;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -225,42 +231,74 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.codeeditor.CodeEditor;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.codeeditor.CodeEditor;
 
 	/**
-	* Sets whether line numbers should be shown or not
-	* @param	bValue true to show line numbers
-	* @return	Returns <code>this</code> to allow method chaining
+	* Sets a new value for property {@link #getLineNumbers lineNumbers}.
+
+Sets whether line numbers should be shown
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bLineNumbers New value for property <code>lineNumbers</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLineNumbers( bValue:Bool):sap.ui.codeeditor.CodeEditor;
+	public function setLineNumbers( ?bLineNumbers:Bool):sap.ui.codeeditor.CodeEditor;
 
 	/**
-	* Sets <code>maxLines</code> property.
-	* @param	iMaxLines Maximum number of lines the editor should display
-	* @return	Void
+	* Sets a new value for property {@link #getMaxLines maxLines}.
+
+Sets whether the editor height should auto expand to a maximum number of lines. After reaching the maximum number of lines specified, the content of the <code>CodeEditor</code> will become scrollable.
+
+<b>Note:</b> Keep in mind that the auto expand <code>CodeEditor</code> behavior requires the <code>height</code> property to be set to <code>auto</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>0</code>.
+	* @param	iMaxLines New value for property <code>maxLines</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxLines( iMaxLines:Int):Void;
+	public function setMaxLines( ?iMaxLines:Int):sap.ui.codeeditor.CodeEditor;
 
 	/**
-	* Sets whether syntax hints should be shown or not Hints are only visible if <code>lineNumbers</code> is set to true.
-	* @param	bShow true(default) to show the syntax hints
-	* @return	Returns <code>this</code> to allow method chaining
+	* Sets a new value for property {@link #getSyntaxHints syntaxHints}.
+
+Sets whether to show syntax hints the editor. This flag is only available if line numbers are shown.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bSyntaxHints New value for property <code>syntaxHints</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSyntaxHints( bShow:Bool):sap.ui.codeeditor.CodeEditor;
+	public function setSyntaxHints( ?bSyntaxHints:Bool):sap.ui.codeeditor.CodeEditor;
 
 	/**
-	* Sets the type of the code editors value used for syntax highlighting
-	* @param	sType javascript (default), html, xml, css
-	* @return	Returns <code>this</code> to allow method chaining
+	* Sets a new value for property {@link #getType type}.
+
+The type of the code in the editor used for syntax highlighting Possible types are: abap, abc, actionscript, ada, apache_conf, applescript, asciidoc, assembly_x86, autohotkey, batchfile, bro, c9search, c_cpp, cirru, clojure, cobol, coffee, coldfusion, csharp, css, curly, d, dart, diff, django, dockerfile, dot, drools, eiffel, ejs, elixir, elm, erlang, forth, fortran, ftl, gcode, gherkin, gitignore, glsl, gobstones, golang, groovy, haml, handlebars, haskell, haskell_cabal, haxe, hjson, html, html_elixir, html_ruby, ini, io, jack, jade, java, javascript, json, jsoniq, jsp, jsx, julia, kotlin, latex, lean, less, liquid, lisp, live_script, livescript, logiql, lsl, lua, luapage, lucene, makefile, markdown, mask, matlab, mavens_mate_log, maze, mel, mips_assembler, mipsassembler, mushcode, mysql, nix, nsis, objectivec, ocaml, pascal, perl, pgsql, php, plain_text, powershell, praat, prolog, properties, protobuf, python, r, razor, rdoc, rhtml, rst, ruby, rust, sass, scad, scala, scheme, scss, sh, sjs, smarty, snippets, soy_template, space, sql, sqlserver, stylus, svg, swift, swig, tcl, tex, text, textile, toml, tsx, twig, typescript, vala, vbscript, velocity, verilog, vhdl, wollok, xml, xquery, yaml, terraform, slim, redshift, red, puppet, php_laravel_blade, mixal, jssm, fsharp, edifact, csp, cssound_score, cssound_orchestra, cssound_document,
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>javascript</code>.
+	* @param	sType New value for property <code>type</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:String):sap.ui.codeeditor.CodeEditor;
+	public function setType( ?sType:String):sap.ui.codeeditor.CodeEditor;
 
 	/**
-	* Sets the value of the code editor
-	* @param	sValue the value of the code editor
-	* @return	Returns <code>this</code> to allow method chaining
+	* Sets a new value for property {@link #getValue value}.
+
+The value displayed in the code editor
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sValue New value for property <code>value</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.ui.codeeditor.CodeEditor;
+	public function setValue( ?sValue:String):sap.ui.codeeditor.CodeEditor;
 
 	/**
 	* Sets a new value for property {@link #getValueSelection valueSelection}.
@@ -273,14 +311,7 @@ Default value is <code>false</code>.
 	* @param	bValueSelection New value for property <code>valueSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueSelection( bValueSelection:Bool):sap.ui.codeeditor.CodeEditor;
-
-	/**
-	* Sets <code>visible</code> property.
-	* @param	bVisible Whether the code editor is visible.
-	* @return	Void
-	*/
-	public function setVisible( bVisible:Bool):Void;
+	public function setValueSelection( ?bValueSelection:Bool):sap.ui.codeeditor.CodeEditor;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -293,7 +324,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.codeeditor.CodeEditor;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.codeeditor.CodeEditor;
 }
 
 typedef CodeEditorArgs = sap.ui.core.Control.ControlArgs & {

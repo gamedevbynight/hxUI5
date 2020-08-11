@@ -263,7 +263,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.m.DateTimeInput;
+	public function setEditable( ?bEditable:Bool):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -276,7 +276,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.DateTimeInput;
+	public function setEnabled( ?bEnabled:Bool):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -311,7 +311,7 @@ Default value is <code>true</code>.
 	* @param	bShowValueStateMessage New value for property <code>showValueStateMessage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowValueStateMessage( bShowValueStateMessage:Bool):sap.m.DateTimeInput;
+	public function setShowValueStateMessage( ?bShowValueStateMessage:Bool):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -324,7 +324,7 @@ Default value is <code>Initial</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.DateTimeInput;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -337,7 +337,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.DateTimeInput;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -350,7 +350,7 @@ Default value is <code>Date</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.DateTimeInputType):sap.m.DateTimeInput;
+	public function setType( ?sType:sap.m.DateTimeInputType):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -389,7 +389,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.m.DateTimeInput;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getValueStateText valueStateText}.
@@ -413,7 +413,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.DateTimeInput;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.DateTimeInput;
 
 	/**
 	* Unbinds property {@link #getValue value} from model data.

@@ -161,7 +161,7 @@ Default value is <code>false</code>.
 	* @param	bEnableNav New value for property <code>enableNav</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableNav( bEnableNav:Bool):sap.m.SelectionDetailsItem;
+	public function setEnableNav( ?bEnableNav:Bool):sap.m.SelectionDetailsItem;
 
 	/**
 	* Unbinds aggregation {@link #getLines lines} from model data.

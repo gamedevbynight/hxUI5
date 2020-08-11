@@ -1,8 +1,20 @@
 package sap.ui.device;
 
-@:native("sap.ui.device.orientation")
+@:native("sap.ui.Device.orientation")
 extern class Orientation
 {
+
+	/**
+	* If this flag is set to <code>true</code>, the screen is currently in landscape mode (the width is greater than the height).
+	*/
+	 public static var landscape:Bool;
+
+	/**
+	* If this flag is set to <code>true</code>, the screen is currently in portrait mode (the height is greater than the width).
+	*/
+	 public static var portrait:Bool;
+
+
 
 	/**
 	* Registers the given event handler to orientation change events of the document's window.

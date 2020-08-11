@@ -17,7 +17,7 @@ The role of the app developer is to integrate the card into the app and define: 
 
 <i>When to use</i> <ul> <li>When you want to reuse the card across apps.</li> <li>When you need easy integration and configuration.</li> </ul>
 
-<i>When not to use</i> <ul> <li>When you need more header and content flexibility.</li> <li>When you have to achieve simple card visualization. For such cases, use: {@link sap.f.Card Card}.</li> <li>When you have to use an application model. For such cases, use: {@link sap.f.Card Card}.</li> <li>When you need complex behavior. For such cases, use: {@link sap.f.Card Card}.</li> </ul>
+<i>When not to use</i> <ul> <li>When you need more header and content flexibility.</li> <li>When you have to achieve simple card visualization. For such cases, use: {@link sap.f.Card sap.f.Card}.</li> <li>When you have to use an application model. For such cases, use: {@link sap.f.Card sap.f.Card}.</li> <li>When you need complex behavior. For such cases, use: {@link sap.f.Card sap.f.Card}.</li> </ul>
 */
 extern class Card extends sap.ui.core.Control implements sap.f.ICard
 {
@@ -90,6 +90,18 @@ Defines the base URL of the Card Manifest. It should be used when manifest prope
 	public function getBaseUrl( ):sap.ui.core.URI;
 
 	/**
+	* Gets values of manifest parameters combined with the parameters from <code>parameters</code> property.
+
+<b>Notes</b>
+
+- Use this method when the manifest is ready. Check <code>manifestReady</code> event.
+
+- Use when developing a Component card.
+	* @return	Object containing parameters in format <code>{parameterKey: parameterValue}</code>.
+	*/
+	public function getCombinedParameters( ):Map<String,Dynamic>;
+
+	/**
 	* Gets current value of property {@link #getDataMode dataMode}.
 
 Defines the state of the <code>Card</code>. When set to <code>Inactive</code>, the <code>Card</code> doesn't make requests.
@@ -122,22 +134,50 @@ Default value is <code>auto</code>.
 	public function getHostConfigurationId( ):sap.ui.core.ID;
 
 	/**
+	* Gets the instance of the <code>host</code> association.
+	* @return	The host object associated with this card.
+	*/
+	public function getHostInstance( ):sap.ui.integration.Host;
+
+	/**
 	* Overwrites getter for card manifest.
 	* @return	Cloned of the parameters.
 	*/
 	public function getManifest( ):Dynamic;
 
 	/**
+	* Gets current value of property {@link #getManifestChanges manifestChanges}.
+
+Defines a list of configuration settings, which will be merged into the original manifest.
+
+This can be a list of flexibility changes generated during designtime.
+
+Each level of changes is an item in the list. The change has property "content" which contains the configuration, which will be merged on top of the original <code>sap.card</code> section.
+
+Example: <pre>
+[
+    {"content": {"header": {"title": "My title"}}},
+    {"content": {"header": {"title": "My new title"}}}
+]
+</pre>
+	* @return	Value of property <code>manifestChanges</code>
+	*/
+	public function getManifestChanges( ):Array<Dynamic>;
+
+	/**
+	* Returns a value from the Manifest based on the specified path.
+
+<b>Note</b> Use this method when the manifest is ready. Check <code>manifestReady</code> event.
+	* @param	sPath The path to return a value for.
+	* @return	The value at the specified path.
+	*/
+	public function getManifestEntry( sPath:String):Dynamic;
+
+	/**
 	* Returns a metadata object for class sap.ui.integration.widgets.Card.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
-
-	/**
-	* Overwrites getter for card parameters.
-	* @return	A Clone of the parameters.
-	*/
-	public function getParameters( ):Dynamic;
 
 	/**
 	* Gets current value of property {@link #getWidth width}.
@@ -170,6 +210,13 @@ Returns a promise that resolves with an object { designtime: the designtime modu
 	public function refresh( ):Void;
 
 	/**
+	* Performs an HTTP request using the given configuration.
+	* @param	oConfiguration The configuration of the request.
+	* @return	Resolves when the request is successful, rejects otherwise.
+	*/
+	public function request( oConfiguration:Dynamic):js.lib.Promise<Card>;
+
+	/**
 	* Sets a new value for property {@link #getBaseUrl baseUrl}.
 
 Defines the base URL of the Card Manifest. It should be used when manifest property is an object instead of a URL.
@@ -198,7 +245,7 @@ Default value is <code>auto</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.integration.widgets.Card;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.integration.widgets.Card;
 	@:overload( function(oHost:sap.ui.core.ID):sap.ui.integration.widgets.Card{ })
 
 	/**
@@ -224,21 +271,32 @@ The URL of the manifest or an object.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	oManifest New value for property <code>manifest</code>
+	* @param	oManifest= New value for property <code>manifest</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setManifest( oManifest:Dynamic):sap.ui.integration.widgets.Card;
+	public function setManifest( ?oManifest:Dynamic):sap.ui.integration.widgets.Card;
 
 	/**
-	* Sets a new value for property {@link #getParameters parameters}.
+	* Sets a new value for property {@link #getManifestChanges manifestChanges}.
 
-The parameters used in the manifest.
+Defines a list of configuration settings, which will be merged into the original manifest.
+
+This can be a list of flexibility changes generated during designtime.
+
+Each level of changes is an item in the list. The change has property "content" which contains the configuration, which will be merged on top of the original <code>sap.card</code> section.
+
+Example: <pre>
+[
+    {"content": {"header": {"title": "My title"}}},
+    {"content": {"header": {"title": "My new title"}}}
+]
+</pre>
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-	* @param	oParameters New value for property <code>parameters</code>
+	* @param	sManifestChanges New value for property <code>manifestChanges</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setParameters( oParameters:Dynamic):sap.ui.integration.widgets.Card;
+	public function setManifestChanges( sManifestChanges:Array<Dynamic>):sap.ui.integration.widgets.Card;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -251,7 +309,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.integration.widgets.Card;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.integration.widgets.Card;
 }
 
 typedef CardArgs = sap.ui.core.Control.ControlArgs & {
@@ -262,7 +320,7 @@ typedef CardArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var manifest:Dynamic;
 
 	/**
-	* The parameters used in the manifest.
+	* Overrides the default values of the parameters, which are defined in the manifest. The value is an object containing parameters in format <code>{parameterKey: parameterValue}</code>.
 	*/
 	@:optional var parameters:haxe.extern.EitherType<String,Dynamic>;
 
@@ -286,10 +344,31 @@ typedef CardArgs = sap.ui.core.Control.ControlArgs & {
 	*/
 	@:optional var baseUrl:haxe.extern.EitherType<String,sap.ui.core.URI>;
 
+	/**
+	* Defines a list of configuration settings, which will be merged into the original manifest.
+
+This can be a list of flexibility changes generated during designtime.
+
+Each level of changes is an item in the list. The change has property "content" which contains the configuration, which will be merged on top of the original <code>sap.card</code> section.
+
+Example: <pre>
+[
+    {"content": {"header": {"title": "My title"}}},
+    {"content": {"header": {"title": "My new title"}}}
+]
+</pre>
+	*/
+	@:optional var manifestChanges:Array<haxe.extern.EitherType<String,Dynamic>>;
+
     /**
     * Defines the header of the card.
     */
 	@:optional var _header:haxe.extern.EitherType<String,sap.f.cards.IHeader>;
+
+    /**
+    * Defines the filters section of the card.
+    */
+	@:optional var _filterBar:haxe.extern.EitherType<String,sap.ui.core.Control>;
 
     /**
     * Defines the content of the card.

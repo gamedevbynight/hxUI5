@@ -122,7 +122,7 @@ Default value is <code>true</code>.
 	* @param	bDecorative New value for property <code>decorative</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDecorative( bDecorative:Bool):sap.ui.commons.Image;
+	public function setDecorative( ?bDecorative:Bool):sap.ui.commons.Image;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.

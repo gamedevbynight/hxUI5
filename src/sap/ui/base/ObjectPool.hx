@@ -1,5 +1,6 @@
 package sap.ui.base;
 
+@:native("sap.ui.base.ObjectPool")
 
 /**
 * Manages a pool of objects for reuse, all of the same type; the type has to be specified at construction time.

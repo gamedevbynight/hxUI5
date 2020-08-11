@@ -129,12 +129,6 @@ Defines the toolbar.
 	public function getToolbar( ):sap.ui.core.Control;
 
 	/**
-	* null
-	* @return	If the header is ready or not.
-	*/
-	public function isReady( ):Bool;
-
-	/**
 	* Sets a new value for property {@link #getIconDisplayShape iconDisplayShape}.
 
 Defines the shape of the icon.
@@ -145,7 +139,7 @@ Default value is <code>Circle</code>.
 	* @param	sIconDisplayShape New value for property <code>iconDisplayShape</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDisplayShape( sIconDisplayShape:sap.m.AvatarShape):sap.f.cards.Header;
+	public function setIconDisplayShape( ?sIconDisplayShape:sap.m.AvatarShape):sap.f.cards.Header;
 
 	/**
 	* Sets a new value for property {@link #getIconInitials iconInitials}.
@@ -158,7 +152,7 @@ Default value is <code>empty string</code>.
 	* @param	sIconInitials New value for property <code>iconInitials</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconInitials( sIconInitials:String):sap.f.cards.Header;
+	public function setIconInitials( ?sIconInitials:String):sap.f.cards.Header;
 
 	/**
 	* Sets a new value for property {@link #getIconSrc iconSrc}.
@@ -168,10 +162,10 @@ Defines the icon source.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIconSrc New value for property <code>iconSrc</code>
+	* @param	sIconSrc= New value for property <code>iconSrc</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconSrc( sIconSrc:sap.ui.core.URI):sap.f.cards.Header;
+	public function setIconSrc( ?sIconSrc:sap.ui.core.URI):sap.f.cards.Header;
 
 	/**
 	* Sets a new value for property {@link #getStatusText statusText}.
@@ -184,7 +178,7 @@ Default value is <code>empty string</code>.
 	* @param	sStatusText New value for property <code>statusText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStatusText( sStatusText:String):sap.f.cards.Header;
+	public function setStatusText( ?sStatusText:String):sap.f.cards.Header;
 
 	/**
 	* Sets a new value for property {@link #getSubtitle subtitle}.
@@ -197,7 +191,7 @@ Default value is <code>empty string</code>.
 	* @param	sSubtitle New value for property <code>subtitle</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSubtitle( sSubtitle:String):sap.f.cards.Header;
+	public function setSubtitle( ?sSubtitle:String):sap.f.cards.Header;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -210,7 +204,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.f.cards.Header;
+	public function setTitle( ?sTitle:String):sap.f.cards.Header;
 
 	/**
 	* Sets the aggregated {@link #getToolbar toolbar}.

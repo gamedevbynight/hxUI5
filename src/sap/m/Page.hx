@@ -341,10 +341,10 @@ Additionally, it unregisters them from the hosting UIArea.
 	/**
 	* Scrolls to the given position. Only available if enableScrolling is set to "true".
 	* @param	y The vertical pixel position to scroll to. Scrolling down happens with positive values.
-	* @param	time The duration of animated scrolling. To scroll immediately without animation, give 0 as value. 0 is also the default value, when this optional parameter is omitted.
+	* @param	time The duration of animated scrolling in milliseconds. The value <code>0</code> results in immediate scrolling without animation.
 	* @return	<code>this</code> to facilitate method chaining.
 	*/
-	public function scrollTo( y:Int, time:Int):sap.m.Page;
+	public function scrollTo( y:Int, ?time:Int):sap.m.Page;
 	@:overload( function(oElement:js.html.HtmlElement, ?iTime:Int, ?aOffset:Array<Int>):sap.m.Page{ })
 
 	/**
@@ -367,7 +367,7 @@ Default value is <code>Standard</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.PageBackgroundDesign):sap.m.Page;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.PageBackgroundDesign):sap.m.Page;
 
 	/**
 	* Sets a new value for property {@link #getContentOnlyBusy contentOnlyBusy}.
@@ -380,7 +380,7 @@ Default value is <code>false</code>.
 	* @param	bContentOnlyBusy New value for property <code>contentOnlyBusy</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentOnlyBusy( bContentOnlyBusy:Bool):sap.m.Page;
+	public function setContentOnlyBusy( ?bContentOnlyBusy:Bool):sap.m.Page;
 
 	/**
 	* Sets the aggregated {@link #getCustomHeader customHeader}.
@@ -402,7 +402,7 @@ Default value is <code>true</code>.
 	* @param	bEnableScrolling New value for property <code>enableScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableScrolling( bEnableScrolling:Bool):sap.m.Page;
+	public function setEnableScrolling( ?bEnableScrolling:Bool):sap.m.Page;
 
 	/**
 	* Sets a new value for property {@link #getFloatingFooter floatingFooter}.
@@ -415,7 +415,7 @@ Default value is <code>false</code>.
 	* @param	bFloatingFooter New value for property <code>floatingFooter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFloatingFooter( bFloatingFooter:Bool):sap.m.Page;
+	public function setFloatingFooter( ?bFloatingFooter:Bool):sap.m.Page;
 
 	/**
 	* Sets the aggregated {@link #getFooter footer}.
@@ -455,7 +455,7 @@ Default value is <code>true</code>.
 	* @param	bShowFooter New value for property <code>showFooter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowFooter( bShowFooter:Bool):sap.m.Page;
+	public function setShowFooter( ?bShowFooter:Bool):sap.m.Page;
 
 	/**
 	* Sets a new value for property {@link #getShowHeader showHeader}.
@@ -468,7 +468,7 @@ Default value is <code>true</code>.
 	* @param	bShowHeader New value for property <code>showHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHeader( bShowHeader:Bool):sap.m.Page;
+	public function setShowHeader( ?bShowHeader:Bool):sap.m.Page;
 
 	/**
 	* Sets a new value for property {@link #getShowNavButton showNavButton}.
@@ -481,7 +481,7 @@ Default value is <code>false</code>.
 	* @param	bShowNavButton New value for property <code>showNavButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowNavButton( bShowNavButton:Bool):sap.m.Page;
+	public function setShowNavButton( ?bShowNavButton:Bool):sap.m.Page;
 
 	/**
 	* Sets a new value for property {@link #getShowSubHeader showSubHeader}.
@@ -494,7 +494,7 @@ Default value is <code>true</code>.
 	* @param	bShowSubHeader New value for property <code>showSubHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSubHeader( bShowSubHeader:Bool):sap.m.Page;
+	public function setShowSubHeader( ?bShowSubHeader:Bool):sap.m.Page;
 
 	/**
 	* Sets the aggregated {@link #getSubHeader subHeader}.
@@ -525,7 +525,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.Page;
+	public function setTitleAlignment( ?sTitleAlignment:sap.m.TitleAlignment):sap.m.Page;
 
 	/**
 	* Sets a new value for property {@link #getTitleLevel titleLevel}.
@@ -538,7 +538,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleLevel New value for property <code>titleLevel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleLevel( sTitleLevel:sap.ui.core.TitleLevel):sap.m.Page;
+	public function setTitleLevel( ?sTitleLevel:sap.ui.core.TitleLevel):sap.m.Page;
 }
 
 typedef PageArgs = sap.ui.core.Control.ControlArgs & {

@@ -236,6 +236,16 @@ Default value is <code>false</code>.
 	public function getRequired( ):Bool;
 
 	/**
+	* Gets current value of property {@link #getResetOnMissingKey resetOnMissingKey}.
+
+Modifies the behavior of the <code>setSelectedKey</code> method so that the selected item is cleared when a provided selected key is missing.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>resetOnMissingKey</code>
+	*/
+	public function getResetOnMissingKey( ):Bool;
+
+	/**
 	* Gets the selected item object from the aggregation named <code>items</code>.
 	* @return	The current target of the <code>selectedItem</code> association, or null.
 	*/
@@ -338,7 +348,7 @@ Default value is <code>auto</code>.
 	/**
 	* Gets current value of property {@link #getWrapItemsText wrapItemsText}.
 
-Determines whether the text in the items wraps on multiple lines when the available width is not enough.
+Determines whether the text in the items wraps on multiple lines when the available width is not enough. When the text is truncated (<code>wrapItemsText</code> property is set to <code>false</code>), the max width of the <code>SelectList</code> is 600px. When <code>wrapItemsText</code> is set to <code>true</code>, <code>SelectList</code> takes all of the available width.
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>wrapItemsText</code>
@@ -407,7 +417,7 @@ Default value is <code>false</code>.
 	* @param	bAutoAdjustWidth New value for property <code>autoAdjustWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAutoAdjustWidth( bAutoAdjustWidth:Bool):sap.m.Select;
+	public function setAutoAdjustWidth( ?bAutoAdjustWidth:Bool):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -422,7 +432,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.m.Select;
+	public function setEditable( ?bEditable:Bool):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -437,7 +447,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.Select;
+	public function setEnabled( ?bEnabled:Bool):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getForceSelection forceSelection}.
@@ -450,7 +460,7 @@ Default value is <code>true</code>.
 	* @param	bForceSelection New value for property <code>forceSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setForceSelection( bForceSelection:Bool):sap.m.Select;
+	public function setForceSelection( ?bForceSelection:Bool):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -460,10 +470,10 @@ The URI to the icon that will be displayed only when using the <code>IconOnly</c
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon New value for property <code>icon</code>
+	* @param	sIcon= New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.Select;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getMaxWidth maxWidth}.
@@ -478,7 +488,7 @@ Default value is <code>100%</code>.
 	* @param	sMaxWidth New value for property <code>maxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxWidth( sMaxWidth:sap.ui.core.CSSSize):sap.m.Select;
+	public function setMaxWidth( ?sMaxWidth:sap.ui.core.CSSSize):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -491,7 +501,7 @@ Default value is <code>empty string</code>.
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.m.Select;
+	public function setName( ?sName:String):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getRequired required}.
@@ -504,7 +514,20 @@ Default value is <code>false</code>.
 	* @param	bRequired New value for property <code>required</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRequired( bRequired:Bool):sap.m.Select;
+	public function setRequired( ?bRequired:Bool):sap.m.Select;
+
+	/**
+	* Sets a new value for property {@link #getResetOnMissingKey resetOnMissingKey}.
+
+Modifies the behavior of the <code>setSelectedKey</code> method so that the selected item is cleared when a provided selected key is missing.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bResetOnMissingKey New value for property <code>resetOnMissingKey</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setResetOnMissingKey( ?bResetOnMissingKey:Bool):sap.m.Select;
 	@:overload( function(vItem:String):sap.m.Select{ })
 	@:overload( function(vItem:sap.ui.core.Item):sap.m.Select{ })
 
@@ -516,7 +539,7 @@ Default value is <code>null</code>.
 	* @return	<code>this</code> to allow method chaining.
 	*/
 	public function setSelectedItem( vItem:Dynamic):sap.m.Select;
-	@:overload( function(vItem:String):sap.m.Select{ })
+	@:overload( function(?vItem:String):sap.m.Select{ })
 
 	/**
 	* Sets the <code>selectedItemId</code> property.
@@ -525,7 +548,7 @@ Default value is an empty string <code>""</code> or <code>undefined</code>.
 	* @param	vItem New value for property <code>selectedItemId</code>. If the provided <code>vItem</code> has a default value, the first enabled item will be selected (if any items exist).
 	* @return	<code>this</code> to allow method chaining.
 	*/
-	public function setSelectedItemId( vItem:Dynamic):sap.m.Select;
+	public function setSelectedItemId( ?vItem:Dynamic):sap.m.Select;
 
 	/**
 	* Sets property <code>selectedKey</code>.
@@ -549,7 +572,7 @@ Default value is <code>false</code>.
 	* @param	bShowSecondaryValues New value for property <code>showSecondaryValues</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSecondaryValues( bShowSecondaryValues:Bool):sap.m.Select;
+	public function setShowSecondaryValues( ?bShowSecondaryValues:Bool):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -562,7 +585,7 @@ Default value is <code>Initial</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.Select;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -575,7 +598,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.Select;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -588,7 +611,7 @@ Default value is <code>Default</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.SelectType):sap.m.Select;
+	public function setType( ?sType:sap.m.SelectType):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -601,7 +624,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.m.Select;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getValueStateText valueStateText}.
@@ -614,7 +637,7 @@ Default value is <code>empty string</code>.
 	* @param	sValueStateText New value for property <code>valueStateText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueStateText( sValueStateText:String):sap.m.Select;
+	public function setValueStateText( ?sValueStateText:String):sap.m.Select;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -629,7 +652,7 @@ Default value is <code>auto</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Select;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Select;
 
 	/**
 	* Sets the <code>wrapItemsText</code> property.
@@ -733,12 +756,17 @@ typedef SelectArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var showSecondaryValues:haxe.extern.EitherType<String,Bool>;
 
 	/**
+	* Modifies the behavior of the <code>setSelectedKey</code> method so that the selected item is cleared when a provided selected key is missing.
+	*/
+	@:optional var resetOnMissingKey:haxe.extern.EitherType<String,Bool>;
+
+	/**
 	* Indicates whether the selection is restricted to one of the items in the list. <b>Note:</b> We strongly recommend that you always set this property to <code>false</code> and bind the <code>selectedKey</code> property to the desired value for better interoperability with data binding.
 	*/
 	@:optional var forceSelection:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Determines whether the text in the items wraps on multiple lines when the available width is not enough.
+	* Determines whether the text in the items wraps on multiple lines when the available width is not enough. When the text is truncated (<code>wrapItemsText</code> property is set to <code>false</code>), the max width of the <code>SelectList</code> is 600px. When <code>wrapItemsText</code> is set to <code>true</code>, <code>SelectList</code> takes all of the available width.
 	*/
 	@:optional var wrapItemsText:haxe.extern.EitherType<String,Bool>;
 

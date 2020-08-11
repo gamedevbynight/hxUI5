@@ -4,15 +4,15 @@ package sap.ui.core;
 @:enum extern abstract ComponentLifecycle(String)
 {
     /**
-    * Application managed lifecycle means that the Application takes care to destroy the Components associated with the ComponentContainer.
+    * Application managed lifecycle means that the application takes care to destroy the components associated with the <code>ComponentContainer</code>.
     */
     var Application= "Application";
     /**
-    * Container managed lifecycle means that the ComponentContainer takes care to destroy the Components associated with the ComponentContainer once the ComponentContainer is destroyed or a new Component is associated.
+    * Container managed lifecycle means that the <code>ComponentContainer</code> takes care to destroy the components associated with the <code>ComponentContainer</code> once the <code>ComponentContainer</code> is destroyed or a new component is associated.
     */
     var Container= "Container";
     /**
-    * Legacy lifecycle means that the ComponentContainer takes care to destroy the Component which is associated with the ComponentContainer once the ComponentContainer is destroyed but not when a new Component is associated.
+    * Legacy lifecycle means that the <code>ComponentContainer</code> takes care to destroy the component which is associated with the <code>ComponentContainer</code> once the <code>ComponentContainer</code> is destroyed, but not when a new component is associated.
     */
     var Legacy= "Legacy";
 }

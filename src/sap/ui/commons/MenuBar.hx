@@ -121,7 +121,7 @@ Default value is <code>Standard</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.ui.commons.MenuBarDesign):sap.ui.commons.MenuBar;
+	public function setDesign( ?sDesign:sap.ui.commons.MenuBarDesign):sap.ui.commons.MenuBar;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -134,7 +134,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.MenuBar;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.MenuBar;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -147,7 +147,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.MenuBar;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.MenuBar;
 }
 
 typedef MenuBarArgs = sap.ui.core.Control.ControlArgs & {

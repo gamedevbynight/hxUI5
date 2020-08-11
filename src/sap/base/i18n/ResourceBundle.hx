@@ -11,17 +11,23 @@ Use {@link module:sap/base/i18n/ResourceBundle.create} to create an instance of 
 
 With the getText() method of the resource bundle, a locale-specific string value for a given key will be returned.
 
-With the given locale, the resource bundle requests the locale-specific properties file (e.g. "mybundle_fr_FR.properties"). If no file is found for the requested locale or if the file does not contain a text for the given key, a sequence of fall back locales is tried one by one. First, if the locale contains a region information (fr_FR), then the locale without the region is tried (fr). If that also can't be found or doesn't contain the requested text, the English file is used (en - assuming that most development projects contain at least English texts). If that also fails, the file without locale (base URL of the bundle) is tried.
+With the given locale, the resource bundle requests the locale-specific properties file (e.g. "mybundle_fr_FR.properties"). If no file is found for the requested locale or if the file does not contain a text for the given key, a sequence of fallback locales is tried one by one. First, if the locale contains a region information (fr_FR), then the locale without the region is tried (fr). If that also can't be found or doesn't contain the requested text, a fallback language will be used, if given (defaults to en (English), assuming that most development projects contain at least English texts). If that also fails, the file without locale (base URL of the bundle, often called the 'raw' bundle) is tried.
 
 If none of the requested files can be found or none of them contains a text for the given key, then the key itself is returned as text.
 
-Exception: Fallback for "zh_HK" is "zh_TW" before zh.
+Exception: Fallback for "zh_HK" is "zh_TW" before "zh".
 */
 extern class ResourceBundle
 {
 
 	/**
 	* Creates and returns a new instance of {@link module:sap/base/i18n/ResourceBundle} using the given URL and locale to determine what to load.
+
+Before loading the ResourceBundle, the locale is evaluated with a fallback chain. Sample fallback chain for locale="de-DE" and fallbackLocale="fr_FR" <code>"de-DE" -> "de" -> "fr_FR" -> "fr" -> raw</code>
+
+Only those locales are considered for loading, which are in the supportedLocales array (if the array is supplied and not empty).
+
+Note: The fallbackLocale should be included in the supportedLocales array.
 	* @param	mParams Parameters used to initialize the resource bundle
 	* @return	A new resource bundle or a Promise on that bundle (in asynchronous case)
 	*/

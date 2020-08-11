@@ -217,7 +217,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.f.SearchManager;
+	public function setEnabled( ?bEnabled:Bool):sap.f.SearchManager;
 
 	/**
 	* Sets a new value for property {@link #getEnableSuggestions enableSuggestions}.
@@ -230,7 +230,7 @@ Default value is <code>false</code>.
 	* @param	bEnableSuggestions New value for property <code>enableSuggestions</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableSuggestions( bEnableSuggestions:Bool):sap.f.SearchManager;
+	public function setEnableSuggestions( ?bEnableSuggestions:Bool):sap.f.SearchManager;
 
 	/**
 	* Sets a new value for property {@link #getMaxLength maxLength}.
@@ -243,7 +243,7 @@ Default value is <code>0</code>.
 	* @param	iMaxLength New value for property <code>maxLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxLength( iMaxLength:Int):sap.f.SearchManager;
+	public function setMaxLength( ?iMaxLength:Int):sap.f.SearchManager;
 
 	/**
 	* Sets a new value for property {@link #getPlaceholder placeholder}.

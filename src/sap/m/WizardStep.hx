@@ -209,10 +209,10 @@ Determines the icon that is displayed for this step. The icon is visualized in t
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon New value for property <code>icon</code>
+	* @param	sIcon= New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.WizardStep;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.WizardStep;
 	@:overload( function(oNextStep:sap.ui.core.ID):sap.m.WizardStep{ })
 
 	/**
@@ -233,7 +233,7 @@ Default value is <code>false</code>.
 	* @param	bOptional New value for property <code>optional</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOptional( bOptional:Bool):sap.m.WizardStep;
+	public function setOptional( ?bOptional:Bool):sap.m.WizardStep;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -246,7 +246,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.WizardStep;
+	public function setTitle( ?sTitle:String):sap.m.WizardStep;
 
 	/**
 	* Sets a new value for property {@link #getValidated validated}.
@@ -259,7 +259,7 @@ Default value is <code>true</code>.
 	* @param	bValidated New value for property <code>validated</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValidated( bValidated:Bool):sap.m.WizardStep;
+	public function setValidated( ?bValidated:Bool):sap.m.WizardStep;
 }
 
 typedef WizardStepArgs = sap.ui.core.Control.ControlArgs & {

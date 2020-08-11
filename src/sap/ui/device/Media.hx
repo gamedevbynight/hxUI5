@@ -1,6 +1,6 @@
 package sap.ui.device;
 
-@:native("sap.ui.device.media")
+@:native("sap.ui.Device.media")
 extern class Media
 {
 

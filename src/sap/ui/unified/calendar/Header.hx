@@ -347,7 +347,7 @@ Default value is <code>true</code>.
 	* @param	bEnabledNext New value for property <code>enabledNext</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabledNext( bEnabledNext:Bool):sap.ui.unified.calendar.Header;
+	public function setEnabledNext( ?bEnabledNext:Bool):sap.ui.unified.calendar.Header;
 
 	/**
 	* Sets a new value for property {@link #getEnabledPrevious enabledPrevious}.
@@ -360,7 +360,7 @@ Default value is <code>true</code>.
 	* @param	bEnabledPrevious New value for property <code>enabledPrevious</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabledPrevious( bEnabledPrevious:Bool):sap.ui.unified.calendar.Header;
+	public function setEnabledPrevious( ?bEnabledPrevious:Bool):sap.ui.unified.calendar.Header;
 
 	/**
 	* Sets a new value for property {@link #getTextButton0 textButton0}.
@@ -408,7 +408,7 @@ Default value is <code>false</code>.
 	* @param	bVisibleButton0 New value for property <code>visibleButton0</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleButton0( bVisibleButton0:Bool):sap.ui.unified.calendar.Header;
+	public function setVisibleButton0( ?bVisibleButton0:Bool):sap.ui.unified.calendar.Header;
 
 	/**
 	* Sets a new value for property {@link #getVisibleButton1 visibleButton1}.
@@ -421,7 +421,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleButton1 New value for property <code>visibleButton1</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleButton1( bVisibleButton1:Bool):sap.ui.unified.calendar.Header;
+	public function setVisibleButton1( ?bVisibleButton1:Bool):sap.ui.unified.calendar.Header;
 
 	/**
 	* Sets a new value for property {@link #getVisibleButton2 visibleButton2}.
@@ -434,7 +434,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleButton2 New value for property <code>visibleButton2</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleButton2( bVisibleButton2:Bool):sap.ui.unified.calendar.Header;
+	public function setVisibleButton2( ?bVisibleButton2:Bool):sap.ui.unified.calendar.Header;
 }
 
 typedef HeaderArgs = sap.ui.core.Control.ControlArgs & {

@@ -68,7 +68,7 @@ Default value is <code>1</code>.
 	* @param	iColumns New value for property <code>columns</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumns( iColumns:Int):sap.f.GridContainerItemLayoutData;
+	public function setColumns( ?iColumns:Int):sap.f.GridContainerItemLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getMinRows minRows}.

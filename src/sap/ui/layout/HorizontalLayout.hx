@@ -101,7 +101,7 @@ Default value is <code>false</code>.
 	* @param	bAllowWrapping New value for property <code>allowWrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAllowWrapping( bAllowWrapping:Bool):sap.ui.layout.HorizontalLayout;
+	public function setAllowWrapping( ?bAllowWrapping:Bool):sap.ui.layout.HorizontalLayout;
 }
 
 typedef HorizontalLayoutArgs = sap.ui.core.Control.ControlArgs & {

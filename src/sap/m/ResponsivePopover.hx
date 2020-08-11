@@ -501,7 +501,7 @@ Default value is <code>true</code>.
 	* @param	bHorizontalScrolling New value for property <code>horizontalScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHorizontalScrolling( bHorizontalScrolling:Bool):sap.m.ResponsivePopover;
+	public function setHorizontalScrolling( ?bHorizontalScrolling:Bool):sap.m.ResponsivePopover;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -566,7 +566,7 @@ Default value is <code>Right</code>.
 	* @param	sPlacement New value for property <code>placement</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlacement( sPlacement:sap.m.PlacementType):sap.m.ResponsivePopover;
+	public function setPlacement( ?sPlacement:sap.m.PlacementType):sap.m.ResponsivePopover;
 
 	/**
 	* Sets a new value for property {@link #getResizable resizable}.
@@ -579,7 +579,7 @@ Default value is <code>false</code>.
 	* @param	bResizable New value for property <code>resizable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setResizable( bResizable:Bool):sap.m.ResponsivePopover;
+	public function setResizable( ?bResizable:Bool):sap.m.ResponsivePopover;
 
 	/**
 	* Sets a new value for property {@link #getShowArrow showArrow}.
@@ -592,7 +592,7 @@ Default value is <code>true</code>.
 	* @param	bShowArrow New value for property <code>showArrow</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowArrow( bShowArrow:Bool):sap.m.ResponsivePopover;
+	public function setShowArrow( ?bShowArrow:Bool):sap.m.ResponsivePopover;
 
 	/**
 	* Determines if the close button to the ResponsivePopover is shown or not. Works only when ResponsivePopover is used as a dialog
@@ -612,7 +612,7 @@ Default value is <code>true</code>.
 	* @param	bShowHeader New value for property <code>showHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHeader( bShowHeader:Bool):sap.m.ResponsivePopover;
+	public function setShowHeader( ?bShowHeader:Bool):sap.m.ResponsivePopover;
 
 	/**
 	* Sets the aggregated {@link #getSubHeader subHeader}.
@@ -643,7 +643,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.ResponsivePopover;
+	public function setTitleAlignment( ?sTitleAlignment:sap.m.TitleAlignment):sap.m.ResponsivePopover;
 
 	/**
 	* Sets a new value for property {@link #getVerticalScrolling verticalScrolling}.
@@ -656,7 +656,7 @@ Default value is <code>true</code>.
 	* @param	bVerticalScrolling New value for property <code>verticalScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVerticalScrolling( bVerticalScrolling:Bool):sap.m.ResponsivePopover;
+	public function setVerticalScrolling( ?bVerticalScrolling:Bool):sap.m.ResponsivePopover;
 }
 
 typedef ResponsivePopoverArgs = sap.ui.core.Control.ControlArgs & {

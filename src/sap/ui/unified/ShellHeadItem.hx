@@ -149,7 +149,7 @@ Default value is <code>false</code>.
 	* @param	bSelected New value for property <code>selected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelected( bSelected:Bool):sap.ui.unified.ShellHeadItem;
+	public function setSelected( ?bSelected:Bool):sap.ui.unified.ShellHeadItem;
 
 	/**
 	* Sets a new value for property {@link #getShowSeparator showSeparator}.
@@ -162,7 +162,7 @@ Default value is <code>true</code>.
 	* @param	bShowSeparator New value for property <code>showSeparator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSeparator( bShowSeparator:Bool):sap.ui.unified.ShellHeadItem;
+	public function setShowSeparator( ?bShowSeparator:Bool):sap.ui.unified.ShellHeadItem;
 
 	/**
 	* Sets a new value for property {@link #getToggleEnabled toggleEnabled}.
@@ -175,7 +175,7 @@ Default value is <code>true</code>.
 	* @param	bToggleEnabled New value for property <code>toggleEnabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setToggleEnabled( bToggleEnabled:Bool):sap.ui.unified.ShellHeadItem;
+	public function setToggleEnabled( ?bToggleEnabled:Bool):sap.ui.unified.ShellHeadItem;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -188,7 +188,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.ui.unified.ShellHeadItem;
+	public function setVisible( ?bVisible:Bool):sap.ui.unified.ShellHeadItem;
 }
 
 typedef ShellHeadItemArgs = sap.ui.core.Element.ElementArgs & {

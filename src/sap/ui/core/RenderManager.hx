@@ -29,9 +29,13 @@ Control renderers only have access to a subset of the public and protected insta
 
 </pre>
 
-By default, when the control is invalidated (e.g. a property is changed, an aggregation is removed, or an association is added), it will be registered for re-rendering. During the (re)rendering, the <code>render</code> method of the control renderer is executed via a specified <code>RenderManager</code> interface and the control instance. Traditional string-based rendering creates a new HTML structure of the control in every rendering cycle and removes the existing control DOM structure from the DOM tree. The set of new semantic <code>RenderManager</code> APIs lets us understand the structure of the DOM, walk along the live DOM tree, and figure out changes as new APIs are called. If there is a change, then <code>RenderManager</code> patches only the required parts of the live DOM tree. This allows control developers to remove their DOM-related custom setters.
+By default, when the control is invalidated (e.g. a property is changed, an aggregation is removed, or an association is added), it will be registered for re-rendering. During the (re)rendering, the <code>render</code> method of the control renderer is executed via a specified <code>RenderManager</code> interface and the control instance.
 
-<b>Note:</b> To enable the new in-place rendering technology, the <code>apiVersion</code> property of the control renderer must be set to <code>2</code>.
+Traditional string-based rendering creates a new HTML structure of the control in every rendering cycle and removes the existing control DOM structure from the DOM tree.
+
+The set of new semantic <code>RenderManager</code> APIs lets us understand the structure of the DOM, walk along the live DOM tree, and figure out changes as new APIs are called. If there is a change, then <code>RenderManager</code> patches only the required parts of the live DOM tree. This allows control developers to remove their DOM-related custom setters.
+
+<b>Note:</b> To enable the new in-place rendering technology, the <code>apiVersion</code> property of the control renderer must be set to <code>2</code>. This property is not inherited by subclass renderers. It has to be set anew by each subclass to assure that the extended contract between framework and renderer is fulfilled (see next paragraph).
 
 <pre>
 
@@ -50,34 +54,40 @@ By default, when the control is invalidated (e.g. a property is changed, an aggr
 
 </pre>
 
-<h3>Renderer.apiVersion contract</h3> To allow a more efficient in-place DOM patching and to ensure the compatibility of the control, the following prerequisites must be fulfilled for the controls using the new rendering technology:
+<h3>Contract for Renderer.apiVersion 2</h3> To allow a more efficient in-place DOM patching and to ensure the compatibility of the control, the following prerequisites must be fulfilled for the controls using the new rendering technology:
 
-<ul> <li>Legacy control renderers must be migrated to the new semantic renderer API: {@link sap.ui.core.RenderManager#openStart openStart}, {@link sap.ui.core.RenderManager#voidStart voidStart}, {@link sap.ui.core.RenderManager#style style}, {@link sap.ui.core.RenderManager#class class}, {@link sap.ui.core.RenderManager#attr attr}, {@link sap.ui.core.RenderManager#openEnd openEnd}, {@link sap.ui.core.RenderManager#voidEnd voidEnd}, {@link sap.ui.core.RenderManager#text text}, {@link sap.ui.core.RenderManager#unsafeHtml unsafeHtml}, {@link sap.ui.core.RenderManager#icon icon}, {@link sap.ui.core.RenderManager#accessibilityState accessibilityState}, {@link sap.ui.core.RenderManager#renderControl renderControl}, {@link sap.ui.core.RenderManager#cleanupControlWithoutRendering cleanupControlWithoutRendering} </li> <li>During the migration, restrictions that are defined in the API documentation must be taken into account, e.g. tag and attribute names must be set in their canonical form.</li> <li>Fault tolerance of HTML5 markups is not applicable for the new semantic rendering API, e.g. except void tags, all tags must be closed; duplicate attributes within one HTML element must not exist.</li> <li>Existing control DOM structure will not be removed from the DOM tree; therefore all custom events, including the ones that are registered with jQuery, must be deregistered correctly at the <code>onBeforeRendering</code> and <code>exit</code> hooks.</li> <li>Classes and attribute names must not be escaped. Styles should be validated via types but this might not be sufficient in all cases, e.g. validated URL values can contain harmful content; in this case {@link module:sap/base/security/encodeCSS encodeCSS} can be used.</li> <li>To allow a more efficient DOM update, second parameter of the {@link sap.ui.core.RenderManager#openStart openStart} or {@link sap.ui.core.RenderManager#voidStart voidStart} methods must be used to identify elements, e.g. use <code>rm.openStart("div", oControl.getId() + "-suffix");</code> instead of <code>rm.openStart("div").attr("id", oControl.getId() + "-suffix");</code></li> <li>Controls that listen to the <code>focusin</code> event must double check their focus handling. Since DOM nodes are not removed and only reused, the <code>focusin</code> event might not be fired because of re-rendering.</li> </ul>
+<ul> <li>Legacy control renderers must be migrated to the new semantic renderer API: {@link sap.ui.core.RenderManager#openStart openStart}, {@link sap.ui.core.RenderManager#voidStart voidStart}, {@link sap.ui.core.RenderManager#style style}, {@link sap.ui.core.RenderManager#class class}, {@link sap.ui.core.RenderManager#attr attr}, {@link sap.ui.core.RenderManager#openEnd openEnd}, {@link sap.ui.core.RenderManager#voidEnd voidEnd}, {@link sap.ui.core.RenderManager#text text}, {@link sap.ui.core.RenderManager#unsafeHtml unsafeHtml}, {@link sap.ui.core.RenderManager#icon icon}, {@link sap.ui.core.RenderManager#accessibilityState accessibilityState}, {@link sap.ui.core.RenderManager#renderControl renderControl}, {@link sap.ui.core.RenderManager#cleanupControlWithoutRendering cleanupControlWithoutRendering} </li> <li>During the migration, restrictions that are defined in the API documentation of those methods must be taken into account, e.g. tag and attribute names must be set in their canonical form.</li> <li>Fault tolerance of HTML5 markup is not applicable for the new semantic rendering API, e.g. except void tags, all tags must be closed; duplicate attributes within one HTML element must not exist.</li> <li>Existing control DOM structure will not be removed from the DOM tree; therefore all custom events, including the ones that are registered with jQuery, must be de-registered correctly at the <code>onBeforeRendering</code> and <code>exit</code> hooks.</li> <li>Classes and attribute names must not be escaped.</li> <li>Styles should be validated via types (e.g. <code>sap.ui.core.CSSSize</code>). But this might not be sufficient in all cases, e.g. validated URL values can contain harmful content; in this case {@link module:sap/base/security/encodeCSS encodeCSS} can be used.</li> <li>To allow a more efficient DOM update, second parameter of the {@link sap.ui.core.RenderManager#openStart openStart} or {@link sap.ui.core.RenderManager#voidStart voidStart} methods must be used to identify elements, e.g. use <code>rm.openStart("div", oControl.getId() + "-suffix");</code> instead of <code>rm.openStart("div").attr("id", oControl.getId() + "-suffix");</code></li> <li>Controls that listen to the <code>focusin</code> event must double check their focus handling. Since DOM nodes are not removed and only reused, the <code>focusin</code> event might not be fired during re-rendering.</li> </ul>
 */
 extern class RenderManager
 {
 public function new():Void;
 
 	/**
-	* Writes the accessibility state (see WAI-ARIA specification) of the provided element into the HTML based on the element's properties and associations.
+	* Collects accessibility related attributes for an <code>Element</code> and renders them as part of the currently rendered DOM element.
 
-The ARIA properties are only written when the accessibility feature is activated in the UI5 configuration.
+See the WAI-ARIA specification for a general description of the accessibility related attributes. Attributes are only rendered when the accessibility feature is activated in the UI5 runtime configuration.
 
-The following properties/values to ARIA attribute mappings are done (if the element does have such properties): <ul> <li><code>editable===false</code> => <code>aria-readonly="true"</code></li> <li><code>enabled===false</code> => <code>aria-disabled="true"</code></li> <li><code>visible===false</code> => <code>aria-hidden="true"</code></li> <li><code>required===true</code> => <code>aria-required="true"</code></li> <li><code>selected===true</code> => <code>aria-selected="true"</code></li> <li><code>checked===true</code> => <code>aria-checked="true"</code></li> </ul>
+The values for the attributes are collected from the following sources (last one wins): <ol> <li>from the properties and associations of the given <code>oElement</code>, using a heuristic mapping (described below)</li> <li>from the <code>mProps</code> parameter, as provided by the caller</li> <li>from the parent of the given <code>oElement</code>, if it has a parent and if the parent implements the method {@link sap.ui.core.Element#enhanceAccessibilityState enhanceAccessibilityState}</li> </ol> If no <code>oElement</code> is given, only <code>mProps</code> will be taken into account.
 
-In case of the required attribute also the Label controls which referencing the given element in their 'for' relation are taken into account to compute the <code>aria-required</code> attribute.
+<h3>Heuristic Mapping</h3> The following mapping from properties/values to ARIA attributes is used (if the element does have such properties): <ul> <li><code>editable===false</code> => <code>aria-readonly="true"</code></li> <li><code>enabled===false</code> => <code>aria-disabled="true"</code></li> <li><code>visible===false</code> => <code>aria-hidden="true"</code></li> <li><code>required===true</code> => <code>aria-required="true"</code></li> <li><code>selected===true</code> => <code>aria-selected="true"</code></li> <li><code>checked===true</code> => <code>aria-checked="true"</code></li> </ul>
 
-Additionally, the association <code>ariaDescribedBy</code> and <code>ariaLabelledBy</code> are used to write the ID lists of the ARIA attributes <code>aria-describedby</code> and <code>aria-labelledby</code>.
+In case of the <code>required</code> property, all label controls which reference the given element in their <code>labelFor</code> relation are additionally taken into account when determining the value for the <code>aria-required</code> attribute.
 
-Label controls that reference the given element in their 'for' relation are automatically added to the <code>aria-labelledby</code> attributes.
+Additionally, the associations <code>ariaDescribedBy</code> and <code>ariaLabelledBy</code> are used to determine the lists of IDS for the ARIA attributes <code>aria-describedby</code> and <code>aria-labelledby</code>.
+
+Label controls that reference the given element in their <code>labelFor</code> relation are automatically added to the <code>aria-labelledby</code> attributes.
 
 Note: This function is only a heuristic of a control property to ARIA attribute mapping. Control developers have to check whether it fulfills their requirements. In case of problems (for example the RadioButton has a <code>selected</code> property but must provide an <code>aria-checked</code> attribute) the auto-generated result of this function can be influenced via the parameter <code>mProps</code> as described below.
 
-The parameter <code>mProps</code> can be used to either provide additional attributes which should be added and/or to avoid the automatic generation of single ARIA attributes. The 'aria-' prefix will be prepended automatically to the keys (Exception: Attribute 'role' does not get the prefix 'aria-').
+The parameter <code>mProps</code> can be used to either provide additional attributes which should be rendered and/or to avoid the automatic generation of single ARIA attributes. The 'aria-' prefix will be prepended automatically to the keys (Exception: Attribute <code>role</code> does not get the prefix 'aria-').
 
-Examples: <code>{hidden : true}</code> results in <code>aria-hidden="true"</code> independent of the presence or absence of the visibility property. <code>{hidden : null}</code> ensures that no <code>aria-hidden</code> attribute is written independent of the presence or absence of the visibility property. The function behaves in the same way for the associations <code>ariaDescribedBy</code> and <code>ariaLabelledBy</code>. To append additional values to the auto-generated <code>aria-describedby</code> and <code>aria-labelledby</code> attributes the following format can be used: <code>{describedby : {value: "id1 id2", append: true}}</code> => <code>aria-describedby="ida idb id1 id2"</code> (assuming that "ida idb" is the auto-generated part based on the association <code>ariaDescribedBy</code>).
-	* @param	oElement the element whose accessibility state should be rendered
-	* @param	mProps a map of properties that should be added additionally or changed.
+Examples:<br> <code>{hidden : true}</code> results in <code>aria-hidden="true"</code> independent of the presence or absence of the visibility property.<br> <code>{hidden : null}</code> ensures that no <code>aria-hidden</code> attribute is written independent of the presence or absence of the visibility property.<br>
+
+The function behaves in the same way for the associations <code>ariaDescribedBy</code> and <code>ariaLabelledBy</code>. To append additional values to the auto-generated <code>aria-describedby</code> and <code>aria-labelledby</code> attributes, the following format can be used: <pre>
+  {describedby : {value: "id1 id2", append: true}} =>  aria-describedby = "ida idb id1 id2"
+</pre> (assuming that "ida idb" is the auto-generated part based on the association <code>ariaDescribedBy</code>).
+	* @param	oElement The <code>Element</code> whose accessibility state should be rendered
+	* @param	mProps A map of additional properties that should be added or changed.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function accessibilityState( ?oElement:sap.ui.core.Element, ?mProps:Dynamic):sap.ui.core.RenderManager;
@@ -339,25 +349,31 @@ This must be followed by <code>voidEnd</code>. For self-closing tags, the <code>
 	public function write( sText:String):sap.ui.core.RenderManager;
 
 	/**
-	* Writes the accessibility state (see WAI-ARIA specification) of the provided element into the HTML based on the element's properties and associations.
+	* Collects accessibility related attributes for an <code>Element</code> and renders them as part of the currently rendered DOM element.
 
-The ARIA properties are only written when the accessibility feature is activated in the UI5 configuration.
+See the WAI-ARIA specification for a general description of the accessibility related attributes. Attributes are only rendered when the accessibility feature is activated in the UI5 runtime configuration.
 
-The following properties/values to ARIA attribute mappings are done (if the element does have such properties): <ul> <li><code>editable===false</code> => <code>aria-readonly="true"</code></li> <li><code>enabled===false</code> => <code>aria-disabled="true"</code></li> <li><code>visible===false</code> => <code>aria-hidden="true"</code></li> <li><code>required===true</code> => <code>aria-required="true"</code></li> <li><code>selected===true</code> => <code>aria-selected="true"</code></li> <li><code>checked===true</code> => <code>aria-checked="true"</code></li> </ul>
+The values for the attributes are collected from the following sources (last one wins): <ol> <li>from the properties and associations of the given <code>oElement</code>, using a heuristic mapping (described below)</li> <li>from the <code>mProps</code> parameter, as provided by the caller</li> <li>from the parent of the given <code>oElement</code>, if it has a parent and if the parent implements the method {@link sap.ui.core.Element#enhanceAccessibilityState enhanceAccessibilityState}</li> </ol> If no <code>oElement</code> is given, only <code>mProps</code> will be taken into account.
 
-In case of the required attribute also the Label controls which referencing the given element in their 'for' relation are taken into account to compute the <code>aria-required</code> attribute.
+<h3>Heuristic Mapping</h3> The following mapping from properties/values to ARIA attributes is used (if the element does have such properties): <ul> <li><code>editable===false</code> => <code>aria-readonly="true"</code></li> <li><code>enabled===false</code> => <code>aria-disabled="true"</code></li> <li><code>visible===false</code> => <code>aria-hidden="true"</code></li> <li><code>required===true</code> => <code>aria-required="true"</code></li> <li><code>selected===true</code> => <code>aria-selected="true"</code></li> <li><code>checked===true</code> => <code>aria-checked="true"</code></li> </ul>
 
-Additionally, the association <code>ariaDescribedBy</code> and <code>ariaLabelledBy</code> are used to write the ID lists of the ARIA attributes <code>aria-describedby</code> and <code>aria-labelledby</code>.
+In case of the <code>required</code> property, all label controls which reference the given element in their <code>labelFor</code> relation are additionally taken into account when determining the value for the <code>aria-required</code> attribute.
 
-Label controls that reference the given element in their 'for' relation are automatically added to the <code>aria-labelledby</code> attributes.
+Additionally, the associations <code>ariaDescribedBy</code> and <code>ariaLabelledBy</code> are used to determine the lists of IDS for the ARIA attributes <code>aria-describedby</code> and <code>aria-labelledby</code>.
+
+Label controls that reference the given element in their <code>labelFor</code> relation are automatically added to the <code>aria-labelledby</code> attributes.
 
 Note: This function is only a heuristic of a control property to ARIA attribute mapping. Control developers have to check whether it fulfills their requirements. In case of problems (for example the RadioButton has a <code>selected</code> property but must provide an <code>aria-checked</code> attribute) the auto-generated result of this function can be influenced via the parameter <code>mProps</code> as described below.
 
-The parameter <code>mProps</code> can be used to either provide additional attributes which should be added and/or to avoid the automatic generation of single ARIA attributes. The 'aria-' prefix will be prepended automatically to the keys (Exception: Attribute 'role' does not get the prefix 'aria-').
+The parameter <code>mProps</code> can be used to either provide additional attributes which should be rendered and/or to avoid the automatic generation of single ARIA attributes. The 'aria-' prefix will be prepended automatically to the keys (Exception: Attribute <code>role</code> does not get the prefix 'aria-').
 
-Examples: <code>{hidden : true}</code> results in <code>aria-hidden="true"</code> independent of the presence or absence of the visibility property. <code>{hidden : null}</code> ensures that no <code>aria-hidden</code> attribute is written independent of the presence or absence of the visibility property. The function behaves in the same way for the associations <code>ariaDescribedBy</code> and <code>ariaLabelledBy</code>. To append additional values to the auto-generated <code>aria-describedby</code> and <code>aria-labelledby</code> attributes the following format can be used: <code>{describedby : {value: "id1 id2", append: true}}</code> => <code>aria-describedby="ida idb id1 id2"</code> (assuming that "ida idb" is the auto-generated part based on the association <code>ariaDescribedBy</code>).
-	* @param	oElement the element whose accessibility state should be rendered
-	* @param	mProps a map of properties that should be added additionally or changed.
+Examples:<br> <code>{hidden : true}</code> results in <code>aria-hidden="true"</code> independent of the presence or absence of the visibility property.<br> <code>{hidden : null}</code> ensures that no <code>aria-hidden</code> attribute is written independent of the presence or absence of the visibility property.<br>
+
+The function behaves in the same way for the associations <code>ariaDescribedBy</code> and <code>ariaLabelledBy</code>. To append additional values to the auto-generated <code>aria-describedby</code> and <code>aria-labelledby</code> attributes, the following format can be used: <pre>
+  {describedby : {value: "id1 id2", append: true}} =>  aria-describedby = "ida idb id1 id2"
+</pre> (assuming that "ida idb" is the auto-generated part based on the association <code>ariaDescribedBy</code>).
+	* @param	oElement The <code>Element</code> whose accessibility state should be rendered
+	* @param	mProps A map of additional properties that should be added or changed.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function writeAccessibilityState( ?oElement:sap.ui.core.Element, ?mProps:Dynamic):sap.ui.core.RenderManager;

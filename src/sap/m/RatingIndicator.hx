@@ -243,7 +243,7 @@ Default value is <code>false</code>.
 	* @param	bDisplayOnly New value for property <code>displayOnly</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayOnly( bDisplayOnly:Bool):sap.m.RatingIndicator;
+	public function setDisplayOnly( ?bDisplayOnly:Bool):sap.m.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -256,7 +256,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.m.RatingIndicator;
+	public function setEditable( ?bEditable:Bool):sap.m.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -269,7 +269,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.RatingIndicator;
+	public function setEnabled( ?bEnabled:Bool):sap.m.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getIconHovered iconHovered}.
@@ -326,7 +326,7 @@ Default value is <code>5</code>.
 	* @param	iMaxValue New value for property <code>maxValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxValue( iMaxValue:Int):sap.m.RatingIndicator;
+	public function setMaxValue( ?iMaxValue:Int):sap.m.RatingIndicator;
 
 	/**
 	* Sets the rating value. The method is automatically checking whether the value is in the valid range of 0-{@link #getMaxValue maxValue} and if it is a valid number. Calling the setter with null or undefined will reset the value to it's default.
@@ -346,7 +346,7 @@ Default value is <code>Half</code>.
 	* @param	sVisualMode New value for property <code>visualMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisualMode( sVisualMode:sap.m.RatingIndicatorVisualMode):sap.m.RatingIndicator;
+	public function setVisualMode( ?sVisualMode:sap.m.RatingIndicatorVisualMode):sap.m.RatingIndicator;
 
 	/**
 	* Unbinds property {@link #getValue value} from model data.

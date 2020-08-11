@@ -177,7 +177,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	* Generates the file content, triggers a download / save action and returns a Promise with the instance as context (this).<br> The promise will be resolved with the generated content as a string. <p><b>For information about browser support, see <code>sap.ui.core.util.File.save</code></b></p>
 
 <p><b>Please note: The return value was changed from jQuery Promises to standard ES6 Promises. jQuery specific Promise methods ('done', 'fail', 'always', 'pipe' and 'state') are still available but should not be used. Please use only the standard methods 'then' and 'catch'!</b></p>
-	* @param	sFileName file name, defaults to 'data'
+	* @param	sFileName The file name
 	* @return	Promise object
 	*/
 	public function saveFile( ?sFileName:String):js.lib.Promise<Export>;

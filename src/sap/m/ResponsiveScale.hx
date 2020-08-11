@@ -52,7 +52,7 @@ Default value is <code>0</code>.
 	* @param	iTickmarksBetweenLabels New value for property <code>tickmarksBetweenLabels</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTickmarksBetweenLabels( iTickmarksBetweenLabels:Int):sap.m.ResponsiveScale;
+	public function setTickmarksBetweenLabels( ?iTickmarksBetweenLabels:Int):sap.m.ResponsiveScale;
 }
 
 typedef ResponsiveScaleArgs = sap.ui.core.Element.ElementArgs & {

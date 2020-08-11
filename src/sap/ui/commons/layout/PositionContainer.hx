@@ -115,7 +115,7 @@ Default value is <code>false</code>.
 	* @param	bCenterHorizontally New value for property <code>centerHorizontally</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCenterHorizontally( bCenterHorizontally:Bool):sap.ui.commons.layout.PositionContainer;
+	public function setCenterHorizontally( ?bCenterHorizontally:Bool):sap.ui.commons.layout.PositionContainer;
 
 	/**
 	* Sets a new value for property {@link #getCenterVertically centerVertically}.
@@ -128,7 +128,7 @@ Default value is <code>false</code>.
 	* @param	bCenterVertically New value for property <code>centerVertically</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCenterVertically( bCenterVertically:Bool):sap.ui.commons.layout.PositionContainer;
+	public function setCenterVertically( ?bCenterVertically:Bool):sap.ui.commons.layout.PositionContainer;
 
 	/**
 	* Sets the aggregated {@link #getControl control}.

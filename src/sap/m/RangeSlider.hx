@@ -68,7 +68,7 @@ Default value is <code>0,100</code>.
 	* @param	sRange New value for property <code>range</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRange( sRange:Array<Float>):sap.m.RangeSlider;
+	public function setRange( ?sRange:Array<Float>):sap.m.RangeSlider;
 
 	/**
 	* Sets a new value for property {@link #getValue2 value2}.
@@ -83,7 +83,7 @@ Default value is <code>100</code>.
 	* @param	fValue2 New value for property <code>value2</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue2( fValue2:Float):sap.m.RangeSlider;
+	public function setValue2( ?fValue2:Float):sap.m.RangeSlider;
 }
 
 typedef RangeSliderArgs = sap.m.Slider.SliderArgs & {

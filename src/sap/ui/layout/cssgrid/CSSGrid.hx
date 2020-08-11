@@ -241,10 +241,10 @@ Sets the value for the CSS display:grid property {@link https://developer.mozill
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridAutoColumns New value for property <code>gridAutoColumns</code>
+	* @param	sGridAutoColumns= New value for property <code>gridAutoColumns</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGridAutoColumns( sGridAutoColumns:sap.ui.layout.cssgrid.CSSGridTrack):sap.ui.layout.cssgrid.CSSGrid;
+	public function setGridAutoColumns( ?sGridAutoColumns:sap.ui.layout.cssgrid.CSSGridTrack):sap.ui.layout.cssgrid.CSSGrid;
 
 	/**
 	* Sets a new value for property {@link #getGridAutoFlow gridAutoFlow}.
@@ -259,7 +259,7 @@ Default value is <code>Row</code>.
 	* @param	sGridAutoFlow New value for property <code>gridAutoFlow</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGridAutoFlow( sGridAutoFlow:sap.ui.layout.cssgrid.CSSGridAutoFlow):sap.ui.layout.cssgrid.CSSGrid;
+	public function setGridAutoFlow( ?sGridAutoFlow:sap.ui.layout.cssgrid.CSSGridAutoFlow):sap.ui.layout.cssgrid.CSSGrid;
 
 	/**
 	* Sets a new value for property {@link #getGridAutoRows gridAutoRows}.
@@ -271,10 +271,10 @@ Sets the value for the CSS display:grid property {@link https://developer.mozill
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridAutoRows New value for property <code>gridAutoRows</code>
+	* @param	sGridAutoRows= New value for property <code>gridAutoRows</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGridAutoRows( sGridAutoRows:sap.ui.layout.cssgrid.CSSGridTrack):sap.ui.layout.cssgrid.CSSGrid;
+	public function setGridAutoRows( ?sGridAutoRows:sap.ui.layout.cssgrid.CSSGridTrack):sap.ui.layout.cssgrid.CSSGrid;
 
 	/**
 	* Sets a new value for property {@link #getGridColumnGap gridColumnGap}.
@@ -286,10 +286,10 @@ Sets the value for the CSS display:grid property {@link https://developer.mozill
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridColumnGap New value for property <code>gridColumnGap</code>
+	* @param	sGridColumnGap= New value for property <code>gridColumnGap</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGridColumnGap( sGridColumnGap:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.CSSGrid;
+	public function setGridColumnGap( ?sGridColumnGap:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.CSSGrid;
 
 	/**
 	* Sets a new value for property {@link #getGridGap gridGap}.
@@ -301,10 +301,10 @@ Sets the value for the CSS display:grid property {@link https://developer.mozill
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridGap New value for property <code>gridGap</code>
+	* @param	sGridGap= New value for property <code>gridGap</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGridGap( sGridGap:sap.ui.layout.cssgrid.CSSGridGapShortHand):sap.ui.layout.cssgrid.CSSGrid;
+	public function setGridGap( ?sGridGap:sap.ui.layout.cssgrid.CSSGridGapShortHand):sap.ui.layout.cssgrid.CSSGrid;
 
 	/**
 	* Sets a new value for property {@link #getGridRowGap gridRowGap}.
@@ -316,10 +316,10 @@ Sets the value for the CSS display:grid property {@link https://developer.mozill
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridRowGap New value for property <code>gridRowGap</code>
+	* @param	sGridRowGap= New value for property <code>gridRowGap</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGridRowGap( sGridRowGap:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.CSSGrid;
+	public function setGridRowGap( ?sGridRowGap:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.CSSGrid;
 
 	/**
 	* Sets a new value for property {@link #getGridTemplateColumns gridTemplateColumns}.
@@ -331,10 +331,10 @@ Sets the value for the CSS display:grid property {@link https://developer.mozill
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridTemplateColumns New value for property <code>gridTemplateColumns</code>
+	* @param	sGridTemplateColumns= New value for property <code>gridTemplateColumns</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGridTemplateColumns( sGridTemplateColumns:sap.ui.layout.cssgrid.CSSGridTrack):sap.ui.layout.cssgrid.CSSGrid;
+	public function setGridTemplateColumns( ?sGridTemplateColumns:sap.ui.layout.cssgrid.CSSGridTrack):sap.ui.layout.cssgrid.CSSGrid;
 
 	/**
 	* Sets a new value for property {@link #getGridTemplateRows gridTemplateRows}.
@@ -346,17 +346,23 @@ Sets the value for the CSS display:grid property {@link https://developer.mozill
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridTemplateRows New value for property <code>gridTemplateRows</code>
+	* @param	sGridTemplateRows= New value for property <code>gridTemplateRows</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGridTemplateRows( sGridTemplateRows:sap.ui.layout.cssgrid.CSSGridTrack):sap.ui.layout.cssgrid.CSSGrid;
+	public function setGridTemplateRows( ?sGridTemplateRows:sap.ui.layout.cssgrid.CSSGridTrack):sap.ui.layout.cssgrid.CSSGrid;
 
 	/**
-	* Sets the width of the grid.
-	* @param	sWidth The width of the Grid as CSS size.
-	* @return	Pointer to the control instance to allow method chaining.
+	* Sets a new value for property {@link #getWidth width}.
+
+The width of the control
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>100%</code>.
+	* @param	sWidth New value for property <code>width</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.CSSGrid;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.CSSGrid;
 }
 
 typedef CSSGridArgs = sap.ui.core.Control.ControlArgs & {

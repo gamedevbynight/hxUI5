@@ -111,7 +111,7 @@ Default value is <code>Appointments</code>.
 	* @param	sAppointmentItemsHeader New value for property <code>appointmentItemsHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAppointmentItemsHeader( sAppointmentItemsHeader:String):sap.m.PlanningCalendarLegend;
+	public function setAppointmentItemsHeader( ?sAppointmentItemsHeader:String):sap.m.PlanningCalendarLegend;
 
 	/**
 	* Sets a new value for property {@link #getItemsHeader itemsHeader}.
@@ -124,7 +124,7 @@ Default value is <code>Calendar</code>.
 	* @param	sItemsHeader New value for property <code>itemsHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setItemsHeader( sItemsHeader:String):sap.m.PlanningCalendarLegend;
+	public function setItemsHeader( ?sItemsHeader:String):sap.m.PlanningCalendarLegend;
 }
 
 typedef PlanningCalendarLegendArgs = sap.ui.unified.CalendarLegend.CalendarLegendArgs & {

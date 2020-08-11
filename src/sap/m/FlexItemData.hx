@@ -74,7 +74,7 @@ Default value is <code>empty string</code>.
 	/**
 	* Gets current value of property {@link #getMaxWidth maxWidth}.
 
-The maximum height of the flex item.
+The maximum width of the flex item.
 
 Default value is <code>empty string</code>.
 	* @return	Value of property <code>maxWidth</code>
@@ -100,7 +100,7 @@ Default value is <code>auto</code>.
 	/**
 	* Gets current value of property {@link #getMinWidth minWidth}.
 
-The minimum height of the flex item.
+The minimum width of the flex item.
 
 Default value is <code>auto</code>.
 	* @return	Value of property <code>minWidth</code>
@@ -253,12 +253,12 @@ typedef FlexItemDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {
 	@:optional var maxHeight:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
 	/**
-	* The minimum height of the flex item.
+	* The minimum width of the flex item.
 	*/
 	@:optional var minWidth:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
 	/**
-	* The maximum height of the flex item.
+	* The maximum width of the flex item.
 	*/
 	@:optional var maxWidth:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 

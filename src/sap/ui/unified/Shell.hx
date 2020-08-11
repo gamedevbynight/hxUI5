@@ -327,7 +327,7 @@ Default value is <code>true</code>.
 	* @param	bSearchVisible New value for property <code>searchVisible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSearchVisible( bSearchVisible:Bool):sap.ui.unified.Shell;
+	public function setSearchVisible( ?bSearchVisible:Bool):sap.ui.unified.Shell;
 
 	/**
 	* Sets the aggregated {@link #getUser user}.

@@ -67,7 +67,7 @@ Example: <pre>
   });
 </pre>
 	* @param	iLevel The level to which the data is expanded
-	* @return	A reference to the Tree control
+	* @return	Returns <code>this</code> to allow method chaining
 	*/
 	public function expandToLevel( iLevel:Int):sap.m.Tree;
 

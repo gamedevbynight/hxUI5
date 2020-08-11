@@ -650,7 +650,7 @@ Default value is <code>true</code>.
 	* @param	bInstantUpload New value for property <code>instantUpload</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInstantUpload( bInstantUpload:Bool):sap.m.upload.UploadSet;
+	public function setInstantUpload( ?bInstantUpload:Bool):sap.m.upload.UploadSet;
 
 	/**
 	* Sets a new value for property {@link #getMaxFileNameLength maxFileNameLength}.
@@ -718,7 +718,7 @@ Default value is <code>true</code>.
 	* @param	bShowIcons New value for property <code>showIcons</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowIcons( bShowIcons:Bool):sap.m.upload.UploadSet;
+	public function setShowIcons( ?bShowIcons:Bool):sap.m.upload.UploadSet;
 
 	/**
 	* Sets a new value for property {@link #getTerminationEnabled terminationEnabled}.
@@ -731,7 +731,7 @@ Default value is <code>true</code>.
 	* @param	bTerminationEnabled New value for property <code>terminationEnabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTerminationEnabled( bTerminationEnabled:Bool):sap.m.upload.UploadSet;
+	public function setTerminationEnabled( ?bTerminationEnabled:Bool):sap.m.upload.UploadSet;
 
 	/**
 	* Sets the aggregated {@link #getToolbar toolbar}.
@@ -751,7 +751,7 @@ Default value is <code>true</code>.
 	* @param	bUploadEnabled New value for property <code>uploadEnabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUploadEnabled( bUploadEnabled:Bool):sap.m.upload.UploadSet;
+	public function setUploadEnabled( ?bUploadEnabled:Bool):sap.m.upload.UploadSet;
 
 	/**
 	* Sets the aggregated {@link #getUploader uploader}.

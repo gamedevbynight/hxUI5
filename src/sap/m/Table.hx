@@ -52,6 +52,19 @@ This event gets fired when the user pastes content from the clipboard to the tab
 	public function attachPaste( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Table;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:popinChanged popinChanged} event of this <code>sap.m.Table</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.Table</code> itself.
+
+Fired when the table pop-in has changed.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Table</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachPopinChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Table;
+
+	/**
 	* Destroys all the columns in the aggregation {@link #getColumns columns}.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -78,6 +91,16 @@ The passed function and listener object must match the ones used for event regis
 	public function detachPaste( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Table;
 
 	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:popinChanged popinChanged} event of this <code>sap.m.Table</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachPopinChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Table;
+
+	/**
 	* Creates a new subclass of class sap.m.Table with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
 
 <code>oClassInfo</code> might contain the same kind of information as described in {@link sap.m.ListBase.extend}.
@@ -97,6 +120,22 @@ Default value is <code>false</code>.
 	* @return	Value of property <code>alternateRowColors</code>
 	*/
 	public function getAlternateRowColors( ):Bool;
+
+	/**
+	* Gets current value of property {@link #getAutoPopinMode autoPopinMode}.
+
+Enables the auto pop-in behavior for the table control.
+
+If this property is set to <code>true</code>, the table control overwrites the <code>demandPopin</code> and the <code>minScreenWidth</code> properties of the <code>sap.m.Column</code> control. The pop-in behavior depends on the <code>importance</code> property of the <code>sap.m.Column</code> control. Columns configured with this property are moved to the pop-in area in the following order:
+
+<ul> <li>With importance <code>High</code>: moved last</li> <li>With importance <code>Medium</code> or <code>None</code>: moved second</li> <li>With importance <code>Low</code>: moved first</li> </ul>
+
+<b>Note:</b> If this property is changed from <code>true</code> to <code>false</code>, the application must reconfigure the <code>demandPopin</code> and <code>minScreenWidth</code> properties of the <code>sap.m.Column</code> control by itself. There is no automatic mechanism that restores the old values if <code>autoPopinMode</code> was set from <code>false</code> to <code>true</code> before.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>autoPopinMode</code>
+	*/
+	public function getAutoPopinMode( ):Bool;
 
 	/**
 	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
@@ -138,6 +177,16 @@ Default value is <code>true</code>.
 	* @return	Value of property <code>fixedLayout</code>
 	*/
 	public function getFixedLayout( ):Bool;
+
+	/**
+	* Gets current value of property {@link #getHiddenInPopin hiddenInPopin}.
+
+Defines which columns should be hidden instead of moved into the pop-in area depending on their importance. See {@link sap.m.Column#getImportance}
+
+<b>Note:</b> To hide columns based on their importance, it's mandatory to set <code>demandPopin="true"</code> for the <code>sap.m.Column</code> control or set <code>autoPopinMode="true"</code> for the <code>sap.m.Table</code> control. See {@link topic:38855e06486f4910bfa6f4485f7c2bac Configuring Responsive Behavior of a Table} and {@link sap.m.Table#getAutoPopinMode}.
+	* @return	Value of property <code>hiddenInPopin</code>
+	*/
+	public function getHiddenInPopin( ):Array<sap.ui.core.Priority>;
 
 	/**
 	* Returns a metadata object for class sap.m.Table.
@@ -208,7 +257,26 @@ Default value is <code>false</code>.
 	* @param	bAlternateRowColors New value for property <code>alternateRowColors</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAlternateRowColors( bAlternateRowColors:Bool):sap.m.Table;
+	public function setAlternateRowColors( ?bAlternateRowColors:Bool):sap.m.Table;
+
+	/**
+	* Sets a new value for property {@link #getAutoPopinMode autoPopinMode}.
+
+Enables the auto pop-in behavior for the table control.
+
+If this property is set to <code>true</code>, the table control overwrites the <code>demandPopin</code> and the <code>minScreenWidth</code> properties of the <code>sap.m.Column</code> control. The pop-in behavior depends on the <code>importance</code> property of the <code>sap.m.Column</code> control. Columns configured with this property are moved to the pop-in area in the following order:
+
+<ul> <li>With importance <code>High</code>: moved last</li> <li>With importance <code>Medium</code> or <code>None</code>: moved second</li> <li>With importance <code>Low</code>: moved first</li> </ul>
+
+<b>Note:</b> If this property is changed from <code>true</code> to <code>false</code>, the application must reconfigure the <code>demandPopin</code> and <code>minScreenWidth</code> properties of the <code>sap.m.Column</code> control by itself. There is no automatic mechanism that restores the old values if <code>autoPopinMode</code> was set from <code>false</code> to <code>true</code> before.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bAutoPopinMode New value for property <code>autoPopinMode</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setAutoPopinMode( ?bAutoPopinMode:Bool):sap.m.Table;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
@@ -221,7 +289,7 @@ Default value is <code>Translucent</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.BackgroundDesign):sap.m.Table;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.BackgroundDesign):sap.m.Table;
 
 	/**
 	* Sets a new value for property {@link #getContextualWidth contextualWidth}.
@@ -236,7 +304,7 @@ Default value is <code>Inherit</code>.
 	* @param	sContextualWidth New value for property <code>contextualWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContextualWidth( sContextualWidth:String):sap.m.Table;
+	public function setContextualWidth( ?sContextualWidth:String):sap.m.Table;
 
 	/**
 	* Sets a new value for property {@link #getFixedLayout fixedLayout}.
@@ -251,7 +319,20 @@ Default value is <code>true</code>.
 	* @param	bFixedLayout New value for property <code>fixedLayout</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFixedLayout( bFixedLayout:Bool):sap.m.Table;
+	public function setFixedLayout( ?bFixedLayout:Bool):sap.m.Table;
+
+	/**
+	* Sets a new value for property {@link #getHiddenInPopin hiddenInPopin}.
+
+Defines which columns should be hidden instead of moved into the pop-in area depending on their importance. See {@link sap.m.Column#getImportance}
+
+<b>Note:</b> To hide columns based on their importance, it's mandatory to set <code>demandPopin="true"</code> for the <code>sap.m.Column</code> control or set <code>autoPopinMode="true"</code> for the <code>sap.m.Table</code> control. See {@link topic:38855e06486f4910bfa6f4485f7c2bac Configuring Responsive Behavior of a Table} and {@link sap.m.Table#getAutoPopinMode}.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sHiddenInPopin New value for property <code>hiddenInPopin</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setHiddenInPopin( sHiddenInPopin:Array<sap.ui.core.Priority>):sap.m.Table;
 
 	/**
 	* Sets a new value for property {@link #getPopinLayout popinLayout}.
@@ -264,7 +345,7 @@ Default value is <code>Block</code>.
 	* @param	sPopinLayout New value for property <code>popinLayout</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPopinLayout( sPopinLayout:sap.m.PopinLayout):sap.m.Table;
+	public function setPopinLayout( ?sPopinLayout:sap.m.PopinLayout):sap.m.Table;
 
 	/**
 	* Sets a new value for property {@link #getShowOverlay showOverlay}.
@@ -277,7 +358,7 @@ Default value is <code>false</code>.
 	* @param	bShowOverlay New value for property <code>showOverlay</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowOverlay( bShowOverlay:Bool):sap.m.Table;
+	public function setShowOverlay( ?bShowOverlay:Bool):sap.m.Table;
 }
 
 typedef TableArgs = sap.m.ListBase.ListBaseArgs & {
@@ -316,6 +397,24 @@ For example, by setting the <code>contextualWidth</code> property to 600px or Ta
 	*/
 	@:optional var contextualWidth:String;
 
+	/**
+	* Enables the auto pop-in behavior for the table control.
+
+If this property is set to <code>true</code>, the table control overwrites the <code>demandPopin</code> and the <code>minScreenWidth</code> properties of the <code>sap.m.Column</code> control. The pop-in behavior depends on the <code>importance</code> property of the <code>sap.m.Column</code> control. Columns configured with this property are moved to the pop-in area in the following order:
+
+<ul> <li>With importance <code>High</code>: moved last</li> <li>With importance <code>Medium</code> or <code>None</code>: moved second</li> <li>With importance <code>Low</code>: moved first</li> </ul>
+
+<b>Note:</b> If this property is changed from <code>true</code> to <code>false</code>, the application must reconfigure the <code>demandPopin</code> and <code>minScreenWidth</code> properties of the <code>sap.m.Column</code> control by itself. There is no automatic mechanism that restores the old values if <code>autoPopinMode</code> was set from <code>false</code> to <code>true</code> before.
+	*/
+	@:optional var autoPopinMode:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Defines which columns should be hidden instead of moved into the pop-in area depending on their importance. See {@link sap.m.Column#getImportance}
+
+<b>Note:</b> To hide columns based on their importance, it's mandatory to set <code>demandPopin="true"</code> for the <code>sap.m.Column</code> control or set <code>autoPopinMode="true"</code> for the <code>sap.m.Table</code> control. See {@link topic:38855e06486f4910bfa6f4485f7c2bac Configuring Responsive Behavior of a Table} and {@link sap.m.Table#getAutoPopinMode}.
+	*/
+	@:optional var hiddenInPopin:Array<haxe.extern.EitherType<String,sap.ui.core.Priority>>;
+
     /**
     * Defines the columns of the table.
     */
@@ -330,4 +429,9 @@ For example, by setting the <code>contextualWidth</code> property to 600px or Ta
 	* This event gets fired when the user pastes content from the clipboard to the table. Pasting can be done via the context menu or the standard paste keyboard shortcut, if the focus is inside the table.
 	*/
 	@:optional var paste:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* Fired when the table pop-in has changed.
+	*/
+	@:optional var popinChanged:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

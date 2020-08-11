@@ -358,7 +358,7 @@ Default value is <code>false</code>.
 	* @param	bAllowMultiSelect New value for property <code>allowMultiSelect</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAllowMultiSelect( bAllowMultiSelect:Bool):sap.ui.commons.ListBox;
+	public function setAllowMultiSelect( ?bAllowMultiSelect:Bool):sap.ui.commons.ListBox;
 
 	/**
 	* Sets a new value for property {@link #getDisplayIcons displayIcons}.
@@ -371,7 +371,7 @@ Default value is <code>false</code>.
 	* @param	bDisplayIcons New value for property <code>displayIcons</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayIcons( bDisplayIcons:Bool):sap.ui.commons.ListBox;
+	public function setDisplayIcons( ?bDisplayIcons:Bool):sap.ui.commons.ListBox;
 
 	/**
 	* Sets a new value for property {@link #getDisplaySecondaryValues displaySecondaryValues}.
@@ -384,7 +384,7 @@ Default value is <code>false</code>.
 	* @param	bDisplaySecondaryValues New value for property <code>displaySecondaryValues</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplaySecondaryValues( bDisplaySecondaryValues:Bool):sap.ui.commons.ListBox;
+	public function setDisplaySecondaryValues( ?bDisplaySecondaryValues:Bool):sap.ui.commons.ListBox;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -397,7 +397,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.commons.ListBox;
+	public function setEditable( ?bEditable:Bool):sap.ui.commons.ListBox;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -410,7 +410,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.ListBox;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.ListBox;
 
 	/**
 	* Sets the height of this ListBox in CSS units.
@@ -467,7 +467,7 @@ Default value is <code>Begin</code>.
 	* @param	sSecondaryValueTextAlign New value for property <code>secondaryValueTextAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSecondaryValueTextAlign( sSecondaryValueTextAlign:sap.ui.core.TextAlign):sap.ui.commons.ListBox;
+	public function setSecondaryValueTextAlign( ?sSecondaryValueTextAlign:sap.ui.core.TextAlign):sap.ui.commons.ListBox;
 
 	/**
 	* Sets the zero-based index of the currently selected item. This method removes any previous selections. When the given index is invalid, the call is ignored.
@@ -501,7 +501,7 @@ Default value is <code>Begin</code>.
 	* @param	sValueTextAlign New value for property <code>valueTextAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueTextAlign( sValueTextAlign:sap.ui.core.TextAlign):sap.ui.commons.ListBox;
+	public function setValueTextAlign( ?sValueTextAlign:sap.ui.core.TextAlign):sap.ui.commons.ListBox;
 
 	/**
 	* Makes the ListBox render with a height that allows it to display exactly the given number of items.

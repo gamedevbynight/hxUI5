@@ -129,7 +129,7 @@ Default value is <code>true</code>.
 	* @param	bShowTitle New value for property <code>showTitle</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowTitle( bShowTitle:Bool):sap.uxap.ObjectPageSection;
+	public function setShowTitle( ?bShowTitle:Bool):sap.uxap.ObjectPageSection;
 
 	/**
 	* Sets a new value for property {@link #getTitleUppercase titleUppercase}.
@@ -142,7 +142,7 @@ Default value is <code>true</code>.
 	* @param	bTitleUppercase New value for property <code>titleUppercase</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleUppercase( bTitleUppercase:Bool):sap.uxap.ObjectPageSection;
+	public function setTitleUppercase( ?bTitleUppercase:Bool):sap.uxap.ObjectPageSection;
 }
 
 typedef ObjectPageSectionArgs = sap.uxap.ObjectPageSectionBase.ObjectPageSectionBaseArgs & {

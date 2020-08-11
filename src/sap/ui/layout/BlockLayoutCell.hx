@@ -192,7 +192,7 @@ Default value is <code>Begin</code>.
 	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleAlignment( sTitleAlignment:sap.ui.core.HorizontalAlign):sap.ui.layout.BlockLayoutCell;
+	public function setTitleAlignment( ?sTitleAlignment:sap.ui.core.HorizontalAlign):sap.ui.layout.BlockLayoutCell;
 
 	/**
 	* Sets a new value for property {@link #getTitleLevel titleLevel}.
@@ -205,7 +205,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleLevel New value for property <code>titleLevel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleLevel( sTitleLevel:sap.ui.core.TitleLevel):sap.ui.layout.BlockLayoutCell;
+	public function setTitleLevel( ?sTitleLevel:sap.ui.core.TitleLevel):sap.ui.layout.BlockLayoutCell;
 
 	/**
 	* Sets the aggregated {@link #getTitleLink titleLink}.

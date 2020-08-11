@@ -224,7 +224,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.commons.SplitterSize):sap.ui.commons.Splitter;
+	public function setHeight( ?sHeight:sap.ui.commons.SplitterSize):sap.ui.commons.Splitter;
 
 	/**
 	* Sets a new value for property {@link #getMinSizeFirstPane minSizeFirstPane}.
@@ -237,7 +237,7 @@ Default value is <code>0%</code>.
 	* @param	sMinSizeFirstPane New value for property <code>minSizeFirstPane</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinSizeFirstPane( sMinSizeFirstPane:sap.ui.core.Percentage):sap.ui.commons.Splitter;
+	public function setMinSizeFirstPane( ?sMinSizeFirstPane:sap.ui.core.Percentage):sap.ui.commons.Splitter;
 
 	/**
 	* Sets a new value for property {@link #getMinSizeSecondPane minSizeSecondPane}.
@@ -250,7 +250,7 @@ Default value is <code>0%</code>.
 	* @param	sMinSizeSecondPane New value for property <code>minSizeSecondPane</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinSizeSecondPane( sMinSizeSecondPane:sap.ui.core.Percentage):sap.ui.commons.Splitter;
+	public function setMinSizeSecondPane( ?sMinSizeSecondPane:sap.ui.core.Percentage):sap.ui.commons.Splitter;
 
 	/**
 	* Sets a new value for property {@link #getShowScrollBars showScrollBars}.
@@ -263,7 +263,7 @@ Default value is <code>true</code>.
 	* @param	bShowScrollBars New value for property <code>showScrollBars</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowScrollBars( bShowScrollBars:Bool):sap.ui.commons.Splitter;
+	public function setShowScrollBars( ?bShowScrollBars:Bool):sap.ui.commons.Splitter;
 
 	/**
 	* Sets a new value for property {@link #getSplitterBarVisible splitterBarVisible}.
@@ -276,7 +276,7 @@ Default value is <code>true</code>.
 	* @param	bSplitterBarVisible New value for property <code>splitterBarVisible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSplitterBarVisible( bSplitterBarVisible:Bool):sap.ui.commons.Splitter;
+	public function setSplitterBarVisible( ?bSplitterBarVisible:Bool):sap.ui.commons.Splitter;
 
 	/**
 	* Sets a new value for property {@link #getSplitterOrientation splitterOrientation}.
@@ -289,7 +289,7 @@ Default value is <code>Vertical</code>.
 	* @param	sSplitterOrientation New value for property <code>splitterOrientation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSplitterOrientation( sSplitterOrientation:sap.ui.core.Orientation):sap.ui.commons.Splitter;
+	public function setSplitterOrientation( ?sSplitterOrientation:sap.ui.core.Orientation):sap.ui.commons.Splitter;
 
 	/**
 	* Sets a new value for property {@link #getSplitterPosition splitterPosition}.
@@ -302,7 +302,7 @@ Default value is <code>50%</code>.
 	* @param	sSplitterPosition New value for property <code>splitterPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSplitterPosition( sSplitterPosition:sap.ui.core.Percentage):sap.ui.commons.Splitter;
+	public function setSplitterPosition( ?sSplitterPosition:sap.ui.core.Percentage):sap.ui.commons.Splitter;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -315,7 +315,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.commons.SplitterSize):sap.ui.commons.Splitter;
+	public function setWidth( ?sWidth:sap.ui.commons.SplitterSize):sap.ui.commons.Splitter;
 }
 
 typedef SplitterArgs = sap.ui.core.Control.ControlArgs & {

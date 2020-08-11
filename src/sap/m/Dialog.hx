@@ -336,7 +336,9 @@ Default value is <code>true</code>.
 	/**
 	* Gets current value of property {@link #getState state}.
 
-Affects the <code>icon</code> and the <code>title</code> color. If other than <code>none</code> is set, a predefined icon will be added to the Dialog. Setting the <code>icon</code> property will overwrite the predefined icon. The default value is <code>none</code> which doesn't add any icon to the Dialog control. This property is by now only supported by the blue crystal theme.
+Affects the <code>icon</code> and the <code>title</code> color.
+
+If a value other than <code>None</code> is set, a predefined icon will be added to the Dialog. Setting the <code>icon</code> property will overwrite the predefined icon.
 
 Default value is <code>None</code>.
 	* @return	Value of property <code>state</code>
@@ -430,10 +432,12 @@ Default value is <code>true</code>.
 	public function insertContent( oContent:sap.ui.core.Control, iIndex:Int):sap.m.Dialog;
 
 	/**
-	* The method checks if the Dialog is open. It returns <code>true</code> when the Dialog is currently open (this includes opening and closing animations), otherwise it returns <code>false</code>.
-	* @return	boolean
+	* The method checks if the Dialog is open.
+
+It returns <code>true</code> when the Dialog is currently open (this includes opening and closing animations), otherwise it returns <code>false</code>.
+	* @return	Whether the dialog is open.
 	*/
-	public function isOpen( ):Dynamic;
+	public function isOpen( ):Bool;
 
 	/**
 	* Open the dialog.
@@ -523,7 +527,7 @@ Default value is <code>true</code>.
 	* @param	bCloseOnNavigation New value for property <code>closeOnNavigation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCloseOnNavigation( bCloseOnNavigation:Bool):sap.m.Dialog;
+	public function setCloseOnNavigation( ?bCloseOnNavigation:Bool):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getContentHeight contentHeight}.
@@ -565,7 +569,7 @@ Default value is <code>false</code>.
 	* @param	bDraggable New value for property <code>draggable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDraggable( bDraggable:Bool):sap.m.Dialog;
+	public function setDraggable( ?bDraggable:Bool):sap.m.Dialog;
 
 	/**
 	* Sets the aggregated {@link #getEndButton endButton}.
@@ -596,7 +600,18 @@ Default value is <code>true</code>.
 	* @param	bHorizontalScrolling New value for property <code>horizontalScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHorizontalScrolling( bHorizontalScrolling:Bool):sap.m.Dialog;
+	public function setHorizontalScrolling( ?bHorizontalScrolling:Bool):sap.m.Dialog;
+
+	/**
+	* Sets a new value for property {@link #getIcon icon}.
+
+Icon displayed in the Dialog header. This <code>icon</code> is invisible on the iOS platform and it is density-aware. You can use the density convention (@2, @1.5, etc.) to provide higher resolution image for higher density screen.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sIcon New value for property <code>icon</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setIcon( sIcon:sap.ui.core.URI):sap.m.Dialog;
 	@:overload( function(oInitialFocus:sap.ui.core.ID):sap.m.Dialog{ })
 
 	/**
@@ -617,7 +632,7 @@ Default value is <code>false</code>.
 	* @param	bResizable New value for property <code>resizable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setResizable( bResizable:Bool):sap.m.Dialog;
+	public function setResizable( ?bResizable:Bool):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getShowHeader showHeader}.
@@ -630,7 +645,22 @@ Default value is <code>true</code>.
 	* @param	bShowHeader New value for property <code>showHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHeader( bShowHeader:Bool):sap.m.Dialog;
+	public function setShowHeader( ?bShowHeader:Bool):sap.m.Dialog;
+
+	/**
+	* Sets a new value for property {@link #getState state}.
+
+Affects the <code>icon</code> and the <code>title</code> color.
+
+If a value other than <code>None</code> is set, a predefined icon will be added to the Dialog. Setting the <code>icon</code> property will overwrite the predefined icon.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>None</code>.
+	* @param	sState New value for property <code>state</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setState( ?sState:sap.ui.core.ValueState):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getStretch stretch}.
@@ -643,7 +673,7 @@ Default value is <code>false</code>.
 	* @param	bStretch New value for property <code>stretch</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStretch( bStretch:Bool):sap.m.Dialog;
+	public function setStretch( ?bStretch:Bool):sap.m.Dialog;
 
 	/**
 	* Sets the aggregated {@link #getSubHeader subHeader}.
@@ -674,7 +704,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.Dialog;
+	public function setTitleAlignment( ?sTitleAlignment:sap.m.TitleAlignment):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -687,7 +717,7 @@ Default value is <code>Standard</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.DialogType):sap.m.Dialog;
+	public function setType( ?sType:sap.m.DialogType):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getVerticalScrolling verticalScrolling}.
@@ -700,7 +730,7 @@ Default value is <code>true</code>.
 	* @param	bVerticalScrolling New value for property <code>verticalScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVerticalScrolling( bVerticalScrolling:Bool):sap.m.Dialog;
+	public function setVerticalScrolling( ?bVerticalScrolling:Bool):sap.m.Dialog;
 }
 
 typedef DialogArgs = sap.ui.core.Control.ControlArgs & {
@@ -726,7 +756,9 @@ typedef DialogArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var type:haxe.extern.EitherType<String,sap.m.DialogType>;
 
 	/**
-	* Affects the <code>icon</code> and the <code>title</code> color. If other than <code>none</code> is set, a predefined icon will be added to the Dialog. Setting the <code>icon</code> property will overwrite the predefined icon. The default value is <code>none</code> which doesn't add any icon to the Dialog control. This property is by now only supported by the blue crystal theme.
+	* Affects the <code>icon</code> and the <code>title</code> color.
+
+If a value other than <code>None</code> is set, a predefined icon will be added to the Dialog. Setting the <code>icon</code> property will overwrite the predefined icon.
 	*/
 	@:optional var state:haxe.extern.EitherType<String,sap.ui.core.ValueState>;
 

@@ -214,7 +214,7 @@ Default value is <code>Standard</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.PageBackgroundDesign):sap.f.DynamicPage;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.PageBackgroundDesign):sap.f.DynamicPage;
 
 	/**
 	* Sets the aggregated {@link #getContent content}.
@@ -236,7 +236,7 @@ Default value is <code>false</code>.
 	* @param	bFitContent New value for property <code>fitContent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFitContent( bFitContent:Bool):sap.f.DynamicPage;
+	public function setFitContent( ?bFitContent:Bool):sap.f.DynamicPage;
 
 	/**
 	* Sets the aggregated {@link #getFooter footer}.
@@ -267,7 +267,7 @@ Default value is <code>true</code>.
 	* @param	bHeaderExpanded New value for property <code>headerExpanded</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderExpanded( bHeaderExpanded:Bool):sap.f.DynamicPage;
+	public function setHeaderExpanded( ?bHeaderExpanded:Bool):sap.f.DynamicPage;
 
 	/**
 	* Sets the aggregated {@link #getLandmarkInfo landmarkInfo}.
@@ -289,7 +289,7 @@ Default value is <code>false</code>.
 	* @param	bPreserveHeaderStateOnScroll New value for property <code>preserveHeaderStateOnScroll</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPreserveHeaderStateOnScroll( bPreserveHeaderStateOnScroll:Bool):sap.f.DynamicPage;
+	public function setPreserveHeaderStateOnScroll( ?bPreserveHeaderStateOnScroll:Bool):sap.f.DynamicPage;
 
 	/**
 	* Sets a new value for property {@link #getShowFooter showFooter}.
@@ -302,7 +302,7 @@ Default value is <code>false</code>.
 	* @param	bShowFooter New value for property <code>showFooter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowFooter( bShowFooter:Bool):sap.f.DynamicPage;
+	public function setShowFooter( ?bShowFooter:Bool):sap.f.DynamicPage;
 	@:overload( function(oStickySubheaderProvider:sap.ui.core.ID):sap.f.DynamicPage{ })
 
 	/**
@@ -332,7 +332,7 @@ Default value is <code>true</code>.
 	* @param	bToggleHeaderOnTitleClick New value for property <code>toggleHeaderOnTitleClick</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setToggleHeaderOnTitleClick( bToggleHeaderOnTitleClick:Bool):sap.f.DynamicPage;
+	public function setToggleHeaderOnTitleClick( ?bToggleHeaderOnTitleClick:Bool):sap.f.DynamicPage;
 }
 
 typedef DynamicPageArgs = sap.ui.core.Control.ControlArgs & {

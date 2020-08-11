@@ -84,7 +84,7 @@ The default values are: <ul> <li>arrangements: A new Opa instance</li> <li>actio
 	public static function stopQueue( ):Void;
 
 	/**
-	* Queues up a waitFor command for Opa. The Queue will not be emptied until {@link sap.ui.test.Opa.emptyQueue} is called. If you are using {@link sap.ui.test.opaQunit}, emptyQueue will be called by the wrapped tests.
+	* Queues up a waitFor command for Opa. The Queue will not be emptied until {@link sap.ui.test.Opa.emptyQueue} is called. If you are using {@link module:sap/ui/test/opaQunit}, emptyQueue will be called by the wrapped tests.
 
 If you are using Opa5, waitFor takes additional parameters. They can be found here: {@link sap.ui.test.Opa5#waitFor}. Waits for a check condition to return true, in which case a success function will be called. If the timeout is reached before the check returns true, an error function will be called.
 	* @param	options These contain check, success and error functions

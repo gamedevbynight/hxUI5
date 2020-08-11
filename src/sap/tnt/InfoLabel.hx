@@ -121,7 +121,7 @@ Default value is <code>7</code>.
 	* @param	iColorScheme New value for property <code>colorScheme</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColorScheme( iColorScheme:Int):sap.tnt.InfoLabel;
+	public function setColorScheme( ?iColorScheme:Int):sap.tnt.InfoLabel;
 
 	/**
 	* Sets a new value for property {@link #getDisplayOnly displayOnly}.
@@ -134,7 +134,7 @@ Default value is <code>false</code>.
 	* @param	bDisplayOnly New value for property <code>displayOnly</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayOnly( bDisplayOnly:Bool):sap.tnt.InfoLabel;
+	public function setDisplayOnly( ?bDisplayOnly:Bool):sap.tnt.InfoLabel;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -144,10 +144,10 @@ Defines the icon to be displayed as graphical element within the <code>InfoLabel
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon New value for property <code>icon</code>
+	* @param	sIcon= New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.tnt.InfoLabel;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.tnt.InfoLabel;
 
 	/**
 	* Sets a new value for property {@link #getRenderMode renderMode}.
@@ -160,7 +160,7 @@ Default value is <code>Loose</code>.
 	* @param	sRenderMode New value for property <code>renderMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRenderMode( sRenderMode:sap.tnt.RenderMode):sap.tnt.InfoLabel;
+	public function setRenderMode( ?sRenderMode:sap.tnt.RenderMode):sap.tnt.InfoLabel;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -173,7 +173,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.tnt.InfoLabel;
+	public function setText( ?sText:String):sap.tnt.InfoLabel;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -186,7 +186,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.tnt.InfoLabel;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.tnt.InfoLabel;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

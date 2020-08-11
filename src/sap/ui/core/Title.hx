@@ -76,7 +76,7 @@ Default value is <code>false</code>.
 	* @param	bEmphasized New value for property <code>emphasized</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEmphasized( bEmphasized:Bool):sap.ui.core.Title;
+	public function setEmphasized( ?bEmphasized:Bool):sap.ui.core.Title;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -102,7 +102,7 @@ Default value is <code>Auto</code>.
 	* @param	sLevel New value for property <code>level</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLevel( sLevel:sap.ui.core.TitleLevel):sap.ui.core.Title;
+	public function setLevel( ?sLevel:sap.ui.core.TitleLevel):sap.ui.core.Title;
 
 	/**
 	* Sets a new value for property {@link #getText text}.

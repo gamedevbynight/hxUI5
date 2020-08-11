@@ -3,7 +3,7 @@ package sap.ui.commons.layout;
 @:native("sap.ui.commons.layout.VerticalLayout")
 
 /**
-* In this layout the elemnts are orderd one below the other
+* In this layout the elements are ordered one below the other
 */
 extern class VerticalLayout extends sap.ui.layout.VerticalLayout
 {

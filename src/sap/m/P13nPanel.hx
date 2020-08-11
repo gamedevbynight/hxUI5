@@ -271,7 +271,7 @@ Default value is <code>true</code>.
 	* @param	bVerticalScrolling New value for property <code>verticalScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVerticalScrolling( bVerticalScrolling:Bool):sap.m.P13nPanel;
+	public function setVerticalScrolling( ?bVerticalScrolling:Bool):sap.m.P13nPanel;
 
 	/**
 	* Unbinds aggregation {@link #getItems items} from model data.

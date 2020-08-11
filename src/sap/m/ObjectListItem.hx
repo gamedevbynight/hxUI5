@@ -305,7 +305,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.ObjectListItem;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.ObjectListItem;
 
 	/**
 	* Sets a new value for property {@link #getIntro intro}.
@@ -329,7 +329,7 @@ Default value is <code>Inherit</code>.
 	* @param	sIntroTextDirection New value for property <code>introTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntroTextDirection( sIntroTextDirection:sap.ui.core.TextDirection):sap.m.ObjectListItem;
+	public function setIntroTextDirection( ?sIntroTextDirection:sap.ui.core.TextDirection):sap.m.ObjectListItem;
 
 	/**
 	* Sets the visibility value of the Favorite marker.
@@ -374,7 +374,7 @@ Default value is <code>None</code>.
 	* @param	sNumberState New value for property <code>numberState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNumberState( sNumberState:sap.ui.core.ValueState):sap.m.ObjectListItem;
+	public function setNumberState( ?sNumberState:sap.ui.core.ValueState):sap.m.ObjectListItem;
 
 	/**
 	* Sets a new value for property {@link #getNumberTextDirection numberTextDirection}.
@@ -387,7 +387,7 @@ Default value is <code>Inherit</code>.
 	* @param	sNumberTextDirection New value for property <code>numberTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNumberTextDirection( sNumberTextDirection:sap.ui.core.TextDirection):sap.m.ObjectListItem;
+	public function setNumberTextDirection( ?sNumberTextDirection:sap.ui.core.TextDirection):sap.m.ObjectListItem;
 
 	/**
 	* Sets a new value for property {@link #getNumberUnit numberUnit}.
@@ -436,7 +436,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTitleTextDirection New value for property <code>titleTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleTextDirection( sTitleTextDirection:sap.ui.core.TextDirection):sap.m.ObjectListItem;
+	public function setTitleTextDirection( ?sTitleTextDirection:sap.ui.core.TextDirection):sap.m.ObjectListItem;
 }
 
 typedef ObjectListItemArgs = sap.m.ListItemBase.ListItemBaseArgs & {

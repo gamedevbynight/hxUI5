@@ -111,7 +111,7 @@ Default value is <code>120px</code>.
 	* @param	sColumnWidth New value for property <code>columnWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnWidth( sColumnWidth:sap.ui.core.CSSSize):sap.ui.unified.CalendarLegend;
+	public function setColumnWidth( ?sColumnWidth:sap.ui.core.CSSSize):sap.ui.unified.CalendarLegend;
 
 	/**
 	* Sets a new value for property {@link #getStandardItems standardItems}.
@@ -124,7 +124,7 @@ Default value is <code>Today,Selected,WorkingDay,NonWorkingDay</code>.
 	* @param	sStandardItems New value for property <code>standardItems</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStandardItems( sStandardItems:Array<String>):sap.ui.unified.CalendarLegend;
+	public function setStandardItems( ?sStandardItems:Array<String>):sap.ui.unified.CalendarLegend;
 }
 
 typedef CalendarLegendArgs = sap.ui.core.Control.ControlArgs & {

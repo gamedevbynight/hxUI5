@@ -1,6 +1,5 @@
 package sap.ui.core.format.numberformat;
 
-@:native("sap.ui.core.format.NumberFormat.RoundingMode")
 @:enum extern abstract RoundingMode(String)
 {
     /**

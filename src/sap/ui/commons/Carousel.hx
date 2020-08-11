@@ -210,7 +210,7 @@ Default value is <code>500</code>.
 	* @param	iAnimationDuration New value for property <code>animationDuration</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAnimationDuration( iAnimationDuration:Int):sap.ui.commons.Carousel;
+	public function setAnimationDuration( ?iAnimationDuration:Int):sap.ui.commons.Carousel;
 
 	/**
 	* Sets a new value for property {@link #getDefaultItemHeight defaultItemHeight}.
@@ -223,7 +223,7 @@ Default value is <code>150</code>.
 	* @param	iDefaultItemHeight New value for property <code>defaultItemHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultItemHeight( iDefaultItemHeight:Int):sap.ui.commons.Carousel;
+	public function setDefaultItemHeight( ?iDefaultItemHeight:Int):sap.ui.commons.Carousel;
 
 	/**
 	* Sets a new value for property {@link #getDefaultItemWidth defaultItemWidth}.
@@ -236,7 +236,7 @@ Default value is <code>150</code>.
 	* @param	iDefaultItemWidth New value for property <code>defaultItemWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultItemWidth( iDefaultItemWidth:Int):sap.ui.commons.Carousel;
+	public function setDefaultItemWidth( ?iDefaultItemWidth:Int):sap.ui.commons.Carousel;
 
 	/**
 	* Setter for property <code>firstVisibleIndex</code>.
@@ -258,7 +258,7 @@ Default value is <code>22</code>.
 	* @param	iHandleSize New value for property <code>handleSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHandleSize( iHandleSize:Int):sap.ui.commons.Carousel;
+	public function setHandleSize( ?iHandleSize:Int):sap.ui.commons.Carousel;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -282,7 +282,7 @@ Default value is <code>horizontal</code>.
 	* @param	sOrientation New value for property <code>orientation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOrientation( sOrientation:sap.ui.commons.enums.Orientation):sap.ui.commons.Carousel;
+	public function setOrientation( ?sOrientation:sap.ui.commons.enums.Orientation):sap.ui.commons.Carousel;
 
 	/**
 	* Sets a new value for property {@link #getVisibleItems visibleItems}.

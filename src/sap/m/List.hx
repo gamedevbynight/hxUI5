@@ -50,7 +50,7 @@ Default value is <code>Solid</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.BackgroundDesign):sap.m.List;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.BackgroundDesign):sap.m.List;
 }
 
 typedef ListArgs = sap.m.ListBase.ListBaseArgs & {

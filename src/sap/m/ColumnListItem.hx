@@ -112,7 +112,7 @@ Default value is <code>Inherit</code>.
 	* @param	sVAlign New value for property <code>vAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVAlign( sVAlign:sap.ui.core.VerticalAlign):sap.m.ColumnListItem;
+	public function setVAlign( ?sVAlign:sap.ui.core.VerticalAlign):sap.m.ColumnListItem;
 
 	/**
 	* Unbinds aggregation {@link #getCells cells} from model data.

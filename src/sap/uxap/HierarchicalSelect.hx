@@ -50,7 +50,7 @@ Default value is <code>false</code>.
 	* @param	bUpperCase New value for property <code>upperCase</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUpperCase( bUpperCase:Bool):sap.uxap.HierarchicalSelect;
+	public function setUpperCase( ?bUpperCase:Bool):sap.uxap.HierarchicalSelect;
 }
 
 typedef HierarchicalSelectArgs = sap.m.Select.SelectArgs & {

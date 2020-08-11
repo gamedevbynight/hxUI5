@@ -598,7 +598,7 @@ Default value is <code>false</code>.
 	* @param	bEnableAppointmentsCreate New value for property <code>enableAppointmentsCreate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableAppointmentsCreate( bEnableAppointmentsCreate:Bool):sap.m.SinglePlanningCalendar;
+	public function setEnableAppointmentsCreate( ?bEnableAppointmentsCreate:Bool):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getEnableAppointmentsDragAndDrop enableAppointmentsDragAndDrop}.
@@ -613,7 +613,7 @@ Default value is <code>false</code>.
 	* @param	bEnableAppointmentsDragAndDrop New value for property <code>enableAppointmentsDragAndDrop</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableAppointmentsDragAndDrop( bEnableAppointmentsDragAndDrop:Bool):sap.m.SinglePlanningCalendar;
+	public function setEnableAppointmentsDragAndDrop( ?bEnableAppointmentsDragAndDrop:Bool):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getEnableAppointmentsResize enableAppointmentsResize}.
@@ -630,7 +630,7 @@ Default value is <code>false</code>.
 	* @param	bEnableAppointmentsResize New value for property <code>enableAppointmentsResize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableAppointmentsResize( bEnableAppointmentsResize:Bool):sap.m.SinglePlanningCalendar;
+	public function setEnableAppointmentsResize( ?bEnableAppointmentsResize:Bool):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getEndHour endHour}.
@@ -643,7 +643,7 @@ Default value is <code>24</code>.
 	* @param	iEndHour New value for property <code>endHour</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEndHour( iEndHour:Int):sap.m.SinglePlanningCalendar;
+	public function setEndHour( ?iEndHour:Int):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getFullDay fullDay}.
@@ -656,7 +656,7 @@ Default value is <code>true</code>.
 	* @param	bFullDay New value for property <code>fullDay</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFullDay( bFullDay:Bool):sap.m.SinglePlanningCalendar;
+	public function setFullDay( ?bFullDay:Bool):sap.m.SinglePlanningCalendar;
 	@:overload( function(oLegend:sap.ui.core.ID):sap.m.SinglePlanningCalendar{ })
 
 	/**
@@ -696,7 +696,7 @@ Default value is <code>0</code>.
 	* @param	iStartHour New value for property <code>startHour</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStartHour( iStartHour:Int):sap.m.SinglePlanningCalendar;
+	public function setStartHour( ?iStartHour:Int):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getStickyMode stickyMode}.
@@ -711,7 +711,7 @@ Default value is <code>None</code>.
 	* @param	sStickyMode New value for property <code>stickyMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStickyMode( sStickyMode:sap.m.PlanningCalendarStickyMode):sap.m.SinglePlanningCalendar;
+	public function setStickyMode( ?sStickyMode:sap.m.PlanningCalendarStickyMode):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -724,7 +724,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.SinglePlanningCalendar;
+	public function setTitle( ?sTitle:String):sap.m.SinglePlanningCalendar;
 }
 
 typedef SinglePlanningCalendarArgs = sap.ui.core.Control.ControlArgs & {

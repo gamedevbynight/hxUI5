@@ -19,19 +19,19 @@ public function new():Void;
 
 	/**
 	* Returns an Element/Control by its ID in the context of the Fragment with the given ID
-	* @param	sFragmentId null
-	* @param	sId null
+	* @param	sFragmentId ID of the Fragment from which to retrieve the Control
+	* @param	sId ID of the Element/Control to retrieve
 	* @return	Element by its ID and Fragment ID
 	*/
 	public static function byId( sFragmentId:String, sId:String):Dynamic;
 
 	/**
-	* Returns the ID which a Control with the given ID in the context of the Fragment with the given ID would have
-	* @param	sFragmentId null
-	* @param	sId null
+	* Returns the ID which a Control with the given ID in the context of the Fragment with the given ID would have.
+	* @param	sFragmentId ID of the Fragment for which to calculate the Control ID
+	* @param	sId Fragment-local ID of the Control to calculate the ID for
 	* @return	the prefixed ID
 	*/
-	public static function createId( sFragmentId:String, sId:String):Dynamic;
+	public static function createId( sFragmentId:String, sId:String):String;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.Fragment with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.

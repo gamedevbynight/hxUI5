@@ -1,6 +1,5 @@
 package sap.ui.test.opabuilder;
 
-@:native("sap.ui.test.opabuilder.Actions")
 extern class Actions
 {
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessBuilderOrOptions:sap.ui.test.actions.Action, ?vElseBuilderOptions:sap.ui.test.actions.Action):()->Void{ })
@@ -85,6 +84,15 @@ extern class Actions
 	* @return	an instance of the {@link sap.ui.test.actions.EnterText} action
 	*/
 	public static function enterText( sText:String, ?bClearTextFirst:Bool, ?bKeepFocus:Bool, ?sIdSuffix:String):sap.ui.test.actions.EnterText;
+	@:overload( function(vActions:sap.ui.test.actions.Action):()->Void{ })
+	@:overload( function(vActions:()->Void):()->Void{ })
+
+	/**
+	* Creates an action function that executes all given actions on a single or an array of controls. This method can be used as a helper for handling the different kinds of action definitions and inputs.
+	* @param	vActions the actions to be executed
+	* @return	an action function
+	*/
+	public static function executor( vActions:Array<Dynamic>):()->Void;
 
 	/**
 	* Creates a {@link sap.ui.test.actions.Press} action.

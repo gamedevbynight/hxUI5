@@ -71,7 +71,7 @@ Default value is <code>true</code>.
 	* @param	bEnableScrolling New value for property <code>enableScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableScrolling( bEnableScrolling:Bool):sap.ui.commons.AutoComplete;
+	public function setEnableScrolling( ?bEnableScrolling:Bool):sap.ui.commons.AutoComplete;
 
 	/**
 	* Sets a custom filter function for items. Default is to check whether the item text begins with the typed value.

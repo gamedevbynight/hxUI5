@@ -5,9 +5,9 @@ package sap.m;
 /**
 * The IconTabBar represents a collection of tabs with associated content. <h3>Overview</h3> The IconTabBar can be used for navigation within an object, or as a filter. Different types of IconTabBar are used based on the contents. <ul> <li>Filter - There is only one main content for all tabs. The main content can be filtered, based on the selected tab.</li> <li>Normal tab bar - The contents of each tab are independent from each other.</li> <li>Combination of the above - There can be both filtered and independent contents.</li> </ul> <h3>Structure</h3> The IconTabBar can hold two types of entities {@link sap.m.IconTabFilter sap.m.IconTabFilter} and {@link sap.m.IconTabSeparator sap.m.IconTabSeparator}
 
-The IconTabBarFilter holds all information on an item - text, icon and count.
+The IconTabFilter holds all information on an item - text, icon and count.
 
-The IconTabBarSeparator holds an icon that can be used to show a process that runs from item to item. <h3>Usage</h3> <h4>Text only</h4> Uses text labels as tabs with optional counter <ul> <li>Used when there are no suitable icons for all items.</li> <li>Used when longer labels are needed.</li> <li>If <code>headerMode</code> property is set to <code>Inline</code> the text and the count are displayed in one line.</li> <li><code>UpperCase</code> is disabled.</li> <li>Use title case.</li> </ul> <h4>Icon Tabs</h4> Round tabs with optional counter and label <ul> <li>Used when there are unique icons for all items.</li> <li>Only shorter labels are possible.</li> <li>Provide labels for all icons or for none. Do not mix these.</li> </ul> <h4>Tabs as filters</h4> Tabs with filtered content from the same set of items <ul> <li>Provide an <i>"All"</i> tab to show all items without filtering.</li> <li>Use counters to show the number of items in each filter.</li> </ul> <h4>Tabs as process steps</h4> Tabs show a single step in a process <ul> <li>Use an arrow (e.g. triple-chevron) as a separator to connect the steps.</li> <li>Use counters to show the number of items in each filter.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>Text-only tabs are never truncated.</li> <li>Use the <code>expandable</code> property to specify whether users can collapse the tab container (default = true).</li> <li>On desktop, tabs can be dragged and dropped (property <code>enableTabReordering</code>).</li> <li>If you have a large number of tabs, you can scroll through them with the arrows. Additionally all tabs are available in an overflow button (property <code>showOverflowSelectList</code>).</li> </ul> When using the <code>sap.m.IconTabBar</code> in SAP Quartz themes, the breakpoints and layout paddings could be determined by the Icon Tab Bar's width. To enable this concept and add responsive paddings to an element of the Icon Tab Bar control, you have to add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--content</code>.
+The IconTabSeparator holds an icon that can be used to show a process that runs from item to item. <h3>Usage</h3> <h4>Text only</h4> Uses text labels as tabs with optional counter <ul> <li>Used when there are no suitable icons for all items.</li> <li>Used when longer labels are needed.</li> <li>If <code>headerMode</code> property is set to <code>Inline</code> the text and the count are displayed in one line.</li> <li><code>UpperCase</code> is disabled.</li> <li>Use title case.</li> </ul> <h4>Icon Tabs</h4> Round tabs with optional counter and label <ul> <li>Used when there are unique icons for all items.</li> <li>Only shorter labels are possible.</li> <li>Provide labels for all icons or for none. Do not mix these.</li> </ul> <h4>Tabs as filters</h4> Tabs with filtered content from the same set of items <ul> <li>Provide an <i>"All"</i> tab to show all items without filtering.</li> <li>Use counters to show the number of items in each filter.</li> </ul> <h4>Tabs as process steps</h4> Tabs show a single step in a process <ul> <li>Use an arrow (e.g. triple-chevron) as a separator to connect the steps.</li> <li>Use counters to show the number of items in each filter.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>Text-only tabs are never truncated.</li> <li>Use the <code>expandable</code> property to specify whether users can collapse the tab container (default = true).</li> <li>On desktop, tabs can be dragged and dropped (property <code>enableTabReordering</code>).</li> <li>If you have a large number of tabs, only the tabs that can fit on screen will be visible. All other tabs that can't fit on the screen are available in an overflow tab "More".</li> </ul> When using the <code>sap.m.IconTabBar</code> in SAP Quartz themes, the breakpoints and layout paddings could be determined by the Icon Tab Bar's width. To enable this concept and add responsive paddings to an element of the Icon Tab Bar control, you have to add the following classes depending on your use case: <code>sapUiResponsivePadding--header</code>, <code>sapUiResponsivePadding--content</code>.
 */
 extern class IconTabBar extends sap.ui.core.Control implements sap.m.ObjectHeaderContainer implements sap.f.IDynamicPageStickyContent
 {
@@ -108,6 +108,16 @@ Default value is <code>true</code>.
 	public function getApplyContentPadding( ):Bool;
 
 	/**
+	* Gets current value of property {@link #getAriaTexts ariaTexts}.
+
+Specifies optional texts for the screen reader.
+
+The given object can contain the following keys: <code>headerLabel</code> - text to serve as a label for the header, <code>headerDescription</code> - text to serve as a description for the header.
+	* @return	Value of property <code>ariaTexts</code>
+	*/
+	public function getAriaTexts( ):Dynamic;
+
+	/**
 	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
 
 Specifies the background color of the IconTabBar.
@@ -188,6 +198,16 @@ The items displayed in the IconTabBar.
 	public function getItems( ):Array<sap.m.IconTab>;
 
 	/**
+	* Gets current value of property {@link #getMaxNestingLevel maxNestingLevel}.
+
+Specifies the allowed level of tabs nesting within one another using drag and drop. Default value is 0 which means nesting via interaction is not allowed. Maximum value is 100. This property allows nesting via user interaction only, and does not restrict adding items to the <code>items</code> aggregation of {@link sap.m.IconTabFilter sap.m.IconTabFilter}.
+
+Default value is <code>0</code>.
+	* @return	Value of property <code>maxNestingLevel</code>
+	*/
+	public function getMaxNestingLevel( ):Int;
+
+	/**
 	* Returns a metadata object for class sap.m.IconTabBar.
 	* @return	Metadata object describing this class
 	*/
@@ -198,18 +218,6 @@ The items displayed in the IconTabBar.
 	* @return	The current property value.
 	*/
 	public function getSelectedKey( ):String;
-
-	/**
-	* Gets current value of property {@link #getShowOverflowSelectList showOverflowSelectList}.
-
-Specifies if the overflow select list is displayed.
-
-The overflow select list represents a list, where all tab filters are displayed, so the user can select specific tab filter easier.
-
-Default value is <code>false</code>.
-	* @return	Value of property <code>showOverflowSelectList</code>
-	*/
-	public function getShowOverflowSelectList( ):Bool;
 
 	/**
 	* Reflector for the internal header's showSelection property.
@@ -324,7 +332,14 @@ Default value is <code>true</code>.
 	* @param	bApplyContentPadding New value for property <code>applyContentPadding</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setApplyContentPadding( bApplyContentPadding:Bool):sap.m.IconTabBar;
+	public function setApplyContentPadding( ?bApplyContentPadding:Bool):sap.m.IconTabBar;
+
+	/**
+	* Sets the ariaTexts property.
+	* @param	oAriaTexts New value for ariaTexts.
+	* @return	this Reference to this in order to allow method chaining
+	*/
+	public function setAriaTexts( oAriaTexts:Dynamic):sap.m.IconTabBar;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
@@ -339,7 +354,7 @@ Default value is <code>Solid</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.BackgroundDesign):sap.m.IconTabBar;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.BackgroundDesign):sap.m.IconTabBar;
 
 	/**
 	* Sets the enableTabReordering property.
@@ -349,11 +364,17 @@ Default value is <code>Solid</code>.
 	public function setEnableTabReordering( value:Bool):sap.m.IconTabBar;
 
 	/**
-	* Sets the tabs as collapsible and expandable without re-rendering the control.
-	* @param	bExpandable New parameter value.
-	* @return	this IconTabBar reference for chaining.
+	* Sets a new value for property {@link #getExpandable expandable}.
+
+Defines if the tabs are collapsible and expandable.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bExpandable New value for property <code>expandable</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExpandable( bExpandable:Bool):sap.m.IconTabBar;
+	public function setExpandable( ?bExpandable:Bool):sap.m.IconTabBar;
 
 	/**
 	* Sets the tab content as expanded.
@@ -377,18 +398,24 @@ Default value is <code>Solid</code>.
 	public function setHeaderMode( mode:sap.m.IconTabHeaderMode):sap.m.IconTabBar;
 
 	/**
+	* Sets a new value for property {@link #getMaxNestingLevel maxNestingLevel}.
+
+Specifies the allowed level of tabs nesting within one another using drag and drop. Default value is 0 which means nesting via interaction is not allowed. Maximum value is 100. This property allows nesting via user interaction only, and does not restrict adding items to the <code>items</code> aggregation of {@link sap.m.IconTabFilter sap.m.IconTabFilter}.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>0</code>.
+	* @param	iMaxNestingLevel New value for property <code>maxNestingLevel</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setMaxNestingLevel( ?iMaxNestingLevel:Int):sap.m.IconTabBar;
+
+	/**
 	* Reflector for the internal header's selectedKey property.
 	* @param	sValue The new value.
 	* @return	this Pointer for chaining.
 	*/
 	public function setSelectedKey( sValue:String):sap.m.IconTabBar;
-
-	/**
-	* Sets the showOverflowSelectList property.
-	* @param	value New value for showOverflowSelectList.
-	* @return	this IconTabBar reference for chaining.
-	*/
-	public function setShowOverflowSelectList( value:Bool):sap.m.IconTabBar;
 
 	/**
 	* Reflector for the internal header's showSelection property.
@@ -408,7 +435,7 @@ Default value is <code>false</code>.
 	* @param	bStretchContentHeight New value for property <code>stretchContentHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStretchContentHeight( bStretchContentHeight:Bool):sap.m.IconTabBar;
+	public function setStretchContentHeight( ?bStretchContentHeight:Bool):sap.m.IconTabBar;
 
 	/**
 	* Sets the tab density mode.
@@ -428,7 +455,7 @@ Default value is <code>false</code>.
 	* @param	bUpperCase New value for property <code>upperCase</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUpperCase( bUpperCase:Bool):sap.m.IconTabBar;
+	public function setUpperCase( ?bUpperCase:Bool):sap.m.IconTabBar;
 }
 
 typedef IconTabBarArgs = sap.ui.core.Control.ControlArgs & {
@@ -478,13 +505,6 @@ Depending on the theme, you can change the state of the background color to "Sol
 	@:optional var headerMode:haxe.extern.EitherType<String,sap.m.IconTabHeaderMode>;
 
 	/**
-	* Specifies if the overflow select list is displayed.
-
-The overflow select list represents a list, where all tab filters are displayed, so the user can select specific tab filter easier.
-	*/
-	@:optional var showOverflowSelectList:haxe.extern.EitherType<String,Bool>;
-
-	/**
 	* Specifies the background color of the header.
 
 Depending on the theme, you can change the state of the background color to "Solid", "Translucent", or "Transparent". Default is "Solid".
@@ -497,11 +517,23 @@ Depending on the theme, you can change the state of the background color to "Sol
 	@:optional var enableTabReordering:haxe.extern.EitherType<String,Bool>;
 
 	/**
+	* Specifies the allowed level of tabs nesting within one another using drag and drop. Default value is 0 which means nesting via interaction is not allowed. Maximum value is 100. This property allows nesting via user interaction only, and does not restrict adding items to the <code>items</code> aggregation of {@link sap.m.IconTabFilter sap.m.IconTabFilter}.
+	*/
+	@:optional var maxNestingLevel:haxe.extern.EitherType<String,Int>;
+
+	/**
 	* Specifies the visual density mode of the tabs.
 
 The values that can be applied are <code>Cozy</code>, <code>Compact</code> and <code>Inherit</code>. <code>Cozy</code> and <code>Compact</code> render the control in one of these modes independent of the global density settings. The <code>Inherit</code> value follows the global density settings which are applied. For compatibility reasons, the default value is <code>Cozy</code>.
 	*/
 	@:optional var tabDensityMode:haxe.extern.EitherType<String,sap.m.IconTabDensityMode>;
+
+	/**
+	* Specifies optional texts for the screen reader.
+
+The given object can contain the following keys: <code>headerLabel</code> - text to serve as a label for the header, <code>headerDescription</code> - text to serve as a description for the header.
+	*/
+	@:optional var ariaTexts:haxe.extern.EitherType<String,Dynamic>;
 
     /**
     * The items displayed in the IconTabBar.

@@ -290,7 +290,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.SelectList;
+	public function setEnabled( ?bEnabled:Bool):sap.m.SelectList;
 
 	/**
 	* Sets a new value for property {@link #getKeyboardNavigationMode keyboardNavigationMode}.
@@ -305,7 +305,7 @@ Default value is <code>Delimited</code>.
 	* @param	sKeyboardNavigationMode New value for property <code>keyboardNavigationMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKeyboardNavigationMode( sKeyboardNavigationMode:sap.m.SelectListKeyboardNavigationMode):sap.m.SelectList;
+	public function setKeyboardNavigationMode( ?sKeyboardNavigationMode:sap.m.SelectListKeyboardNavigationMode):sap.m.SelectList;
 
 	/**
 	* Sets a new value for property {@link #getMaxWidth maxWidth}.
@@ -318,7 +318,7 @@ Default value is <code>100%</code>.
 	* @param	sMaxWidth New value for property <code>maxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxWidth( sMaxWidth:sap.ui.core.CSSSize):sap.m.SelectList;
+	public function setMaxWidth( ?sMaxWidth:sap.ui.core.CSSSize):sap.m.SelectList;
 	@:overload( function(vItem:String):sap.m.SelectList{ })
 	@:overload( function(vItem:sap.ui.core.Item):sap.m.SelectList{ })
 
@@ -359,7 +359,7 @@ Default value is <code>false</code>.
 	* @param	bShowSecondaryValues New value for property <code>showSecondaryValues</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSecondaryValues( bShowSecondaryValues:Bool):sap.m.SelectList;
+	public function setShowSecondaryValues( ?bShowSecondaryValues:Bool):sap.m.SelectList;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -372,7 +372,7 @@ Default value is <code>auto</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.SelectList;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.SelectList;
 
 	/**
 	* Unbinds aggregation {@link #getItems items} from model data.

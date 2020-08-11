@@ -204,7 +204,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.RoadMap;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.RoadMap;
 }
 
 typedef RoadMapArgs = sap.ui.core.Control.ControlArgs & {

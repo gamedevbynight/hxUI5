@@ -151,7 +151,7 @@ Default value is <code>20</code>.
 	* @param	iCols New value for property <code>cols</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCols( iCols:Int):sap.m.TextArea;
+	public function setCols( ?iCols:Int):sap.m.TextArea;
 
 	/**
 	* Sets a new value for property {@link #getGrowing growing}.
@@ -164,7 +164,7 @@ Default value is <code>false</code>.
 	* @param	bGrowing New value for property <code>growing</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGrowing( bGrowing:Bool):sap.m.TextArea;
+	public function setGrowing( ?bGrowing:Bool):sap.m.TextArea;
 
 	/**
 	* Sets a new value for property {@link #getGrowingMaxLines growingMaxLines}.
@@ -177,7 +177,7 @@ Default value is <code>0</code>.
 	* @param	iGrowingMaxLines New value for property <code>growingMaxLines</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGrowingMaxLines( iGrowingMaxLines:Int):sap.m.TextArea;
+	public function setGrowingMaxLines( ?iGrowingMaxLines:Int):sap.m.TextArea;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -201,7 +201,7 @@ Default value is <code>0</code>.
 	* @param	iMaxLength New value for property <code>maxLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxLength( iMaxLength:Int):sap.m.TextArea;
+	public function setMaxLength( ?iMaxLength:Int):sap.m.TextArea;
 
 	/**
 	* Sets a new value for property {@link #getRows rows}.
@@ -214,7 +214,7 @@ Default value is <code>2</code>.
 	* @param	iRows New value for property <code>rows</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRows( iRows:Int):sap.m.TextArea;
+	public function setRows( ?iRows:Int):sap.m.TextArea;
 
 	/**
 	* Sets a new value for property {@link #getShowExceededText showExceededText}.
@@ -229,7 +229,7 @@ Default value is <code>false</code>.
 	* @param	bShowExceededText New value for property <code>showExceededText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowExceededText( bShowExceededText:Bool):sap.m.TextArea;
+	public function setShowExceededText( ?bShowExceededText:Bool):sap.m.TextArea;
 
 	/**
 	* Sets a new value for property {@link #getValueLiveUpdate valueLiveUpdate}.
@@ -242,7 +242,7 @@ Default value is <code>false</code>.
 	* @param	bValueLiveUpdate New value for property <code>valueLiveUpdate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueLiveUpdate( bValueLiveUpdate:Bool):sap.m.TextArea;
+	public function setValueLiveUpdate( ?bValueLiveUpdate:Bool):sap.m.TextArea;
 
 	/**
 	* Sets a new value for property {@link #getWrapping wrapping}.
@@ -255,7 +255,7 @@ Default value is <code>None</code>.
 	* @param	sWrapping New value for property <code>wrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrapping( sWrapping:sap.ui.core.Wrapping):sap.m.TextArea;
+	public function setWrapping( ?sWrapping:sap.ui.core.Wrapping):sap.m.TextArea;
 }
 
 typedef TextAreaArgs = sap.m.InputBase.InputBaseArgs & {

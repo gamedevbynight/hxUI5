@@ -101,9 +101,10 @@ The passed function and listener object must match the ones used for event regis
 
 	/**
 	* Returns a promise for the loaded state of the metadata.
+	* @param	bRejectOnFailure With <code>bRejectOnFailure=false</code> the returned promise is not rejected. In case of failure this promise stays pending. Since 1.79 with <code>bRejectOnFailure=true</code> the returned promise is rejected when the initial loading of the metadata fails.
 	* @return	A promise on metadata loaded state
 	*/
-	public function loaded( ):js.lib.Promise<ODataMetadata>;
+	public function loaded( ?bRejectOnFailure:Bool):js.lib.Promise<ODataMetadata>;
 
 	/**
 	* Refreshes the metadata creating a new request to the server.

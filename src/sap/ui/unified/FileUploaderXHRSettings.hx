@@ -48,7 +48,7 @@ Default value is <code>false</code>.
 	* @param	bWithCredentials New value for property <code>withCredentials</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWithCredentials( bWithCredentials:Bool):sap.ui.unified.FileUploaderXHRSettings;
+	public function setWithCredentials( ?bWithCredentials:Bool):sap.ui.unified.FileUploaderXHRSettings;
 }
 
 typedef FileUploaderXHRSettingsArgs = sap.ui.core.Element.ElementArgs & {

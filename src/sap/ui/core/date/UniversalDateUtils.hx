@@ -1,7 +1,9 @@
 package sap.ui.core.date;
 
-@:native("sap.ui.core.date.UniversalDateUtils")
+@:native("module:sap/ui/core/date/UniversalDateUtils")
 extern class UniversalDateUtils
 {
+
+
 }
 

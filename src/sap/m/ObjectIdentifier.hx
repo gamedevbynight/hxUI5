@@ -145,7 +145,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.ObjectIdentifier;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.ObjectIdentifier;
 
 	/**
 	* Sets the title. Default value is empty/undefined.
@@ -172,7 +172,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.ObjectIdentifier;
+	public function setVisible( ?bVisible:Bool):sap.m.ObjectIdentifier;
 }
 
 typedef ObjectIdentifierArgs = sap.ui.core.Control.ControlArgs & {

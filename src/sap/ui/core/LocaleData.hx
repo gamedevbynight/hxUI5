@@ -78,6 +78,8 @@ If a skeleton based pattern is not available or not wanted, this method can be u
 
 	/**
 	* Get currency format pattern.
+
+CLDR format pattern:
 	* @param	sContext the context of the currency pattern (standard or accounting)
 	* @return	The pattern
 	*/

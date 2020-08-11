@@ -111,7 +111,7 @@ Default value is <code>sap-icon://competitor</code>.
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.ViewSettingsCustomTab;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.ViewSettingsCustomTab;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -124,7 +124,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.ViewSettingsCustomTab;
+	public function setTitle( ?sTitle:String):sap.m.ViewSettingsCustomTab;
 }
 
 typedef ViewSettingsCustomTabArgs = sap.ui.core.Item.ItemArgs & {

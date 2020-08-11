@@ -199,7 +199,7 @@ Default value is <code>false</code>.
 	* @param	bContainerQuery New value for property <code>containerQuery</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContainerQuery( bContainerQuery:Bool):sap.m.P13nSortPanel;
+	public function setContainerQuery( ?bContainerQuery:Bool):sap.m.P13nSortPanel;
 
 	/**
 	* Sets a new value for property {@link #getLayoutMode layoutMode}.

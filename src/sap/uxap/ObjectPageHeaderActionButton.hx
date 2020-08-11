@@ -68,7 +68,7 @@ Default value is <code>false</code>.
 	* @param	bHideIcon New value for property <code>hideIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHideIcon( bHideIcon:Bool):sap.uxap.ObjectPageHeaderActionButton;
+	public function setHideIcon( ?bHideIcon:Bool):sap.uxap.ObjectPageHeaderActionButton;
 
 	/**
 	* Sets a new value for property {@link #getHideText hideText}.
@@ -81,7 +81,7 @@ Default value is <code>true</code>.
 	* @param	bHideText New value for property <code>hideText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHideText( bHideText:Bool):sap.uxap.ObjectPageHeaderActionButton;
+	public function setHideText( ?bHideText:Bool):sap.uxap.ObjectPageHeaderActionButton;
 
 	/**
 	* Sets a new value for property {@link #getImportance importance}.
@@ -94,7 +94,7 @@ Default value is <code>High</code>.
 	* @param	sImportance New value for property <code>importance</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setImportance( sImportance:sap.uxap.Importance):sap.uxap.ObjectPageHeaderActionButton;
+	public function setImportance( ?sImportance:sap.uxap.Importance):sap.uxap.ObjectPageHeaderActionButton;
 }
 
 typedef ObjectPageHeaderActionButtonArgs = sap.m.Button.ButtonArgs & {

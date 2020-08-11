@@ -143,7 +143,7 @@ Default value is <code>_blank</code>.
 	* @param	sConvertedLinksDefaultTarget New value for property <code>convertedLinksDefaultTarget</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setConvertedLinksDefaultTarget( sConvertedLinksDefaultTarget:String):sap.m.FormattedText;
+	public function setConvertedLinksDefaultTarget( ?sConvertedLinksDefaultTarget:String):sap.m.FormattedText;
 
 	/**
 	* Sets a new value for property {@link #getConvertLinksToAnchorTags convertLinksToAnchorTags}.
@@ -156,7 +156,7 @@ Default value is <code>None</code>.
 	* @param	sConvertLinksToAnchorTags New value for property <code>convertLinksToAnchorTags</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setConvertLinksToAnchorTags( sConvertLinksToAnchorTags:sap.m.LinkConversion):sap.m.FormattedText;
+	public function setConvertLinksToAnchorTags( ?sConvertLinksToAnchorTags:sap.m.LinkConversion):sap.m.FormattedText;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.

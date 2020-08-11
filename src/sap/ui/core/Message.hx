@@ -35,12 +35,10 @@ The types of {@link sap.ui.core.MessageType} are ordered from "Error" > "Warning
 
 	/**
 	* Returns the icon's default URI depending on given size.
-
-There are default icons for messages available that can be used this way. If no parameter is given, the size will be 16x16 per default. If larger icons are needed, the parameter "32x32" might be given.
-	* @param	sSize If parameter is not set the default icon's size will be 16x16. If parameter is set to "32x32" the icon size will be 32x32.
+	* @param	sSize Only the values "16x16" or "32x32" are allowed. Otherwise the default value is used.
 	* @return	URI of the default icon.
 	*/
-	public function getDefaultIcon( sSize:String):sap.ui.core.URI;
+	public function getDefaultIcon( ?sSize:String):sap.ui.core.URI;
 
 	/**
 	* Gets current value of property {@link #getIcon icon}.
@@ -114,7 +112,7 @@ Default value is <code>None</code>.
 	* @param	sLevel New value for property <code>level</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLevel( sLevel:sap.ui.core.MessageType):sap.ui.core.Message;
+	public function setLevel( ?sLevel:sap.ui.core.MessageType):sap.ui.core.Message;
 
 	/**
 	* Sets a new value for property {@link #getReadOnly readOnly}.
@@ -127,7 +125,7 @@ Default value is <code>false</code>.
 	* @param	bReadOnly New value for property <code>readOnly</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setReadOnly( bReadOnly:Bool):sap.ui.core.Message;
+	public function setReadOnly( ?bReadOnly:Bool):sap.ui.core.Message;
 
 	/**
 	* Sets a new value for property {@link #getText text}.

@@ -44,7 +44,7 @@ Fired if an error with initialization or hyphenation occurs.
 	public function attachError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.hyphenation.Hyphenation;
 
 	/**
-	* Checks if native hyphenation works in the current browser for the given language.
+	* Checks if native hyphenation works in the current browser for the given language. This check is performed against the value of the "lang" HTML attribute of the page.
 	* @param	sLang For what language to check. The global application language is the default one
 	* @return	True if native hyphenation works for the given language. False if native hyphenation will not work. Null if the language is not known to the Hyphenation API
 	*/
@@ -120,7 +120,7 @@ Loads required third-party resources and language-specific resources.
 	* @param	sLang The language to check for
 	* @return	True if the language was initialized
 	*/
-	public function isLanguageInitialized( sLang:String):Bool;
+	public function isLanguageInitialized( ?sLang:String):Bool;
 
 	/**
 	* Checks if <code>Hyphenation</code> API knows about the given language.

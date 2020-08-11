@@ -1,6 +1,5 @@
 package sap.ui.core.configuration;
 
-@:native("sap.ui.core.Configuration.FormatSettings")
 
 /**
 * Encapsulates configuration settings that are related to data formatting/parsing.

@@ -261,7 +261,7 @@ Default value is <code>Fill</code>.
 	* @param	sAreaDesign New value for property <code>areaDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAreaDesign( sAreaDesign:sap.ui.commons.enums.AreaDesign):sap.ui.commons.Panel;
+	public function setAreaDesign( ?sAreaDesign:sap.ui.commons.enums.AreaDesign):sap.ui.commons.Panel;
 
 	/**
 	* Sets a new value for property {@link #getBorderDesign borderDesign}.
@@ -274,7 +274,7 @@ Default value is <code>Box</code>.
 	* @param	sBorderDesign New value for property <code>borderDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBorderDesign( sBorderDesign:sap.ui.commons.enums.BorderDesign):sap.ui.commons.Panel;
+	public function setBorderDesign( ?sBorderDesign:sap.ui.commons.enums.BorderDesign):sap.ui.commons.Panel;
 
 	/**
 	* Property setter for the "collapsed" state
@@ -330,7 +330,7 @@ Default value is <code>true</code>.
 	* @param	bShowCollapseIcon New value for property <code>showCollapseIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowCollapseIcon( bShowCollapseIcon:Bool):sap.ui.commons.Panel;
+	public function setShowCollapseIcon( ?bShowCollapseIcon:Bool):sap.ui.commons.Panel;
 
 	/**
 	* Sets the text that will be rendered in the Panel header.

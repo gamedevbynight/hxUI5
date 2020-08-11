@@ -169,7 +169,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.StandardTile;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.StandardTile;
 
 	/**
 	* Sets a new value for property {@link #getInfo info}.
@@ -193,7 +193,7 @@ Default value is <code>None</code>.
 	* @param	sInfoState New value for property <code>infoState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInfoState( sInfoState:sap.ui.core.ValueState):sap.m.StandardTile;
+	public function setInfoState( ?sInfoState:sap.ui.core.ValueState):sap.m.StandardTile;
 
 	/**
 	* Sets a new value for property {@link #getNumber number}.
@@ -239,7 +239,7 @@ Default value is <code>None</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.StandardTileType):sap.m.StandardTile;
+	public function setType( ?sType:sap.m.StandardTileType):sap.m.StandardTile;
 }
 
 typedef StandardTileArgs = sap.m.Tile.TileArgs & {

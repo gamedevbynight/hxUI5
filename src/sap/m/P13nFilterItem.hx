@@ -91,7 +91,7 @@ Default value is <code>false</code>.
 	* @param	bExclude New value for property <code>exclude</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExclude( bExclude:Bool):sap.m.P13nFilterItem;
+	public function setExclude( ?bExclude:Bool):sap.m.P13nFilterItem;
 
 	/**
 	* Sets a new value for property {@link #getOperation operation}.

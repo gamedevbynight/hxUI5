@@ -163,7 +163,7 @@ Default value is <code>0</code>.
 	/**
 	* Gets current value of property {@link #getValueState valueState}.
 
-Тhe value state to be displayed for the RadioButton. Possible values are: sap.ui.core.ValueState.Error, sap.ui.core.ValueState.Warning, sap.ui.core.ValueState.Success and sap.ui.core.ValueState.None. Note: Setting this attribute to sap.ui.core.ValueState.Error when the accessibility feature is enabled, sets the value of the invalid property for the whole RadioButtonGroup to true.
+The value state to be displayed for the RadioButton. Possible values are: sap.ui.core.ValueState.Error, sap.ui.core.ValueState.Warning, sap.ui.core.ValueState.Success and sap.ui.core.ValueState.None. Note: Setting this attribute to sap.ui.core.ValueState.Error when the accessibility feature is enabled, sets the value of the invalid property for the whole RadioButtonGroup to true.
 
 Default value is <code>None</code>.
 	* @return	Value of property <code>valueState</code>
@@ -251,7 +251,7 @@ Default value is <code>1</code>.
 	* @param	iColumns New value for property <code>columns</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumns( iColumns:Int):sap.ui.commons.RadioButtonGroup;
+	public function setColumns( ?iColumns:Int):sap.ui.commons.RadioButtonGroup;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -264,7 +264,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.commons.RadioButtonGroup;
+	public function setEditable( ?bEditable:Bool):sap.ui.commons.RadioButtonGroup;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -277,7 +277,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.RadioButtonGroup;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.RadioButtonGroup;
 
 	/**
 	* Sets a new value for property {@link #getSelectedIndex selectedIndex}.
@@ -290,7 +290,7 @@ Default value is <code>0</code>.
 	* @param	iSelectedIndex New value for property <code>selectedIndex</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelectedIndex( iSelectedIndex:Int):sap.ui.commons.RadioButtonGroup;
+	public function setSelectedIndex( ?iSelectedIndex:Int):sap.ui.commons.RadioButtonGroup;
 
 	/**
 	* Sets the Item as selected and removes the selection from the previous one.
@@ -302,7 +302,7 @@ Default value is <code>0</code>.
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
 
-Тhe value state to be displayed for the RadioButton. Possible values are: sap.ui.core.ValueState.Error, sap.ui.core.ValueState.Warning, sap.ui.core.ValueState.Success and sap.ui.core.ValueState.None. Note: Setting this attribute to sap.ui.core.ValueState.Error when the accessibility feature is enabled, sets the value of the invalid property for the whole RadioButtonGroup to true.
+The value state to be displayed for the RadioButton. Possible values are: sap.ui.core.ValueState.Error, sap.ui.core.ValueState.Warning, sap.ui.core.ValueState.Success and sap.ui.core.ValueState.None. Note: Setting this attribute to sap.ui.core.ValueState.Error when the accessibility feature is enabled, sets the value of the invalid property for the whole RadioButtonGroup to true.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -310,7 +310,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.ui.commons.RadioButtonGroup;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.ui.commons.RadioButtonGroup;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -348,7 +348,7 @@ typedef RadioButtonGroupArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var editable:haxe.extern.EitherType<String,Bool>;
 
 	/**
-	* Тhe value state to be displayed for the RadioButton. Possible values are: sap.ui.core.ValueState.Error, sap.ui.core.ValueState.Warning, sap.ui.core.ValueState.Success and sap.ui.core.ValueState.None. Note: Setting this attribute to sap.ui.core.ValueState.Error when the accessibility feature is enabled, sets the value of the invalid property for the whole RadioButtonGroup to true.
+	* The value state to be displayed for the RadioButton. Possible values are: sap.ui.core.ValueState.Error, sap.ui.core.ValueState.Warning, sap.ui.core.ValueState.Success and sap.ui.core.ValueState.None. Note: Setting this attribute to sap.ui.core.ValueState.Error when the accessibility feature is enabled, sets the value of the invalid property for the whole RadioButtonGroup to true.
 	*/
 	@:optional var valueState:haxe.extern.EitherType<String,sap.ui.core.ValueState>;
 

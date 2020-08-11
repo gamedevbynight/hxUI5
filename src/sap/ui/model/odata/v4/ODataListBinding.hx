@@ -66,9 +66,11 @@ The initial data for the created entity can be supplied via the parameter <code>
 
 Note: If a server requires a property in the request, you must supply this property in the initial data, for example if the server requires a unit for an amount. This also applies if this property has a default value.
 
-Note: After creation, the created entity is refreshed to ensure that the data specified in this list binding's $expand is available; to skip this refresh, set <code>bSkipRefresh</code> to <code>true</code>.
+Note: After creation, the created entity is refreshed to ensure that the data specified in this list binding's $expand is available; to skip this refresh, set <code>bSkipRefresh</code> to <code>true</code>. To avoid errors you must skip this refresh when using {@link sap.ui.model.odata.v4.Context#requestSideEffects} in the same $batch to refresh the complete collection containing the newly created entity.
 
-Note: The binding must have the parameter <code>$count : true</code> when creating an entity at the end. Otherwise the collection length may be unknown and there is no clear position to place this entity at.
+Note: A deep create is not supported. The dependent entity has to be created using a second list binding. Note that it is not supported to bind relative to a transient context.
+
+Note: Creating at the end is only allowed if the final length of the binding is known (see {@link #isLengthFinal}), so that there is a clear position to place this entity at. This is the case if the complete collection has been read or if the system parameter <code>$count</code> is <code>true</code> and the binding has processed at least one request.
 	* @param	oInitialData The initial data for the created entity
 	* @param	bSkipRefresh Whether an automatic refresh of the created entity will be skipped
 	* @param	bAtEnd Whether the entity is inserted at the end of the list. When creating multiple entities, this parameter must have the same value for each entity. Supported since 1.66.0
@@ -191,13 +193,15 @@ The <code>$count</code> is unknown, if the binding is relative, but has no conte
 
 	/**
 	* Returns the root binding of this binding's hierarchy, see binding {@link topic:54e0ddf695af4a6c978472cecb01c64d Initialization and Read Requests}.
-	* @return	The root binding or <code>undefined</code> if this binding is not yet resolved.
+	* @return	The root binding or <code>undefined</code> if this binding is unresolved (see {@link sap.ui.model.Binding#isResolved}).
 	*/
 	public function getRootBinding( ):Dynamic;
 
 	/**
-	* Returns <code>true</code> if this binding or its dependent bindings have pending changes, meaning updates that have not yet been successfully sent to the server.
-	* @return	<code>true</code> if the binding has pending changes
+	* Returns <code>true</code> if this binding or its dependent bindings have pending property changes or created entities which have not been sent successfully to the server. This function does not take into account the deletion of entities (see {@link sap.ui.model.odata.v4.Context#delete}) and the execution of OData operations (see {@link sap.ui.model.odata.v4.ODataContextBinding#execute}).
+
+Note: If this binding is relative, its data is cached separately for each parent context path. This method returns <code>true</code> if there are pending changes for the current parent context path of this binding. If this binding is unresolved (see {@link sap.ui.model.Binding#isResolved}), it returns <code>false</code>.
+	* @return	<code>true</code> if the binding is resolved and has pending changes
 	*/
 	public function hasPendingChanges( ):Bool;
 
@@ -261,10 +265,10 @@ Additionally, you must be aware of server-driven paging and be ready to send a f
 
 	/**
 	* Sets a new data aggregation object and derives the system query option <code>$apply</code> implicitly from it.
-	* @param	oAggregation An object holding the information needed for data aggregation; see also <a href="http://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/">OData Extension for Data Aggregation Version 4.0</a>.
+	* @param	oAggregation An object holding the information needed for data aggregation; see also <a href="http://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/">OData Extension for Data Aggregation Version 4.0</a>. Since 1.76.0, <code>undefined</code> can be used to remove the data aggregation object, which allows to set <code>$apply</code> explicitly afterwards. <code>null</code> is not supported.
 	* @return	Void
 	*/
-	public function setAggregation( oAggregation:Dynamic):Void;
+	public function setAggregation( ?oAggregation:Dynamic):Void;
 	@:overload( function(?vSorters:sap.ui.model.Sorter):sap.ui.model.odata.v4.ODataListBinding{ })
 
 	/**

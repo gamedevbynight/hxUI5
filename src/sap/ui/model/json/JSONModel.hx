@@ -59,7 +59,7 @@ extern class JSONModel extends sap.ui.model.ClientModel
 	* Load JSON-encoded data from the server using a GET HTTP request and store the resulting JSON data in the model. Note: Due to browser security restrictions, most "Ajax" requests are subject to the same origin policy, the request can not successfully retrieve data from a different domain, subdomain, or protocol.
 	* @param	sURL A string containing the URL to which the request is sent.
 	* @param	oParameters A map or string that is sent to the server with the request. Data that is sent to the server is appended to the URL as a query string. If the value of the data parameter is an object (map), it is converted to a string and url-encoded before it is appended to the URL.
-	* @param	bAsync By default, all requests are sent asynchronous (i.e. this is set to true by default). If you need synchronous requests, set this option to false. Cross-domain requests do not support synchronous operation. Note that synchronous requests may temporarily lock the browser, disabling any actions while the request is active.
+	* @param	bAsync By default, all requests are sent asynchronous. <b>Do not use <code>bAsync=false</code></b> because synchronous requests may temporarily lock the browser, disabling any actions while the request is active. Cross-domain requests do not support synchronous operation.
 	* @param	sType The type of request to make ("POST" or "GET"), default is "GET". Note: Other HTTP request methods, such as PUT and DELETE, can also be used here, but they are not supported by all browsers.
 	* @param	bMerge Whether the data should be merged instead of replaced
 	* @param	bCache Disables caching if set to false. Default is true.

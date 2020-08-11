@@ -206,7 +206,7 @@ Default value is <code>false</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.layout.form.Form;
+	public function setEditable( ?bEditable:Bool):sap.ui.layout.form.Form;
 
 	/**
 	* Sets the aggregated {@link #getLayout layout}.

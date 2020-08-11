@@ -40,7 +40,7 @@ extern class LabelFor extends sap.ui.test.matchers.Matcher
 	/**
 	* Gets current value of property {@link #getKey key}.
 
-The key of the I18N text in the containing {@link jQuery.sap.util.ResourceBundle}.
+The key of the I18N text in the containing {@link module:sap/base/i18n/ResourceBundle}.
 	* @return	Value of property <code>key</code>
 	*/
 	public function getKey( ):String;
@@ -64,7 +64,7 @@ Default value is <code>i18n</code>.
 	/**
 	* Gets current value of property {@link #getParameters parameters}.
 
-The parameters for replacing the placeholders of the I18N text. See {@link jQuery.sap.util.ResourceBundle#getText}.
+The parameters for replacing the placeholders of the I18N text. See {@link module:sap/base/i18n/ResourceBundle#getText}.
 	* @return	Value of property <code>parameters</code>
 	*/
 	public function getParameters( ):Dynamic;
@@ -97,7 +97,7 @@ The text of the {@link sap.m.Label} which have the labelFor property.
 	/**
 	* Sets a new value for property {@link #getKey key}.
 
-The key of the I18N text in the containing {@link jQuery.sap.util.ResourceBundle}.
+The key of the I18N text in the containing {@link module:sap/base/i18n/ResourceBundle}.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sKey New value for property <code>key</code>
@@ -116,12 +116,12 @@ Default value is <code>i18n</code>.
 	* @param	sModelName New value for property <code>modelName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setModelName( sModelName:String):sap.ui.test.matchers.LabelFor;
+	public function setModelName( ?sModelName:String):sap.ui.test.matchers.LabelFor;
 
 	/**
 	* Sets a new value for property {@link #getParameters parameters}.
 
-The parameters for replacing the placeholders of the I18N text. See {@link jQuery.sap.util.ResourceBundle#getText}.
+The parameters for replacing the placeholders of the I18N text. See {@link module:sap/base/i18n/ResourceBundle#getText}.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	oParameters New value for property <code>parameters</code>
@@ -140,7 +140,7 @@ Default value is <code>text</code>.
 	* @param	sPropertyName New value for property <code>propertyName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPropertyName( sPropertyName:String):sap.ui.test.matchers.LabelFor;
+	public function setPropertyName( ?sPropertyName:String):sap.ui.test.matchers.LabelFor;
 
 	/**
 	* Sets a new value for property {@link #getText text}.

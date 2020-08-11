@@ -147,7 +147,7 @@ Default value is <code>false</code>.
 	* @param	bRenderWhitespace New value for property <code>renderWhitespace</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRenderWhitespace( bRenderWhitespace:Bool):sap.m.Text;
+	public function setRenderWhitespace( ?bRenderWhitespace:Bool):sap.m.Text;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -160,7 +160,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.Text;
+	public function setText( ?sText:String):sap.m.Text;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -173,7 +173,7 @@ Default value is <code>Begin</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.Text;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.Text;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -186,7 +186,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.Text;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.Text;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -210,7 +210,7 @@ Default value is <code>true</code>.
 	* @param	bWrapping New value for property <code>wrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrapping( bWrapping:Bool):sap.m.Text;
+	public function setWrapping( ?bWrapping:Bool):sap.m.Text;
 
 	/**
 	* Sets a new value for property {@link #getWrappingType wrappingType}.
@@ -225,7 +225,7 @@ Default value is <code>Normal</code>.
 	* @param	sWrappingType New value for property <code>wrappingType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrappingType( sWrappingType:sap.m.WrappingType):sap.m.Text;
+	public function setWrappingType( ?sWrappingType:sap.m.WrappingType):sap.m.Text;
 
 	/**
 	* Unbinds property {@link #getText text} from model data.

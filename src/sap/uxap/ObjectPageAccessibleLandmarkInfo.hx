@@ -163,7 +163,7 @@ Default value is <code>None</code>.
 	* @param	sContentRole New value for property <code>contentRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentRole( sContentRole:sap.ui.core.AccessibleLandmarkRole):sap.uxap.ObjectPageAccessibleLandmarkInfo;
+	public function setContentRole( ?sContentRole:sap.ui.core.AccessibleLandmarkRole):sap.uxap.ObjectPageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getFooterLabel footerLabel}.
@@ -191,7 +191,7 @@ Default value is <code>Region</code>.
 	* @param	sFooterRole New value for property <code>footerRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFooterRole( sFooterRole:sap.ui.core.AccessibleLandmarkRole):sap.uxap.ObjectPageAccessibleLandmarkInfo;
+	public function setFooterRole( ?sFooterRole:sap.ui.core.AccessibleLandmarkRole):sap.uxap.ObjectPageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getHeaderLabel headerLabel}.
@@ -219,7 +219,7 @@ Default value is <code>Banner</code>.
 	* @param	sHeaderRole New value for property <code>headerRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderRole( sHeaderRole:sap.ui.core.AccessibleLandmarkRole):sap.uxap.ObjectPageAccessibleLandmarkInfo;
+	public function setHeaderRole( ?sHeaderRole:sap.ui.core.AccessibleLandmarkRole):sap.uxap.ObjectPageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getNavigationLabel navigationLabel}.
@@ -247,7 +247,7 @@ Default value is <code>Navigation</code>.
 	* @param	sNavigationRole New value for property <code>navigationRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNavigationRole( sNavigationRole:sap.ui.core.AccessibleLandmarkRole):sap.uxap.ObjectPageAccessibleLandmarkInfo;
+	public function setNavigationRole( ?sNavigationRole:sap.ui.core.AccessibleLandmarkRole):sap.uxap.ObjectPageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getRootLabel rootLabel}.
@@ -275,7 +275,7 @@ Default value is <code>Main</code>.
 	* @param	sRootRole New value for property <code>rootRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRootRole( sRootRole:sap.ui.core.AccessibleLandmarkRole):sap.uxap.ObjectPageAccessibleLandmarkInfo;
+	public function setRootRole( ?sRootRole:sap.ui.core.AccessibleLandmarkRole):sap.uxap.ObjectPageAccessibleLandmarkInfo;
 }
 
 typedef ObjectPageAccessibleLandmarkInfoArgs = sap.ui.core.Element.ElementArgs & {

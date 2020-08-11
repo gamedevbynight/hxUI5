@@ -105,7 +105,7 @@ Default value is <code>true</code>.
 	* @param	bDisplayLogoff New value for property <code>displayLogoff</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayLogoff( bDisplayLogoff:Bool):sap.ui.commons.ApplicationHeader;
+	public function setDisplayLogoff( ?bDisplayLogoff:Bool):sap.ui.commons.ApplicationHeader;
 
 	/**
 	* Sets a new value for property {@link #getDisplayWelcome displayWelcome}.
@@ -118,7 +118,7 @@ Default value is <code>true</code>.
 	* @param	bDisplayWelcome New value for property <code>displayWelcome</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayWelcome( bDisplayWelcome:Bool):sap.ui.commons.ApplicationHeader;
+	public function setDisplayWelcome( ?bDisplayWelcome:Bool):sap.ui.commons.ApplicationHeader;
 
 	/**
 	* Sets a new value for property {@link #getLogoSrc logoSrc}.

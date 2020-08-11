@@ -11,7 +11,7 @@ The <code>ViewSettingsDialog</code> is a composite control, consisting of a moda
 
 <b>Note:</b> If the app does not offer all three sorting, filtering, and grouping operations, but only one of these (such as sort), we recommend placing the icon button directly in the toolbar. Do not place sort, filter, or group buttons in the footer toolbar if they refer to a table. Place group, sort, and filter buttons in the footer toolbar if they refer to a master list.
 
-<b>Note:</b> Reset button, when used in <code>ViewSettingsDialog</code> without custom tabs, is enabled when there are some Filters or presetFilters selected as well as there are changes in Sort by, Sort order, Group By or Group order values compared to initial state of the dialog, and disabled, if there are no changes or filters set. If the <code>ViewSettingsDialog</code> have one or more custom tabs, the Reset button is always enabled, because there is no way to determine the initial state of the custom tabs content and compare to their current state in order to determine enable/disable state of the Reset button.
+<b>Note:</b> If <code>ViewSettingsDialog</code> is used without custom tabs or custom items in any of its aggregations, then Reset button is enabled if the user selects any Filters or presetFilters or changes any of the Sort by, Sort order, Group by, or Group order values. When <code>ViewSettingsDialog</code> is used with custom tabs or custom items in any of its aggregations (sortItems, groupItems, filterItems or presetFilterItems), the Reset button is always enabled, because there is no way to determine the initial state of the custom tabs and compare it to their current state in order to determine the enable/disable state of the Reset button.
 
 <h3>Usage</h3>
 
@@ -618,7 +618,7 @@ Default value is <code>StartsWith</code>.
 	* @param	sFilterSearchOperator New value for property <code>filterSearchOperator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFilterSearchOperator( sFilterSearchOperator:sap.m.StringFilterOperator):sap.m.ViewSettingsDialog;
+	public function setFilterSearchOperator( ?sFilterSearchOperator:sap.m.StringFilterOperator):sap.m.ViewSettingsDialog;
 
 	/**
 	* Sets a new value for property {@link #getGroupDescending groupDescending}.
@@ -631,7 +631,7 @@ Default value is <code>false</code>.
 	* @param	bGroupDescending New value for property <code>groupDescending</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGroupDescending( bGroupDescending:Bool):sap.m.ViewSettingsDialog;
+	public function setGroupDescending( ?bGroupDescending:Bool):sap.m.ViewSettingsDialog;
 
 	/**
 	* Sets the selected filter object in format { parent_key: { key: boolean, key2: boolean, ...}, ... }.
@@ -676,7 +676,7 @@ Default value is <code>false</code>.
 	* @param	bSortDescending New value for property <code>sortDescending</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSortDescending( bSortDescending:Bool):sap.m.ViewSettingsDialog;
+	public function setSortDescending( ?bSortDescending:Bool):sap.m.ViewSettingsDialog;
 
 	/**
 	* Sets the title of the internal dialog.
@@ -696,7 +696,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleAlignment( sTitleAlignment:sap.m.TitleAlignment):sap.m.ViewSettingsDialog;
+	public function setTitleAlignment( ?sTitleAlignment:sap.m.TitleAlignment):sap.m.ViewSettingsDialog;
 
 	/**
 	* Forward method to the inner dialog method: toggleStyleClass.

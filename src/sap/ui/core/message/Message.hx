@@ -105,10 +105,10 @@ NOTE: The control ID is only set for Controls based on <code>sap.m.InputBase</co
 	public function getPersistent( ):Bool;
 
 	/**
-	* Returns the message target
-	* @return	target
+	* Returns the targets of this message.
+	* @return	The message targets; empty array if the message has no targets
 	*/
-	public function getTarget( ):String;
+	public function getTargets( ):Array<String>;
 
 	/**
 	* Returns the if Message set as technical message
@@ -185,11 +185,11 @@ NOTE: The control ID is only set for Controls based on <code>sap.m.InputBase</co
 	public function setPersistent( bPersistent:Bool):Void;
 
 	/**
-	* Set message target: The syntax is MessageProcessor dependent. See the documentation of the respective MessageProcessor.
-	* @param	sTarget The Message target
+	* Sets the targets of this message.
+	* @param	aNewTargets The new targets of this message; use an empty array if the message shall have no targets
 	* @return	Void
 	*/
-	public function setTarget( sTarget:String):Void;
+	public function setTargets( aNewTargets:Array<String>):Void;
 
 	/**
 	* Set message as technical message

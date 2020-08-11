@@ -189,7 +189,7 @@ Default value is <code>empty string</code>.
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDescription( sDescription:String):sap.m.QuickViewPage;
+	public function setDescription( ?sDescription:String):sap.m.QuickViewPage;
 
 	/**
 	* Sets a new value for property {@link #getFallbackIcon fallbackIcon}.
@@ -215,7 +215,7 @@ Default value is <code>empty string</code>.
 	* @param	sHeader New value for property <code>header</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeader( sHeader:String):sap.m.QuickViewPage;
+	public function setHeader( ?sHeader:String):sap.m.QuickViewPage;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -228,7 +228,7 @@ Default value is <code>empty string</code>.
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:String):sap.m.QuickViewPage;
+	public function setIcon( ?sIcon:String):sap.m.QuickViewPage;
 
 	/**
 	* Sets a new value for property {@link #getPageId pageId}.
@@ -241,7 +241,7 @@ Default value is <code>empty string</code>.
 	* @param	sPageId New value for property <code>pageId</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPageId( sPageId:String):sap.m.QuickViewPage;
+	public function setPageId( ?sPageId:String):sap.m.QuickViewPage;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -254,7 +254,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.QuickViewPage;
+	public function setTitle( ?sTitle:String):sap.m.QuickViewPage;
 
 	/**
 	* Sets a new value for property {@link #getTitleUrl titleUrl}.
@@ -267,7 +267,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitleUrl New value for property <code>titleUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleUrl( sTitleUrl:String):sap.m.QuickViewPage;
+	public function setTitleUrl( ?sTitleUrl:String):sap.m.QuickViewPage;
 
 	/**
 	* Unbinds aggregation {@link #getGroups groups} from model data.

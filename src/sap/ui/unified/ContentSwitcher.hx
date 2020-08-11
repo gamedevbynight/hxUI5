@@ -164,7 +164,7 @@ Default value is <code>1</code>.
 	* @param	iActiveContent New value for property <code>activeContent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveContent( iActiveContent:Int):sap.ui.unified.ContentSwitcher;
+	public function setActiveContent( ?iActiveContent:Int):sap.ui.unified.ContentSwitcher;
 
 	/**
 	* Sets a new value for property {@link #getAnimation animation}.
@@ -177,7 +177,7 @@ Default value is <code>None</code>.
 	* @param	sAnimation New value for property <code>animation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAnimation( sAnimation:String):sap.ui.unified.ContentSwitcher;
+	public function setAnimation( ?sAnimation:String):sap.ui.unified.ContentSwitcher;
 
 	/**
 	* Changes the currently active content to the other one. If content 1 is active, content 2 will be activated and the other way around.

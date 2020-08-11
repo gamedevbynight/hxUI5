@@ -5,7 +5,7 @@ package sap.ui.layout;
 /**
 * A responsive splitter which divides the application into several areas. <h3>Overview</h3> The responsive splitter layout structures complex applications into defined areas. These areas may be resizable and are either distributed across one or multiple screen areas, some of which may also be off-canvas.
 
-The control is intended for developing administrative tools and applications. <h3>Structure</h3> The responsive splitter holds the following hierarchy of containers and controls: <ul> <li>{@link sap.ui.layout.PaneContainer Pane Container} - holds one or more Split Panes and determines the pane orientation. The pane which is stored in <code>rootPaneContainer</code> holds all other pane containers and split panes.</li> <li>{@link sap.ui.layout.SplitPane Split Pane} - independent containers that may interact with one another. Each pane can hold only one control.</li> </ul> <h3>Usage</h3> <h4>When to use</h4> <ul> <li>The application has to display several areas side by side that must be resizable.</li> <li>The application must work on a range of different devices in a responsive manner.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>As soon as views are in the off-canvas mode, the pagination bar at the bottom of the application allows the user to switch between them.</li> <li>On touch-enabled devices, the splitters show explicit handles with larger touch areas.</li> <li>Double-clicking on a splitter will collapse or expand it back to its original position.</li> </ul>
+The control is intended for developing administrative tools and applications. <h3>Structure</h3> The responsive splitter holds the following hierarchy of containers and controls: <ul> <li>{@link sap.ui.layout.PaneContainer Pane Container} - holds one or more Split Panes and determines the pane orientation. The pane which is stored in <code>rootPaneContainer</code> holds all other pane containers and split panes.</li> <li>{@link sap.ui.layout.SplitPane Split Pane} - independent containers that may interact with one another. Each pane can hold only one control.</li> </ul> <h3>Usage</h3> <h4>When to use</h4> <ul> <li>The application has to display several areas side by side that must be resizable.</li> <li>The application must work on a range of different devices in a responsive manner.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>As soon as views are in the off-canvas mode, the pagination bar at the bottom of the application allows the user to switch between them.</li> <li>On touch-enabled devices the bars of the splitter can be moved by touching the grip.</li> <li>Double-clicking on a splitter will collapse or expand it back to its original position.</li> </ul>
 
 <b>Note:</b> We don't recommend dynamically inserting/removing panes into/from the PaneContainer since this might lead to inconsistent layout. If it is necessary, you need to ensure the sum of all sizes of the SplitPanes doesn't exceed the width of the PaneContainer.
 */
@@ -90,7 +90,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.layout.ResponsiveSplitter;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.layout.ResponsiveSplitter;
 
 	/**
 	* Sets the aggregated {@link #getRootPaneContainer rootPaneContainer}.
@@ -110,7 +110,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.layout.ResponsiveSplitter;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.layout.ResponsiveSplitter;
 }
 
 typedef ResponsiveSplitterArgs = sap.ui.core.Control.ControlArgs & {

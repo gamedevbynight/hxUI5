@@ -208,7 +208,7 @@ Default value is <code>false</code>.
 	* @param	bStartsSection New value for property <code>startsSection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStartsSection( bStartsSection:Bool):sap.m.MenuItem;
+	public function setStartsSection( ?bStartsSection:Bool):sap.m.MenuItem;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -221,7 +221,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.MenuItem;
+	public function setVisible( ?bVisible:Bool):sap.m.MenuItem;
 
 	/**
 	* Unbinds aggregation {@link #getItems items} from model data.

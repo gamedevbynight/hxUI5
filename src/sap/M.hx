@@ -4,6 +4,8 @@ package sap;
 extern class M
 {
 
+
+
 	/**
 	* Hide the soft keyboard.
 	* @return	Void

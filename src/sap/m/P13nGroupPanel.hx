@@ -209,7 +209,7 @@ Default value is <code>false</code>.
 	* @param	bContainerQuery New value for property <code>containerQuery</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContainerQuery( bContainerQuery:Bool):sap.m.P13nGroupPanel;
+	public function setContainerQuery( ?bContainerQuery:Bool):sap.m.P13nGroupPanel;
 
 	/**
 	* Sets a new value for property {@link #getLayoutMode layoutMode}.
@@ -233,7 +233,7 @@ Default value is <code>-1</code>.
 	* @param	sMaxGroups New value for property <code>maxGroups</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxGroups( sMaxGroups:String):sap.m.P13nGroupPanel;
+	public function setMaxGroups( ?sMaxGroups:String):sap.m.P13nGroupPanel;
 
 	/**
 	* Setter for the supported operations array.

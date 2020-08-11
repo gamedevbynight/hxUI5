@@ -149,7 +149,7 @@ Default value is <code>Move</code>.
 	* @param	sDropEffect New value for property <code>dropEffect</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDropEffect( sDropEffect:sap.ui.core.dnd.DropEffect):sap.ui.core.dnd.DropInfo;
+	public function setDropEffect( ?sDropEffect:sap.ui.core.dnd.DropEffect):sap.ui.core.dnd.DropInfo;
 
 	/**
 	* Sets a new value for property {@link #getDropLayout dropLayout}.
@@ -162,7 +162,7 @@ Default value is <code>Default</code>.
 	* @param	sDropLayout New value for property <code>dropLayout</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDropLayout( sDropLayout:sap.ui.core.dnd.DropLayout):sap.ui.core.dnd.DropInfo;
+	public function setDropLayout( ?sDropLayout:sap.ui.core.dnd.DropLayout):sap.ui.core.dnd.DropInfo;
 
 	/**
 	* Sets a new value for property {@link #getDropPosition dropPosition}.
@@ -175,7 +175,7 @@ Default value is <code>On</code>.
 	* @param	sDropPosition New value for property <code>dropPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDropPosition( sDropPosition:sap.ui.core.dnd.DropPosition):sap.ui.core.dnd.DropInfo;
+	public function setDropPosition( ?sDropPosition:sap.ui.core.dnd.DropPosition):sap.ui.core.dnd.DropInfo;
 
 	/**
 	* Sets a new value for property {@link #getTargetAggregation targetAggregation}.

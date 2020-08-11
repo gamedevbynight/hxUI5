@@ -1,6 +1,5 @@
 package sap.ui.core.mvc.xmlview;
 
-@:native("sap.ui.core.mvc.XMLView.PreprocessorType")
 @:enum extern abstract PreprocessorType(String)
 {
     /**

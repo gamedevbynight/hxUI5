@@ -190,7 +190,7 @@ If this property is used, the <code>dateValue</code> property should not be chan
 	public function getValue( ):String;
 
 	/**
-	* The date string expected and returned in the <code>value</code> property uses this format. By default the short format of the used locale is used.
+	* The date string expected and returned in the <code>value</code> property uses this format. By default the medium format of the used locale is used.
 
 Supported format options are pattern-based on Unicode LDML Date Format notation. {@link http://unicode.org/reports/tr35/#Date_Field_Symbol_Table}
 
@@ -248,7 +248,7 @@ Default value is <code>empty string</code>.
 	* @param	sDisplayFormatType New value for property <code>displayFormatType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayFormatType( sDisplayFormatType:String):sap.m.DatePicker;
+	public function setDisplayFormatType( ?sDisplayFormatType:String):sap.m.DatePicker;
 	@:overload( function(oLegend:sap.ui.core.ID):sap.m.DatePicker{ })
 
 	/**

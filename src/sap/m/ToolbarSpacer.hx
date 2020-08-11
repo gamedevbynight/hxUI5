@@ -47,10 +47,10 @@ Defines the width of the horizontal space. Note: Empty("") value makes the space
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth New value for property <code>width</code>
+	* @param	sWidth= New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.ToolbarSpacer;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.ToolbarSpacer;
 }
 
 typedef ToolbarSpacerArgs = sap.ui.core.Control.ControlArgs & {

@@ -141,7 +141,7 @@ Default value is <code>false</code>.
 	* @param	bContainerQuery New value for property <code>containerQuery</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContainerQuery( bContainerQuery:Bool):sap.ui.layout.cssgrid.GridResponsiveLayout;
+	public function setContainerQuery( ?bContainerQuery:Bool):sap.ui.layout.cssgrid.GridResponsiveLayout;
 
 	/**
 	* Sets the aggregated {@link #getLayout layout}.

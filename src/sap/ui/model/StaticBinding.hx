@@ -3,11 +3,17 @@ package sap.ui.model;
 @:native("sap.ui.model.StaticBinding")
 
 /**
-* The StaticBinding allows to define static values within a CompositeBinding. It behaves like a property binding but always returns the value, which is stored in the binding itself.
+* The <code>StaticBinding</code> allows to define static values within a {@link sap.ui.model.CompositeBinding}. It behaves like a property binding but always returns the value that is stored in the binding itself. The binding does not have a {@link sap.ui.model.Context}, a {@link sap.ui.model.Model} or a path.
 */
 extern class StaticBinding extends sap.ui.model.PropertyBinding
 {
-public function new():Void;
+
+	/**
+	* 
+	* @param	vValue The static value of this binding
+	* @return	Object
+	*/
+	public function new( ?vValue:Dynamic):Void;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.StaticBinding with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.

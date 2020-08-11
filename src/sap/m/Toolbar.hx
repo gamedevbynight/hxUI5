@@ -90,6 +90,14 @@ Default value is <code>false</code>.
 	public function getActive( ):Bool;
 
 	/**
+	* Gets current value of property {@link #getAriaHasPopup ariaHasPopup}.
+
+Defines the aria-haspopup attribute of the <code>Toolbar</code>. if the active <code>design</code> is true.
+	* @return	Value of property <code>ariaHasPopup</code>
+	*/
+	public function getAriaHasPopup( ):String;
+
+	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
 	* @return	null
 	*/
@@ -221,7 +229,18 @@ Default value is <code>false</code>.
 	* @param	bActive New value for property <code>active</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActive( bActive:Bool):sap.m.Toolbar;
+	public function setActive( ?bActive:Bool):sap.m.Toolbar;
+
+	/**
+	* Sets a new value for property {@link #getAriaHasPopup ariaHasPopup}.
+
+Defines the aria-haspopup attribute of the <code>Toolbar</code>. if the active <code>design</code> is true.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sAriaHasPopup New value for property <code>ariaHasPopup</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setAriaHasPopup( sAriaHasPopup:String):sap.m.Toolbar;
 
 	/**
 	* Sets a new value for property {@link #getDesign design}.
@@ -236,7 +255,7 @@ Default value is <code>Auto</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.m.ToolbarDesign):sap.m.Toolbar;
+	public function setDesign( ?sDesign:sap.m.ToolbarDesign):sap.m.Toolbar;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -249,7 +268,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.Toolbar;
+	public function setEnabled( ?bEnabled:Bool):sap.m.Toolbar;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -261,10 +280,10 @@ Defines the height of the control. By default, the <code>height</code> property 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sHeight New value for property <code>height</code>
+	* @param	sHeight= New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.Toolbar;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.Toolbar;
 
 	/**
 	* Sets a new value for property {@link #getStyle style}.
@@ -279,7 +298,7 @@ Default value is <code>Standard</code>.
 	* @param	sStyle New value for property <code>style</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStyle( sStyle:sap.m.ToolbarStyle):sap.m.Toolbar;
+	public function setStyle( ?sStyle:sap.m.ToolbarStyle):sap.m.Toolbar;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -330,6 +349,11 @@ typedef ToolbarArgs = sap.ui.core.Control.ControlArgs & {
 <b>Note:</b> The visual styles are theme-dependent.
 	*/
 	@:optional var style:haxe.extern.EitherType<String,sap.m.ToolbarStyle>;
+
+	/**
+	* Defines the aria-haspopup attribute of the <code>Toolbar</code>. if the active <code>design</code> is true.
+	*/
+	@:optional var ariaHasPopup:String;
 
     /**
     * The content of the toolbar.

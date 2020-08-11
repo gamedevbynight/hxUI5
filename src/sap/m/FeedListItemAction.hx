@@ -100,7 +100,7 @@ Default value is <code>empty string</code>.
 	* @param	sKey New value for property <code>key</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKey( sKey:String):sap.m.FeedListItemAction;
+	public function setKey( ?sKey:String):sap.m.FeedListItemAction;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -113,7 +113,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.FeedListItemAction;
+	public function setText( ?sText:String):sap.m.FeedListItemAction;
 }
 
 typedef FeedListItemActionArgs = sap.ui.core.Element.ElementArgs & {

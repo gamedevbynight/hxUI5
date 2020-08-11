@@ -476,7 +476,7 @@ Default value is <code>-1</code>.
 	* @param	iFirstDayOfWeek New value for property <code>firstDayOfWeek</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFirstDayOfWeek( iFirstDayOfWeek:Int):sap.ui.unified.Calendar;
+	public function setFirstDayOfWeek( ?iFirstDayOfWeek:Int):sap.ui.unified.Calendar;
 
 	/**
 	* Sets a new value for property {@link #getIntervalSelection intervalSelection}.
@@ -489,7 +489,7 @@ Default value is <code>false</code>.
 	* @param	bIntervalSelection New value for property <code>intervalSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervalSelection( bIntervalSelection:Bool):sap.ui.unified.Calendar;
+	public function setIntervalSelection( ?bIntervalSelection:Bool):sap.ui.unified.Calendar;
 	@:overload( function(oLegend:sap.ui.core.ID):sap.ui.unified.Calendar{ })
 
 	/**
@@ -528,7 +528,7 @@ Default value is <code>1</code>.
 	* @param	iMonths New value for property <code>months</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMonths( iMonths:Int):sap.ui.unified.Calendar;
+	public function setMonths( ?iMonths:Int):sap.ui.unified.Calendar;
 
 	/**
 	* Sets a new value for property {@link #getNonWorkingDays nonWorkingDays}.
@@ -578,7 +578,7 @@ Default value is <code>true</code>.
 	* @param	bShowWeekNumbers New value for property <code>showWeekNumbers</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowWeekNumbers( bShowWeekNumbers:Bool):sap.ui.unified.Calendar;
+	public function setShowWeekNumbers( ?bShowWeekNumbers:Bool):sap.ui.unified.Calendar;
 
 	/**
 	* Sets a new value for property {@link #getSingleSelection singleSelection}.
@@ -591,7 +591,7 @@ Default value is <code>true</code>.
 	* @param	bSingleSelection New value for property <code>singleSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSingleSelection( bSingleSelection:Bool):sap.ui.unified.Calendar;
+	public function setSingleSelection( ?bSingleSelection:Bool):sap.ui.unified.Calendar;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

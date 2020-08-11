@@ -113,13 +113,15 @@ If a return value context is created, it must be used instead of <code>this.getB
 
 	/**
 	* Returns the root binding of this binding's hierarchy, see binding {@link topic:54e0ddf695af4a6c978472cecb01c64d Initialization and Read Requests}.
-	* @return	The root binding or <code>undefined</code> if this binding is not yet resolved.
+	* @return	The root binding or <code>undefined</code> if this binding is unresolved (see {@link sap.ui.model.Binding#isResolved}).
 	*/
 	public function getRootBinding( ):Dynamic;
 
 	/**
-	* Returns <code>true</code> if this binding or its dependent bindings have pending changes, meaning updates that have not yet been successfully sent to the server.
-	* @return	<code>true</code> if the binding has pending changes
+	* Returns <code>true</code> if this binding or its dependent bindings have pending property changes or created entities which have not been sent successfully to the server. This function does not take into account the deletion of entities (see {@link sap.ui.model.odata.v4.Context#delete}) and the execution of OData operations (see {@link sap.ui.model.odata.v4.ODataContextBinding#execute}).
+
+Note: If this binding is relative, its data is cached separately for each parent context path. This method returns <code>true</code> if there are pending changes for the current parent context path of this binding. If this binding is unresolved (see {@link sap.ui.model.Binding#isResolved}), it returns <code>false</code>.
+	* @return	<code>true</code> if the binding is resolved and has pending changes
 	*/
 	public function hasPendingChanges( ):Bool;
 
@@ -148,7 +150,7 @@ Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or applic
 	* Returns a promise on the value for the given path relative to this binding. The function allows access to the complete data the binding points to (if <code>sPath</code> is "") or any part thereof. The data is a JSON structure as described in <a href="http://docs.oasis-open.org/odata/odata-json-format/v4.0/odata-json-format-v4.0.html"> "OData JSON Format Version 4.0"</a>. Note that the function clones the result. Modify values via {@link sap.ui.model.odata.v4.Context#setProperty}.
 
 If you want {@link #requestObject} to read fresh data, call <code>oBinding.refresh()</code> first.
-	* @param	sPath A relative path within the JSON structure
+	* @param	sPath A path relative to this context binding
 	* @return	A promise on the requested value; in case there is no bound context this promise resolves with <code>undefined</code>
 	*/
 	public function requestObject( ?sPath:String):js.lib.Promise<ODataContextBinding>;

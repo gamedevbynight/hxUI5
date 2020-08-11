@@ -1,6 +1,5 @@
 package sap.ui.model.analytics.odata4analytics.model;
 
-@:native("sap.ui.model.analytics.odata4analytics.Model.ReferenceByURI")
 
 /**
 * Handle to an OData model by the URI pointing to it.

@@ -130,7 +130,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.SegmentedButton;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.SegmentedButton;
 	@:overload( function(oSelectedButton:sap.ui.core.ID):sap.ui.commons.SegmentedButton{ })
 
 	/**

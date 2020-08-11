@@ -145,7 +145,7 @@ Default value is <code>false</code>.
 	* @param	bScrollable New value for property <code>scrollable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScrollable( bScrollable:Bool):sap.ui.layout.BlockLayoutRow;
+	public function setScrollable( ?bScrollable:Bool):sap.ui.layout.BlockLayoutRow;
 }
 
 typedef BlockLayoutRowArgs = sap.ui.core.Control.ControlArgs & {

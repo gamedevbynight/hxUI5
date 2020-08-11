@@ -144,7 +144,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.ObjectAttribute;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.ObjectAttribute;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.

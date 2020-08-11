@@ -59,7 +59,7 @@ extern class XMLModel extends sap.ui.model.ClientModel
 	* Load XML-encoded data from the server using a GET HTTP request and store the resulting XML data in the model. Note: Due to browser security restrictions, most "Ajax" requests are subject to the same origin policy, the request can not successfully retrieve data from a different domain, subdomain, or protocol.
 	* @param	sURL A string containing the URL to which the request is sent
 	* @param	oParameters A map of parameters or a single parameter string that is sent to the server with the request
-	* @param	bAsync Whether the request should be asynchronous or not
+	* @param	bAsync By default, all requests are sent asynchronous. <b>Do not use <code>bAsync=false</code></b> because synchronous requests may temporarily lock the browser, disabling any actions while the request is active. Cross-domain requests do not support synchronous operation.
 	* @param	sType HTTP method of request
 	* @param	bCache Force no caching if false
 	* @param	mHeaders An object of additional header key/value pairs to send along with the request

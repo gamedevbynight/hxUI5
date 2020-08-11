@@ -172,7 +172,7 @@ Default value is <code>Horizontal</code>.
 	* @param	sOrientation New value for property <code>orientation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOrientation( sOrientation:sap.ui.core.Orientation):sap.ui.unified.SplitContainer;
+	public function setOrientation( ?sOrientation:sap.ui.core.Orientation):sap.ui.unified.SplitContainer;
 
 	/**
 	* Sets a new value for property {@link #getSecondaryContentSize secondaryContentSize}.
@@ -185,7 +185,7 @@ Default value is <code>250px</code>.
 	* @param	sSecondaryContentSize New value for property <code>secondaryContentSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSecondaryContentSize( sSecondaryContentSize:sap.ui.core.CSSSize):sap.ui.unified.SplitContainer;
+	public function setSecondaryContentSize( ?sSecondaryContentSize:sap.ui.core.CSSSize):sap.ui.unified.SplitContainer;
 
 	/**
 	* Sets a new value for property {@link #getShowSecondaryContent showSecondaryContent}.

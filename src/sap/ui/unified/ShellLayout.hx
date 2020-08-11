@@ -195,7 +195,7 @@ Default value is <code>false</code>.
 	* @param	bHeaderHiding New value for property <code>headerHiding</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderHiding( bHeaderHiding:Bool):sap.ui.unified.ShellLayout;
+	public function setHeaderHiding( ?bHeaderHiding:Bool):sap.ui.unified.ShellLayout;
 
 	/**
 	* Sets a new value for property {@link #getHeaderVisible headerVisible}.
@@ -208,7 +208,7 @@ Default value is <code>true</code>.
 	* @param	bHeaderVisible New value for property <code>headerVisible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderVisible( bHeaderVisible:Bool):sap.ui.unified.ShellLayout;
+	public function setHeaderVisible( ?bHeaderVisible:Bool):sap.ui.unified.ShellLayout;
 
 	/**
 	* Sets a new value for property {@link #getShowPane showPane}.
@@ -221,7 +221,7 @@ Default value is <code>false</code>.
 	* @param	bShowPane New value for property <code>showPane</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowPane( bShowPane:Bool):sap.ui.unified.ShellLayout;
+	public function setShowPane( ?bShowPane:Bool):sap.ui.unified.ShellLayout;
 }
 
 typedef ShellLayoutArgs = sap.ui.core.Control.ControlArgs & {

@@ -84,7 +84,7 @@ Default value is <code>7</code>.
 	* @param	iDays New value for property <code>days</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDays( iDays:Int):sap.ui.unified.calendar.DatesRow;
+	public function setDays( ?iDays:Int):sap.ui.unified.calendar.DatesRow;
 
 	/**
 	* Sets a new value for property {@link #getShowDayNamesLine showDayNamesLine}.
@@ -97,7 +97,7 @@ Default value is <code>true</code>.
 	* @param	bShowDayNamesLine New value for property <code>showDayNamesLine</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowDayNamesLine( bShowDayNamesLine:Bool):sap.ui.unified.calendar.DatesRow;
+	public function setShowDayNamesLine( ?bShowDayNamesLine:Bool):sap.ui.unified.calendar.DatesRow;
 
 	/**
 	* Sets a new value for property {@link #getStartDate startDate}.

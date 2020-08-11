@@ -116,6 +116,19 @@ Fires when navigation between two pages in the <code>Begin</code> column has bee
 	public function attachBeginColumnNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:columnResize columnResize} event of this <code>sap.f.FlexibleColumnLayout</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.f.FlexibleColumnLayout</code> itself.
+
+Fired when resize of each column has completed.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.FlexibleColumnLayout</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachColumnResize( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+
+	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:endColumnNavigate endColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.f.FlexibleColumnLayout</code> itself.
@@ -280,6 +293,16 @@ The passed function and listener object must match the ones used for event regis
 	public function detachBeginColumnNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:columnResize columnResize} event of this <code>sap.f.FlexibleColumnLayout</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachColumnResize( fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+
+	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:endColumnNavigate endColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -319,6 +342,18 @@ The passed function and listener object must match the ones used for event regis
 	* @return	Created class / constructor function
 	*/
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+
+	/**
+	* Gets current value of property {@link #getAutoFocus autoFocus}.
+
+Determines whether the initial focus of the <code>NavContainer</code> instances is set automatically on first rendering and after navigating to a new page.
+
+For more information, see {@link sap.m.NavContainer#autoFocus}.
+
+Default value is <code>true</code>.
+	* @return	Value of property <code>autoFocus</code>
+	*/
+	public function getAutoFocus( ):Bool;
 
 	/**
 	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
@@ -451,6 +486,16 @@ These should be any control with page semantics. These aggregated controls will 
 	public function getMidColumnPages( ):Array<sap.ui.core.Control>;
 
 	/**
+	* Gets current value of property {@link #getRestoreFocusOnBackNavigation restoreFocusOnBackNavigation}.
+
+Determines whether the focus is restored to the last known when navigating back to a prevously opened column, for example, upon closing of the end column and being transfered back to the mid column.
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>restoreFocusOnBackNavigation</code>
+	*/
+	public function getRestoreFocusOnBackNavigation( ):Bool;
+
+	/**
 	* Checks for the provided <code>sap.ui.core.Control</code> in the aggregation {@link #getBeginColumnPages beginColumnPages}. and returns its index if found or -1 otherwise.
 	* @param	oBeginColumnPage The beginColumnPage whose index is looked for
 	* @return	The index of the provided control in the aggregation if found, or -1 otherwise
@@ -547,6 +592,21 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeMidColumnPage( vMidColumnPage:sap.ui.core.Control):sap.ui.core.Control;
 
 	/**
+	* Sets a new value for property {@link #getAutoFocus autoFocus}.
+
+Determines whether the initial focus of the <code>NavContainer</code> instances is set automatically on first rendering and after navigating to a new page.
+
+For more information, see {@link sap.m.NavContainer#autoFocus}.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bAutoFocus New value for property <code>autoFocus</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setAutoFocus( ?bAutoFocus:Bool):sap.f.FlexibleColumnLayout;
+
+	/**
 	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
 
 Specifies the background color of the content. The visualization of the different options depends on the used theme.
@@ -557,7 +617,7 @@ Default value is <code>Transparent</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.BackgroundDesign):sap.f.FlexibleColumnLayout;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.BackgroundDesign):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Sets a new value for property {@link #getDefaultTransitionNameBeginColumn defaultTransitionNameBeginColumn}.
@@ -570,7 +630,7 @@ Default value is <code>slide</code>.
 	* @param	sDefaultTransitionNameBeginColumn New value for property <code>defaultTransitionNameBeginColumn</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultTransitionNameBeginColumn( sDefaultTransitionNameBeginColumn:String):sap.f.FlexibleColumnLayout;
+	public function setDefaultTransitionNameBeginColumn( ?sDefaultTransitionNameBeginColumn:String):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Sets a new value for property {@link #getDefaultTransitionNameEndColumn defaultTransitionNameEndColumn}.
@@ -583,7 +643,7 @@ Default value is <code>slide</code>.
 	* @param	sDefaultTransitionNameEndColumn New value for property <code>defaultTransitionNameEndColumn</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultTransitionNameEndColumn( sDefaultTransitionNameEndColumn:String):sap.f.FlexibleColumnLayout;
+	public function setDefaultTransitionNameEndColumn( ?sDefaultTransitionNameEndColumn:String):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Sets a new value for property {@link #getDefaultTransitionNameMidColumn defaultTransitionNameMidColumn}.
@@ -596,7 +656,7 @@ Default value is <code>slide</code>.
 	* @param	sDefaultTransitionNameMidColumn New value for property <code>defaultTransitionNameMidColumn</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultTransitionNameMidColumn( sDefaultTransitionNameMidColumn:String):sap.f.FlexibleColumnLayout;
+	public function setDefaultTransitionNameMidColumn( ?sDefaultTransitionNameMidColumn:String):sap.f.FlexibleColumnLayout;
 	@:overload( function(oInitialBeginColumnPage:sap.ui.core.ID):sap.f.FlexibleColumnLayout{ })
 
 	/**
@@ -635,12 +695,25 @@ Default value is <code>OneColumn</code>.
 	* @param	sLayout New value for property <code>layout</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLayout( sLayout:sap.f.LayoutType):sap.f.FlexibleColumnLayout;
+	public function setLayout( ?sLayout:sap.f.LayoutType):sap.f.FlexibleColumnLayout;
+
+	/**
+	* Sets a new value for property {@link #getRestoreFocusOnBackNavigation restoreFocusOnBackNavigation}.
+
+Determines whether the focus is restored to the last known when navigating back to a prevously opened column, for example, upon closing of the end column and being transfered back to the mid column.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bRestoreFocusOnBackNavigation New value for property <code>restoreFocusOnBackNavigation</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setRestoreFocusOnBackNavigation( ?bRestoreFocusOnBackNavigation:Bool):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Navigates to the given page inside the FlexibleColumnLayout. Columns are scanned for the page in the following order: <code>Begin</code>, <code>Mid</code>, <code>End</code>.
 	* @param	sPageId The screen to which we are navigating to. The ID or the control itself can be given.
-	* @param	sTransitionName The type of the transition/animation to apply. This parameter can be omitted; then the default value is "slide" (horizontal movement from the right). Other options are: "fade", "flip", and "show" and the names of any registered custom transitions.
+	* @param	sTransitionName The type of the transition/animation to apply. Options are: "slide" (horizontal movement from the right), "fade", "flip", and "show" and the names of any registered custom transitions.
 
 None of the standard transitions is currently making use of any given transition parameters.
 	* @param	oData This optional object can carry any payload data which should be made available to the target page. The beforeShow event on the target page will contain this data object as data property.
@@ -655,12 +728,12 @@ For a proper parameter order, the "data" parameter must be given when the transi
 NOTE: It depends on the transition function how the object should be structured and which parameters are actually used to influence the transition. The "show", "slide" and "fade" transitions do not use any parameter.
 	* @return	The <code>sap.f.FlexibleColumnLayout</code> instance
 	*/
-	public function to( sPageId:String, sTransitionName:String, oData:Dynamic, oTransitionParameters:Dynamic):sap.f.FlexibleColumnLayout;
+	public function to( sPageId:String, ?sTransitionName:String, oData:Dynamic, oTransitionParameters:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Navigates to a given Begin column page.
 	* @param	sPageId The screen to which drilldown should happen. The ID or the control itself can be given.
-	* @param	sTransitionName The type of the transition/animation to apply. This parameter can be omitted; then the default value is "slide" (horizontal movement from the right). Other options are: "fade", "flip", and "show" and the names of any registered custom transitions.
+	* @param	sTransitionName The type of the transition/animation to apply. Options are: "slide" (horizontal movement from the right), "fade", "flip", and "show" and the names of any registered custom transitions.
 
 None of the standard transitions is currently making use of any given transition parameters.
 	* @param	oData This optional object can carry any payload data which should be made available to the target page. The beforeShow event on the target page will contain this data object as data property.
@@ -675,12 +748,12 @@ For a proper parameter order, the data parameter must be given when the transiti
 NOTE: it depends on the transition function how the object should be structured and which parameters are actually used to influence the transition. The "show", "slide" and "fade" transitions do not use any parameter.
 	* @return	The <code>sap.f.FlexibleColumnLayout</code> instance
 	*/
-	public function toBeginColumnPage( sPageId:String, sTransitionName:String, oData:Dynamic, oTransitionParameters:Dynamic):sap.f.FlexibleColumnLayout;
+	public function toBeginColumnPage( sPageId:String, ?sTransitionName:String, oData:Dynamic, oTransitionParameters:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Navigates to a given End column page.
 	* @param	sPageId The screen to which drilldown should happen. The ID or the control itself can be given.
-	* @param	sTransitionName The type of the transition/animation to apply. This parameter can be omitted; then the default value is "slide" (horizontal movement from the right). Other options are: "fade", "flip", and "show" and the names of any registered custom transitions.
+	* @param	sTransitionName The type of the transition/animation to apply. Options are: "slide" (horizontal movement from the right), "fade", "flip", and "show" and the names of any registered custom transitions.
 
 None of the standard transitions is currently making use of any given transition parameters.
 	* @param	oData This optional object can carry any payload data which should be made available to the target page. The beforeShow event on the target page will contain this data object as data property.
@@ -695,12 +768,12 @@ For a proper parameter order, the data parameter must be given when the transiti
 NOTE: it depends on the transition function how the object should be structured and which parameters are actually used to influence the transition. The "show", "slide" and "fade" transitions do not use any parameter.
 	* @return	The <code>sap.f.FlexibleColumnLayout</code> instance
 	*/
-	public function toEndColumnPage( sPageId:String, sTransitionName:String, oData:Dynamic, oTransitionParameters:Dynamic):sap.f.FlexibleColumnLayout;
+	public function toEndColumnPage( sPageId:String, ?sTransitionName:String, oData:Dynamic, oTransitionParameters:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Navigates to a given Mid column page.
 	* @param	sPageId The screen to which drilldown should happen. The ID or the control itself can be given.
-	* @param	sTransitionName The type of the transition/animation to apply. This parameter can be omitted; then the default value is "slide" (horizontal movement from the right). Other options are: "fade", "flip", and "show" and the names of any registered custom transitions.
+	* @param	sTransitionName The type of the transition/animation to apply. Options are: "slide" (horizontal movement from the right), "fade", "flip", and "show" and the names of any registered custom transitions.
 
 None of the standard transitions is currently making use of any given transition parameters.
 	* @param	oData This optional object can carry any payload data which should be made available to the target page. The beforeShow event on the target page will contain this data object as data property.
@@ -715,10 +788,17 @@ For a proper parameter order, the data parameter must be given when the transiti
 NOTE: it depends on the transition function how the object should be structured and which parameters are actually used to influence the transition. The "show", "slide" and "fade" transitions do not use any parameter.
 	* @return	The <code>sap.f.FlexibleColumnLayout</code> instance
 	*/
-	public function toMidColumnPage( sPageId:String, sTransitionName:String, oData:Dynamic, oTransitionParameters:Dynamic):sap.f.FlexibleColumnLayout;
+	public function toMidColumnPage( sPageId:String, ?sTransitionName:String, oData:Dynamic, oTransitionParameters:Dynamic):sap.f.FlexibleColumnLayout;
 }
 
 typedef FlexibleColumnLayoutArgs = sap.ui.core.Control.ControlArgs & {
+
+	/**
+	* Determines whether the initial focus of the <code>NavContainer</code> instances is set automatically on first rendering and after navigating to a new page.
+
+For more information, see {@link sap.m.NavContainer#autoFocus}.
+	*/
+	@:optional var autoFocus:haxe.extern.EitherType<String,Bool>;
 
 	/**
 	* Determines the layout of the control - number of visible columns and their relative sizes.
@@ -746,6 +826,11 @@ For more details, see {@link topic:3b9f760da5b64adf8db7f95247879086 Types of Lay
 	* Specifies the background color of the content. The visualization of the different options depends on the used theme.
 	*/
 	@:optional var backgroundDesign:haxe.extern.EitherType<String,sap.m.BackgroundDesign>;
+
+	/**
+	* Determines whether the focus is restored to the last known when navigating back to a prevously opened column, for example, upon closing of the end column and being transfered back to the mid column.
+	*/
+	@:optional var restoreFocusOnBackNavigation:haxe.extern.EitherType<String,Bool>;
 
     /**
     * The content entities between which the <code>FlexibleColumnLayout</code> navigates in the <code>Begin</code> column.
@@ -843,6 +928,11 @@ NOTE: In case of animated transitions this event is fired with some delay after 
 	* Fires when navigation between two pages in the <code>Begin</code> column has been triggered. The transition (if any) to the new page has not started yet. This event can be aborted by the application with preventDefault(), which means that there will be no navigation.
 	*/
 	@:optional var beginColumnNavigate:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* Fired when resize of each column has completed.
+	*/
+	@:optional var columnResize:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
 	* Fires when navigation between two pages in the <code>End</code> column has been triggered. The transition (if any) to the new page has not started yet. This event can be aborted by the application with preventDefault(), which means that there will be no navigation.

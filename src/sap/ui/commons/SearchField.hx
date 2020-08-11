@@ -340,7 +340,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.commons.SearchField;
+	public function setEditable( ?bEditable:Bool):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getEnableCache enableCache}.
@@ -353,7 +353,7 @@ Default value is <code>true</code>.
 	* @param	bEnableCache New value for property <code>enableCache</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableCache( bEnableCache:Bool):sap.ui.commons.SearchField;
+	public function setEnableCache( ?bEnableCache:Bool):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getEnableClear enableClear}.
@@ -366,7 +366,7 @@ Default value is <code>false</code>.
 	* @param	bEnableClear New value for property <code>enableClear</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableClear( bEnableClear:Bool):sap.ui.commons.SearchField;
+	public function setEnableClear( ?bEnableClear:Bool):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -379,7 +379,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.SearchField;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getEnableFilterMode enableFilterMode}.
@@ -392,7 +392,7 @@ Default value is <code>false</code>.
 	* @param	bEnableFilterMode New value for property <code>enableFilterMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableFilterMode( bEnableFilterMode:Bool):sap.ui.commons.SearchField;
+	public function setEnableFilterMode( ?bEnableFilterMode:Bool):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getEnableListSuggest enableListSuggest}.
@@ -405,7 +405,7 @@ Default value is <code>true</code>.
 	* @param	bEnableListSuggest New value for property <code>enableListSuggest</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableListSuggest( bEnableListSuggest:Bool):sap.ui.commons.SearchField;
+	public function setEnableListSuggest( ?bEnableListSuggest:Bool):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getMaxHistoryItems maxHistoryItems}.
@@ -418,7 +418,7 @@ Default value is <code>0</code>.
 	* @param	iMaxHistoryItems New value for property <code>maxHistoryItems</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxHistoryItems( iMaxHistoryItems:Int):sap.ui.commons.SearchField;
+	public function setMaxHistoryItems( ?iMaxHistoryItems:Int):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getMaxLength maxLength}.
@@ -431,7 +431,7 @@ Default value is <code>0</code>.
 	* @param	iMaxLength New value for property <code>maxLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxLength( iMaxLength:Int):sap.ui.commons.SearchField;
+	public function setMaxLength( ?iMaxLength:Int):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getMaxSuggestionItems maxSuggestionItems}.
@@ -444,7 +444,7 @@ Default value is <code>10</code>.
 	* @param	iMaxSuggestionItems New value for property <code>maxSuggestionItems</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxSuggestionItems( iMaxSuggestionItems:Int):sap.ui.commons.SearchField;
+	public function setMaxSuggestionItems( ?iMaxSuggestionItems:Int):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getPlaceholder placeholder}.
@@ -457,7 +457,7 @@ Default value is <code>empty string</code>.
 	* @param	sPlaceholder New value for property <code>placeholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholder( sPlaceholder:String):sap.ui.commons.SearchField;
+	public function setPlaceholder( ?sPlaceholder:String):sap.ui.commons.SearchField;
 
 	/**
 	* Sets the aggregated {@link #getSearchProvider searchProvider}.
@@ -477,7 +477,7 @@ Default value is <code>false</code>.
 	* @param	bShowExternalButton New value for property <code>showExternalButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowExternalButton( bShowExternalButton:Bool):sap.ui.commons.SearchField;
+	public function setShowExternalButton( ?bShowExternalButton:Bool):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getShowListExpander showListExpander}.
@@ -490,7 +490,7 @@ Default value is <code>true</code>.
 	* @param	bShowListExpander New value for property <code>showListExpander</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowListExpander( bShowListExpander:Bool):sap.ui.commons.SearchField;
+	public function setShowListExpander( ?bShowListExpander:Bool):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getStartSuggestion startSuggestion}.
@@ -503,7 +503,7 @@ Default value is <code>3</code>.
 	* @param	iStartSuggestion New value for property <code>startSuggestion</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStartSuggestion( iStartSuggestion:Int):sap.ui.commons.SearchField;
+	public function setStartSuggestion( ?iStartSuggestion:Int):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -516,7 +516,7 @@ Default value is <code>Begin</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.ui.commons.SearchField;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -529,7 +529,7 @@ Default value is <code>empty string</code>.
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.ui.commons.SearchField;
+	public function setValue( ?sValue:String):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -542,7 +542,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.ui.commons.SearchField;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getVisibleItemCount visibleItemCount}.
@@ -555,7 +555,7 @@ Default value is <code>20</code>.
 	* @param	iVisibleItemCount New value for property <code>visibleItemCount</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleItemCount( iVisibleItemCount:Int):sap.ui.commons.SearchField;
+	public function setVisibleItemCount( ?iVisibleItemCount:Int):sap.ui.commons.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

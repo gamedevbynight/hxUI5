@@ -130,7 +130,7 @@ Default value is <code>true</code>.
 	* @param	bResponsive New value for property <code>responsive</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setResponsive( bResponsive:Bool):sap.ui.layout.ResponsiveFlowLayout;
+	public function setResponsive( ?bResponsive:Bool):sap.ui.layout.ResponsiveFlowLayout;
 }
 
 typedef ResponsiveFlowLayoutArgs = sap.ui.core.Control.ControlArgs & {

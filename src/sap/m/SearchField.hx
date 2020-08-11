@@ -34,11 +34,24 @@ extern class SearchField extends sap.ui.core.Control implements sap.ui.core.IFor
 	public function addSuggestionItem( oSuggestionItem:sap.m.SuggestionItem):sap.m.SearchField;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:change change} event of this <code>sap.m.SearchField</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.SearchField</code> itself.
+
+This event is fired when the user changes the value of the search field. Unlike the <code>liveChange</code> event, the <code>change</code> event is not fired for each key press.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SearchField</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SearchField;
+
+	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:liveChange liveChange} event of this <code>sap.m.SearchField</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.SearchField</code> itself.
 
-This event is fired when the value of the search field is changed by a user - e.g. at each key press. Do not invalidate or re-render a focused search field, especially during the liveChange event.
+This event is fired each time when the value of the search field is changed by the user - e.g. at each key press. Do not invalidate or re-render a focused search field, especially during the liveChange event.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SearchField</code> itself
@@ -86,6 +99,16 @@ See {@link sap.ui.base.ManagedObject#bindProperty ManagedObject.bindProperty} fo
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function destroySuggestionItems( ):sap.m.SearchField;
+
+	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:change change} event of this <code>sap.m.SearchField</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SearchField;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:liveChange liveChange} event of this <code>sap.m.SearchField</code>.
@@ -241,7 +264,9 @@ Default value is <code>true</code>.
 	/**
 	* Gets current value of property {@link #getWidth width}.
 
-Defines the CSS width of the input. If not set, width is 100%.
+Defines the CSS width of the input. 100% by default.
+
+Default value is <code>100%</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -319,7 +344,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.SearchField;
+	public function setEnabled( ?bEnabled:Bool):sap.m.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getEnableSuggestions enableSuggestions}.
@@ -332,7 +357,7 @@ Default value is <code>false</code>.
 	* @param	bEnableSuggestions New value for property <code>enableSuggestions</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableSuggestions( bEnableSuggestions:Bool):sap.m.SearchField;
+	public function setEnableSuggestions( ?bEnableSuggestions:Bool):sap.m.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getMaxLength maxLength}.
@@ -345,7 +370,7 @@ Default value is <code>0</code>.
 	* @param	iMaxLength New value for property <code>maxLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxLength( iMaxLength:Int):sap.m.SearchField;
+	public function setMaxLength( ?iMaxLength:Int):sap.m.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getPlaceholder placeholder}.
@@ -380,7 +405,7 @@ Default value is <code>false</code>.
 	* @param	bShowRefreshButton New value for property <code>showRefreshButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowRefreshButton( bShowRefreshButton:Bool):sap.m.SearchField;
+	public function setShowRefreshButton( ?bShowRefreshButton:Bool):sap.m.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getShowSearchButton showSearchButton}.
@@ -393,7 +418,7 @@ Default value is <code>true</code>.
 	* @param	bShowSearchButton New value for property <code>showSearchButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSearchButton( bShowSearchButton:Bool):sap.m.SearchField;
+	public function setShowSearchButton( ?bShowSearchButton:Bool):sap.m.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -417,28 +442,30 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.SearchField;
+	public function setVisible( ?bVisible:Bool):sap.m.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
 
-Defines the CSS width of the input. If not set, width is 100%.
+Defines the CSS width of the input. 100% by default.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.SearchField;
-	@:overload( function(bShow:Bool):sap.m.SearchField{ })
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.SearchField;
+	@:overload( function(?bShow:Bool):sap.m.SearchField{ })
 
 	/**
 	* Toggle visibility of the suggestion list.
-	* @param	bShow set to <code>true</code> to display suggestions and <code>false</code> to hide them. Default value is <code>true</code>. An empty suggestion list is not shown on desktop and tablet devices.<br>
+	* @param	bShow If the value is <code>true</code> the suggestions are displayed. If the value is <code>false</code> the suggestions are hidden. An empty suggestion list is not shown on desktop and tablet devices.<br>
 
 This method may be called only as a response to the <code>suggest</code> event to ensure that the suggestion list is shown at the moment when the user expects it.
 	* @return	<code>this</code> to allow method chaining
 	*/
-	public function suggest( bShow:Dynamic):sap.m.SearchField;
+	public function suggest( ?bShow:Dynamic):sap.m.SearchField;
 
 	/**
 	* Unbinds property {@link #getValue value} from model data.
@@ -455,7 +482,7 @@ typedef SearchFieldArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var value:String;
 
 	/**
-	* Defines the CSS width of the input. If not set, width is 100%.
+	* Defines the CSS width of the input. 100% by default.
 	*/
 	@:optional var width:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
@@ -515,7 +542,12 @@ typedef SearchFieldArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var ariaLabelledBy:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 
 	/**
-	* This event is fired when the value of the search field is changed by a user - e.g. at each key press. Do not invalidate or re-render a focused search field, especially during the liveChange event.
+	* This event is fired when the user changes the value of the search field. Unlike the <code>liveChange</code> event, the <code>change</code> event is not fired for each key press.
+	*/
+	@:optional var change:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* This event is fired each time when the value of the search field is changed by the user - e.g. at each key press. Do not invalidate or re-render a focused search field, especially during the liveChange event.
 	*/
 	@:optional var liveChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 

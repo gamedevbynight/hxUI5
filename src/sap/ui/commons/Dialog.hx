@@ -371,7 +371,7 @@ Default value is <code>Dialog</code>.
 	* @param	sAccessibleRole New value for property <code>accessibleRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAccessibleRole( sAccessibleRole:sap.ui.core.AccessibleRole):sap.ui.commons.Dialog;
+	public function setAccessibleRole( ?sAccessibleRole:sap.ui.core.AccessibleRole):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getApplyContentPadding applyContentPadding}.
@@ -384,7 +384,7 @@ Default value is <code>true</code>.
 	* @param	bApplyContentPadding New value for property <code>applyContentPadding</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setApplyContentPadding( bApplyContentPadding:Bool):sap.ui.commons.Dialog;
+	public function setApplyContentPadding( ?bApplyContentPadding:Bool):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getAutoClose autoClose}.
@@ -397,7 +397,7 @@ Default value is <code>false</code>.
 	* @param	bAutoClose New value for property <code>autoClose</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAutoClose( bAutoClose:Bool):sap.ui.commons.Dialog;
+	public function setAutoClose( ?bAutoClose:Bool):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getContentBorderDesign contentBorderDesign}.
@@ -410,7 +410,7 @@ Default value is <code>None</code>.
 	* @param	sContentBorderDesign New value for property <code>contentBorderDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentBorderDesign( sContentBorderDesign:sap.ui.commons.enums.BorderDesign):sap.ui.commons.Dialog;
+	public function setContentBorderDesign( ?sContentBorderDesign:sap.ui.commons.enums.BorderDesign):sap.ui.commons.Dialog;
 	@:overload( function(oDefaultButton:sap.ui.core.ID):sap.ui.commons.Dialog{ })
 
 	/**
@@ -450,7 +450,7 @@ Default value is <code>false</code>.
 	* @param	bKeepInWindow New value for property <code>keepInWindow</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKeepInWindow( bKeepInWindow:Bool):sap.ui.commons.Dialog;
+	public function setKeepInWindow( ?bKeepInWindow:Bool):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getMaxHeight maxHeight}.
@@ -507,7 +507,7 @@ Default value is <code>false</code>.
 	* @param	bModal New value for property <code>modal</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setModal( bModal:Bool):sap.ui.commons.Dialog;
+	public function setModal( ?bModal:Bool):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getResizable resizable}.
@@ -520,7 +520,7 @@ Default value is <code>true</code>.
 	* @param	bResizable New value for property <code>resizable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setResizable( bResizable:Bool):sap.ui.commons.Dialog;
+	public function setResizable( ?bResizable:Bool):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getScrollLeft scrollLeft}.
@@ -533,7 +533,7 @@ Default value is <code>0</code>.
 	* @param	iScrollLeft New value for property <code>scrollLeft</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScrollLeft( iScrollLeft:Int):sap.ui.commons.Dialog;
+	public function setScrollLeft( ?iScrollLeft:Int):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getScrollTop scrollTop}.
@@ -546,7 +546,7 @@ Default value is <code>0</code>.
 	* @param	iScrollTop New value for property <code>scrollTop</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScrollTop( iScrollTop:Int):sap.ui.commons.Dialog;
+	public function setScrollTop( ?iScrollTop:Int):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getShowCloseButton showCloseButton}.
@@ -559,7 +559,7 @@ Default value is <code>true</code>.
 	* @param	bShowCloseButton New value for property <code>showCloseButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowCloseButton( bShowCloseButton:Bool):sap.ui.commons.Dialog;
+	public function setShowCloseButton( ?bShowCloseButton:Bool):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -572,7 +572,7 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.ui.commons.Dialog;
+	public function setTitle( ?sTitle:String):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

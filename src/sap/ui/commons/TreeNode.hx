@@ -274,7 +274,7 @@ Default value is <code>true</code>.
 	* @param	bExpanded New value for property <code>expanded</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExpanded( bExpanded:Bool):sap.ui.commons.TreeNode;
+	public function setExpanded( ?bExpanded:Bool):sap.ui.commons.TreeNode;
 
 	/**
 	* Sets a new value for property {@link #getHasExpander hasExpander}.
@@ -287,7 +287,7 @@ Default value is <code>false</code>.
 	* @param	bHasExpander New value for property <code>hasExpander</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHasExpander( bHasExpander:Bool):sap.ui.commons.TreeNode;
+	public function setHasExpander( ?bHasExpander:Bool):sap.ui.commons.TreeNode;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.

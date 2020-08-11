@@ -162,7 +162,7 @@ Default value is <code>Standard</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.m.LabelDesign):sap.m.Label;
+	public function setDesign( ?sDesign:sap.m.LabelDesign):sap.m.Label;
 
 	/**
 	* Sets a new value for property {@link #getDisplayOnly displayOnly}.
@@ -177,7 +177,7 @@ Default value is <code>false</code>.
 	* @param	bDisplayOnly New value for property <code>displayOnly</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayOnly( bDisplayOnly:Bool):sap.m.Label;
+	public function setDisplayOnly( ?bDisplayOnly:Bool):sap.m.Label;
 	@:overload( function(oLabelFor:sap.ui.core.ID):sap.m.Label{ })
 
 	/**
@@ -198,7 +198,7 @@ Default value is <code>false</code>.
 	* @param	bRequired New value for property <code>required</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRequired( bRequired:Bool):sap.m.Label;
+	public function setRequired( ?bRequired:Bool):sap.m.Label;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -222,7 +222,7 @@ Default value is <code>Begin</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.Label;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.Label;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -235,7 +235,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.Label;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.Label;
 
 	/**
 	* Sets a new value for property {@link #getVAlign vAlign}.
@@ -248,7 +248,7 @@ Default value is <code>Inherit</code>.
 	* @param	sVAlign New value for property <code>vAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVAlign( sVAlign:sap.ui.core.VerticalAlign):sap.m.Label;
+	public function setVAlign( ?sVAlign:sap.ui.core.VerticalAlign):sap.m.Label;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -258,10 +258,10 @@ Determines the width of the label.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth New value for property <code>width</code>
+	* @param	sWidth= New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Label;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Label;
 
 	/**
 	* Sets a new value for property {@link #getWrapping wrapping}.
@@ -274,7 +274,7 @@ Default value is <code>false</code>.
 	* @param	bWrapping New value for property <code>wrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrapping( bWrapping:Bool):sap.m.Label;
+	public function setWrapping( ?bWrapping:Bool):sap.m.Label;
 
 	/**
 	* Sets a new value for property {@link #getWrappingType wrappingType}.
@@ -289,7 +289,7 @@ Default value is <code>Normal</code>.
 	* @param	sWrappingType New value for property <code>wrappingType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrappingType( sWrappingType:sap.m.WrappingType):sap.m.Label;
+	public function setWrappingType( ?sWrappingType:sap.m.WrappingType):sap.m.Label;
 }
 
 typedef LabelArgs = sap.ui.core.Control.ControlArgs & {

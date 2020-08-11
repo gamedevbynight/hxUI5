@@ -350,7 +350,7 @@ Default value is <code>0</code>.
 	* @param	iDisplayValuePrecision New value for property <code>displayValuePrecision</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayValuePrecision( iDisplayValuePrecision:Int):sap.m.StepInput;
+	public function setDisplayValuePrecision( ?iDisplayValuePrecision:Int):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -363,7 +363,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.m.StepInput;
+	public function setEditable( ?bEditable:Bool):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -376,7 +376,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.StepInput;
+	public function setEnabled( ?bEnabled:Bool):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getFieldWidth fieldWidth}.
@@ -391,7 +391,7 @@ Default value is <code>50%</code>.
 	* @param	sFieldWidth New value for property <code>fieldWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFieldWidth( sFieldWidth:sap.ui.core.CSSSize):sap.m.StepInput;
+	public function setFieldWidth( ?sFieldWidth:sap.ui.core.CSSSize):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getLargerStep largerStep}.
@@ -404,7 +404,7 @@ Default value is <code>2</code>.
 	* @param	fLargerStep New value for property <code>largerStep</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLargerStep( fLargerStep:Float):sap.m.StepInput;
+	public function setLargerStep( ?fLargerStep:Float):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -439,7 +439,7 @@ Default value is <code>false</code>.
 	* @param	bRequired New value for property <code>required</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRequired( bRequired:Bool):sap.m.StepInput;
+	public function setRequired( ?bRequired:Bool):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getStep step}.
@@ -452,7 +452,7 @@ Default value is <code>1</code>.
 	* @param	fStep New value for property <code>step</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStep( fStep:Float):sap.m.StepInput;
+	public function setStep( ?fStep:Float):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getStepMode stepMode}.
@@ -467,7 +467,7 @@ Default value is <code>AdditionAndSubtraction</code>.
 	* @param	sStepMode New value for property <code>stepMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStepMode( sStepMode:sap.m.StepInputStepModeType):sap.m.StepInput;
+	public function setStepMode( ?sStepMode:sap.m.StepInputStepModeType):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -480,7 +480,7 @@ Default value is <code>End</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.StepInput;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -493,7 +493,7 @@ Default value is <code>0</code>.
 	* @param	fValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( fValue:Float):sap.m.StepInput;
+	public function setValue( ?fValue:Float):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -506,7 +506,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.m.StepInput;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getValueStateText valueStateText}.

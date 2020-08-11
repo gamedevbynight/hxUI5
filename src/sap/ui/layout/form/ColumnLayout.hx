@@ -106,7 +106,7 @@ Default value is <code>2</code>.
 	* @param	sColumnsL New value for property <code>columnsL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnsL( sColumnsL:sap.ui.layout.form.ColumnsL):sap.ui.layout.form.ColumnLayout;
+	public function setColumnsL( ?sColumnsL:sap.ui.layout.form.ColumnsL):sap.ui.layout.form.ColumnLayout;
 
 	/**
 	* Sets a new value for property {@link #getColumnsM columnsM}.
@@ -119,7 +119,7 @@ Default value is <code>1</code>.
 	* @param	sColumnsM New value for property <code>columnsM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnsM( sColumnsM:sap.ui.layout.form.ColumnsM):sap.ui.layout.form.ColumnLayout;
+	public function setColumnsM( ?sColumnsM:sap.ui.layout.form.ColumnsM):sap.ui.layout.form.ColumnLayout;
 
 	/**
 	* Sets a new value for property {@link #getColumnsXL columnsXL}.
@@ -134,7 +134,7 @@ Default value is <code>2</code>.
 	* @param	sColumnsXL New value for property <code>columnsXL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnsXL( sColumnsXL:sap.ui.layout.form.ColumnsXL):sap.ui.layout.form.ColumnLayout;
+	public function setColumnsXL( ?sColumnsXL:sap.ui.layout.form.ColumnsXL):sap.ui.layout.form.ColumnLayout;
 
 	/**
 	* Sets a new value for property {@link #getEmptyCellsLarge emptyCellsLarge}.
@@ -147,7 +147,7 @@ Default value is <code>0</code>.
 	* @param	sEmptyCellsLarge New value for property <code>emptyCellsLarge</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEmptyCellsLarge( sEmptyCellsLarge:sap.ui.layout.form.EmptyCells):sap.ui.layout.form.ColumnLayout;
+	public function setEmptyCellsLarge( ?sEmptyCellsLarge:sap.ui.layout.form.EmptyCells):sap.ui.layout.form.ColumnLayout;
 
 	/**
 	* Sets a new value for property {@link #getLabelCellsLarge labelCellsLarge}.
@@ -160,7 +160,7 @@ Default value is <code>4</code>.
 	* @param	sLabelCellsLarge New value for property <code>labelCellsLarge</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabelCellsLarge( sLabelCellsLarge:sap.ui.layout.form.ColumnCells):sap.ui.layout.form.ColumnLayout;
+	public function setLabelCellsLarge( ?sLabelCellsLarge:sap.ui.layout.form.ColumnCells):sap.ui.layout.form.ColumnLayout;
 }
 
 typedef ColumnLayoutArgs = sap.ui.layout.form.FormLayout.FormLayoutArgs & {

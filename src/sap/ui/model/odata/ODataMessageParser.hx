@@ -35,12 +35,13 @@ public function new():Void;
 	/**
 	* Parses the given response for messages, calculates the delta and fires the messageChange-event on the MessageProcessor if messages are found.
 	* @param	oResponse The response from the server containing body and headers
-	* @param	oRequest The original request that lead to this response
-	* @param	mGetEntities A map containing the entities requested from the back-end as keys
-	* @param	mChangeEntities A map containing the entities changed on the back-end as keys
+	* @param	oRequest The original request that leads to this response
+	* @param	mGetEntities A map with the keys of the entities requested from the back-end mapped to true
+	* @param	mChangeEntities A map with the keys of the entities changed in the back-end mapped to true
+	* @param	bMessageScopeSupported Whether the used OData service supports the message scope {@link sap.ui.model.odata.MessageScope.BusinessObject}
 	* @return	Void
 	*/
-	public function parse( oResponse:Dynamic, oRequest:Dynamic, mGetEntities:Map<String,Dynamic>, mChangeEntities:Map<String,Dynamic>):Void;
+	public function parse( oResponse:Dynamic, oRequest:Dynamic, mGetEntities:Dynamic, mChangeEntities:Dynamic, bMessageScopeSupported:Bool):Void;
 
 	/**
 	* Sets the header field name that should be used for parsing the JSON messages

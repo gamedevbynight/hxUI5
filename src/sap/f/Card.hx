@@ -122,7 +122,7 @@ Default value is <code>Top</code>.
 	* @param	sHeaderPosition New value for property <code>headerPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderPosition( sHeaderPosition:sap.f.cards.HeaderPosition):sap.f.Card;
+	public function setHeaderPosition( ?sHeaderPosition:sap.f.cards.HeaderPosition):sap.f.Card;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -135,7 +135,7 @@ Default value is <code>auto</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.f.Card;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.f.Card;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -148,7 +148,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.f.Card;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.f.Card;
 }
 
 typedef CardArgs = sap.ui.core.Control.ControlArgs & {

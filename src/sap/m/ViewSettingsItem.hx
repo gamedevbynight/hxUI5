@@ -71,7 +71,7 @@ Default value is <code>false</code>.
 	* @param	bSelected New value for property <code>selected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelected( bSelected:Bool):sap.m.ViewSettingsItem;
+	public function setSelected( ?bSelected:Bool):sap.m.ViewSettingsItem;
 }
 
 typedef ViewSettingsItemArgs = sap.ui.core.Item.ItemArgs & {

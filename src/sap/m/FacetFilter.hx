@@ -62,6 +62,8 @@ Fired when the user confirms filter selection.
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.FacetFilter</code> itself.
 
 Fired when the Reset button is pressed to inform that all FacetFilterLists need to be reset.
+
+The default filtering behavior of the sap.m.FacetFilterList can be prevented by calling <code>sap.ui.base.Event.prototype.preventDefault</code> function in the <code>search</code> event handler function. If the default filtering behavior is prevented then filtering behavior has to be defined at application level inside the <code>search</code> and <code>reset</code> event handler functions.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.FacetFilter</code> itself
@@ -231,7 +233,7 @@ Default value is <code>true</code>.
 	* @param	bLiveSearch New value for property <code>liveSearch</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLiveSearch( bLiveSearch:Bool):sap.m.FacetFilter;
+	public function setLiveSearch( ?bLiveSearch:Bool):sap.m.FacetFilter;
 
 	/**
 	* Sets a new value for property {@link #getShowPersonalization showPersonalization}.
@@ -246,7 +248,7 @@ Default value is <code>false</code>.
 	* @param	bShowPersonalization New value for property <code>showPersonalization</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowPersonalization( bShowPersonalization:Bool):sap.m.FacetFilter;
+	public function setShowPersonalization( ?bShowPersonalization:Bool):sap.m.FacetFilter;
 
 	/**
 	* Sets a new value for property {@link #getShowPopoverOKButton showPopoverOKButton}.
@@ -259,7 +261,7 @@ Default value is <code>false</code>.
 	* @param	bShowPopoverOKButton New value for property <code>showPopoverOKButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowPopoverOKButton( bShowPopoverOKButton:Bool):sap.m.FacetFilter;
+	public function setShowPopoverOKButton( ?bShowPopoverOKButton:Bool):sap.m.FacetFilter;
 
 	/**
 	* Sets a new value for property {@link #getShowReset showReset}.
@@ -272,7 +274,7 @@ Default value is <code>true</code>.
 	* @param	bShowReset New value for property <code>showReset</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowReset( bShowReset:Bool):sap.m.FacetFilter;
+	public function setShowReset( ?bShowReset:Bool):sap.m.FacetFilter;
 
 	/**
 	* Sets a new value for property {@link #getShowSummaryBar showSummaryBar}.
@@ -285,7 +287,7 @@ Default value is <code>false</code>.
 	* @param	bShowSummaryBar New value for property <code>showSummaryBar</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSummaryBar( bShowSummaryBar:Bool):sap.m.FacetFilter;
+	public function setShowSummaryBar( ?bShowSummaryBar:Bool):sap.m.FacetFilter;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -298,7 +300,7 @@ Default value is <code>Simple</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.FacetFilterType):sap.m.FacetFilter;
+	public function setType( ?sType:sap.m.FacetFilterType):sap.m.FacetFilter;
 }
 
 typedef FacetFilterArgs = sap.ui.core.Control.ControlArgs & {
@@ -392,6 +394,8 @@ typedef FacetFilterArgs = sap.ui.core.Control.ControlArgs & {
 
 	/**
 	* Fired when the Reset button is pressed to inform that all FacetFilterLists need to be reset.
+
+The default filtering behavior of the sap.m.FacetFilterList can be prevented by calling <code>sap.ui.base.Event.prototype.preventDefault</code> function in the <code>search</code> event handler function. If the default filtering behavior is prevented then filtering behavior has to be defined at application level inside the <code>search</code> and <code>reset</code> event handler functions.
 	*/
 	@:optional var reset:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 }

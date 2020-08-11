@@ -62,7 +62,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 
 	/**
 	* Closes the connection.
-	* @param	iCode Status code that explains why the connection is closed. Must either be 1000, or between 3000 and 4999 (default 1000)
+	* @param	iCode Status code that explains why the connection is closed. Must either be 1000, or between 3000 and 4999
 	* @param	sReason Closing reason as a string
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

@@ -113,7 +113,7 @@ Default value is <code>false</code>.
 	public function getContainerQuery( ):Bool;
 
 	/**
-	* Returns the breakpoint for the current state of the control.
+	* Returns the breakpoint for the current state of the control. If the control is not rendered yet this method will return <code>undefined</code>, as current break point calculation is based on the parent container width.
 	* @return	currentBreakpoint
 	*/
 	public function getCurrentBreakpoint( ):String;
@@ -141,6 +141,13 @@ Main content controls.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+
+	/**
+	* Returns a scroll helper object used to handle scrolling.
+	* @param	oControl The control instance that requested the scroll helper
+	* @return	The scroll helper instance
+	*/
+	public function getScrollDelegate( oControl:Dynamic):sap.ui.core.delegate.ScrollEnablement;
 
 	/**
 	* Gets current value of property {@link #getShowMainContent showMainContent}.
@@ -289,7 +296,7 @@ Default value is <code>false</code>.
 	* @param	bContainerQuery New value for property <code>containerQuery</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContainerQuery( bContainerQuery:Bool):sap.ui.layout.DynamicSideContent;
+	public function setContainerQuery( ?bContainerQuery:Bool):sap.ui.layout.DynamicSideContent;
 
 	/**
 	* Sets or unsets the page in equalSplit mode.
@@ -325,7 +332,7 @@ Default value is <code>OnMinimumWidth</code>.
 	* @param	sSideContentFallDown New value for property <code>sideContentFallDown</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSideContentFallDown( sSideContentFallDown:sap.ui.layout.SideContentFallDown):sap.ui.layout.DynamicSideContent;
+	public function setSideContentFallDown( ?sSideContentFallDown:sap.ui.layout.SideContentFallDown):sap.ui.layout.DynamicSideContent;
 
 	/**
 	* Sets a new value for property {@link #getSideContentPosition sideContentPosition}.
@@ -338,7 +345,7 @@ Default value is <code>End</code>.
 	* @param	sSideContentPosition New value for property <code>sideContentPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSideContentPosition( sSideContentPosition:sap.ui.layout.SideContentPosition):sap.ui.layout.DynamicSideContent;
+	public function setSideContentPosition( ?sSideContentPosition:sap.ui.layout.SideContentPosition):sap.ui.layout.DynamicSideContent;
 
 	/**
 	* Sets the sideContentVisibility property.

@@ -200,7 +200,7 @@ Default value is <code>false</code>.
 	* @param	bContainerQuery New value for property <code>containerQuery</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContainerQuery( bContainerQuery:Bool):sap.ui.layout.Grid;
+	public function setContainerQuery( ?bContainerQuery:Bool):sap.ui.layout.Grid;
 
 	/**
 	* Sets a new value for property {@link #getDefaultIndent defaultIndent}.
@@ -215,7 +215,7 @@ Default value is <code>XL0 L0 M0 S0</code>.
 	* @param	sDefaultIndent New value for property <code>defaultIndent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultIndent( sDefaultIndent:sap.ui.layout.GridIndent):sap.ui.layout.Grid;
+	public function setDefaultIndent( ?sDefaultIndent:sap.ui.layout.GridIndent):sap.ui.layout.Grid;
 
 	/**
 	* Sets a new value for property {@link #getDefaultSpan defaultSpan}.
@@ -230,7 +230,7 @@ Default value is <code>XL3 L3 M6 S12</code>.
 	* @param	sDefaultSpan New value for property <code>defaultSpan</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultSpan( sDefaultSpan:sap.ui.layout.GridSpan):sap.ui.layout.Grid;
+	public function setDefaultSpan( ?sDefaultSpan:sap.ui.layout.GridSpan):sap.ui.layout.Grid;
 
 	/**
 	* Sets a new value for property {@link #getHSpacing hSpacing}.
@@ -243,7 +243,7 @@ Default value is <code>1</code>.
 	* @param	fHSpacing New value for property <code>hSpacing</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHSpacing( fHSpacing:Float):sap.ui.layout.Grid;
+	public function setHSpacing( ?fHSpacing:Float):sap.ui.layout.Grid;
 
 	/**
 	* Sets a new value for property {@link #getPosition position}.
@@ -256,7 +256,7 @@ Default value is <code>Left</code>.
 	* @param	sPosition New value for property <code>position</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPosition( sPosition:sap.ui.layout.GridPosition):sap.ui.layout.Grid;
+	public function setPosition( ?sPosition:sap.ui.layout.GridPosition):sap.ui.layout.Grid;
 
 	/**
 	* Sets a new value for property {@link #getVSpacing vSpacing}.
@@ -269,7 +269,7 @@ Default value is <code>1</code>.
 	* @param	fVSpacing New value for property <code>vSpacing</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVSpacing( fVSpacing:Float):sap.ui.layout.Grid;
+	public function setVSpacing( ?fVSpacing:Float):sap.ui.layout.Grid;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -282,7 +282,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.layout.Grid;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.layout.Grid;
 }
 
 typedef GridArgs = sap.ui.core.Control.ControlArgs & {

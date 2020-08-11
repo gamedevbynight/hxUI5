@@ -86,7 +86,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTitleTextDirection New value for property <code>titleTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleTextDirection( sTitleTextDirection:sap.ui.core.TextDirection):sap.m.GroupHeaderListItem;
+	public function setTitleTextDirection( ?sTitleTextDirection:sap.ui.core.TextDirection):sap.m.GroupHeaderListItem;
 }
 
 typedef GroupHeaderListItemArgs = sap.m.ListItemBase.ListItemBaseArgs & {

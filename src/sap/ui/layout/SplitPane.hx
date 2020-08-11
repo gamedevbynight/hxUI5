@@ -81,7 +81,7 @@ Default value is <code>true</code>.
 	* @param	bDemandPane New value for property <code>demandPane</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDemandPane( bDemandPane:Bool):sap.ui.layout.SplitPane;
+	public function setDemandPane( ?bDemandPane:Bool):sap.ui.layout.SplitPane;
 
 	/**
 	* Sets a new value for property {@link #getRequiredParentWidth requiredParentWidth}.
@@ -94,7 +94,7 @@ Default value is <code>800</code>.
 	* @param	iRequiredParentWidth New value for property <code>requiredParentWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRequiredParentWidth( iRequiredParentWidth:Int):sap.ui.layout.SplitPane;
+	public function setRequiredParentWidth( ?iRequiredParentWidth:Int):sap.ui.layout.SplitPane;
 }
 
 typedef SplitPaneArgs = sap.ui.core.Element.ElementArgs & {

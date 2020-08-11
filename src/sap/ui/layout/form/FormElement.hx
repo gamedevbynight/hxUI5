@@ -145,7 +145,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.ui.layout.form.FormElement;
+	public function setVisible( ?bVisible:Bool):sap.ui.layout.form.FormElement;
 }
 
 typedef FormElementArgs = sap.ui.core.Element.ElementArgs & {

@@ -151,7 +151,7 @@ Default value is <code>begin bottom</code>.
 	* @param	sAtPosition New value for property <code>atPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAtPosition( sAtPosition:sap.ui.core.Dock):sap.ui.core.TooltipBase;
+	public function setAtPosition( ?sAtPosition:sap.ui.core.Dock):sap.ui.core.TooltipBase;
 
 	/**
 	* Sets a new value for property {@link #getCloseDelay closeDelay}.
@@ -164,7 +164,7 @@ Default value is <code>100</code>.
 	* @param	iCloseDelay New value for property <code>closeDelay</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCloseDelay( iCloseDelay:Int):sap.ui.core.TooltipBase;
+	public function setCloseDelay( ?iCloseDelay:Int):sap.ui.core.TooltipBase;
 
 	/**
 	* Sets a new value for property {@link #getCloseDuration closeDuration}.
@@ -177,7 +177,7 @@ Default value is <code>200</code>.
 	* @param	iCloseDuration New value for property <code>closeDuration</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCloseDuration( iCloseDuration:Int):sap.ui.core.TooltipBase;
+	public function setCloseDuration( ?iCloseDuration:Int):sap.ui.core.TooltipBase;
 
 	/**
 	* Sets a new value for property {@link #getCollision collision}.
@@ -190,7 +190,7 @@ Default value is <code>flip</code>.
 	* @param	sCollision New value for property <code>collision</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCollision( sCollision:sap.ui.core.Collision):sap.ui.core.TooltipBase;
+	public function setCollision( ?sCollision:sap.ui.core.Collision):sap.ui.core.TooltipBase;
 
 	/**
 	* Sets a new value for property {@link #getMyPosition myPosition}.
@@ -203,7 +203,7 @@ Default value is <code>begin top</code>.
 	* @param	sMyPosition New value for property <code>myPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMyPosition( sMyPosition:sap.ui.core.Dock):sap.ui.core.TooltipBase;
+	public function setMyPosition( ?sMyPosition:sap.ui.core.Dock):sap.ui.core.TooltipBase;
 
 	/**
 	* Sets a new value for property {@link #getOffset offset}.
@@ -216,7 +216,7 @@ Default value is <code>10 3</code>.
 	* @param	sOffset New value for property <code>offset</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOffset( sOffset:String):sap.ui.core.TooltipBase;
+	public function setOffset( ?sOffset:String):sap.ui.core.TooltipBase;
 
 	/**
 	* Sets a new value for property {@link #getOpenDelay openDelay}.
@@ -229,7 +229,7 @@ Default value is <code>500</code>.
 	* @param	iOpenDelay New value for property <code>openDelay</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOpenDelay( iOpenDelay:Int):sap.ui.core.TooltipBase;
+	public function setOpenDelay( ?iOpenDelay:Int):sap.ui.core.TooltipBase;
 
 	/**
 	* Sets a new value for property {@link #getOpenDuration openDuration}.
@@ -242,7 +242,7 @@ Default value is <code>200</code>.
 	* @param	iOpenDuration New value for property <code>openDuration</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOpenDuration( iOpenDuration:Int):sap.ui.core.TooltipBase;
+	public function setOpenDuration( ?iOpenDuration:Int):sap.ui.core.TooltipBase;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -255,7 +255,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.core.TooltipBase;
+	public function setText( ?sText:String):sap.ui.core.TooltipBase;
 }
 
 typedef TooltipBaseArgs = sap.ui.core.Control.ControlArgs & {

@@ -356,7 +356,7 @@ Default value is <code>Standard</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.m.PageBackgroundDesign):sap.m.semantic.SemanticPage;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.m.PageBackgroundDesign):sap.m.semantic.SemanticPage;
 
 	/**
 	* Sets a new value for property {@link #getEnableScrolling enableScrolling}.
@@ -369,7 +369,7 @@ Default value is <code>true</code>.
 	* @param	bEnableScrolling New value for property <code>enableScrolling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableScrolling( bEnableScrolling:Bool):sap.m.semantic.SemanticPage;
+	public function setEnableScrolling( ?bEnableScrolling:Bool):sap.m.semantic.SemanticPage;
 
 	/**
 	* Sets a new value for property {@link #getFloatingFooter floatingFooter}.
@@ -382,7 +382,7 @@ Default value is <code>false</code>.
 	* @param	bFloatingFooter New value for property <code>floatingFooter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFloatingFooter( bFloatingFooter:Bool):sap.m.semantic.SemanticPage;
+	public function setFloatingFooter( ?bFloatingFooter:Bool):sap.m.semantic.SemanticPage;
 
 	/**
 	* Sets the aggregated {@link #getLandmarkInfo landmarkInfo}.
@@ -402,7 +402,7 @@ Default value is <code>Classic</code>.
 	* @param	sSemanticRuleSet New value for property <code>semanticRuleSet</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSemanticRuleSet( sSemanticRuleSet:sap.m.semantic.SemanticRuleSetType):sap.m.semantic.SemanticPage;
+	public function setSemanticRuleSet( ?sSemanticRuleSet:sap.m.semantic.SemanticRuleSetType):sap.m.semantic.SemanticPage;
 
 	/**
 	* Sets a new value for property {@link #getShowFooter showFooter}.
@@ -415,7 +415,7 @@ Default value is <code>true</code>.
 	* @param	bShowFooter New value for property <code>showFooter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowFooter( bShowFooter:Bool):sap.m.semantic.SemanticPage;
+	public function setShowFooter( ?bShowFooter:Bool):sap.m.semantic.SemanticPage;
 
 	/**
 	* Sets a new value for property {@link #getShowNavButton showNavButton}.
@@ -428,7 +428,7 @@ Default value is <code>false</code>.
 	* @param	bShowNavButton New value for property <code>showNavButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowNavButton( bShowNavButton:Bool):sap.m.semantic.SemanticPage;
+	public function setShowNavButton( ?bShowNavButton:Bool):sap.m.semantic.SemanticPage;
 
 	/**
 	* Sets a new value for property {@link #getShowSubHeader showSubHeader}.
@@ -441,7 +441,7 @@ Default value is <code>true</code>.
 	* @param	bShowSubHeader New value for property <code>showSubHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSubHeader( bShowSubHeader:Bool):sap.m.semantic.SemanticPage;
+	public function setShowSubHeader( ?bShowSubHeader:Bool):sap.m.semantic.SemanticPage;
 
 	/**
 	* Sets the aggregated {@link #getSubHeader subHeader}.
@@ -472,7 +472,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleLevel New value for property <code>titleLevel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleLevel( sTitleLevel:sap.ui.core.TitleLevel):sap.m.semantic.SemanticPage;
+	public function setTitleLevel( ?sTitleLevel:sap.ui.core.TitleLevel):sap.m.semantic.SemanticPage;
 }
 
 typedef SemanticPageArgs = sap.ui.core.Control.ControlArgs & {

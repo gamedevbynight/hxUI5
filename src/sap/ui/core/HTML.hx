@@ -162,7 +162,7 @@ Default value is <code>true</code>.
 	* @param	bPreferDOM New value for property <code>preferDOM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPreferDOM( bPreferDOM:Bool):sap.ui.core.HTML;
+	public function setPreferDOM( ?bPreferDOM:Bool):sap.ui.core.HTML;
 
 	/**
 	* Sets a new value for property {@link #getSanitizeContent sanitizeContent}.
@@ -177,7 +177,7 @@ Default value is <code>false</code>.
 	* @param	bSanitizeContent New value for property <code>sanitizeContent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSanitizeContent( bSanitizeContent:Bool):sap.ui.core.HTML;
+	public function setSanitizeContent( ?bSanitizeContent:Bool):sap.ui.core.HTML;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -190,7 +190,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.ui.core.HTML;
+	public function setVisible( ?bVisible:Bool):sap.ui.core.HTML;
 }
 
 typedef HTMLArgs = sap.ui.core.Control.ControlArgs & {

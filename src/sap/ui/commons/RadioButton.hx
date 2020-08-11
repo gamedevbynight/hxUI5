@@ -205,7 +205,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.commons.RadioButton;
+	public function setEditable( ?bEditable:Bool):sap.ui.commons.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -218,7 +218,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.RadioButton;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getGroupName groupName}.
@@ -231,7 +231,7 @@ Default value is <code>sapUiRbDefaultGroup</code>.
 	* @param	sGroupName New value for property <code>groupName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGroupName( sGroupName:String):sap.ui.commons.RadioButton;
+	public function setGroupName( ?sGroupName:String):sap.ui.commons.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getKey key}.
@@ -255,7 +255,7 @@ Default value is <code>false</code>.
 	* @param	bSelected New value for property <code>selected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelected( bSelected:Bool):sap.ui.commons.RadioButton;
+	public function setSelected( ?bSelected:Bool):sap.ui.commons.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -279,7 +279,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.RadioButton;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -292,7 +292,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.ui.commons.RadioButton;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.ui.commons.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

@@ -245,7 +245,7 @@ Default value is <code>false</code>.
 	* @param	bEmphasized New value for property <code>emphasized</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEmphasized( bEmphasized:Bool):sap.m.Link;
+	public function setEmphasized( ?bEmphasized:Bool):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -258,7 +258,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.Link;
+	public function setEnabled( ?bEnabled:Bool):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getHref href}.
@@ -282,7 +282,7 @@ Default value is <code>false</code>.
 	* @param	bSubtle New value for property <code>subtle</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSubtle( bSubtle:Bool):sap.m.Link;
+	public function setSubtle( ?bSubtle:Bool):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getTarget target}.
@@ -308,7 +308,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.Link;
+	public function setText( ?sText:String):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -321,7 +321,7 @@ Default value is <code>Initial</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.Link;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -334,7 +334,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.Link;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getValidateUrl validateUrl}.
@@ -351,7 +351,7 @@ Default value is <code>false</code>.
 	* @param	bValidateUrl New value for property <code>validateUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValidateUrl( bValidateUrl:Bool):sap.m.Link;
+	public function setValidateUrl( ?bValidateUrl:Bool):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -375,7 +375,7 @@ Default value is <code>false</code>.
 	* @param	bWrapping New value for property <code>wrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrapping( bWrapping:Bool):sap.m.Link;
+	public function setWrapping( ?bWrapping:Bool):sap.m.Link;
 }
 
 typedef LinkArgs = sap.ui.core.Control.ControlArgs & {

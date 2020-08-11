@@ -230,7 +230,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.Button;
+	public function setEnabled( ?bEnabled:Bool):sap.m.Button;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -240,10 +240,10 @@ Defines the icon to be displayed as graphical element within the <code>Button</c
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon New value for property <code>icon</code>
+	* @param	sIcon= New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.Button;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.Button;
 
 	/**
 	* Sets a new value for property {@link #getIconDensityAware iconDensityAware}.
@@ -258,7 +258,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.Button;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.Button;
 
 	/**
 	* Sets a new value for property {@link #getIconFirst iconFirst}.
@@ -271,7 +271,7 @@ Default value is <code>true</code>.
 	* @param	bIconFirst New value for property <code>iconFirst</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconFirst( bIconFirst:Bool):sap.m.Button;
+	public function setIconFirst( ?bIconFirst:Bool):sap.m.Button;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -284,7 +284,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.Button;
+	public function setText( ?sText:String):sap.m.Button;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -297,7 +297,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.Button;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.Button;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -310,7 +310,7 @@ Default value is <code>Default</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.ButtonType):sap.m.Button;
+	public function setType( ?sType:sap.m.ButtonType):sap.m.Button;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

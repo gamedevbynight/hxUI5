@@ -25,7 +25,7 @@ Use page objects to structure your actions and assertions based on parts of the 
     }
   </pre>
 	*/
-	public static function createPageObjects( mPageObjects:map<string,sap.ui.test.PageObjectDefinition>):Map<String,Dynamic>;
+	public static function createPageObjects( mPageObjects:Map<String,sap.ui.test.PageObjectDefinition>):Map<String,Dynamic>;
 
 	/**
 	* Waits until all waitFor calls are done See {@link sap.ui.test.Opa.emptyQueue} for the description
@@ -201,7 +201,7 @@ Sample usage: <pre>
 	public function iWaitForPromise( oPromise:js.lib.Promise<Opa5>):jquery.promise;
 
 	/**
-	* Resets Opa.config to its default values. See {@link sap.ui.test.Opa5#waitFor} for the description Default values for OPA5 are: <ul> <li>viewNamespace: empty string</li> <li>arrangements: instance of OPA5</li> <li>actions: instance of OPA5</li> <li>assertions: instance of OPA5</li> <li>visible: true</li> <li>enabled: false</li> <li>timeout : 15 seconds, 0 for infinite timeout</li> <li>pollingInterval: 400 milliseconds</li> <li>debugTimeout: 0 seconds, infinite timeout by default. This will be used instead of timeout if running in debug mode.</li> <li>autoWait: false - since 1.42</li> <li>appParams: object with URI parameters for the tested app - since 1.48</li> </ul>
+	* Resets Opa.config to its default values. See {@link sap.ui.test.Opa5#waitFor} for the description Default values for OPA5 are: <ul> <li>viewNamespace: empty string</li> <li>arrangements: instance of OPA5</li> <li>actions: instance of OPA5</li> <li>assertions: instance of OPA5</li> <li>visible: true</li> <li>enabled: false</li> <li>editable: false</li> <li>timeout : 15 seconds, 0 for infinite timeout</li> <li>pollingInterval: 400 milliseconds</li> <li>debugTimeout: 0 seconds, infinite timeout by default. This will be used instead of timeout if running in debug mode.</li> <li>autoWait: false - since 1.42</li> <li>appParams: object with URI parameters for the tested app - since 1.48</li> </ul>
 	* @return	Void
 	*/
 	public static function resetConfig( ):Void;

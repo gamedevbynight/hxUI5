@@ -66,7 +66,7 @@ Default value is <code>false</code>.
 	* @param	bScrollToLoad New value for property <code>scrollToLoad</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScrollToLoad( bScrollToLoad:Bool):sap.m.GrowingList;
+	public function setScrollToLoad( ?bScrollToLoad:Bool):sap.m.GrowingList;
 
 	/**
 	* Sets a new value for property {@link #getThreshold threshold}.
@@ -79,7 +79,7 @@ Default value is <code>20</code>.
 	* @param	iThreshold New value for property <code>threshold</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setThreshold( iThreshold:Int):sap.m.GrowingList;
+	public function setThreshold( ?iThreshold:Int):sap.m.GrowingList;
 
 	/**
 	* Sets a new value for property {@link #getTriggerText triggerText}.

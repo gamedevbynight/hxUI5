@@ -110,7 +110,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.table.RowActionItem;
+	public function setText( ?sText:String):sap.ui.table.RowActionItem;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -123,7 +123,7 @@ Default value is <code>Custom</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.ui.table.RowActionType):sap.ui.table.RowActionItem;
+	public function setType( ?sType:sap.ui.table.RowActionType):sap.ui.table.RowActionItem;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -136,7 +136,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.ui.table.RowActionItem;
+	public function setVisible( ?bVisible:Bool):sap.ui.table.RowActionItem;
 }
 
 typedef RowActionItemArgs = sap.ui.core.Element.ElementArgs & {

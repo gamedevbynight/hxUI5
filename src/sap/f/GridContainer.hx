@@ -67,6 +67,19 @@ extern class GridContainer extends sap.ui.core.Control implements sap.f.dnd.IGri
 	public function addItem( oItem:sap.ui.core.Control):sap.f.GridContainer;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:borderReached borderReached} event of this <code>sap.f.GridContainer</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.f.GridContainer</code> itself.
+
+Fires if the border of the visualizations is reached so that an application can react on this.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.GridContainer</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachBorderReached( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.GridContainer;
+
+	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:layoutChange layoutChange} event of this <code>sap.f.GridContainer</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.f.GridContainer</code> itself.
@@ -120,6 +133,16 @@ Fired when the currently active GridSettings change.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function destroyLayoutXS( ):sap.f.GridContainer;
+
+	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:borderReached borderReached} event of this <code>sap.f.GridContainer</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachBorderReached( fnFunction:()->Void, ?oListener:Dynamic):sap.f.GridContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:layoutChange layoutChange} event of this <code>sap.f.GridContainer</code>.
@@ -317,7 +340,7 @@ Default value is <code>false</code>.
 	* @param	bAllowDenseFill New value for property <code>allowDenseFill</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAllowDenseFill( bAllowDenseFill:Bool):sap.f.GridContainer;
+	public function setAllowDenseFill( ?bAllowDenseFill:Bool):sap.f.GridContainer;
 
 	/**
 	* Sets a new value for property {@link #getContainerQuery containerQuery}.
@@ -330,7 +353,7 @@ Default value is <code>false</code>.
 	* @param	bContainerQuery New value for property <code>containerQuery</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContainerQuery( bContainerQuery:Bool):sap.f.GridContainer;
+	public function setContainerQuery( ?bContainerQuery:Bool):sap.f.GridContainer;
 
 	/**
 	* Sets a new value for property {@link #getInlineBlockLayout inlineBlockLayout}.
@@ -347,7 +370,7 @@ Default value is <code>false</code>.
 	* @param	bInlineBlockLayout New value for property <code>inlineBlockLayout</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInlineBlockLayout( bInlineBlockLayout:Bool):sap.f.GridContainer;
+	public function setInlineBlockLayout( ?bInlineBlockLayout:Bool):sap.f.GridContainer;
 
 	/**
 	* Sets the aggregated {@link #getLayout layout}.
@@ -404,7 +427,7 @@ Default value is <code>false</code>.
 	* @param	bSnapToRow New value for property <code>snapToRow</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSnapToRow( bSnapToRow:Bool):sap.f.GridContainer;
+	public function setSnapToRow( ?bSnapToRow:Bool):sap.f.GridContainer;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -414,10 +437,10 @@ Defines the width of the control.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth New value for property <code>width</code>
+	* @param	sWidth= New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.f.GridContainer;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.f.GridContainer;
 }
 
 typedef GridContainerArgs = sap.ui.core.Control.ControlArgs & {
@@ -498,6 +521,11 @@ If no layout is given, a default layout will be used. See the default values for
     * Default sap.f.GridContainerSettings
     */
 	@:optional var _defaultLayout:haxe.extern.EitherType<String,sap.f.GridContainerSettings>;
+
+	/**
+	* Fires if the border of the visualizations is reached so that an application can react on this.
+	*/
+	@:optional var borderReached:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
 	* Fired when the currently active GridSettings change.

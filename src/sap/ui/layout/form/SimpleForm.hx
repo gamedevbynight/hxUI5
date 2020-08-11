@@ -456,7 +456,7 @@ Default value is <code>true</code>.
 	* @param	bAdjustLabelSpan New value for property <code>adjustLabelSpan</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAdjustLabelSpan( bAdjustLabelSpan:Bool):sap.ui.layout.form.SimpleForm;
+	public function setAdjustLabelSpan( ?bAdjustLabelSpan:Bool):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
@@ -471,7 +471,7 @@ Default value is <code>Translucent</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.ui.layout.BackgroundDesign):sap.ui.layout.form.SimpleForm;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.ui.layout.BackgroundDesign):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getBreakpointL breakpointL}.
@@ -486,7 +486,7 @@ Default value is <code>1024</code>.
 	* @param	iBreakpointL New value for property <code>breakpointL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBreakpointL( iBreakpointL:Int):sap.ui.layout.form.SimpleForm;
+	public function setBreakpointL( ?iBreakpointL:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getBreakpointM breakpointM}.
@@ -501,7 +501,7 @@ Default value is <code>600</code>.
 	* @param	iBreakpointM New value for property <code>breakpointM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBreakpointM( iBreakpointM:Int):sap.ui.layout.form.SimpleForm;
+	public function setBreakpointM( ?iBreakpointM:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getBreakpointXL breakpointXL}.
@@ -516,7 +516,7 @@ Default value is <code>1440</code>.
 	* @param	iBreakpointXL New value for property <code>breakpointXL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBreakpointXL( iBreakpointXL:Int):sap.ui.layout.form.SimpleForm;
+	public function setBreakpointXL( ?iBreakpointXL:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getColumnsL columnsL}.
@@ -531,7 +531,7 @@ Default value is <code>2</code>.
 	* @param	iColumnsL New value for property <code>columnsL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnsL( iColumnsL:Int):sap.ui.layout.form.SimpleForm;
+	public function setColumnsL( ?iColumnsL:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getColumnsM columnsM}.
@@ -546,7 +546,7 @@ Default value is <code>1</code>.
 	* @param	iColumnsM New value for property <code>columnsM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnsM( iColumnsM:Int):sap.ui.layout.form.SimpleForm;
+	public function setColumnsM( ?iColumnsM:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getColumnsXL columnsXL}.
@@ -561,7 +561,7 @@ Default value is <code>-1</code>.
 	* @param	iColumnsXL New value for property <code>columnsXL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnsXL( iColumnsXL:Int):sap.ui.layout.form.SimpleForm;
+	public function setColumnsXL( ?iColumnsXL:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -593,7 +593,7 @@ Default value is <code>0</code>.
 	* @param	iEmptySpanL New value for property <code>emptySpanL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEmptySpanL( iEmptySpanL:Int):sap.ui.layout.form.SimpleForm;
+	public function setEmptySpanL( ?iEmptySpanL:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getEmptySpanM emptySpanM}.
@@ -608,7 +608,7 @@ Default value is <code>0</code>.
 	* @param	iEmptySpanM New value for property <code>emptySpanM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEmptySpanM( iEmptySpanM:Int):sap.ui.layout.form.SimpleForm;
+	public function setEmptySpanM( ?iEmptySpanM:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getEmptySpanS emptySpanS}.
@@ -623,7 +623,7 @@ Default value is <code>0</code>.
 	* @param	iEmptySpanS New value for property <code>emptySpanS</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEmptySpanS( iEmptySpanS:Int):sap.ui.layout.form.SimpleForm;
+	public function setEmptySpanS( ?iEmptySpanS:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getEmptySpanXL emptySpanXL}.
@@ -638,7 +638,7 @@ Default value is <code>-1</code>.
 	* @param	iEmptySpanXL New value for property <code>emptySpanXL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEmptySpanXL( iEmptySpanXL:Int):sap.ui.layout.form.SimpleForm;
+	public function setEmptySpanXL( ?iEmptySpanXL:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getLabelMinWidth labelMinWidth}.
@@ -653,7 +653,7 @@ Default value is <code>192</code>.
 	* @param	iLabelMinWidth New value for property <code>labelMinWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabelMinWidth( iLabelMinWidth:Int):sap.ui.layout.form.SimpleForm;
+	public function setLabelMinWidth( ?iLabelMinWidth:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getLabelSpanL labelSpanL}.
@@ -670,7 +670,7 @@ Default value is <code>4</code>.
 	* @param	iLabelSpanL New value for property <code>labelSpanL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabelSpanL( iLabelSpanL:Int):sap.ui.layout.form.SimpleForm;
+	public function setLabelSpanL( ?iLabelSpanL:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getLabelSpanM labelSpanM}.
@@ -687,7 +687,7 @@ Default value is <code>2</code>.
 	* @param	iLabelSpanM New value for property <code>labelSpanM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabelSpanM( iLabelSpanM:Int):sap.ui.layout.form.SimpleForm;
+	public function setLabelSpanM( ?iLabelSpanM:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getLabelSpanS labelSpanS}.
@@ -702,7 +702,7 @@ Default value is <code>12</code>.
 	* @param	iLabelSpanS New value for property <code>labelSpanS</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabelSpanS( iLabelSpanS:Int):sap.ui.layout.form.SimpleForm;
+	public function setLabelSpanS( ?iLabelSpanS:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getLabelSpanXL labelSpanXL}.
@@ -717,7 +717,7 @@ Default value is <code>-1</code>.
 	* @param	iLabelSpanXL New value for property <code>labelSpanXL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabelSpanXL( iLabelSpanXL:Int):sap.ui.layout.form.SimpleForm;
+	public function setLabelSpanXL( ?iLabelSpanXL:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getLayout layout}.
@@ -734,7 +734,7 @@ Default value is <code>ResponsiveLayout</code>.
 	* @param	sLayout New value for property <code>layout</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLayout( sLayout:sap.ui.layout.form.SimpleFormLayout):sap.ui.layout.form.SimpleForm;
+	public function setLayout( ?sLayout:sap.ui.layout.form.SimpleFormLayout):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getMaxContainerCols maxContainerCols}.
@@ -749,7 +749,7 @@ Default value is <code>2</code>.
 	* @param	iMaxContainerCols New value for property <code>maxContainerCols</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxContainerCols( iMaxContainerCols:Int):sap.ui.layout.form.SimpleForm;
+	public function setMaxContainerCols( ?iMaxContainerCols:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getMinWidth minWidth}.
@@ -766,7 +766,7 @@ Default value is <code>-1</code>.
 	* @param	iMinWidth New value for property <code>minWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinWidth( iMinWidth:Int):sap.ui.layout.form.SimpleForm;
+	public function setMinWidth( ?iMinWidth:Int):sap.ui.layout.form.SimpleForm;
 
 	/**
 	* Sets a new value for property {@link #getSingleContainerFullSize singleContainerFullSize}.
@@ -783,7 +783,7 @@ Default value is <code>true</code>.
 	* @param	bSingleContainerFullSize New value for property <code>singleContainerFullSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSingleContainerFullSize( bSingleContainerFullSize:Bool):sap.ui.layout.form.SimpleForm;
+	public function setSingleContainerFullSize( ?bSingleContainerFullSize:Bool):sap.ui.layout.form.SimpleForm;
 	@:overload( function(vTitle:sap.ui.core.Title):sap.ui.layout.form.SimpleForm{ })
 
 	/**

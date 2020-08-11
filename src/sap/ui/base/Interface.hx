@@ -1,5 +1,6 @@
 package sap.ui.base;
 
+@:native("sap.ui.base.Interface")
 
 /**
 * A class whose instances act as a facade for other objects.

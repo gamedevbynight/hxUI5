@@ -1,6 +1,6 @@
 package sap.base.security;
 
-@:native("sap.base.security.URLWhitelist")
+@:native("module:sap/base/security/URLWhitelist")
 extern class URLWhitelist
 {
 

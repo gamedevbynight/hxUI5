@@ -29,7 +29,7 @@ extern class ResourceModel extends sap.ui.model.Model
 	* @return	The property binding for the given path
 	*/
 	public function bindProperty( sPath:String):sap.ui.model.PropertyBinding;
-	@:overload( function(oData:sap.base.i18n.ResourceBundle):js.lib.Promise<ResourceModel>{ })
+	@:overload( function(oData:sap.base.i18n.ResourceBundle):Dynamic{ })
 
 	/**
 	* Enhances the resource model with a custom resource bundle.
@@ -40,7 +40,7 @@ When looking up a text for a key, the enhancements are processed in reverse orde
 	* @param	oData Either an already loaded bundle instance, or a configuration object with parameters to load a new resource bundle. When a configuration object is given, at least one of <code>bundleUrl</code> or <code>bundleName</code> must be set; if both are set, <code>bundleName</code> wins
 	* @return	A Promise resolving when the enhancement is finished or <code>null</code> if the <code>ResourceModel</code> is configured to act synchronously
 	*/
-	public function enhance( oData:Dynamic):js.lib.Promise<ResourceModel>;
+	public function enhance( oData:Dynamic):Dynamic;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.resource.ResourceModel with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.

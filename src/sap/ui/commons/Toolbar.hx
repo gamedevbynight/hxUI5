@@ -174,7 +174,7 @@ Default value is <code>Flat</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.ui.commons.ToolbarDesign):sap.ui.commons.Toolbar;
+	public function setDesign( ?sDesign:sap.ui.commons.ToolbarDesign):sap.ui.commons.Toolbar;
 
 	/**
 	* Sets a new value for property {@link #getStandalone standalone}.
@@ -187,7 +187,7 @@ Default value is <code>true</code>.
 	* @param	bStandalone New value for property <code>standalone</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStandalone( bStandalone:Bool):sap.ui.commons.Toolbar;
+	public function setStandalone( ?bStandalone:Bool):sap.ui.commons.Toolbar;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -200,7 +200,7 @@ Default value is <code>auto</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.Toolbar;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.Toolbar;
 }
 
 typedef ToolbarArgs = sap.ui.core.Control.ControlArgs & {

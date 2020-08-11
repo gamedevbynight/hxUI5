@@ -144,10 +144,10 @@ Determines a custom icon which is displayed. If none is set, the default icon fo
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sCustomIcon New value for property <code>customIcon</code>
+	* @param	sCustomIcon= New value for property <code>customIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomIcon( sCustomIcon:sap.ui.core.URI):sap.m.MessageStrip;
+	public function setCustomIcon( ?sCustomIcon:sap.ui.core.URI):sap.m.MessageStrip;
 
 	/**
 	* Sets a new value for property {@link #getEnableFormattedText enableFormattedText}.
@@ -162,7 +162,7 @@ Default value is <code>false</code>.
 	* @param	bEnableFormattedText New value for property <code>enableFormattedText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableFormattedText( bEnableFormattedText:Bool):sap.m.MessageStrip;
+	public function setEnableFormattedText( ?bEnableFormattedText:Bool):sap.m.MessageStrip;
 
 	/**
 	* Sets the aggregated {@link #getLink link}.
@@ -182,7 +182,7 @@ Default value is <code>false</code>.
 	* @param	bShowCloseButton New value for property <code>showCloseButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowCloseButton( bShowCloseButton:Bool):sap.m.MessageStrip;
+	public function setShowCloseButton( ?bShowCloseButton:Bool):sap.m.MessageStrip;
 
 	/**
 	* Sets a new value for property {@link #getShowIcon showIcon}.
@@ -195,7 +195,7 @@ Default value is <code>false</code>.
 	* @param	bShowIcon New value for property <code>showIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowIcon( bShowIcon:Bool):sap.m.MessageStrip;
+	public function setShowIcon( ?bShowIcon:Bool):sap.m.MessageStrip;
 
 	/**
 	* Setter for property text. Default value is empty/undefined
@@ -260,6 +260,11 @@ typedef MessageStripArgs = sap.ui.core.Control.ControlArgs & {
     * Hidden aggregation which is used to transform the string message into sap.m.Text control.
     */
 	@:optional var _text:haxe.extern.EitherType<String,sap.m.Text>;
+
+    /**
+    * Hidden aggregation which is used to create the close button with sap.m.Button control.
+    */
+	@:optional var _closeButton:haxe.extern.EitherType<String,sap.m.Button>;
 
 	/**
 	* This event will be fired after the container is closed.

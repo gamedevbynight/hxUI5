@@ -11,7 +11,7 @@ extern class RouteMatchedHandler extends sap.ui.base.Object
 	/**
 	* 
 	* @param	router A router that creates views</br>
-	* @param	closeDialogs the default is true - will close all open dialogs before navigating, if set to true. If set to false it will just navigate without closing dialogs.
+	* @param	closeDialogs If set to <code>true</code> it will close all open dialogs before navigating. If set to <code>false</code> it will just navigate without closing dialogs.
 	* @return	Object
 	*/
 	public function new( ?router:sap.ui.core.routing.Router, ?closeDialogs:Bool):Void;

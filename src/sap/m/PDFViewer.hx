@@ -257,7 +257,7 @@ Default value is <code>Auto</code>.
 	* @param	sDisplayType New value for property <code>displayType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayType( sDisplayType:sap.m.PDFViewerDisplayType):sap.m.PDFViewer;
+	public function setDisplayType( ?sDisplayType:sap.m.PDFViewerDisplayType):sap.m.PDFViewer;
 
 	/**
 	* Sets the aggregated {@link #getErrorPlaceholder errorPlaceholder}.
@@ -288,7 +288,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.PDFViewer;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.PDFViewer;
 
 	/**
 	* Sets a new value for property {@link #getShowDownloadButton showDownloadButton}.
@@ -301,7 +301,7 @@ Default value is <code>true</code>.
 	* @param	bShowDownloadButton New value for property <code>showDownloadButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowDownloadButton( bShowDownloadButton:Bool):sap.m.PDFViewer;
+	public function setShowDownloadButton( ?bShowDownloadButton:Bool):sap.m.PDFViewer;
 
 	/**
 	* Sets a new value for property {@link #getSource source}.
@@ -336,7 +336,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.PDFViewer;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.PDFViewer;
 }
 
 typedef PDFViewerArgs = sap.ui.core.Control.ControlArgs & {

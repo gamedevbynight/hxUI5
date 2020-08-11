@@ -282,7 +282,7 @@ Default value is <code>_blank</code>.
 	* @param	sConvertedLinksDefaultTarget New value for property <code>convertedLinksDefaultTarget</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setConvertedLinksDefaultTarget( sConvertedLinksDefaultTarget:String):sap.m.FeedListItem;
+	public function setConvertedLinksDefaultTarget( ?sConvertedLinksDefaultTarget:String):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getConvertLinksToAnchorTags convertLinksToAnchorTags}.
@@ -295,7 +295,7 @@ Default value is <code>None</code>.
 	* @param	sConvertLinksToAnchorTags New value for property <code>convertLinksToAnchorTags</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setConvertLinksToAnchorTags( sConvertLinksToAnchorTags:sap.m.LinkConversion):sap.m.FeedListItem;
+	public function setConvertLinksToAnchorTags( ?sConvertLinksToAnchorTags:sap.m.LinkConversion):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -319,7 +319,7 @@ Default value is <code>true</code>.
 	* @param	bIconActive New value for property <code>iconActive</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconActive( bIconActive:Bool):sap.m.FeedListItem;
+	public function setIconActive( ?bIconActive:Bool):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getIconDensityAware iconDensityAware}.
@@ -334,7 +334,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.FeedListItem;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getInfo info}.
@@ -402,7 +402,7 @@ Default value is <code>true</code>.
 	* @param	bSenderActive New value for property <code>senderActive</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSenderActive( bSenderActive:Bool):sap.m.FeedListItem;
+	public function setSenderActive( ?bSenderActive:Bool):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getShowIcon showIcon}.
@@ -415,7 +415,7 @@ Default value is <code>true</code>.
 	* @param	bShowIcon New value for property <code>showIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowIcon( bShowIcon:Bool):sap.m.FeedListItem;
+	public function setShowIcon( ?bShowIcon:Bool):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getText text}.

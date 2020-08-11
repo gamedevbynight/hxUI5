@@ -366,7 +366,7 @@ Default value is <code>60</code>.
 	* @param	iIntervalMinutes New value for property <code>intervalMinutes</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervalMinutes( iIntervalMinutes:Int):sap.ui.unified.CalendarTimeInterval;
+	public function setIntervalMinutes( ?iIntervalMinutes:Int):sap.ui.unified.CalendarTimeInterval;
 
 	/**
 	* Sets a new value for property {@link #getIntervalSelection intervalSelection}.
@@ -379,7 +379,7 @@ Default value is <code>false</code>.
 	* @param	bIntervalSelection New value for property <code>intervalSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervalSelection( bIntervalSelection:Bool):sap.ui.unified.CalendarTimeInterval;
+	public function setIntervalSelection( ?bIntervalSelection:Bool):sap.ui.unified.CalendarTimeInterval;
 
 	/**
 	* Sets a new value for property {@link #getItems items}.
@@ -394,7 +394,7 @@ Default value is <code>12</code>.
 	* @param	iItems New value for property <code>items</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setItems( iItems:Int):sap.ui.unified.CalendarTimeInterval;
+	public function setItems( ?iItems:Int):sap.ui.unified.CalendarTimeInterval;
 	@:overload( function(oLegend:sap.ui.core.ID):sap.ui.unified.CalendarTimeInterval{ })
 
 	/**
@@ -441,7 +441,7 @@ Default value is <code>false</code>.
 	* @param	bPickerPopup New value for property <code>pickerPopup</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPickerPopup( bPickerPopup:Bool):sap.ui.unified.CalendarTimeInterval;
+	public function setPickerPopup( ?bPickerPopup:Bool):sap.ui.unified.CalendarTimeInterval;
 
 	/**
 	* Sets a new value for property {@link #getSingleSelection singleSelection}.
@@ -456,7 +456,7 @@ Default value is <code>true</code>.
 	* @param	bSingleSelection New value for property <code>singleSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSingleSelection( bSingleSelection:Bool):sap.ui.unified.CalendarTimeInterval;
+	public function setSingleSelection( ?bSingleSelection:Bool):sap.ui.unified.CalendarTimeInterval;
 
 	/**
 	* Sets a new value for property {@link #getStartDate startDate}.

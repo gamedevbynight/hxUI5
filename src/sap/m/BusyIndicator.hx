@@ -144,10 +144,10 @@ Icon URL if an icon is used as the busy indicator.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sCustomIcon New value for property <code>customIcon</code>
+	* @param	sCustomIcon= New value for property <code>customIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomIcon( sCustomIcon:sap.ui.core.URI):sap.m.BusyIndicator;
+	public function setCustomIcon( ?sCustomIcon:sap.ui.core.URI):sap.m.BusyIndicator;
 
 	/**
 	* Sets a new value for property {@link #getCustomIconDensityAware customIconDensityAware}.
@@ -160,7 +160,7 @@ Default value is <code>true</code>.
 	* @param	bCustomIconDensityAware New value for property <code>customIconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomIconDensityAware( bCustomIconDensityAware:Bool):sap.m.BusyIndicator;
+	public function setCustomIconDensityAware( ?bCustomIconDensityAware:Bool):sap.m.BusyIndicator;
 
 	/**
 	* Sets a new value for property {@link #getCustomIconHeight customIconHeight}.
@@ -173,7 +173,7 @@ Default value is <code>44px</code>.
 	* @param	sCustomIconHeight New value for property <code>customIconHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomIconHeight( sCustomIconHeight:sap.ui.core.CSSSize):sap.m.BusyIndicator;
+	public function setCustomIconHeight( ?sCustomIconHeight:sap.ui.core.CSSSize):sap.m.BusyIndicator;
 
 	/**
 	* Sets a new value for property {@link #getCustomIconRotationSpeed customIconRotationSpeed}.
@@ -186,7 +186,7 @@ Default value is <code>1000</code>.
 	* @param	iCustomIconRotationSpeed New value for property <code>customIconRotationSpeed</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomIconRotationSpeed( iCustomIconRotationSpeed:Int):sap.m.BusyIndicator;
+	public function setCustomIconRotationSpeed( ?iCustomIconRotationSpeed:Int):sap.m.BusyIndicator;
 
 	/**
 	* Sets a new value for property {@link #getCustomIconWidth customIconWidth}.
@@ -199,7 +199,7 @@ Default value is <code>44px</code>.
 	* @param	sCustomIconWidth New value for property <code>customIconWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomIconWidth( sCustomIconWidth:sap.ui.core.CSSSize):sap.m.BusyIndicator;
+	public function setCustomIconWidth( ?sCustomIconWidth:sap.ui.core.CSSSize):sap.m.BusyIndicator;
 
 	/**
 	* Sets a new value for property {@link #getSize size}.
@@ -212,7 +212,7 @@ Default value is <code>1rem</code>.
 	* @param	sSize New value for property <code>size</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSize( sSize:sap.ui.core.CSSSize):sap.m.BusyIndicator;
+	public function setSize( ?sSize:sap.ui.core.CSSSize):sap.m.BusyIndicator;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -225,7 +225,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.BusyIndicator;
+	public function setText( ?sText:String):sap.m.BusyIndicator;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -238,7 +238,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.BusyIndicator;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.BusyIndicator;
 }
 
 typedef BusyIndicatorArgs = sap.ui.core.Control.ControlArgs & {

@@ -712,7 +712,7 @@ Default value is <code>false</code>.
 	* @param	bFullScreenOptimized New value for property <code>fullScreenOptimized</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFullScreenOptimized( bFullScreenOptimized:Bool):sap.m.ObjectHeader;
+	public function setFullScreenOptimized( ?bFullScreenOptimized:Bool):sap.m.ObjectHeader;
 
 	/**
 	* Sets the aggregated {@link #getHeaderContainer headerContainer}.
@@ -769,7 +769,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.ObjectHeader;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getIconTooltip iconTooltip}.
@@ -795,7 +795,7 @@ Default value is <code>Square</code>.
 	* @param	sImageShape New value for property <code>imageShape</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setImageShape( sImageShape:sap.m.ObjectHeaderPictureShape):sap.m.ObjectHeader;
+	public function setImageShape( ?sImageShape:sap.m.ObjectHeaderPictureShape):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getIntro intro}.
@@ -852,7 +852,7 @@ Default value is <code>Inherit</code>.
 	* @param	sIntroTextDirection New value for property <code>introTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntroTextDirection( sIntroTextDirection:sap.ui.core.TextDirection):sap.m.ObjectHeader;
+	public function setIntroTextDirection( ?sIntroTextDirection:sap.ui.core.TextDirection):sap.m.ObjectHeader;
 
 	/**
 	* Sets the visibility value of the Favorite marker.
@@ -893,7 +893,7 @@ Default value is <code>Inherit</code>.
 	* @param	sNumberTextDirection New value for property <code>numberTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNumberTextDirection( sNumberTextDirection:sap.ui.core.TextDirection):sap.m.ObjectHeader;
+	public function setNumberTextDirection( ?sNumberTextDirection:sap.ui.core.TextDirection):sap.m.ObjectHeader;
 
 	/**
 	* Set the number unit to the internal aggregation
@@ -915,7 +915,7 @@ Default value is <code>false</code>.
 	* @param	bResponsive New value for property <code>responsive</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setResponsive( bResponsive:Bool):sap.m.ObjectHeader;
+	public function setResponsive( ?bResponsive:Bool):sap.m.ObjectHeader;
 
 	/**
 	* Sets the visibility value of the Flagged and Favorite markers.
@@ -935,7 +935,7 @@ Default value is <code>false</code>.
 	* @param	bShowTitleSelector New value for property <code>showTitleSelector</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowTitleSelector( bShowTitleSelector:Bool):sap.m.ObjectHeader;
+	public function setShowTitleSelector( ?bShowTitleSelector:Bool):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -985,7 +985,7 @@ Default value is <code>H1</code>.
 	* @param	sTitleLevel New value for property <code>titleLevel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleLevel( sTitleLevel:sap.ui.core.TitleLevel):sap.m.ObjectHeader;
+	public function setTitleLevel( ?sTitleLevel:sap.ui.core.TitleLevel):sap.m.ObjectHeader;
 
 	/**
 	* Sets the new text for the tooltip of the select title arrow to the internal aggregation
@@ -1016,7 +1016,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTitleTextDirection New value for property <code>titleTextDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleTextDirection( sTitleTextDirection:sap.ui.core.TextDirection):sap.m.ObjectHeader;
+	public function setTitleTextDirection( ?sTitleTextDirection:sap.ui.core.TextDirection):sap.m.ObjectHeader;
 }
 
 typedef ObjectHeaderArgs = sap.ui.core.Control.ControlArgs & {

@@ -68,7 +68,7 @@ Default value is <code>0</code>.
 	* @param	iMinSize New value for property <code>minSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinSize( iMinSize:Int):sap.ui.layout.SplitterLayoutData;
+	public function setMinSize( ?iMinSize:Int):sap.ui.layout.SplitterLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getResizable resizable}.
@@ -81,7 +81,7 @@ Default value is <code>true</code>.
 	* @param	bResizable New value for property <code>resizable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setResizable( bResizable:Bool):sap.ui.layout.SplitterLayoutData;
+	public function setResizable( ?bResizable:Bool):sap.ui.layout.SplitterLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getSize size}.
@@ -94,7 +94,7 @@ Default value is <code>auto</code>.
 	* @param	sSize New value for property <code>size</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSize( sSize:sap.ui.core.CSSSize):sap.ui.layout.SplitterLayoutData;
+	public function setSize( ?sSize:sap.ui.core.CSSSize):sap.ui.layout.SplitterLayoutData;
 }
 
 typedef SplitterLayoutDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {

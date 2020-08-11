@@ -41,6 +41,12 @@ See {@link sap.ui.base.ManagedObject#bindProperty ManagedObject.bindProperty} fo
 	public function bindValue( oBindingInfo:Dynamic):sap.m.InputBase;
 
 	/**
+	* Destroys the formattedValueStateText in the aggregation {@link #getFormattedValueStateText formattedValueStateText}.
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function destroyFormattedValueStateText( ):sap.m.InputBase;
+
+	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:change change} event of this <code>sap.m.InputBase</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -86,6 +92,14 @@ Default value is <code>true</code>.
 	* @return	Value of property <code>enabled</code>
 	*/
 	public function getEnabled( ):Bool;
+
+	/**
+	* Gets content of aggregation {@link #getFormattedValueStateText formattedValueStateText}.
+
+Defines the formatted text that appears in the value state message pop-up. It can include links. If both <code>valueStateText</code> and <code>formattedValueStateText</code> are set - the latter is shown.
+	* @return	null
+	*/
+	public function getFormattedValueStateText( ):sap.m.FormattedText;
 
 	/**
 	* Returns a metadata object for class sap.m.InputBase.
@@ -211,7 +225,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.m.InputBase;
+	public function setEditable( ?bEditable:Bool):sap.m.InputBase;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -224,7 +238,14 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.InputBase;
+	public function setEnabled( ?bEnabled:Bool):sap.m.InputBase;
+
+	/**
+	* Sets the aggregated {@link #getFormattedValueStateText formattedValueStateText}.
+	* @param	oFormattedValueStateText The formattedValueStateText to set
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setFormattedValueStateText( oFormattedValueStateText:sap.m.FormattedText):sap.m.InputBase;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -259,7 +280,7 @@ Default value is <code>false</code>.
 	* @param	bRequired New value for property <code>required</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRequired( bRequired:Bool):sap.m.InputBase;
+	public function setRequired( ?bRequired:Bool):sap.m.InputBase;
 
 	/**
 	* Sets a new value for property {@link #getShowValueStateMessage showValueStateMessage}.
@@ -272,7 +293,7 @@ Default value is <code>true</code>.
 	* @param	bShowValueStateMessage New value for property <code>showValueStateMessage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowValueStateMessage( bShowValueStateMessage:Bool):sap.m.InputBase;
+	public function setShowValueStateMessage( ?bShowValueStateMessage:Bool):sap.m.InputBase;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -285,7 +306,7 @@ Default value is <code>Initial</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.m.InputBase;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.m.InputBase;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -298,7 +319,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.InputBase;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.InputBase;
 
 	/**
 	* Setter for property <code>value</code>.
@@ -310,22 +331,28 @@ Default value is empty/<code>undefined</code>.
 	public function setValue( sValue:String):sap.m.InputBase;
 
 	/**
-	* Setter for property <code>valueState</code>.
+	* Sets a new value for property {@link #getValueState valueState}.
+
+Visualizes the validation state of the control, e.g. <code>Error</code>, <code>Warning</code>, <code>Success</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>None</code>.
-	* @param	sValueState New value for property <code>valueState</code>.
-	* @return	<code>this</code> to allow method chaining.
+	* @param	sValueState New value for property <code>valueState</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.m.InputBase;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.m.InputBase;
 
 	/**
-	* Setter for property <code>valueStateText</code>.
+	* Sets a new value for property {@link #getValueStateText valueStateText}.
 
-Default value is empty/<code>undefined</code>.
-	* @param	sText New value for property <code>valueStateText</code>.
-	* @return	<code>this</code> to allow method chaining
+Defines the text that appears in the value state message pop-up. If this is not specified, a default text is shown from the resource bundle.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sValueStateText New value for property <code>valueStateText</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueStateText( sText:String):sap.m.InputBase;
+	public function setValueStateText( sValueStateText:String):sap.m.InputBase;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -410,6 +437,11 @@ typedef InputBaseArgs = sap.ui.core.Control.ControlArgs & {
 	* Indicates that user input is required. This property is only needed for accessibility purposes when a single relationship between the field and a label (see aggregation <code>labelFor</code> of <code>sap.m.Label</code>) cannot be established (e.g. one label should label multiple fields).
 	*/
 	@:optional var required:haxe.extern.EitherType<String,Bool>;
+
+    /**
+    * Defines the formatted text that appears in the value state message pop-up. It can include links. If both <code>valueStateText</code> and <code>formattedValueStateText</code> are set - the latter is shown.
+    */
+	@:optional var formattedValueStateText:haxe.extern.EitherType<String,sap.m.FormattedText>;
 
     /**
     * Icons that will be placed after the input field

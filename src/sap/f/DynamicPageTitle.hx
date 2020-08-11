@@ -34,6 +34,14 @@ extern class DynamicPageTitle extends sap.ui.core.Control
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function addAction( oAction:sap.ui.core.Control):sap.f.DynamicPageTitle;
+	@:overload( function(vAriaDescribedBy:sap.ui.core.ID):sap.f.DynamicPageTitle{ })
+
+	/**
+	* Adds some ariaDescribedBy into the association {@link #getAriaDescribedBy ariaDescribedBy}.
+	* @param	vAriaDescribedBy The ariaDescribedBy to add; if empty, nothing is inserted
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function addAriaDescribedBy( vAriaDescribedBy:sap.ui.core.Control):sap.f.DynamicPageTitle;
 
 	/**
 	* Adds some content to the aggregation {@link #getContent content}.
@@ -186,6 +194,12 @@ Default value is <code>1:1.6:1.6</code>.
 	* @return	Value of property <code>areaShrinkRatio</code>
 	*/
 	public function getAreaShrinkRatio( ):sap.f.DynamicPageTitleShrinkRatio;
+
+	/**
+	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
+	* @return	null
+	*/
+	public function getAriaDescribedBy( ):Array<sap.ui.core.ID>;
 
 	/**
 	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
@@ -384,6 +398,12 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeAllActions( ):Array<sap.ui.core.Control>;
 
 	/**
+	* Removes all the controls in the association named {@link #getAriaDescribedBy ariaDescribedBy}.
+	* @return	An array of the removed elements (might be empty)
+	*/
+	public function removeAllAriaDescribedBy( ):Array<sap.ui.core.ID>;
+
+	/**
 	* Removes all the controls from the aggregation {@link #getContent content}.
 
 Additionally, it unregisters them from the hosting UIArea.
@@ -414,6 +434,15 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @return	An array of the removed elements (might be empty)
 	*/
 	public function removeAllSnappedContent( ):Array<sap.ui.core.Control>;
+	@:overload( function(vAriaDescribedBy:Int):sap.ui.core.ID{ })
+	@:overload( function(vAriaDescribedBy:sap.ui.core.ID):sap.ui.core.ID{ })
+
+	/**
+	* Removes an ariaDescribedBy from the association named {@link #getAriaDescribedBy ariaDescribedBy}.
+	* @param	vAriaDescribedBy The ariaDescribedBy to be removed or its index or ID
+	* @return	The removed ariaDescribedBy or <code>null</code>
+	*/
+	public function removeAriaDescribedBy( vAriaDescribedBy:sap.ui.core.Control):sap.ui.core.ID;
 	@:overload( function(vContent:Int):sap.ui.core.Control{ })
 	@:overload( function(vContent:String):sap.ui.core.Control{ })
 
@@ -622,10 +651,10 @@ Using this aggregation enables you to provide a simple, single-line title that t
     */
 	@:optional var _snappedTitleOnMobileIcon:haxe.extern.EitherType<String,sap.ui.core.Icon>;
 
-    /**
-    * Internal span tag for correct representation of the accessibility requirements. Upon focus, the <code>DynamicPageTitle</code> control has the focus outline, but the <code>_focusSpan</code> is the real focused DOM element.
-    */
-	@:optional var _focusSpan:haxe.extern.EitherType<String,sap.ui.core.HTML>;
+	/**
+	* Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).
+	*/
+	@:optional var ariaDescribedBy:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 
 	/**
 	* Fired when the title state (expanded/collapsed) is toggled by user interaction. For example, scrolling, title clicking/tapping, using expand/collapse button.

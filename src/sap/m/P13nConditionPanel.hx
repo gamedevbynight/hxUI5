@@ -272,7 +272,7 @@ Default value is <code>false</code>.
 	* @param	bAutoAddNewRow New value for property <code>autoAddNewRow</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAutoAddNewRow( bAutoAddNewRow:Bool):sap.m.P13nConditionPanel;
+	public function setAutoAddNewRow( ?bAutoAddNewRow:Bool):sap.m.P13nConditionPanel;
 
 	/**
 	* Sets a new value for property {@link #getAutoReduceKeyFieldItems autoReduceKeyFieldItems}.
@@ -285,7 +285,7 @@ Default value is <code>false</code>.
 	* @param	bAutoReduceKeyFieldItems New value for property <code>autoReduceKeyFieldItems</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAutoReduceKeyFieldItems( bAutoReduceKeyFieldItems:Bool):sap.m.P13nConditionPanel;
+	public function setAutoReduceKeyFieldItems( ?bAutoReduceKeyFieldItems:Bool):sap.m.P13nConditionPanel;
 
 	/**
 	* This method must be used to assign a list of conditions.
@@ -305,7 +305,7 @@ Default value is <code>false</code>.
 	* @param	bDisableFirstRemoveIcon New value for property <code>disableFirstRemoveIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisableFirstRemoveIcon( bDisableFirstRemoveIcon:Bool):sap.m.P13nConditionPanel;
+	public function setDisableFirstRemoveIcon( ?bDisableFirstRemoveIcon:Bool):sap.m.P13nConditionPanel;
 
 	/**
 	* Sets a new value for property {@link #getDisplayFormat displayFormat}.
@@ -329,7 +329,7 @@ Default value is <code>false</code>.
 	* @param	bExclude New value for property <code>exclude</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExclude( bExclude:Bool):sap.m.P13nConditionPanel;
+	public function setExclude( ?bExclude:Bool):sap.m.P13nConditionPanel;
 
 	/**
 	* This method allows you to specify the KeyFields for the conditions. You can set an array of object with Key and Text properties to define the keyfields.
@@ -349,7 +349,7 @@ Default value is <code>-1</code>.
 	* @param	sMaxConditions New value for property <code>maxConditions</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxConditions( sMaxConditions:String):sap.m.P13nConditionPanel;
+	public function setMaxConditions( ?sMaxConditions:String):sap.m.P13nConditionPanel;
 
 	/**
 	* setter for the supported operations which we show per condition row. This array of "default" operations will only be used when we do not have on the keyfield itself some specific operations and a keyfield is of not of type date or numeric.
@@ -370,7 +370,7 @@ Default value is <code>false</code>.
 	* @param	bShowLabel New value for property <code>showLabel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowLabel( bShowLabel:Bool):sap.m.P13nConditionPanel;
+	public function setShowLabel( ?bShowLabel:Bool):sap.m.P13nConditionPanel;
 
 	/**
 	* Sets a new value for property {@link #getUsePrevConditionSetting usePrevConditionSetting}.
@@ -383,7 +383,7 @@ Default value is <code>true</code>.
 	* @param	bUsePrevConditionSetting New value for property <code>usePrevConditionSetting</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUsePrevConditionSetting( bUsePrevConditionSetting:Bool):sap.m.P13nConditionPanel;
+	public function setUsePrevConditionSetting( ?bUsePrevConditionSetting:Bool):sap.m.P13nConditionPanel;
 
 	/**
 	* Sets a new value for property {@link #getValidationExecutor validationExecutor}.

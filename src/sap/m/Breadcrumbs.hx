@@ -114,7 +114,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSeparatorStyle null
 	* @return	this
 	*/
-	public function setSeparatorStyle( sSeparatorStyle:String):Dynamic;
+	public function setSeparatorStyle( sSeparatorStyle:sap.m.BreadcrumbsSeparatorStyle):sap.m.Breadcrumbs;
 }
 
 typedef BreadcrumbsArgs = sap.ui.core.Control.ControlArgs & {

@@ -1,5 +1,6 @@
 package sap.ui.model.base;
 
+@:native("sap.ui.model.base.ManagedObjectModel")
 
 /**
 * The ManagedObjectModel class can be used for data binding of properties and aggregations for managed objects.

@@ -88,16 +88,6 @@ Please also see <code>sap.ui.model.odata.OperationMode</code>.
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
-	* Gets current value of property {@link #getCollapseRecursive collapseRecursive}.
-
-Setting collapseRecursive to true means, that when collapsing a node all subsequent child nodes will also be collapsed. This property is only supported with sap.ui.model.odata.v2.ODataModel. <b>Note:</b> collapseRecursive is currently <b>not</b> supported if your OData service exposes the hierarchy annotation <code>hierarchy-descendant-count-for</code>. In this case the value of the collapseRecursive property is ignored. For more information about the OData hierarchy annotations, please see the <b>SAP Annotations for OData Version 2.0</b> specification.
-
-Default value is <code>true</code>.
-	* @return	Value of property <code>collapseRecursive</code>
-	*/
-	public function getCollapseRecursive( ):Bool;
-
-	/**
 	* Gets current value of property {@link #getGroupHeaderProperty groupHeaderProperty}.
 
 The property name of the rows data which will be displayed as a group header if the group mode is enabled
@@ -110,16 +100,6 @@ The property name of the rows data which will be displayed as a group header if 
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
-
-	/**
-	* Gets current value of property {@link #getRootLevel rootLevel}.
-
-The root level is the level of the topmost tree nodes, which will be used as an entry point for OData services. This property is only supported when the TreeTable uses an underlying odata services with hierarchy annotations. This property is only supported with sap.ui.model.odata.v2.ODataModel The hierarchy annotations may also be provided locally as a parameter for the ODataTreeBinding.
-
-Default value is <code>0</code>.
-	* @return	Value of property <code>rootLevel</code>
-	*/
-	public function getRootLevel( ):Int;
 
 	/**
 	* Returns an array containing the row indices of all selected tree nodes (ordered ascending).
@@ -163,19 +143,6 @@ All rows/tree nodes that are locally stored on the client and that are part of t
 	public function selectAll( ):sap.ui.table.TreeTable;
 
 	/**
-	* Sets a new value for property {@link #getCollapseRecursive collapseRecursive}.
-
-Setting collapseRecursive to true means, that when collapsing a node all subsequent child nodes will also be collapsed. This property is only supported with sap.ui.model.odata.v2.ODataModel. <b>Note:</b> collapseRecursive is currently <b>not</b> supported if your OData service exposes the hierarchy annotation <code>hierarchy-descendant-count-for</code>. In this case the value of the collapseRecursive property is ignored. For more information about the OData hierarchy annotations, please see the <b>SAP Annotations for OData Version 2.0</b> specification.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>true</code>.
-	* @param	bCollapseRecursive New value for property <code>collapseRecursive</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setCollapseRecursive( bCollapseRecursive:Bool):sap.ui.table.TreeTable;
-
-	/**
 	* Setter for property <code>fixedRowCount</code>.
 
 <b>This property is not supportd for the TreeTable and will be ignored!</b>
@@ -196,19 +163,6 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setGroupHeaderProperty( sGroupHeaderProperty:String):sap.ui.table.TreeTable;
-
-	/**
-	* Sets a new value for property {@link #getRootLevel rootLevel}.
-
-The root level is the level of the topmost tree nodes, which will be used as an entry point for OData services. This property is only supported when the TreeTable uses an underlying odata services with hierarchy annotations. This property is only supported with sap.ui.model.odata.v2.ODataModel The hierarchy annotations may also be provided locally as a parameter for the ODataTreeBinding.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>0</code>.
-	* @param	iRootLevel New value for property <code>rootLevel</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setRootLevel( iRootLevel:Int):sap.ui.table.TreeTable;
 
 	/**
 	* Sets the selected index In a TreeTable you can only select indices, which correspond to the currently visualized tree. Invisible tree nodes (e.g. collapsed child nodes) can not be selected via Index, because they do not correspond to a TreeTable row.
@@ -236,7 +190,7 @@ Default value is <code>false</code>.
 	* @param	bUseGroupMode New value for property <code>useGroupMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUseGroupMode( bUseGroupMode:Bool):sap.ui.table.TreeTable;
+	public function setUseGroupMode( ?bUseGroupMode:Bool):sap.ui.table.TreeTable;
 }
 
 typedef TreeTableArgs = sap.ui.table.Table.TableArgs & {
@@ -250,16 +204,6 @@ typedef TreeTableArgs = sap.ui.table.Table.TableArgs & {
 	* The property name of the rows data which will be displayed as a group header if the group mode is enabled
 	*/
 	@:optional var groupHeaderProperty:String;
-
-	/**
-	* Setting collapseRecursive to true means, that when collapsing a node all subsequent child nodes will also be collapsed. This property is only supported with sap.ui.model.odata.v2.ODataModel. <b>Note:</b> collapseRecursive is currently <b>not</b> supported if your OData service exposes the hierarchy annotation <code>hierarchy-descendant-count-for</code>. In this case the value of the collapseRecursive property is ignored. For more information about the OData hierarchy annotations, please see the <b>SAP Annotations for OData Version 2.0</b> specification.
-	*/
-	@:optional var collapseRecursive:haxe.extern.EitherType<String,Bool>;
-
-	/**
-	* The root level is the level of the topmost tree nodes, which will be used as an entry point for OData services. This property is only supported when the TreeTable uses an underlying odata services with hierarchy annotations. This property is only supported with sap.ui.model.odata.v2.ODataModel The hierarchy annotations may also be provided locally as a parameter for the ODataTreeBinding.
-	*/
-	@:optional var rootLevel:haxe.extern.EitherType<String,Int>;
 
 	/**
 	* Fired when a row has been expanded or collapsed by user interaction. Only available in hierarchical mode.

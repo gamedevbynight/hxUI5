@@ -71,7 +71,7 @@ Default value is <code>true</code>.
 	* @param	bRemovable New value for property <code>removable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRemovable( bRemovable:Bool):sap.m.Tile;
+	public function setRemovable( ?bRemovable:Bool):sap.m.Tile;
 }
 
 typedef TileArgs = sap.ui.core.Control.ControlArgs & {

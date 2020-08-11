@@ -77,7 +77,7 @@ Default value is <code>7</code>.
 	* @param	sMaxListed New value for property <code>maxListed</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxListed( sMaxListed:String):sap.ui.commons.MessageList;
+	public function setMaxListed( ?sMaxListed:String):sap.ui.commons.MessageList;
 
 	/**
 	* Sets the list of Messages to be displayed and re-renders this Control if it is visible.

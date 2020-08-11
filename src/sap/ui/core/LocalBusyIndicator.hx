@@ -58,7 +58,7 @@ Default value is <code>100px</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.core.LocalBusyIndicator;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.core.LocalBusyIndicator;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -71,7 +71,7 @@ Default value is <code>100px</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.core.LocalBusyIndicator;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.core.LocalBusyIndicator;
 }
 
 typedef LocalBusyIndicatorArgs = sap.ui.core.Control.ControlArgs & {

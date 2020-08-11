@@ -68,7 +68,7 @@ Default value is <code>true</code>.
 	* @param	bCloseOverflowOnInteraction New value for property <code>closeOverflowOnInteraction</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCloseOverflowOnInteraction( bCloseOverflowOnInteraction:Bool):sap.m.OverflowToolbarLayoutData;
+	public function setCloseOverflowOnInteraction( ?bCloseOverflowOnInteraction:Bool):sap.m.OverflowToolbarLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getGroup group}.
@@ -81,7 +81,7 @@ Default value is <code>0</code>.
 	* @param	iGroup New value for property <code>group</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGroup( iGroup:Int):sap.m.OverflowToolbarLayoutData;
+	public function setGroup( ?iGroup:Int):sap.m.OverflowToolbarLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getPriority priority}.
@@ -94,7 +94,7 @@ Default value is <code>High</code>.
 	* @param	sPriority New value for property <code>priority</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPriority( sPriority:sap.m.OverflowToolbarPriority):sap.m.OverflowToolbarLayoutData;
+	public function setPriority( ?sPriority:sap.m.OverflowToolbarPriority):sap.m.OverflowToolbarLayoutData;
 }
 
 typedef OverflowToolbarLayoutDataArgs = sap.m.ToolbarLayoutData.ToolbarLayoutDataArgs & {

@@ -165,7 +165,7 @@ Default value is <code>-1</code>.
 	* @param	iVisibleItemsThreshold New value for property <code>visibleItemsThreshold</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleItemsThreshold( iVisibleItemsThreshold:Int):sap.m.P13nColumnsPanel;
+	public function setVisibleItemsThreshold( ?iVisibleItemsThreshold:Int):sap.m.P13nColumnsPanel;
 
 	/**
 	* Unbinds aggregation {@link #getColumnsItems columnsItems} from model data.

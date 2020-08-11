@@ -54,7 +54,7 @@ Default value is <code>Translucent</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundDesign( sBackgroundDesign:sap.ui.layout.BackgroundDesign):sap.ui.layout.form.FormLayout;
+	public function setBackgroundDesign( ?sBackgroundDesign:sap.ui.layout.BackgroundDesign):sap.ui.layout.form.FormLayout;
 }
 
 typedef FormLayoutArgs = sap.ui.core.Control.ControlArgs & {

@@ -23,6 +23,14 @@ extern class Image extends sap.ui.core.Control implements sap.ui.core.IFormConte
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function addAriaDescribedBy( vAriaDescribedBy:sap.ui.core.Control):sap.m.Image;
+	@:overload( function(vAriaDetails:sap.ui.core.ID):sap.m.Image{ })
+
+	/**
+	* Adds some ariaDetails into the association {@link #getAriaDetails ariaDetails}.
+	* @param	vAriaDetails The ariaDetails to add; if empty, nothing is inserted
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function addAriaDetails( vAriaDetails:sap.ui.core.Control):sap.m.Image;
 	@:overload( function(vAriaLabelledBy:sap.ui.core.ID):sap.m.Image{ })
 
 	/**
@@ -177,6 +185,12 @@ If the image is set to decorative, this property is ignored.
 	public function getAriaDescribedBy( ):Array<sap.ui.core.ID>;
 
 	/**
+	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDetails ariaDetails}.
+	* @return	null
+	*/
+	public function getAriaDetails( ):Array<sap.ui.core.ID>;
+
+	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
 	* @return	null
 	*/
@@ -317,6 +331,12 @@ It is also possible to make settings for width or height only, in which case the
 	public function removeAllAriaDescribedBy( ):Array<sap.ui.core.ID>;
 
 	/**
+	* Removes all the controls in the association named {@link #getAriaDetails ariaDetails}.
+	* @return	An array of the removed elements (might be empty)
+	*/
+	public function removeAllAriaDetails( ):Array<sap.ui.core.ID>;
+
+	/**
 	* Removes all the controls in the association named {@link #getAriaLabelledBy ariaLabelledBy}.
 	* @return	An array of the removed elements (might be empty)
 	*/
@@ -330,6 +350,15 @@ It is also possible to make settings for width or height only, in which case the
 	* @return	The removed ariaDescribedBy or <code>null</code>
 	*/
 	public function removeAriaDescribedBy( vAriaDescribedBy:sap.ui.core.Control):sap.ui.core.ID;
+	@:overload( function(vAriaDetails:Int):sap.ui.core.ID{ })
+	@:overload( function(vAriaDetails:sap.ui.core.ID):sap.ui.core.ID{ })
+
+	/**
+	* Removes an ariaDetails from the association named {@link #getAriaDetails ariaDetails}.
+	* @param	vAriaDetails The ariaDetails to be removed or its index or ID
+	* @return	The removed ariaDetails or <code>null</code>
+	*/
+	public function removeAriaDetails( vAriaDetails:sap.ui.core.Control):sap.ui.core.ID;
 	@:overload( function(vAriaLabelledBy:Int):sap.ui.core.ID{ })
 	@:overload( function(vAriaLabelledBy:sap.ui.core.ID):sap.ui.core.ID{ })
 
@@ -348,10 +377,10 @@ The source property which is used when the image is pressed.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sActiveSrc New value for property <code>activeSrc</code>
+	* @param	sActiveSrc= New value for property <code>activeSrc</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveSrc( sActiveSrc:sap.ui.core.URI):sap.m.Image;
+	public function setActiveSrc( ?sActiveSrc:sap.ui.core.URI):sap.m.Image;
 
 	/**
 	* Sets a new value for property {@link #getAlt alt}.
@@ -379,7 +408,7 @@ Default value is <code>initial</code>.
 	* @param	sBackgroundPosition New value for property <code>backgroundPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundPosition( sBackgroundPosition:String):sap.m.Image;
+	public function setBackgroundPosition( ?sBackgroundPosition:String):sap.m.Image;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundRepeat backgroundRepeat}.
@@ -394,7 +423,7 @@ Default value is <code>no-repeat</code>.
 	* @param	sBackgroundRepeat New value for property <code>backgroundRepeat</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundRepeat( sBackgroundRepeat:String):sap.m.Image;
+	public function setBackgroundRepeat( ?sBackgroundRepeat:String):sap.m.Image;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundSize backgroundSize}.
@@ -409,7 +438,7 @@ Default value is <code>cover</code>.
 	* @param	sBackgroundSize New value for property <code>backgroundSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundSize( sBackgroundSize:String):sap.m.Image;
+	public function setBackgroundSize( ?sBackgroundSize:String):sap.m.Image;
 
 	/**
 	* Sets a new value for property {@link #getDecorative decorative}.
@@ -424,7 +453,7 @@ Default value is <code>true</code>.
 	* @param	bDecorative New value for property <code>decorative</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDecorative( bDecorative:Bool):sap.m.Image;
+	public function setDecorative( ?bDecorative:Bool):sap.m.Image;
 
 	/**
 	* Sets a new value for property {@link #getDensityAware densityAware}.
@@ -441,7 +470,7 @@ Default value is <code>false</code>.
 	* @param	bDensityAware New value for property <code>densityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDensityAware( bDensityAware:Bool):sap.m.Image;
+	public function setDensityAware( ?bDensityAware:Bool):sap.m.Image;
 	@:overload( function(oLightBox:sap.m.LightBox):Dynamic{ })
 
 	/**
@@ -477,7 +506,7 @@ Default value is <code>Image</code>.
 	* @param	sMode New value for property <code>mode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMode( sMode:sap.m.ImageMode):sap.m.Image;
+	public function setMode( ?sMode:sap.m.ImageMode):sap.m.Image;
 
 	/**
 	* Sets a new value for property {@link #getSrc src}.
@@ -623,6 +652,11 @@ The <code>tap</code> event will still be fired.
 	* Association to controls / ids which label this control (see WAI-ARIA attribute aria-labelledBy).
 	*/
 	@:optional var ariaLabelledBy:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
+
+	/**
+	* Association to controls / IDs which are details to this control (see WAI-ARIA attribute aria-details).
+	*/
+	@:optional var ariaDetails:Array<haxe.extern.EitherType<String,sap.ui.core.Control>>;
 
 	/**
 	* Event is fired when the image resource can't be loaded. If densityAware is set to true, the event is fired when none of the fallback resources can be loaded.

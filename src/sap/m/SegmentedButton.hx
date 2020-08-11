@@ -72,11 +72,11 @@ See {@link sap.ui.base.ManagedObject#bindProperty ManagedObject.bindProperty} fo
 	* Adds a Button with a text as title, a URI for an icon, enabled and textDirection. Only one is allowed.
 	* @param	sText Defines the title text of the newly created Button
 	* @param	sURI Icon to be displayed as graphical element within the Button. Density related image will be loaded if image with density awareness name in format [imageName]@[densityValue].[extension] is provided.
-	* @param	bEnabled Enables the control (default is true). Buttons that are disabled have other colors than enabled ones, depending on custom settings.
+	* @param	bEnabled Enables the control. Buttons that are disabled have other colors than enabled ones, depending on custom settings.
 	* @param	sTextDirection Element's text directionality with enumerated options
 	* @return	The created Button
 	*/
-	public function createButton( sText:String, sURI:sap.ui.core.URI, bEnabled:Bool, ?sTextDirection:sap.ui.core.TextDirection):sap.m.Button;
+	public function createButton( sText:String, sURI:sap.ui.core.URI, ?bEnabled:Bool, ?sTextDirection:sap.ui.core.TextDirection):sap.m.Button;
 
 	/**
 	* Destroys all the items in the aggregation {@link #getItems items}.
@@ -231,7 +231,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.SegmentedButton;
+	public function setEnabled( ?bEnabled:Bool):sap.m.SegmentedButton;
 	@:overload( function(vButton:String):sap.m.SegmentedButton{ })
 	@:overload( function(vButton:sap.m.Button):sap.m.SegmentedButton{ })
 	@:overload( function(vButton:Dynamic):sap.m.SegmentedButton{ })

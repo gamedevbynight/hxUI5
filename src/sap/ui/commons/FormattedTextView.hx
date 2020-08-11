@@ -117,7 +117,7 @@ Default value is <code>Document</code>.
 	* @param	sAccessibleRole New value for property <code>accessibleRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAccessibleRole( sAccessibleRole:sap.ui.core.AccessibleRole):sap.ui.commons.FormattedTextView;
+	public function setAccessibleRole( ?sAccessibleRole:sap.ui.core.AccessibleRole):sap.ui.commons.FormattedTextView;
 
 	/**
 	* Sets text with placeholders and given array of controls.

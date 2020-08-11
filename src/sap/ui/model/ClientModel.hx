@@ -40,7 +40,9 @@ extern class ClientModel extends sap.ui.model.Model
 	public function forceNoCache( ?bForceNoCache:Bool):Void;
 
 	/**
-	* Returns the current data of the model. Be aware that the returned object is a reference to the model data so all changes to that data will also change the model data.
+	* Returns the current data of the model.
+
+Be aware that the returned object is a reference to the model data so all changes to that data will also change the model data.
 	* @return	the data object
 	*/
 	public function getData( ):Dynamic;

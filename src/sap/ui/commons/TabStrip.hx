@@ -214,7 +214,7 @@ Default value is <code>0</code>.
 	* @param	iSelectedIndex New value for property <code>selectedIndex</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelectedIndex( iSelectedIndex:Int):sap.ui.commons.TabStrip;
+	public function setSelectedIndex( ?iSelectedIndex:Int):sap.ui.commons.TabStrip;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

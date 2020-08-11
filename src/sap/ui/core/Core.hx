@@ -153,15 +153,19 @@ Please note that this event is a bubbling event and may already be canceled befo
 	* @return	The list of controls with matching field group IDs
 	*/
 	public function byFieldGroupId( ?vFieldGroupIds:Array<String>):Array<sap.ui.core.Control>;
+	@:overload( function(sId:sap.ui.core.ID):Dynamic{ })
+	@:overload( function(sId:Dynamic):Dynamic{ })
 
 	/**
 	* Returns the registered element with the given ID, if any.
 
-The ID must be the globally unique ID of an element, the same as returned by <code>oElement.getId()</code>. When the element has been created from a declarative source (e.g. XMLView), that source might have used a shorter, non-unique local ID. A search for such a local ID cannot be executed with this method. It can only be executed on the corresponding scope (e.g. on an XMLView instance), by using the {@link sap.ui.core.mvc.View#byId View#byId} method of that scope.
+The ID must be the globally unique ID of an element, the same as returned by <code>oElement.getId()</code>.
+
+When the element has been created from a declarative source (e.g. XMLView), that source might have used a shorter, non-unique local ID. A search for such a local ID cannot be executed with this method. It can only be executed on the corresponding scope (e.g. on an XMLView instance), by using the {@link sap.ui.core.mvc.View#byId View#byId} method of that scope.
 	* @param	sId ID of the element to search for
 	* @return	Element with the given ID or <code>undefined</code>
 	*/
-	public function byId( sId:String):sap.ui.core.Element;
+	public function byId( sId:Dynamic):Dynamic;
 	@:overload( function(vComponent:String, ?sUrl:String, ?sId:String, ?mSettings:Dynamic):Void{ })
 
 	/**
@@ -506,7 +510,9 @@ Lock should be called before and after the DOM is modified for rendering, roundt
 	public function lock( ):Void;
 
 	/**
-	* This method can be called to trigger realignment of controls after changing the cozy/compact CSS class of a DOM element, for example, the <code>&lt;body&gt;</code> tag.
+	* Triggers a realignment of controls
+
+This method should be called after changing the cozy/compact CSS class of a DOM element at runtime, for example at the <code>&lt;body&gt;</code> tag. Controls can listen to the themeChanged event to realign their appearance after changing the theme. Changing the cozy/compact CSS class should then also be handled as a theme change. In more simple scenarios where the cozy/compact CSS class is added to a DOM element which contains only a few controls it might not be necessary to trigger the realigment of all controls placed in the DOM, for example changing the cozy/compact CSS class at a single control
 	* @return	Void
 	*/
 	public function notifyContentDensityChanged( ):Void;

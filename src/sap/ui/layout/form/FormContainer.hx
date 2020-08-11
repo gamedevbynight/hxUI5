@@ -196,7 +196,7 @@ Default value is <code>false</code>.
 	* @param	bExpandable New value for property <code>expandable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExpandable( bExpandable:Bool):sap.ui.layout.form.FormContainer;
+	public function setExpandable( ?bExpandable:Bool):sap.ui.layout.form.FormContainer;
 
 	/**
 	* Sets a new value for property {@link #getExpanded expanded}.
@@ -211,7 +211,7 @@ Default value is <code>true</code>.
 	* @param	bExpanded New value for property <code>expanded</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExpanded( bExpanded:Bool):sap.ui.layout.form.FormContainer;
+	public function setExpanded( ?bExpanded:Bool):sap.ui.layout.form.FormContainer;
 	@:overload( function(vTitle:sap.ui.core.Title):sap.ui.layout.form.FormContainer{ })
 
 	/**
@@ -239,7 +239,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.ui.layout.form.FormContainer;
+	public function setVisible( ?bVisible:Bool):sap.ui.layout.form.FormContainer;
 }
 
 typedef FormContainerArgs = sap.ui.core.Element.ElementArgs & {

@@ -150,7 +150,7 @@ Specifies the position of the popup menu with enumerated options. By default, th
 Default value is <code>BeginBottom</code>.
 	* @return	Value of property <code>menuPosition</code>
 	*/
-	public function getMenuPosition( ):sap.ui.core.popup.Dock;
+	public function getMenuPosition( ):sap.ui.core.Popup.Dock;
 
 	/**
 	* Returns a metadata object for class sap.m.MenuButton.
@@ -180,6 +180,8 @@ Default value is <code>Inherit</code>.
 	* Gets current value of property {@link #getType type}.
 
 Defines the type of the <code>MenuButton</code> (for example, Default, Accept, Reject, Back, etc.)
+
+<b>Note:</b> Not all existing types are valid for the control. See {@link sap.m.ButtonType} documentation.
 
 Default value is <code>Default</code>.
 	* @return	Value of property <code>type</code>
@@ -269,7 +271,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.MenuButton;
+	public function setEnabled( ?bEnabled:Bool):sap.m.MenuButton;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -293,7 +295,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.MenuButton;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.MenuButton;
 
 	/**
 	* Sets the aggregated {@link #getMenu menu}.
@@ -315,7 +317,7 @@ Default value is <code>BeginBottom</code>.
 	* @param	sMenuPosition New value for property <code>menuPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMenuPosition( sMenuPosition:sap.ui.core.popup.Dock):sap.m.MenuButton;
+	public function setMenuPosition( ?sMenuPosition:sap.ui.core.Popup.Dock):sap.m.MenuButton;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -339,7 +341,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.m.MenuButton;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.m.MenuButton;
 
 	/**
 	* Sets the tooltip for the <code>MenuButton</code>. Can either be an instance of a TooltipBase subclass or a simple string.
@@ -353,13 +355,15 @@ Default value is <code>Inherit</code>.
 
 Defines the type of the <code>MenuButton</code> (for example, Default, Accept, Reject, Back, etc.)
 
+<b>Note:</b> Not all existing types are valid for the control. See {@link sap.m.ButtonType} documentation.
+
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>Default</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.ButtonType):sap.m.MenuButton;
+	public function setType( ?sType:sap.m.ButtonType):sap.m.MenuButton;
 
 	/**
 	* Sets a new value for property {@link #getUseDefaultActionOnly useDefaultActionOnly}.
@@ -372,7 +376,7 @@ Default value is <code>false</code>.
 	* @param	bUseDefaultActionOnly New value for property <code>useDefaultActionOnly</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUseDefaultActionOnly( bUseDefaultActionOnly:Bool):sap.m.MenuButton;
+	public function setUseDefaultActionOnly( ?bUseDefaultActionOnly:Bool):sap.m.MenuButton;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -395,6 +399,8 @@ typedef MenuButtonArgs = sap.ui.core.Control.ControlArgs & {
 
 	/**
 	* Defines the type of the <code>MenuButton</code> (for example, Default, Accept, Reject, Back, etc.)
+
+<b>Note:</b> Not all existing types are valid for the control. See {@link sap.m.ButtonType} documentation.
 	*/
 	@:optional var type:haxe.extern.EitherType<String,sap.m.ButtonType>;
 
@@ -438,7 +444,7 @@ typedef MenuButtonArgs = sap.ui.core.Control.ControlArgs & {
 
 <b>Note:</b> In the case that the menu has no space to show itself in the view port of the current window it tries to open itself to the inverted direction.
 	*/
-	@:optional var menuPosition:haxe.extern.EitherType<String,sap.ui.core.popup.Dock>;
+	@:optional var menuPosition:haxe.extern.EitherType<String,sap.ui.core.Popup.Dock>;
 
 	/**
 	* Controls whether the default action handler is invoked always or it is invoked only until a menu item is selected. Usable only if <code>buttonMode</code> is set to <code>Split</code>.

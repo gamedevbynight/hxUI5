@@ -278,7 +278,7 @@ Default value is <code>Bottom</code>.
 	* @param	sPlacement New value for property <code>placement</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlacement( sPlacement:sap.m.PlacementType):sap.m.ActionSheet;
+	public function setPlacement( ?sPlacement:sap.m.PlacementType):sap.m.ActionSheet;
 
 	/**
 	* Sets a new value for property {@link #getShowCancelButton showCancelButton}.
@@ -291,7 +291,7 @@ Default value is <code>true</code>.
 	* @param	bShowCancelButton New value for property <code>showCancelButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowCancelButton( bShowCancelButton:Bool):sap.m.ActionSheet;
+	public function setShowCancelButton( ?bShowCancelButton:Bool):sap.m.ActionSheet;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.

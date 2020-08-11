@@ -1,6 +1,5 @@
 package sap.m.messagebox;
 
-@:native("sap.m.MessageBox.Icon")
 @:enum extern abstract Icon(String)
 {
     /**

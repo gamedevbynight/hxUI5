@@ -1,6 +1,6 @@
 package sap.base.util;
 
-@:native("sap.base.util.ObjectPath")
+@:native("module:sap/base/util/ObjectPath")
 extern class ObjectPath
 {
 	@:overload( function(vObjectPath:String, ?oRootContext:Dynamic):Dynamic{ })

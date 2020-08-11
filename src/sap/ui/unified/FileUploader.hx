@@ -384,7 +384,7 @@ Default value is <code>true</code>.
 
 The chosen files will be checked against an array of file types.
 
-If at least one file does not fit the file type restriction, the upload is prevented.
+If at least one file does not fit the file type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Microsoft Edge.
 
 Example: <code>["jpg", "png", "bmp"]</code>.
 	* @return	Value of property <code>fileType</code>
@@ -486,7 +486,7 @@ This property is not supported by Internet Explorer 9.
 
 The chosen files will be checked against an array of mime types.
 
-If at least one file does not fit the mime type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Edge.
+If at least one file does not fit the mime type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Microsoft Edge.
 
 Example: <code>["image/png", "image/jpeg"]</code>.
 	* @return	Value of property <code>mimeType</code>
@@ -776,7 +776,7 @@ Default value is <code>false</code>.
 	* @param	bButtonOnly New value for property <code>buttonOnly</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setButtonOnly( bButtonOnly:Bool):sap.ui.unified.FileUploader;
+	public function setButtonOnly( ?bButtonOnly:Bool):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getButtonText buttonText}.
@@ -800,14 +800,14 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.unified.FileUploader;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getFileType fileType}.
 
 The chosen files will be checked against an array of file types.
 
-If at least one file does not fit the file type restriction, the upload is prevented.
+If at least one file does not fit the file type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Microsoft Edge.
 
 Example: <code>["jpg", "png", "bmp"]</code>.
 
@@ -827,10 +827,10 @@ This can be a URI to an image or an icon font URI.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon New value for property <code>icon</code>
+	* @param	sIcon= New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.ui.unified.FileUploader;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getIconFirst iconFirst}.
@@ -843,7 +843,7 @@ Default value is <code>true</code>.
 	* @param	bIconFirst New value for property <code>iconFirst</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconFirst( bIconFirst:Bool):sap.ui.unified.FileUploader;
+	public function setIconFirst( ?bIconFirst:Bool):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getIconHovered iconHovered}.
@@ -855,10 +855,10 @@ If not specified, the base icon is used. If an icon font icon is used, this prop
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIconHovered New value for property <code>iconHovered</code>
+	* @param	sIconHovered= New value for property <code>iconHovered</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconHovered( sIconHovered:sap.ui.core.URI):sap.ui.unified.FileUploader;
+	public function setIconHovered( ?sIconHovered:sap.ui.core.URI):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getIconOnly iconOnly}.
@@ -871,7 +871,7 @@ Default value is <code>false</code>.
 	* @param	bIconOnly New value for property <code>iconOnly</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconOnly( bIconOnly:Bool):sap.ui.unified.FileUploader;
+	public function setIconOnly( ?bIconOnly:Bool):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getIconSelected iconSelected}.
@@ -883,10 +883,10 @@ If not specified, the base or hovered icon is used. If an icon font icon is used
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIconSelected New value for property <code>iconSelected</code>
+	* @param	sIconSelected= New value for property <code>iconSelected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconSelected( sIconSelected:sap.ui.core.URI):sap.ui.unified.FileUploader;
+	public function setIconSelected( ?sIconSelected:sap.ui.core.URI):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getMaximumFilenameLength maximumFilenameLength}.
@@ -919,7 +919,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 
 The chosen files will be checked against an array of mime types.
 
-If at least one file does not fit the mime type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Edge.
+If at least one file does not fit the mime type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Microsoft Edge.
 
 Example: <code>["image/png", "image/jpeg"]</code>.
 
@@ -944,7 +944,7 @@ Default value is <code>false</code>.
 	* @param	bMultiple New value for property <code>multiple</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMultiple( bMultiple:Bool):sap.ui.unified.FileUploader;
+	public function setMultiple( ?bMultiple:Bool):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -981,7 +981,7 @@ Default value is <code>false</code>.
 	* @param	bSameFilenameAllowed New value for property <code>sameFilenameAllowed</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSameFilenameAllowed( bSameFilenameAllowed:Bool):sap.ui.unified.FileUploader;
+	public function setSameFilenameAllowed( ?bSameFilenameAllowed:Bool):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getSendXHR sendXHR}.
@@ -996,7 +996,7 @@ Default value is <code>false</code>.
 	* @param	bSendXHR New value for property <code>sendXHR</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSendXHR( bSendXHR:Bool):sap.ui.unified.FileUploader;
+	public function setSendXHR( ?bSendXHR:Bool):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getStyle style}.
@@ -1022,7 +1022,7 @@ Default value is <code>false</code>.
 	* @param	bUploadOnChange New value for property <code>uploadOnChange</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUploadOnChange( bUploadOnChange:Bool):sap.ui.unified.FileUploader;
+	public function setUploadOnChange( ?bUploadOnChange:Bool):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getUploadUrl uploadUrl}.
@@ -1032,10 +1032,10 @@ Used when URL address is on a remote server.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sUploadUrl New value for property <code>uploadUrl</code>
+	* @param	sUploadUrl= New value for property <code>uploadUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUploadUrl( sUploadUrl:sap.ui.core.URI):sap.ui.unified.FileUploader;
+	public function setUploadUrl( ?sUploadUrl:sap.ui.core.URI):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getUseMultipart useMultipart}.
@@ -1050,7 +1050,7 @@ Default value is <code>true</code>.
 	* @param	bUseMultipart New value for property <code>useMultipart</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUseMultipart( bUseMultipart:Bool):sap.ui.unified.FileUploader;
+	public function setUseMultipart( ?bUseMultipart:Bool):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -1063,7 +1063,7 @@ Default value is <code>empty string</code>.
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.ui.unified.FileUploader;
+	public function setValue( ?sValue:String):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -1078,7 +1078,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.ui.unified.FileUploader;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getValueStateText valueStateText}.
@@ -1101,10 +1101,10 @@ Specifies the displayed control width.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth New value for property <code>width</code>
+	* @param	sWidth= New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.unified.FileUploader;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets the aggregated {@link #getXhrSettings xhrSettings}.
@@ -1175,7 +1175,7 @@ A typical use case would be if the files have different paths.
 	/**
 	* The chosen files will be checked against an array of file types.
 
-If at least one file does not fit the file type restriction, the upload is prevented.
+If at least one file does not fit the file type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Microsoft Edge.
 
 Example: <code>["jpg", "png", "bmp"]</code>.
 	*/
@@ -1200,7 +1200,7 @@ This property is not supported by Internet Explorer 9.
 	/**
 	* The chosen files will be checked against an array of mime types.
 
-If at least one file does not fit the mime type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Edge.
+If at least one file does not fit the mime type restriction, the upload is prevented. <b>Note:</b> This property is not supported by Internet Explorer & Microsoft Edge.
 
 Example: <code>["image/png", "image/jpeg"]</code>.
 	*/

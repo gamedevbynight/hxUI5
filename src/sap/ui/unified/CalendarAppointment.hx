@@ -137,7 +137,7 @@ Default value is <code>false</code>.
 	* @param	bSelected New value for property <code>selected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelected( bSelected:Bool):sap.ui.unified.CalendarAppointment;
+	public function setSelected( ?bSelected:Bool):sap.ui.unified.CalendarAppointment;
 
 	/**
 	* Sets a new value for property {@link #getTentative tentative}.
@@ -150,7 +150,7 @@ Default value is <code>false</code>.
 	* @param	bTentative New value for property <code>tentative</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTentative( bTentative:Bool):sap.ui.unified.CalendarAppointment;
+	public function setTentative( ?bTentative:Bool):sap.ui.unified.CalendarAppointment;
 
 	/**
 	* Sets a new value for property {@link #getText text}.

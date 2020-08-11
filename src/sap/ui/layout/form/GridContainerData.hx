@@ -48,7 +48,7 @@ Default value is <code>false</code>.
 	* @param	bHalfGrid New value for property <code>halfGrid</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHalfGrid( bHalfGrid:Bool):sap.ui.layout.form.GridContainerData;
+	public function setHalfGrid( ?bHalfGrid:Bool):sap.ui.layout.form.GridContainerData;
 }
 
 typedef GridContainerDataArgs = sap.ui.core.LayoutData.LayoutDataArgs & {

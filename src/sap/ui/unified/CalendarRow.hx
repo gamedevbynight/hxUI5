@@ -480,7 +480,7 @@ Default value is <code>false</code>.
 	* @param	bAppointmentsReducedHeight New value for property <code>appointmentsReducedHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAppointmentsReducedHeight( bAppointmentsReducedHeight:Bool):sap.ui.unified.CalendarRow;
+	public function setAppointmentsReducedHeight( ?bAppointmentsReducedHeight:Bool):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getAppointmentsVisualization appointmentsVisualization}.
@@ -495,7 +495,7 @@ Default value is <code>Standard</code>.
 	* @param	sAppointmentsVisualization New value for property <code>appointmentsVisualization</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAppointmentsVisualization( sAppointmentsVisualization:sap.ui.unified.CalendarAppointmentVisualization):sap.ui.unified.CalendarRow;
+	public function setAppointmentsVisualization( ?sAppointmentsVisualization:sap.ui.unified.CalendarAppointmentVisualization):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getCheckResize checkResize}.
@@ -510,7 +510,7 @@ Default value is <code>true</code>.
 	* @param	bCheckResize New value for property <code>checkResize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCheckResize( bCheckResize:Bool):sap.ui.unified.CalendarRow;
+	public function setCheckResize( ?bCheckResize:Bool):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getGroupAppointmentsMode groupAppointmentsMode}.
@@ -525,7 +525,7 @@ Default value is <code>Collapsed</code>.
 	* @param	sGroupAppointmentsMode New value for property <code>groupAppointmentsMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGroupAppointmentsMode( sGroupAppointmentsMode:sap.ui.unified.GroupAppointmentsMode):sap.ui.unified.CalendarRow;
+	public function setGroupAppointmentsMode( ?sGroupAppointmentsMode:sap.ui.unified.GroupAppointmentsMode):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -549,7 +549,7 @@ Default value is <code>12</code>.
 	* @param	iIntervals New value for property <code>intervals</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervals( iIntervals:Int):sap.ui.unified.CalendarRow;
+	public function setIntervals( ?iIntervals:Int):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getIntervalType intervalType}.
@@ -562,7 +562,7 @@ Default value is <code>Hour</code>.
 	* @param	sIntervalType New value for property <code>intervalType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervalType( sIntervalType:sap.ui.unified.CalendarIntervalType):sap.ui.unified.CalendarRow;
+	public function setIntervalType( ?sIntervalType:sap.ui.unified.CalendarIntervalType):sap.ui.unified.CalendarRow;
 	@:overload( function(oLegend:sap.ui.core.ID):sap.ui.unified.CalendarRow{ })
 
 	/**
@@ -615,7 +615,7 @@ Default value is <code>true</code>.
 	* @param	bShowEmptyIntervalHeaders New value for property <code>showEmptyIntervalHeaders</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowEmptyIntervalHeaders( bShowEmptyIntervalHeaders:Bool):sap.ui.unified.CalendarRow;
+	public function setShowEmptyIntervalHeaders( ?bShowEmptyIntervalHeaders:Bool):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getShowIntervalHeaders showIntervalHeaders}.
@@ -630,7 +630,7 @@ Default value is <code>true</code>.
 	* @param	bShowIntervalHeaders New value for property <code>showIntervalHeaders</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowIntervalHeaders( bShowIntervalHeaders:Bool):sap.ui.unified.CalendarRow;
+	public function setShowIntervalHeaders( ?bShowIntervalHeaders:Bool):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getShowSubIntervals showSubIntervals}.
@@ -649,7 +649,7 @@ Default value is <code>false</code>.
 	* @param	bShowSubIntervals New value for property <code>showSubIntervals</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSubIntervals( bShowSubIntervals:Bool):sap.ui.unified.CalendarRow;
+	public function setShowSubIntervals( ?bShowSubIntervals:Bool):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getStartDate startDate}.
@@ -675,7 +675,7 @@ Default value is <code>true</code>.
 	* @param	bUpdateCurrentTime New value for property <code>updateCurrentTime</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUpdateCurrentTime( bUpdateCurrentTime:Bool):sap.ui.unified.CalendarRow;
+	public function setUpdateCurrentTime( ?bUpdateCurrentTime:Bool):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

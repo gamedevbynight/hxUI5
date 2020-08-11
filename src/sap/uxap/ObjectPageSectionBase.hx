@@ -62,7 +62,9 @@ Default value is <code>High</code>.
 	/**
 	* Gets current value of property {@link #getTitle title}.
 
-Section Title
+Defines the title of the respective section/subsection.
+
+<b>Note:</b> If a subsection is the only one (or the only one visible) within a section, its title is displayed instead of the section title. This behavior is true even if the <code>showTitle</code> propeprty of {@link sap.uxap.ObjectPageSubSection} is set to <code>false</code>.
 	* @return	Value of property <code>title</code>
 	*/
 	public function getTitle( ):String;
@@ -107,12 +109,14 @@ Default value is <code>High</code>.
 	* @param	sImportance New value for property <code>importance</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setImportance( sImportance:sap.uxap.Importance):sap.uxap.ObjectPageSectionBase;
+	public function setImportance( ?sImportance:sap.uxap.Importance):sap.uxap.ObjectPageSectionBase;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
 
-Section Title
+Defines the title of the respective section/subsection.
+
+<b>Note:</b> If a subsection is the only one (or the only one visible) within a section, its title is displayed instead of the section title. This behavior is true even if the <code>showTitle</code> propeprty of {@link sap.uxap.ObjectPageSubSection} is set to <code>false</code>.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	sTitle New value for property <code>title</code>
@@ -133,7 +137,7 @@ Default value is <code>Auto</code>.
 	* @param	sTitleLevel New value for property <code>titleLevel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleLevel( sTitleLevel:sap.ui.core.TitleLevel):sap.uxap.ObjectPageSectionBase;
+	public function setTitleLevel( ?sTitleLevel:sap.ui.core.TitleLevel):sap.uxap.ObjectPageSectionBase;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -146,13 +150,15 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.uxap.ObjectPageSectionBase;
+	public function setVisible( ?bVisible:Bool):sap.uxap.ObjectPageSectionBase;
 }
 
 typedef ObjectPageSectionBaseArgs = sap.ui.core.Control.ControlArgs & {
 
 	/**
-	* Section Title
+	* Defines the title of the respective section/subsection.
+
+<b>Note:</b> If a subsection is the only one (or the only one visible) within a section, its title is displayed instead of the section title. This behavior is true even if the <code>showTitle</code> propeprty of {@link sap.uxap.ObjectPageSubSection} is set to <code>false</code>.
 	*/
 	@:optional var title:String;
 

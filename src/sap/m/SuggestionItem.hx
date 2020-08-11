@@ -58,7 +58,7 @@ Default value is <code>empty string</code>.
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDescription( sDescription:String):sap.m.SuggestionItem;
+	public function setDescription( ?sDescription:String):sap.m.SuggestionItem;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -71,7 +71,7 @@ Default value is <code>empty string</code>.
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:String):sap.m.SuggestionItem;
+	public function setIcon( ?sIcon:String):sap.m.SuggestionItem;
 }
 
 typedef SuggestionItemArgs = sap.ui.core.Item.ItemArgs & {

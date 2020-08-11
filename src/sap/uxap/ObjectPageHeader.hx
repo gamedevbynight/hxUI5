@@ -409,7 +409,7 @@ Default value is <code>true</code>.
 	* @param	bIsActionAreaAlwaysVisible New value for property <code>isActionAreaAlwaysVisible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIsActionAreaAlwaysVisible( bIsActionAreaAlwaysVisible:Bool):sap.uxap.ObjectPageHeader;
+	public function setIsActionAreaAlwaysVisible( ?bIsActionAreaAlwaysVisible:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getIsObjectIconAlwaysVisible isObjectIconAlwaysVisible}.
@@ -422,7 +422,7 @@ Default value is <code>false</code>.
 	* @param	bIsObjectIconAlwaysVisible New value for property <code>isObjectIconAlwaysVisible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIsObjectIconAlwaysVisible( bIsObjectIconAlwaysVisible:Bool):sap.uxap.ObjectPageHeader;
+	public function setIsObjectIconAlwaysVisible( ?bIsObjectIconAlwaysVisible:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getIsObjectSubtitleAlwaysVisible isObjectSubtitleAlwaysVisible}.
@@ -435,7 +435,7 @@ Default value is <code>true</code>.
 	* @param	bIsObjectSubtitleAlwaysVisible New value for property <code>isObjectSubtitleAlwaysVisible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIsObjectSubtitleAlwaysVisible( bIsObjectSubtitleAlwaysVisible:Bool):sap.uxap.ObjectPageHeader;
+	public function setIsObjectSubtitleAlwaysVisible( ?bIsObjectSubtitleAlwaysVisible:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getIsObjectTitleAlwaysVisible isObjectTitleAlwaysVisible}.
@@ -448,7 +448,7 @@ Default value is <code>true</code>.
 	* @param	bIsObjectTitleAlwaysVisible New value for property <code>isObjectTitleAlwaysVisible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIsObjectTitleAlwaysVisible( bIsObjectTitleAlwaysVisible:Bool):sap.uxap.ObjectPageHeader;
+	public function setIsObjectTitleAlwaysVisible( ?bIsObjectTitleAlwaysVisible:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getMarkChanges markChanges}.
@@ -461,7 +461,7 @@ Default value is <code>false</code>.
 	* @param	bMarkChanges New value for property <code>markChanges</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMarkChanges( bMarkChanges:Bool):sap.uxap.ObjectPageHeader;
+	public function setMarkChanges( ?bMarkChanges:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getMarkFavorite markFavorite}.
@@ -474,7 +474,7 @@ Default value is <code>false</code>.
 	* @param	bMarkFavorite New value for property <code>markFavorite</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMarkFavorite( bMarkFavorite:Bool):sap.uxap.ObjectPageHeader;
+	public function setMarkFavorite( ?bMarkFavorite:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getMarkFlagged markFlagged}.
@@ -487,7 +487,7 @@ Default value is <code>false</code>.
 	* @param	bMarkFlagged New value for property <code>markFlagged</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMarkFlagged( bMarkFlagged:Bool):sap.uxap.ObjectPageHeader;
+	public function setMarkFlagged( ?bMarkFlagged:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getMarkLocked markLocked}.
@@ -500,7 +500,7 @@ Default value is <code>false</code>.
 	* @param	bMarkLocked New value for property <code>markLocked</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMarkLocked( bMarkLocked:Bool):sap.uxap.ObjectPageHeader;
+	public function setMarkLocked( ?bMarkLocked:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets the aggregated {@link #getNavigationBar navigationBar}.
@@ -520,7 +520,7 @@ Default value is <code>empty string</code>.
 	* @param	sObjectImageAlt New value for property <code>objectImageAlt</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setObjectImageAlt( sObjectImageAlt:String):sap.uxap.ObjectPageHeader;
+	public function setObjectImageAlt( ?sObjectImageAlt:String):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getObjectImageBackgroundColor objectImageBackgroundColor}.
@@ -533,7 +533,7 @@ Default value is <code>Accent6</code>.
 	* @param	sObjectImageBackgroundColor New value for property <code>objectImageBackgroundColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setObjectImageBackgroundColor( sObjectImageBackgroundColor:sap.m.AvatarColor):sap.uxap.ObjectPageHeader;
+	public function setObjectImageBackgroundColor( ?sObjectImageBackgroundColor:sap.m.AvatarColor):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getObjectImageDensityAware objectImageDensityAware}.
@@ -546,7 +546,7 @@ Default value is <code>false</code>.
 	* @param	bObjectImageDensityAware New value for property <code>objectImageDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setObjectImageDensityAware( bObjectImageDensityAware:Bool):sap.uxap.ObjectPageHeader;
+	public function setObjectImageDensityAware( ?bObjectImageDensityAware:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getObjectImageShape objectImageShape}.
@@ -559,7 +559,7 @@ Default value is <code>Square</code>.
 	* @param	sObjectImageShape New value for property <code>objectImageShape</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setObjectImageShape( sObjectImageShape:sap.m.AvatarShape):sap.uxap.ObjectPageHeader;
+	public function setObjectImageShape( ?sObjectImageShape:sap.m.AvatarShape):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getObjectImageURI objectImageURI}.
@@ -605,7 +605,7 @@ Default value is <code>false</code>.
 	* @param	bShowMarkers New value for property <code>showMarkers</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowMarkers( bShowMarkers:Bool):sap.uxap.ObjectPageHeader;
+	public function setShowMarkers( ?bShowMarkers:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getShowPlaceholder showPlaceholder}.
@@ -618,7 +618,7 @@ Default value is <code>false</code>.
 	* @param	bShowPlaceholder New value for property <code>showPlaceholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowPlaceholder( bShowPlaceholder:Bool):sap.uxap.ObjectPageHeader;
+	public function setShowPlaceholder( ?bShowPlaceholder:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getShowTitleSelector showTitleSelector}.
@@ -631,7 +631,7 @@ Default value is <code>false</code>.
 	* @param	bShowTitleSelector New value for property <code>showTitleSelector</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowTitleSelector( bShowTitleSelector:Bool):sap.uxap.ObjectPageHeader;
+	public function setShowTitleSelector( ?bShowTitleSelector:Bool):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets the aggregated {@link #getSideContentButton sideContentButton}.

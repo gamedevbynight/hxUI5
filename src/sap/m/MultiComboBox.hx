@@ -187,13 +187,6 @@ Default value is <code>[]</code>.
 	* @return	<code>this</code> to allow method chaining.
 	*/
 	public function setSelectedKeys( aKeys:Array<String>):sap.m.MultiComboBox;
-
-	/**
-	* Sets the value state text
-	* @param	sValueStateText The new value state text
-	* @return	this for chaining
-	*/
-	public function setValueStateText( ?sValueStateText:String):sap.m.MultiComboBox;
 }
 
 typedef MultiComboBoxArgs = sap.m.ComboBoxBase.ComboBoxBaseArgs & {
@@ -202,6 +195,11 @@ typedef MultiComboBoxArgs = sap.m.ComboBoxBase.ComboBoxBaseArgs & {
 	* Keys of the selected items. If the key has no corresponding item, no changes will apply. If duplicate keys exists the first item matching the key is used.
 	*/
 	@:optional var selectedKeys:Array<String>;
+
+    /**
+    * The tokenizer which displays the tokens
+    */
+	@:optional var tokenizer:haxe.extern.EitherType<String,sap.m.Tokenizer>;
 
 	/**
 	* Provides getter and setter for the selected items from the aggregation named items.

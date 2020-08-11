@@ -1,6 +1,6 @@
 package sap.ui.core;
 
-@:native("sap.ui.core.ComponentSupport")
+@:native("module:sap/ui/core/ComponentSupport")
 extern class ComponentSupport
 {
 

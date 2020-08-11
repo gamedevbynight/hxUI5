@@ -118,7 +118,7 @@ Default value is <code>empty string</code>.
 	* @param	sEmailSubject New value for property <code>emailSubject</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEmailSubject( sEmailSubject:String):sap.m.QuickViewGroupElement;
+	public function setEmailSubject( ?sEmailSubject:String):sap.m.QuickViewGroupElement;
 
 	/**
 	* Sets a new value for property {@link #getLabel label}.
@@ -131,7 +131,7 @@ Default value is <code>empty string</code>.
 	* @param	sLabel New value for property <code>label</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabel( sLabel:String):sap.m.QuickViewGroupElement;
+	public function setLabel( ?sLabel:String):sap.m.QuickViewGroupElement;
 
 	/**
 	* Sets a new value for property {@link #getPageLinkId pageLinkId}.
@@ -144,7 +144,7 @@ Default value is <code>empty string</code>.
 	* @param	sPageLinkId New value for property <code>pageLinkId</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPageLinkId( sPageLinkId:String):sap.m.QuickViewGroupElement;
+	public function setPageLinkId( ?sPageLinkId:String):sap.m.QuickViewGroupElement;
 
 	/**
 	* Sets a new value for property {@link #getTarget target}.
@@ -157,7 +157,7 @@ Default value is <code>_blank</code>.
 	* @param	sTarget New value for property <code>target</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTarget( sTarget:String):sap.m.QuickViewGroupElement;
+	public function setTarget( ?sTarget:String):sap.m.QuickViewGroupElement;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -170,7 +170,7 @@ Default value is <code>text</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.QuickViewGroupElementType):sap.m.QuickViewGroupElement;
+	public function setType( ?sType:sap.m.QuickViewGroupElementType):sap.m.QuickViewGroupElement;
 
 	/**
 	* Sets a new value for property {@link #getUrl url}.
@@ -183,7 +183,7 @@ Default value is <code>empty string</code>.
 	* @param	sUrl New value for property <code>url</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUrl( sUrl:String):sap.m.QuickViewGroupElement;
+	public function setUrl( ?sUrl:String):sap.m.QuickViewGroupElement;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -196,7 +196,7 @@ Default value is <code>empty string</code>.
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.m.QuickViewGroupElement;
+	public function setValue( ?sValue:String):sap.m.QuickViewGroupElement;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -209,7 +209,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.QuickViewGroupElement;
+	public function setVisible( ?bVisible:Bool):sap.m.QuickViewGroupElement;
 }
 
 typedef QuickViewGroupElementArgs = sap.ui.core.Element.ElementArgs & {

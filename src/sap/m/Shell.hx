@@ -188,7 +188,7 @@ Default value is <code>true</code>.
 	* @param	bAppWidthLimited New value for property <code>appWidthLimited</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAppWidthLimited( bAppWidthLimited:Bool):sap.m.Shell;
+	public function setAppWidthLimited( ?bAppWidthLimited:Bool):sap.m.Shell;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundColor backgroundColor}.
@@ -223,7 +223,7 @@ Default value is <code>1</code>.
 	* @param	fBackgroundOpacity New value for property <code>backgroundOpacity</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundOpacity( fBackgroundOpacity:Float):sap.m.Shell;
+	public function setBackgroundOpacity( ?fBackgroundOpacity:Float):sap.m.Shell;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundRepeat backgroundRepeat}.
@@ -236,7 +236,7 @@ Default value is <code>false</code>.
 	* @param	bBackgroundRepeat New value for property <code>backgroundRepeat</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundRepeat( bBackgroundRepeat:Bool):sap.m.Shell;
+	public function setBackgroundRepeat( ?bBackgroundRepeat:Bool):sap.m.Shell;
 
 	/**
 	* Sets a new value for property {@link #getHeaderRightText headerRightText}.
@@ -288,7 +288,7 @@ Default value is <code>true</code>.
 	* @param	bShowLogout New value for property <code>showLogout</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowLogout( bShowLogout:Bool):sap.m.Shell;
+	public function setShowLogout( ?bShowLogout:Bool):sap.m.Shell;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -314,7 +314,7 @@ Default value is <code>H1</code>.
 	* @param	sTitleLevel New value for property <code>titleLevel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleLevel( sTitleLevel:sap.ui.core.TitleLevel):sap.m.Shell;
+	public function setTitleLevel( ?sTitleLevel:sap.ui.core.TitleLevel):sap.m.Shell;
 }
 
 typedef ShellArgs = sap.ui.core.Control.ControlArgs & {

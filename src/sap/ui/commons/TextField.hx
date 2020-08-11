@@ -307,7 +307,7 @@ Default value is <code>Textbox</code>.
 	* @param	sAccessibleRole New value for property <code>accessibleRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAccessibleRole( sAccessibleRole:sap.ui.core.AccessibleRole):sap.ui.commons.TextField;
+	public function setAccessibleRole( ?sAccessibleRole:sap.ui.core.AccessibleRole):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getDesign design}.
@@ -320,7 +320,7 @@ Default value is <code>Standard</code>.
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:sap.ui.core.Design):sap.ui.commons.TextField;
+	public function setDesign( ?sDesign:sap.ui.core.Design):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -333,7 +333,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.commons.TextField;
+	public function setEditable( ?bEditable:Bool):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -346,7 +346,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.TextField;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getHelpId helpId}.
@@ -359,7 +359,7 @@ Default value is <code>empty string</code>.
 	* @param	sHelpId New value for property <code>helpId</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHelpId( sHelpId:String):sap.ui.commons.TextField;
+	public function setHelpId( ?sHelpId:String):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getImeMode imeMode}.
@@ -372,7 +372,7 @@ Default value is <code>Auto</code>.
 	* @param	sImeMode New value for property <code>imeMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setImeMode( sImeMode:sap.ui.core.ImeMode):sap.ui.commons.TextField;
+	public function setImeMode( ?sImeMode:sap.ui.core.ImeMode):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getMaxLength maxLength}.
@@ -385,7 +385,7 @@ Default value is <code>0</code>.
 	* @param	iMaxLength New value for property <code>maxLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxLength( iMaxLength:Int):sap.ui.commons.TextField;
+	public function setMaxLength( ?iMaxLength:Int):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -420,7 +420,7 @@ Default value is <code>false</code>.
 	* @param	bRequired New value for property <code>required</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRequired( bRequired:Bool):sap.ui.commons.TextField;
+	public function setRequired( ?bRequired:Bool):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -433,7 +433,7 @@ Default value is <code>Begin</code>.
 	* @param	sTextAlign New value for property <code>textAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextAlign( sTextAlign:sap.ui.core.TextAlign):sap.ui.commons.TextField;
+	public function setTextAlign( ?sTextAlign:sap.ui.core.TextAlign):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -446,7 +446,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.TextField;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -459,7 +459,7 @@ Default value is <code>empty string</code>.
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.ui.commons.TextField;
+	public function setValue( ?sValue:String):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -472,7 +472,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.ui.commons.TextField;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

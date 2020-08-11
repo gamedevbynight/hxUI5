@@ -16,6 +16,10 @@ package sap.ui.core;
     */
     var Default= "Default";
     /**
+    * Color for icon used as a marker
+    */
+    var Marker= "Marker";
+    /**
     * Negative color
     */
     var Negative= "Negative";
@@ -24,7 +28,15 @@ package sap.ui.core;
     */
     var Neutral= "Neutral";
     /**
+    * Color that indicates an icon which isn't interactive
+    */
+    var NonInteractive= "NonInteractive";
+    /**
     * Positive color
     */
     var Positive= "Positive";
+    /**
+    * Color for icon used in a Tile
+    */
+    var Tile= "Tile";
 }

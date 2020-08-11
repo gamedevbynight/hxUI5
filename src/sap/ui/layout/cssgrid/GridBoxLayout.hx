@@ -74,7 +74,7 @@ Default value is <code>XL7 L6 M4 S2</code>.
 	* @param	sBoxesPerRowConfig New value for property <code>boxesPerRowConfig</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBoxesPerRowConfig( sBoxesPerRowConfig:sap.ui.layout.BoxesPerRowConfig):sap.ui.layout.cssgrid.GridBoxLayout;
+	public function setBoxesPerRowConfig( ?sBoxesPerRowConfig:sap.ui.layout.BoxesPerRowConfig):sap.ui.layout.cssgrid.GridBoxLayout;
 
 	/**
 	* Sets a new value for property {@link #getBoxMinWidth boxMinWidth}.
@@ -84,10 +84,10 @@ Defines the minimum width of the Boxes
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sBoxMinWidth New value for property <code>boxMinWidth</code>
+	* @param	sBoxMinWidth= New value for property <code>boxMinWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBoxMinWidth( sBoxMinWidth:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.GridBoxLayout;
+	public function setBoxMinWidth( ?sBoxMinWidth:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.GridBoxLayout;
 
 	/**
 	* Sets a new value for property {@link #getBoxWidth boxWidth}.
@@ -97,10 +97,10 @@ Defines the width of the Boxes
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sBoxWidth New value for property <code>boxWidth</code>
+	* @param	sBoxWidth= New value for property <code>boxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBoxWidth( sBoxWidth:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.GridBoxLayout;
+	public function setBoxWidth( ?sBoxWidth:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.GridBoxLayout;
 }
 
 typedef GridBoxLayoutArgs = sap.ui.layout.cssgrid.GridLayoutBase.GridLayoutBaseArgs & {

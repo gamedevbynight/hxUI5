@@ -239,7 +239,7 @@ Default value is <code>Content</code>.
 	* @param	sArrowsPlacement New value for property <code>arrowsPlacement</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setArrowsPlacement( sArrowsPlacement:sap.m.CarouselArrowsPlacement):sap.m.Carousel;
+	public function setArrowsPlacement( ?sArrowsPlacement:sap.m.CarouselArrowsPlacement):sap.m.Carousel;
 
 	/**
 	* Sets the aggregated {@link #getCustomLayout customLayout}.
@@ -259,7 +259,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.Carousel;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.Carousel;
 
 	/**
 	* Sets a new value for property {@link #getLoop loop}.
@@ -272,7 +272,7 @@ Default value is <code>false</code>.
 	* @param	bLoop New value for property <code>loop</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLoop( bLoop:Bool):sap.m.Carousel;
+	public function setLoop( ?bLoop:Bool):sap.m.Carousel;
 
 	/**
 	* Sets a new value for property {@link #getPageIndicatorPlacement pageIndicatorPlacement}.
@@ -285,7 +285,7 @@ Default value is <code>Bottom</code>.
 	* @param	sPageIndicatorPlacement New value for property <code>pageIndicatorPlacement</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPageIndicatorPlacement( sPageIndicatorPlacement:sap.m.PlacementType):sap.m.Carousel;
+	public function setPageIndicatorPlacement( ?sPageIndicatorPlacement:sap.m.PlacementType):sap.m.Carousel;
 
 	/**
 	* Sets a new value for property {@link #getShowPageIndicator showPageIndicator}.
@@ -298,7 +298,7 @@ Default value is <code>true</code>.
 	* @param	bShowPageIndicator New value for property <code>showPageIndicator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowPageIndicator( bShowPageIndicator:Bool):sap.m.Carousel;
+	public function setShowPageIndicator( ?bShowPageIndicator:Bool):sap.m.Carousel;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -311,7 +311,7 @@ Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Carousel;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Carousel;
 }
 
 typedef CarouselArgs = sap.ui.core.Control.ControlArgs & {

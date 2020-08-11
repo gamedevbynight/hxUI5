@@ -8,6 +8,8 @@ package sap.ui.core.util;
 Please note that there could be an issue with the separator char depending on the user's system language in some programs such as Microsoft Excel. To prevent those issues use the data-import functionality which enables the possibility to explicitly set the separator char that should be used. This way the content will be displayed correctly.
 
 Potential formulas (cell data starts with one of = + - @) will be escaped by prepending a single quote. As the export functionality is intended to be used with actual (user) data there is no reason to allow formulas.
+
+The maximum cell length is limited to 32,760 characters. In case any string exceeds this limit, it will be cut off.
 */
 extern class ExportTypeCSV extends sap.ui.core.util.ExportType
 {

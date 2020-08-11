@@ -1,8 +1,15 @@
 package sap.ui.util;
 
-@:native("sap.ui.util.ActivityDetection")
+@:native("module:sap/ui/util/ActivityDetection")
 extern class ActivityDetection
 {
+
+	/**
+	* Reports an activity.
+	*/
+	 public static var refresh:Dynamic;
+
+
 
 	/**
 	* Checks whether recently an activity was detected.

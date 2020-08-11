@@ -142,7 +142,7 @@ Default value is <code>1</code>.
 	* @param	fBackgroundOpacity New value for property <code>backgroundOpacity</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundOpacity( fBackgroundOpacity:Float):sap.m.App;
+	public function setBackgroundOpacity( ?fBackgroundOpacity:Float):sap.m.App;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundRepeat backgroundRepeat}.
@@ -155,7 +155,7 @@ Default value is <code>false</code>.
 	* @param	bBackgroundRepeat New value for property <code>backgroundRepeat</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundRepeat( bBackgroundRepeat:Bool):sap.m.App;
+	public function setBackgroundRepeat( ?bBackgroundRepeat:Bool):sap.m.App;
 
 	/**
 	* Sets a new value for property {@link #getHomeIcon homeIcon}.
@@ -197,7 +197,7 @@ Default value is <code>true</code>.
 	* @param	bMobileWebAppCapable New value for property <code>mobileWebAppCapable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMobileWebAppCapable( bMobileWebAppCapable:Bool):sap.m.App;
+	public function setMobileWebAppCapable( ?bMobileWebAppCapable:Bool):sap.m.App;
 }
 
 typedef AppArgs = sap.m.NavContainer.NavContainerArgs & {

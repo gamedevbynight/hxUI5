@@ -1,6 +1,6 @@
 package sap.ui.performance;
 
-@:native("sap.ui.performance.Measurement")
+@:native("module:sap/ui/performance/Measurement")
 extern class Measurement
 {
 	@:overload( function(sId:String, sInfo:String, iStart:Int, iEnd:Int, iTime:Int, iDuration:Int, ?aCategories:String):Dynamic{ })

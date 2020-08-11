@@ -141,7 +141,7 @@ Default value is <code>left</code>.
 	* @param	sContentAlign New value for property <code>contentAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentAlign( sContentAlign:String):sap.ui.commons.layout.BorderLayoutArea;
+	public function setContentAlign( ?sContentAlign:String):sap.ui.commons.layout.BorderLayoutArea;
 
 	/**
 	* Sets a new value for property {@link #getOverflowX overflowX}.
@@ -154,7 +154,7 @@ Default value is <code>auto</code>.
 	* @param	sOverflowX New value for property <code>overflowX</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOverflowX( sOverflowX:String):sap.ui.commons.layout.BorderLayoutArea;
+	public function setOverflowX( ?sOverflowX:String):sap.ui.commons.layout.BorderLayoutArea;
 
 	/**
 	* Sets a new value for property {@link #getOverflowY overflowY}.
@@ -167,7 +167,7 @@ Default value is <code>auto</code>.
 	* @param	sOverflowY New value for property <code>overflowY</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOverflowY( sOverflowY:String):sap.ui.commons.layout.BorderLayoutArea;
+	public function setOverflowY( ?sOverflowY:String):sap.ui.commons.layout.BorderLayoutArea;
 
 	/**
 	* Sets a new value for property {@link #getSize size}.
@@ -180,7 +180,7 @@ Default value is <code>100px</code>.
 	* @param	sSize New value for property <code>size</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSize( sSize:sap.ui.core.CSSSize):sap.ui.commons.layout.BorderLayoutArea;
+	public function setSize( ?sSize:sap.ui.core.CSSSize):sap.ui.commons.layout.BorderLayoutArea;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -193,7 +193,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.ui.commons.layout.BorderLayoutArea;
+	public function setVisible( ?bVisible:Bool):sap.ui.commons.layout.BorderLayoutArea;
 }
 
 typedef BorderLayoutAreaArgs = sap.ui.core.Element.ElementArgs & {

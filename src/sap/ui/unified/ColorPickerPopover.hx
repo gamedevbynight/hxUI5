@@ -113,7 +113,7 @@ Default value is <code>Default</code>.
 	* @param	sDisplayMode New value for property <code>displayMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayMode( sDisplayMode:sap.ui.unified.ColorPickerDisplayMode):sap.ui.unified.ColorPickerPopover;
+	public function setDisplayMode( ?sDisplayMode:sap.ui.unified.ColorPickerDisplayMode):sap.ui.unified.ColorPickerPopover;
 
 	/**
 	* Sets a new value for property {@link #getMode mode}.
@@ -126,7 +126,7 @@ Default value is <code>HSV</code>.
 	* @param	sMode New value for property <code>mode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMode( sMode:sap.ui.unified.ColorPickerMode):sap.ui.unified.ColorPickerPopover;
+	public function setMode( ?sMode:sap.ui.unified.ColorPickerMode):sap.ui.unified.ColorPickerPopover;
 }
 
 typedef ColorPickerPopoverArgs = sap.ui.core.Control.ControlArgs & {

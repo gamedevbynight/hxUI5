@@ -105,7 +105,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.ui.unified.MenuTextFieldItem;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.ui.unified.MenuTextFieldItem;
 }
 
 typedef MenuTextFieldItemArgs = sap.ui.unified.MenuItemBase.MenuItemBaseArgs & {

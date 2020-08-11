@@ -3,7 +3,7 @@ package sap.ui.model;
 @:native("sap.ui.model.SelectionModel")
 
 /**
-* null
+* This artefact is used by the table controls for handling selections. It is not associated with the model layer of UI5.
 */
 extern class SelectionModel extends sap.ui.base.EventProvider
 {

@@ -1,5 +1,6 @@
 package sap.ui.base;
 
+@:native("sap.ui.base.Object")
 
 /**
 * Base class for all SAPUI5 Objects.
@@ -47,9 +48,9 @@ By default, the public facade is implemented as an instance of {@link sap.ui.bas
 See the documentation of the {@link #.extend extend} method for an explanation of <code>publicMethods</code>.
 
 The facade is created on the first call of <code>getInterface</code> and reused for all later calls.
-	* @return	Void
+	* @return	A facade for this object, with at least the public methods of the class of this.
 	*/
-	public function getInterface( ):Void;
+	public function getInterface( ):sap.ui.base.Object;
 
 	/**
 	* Returns the metadata for the class that this object belongs to.

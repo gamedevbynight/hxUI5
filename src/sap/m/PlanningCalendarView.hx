@@ -121,7 +121,7 @@ Default value is <code>12</code>.
 	* @param	iIntervalsL New value for property <code>intervalsL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervalsL( iIntervalsL:Int):sap.m.PlanningCalendarView;
+	public function setIntervalsL( ?iIntervalsL:Int):sap.m.PlanningCalendarView;
 
 	/**
 	* Sets a new value for property {@link #getIntervalsM intervalsM}.
@@ -134,7 +134,7 @@ Default value is <code>8</code>.
 	* @param	iIntervalsM New value for property <code>intervalsM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervalsM( iIntervalsM:Int):sap.m.PlanningCalendarView;
+	public function setIntervalsM( ?iIntervalsM:Int):sap.m.PlanningCalendarView;
 
 	/**
 	* Sets a new value for property {@link #getIntervalsS intervalsS}.
@@ -147,7 +147,7 @@ Default value is <code>6</code>.
 	* @param	iIntervalsS New value for property <code>intervalsS</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervalsS( iIntervalsS:Int):sap.m.PlanningCalendarView;
+	public function setIntervalsS( ?iIntervalsS:Int):sap.m.PlanningCalendarView;
 
 	/**
 	* Sets a new value for property {@link #getIntervalType intervalType}.
@@ -162,7 +162,7 @@ Default value is <code>Hour</code>.
 	* @param	sIntervalType New value for property <code>intervalType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntervalType( sIntervalType:sap.ui.unified.CalendarIntervalType):sap.m.PlanningCalendarView;
+	public function setIntervalType( ?sIntervalType:sap.ui.unified.CalendarIntervalType):sap.m.PlanningCalendarView;
 
 	/**
 	* Sets a new value for property {@link #getKey key}.
@@ -188,7 +188,7 @@ Default value is <code>false</code>.
 	* @param	bShowSubIntervals New value for property <code>showSubIntervals</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSubIntervals( bShowSubIntervals:Bool):sap.m.PlanningCalendarView;
+	public function setShowSubIntervals( ?bShowSubIntervals:Bool):sap.m.PlanningCalendarView;
 }
 
 typedef PlanningCalendarViewArgs = sap.ui.core.Element.ElementArgs & {

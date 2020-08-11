@@ -76,10 +76,10 @@ Default value is <code>false</code>.
 	/**
 	* Scroll to a specific Section.
 	* @param	sId The Section ID to scroll to
-	* @param	iDuration Scroll duration (in ms). Default value is 0.
+	* @param	iDuration Scroll duration (in ms)
 	* @return	Void
 	*/
-	public function scrollToSection( sId:String, iDuration:Int):Void;
+	public function scrollToSection( sId:String, ?iDuration:Int):Void;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.
@@ -113,7 +113,7 @@ Default value is <code>true</code>.
 	* @param	bShowPopover New value for property <code>showPopover</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowPopover( bShowPopover:Bool):sap.uxap.AnchorBar;
+	public function setShowPopover( ?bShowPopover:Bool):sap.uxap.AnchorBar;
 
 	/**
 	* Sets a new value for property {@link #getUpperCase upperCase}.
@@ -126,7 +126,7 @@ Default value is <code>false</code>.
 	* @param	bUpperCase New value for property <code>upperCase</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUpperCase( bUpperCase:Bool):sap.uxap.AnchorBar;
+	public function setUpperCase( ?bUpperCase:Bool):sap.uxap.AnchorBar;
 }
 
 typedef AnchorBarArgs = sap.m.Toolbar.ToolbarArgs & {

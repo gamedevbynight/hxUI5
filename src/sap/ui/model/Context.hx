@@ -28,6 +28,12 @@ extern class Context extends sap.ui.base.Object
 	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
 
 	/**
+	* Returns messages associated with this context, that is messages belonging to the object referred to by this context or a child object of that object. The messages are sorted by their {@link sap.ui.core.message.Message#getType type} according to the type's severity in a way that messages with highest severity come first.
+	* @return	The messages associated with this context sorted by severity; empty array in case no messages exist
+	*/
+	public function getMessages( ):Array<sap.ui.core.message.Message>;
+
+	/**
 	* Returns a metadata object for class sap.ui.model.Context.
 	* @return	Metadata object describing this class
 	*/

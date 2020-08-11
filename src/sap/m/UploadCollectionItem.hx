@@ -403,7 +403,7 @@ Default value is <code>true</code>.
 	* @param	bEnableDelete New value for property <code>enableDelete</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableDelete( bEnableDelete:Bool):sap.m.UploadCollectionItem;
+	public function setEnableDelete( ?bEnableDelete:Bool):sap.m.UploadCollectionItem;
 
 	/**
 	* Sets a new value for property {@link #getEnableEdit enableEdit}.
@@ -416,7 +416,7 @@ Default value is <code>true</code>.
 	* @param	bEnableEdit New value for property <code>enableEdit</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableEdit( bEnableEdit:Bool):sap.m.UploadCollectionItem;
+	public function setEnableEdit( ?bEnableEdit:Bool):sap.m.UploadCollectionItem;
 
 	/**
 	* Sets a new value for property {@link #getFileName fileName}.
@@ -459,7 +459,7 @@ Default value is <code>false</code>.
 	* @param	bSelected New value for property <code>selected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelected( bSelected:Bool):sap.m.UploadCollectionItem;
+	public function setSelected( ?bSelected:Bool):sap.m.UploadCollectionItem;
 
 	/**
 	* Sets a new value for property {@link #getThumbnailUrl thumbnailUrl}.
@@ -494,7 +494,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleDelete New value for property <code>visibleDelete</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleDelete( bVisibleDelete:Bool):sap.m.UploadCollectionItem;
+	public function setVisibleDelete( ?bVisibleDelete:Bool):sap.m.UploadCollectionItem;
 
 	/**
 	* Sets a new value for property {@link #getVisibleEdit visibleEdit}.
@@ -507,7 +507,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleEdit New value for property <code>visibleEdit</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleEdit( bVisibleEdit:Bool):sap.m.UploadCollectionItem;
+	public function setVisibleEdit( ?bVisibleEdit:Bool):sap.m.UploadCollectionItem;
 
 	/**
 	* Unbinds aggregation {@link #getAttributes attributes} from model data.

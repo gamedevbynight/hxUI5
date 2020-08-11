@@ -1,8 +1,20 @@
 package sap.ui.device;
 
-@:native("sap.ui.device.resize")
+@:native("sap.ui.Device.resize")
 extern class Resize
 {
+
+	/**
+	* The current height of the document's window in pixels.
+	*/
+	 public static var height:Int;
+
+	/**
+	* The current width of the document's window in pixels.
+	*/
+	 public static var width:Int;
+
+
 
 	/**
 	* Registers the given event handler to resize change events of the document's window.

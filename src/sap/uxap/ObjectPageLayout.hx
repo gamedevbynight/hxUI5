@@ -88,6 +88,19 @@ Fired when the current section is changed by scrolling.
 	public function attachSectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
+	* Attaches event handler <code>fnFunction</code> to the {@link #event:subSectionVisibilityChange subSectionVisibilityChange} event of this <code>sap.uxap.ObjectPageLayout</code>.
+
+When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.uxap.ObjectPageLayout</code> itself.
+
+Fired when the visibility of subsections is changed.
+	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
+	* @param	fnFunction The function to be called when the event occurs
+	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.ObjectPageLayout</code> itself
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function attachSubSectionVisibilityChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+
+	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:toggleAnchorBar toggleAnchorBar} event of this <code>sap.uxap.ObjectPageLayout</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.uxap.ObjectPageLayout</code> itself.
@@ -159,6 +172,16 @@ The passed function and listener object must match the ones used for event regis
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function detachSectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+
+	/**
+	* Detaches event handler <code>fnFunction</code> from the {@link #event:subSectionVisibilityChange subSectionVisibilityChange} event of this <code>sap.uxap.ObjectPageLayout</code>.
+
+The passed function and listener object must match the ones used for event registration.
+	* @param	fnFunction The function to be called, when the event occurs
+	* @param	oListener Context object on which the given function had to be called
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function detachSubSectionVisibilityChange( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:toggleAnchorBar toggleAnchorBar} event of this <code>sap.uxap.ObjectPageLayout</code>.
@@ -548,11 +571,11 @@ Additionally, it unregisters them from the hosting UIArea.
 	/**
 	* Scrolls the Object page to the given Section.
 	* @param	sId The Section ID to scroll to
-	* @param	iDuration Scroll duration (in ms). Default value is 0
+	* @param	iDuration Scroll duration (in ms)
 	* @param	iOffset Additional pixels to scroll
 	* @return	Void
 	*/
-	public function scrollToSection( sId:String, iDuration:Int, iOffset:Int):Void;
+	public function scrollToSection( sId:String, ?iDuration:Int, ?iOffset:Int):Void;
 
 	/**
 	* Sets a new value for property {@link #getAlwaysShowContentHeader alwaysShowContentHeader}.
@@ -567,7 +590,7 @@ Default value is <code>false</code>.
 	* @param	bAlwaysShowContentHeader New value for property <code>alwaysShowContentHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAlwaysShowContentHeader( bAlwaysShowContentHeader:Bool):sap.uxap.ObjectPageLayout;
+	public function setAlwaysShowContentHeader( ?bAlwaysShowContentHeader:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets the value of the <code>backgroundDesignAnchorBar</code> property.
@@ -587,7 +610,7 @@ Default value is <code>false</code>.
 	* @param	bEnableLazyLoading New value for property <code>enableLazyLoading</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnableLazyLoading( bEnableLazyLoading:Bool):sap.uxap.ObjectPageLayout;
+	public function setEnableLazyLoading( ?bEnableLazyLoading:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getFlexEnabled flexEnabled}.
@@ -600,7 +623,7 @@ Default value is <code>false</code>.
 	* @param	bFlexEnabled New value for property <code>flexEnabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFlexEnabled( bFlexEnabled:Bool):sap.uxap.ObjectPageLayout;
+	public function setFlexEnabled( ?bFlexEnabled:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets the aggregated {@link #getFooter footer}.
@@ -624,7 +647,7 @@ Default value is <code>true</code>.
 	* @param	bHeaderContentPinnable New value for property <code>headerContentPinnable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderContentPinnable( bHeaderContentPinnable:Bool):sap.uxap.ObjectPageLayout;
+	public function setHeaderContentPinnable( ?bHeaderContentPinnable:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets the aggregated {@link #getHeaderTitle headerTitle}.
@@ -644,7 +667,7 @@ Default value is <code>100%</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.uxap.ObjectPageLayout;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getIsChildPage isChildPage}.
@@ -659,7 +682,7 @@ Default value is <code>false</code>.
 	* @param	bIsChildPage New value for property <code>isChildPage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIsChildPage( bIsChildPage:Bool):sap.uxap.ObjectPageLayout;
+	public function setIsChildPage( ?bIsChildPage:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets the aggregated {@link #getLandmarkInfo landmarkInfo}.
@@ -681,7 +704,7 @@ Default value is <code>false</code>.
 	* @param	bPreserveHeaderStateOnScroll New value for property <code>preserveHeaderStateOnScroll</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPreserveHeaderStateOnScroll( bPreserveHeaderStateOnScroll:Bool):sap.uxap.ObjectPageLayout;
+	public function setPreserveHeaderStateOnScroll( ?bPreserveHeaderStateOnScroll:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getSectionTitleLevel sectionTitleLevel}.
@@ -700,7 +723,7 @@ Default value is <code>Auto</code>.
 	* @param	sSectionTitleLevel New value for property <code>sectionTitleLevel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSectionTitleLevel( sSectionTitleLevel:sap.ui.core.TitleLevel):sap.uxap.ObjectPageLayout;
+	public function setSectionTitleLevel( ?sSectionTitleLevel:sap.ui.core.TitleLevel):sap.uxap.ObjectPageLayout;
 	@:overload( function(sId:String):sap.uxap.ObjectPageLayout{ })
 
 	/**
@@ -725,7 +748,7 @@ Default value is <code>true</code>.
 	* @param	bShowAnchorBar New value for property <code>showAnchorBar</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowAnchorBar( bShowAnchorBar:Bool):sap.uxap.ObjectPageLayout;
+	public function setShowAnchorBar( ?bShowAnchorBar:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getShowAnchorBarPopover showAnchorBarPopover}.
@@ -738,7 +761,7 @@ Default value is <code>true</code>.
 	* @param	bShowAnchorBarPopover New value for property <code>showAnchorBarPopover</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowAnchorBarPopover( bShowAnchorBarPopover:Bool):sap.uxap.ObjectPageLayout;
+	public function setShowAnchorBarPopover( ?bShowAnchorBarPopover:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getShowEditHeaderButton showEditHeaderButton}.
@@ -753,7 +776,7 @@ Default value is <code>false</code>.
 	* @param	bShowEditHeaderButton New value for property <code>showEditHeaderButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowEditHeaderButton( bShowEditHeaderButton:Bool):sap.uxap.ObjectPageLayout;
+	public function setShowEditHeaderButton( ?bShowEditHeaderButton:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getShowFooter showFooter}.
@@ -766,7 +789,7 @@ Default value is <code>false</code>.
 	* @param	bShowFooter New value for property <code>showFooter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowFooter( bShowFooter:Bool):sap.uxap.ObjectPageLayout;
+	public function setShowFooter( ?bShowFooter:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getShowHeaderContent showHeaderContent}.
@@ -779,7 +802,7 @@ Default value is <code>true</code>.
 	* @param	bShowHeaderContent New value for property <code>showHeaderContent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowHeaderContent( bShowHeaderContent:Bool):sap.uxap.ObjectPageLayout;
+	public function setShowHeaderContent( ?bShowHeaderContent:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getShowOnlyHighImportance showOnlyHighImportance}.
@@ -792,7 +815,7 @@ Default value is <code>false</code>.
 	* @param	bShowOnlyHighImportance New value for property <code>showOnlyHighImportance</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowOnlyHighImportance( bShowOnlyHighImportance:Bool):sap.uxap.ObjectPageLayout;
+	public function setShowOnlyHighImportance( ?bShowOnlyHighImportance:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getShowTitleInHeaderContent showTitleInHeaderContent}.
@@ -807,7 +830,7 @@ Default value is <code>false</code>.
 	* @param	bShowTitleInHeaderContent New value for property <code>showTitleInHeaderContent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowTitleInHeaderContent( bShowTitleInHeaderContent:Bool):sap.uxap.ObjectPageLayout;
+	public function setShowTitleInHeaderContent( ?bShowTitleInHeaderContent:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getSubSectionLayout subSectionLayout}.
@@ -820,7 +843,7 @@ Default value is <code>TitleOnTop</code>.
 	* @param	sSubSectionLayout New value for property <code>subSectionLayout</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSubSectionLayout( sSubSectionLayout:sap.uxap.ObjectPageSubSectionLayout):sap.uxap.ObjectPageLayout;
+	public function setSubSectionLayout( ?sSubSectionLayout:sap.uxap.ObjectPageSubSectionLayout):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getToggleHeaderOnTitleClick toggleHeaderOnTitleClick}.
@@ -835,7 +858,7 @@ Default value is <code>true</code>.
 	* @param	bToggleHeaderOnTitleClick New value for property <code>toggleHeaderOnTitleClick</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setToggleHeaderOnTitleClick( bToggleHeaderOnTitleClick:Bool):sap.uxap.ObjectPageLayout;
+	public function setToggleHeaderOnTitleClick( ?bToggleHeaderOnTitleClick:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getUpperCaseAnchorBar upperCaseAnchorBar}.
@@ -848,7 +871,7 @@ Default value is <code>true</code>.
 	* @param	bUpperCaseAnchorBar New value for property <code>upperCaseAnchorBar</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUpperCaseAnchorBar( bUpperCaseAnchorBar:Bool):sap.uxap.ObjectPageLayout;
+	public function setUpperCaseAnchorBar( ?bUpperCaseAnchorBar:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getUseIconTabBar useIconTabBar}.
@@ -863,7 +886,7 @@ Default value is <code>false</code>.
 	* @param	bUseIconTabBar New value for property <code>useIconTabBar</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUseIconTabBar( bUseIconTabBar:Bool):sap.uxap.ObjectPageLayout;
+	public function setUseIconTabBar( ?bUseIconTabBar:Bool):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Sets a new value for property {@link #getUseTwoColumnsForLargeScreen useTwoColumnsForLargeScreen}.
@@ -876,7 +899,7 @@ Default value is <code>false</code>.
 	* @param	bUseTwoColumnsForLargeScreen New value for property <code>useTwoColumnsForLargeScreen</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUseTwoColumnsForLargeScreen( bUseTwoColumnsForLargeScreen:Bool):sap.uxap.ObjectPageLayout;
+	public function setUseTwoColumnsForLargeScreen( ?bUseTwoColumnsForLargeScreen:Bool):sap.uxap.ObjectPageLayout;
 }
 
 typedef ObjectPageLayoutArgs = sap.ui.core.Control.ControlArgs & {
@@ -1078,6 +1101,11 @@ If not set, no landmarks will be written.
 	* Fired when the current section is changed by scrolling.
 	*/
 	@:optional var sectionChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
+
+	/**
+	* Fired when the visibility of subsections is changed.
+	*/
+	@:optional var subSectionVisibilityChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
 	* The event is fired when the Anchor bar is switched from moving to fixed or the other way round.

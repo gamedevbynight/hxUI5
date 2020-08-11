@@ -202,7 +202,7 @@ Default value is <code>Submit</code>.
 	* @param	sButtonTooltip New value for property <code>buttonTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setButtonTooltip( sButtonTooltip:sap.ui.core.TooltipBase):sap.m.FeedInput;
+	public function setButtonTooltip( ?sButtonTooltip:sap.ui.core.TooltipBase):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -215,7 +215,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.FeedInput;
+	public function setEnabled( ?bEnabled:Bool):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getGrowing growing}.
@@ -228,7 +228,7 @@ Default value is <code>false</code>.
 	* @param	bGrowing New value for property <code>growing</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGrowing( bGrowing:Bool):sap.m.FeedInput;
+	public function setGrowing( ?bGrowing:Bool):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getGrowingMaxLines growingMaxLines}.
@@ -241,7 +241,7 @@ Default value is <code>0</code>.
 	* @param	iGrowingMaxLines New value for property <code>growingMaxLines</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGrowingMaxLines( iGrowingMaxLines:Int):sap.m.FeedInput;
+	public function setGrowingMaxLines( ?iGrowingMaxLines:Int):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -269,7 +269,7 @@ Default value is <code>true</code>.
 	* @param	bIconDensityAware New value for property <code>iconDensityAware</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDensityAware( bIconDensityAware:Bool):sap.m.FeedInput;
+	public function setIconDensityAware( ?bIconDensityAware:Bool):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getMaxLength maxLength}.
@@ -282,7 +282,7 @@ Default value is <code>0</code>.
 	* @param	iMaxLength New value for property <code>maxLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxLength( iMaxLength:Int):sap.m.FeedInput;
+	public function setMaxLength( ?iMaxLength:Int):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getPlaceholder placeholder}.
@@ -295,7 +295,7 @@ Default value is <code>Post something here</code>.
 	* @param	sPlaceholder New value for property <code>placeholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholder( sPlaceholder:String):sap.m.FeedInput;
+	public function setPlaceholder( ?sPlaceholder:String):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getRows rows}.
@@ -308,7 +308,7 @@ Default value is <code>2</code>.
 	* @param	iRows New value for property <code>rows</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRows( iRows:Int):sap.m.FeedInput;
+	public function setRows( ?iRows:Int):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getShowExceededText showExceededText}.
@@ -323,7 +323,7 @@ Default value is <code>false</code>.
 	* @param	bShowExceededText New value for property <code>showExceededText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowExceededText( bShowExceededText:Bool):sap.m.FeedInput;
+	public function setShowExceededText( ?bShowExceededText:Bool):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getShowIcon showIcon}.
@@ -336,7 +336,7 @@ Default value is <code>true</code>.
 	* @param	bShowIcon New value for property <code>showIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowIcon( bShowIcon:Bool):sap.m.FeedInput;
+	public function setShowIcon( ?bShowIcon:Bool):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.

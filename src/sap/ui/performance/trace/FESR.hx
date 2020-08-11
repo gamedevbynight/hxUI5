@@ -1,6 +1,6 @@
 package sap.ui.performance.trace;
 
-@:native("sap.ui.performance.trace.FESR")
+@:native("module:sap/ui/performance/trace/FESR")
 extern class FESR
 {
 }

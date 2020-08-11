@@ -212,7 +212,7 @@ Default value is <code>None</code>.
 	* @param	sHighlight New value for property <code>highlight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHighlight( sHighlight:String):sap.m.ListItemBase;
+	public function setHighlight( ?sHighlight:String):sap.m.ListItemBase;
 
 	/**
 	* Sets a new value for property {@link #getHighlightText highlightText}.
@@ -225,7 +225,7 @@ Default value is <code>empty string</code>.
 	* @param	sHighlightText New value for property <code>highlightText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHighlightText( sHighlightText:String):sap.m.ListItemBase;
+	public function setHighlightText( ?sHighlightText:String):sap.m.ListItemBase;
 
 	/**
 	* Sets a new value for property {@link #getNavigated navigated}.
@@ -240,7 +240,7 @@ Default value is <code>false</code>.
 	* @param	bNavigated New value for property <code>navigated</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNavigated( bNavigated:Bool):sap.m.ListItemBase;
+	public function setNavigated( ?bNavigated:Bool):sap.m.ListItemBase;
 
 	/**
 	* Sets a new value for property {@link #getSelected selected}.
@@ -253,7 +253,7 @@ Default value is <code>false</code>.
 	* @param	bSelected New value for property <code>selected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelected( bSelected:Bool):sap.m.ListItemBase;
+	public function setSelected( ?bSelected:Bool):sap.m.ListItemBase;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -266,7 +266,7 @@ Default value is <code>Inactive</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.m.ListType):sap.m.ListItemBase;
+	public function setType( ?sType:sap.m.ListType):sap.m.ListItemBase;
 
 	/**
 	* Sets a new value for property {@link #getUnread unread}.
@@ -279,7 +279,7 @@ Default value is <code>false</code>.
 	* @param	bUnread New value for property <code>unread</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUnread( bUnread:Bool):sap.m.ListItemBase;
+	public function setUnread( ?bUnread:Bool):sap.m.ListItemBase;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -292,7 +292,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.ListItemBase;
+	public function setVisible( ?bVisible:Bool):sap.m.ListItemBase;
 }
 
 typedef ListItemBaseArgs = sap.ui.core.Control.ControlArgs & {

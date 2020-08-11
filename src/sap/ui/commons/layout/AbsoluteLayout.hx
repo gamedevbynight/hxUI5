@@ -13,10 +13,10 @@ extern class AbsoluteLayout extends sap.ui.core.Control
 	/**
 	* Adds the given control and a corresponding position container into the aggregation named 'positions'. Returns 'this' to allow method chaining.
 	* @param	oContent The content to add; if empty, nothing is inserted.
-	* @param	oPos JSON-like object which defines the position of the child control in the layout. The object is expected to have one or more from the attribute set top, bottom, left, right; each with a value of type sap.ui.core.CSSSize. If no object is given, the default is left=0px,right=0px
+	* @param	oPos JSON-like object which defines the position of the child control in the layout. The object is expected to have one or more from the attribute set top, bottom, left, right; each with a value of type sap.ui.core.CSSSize.
 	* @return	null
 	*/
-	public function addContent( oContent:sap.ui.core.Control, oPos:Dynamic):sap.ui.commons.layout.AbsoluteLayout;
+	public function addContent( oContent:sap.ui.core.Control, ?oPos:Dynamic):sap.ui.commons.layout.AbsoluteLayout;
 
 	/**
 	* Adds element to the layout.
@@ -126,10 +126,10 @@ Default value is <code>100%</code>.
 	* Inserts the given control and a corresponding position container into the aggregation named 'positions'. Returns 'this' to allow method chaining.
 	* @param	oContent The content to insert; if empty, nothing is inserted
 	* @param	iIndex The '0'-based index where the content shall be inserted at. For a negative value of iIndex, the content is inserted at position '0'; for a value greater than the current size of the aggregation, the content is inserted at the last position.
-	* @param	oPos JSON-like object which defines the position of the child control within the layout. The object is expected to have one or more from the attribute set top, bottom, left, right; each with a value of type sap.ui.core.CSSSize. If no object is given, the default is left=0px,right=0px.
+	* @param	oPos JSON-like object which defines the position of the child control in the layout. The object is expected to have one or more from the attribute set top, bottom, left, right; each with a value of type sap.ui.core.CSSSize.
 	* @return	null
 	*/
-	public function insertContent( oContent:sap.ui.core.Control, iIndex:Int, oPos:Dynamic):sap.ui.commons.layout.AbsoluteLayout;
+	public function insertContent( oContent:sap.ui.core.Control, iIndex:Int, ?oPos:Dynamic):sap.ui.commons.layout.AbsoluteLayout;
 
 	/**
 	* Inserts element to the layout on a specific index.
@@ -182,10 +182,10 @@ Default value is <code>100%</code>.
 	/**
 	* Allows to set or change the position information of the given child control
 	* @param	oControl The child control for which to change the position information; if empty or not aggregated, nothing is changed
-	* @param	oPos JSON-like object which defines the position of the child control. The object is expected to have one or more from the attribute set top, bottom, left, right; each with a value of type sap.ui.core.CSSSize. If no object is given, the default is used which is left=0px,right=0px.
+	* @param	oPos JSON-like object which defines the position of the child control in the layout. The object is expected to have one or more from the attribute set top, bottom, left, right; each with a value of type sap.ui.core.CSSSize.
 	* @return	null
 	*/
-	public function setPositionOfChild( oControl:sap.ui.core.Control, oPos:Dynamic):Bool;
+	public function setPositionOfChild( oControl:sap.ui.core.Control, ?oPos:Dynamic):Bool;
 
 	/**
 	* Sets the <code>verticalScrolling</code> property.

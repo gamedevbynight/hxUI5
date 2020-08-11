@@ -241,7 +241,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.Button;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -265,7 +265,7 @@ Default value is <code>empty string</code>.
 	* @param	sHelpId New value for property <code>helpId</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHelpId( sHelpId:String):sap.ui.commons.Button;
+	public function setHelpId( ?sHelpId:String):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -275,10 +275,10 @@ Icon to be displayed as graphical element within the button. This can be a URI t
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon New value for property <code>icon</code>
+	* @param	sIcon= New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.ui.commons.Button;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getIconFirst iconFirst}.
@@ -291,7 +291,7 @@ Default value is <code>true</code>.
 	* @param	bIconFirst New value for property <code>iconFirst</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconFirst( bIconFirst:Bool):sap.ui.commons.Button;
+	public function setIconFirst( ?bIconFirst:Bool):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getIconHovered iconHovered}.
@@ -301,10 +301,10 @@ Icon to be displayed as graphical element within the button when it is hovered (
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIconHovered New value for property <code>iconHovered</code>
+	* @param	sIconHovered= New value for property <code>iconHovered</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconHovered( sIconHovered:sap.ui.core.URI):sap.ui.commons.Button;
+	public function setIconHovered( ?sIconHovered:sap.ui.core.URI):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getIconSelected iconSelected}.
@@ -314,10 +314,10 @@ Icon to be displayed as graphical element within the button when it is selected 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIconSelected New value for property <code>iconSelected</code>
+	* @param	sIconSelected= New value for property <code>iconSelected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconSelected( sIconSelected:sap.ui.core.URI):sap.ui.commons.Button;
+	public function setIconSelected( ?sIconSelected:sap.ui.core.URI):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getLite lite}.
@@ -330,7 +330,7 @@ Default value is <code>false</code>.
 	* @param	bLite New value for property <code>lite</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLite( bLite:Bool):sap.ui.commons.Button;
+	public function setLite( ?bLite:Bool):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getStyle style}.
@@ -343,7 +343,7 @@ Default value is <code>Default</code>.
 	* @param	sStyle New value for property <code>style</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStyle( sStyle:sap.ui.commons.ButtonStyle):sap.ui.commons.Button;
+	public function setStyle( ?sStyle:sap.ui.commons.ButtonStyle):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getStyled styled}.
@@ -356,7 +356,7 @@ Default value is <code>true</code>.
 	* @param	bStyled New value for property <code>styled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStyled( bStyled:Bool):sap.ui.commons.Button;
+	public function setStyled( ?bStyled:Bool):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -369,7 +369,7 @@ Default value is <code>empty string</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.commons.Button;
+	public function setText( ?sText:String):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

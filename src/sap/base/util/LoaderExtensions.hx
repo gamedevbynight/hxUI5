@@ -1,7 +1,9 @@
 package sap.base.util;
 
-@:native("sap.base.util.LoaderExtensions")
+@:native("module:sap/base/util/LoaderExtensions")
 extern class LoaderExtensions
 {
+
+
 }
 

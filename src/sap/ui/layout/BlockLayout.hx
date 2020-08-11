@@ -11,7 +11,7 @@ The BlockLayout comes in five predefined types for background colors: <ul> <li>L
 
 <b>Note:</b> With version 1.48 colors can be set for each individual {@link sap.ui.layout.BlockLayoutCell cell}. There are 11 pre-defined color sets, each with 4 different shades for the Belize theme and 6 different shades for the Fiori 3 theme. The main colors of the sets can be changed in Theme Designer. To change the background of a particular cell, set <code>backgroundColorSet</code> (main color) and <code>backgroundColorShade</code> (shade).
 
-<b>Note:</b> Usage of disabled, emphasized or subtle links as titles is not recommended. Dark background designs, for example Accent, are not fully supported with regards to Аccessibility when used with links as titles.
+<b>Note:</b> Usage of disabled, emphasized or subtle links as titles is not recommended. Dark background designs, for example Accent, are not fully supported with regards to Accessibility when used with links as titles.
 
 <h3>Usage</h3> <h4>When to use</h4> <ul> <li>You want to create a catalogue-like page with sections of blocks.</li> <li>The BlockLayout is intended for developing administrative tools and applications.</li> </ul> <h4>When not to use</h4> <ul> <li>You want to display properties or features of one content item. Use a {@link sap.uxap.ObjectPageLayout object page} or {@link sap.f.DynamicPage dynamic page} instead.</li> </ul> <h3>Responsive Behavior</h3> <ul> <li>The breakpoints of the block layout react to the width of the control itself and not to the actual screen size.</li> <li> On small screens all blocks will wrap to a single scrollable column</li> </ul>
 */
@@ -111,11 +111,17 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeContent( vContent:sap.ui.layout.BlockLayoutRow):sap.ui.layout.BlockLayoutRow;
 
 	/**
-	* Changes background type
-	* @param	sNewBackground Background's style of type sap.ui.layout.BlockBackgroundType
-	* @return	BlockLayout instance. Allows method chaining
+	* Sets a new value for property {@link #getBackground background}.
+
+Determines the background used for the Layout
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Default</code>.
+	* @param	sBackground New value for property <code>background</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackground( sNewBackground:String):sap.ui.layout.BlockLayout;
+	public function setBackground( ?sBackground:sap.ui.layout.BlockBackgroundType):sap.ui.layout.BlockLayout;
 
 	/**
 	* Sets a new value for property {@link #getKeepFontSize keepFontSize}.
@@ -128,7 +134,7 @@ Default value is <code>false</code>.
 	* @param	bKeepFontSize New value for property <code>keepFontSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKeepFontSize( bKeepFontSize:Bool):sap.ui.layout.BlockLayout;
+	public function setKeepFontSize( ?bKeepFontSize:Bool):sap.ui.layout.BlockLayout;
 }
 
 typedef BlockLayoutArgs = sap.ui.core.Control.ControlArgs & {

@@ -51,7 +51,7 @@ public function new():Void;
 	public function getControlInView( oOptions:Dynamic):Dynamic;
 
 	/**
-	* Find a control matching the provided options autowait and Interactable matcher will be enforced if neccessary
+	* Find a control matching the provided options
 	* @param	oOptions a map of options used to describe the control you are looking for.
 	* @return	<ul> <li>if a oOptions.id is a string, will return the single matching control or null if no controls match</li> <li>otherwise, will return an array of matching controls, or an empty array, if no controls match</li> </ul>
 	*/

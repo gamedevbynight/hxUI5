@@ -202,7 +202,7 @@ Default value is <code>false</code>.
 	* @param	bChecked New value for property <code>checked</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setChecked( bChecked:Bool):sap.ui.commons.CheckBox;
+	public function setChecked( ?bChecked:Bool):sap.ui.commons.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -215,7 +215,7 @@ Default value is <code>true</code>.
 	* @param	bEditable New value for property <code>editable</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEditable( bEditable:Bool):sap.ui.commons.CheckBox;
+	public function setEditable( ?bEditable:Bool):sap.ui.commons.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -228,7 +228,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.commons.CheckBox;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.commons.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -263,7 +263,7 @@ Default value is <code>Inherit</code>.
 	* @param	sTextDirection New value for property <code>textDirection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTextDirection( sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.CheckBox;
+	public function setTextDirection( ?sTextDirection:sap.ui.core.TextDirection):sap.ui.commons.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -276,7 +276,7 @@ Default value is <code>None</code>.
 	* @param	sValueState New value for property <code>valueState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueState( sValueState:sap.ui.core.ValueState):sap.ui.commons.CheckBox;
+	public function setValueState( ?sValueState:sap.ui.core.ValueState):sap.ui.commons.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

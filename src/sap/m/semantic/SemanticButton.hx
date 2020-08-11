@@ -71,7 +71,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.m.semantic.SemanticButton;
+	public function setEnabled( ?bEnabled:Bool):sap.m.semantic.SemanticButton;
 }
 
 typedef SemanticButtonArgs = sap.m.semantic.SemanticControl.SemanticControlArgs & {

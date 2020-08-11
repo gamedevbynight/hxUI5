@@ -105,7 +105,7 @@ Default value is <code>true</code>.
 	* @param	bEnabled New value for property <code>enabled</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabled( bEnabled:Bool):sap.ui.unified.MenuItemBase;
+	public function setEnabled( ?bEnabled:Bool):sap.ui.unified.MenuItemBase;
 
 	/**
 	* Sets a new value for property {@link #getStartsSection startsSection}.
@@ -118,7 +118,7 @@ Default value is <code>false</code>.
 	* @param	bStartsSection New value for property <code>startsSection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStartsSection( bStartsSection:Bool):sap.ui.unified.MenuItemBase;
+	public function setStartsSection( ?bStartsSection:Bool):sap.ui.unified.MenuItemBase;
 
 	/**
 	* Sets the aggregated {@link #getSubmenu submenu}.
@@ -138,7 +138,7 @@ Default value is <code>true</code>.
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.ui.unified.MenuItemBase;
+	public function setVisible( ?bVisible:Bool):sap.ui.unified.MenuItemBase;
 }
 
 typedef MenuItemBaseArgs = sap.ui.core.Element.ElementArgs & {

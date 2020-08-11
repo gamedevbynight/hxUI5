@@ -139,7 +139,7 @@ Default value is <code>-</code>.
 	* @param	sDelimiter New value for property <code>delimiter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDelimiter( sDelimiter:String):sap.m.DateRangeSelection;
+	public function setDelimiter( ?sDelimiter:String):sap.m.DateRangeSelection;
 
 	/**
 	* Sets a new value for property {@link #getSecondDateValue secondDateValue}.

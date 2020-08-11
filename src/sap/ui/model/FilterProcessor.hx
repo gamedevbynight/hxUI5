@@ -1,6 +1,6 @@
 package sap.ui.model;
 
-@:native("sap.ui.model.FilterProcessor")
+@:native("module:sap/ui/model/FilterProcessor")
 extern class FilterProcessor
 {
 

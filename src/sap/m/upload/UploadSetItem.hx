@@ -342,7 +342,7 @@ Default value is <code>true</code>.
 	* @param	bEnabledEdit New value for property <code>enabledEdit</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabledEdit( bEnabledEdit:Bool):sap.m.upload.UploadSetItem;
+	public function setEnabledEdit( ?bEnabledEdit:Bool):sap.m.upload.UploadSetItem;
 
 	/**
 	* Sets a new value for property {@link #getEnabledRemove enabledRemove}.
@@ -355,7 +355,7 @@ Default value is <code>true</code>.
 	* @param	bEnabledRemove New value for property <code>enabledRemove</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEnabledRemove( bEnabledRemove:Bool):sap.m.upload.UploadSetItem;
+	public function setEnabledRemove( ?bEnabledRemove:Bool):sap.m.upload.UploadSetItem;
 
 	/**
 	* Sets a new value for property {@link #getFileName fileName}.
@@ -430,7 +430,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleEdit New value for property <code>visibleEdit</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleEdit( bVisibleEdit:Bool):sap.m.upload.UploadSetItem;
+	public function setVisibleEdit( ?bVisibleEdit:Bool):sap.m.upload.UploadSetItem;
 
 	/**
 	* Sets a new value for property {@link #getVisibleRemove visibleRemove}.
@@ -443,7 +443,7 @@ Default value is <code>true</code>.
 	* @param	bVisibleRemove New value for property <code>visibleRemove</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleRemove( bVisibleRemove:Bool):sap.m.upload.UploadSetItem;
+	public function setVisibleRemove( ?bVisibleRemove:Bool):sap.m.upload.UploadSetItem;
 }
 
 typedef UploadSetItemArgs = sap.ui.core.Element.ElementArgs & {
