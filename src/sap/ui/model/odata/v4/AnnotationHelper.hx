@@ -48,6 +48,7 @@ Example: <pre>
 	&lt;Annotation Term="com.sap.vocabularies.Common.v1.QuickInfo" Path="PRODUCT_2_SUPPLIER/Supplier_Name" />
 &lt;/Annotations>
 </pre> <pre>
+<<<<<<< HEAD
 &lt;Text text="{meta>/Equipments/@com.sap.vocabularies.UI.v1.LineItem/0/Value/$Path@com.sap.vocabularies.Common.v1.QuickInfo@@sap.ui.model.odata.v4.AnnotationHelper.format}" />
 </pre> <code>format</code> returns a binding with path "EQUIPMENT_2_PRODUCT/PRODUCT_2_SUPPLIER/Supplier_Name".
 
@@ -73,6 +74,14 @@ Using <code>AnnotationHelper.format</code> like <pre>
 <h3>Operation Parameters</h3> Since 1.73.0, this function can be used on action or function parameters and results in a relative data binding, just like a "14.5.12 Expression edm:Path".
 
 Assume we have the following metadata for an unbound action "AcChangeTeamBudgetByID": <pre>
+=======
+&lt;Text text="{meta>/Equipments/@com.sap.vocabularies.UI.v1.Facets/0/Target/$AnnotationPath/@@sap.ui.model.odata.v4.AnnotationHelper.format}" />
+</pre> <code>format</code> returns a binding with path "EQUIPMENT_2_PRODUCT/Name".
+
+Since 1.73 in addition to supporting annotations, this function also can be used to interpret action or function parameters as a binding string.
+
+See an example of the metadata for an unbound action "AcChangeTeamBudgetByID": <pre>
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
    &lt;Action Name="AcChangeTeamBudgetByID">
        &lt;Parameter Name="TeamID" Type="Edm.String" Nullable="false" MaxLength="10"/>
        &lt;Parameter Name="Budget" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="variable"/>
@@ -81,6 +90,7 @@ Assume we have the following metadata for an unbound action "AcChangeTeamBudgetB
 
 Let <code>ChangeTeamBudgetByID</code> be the action import of this action. Using <code>AnnotationHelper.format</code> for the <code>TeamID</code> like <pre>
 &lt;Text text="{meta>/ChangeTeamBudgetByID/TeamID@@sap.ui.model.odata.v4.AnnotationHelper.format}" />
+<<<<<<< HEAD
 </pre> results in <pre>
 &lt;Text text="{path:'TeamID',type:'sap.ui.model.odata.type.String',constraints:{'maxLength':10,'nullable':false},formatOptions:{'parseKeepsEmptyString':true}}" />
 </pre>
@@ -93,6 +103,10 @@ Let <code>ChangeTeamBudgetByID</code> be the action import of this action. Using
 &lt;Input value="{meta>/Department/Name@@sap.ui.model.odata.v4.AnnotationHelper.format}"/>
 </pre> results in <pre>
 &lt; Input value="{path:'Name',type:'sap.ui.model.odata.type.String',constraints:{'maxLength':40,'nullable':false},formatOptions:{'parseKeepsEmptyString':true}}"/>
+=======
+</pre> returns the following binding string which contains information about path, type and constraints: <pre>
+&lt;Text text="{path:'TeamID',type:'sap.ui.model.odata.type.String',constraints:{'maxLength':10,'nullable':false}" />
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 </pre>
 	* @param	vRawValue The raw value from the meta model
 	* @param	oDetails The details object

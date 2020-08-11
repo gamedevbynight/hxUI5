@@ -510,9 +510,13 @@ Lock should be called before and after the DOM is modified for rendering, roundt
 	public function lock( ):Void;
 
 	/**
+<<<<<<< HEAD
 	* Triggers a realignment of controls
 
 This method should be called after changing the cozy/compact CSS class of a DOM element at runtime, for example at the <code>&lt;body&gt;</code> tag. Controls can listen to the themeChanged event to realign their appearance after changing the theme. Changing the cozy/compact CSS class should then also be handled as a theme change. In more simple scenarios where the cozy/compact CSS class is added to a DOM element which contains only a few controls it might not be necessary to trigger the realigment of all controls placed in the DOM, for example changing the cozy/compact CSS class at a single control
+=======
+	* This method can be called to trigger realignment of controls after changing the cozy/compact CSS class of a DOM element, for example, the <code>&lt;body&gt;</code> tag.
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* @return	Void
 	*/
 	public function notifyContentDensityChanged( ):Void;

@@ -1,9 +1,14 @@
 package sap.ui.test.opabuilder;
 
+<<<<<<< HEAD
+=======
+@:native("sap.ui.test.opabuilder.Matchers")
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 extern class Matchers
 {
 
 	/**
+<<<<<<< HEAD
 	* A matcher function that always returns <code>false</code>.
 
 <code> <pre>var fnFalsyMatcher = OpaBuilder.Matchers.FALSE;</pre> </code>
@@ -31,6 +36,8 @@ extern class Matchers
 	public static function aggregation( sAggregationName:String, ?vMatchers:Dynamic):()->Void;
 
 	/**
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* Creates a matcher function that returns an aggregation element of a control at a given index.
 	* @param	sAggregationName the name of the aggregation that is used for matching
 	* @param	iIndex the index within the aggregation
@@ -81,6 +88,7 @@ extern class Matchers
 	* @return	the matcher function checks all path in the properties object against the binding context
 	*/
 	public static function bindingProperties( sModelName:String, oProperties:Dynamic):()->Void;
+<<<<<<< HEAD
 	@:overload( function(?vBuilderOrMatcher:sap.ui.test.matchers.Matcher, ?bDirect:Bool):()->Void{ })
 	@:overload( function(?vBuilderOrMatcher:()->Void, ?bDirect:Bool):()->Void{ })
 	@:overload( function(?vBuilderOrMatcher:Array<Dynamic>, ?bDirect:Bool):()->Void{ })
@@ -105,6 +113,8 @@ extern class Matchers
 	* @return	matcher function
 	*/
 	public static function childrenMatcher( ?vBuilderOrMatcher:sap.ui.test.OpaBuilder, ?bDirect:Bool):()->Void;
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:sap.ui.test.matchers.Matcher):()->Void{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:()->Void):()->Void{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Array<Dynamic>):()->Void{ })
@@ -205,6 +215,7 @@ extern class Matchers
 	public static function filter( ?vMatchers:Dynamic):()->Void;
 
 	/**
+<<<<<<< HEAD
 	* Creates a matcher that checks whether a control has the focus.
 	* @param	bCheckChildren set true to check additionally for the focus on any child element
 	* @return	a matcher function
@@ -212,6 +223,8 @@ extern class Matchers
 	public static function focused( ?bCheckChildren:Bool):()->Void;
 
 	/**
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* Creates a {@link sap.ui.test.matchers.I18NText} matcher.
 	* @param	sPropertyName the name of the control property to match the I18N text with
 	* @param	sModelTokenPath the path to the I18N text. If model is omitted, <code>i18n</code> is used as model name.
@@ -239,6 +252,7 @@ extern class Matchers
 	* @return	the matcher function returns the result of the matcher chain
 	*/
 	public static function match( ?vMatchers:Dynamic):()->Void;
+<<<<<<< HEAD
 	@:overload( function(?vMatchers:sap.ui.test.matchers.Matcher):()->Void{ })
 	@:overload( function(?vMatchers:()->Void):()->Void{ })
 	@:overload( function(?vMatchers:Array<Dynamic>):()->Void{ })
@@ -256,6 +270,8 @@ Example usage for only matching controls without a certain text: <code> <pre>new
 	* @return	the matcher function returns the negated result of the matcher chain
 	*/
 	public static function not( ?vMatchers:Dynamic):()->Void;
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Creates a {@link sap.ui.test.matchers.Properties} matcher.

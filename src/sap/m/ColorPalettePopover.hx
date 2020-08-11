@@ -115,6 +115,7 @@ Default value is <code>true</code>.
 	public function getShowRecentColorsSection( ):Bool;
 
 	/**
+<<<<<<< HEAD
 	* Sets a selected color for the ColorPicker control.
 	* @param	color the selected color
 	* @return	<code>this</code> for method chaining
@@ -122,6 +123,8 @@ Default value is <code>true</code>.
 	public function setColorPickerSelectedColor( color:sap.ui.core.CSSColor):sap.m.ColorPalettePopover;
 
 	/**
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* Sets a new value for property {@link #getColors colors}.
 
 Defines the List of colors displayed in the palette. Minimum is 2 colors, maximum is 15 colors.
@@ -182,7 +185,11 @@ Default value is <code>true</code>.
 	* @param	bShowMoreColorsButton New value for property <code>showMoreColorsButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setShowMoreColorsButton( ?bShowMoreColorsButton:Bool):sap.m.ColorPalettePopover;
+=======
+	public function setShowMoreColorsButton( bShowMoreColorsButton:Bool):sap.m.ColorPalettePopover;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getShowRecentColorsSection showRecentColorsSection}.
@@ -195,7 +202,11 @@ Default value is <code>true</code>.
 	* @param	bShowRecentColorsSection New value for property <code>showRecentColorsSection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setShowRecentColorsSection( ?bShowRecentColorsSection:Bool):sap.m.ColorPalettePopover;
+=======
+	public function setShowRecentColorsSection( bShowRecentColorsSection:Bool):sap.m.ColorPalettePopover;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 }
 
 typedef ColorPalettePopoverArgs = sap.ui.core.Control.ControlArgs & {

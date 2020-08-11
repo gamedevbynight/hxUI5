@@ -381,7 +381,11 @@ Available transitions currently include "slide" (default), "baseSlide", "fade", 
 
 Calling this navigation method triggers first the (cancelable) "navigate" event on the NavContainer, then the "beforeHide" pseudo event on the source page and "beforeFirstShow" (if applicable) and"beforeShow" on the target page. Later - after the transition has completed - the "afterShow" pseudo event is triggered on the target page and "afterHide" on the page which has been left. The given data object is available in the "beforeFirstShow", "beforeShow" and "afterShow" event object as "data" property.
 	* @param	pageId The screen to which drilldown should happen. The ID or the control itself can be given.
+<<<<<<< HEAD
 	* @param	transitionName The type of the transition/animation to apply. Options are "slide" (horizontal movement from the right), "baseSlide", "fade", "flip", and "show" and the names of any registered custom transitions.
+=======
+	* @param	transitionName The type of the transition/animation to apply. This parameter can be omitted; then the default is "slide" (horizontal movement from the right). Other options are: "baseSlide", "fade", "flip", and "show" and the names of any registered custom transitions.
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 None of the standard transitions is currently making use of any given transition parameters.
 	* @param	data Since version 1.7.1. This optional object can carry any payload data which should be made available to the target page. The "beforeShow" event on the target page will contain this data object as "data" property. Use case: in scenarios where the entity triggering the navigation can or should not directly initialize the target page, it can fill this object and the target page itself (or a listener on it) can take over the initialization, using the given data.

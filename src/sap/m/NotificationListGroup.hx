@@ -205,7 +205,11 @@ Default value is <code>false</code>.
 	* @param	bShowEmptyGroup New value for property <code>showEmptyGroup</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setShowEmptyGroup( ?bShowEmptyGroup:Bool):sap.m.NotificationListGroup;
+=======
+	public function setShowEmptyGroup( bShowEmptyGroup:Bool):sap.m.NotificationListGroup;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getShowItemsCounter showItemsCounter}.
@@ -220,7 +224,11 @@ Default value is <code>true</code>.
 	* @param	bShowItemsCounter New value for property <code>showItemsCounter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setShowItemsCounter( ?bShowItemsCounter:Bool):sap.m.NotificationListGroup;
+=======
+	public function setShowItemsCounter( bShowItemsCounter:Bool):sap.m.NotificationListGroup;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 }
 
 typedef NotificationListGroupArgs = sap.m.NotificationListBase.NotificationListBaseArgs & {

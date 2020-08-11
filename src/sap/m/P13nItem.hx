@@ -93,6 +93,19 @@ specifies the number of characters which can be entered in the value fields of t
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+<<<<<<< HEAD
+=======
+
+	/**
+	* Gets current value of property {@link #getNullable nullable}.
+
+Defines if the item is nullable
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>nullable</code>
+	*/
+	public function getNullable( ):Bool;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Gets current value of property {@link #getNullable nullable}.

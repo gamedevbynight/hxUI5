@@ -170,12 +170,15 @@ Default value is <code>empty string</code>.
 	public function getTitle( ):String;
 
 	/**
+<<<<<<< HEAD
 	* Gets the tooltip of the BusyDialog.
 	* @return	The tooltip of the BusyDialog.
 	*/
 	public function getTooltip( ):Dynamic;
 
 	/**
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* Opens the BusyDialog.
 	* @return	BusyDialog reference for chaining.
 	*/

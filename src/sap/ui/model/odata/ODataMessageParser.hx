@@ -41,7 +41,11 @@ public function new():Void;
 	* @param	bMessageScopeSupported Whether the used OData service supports the message scope {@link sap.ui.model.odata.MessageScope.BusinessObject}
 	* @return	Void
 	*/
+<<<<<<< HEAD
 	public function parse( oResponse:Dynamic, oRequest:Dynamic, mGetEntities:Dynamic, mChangeEntities:Dynamic, bMessageScopeSupported:Bool):Void;
+=======
+	public function parse( oResponse:Dynamic, oRequest:Dynamic, mGetEntities:Map<String,Dynamic>, mChangeEntities:Map<String,Dynamic>):Void;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets the header field name that should be used for parsing the JSON messages

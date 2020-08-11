@@ -350,6 +350,16 @@ The given object can contain the following keys: <code>headerLabel</code> - text
     */
 	@:optional var _overflow:haxe.extern.EitherType<String,sap.m.IconTabFilter>;
 
+    /**
+    * Internal aggregation for managing the scroll back button.
+    */
+	@:optional var _leftArrowButton:haxe.extern.EitherType<String,sap.m.Button>;
+
+    /**
+    * Internal aggregation for managing the scroll forward button.
+    */
+	@:optional var _rightArrowButton:haxe.extern.EitherType<String,sap.m.Button>;
+
 	/**
 	* Fires when an item is selected.
 	*/

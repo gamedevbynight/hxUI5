@@ -252,7 +252,11 @@ Default value is <code>Review</code>.
 	* @param	sFinishButtonText New value for property <code>finishButtonText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setFinishButtonText( ?sFinishButtonText:String):sap.m.Wizard;
+=======
+	public function setFinishButtonText( sFinishButtonText:String):sap.m.Wizard;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.

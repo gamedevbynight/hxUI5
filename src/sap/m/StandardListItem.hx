@@ -261,6 +261,19 @@ Default value is <code>false</code>.
 	public function setInfoStateInverted( ?bInfoStateInverted:Bool):sap.m.StandardListItem;
 
 	/**
+	* Sets a new value for property {@link #getInfoStateInverted infoStateInverted}.
+
+Determines the inverted rendering behavior of the info text and the info state. The color defined by the <code>infoState</code> property is rendered as the background color for the info text, if this property is set to <code>true</code>.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bInfoStateInverted New value for property <code>infoStateInverted</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setInfoStateInverted( bInfoStateInverted:Bool):sap.m.StandardListItem;
+
+	/**
 	* Sets a new value for property {@link #getInfoTextDirection infoTextDirection}.
 
 Defines the <code>info</code> directionality with enumerated options. By default, the control inherits text direction from the DOM.

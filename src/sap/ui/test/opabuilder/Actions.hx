@@ -1,5 +1,9 @@
 package sap.ui.test.opabuilder;
 
+<<<<<<< HEAD
+=======
+@:native("sap.ui.test.opabuilder.Actions")
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 extern class Actions
 {
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessBuilderOrOptions:sap.ui.test.actions.Action, ?vElseBuilderOptions:sap.ui.test.actions.Action):()->Void{ })
@@ -84,6 +88,7 @@ extern class Actions
 	* @return	an instance of the {@link sap.ui.test.actions.EnterText} action
 	*/
 	public static function enterText( sText:String, ?bClearTextFirst:Bool, ?bKeepFocus:Bool, ?sIdSuffix:String):sap.ui.test.actions.EnterText;
+<<<<<<< HEAD
 	@:overload( function(vActions:sap.ui.test.actions.Action):()->Void{ })
 	@:overload( function(vActions:()->Void):()->Void{ })
 
@@ -93,6 +98,8 @@ extern class Actions
 	* @return	an action function
 	*/
 	public static function executor( vActions:Array<Dynamic>):()->Void;
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Creates a {@link sap.ui.test.actions.Press} action.

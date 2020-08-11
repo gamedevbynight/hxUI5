@@ -150,6 +150,19 @@ Default value is <code>empty string</code>.
 	public function setIcon( ?sIcon:sap.ui.core.URI):sap.tnt.InfoLabel;
 
 	/**
+	* Sets a new value for property {@link #getIcon icon}.
+
+Defines the icon to be displayed as graphical element within the <code>InfoLabel</code>. It can be an icon from the icon font.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sIcon New value for property <code>icon</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setIcon( sIcon:sap.ui.core.URI):sap.tnt.InfoLabel;
+
+	/**
 	* Sets a new value for property {@link #getRenderMode renderMode}.
 
 Specifies the type of the <code>InfoLabel</code> paddings - loose or narrow. <b>Note:</b> By default the padding is loose. It is recommended to use narrow (smaller) paddings for numeric texts.

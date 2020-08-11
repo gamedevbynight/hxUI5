@@ -194,7 +194,11 @@ Default value is <code>true</code>.
 	* @param	bDisplayAnimation New value for property <code>displayAnimation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setDisplayAnimation( ?bDisplayAnimation:Bool):sap.m.ProgressIndicator;
+=======
+	public function setDisplayAnimation( bDisplayAnimation:Bool):sap.m.ProgressIndicator;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getDisplayOnly displayOnly}.

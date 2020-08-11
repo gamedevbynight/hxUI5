@@ -562,6 +562,13 @@ Default value is empty/<code>undefined</code>
 	public function onchange( oEvent:jquery.Event):Void;
 
 	/**
+	* Event handler for browsers' <code>change</code> event.
+	* @param	oEvent The event.
+	* @return	Void
+	*/
+	public function onchange( oEvent:jquery.Event):Void;
+
+	/**
 	* Event handler for the onFocusIn event.
 	* @param	oEvent On focus in event.
 	* @return	Void
@@ -785,11 +792,19 @@ Default value is an empty string <code>""</code> or <code>undefined</code>.
 	public function setShowSuggestion( bValue:Bool):sap.m.Input;
 
 	/**
-	* Shows value help suggestions in table.
-	* @param	bValue Show suggestions.
-	* @return	this Input instance for chaining.
+	* Sets a new value for property {@link #getShowTableSuggestionValueHelp showTableSuggestionValueHelp}.
+
+For tabular suggestions, this flag will show/hide the button at the end of the suggestion table that triggers the event "valueHelpRequest" when pressed. The default value is true.
+
+<b>Note:</b> If suggestions are not tabular or no suggestions are used, the button will not be displayed and this flag is without effect.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>true</code>.
+	* @param	bShowTableSuggestionValueHelp New value for property <code>showTableSuggestionValueHelp</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowTableSuggestionValueHelp( bValue:Bool):sap.m.Input;
+	public function setShowTableSuggestionValueHelp( bShowTableSuggestionValueHelp:Bool):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getShowValueHelp showValueHelp}.
@@ -920,12 +935,15 @@ Default value is <code>false</code>.
 	/**
 	* Setter for property <code>valueStateText</code>.
 
+<<<<<<< HEAD
 Default value is empty/<code>undefined</code>
 	* @param	sValueStateText new value for property <code>valueStateText</code>
 	* @return	<code>this</code> to allow method chaining
 	*/
 	public function setValueStateText( sValueStateText:String):sap.m.InputBase;
 
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	/**
 	* Opens the <code>SuggestionsPopover</code> with the available items.
 	* @param	fnFilter Function to filter the items shown in the SuggestionsPopover

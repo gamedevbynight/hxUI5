@@ -150,7 +150,11 @@ Default value is <code>S</code>.
 	* @param	sAvatarDisplaySize New value for property <code>avatarDisplaySize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setAvatarDisplaySize( ?sAvatarDisplaySize:sap.m.AvatarSize):sap.f.AvatarGroup;
+=======
+	public function setAvatarDisplaySize( sAvatarDisplaySize:sap.m.AvatarSize):sap.f.AvatarGroup;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getGroupType groupType}.
@@ -163,7 +167,11 @@ Default value is <code>Group</code>.
 	* @param	sGroupType New value for property <code>groupType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setGroupType( ?sGroupType:sap.f.AvatarGroupType):sap.f.AvatarGroup;
+=======
+	public function setGroupType( sGroupType:sap.f.AvatarGroupType):sap.f.AvatarGroup;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 }
 
 typedef AvatarGroupArgs = sap.ui.core.Control.ControlArgs & {

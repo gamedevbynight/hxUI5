@@ -225,7 +225,11 @@ Default value is <code>false</code>.
 	* @param	bIntervalSelection New value for property <code>intervalSelection</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setIntervalSelection( ?bIntervalSelection:Bool):sap.ui.unified.calendar.YearPicker;
+=======
+	public function setIntervalSelection( bIntervalSelection:Bool):sap.ui.unified.calendar.YearPicker;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getPrimaryCalendarType primaryCalendarType}.

@@ -213,6 +213,19 @@ Default value is <code>false</code>.
 	public function setIntervalSelection( ?bIntervalSelection:Bool):sap.ui.unified.calendar.MonthPicker;
 
 	/**
+	* Sets a new value for property {@link #getIntervalSelection intervalSelection}.
+
+If set, interval selection is allowed
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bIntervalSelection New value for property <code>intervalSelection</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setIntervalSelection( bIntervalSelection:Bool):sap.ui.unified.calendar.MonthPicker;
+
+	/**
 	* sets a minimum and maximum month
 	* @param	iMin minimum month as integer (starting with 0)
 	* @param	iMax maximum month as integer (starting with 0)

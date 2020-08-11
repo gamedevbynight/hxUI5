@@ -196,7 +196,11 @@ Default value is <code>empty string</code>.
 	* @param	sAuthorName New value for property <code>authorName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setAuthorName( ?sAuthorName:String):sap.m.NotificationListBase;
+=======
+	public function setAuthorName( sAuthorName:String):sap.m.NotificationListBase;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getAuthorPicture authorPicture}.
@@ -220,7 +224,11 @@ Default value is <code>empty string</code>.
 	* @param	sDatetime New value for property <code>datetime</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setDatetime( ?sDatetime:String):sap.m.NotificationListBase;
+=======
+	public function setDatetime( sDatetime:String):sap.m.NotificationListBase;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getPriority priority}.
@@ -274,7 +282,11 @@ Default value is <code>empty string</code>.
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setTitle( ?sTitle:String):sap.m.NotificationListBase;
+=======
+	public function setTitle( sTitle:String):sap.m.NotificationListBase;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 }
 
 typedef NotificationListBaseArgs = sap.m.ListItemBase.ListItemBaseArgs & {
@@ -322,11 +334,14 @@ typedef NotificationListBaseArgs = sap.m.ListItemBase.ListItemBaseArgs & {
 	@:optional var buttons:Array<haxe.extern.EitherType<String,sap.m.Button>>;
 
     /**
+<<<<<<< HEAD
     * Close button.
     */
 	@:optional var _closeButton:haxe.extern.EitherType<String,sap.m.Button>;
 
     /**
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
     * The overflow toolbar.
     */
 	@:optional var _overflowToolbar:haxe.extern.EitherType<String,sap.m.OverflowToolbar>;

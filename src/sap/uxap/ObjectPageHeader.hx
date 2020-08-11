@@ -536,6 +536,19 @@ Default value is <code>Accent6</code>.
 	public function setObjectImageBackgroundColor( ?sObjectImageBackgroundColor:sap.m.AvatarColor):sap.uxap.ObjectPageHeader;
 
 	/**
+	* Sets a new value for property {@link #getObjectImageBackgroundColor objectImageBackgroundColor}.
+
+Determines the background color of the image placeholder or icon if valid icon URI is provided.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Accent6</code>.
+	* @param	sObjectImageBackgroundColor New value for property <code>objectImageBackgroundColor</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setObjectImageBackgroundColor( sObjectImageBackgroundColor:sap.m.AvatarColor):sap.uxap.ObjectPageHeader;
+
+	/**
 	* Sets a new value for property {@link #getObjectImageDensityAware objectImageDensityAware}.
 
 The value of densityAware for the image, supplied via the objectImageURI property. See sap.m.Image for more details on densityAware.
@@ -559,7 +572,11 @@ Default value is <code>Square</code>.
 	* @param	sObjectImageShape New value for property <code>objectImageShape</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setObjectImageShape( ?sObjectImageShape:sap.m.AvatarShape):sap.uxap.ObjectPageHeader;
+=======
+	public function setObjectImageShape( sObjectImageShape:sap.m.AvatarShape):sap.uxap.ObjectPageHeader;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getObjectImageURI objectImageURI}.

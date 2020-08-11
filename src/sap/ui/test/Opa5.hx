@@ -25,7 +25,11 @@ Use page objects to structure your actions and assertions based on parts of the 
     }
   </pre>
 	*/
+<<<<<<< HEAD
 	public static function createPageObjects( mPageObjects:Map<String,sap.ui.test.PageObjectDefinition>):Map<String,Dynamic>;
+=======
+	public static function createPageObjects( mPageObjects:map<string,sap.ui.test.PageObjectDefinition>):Map<String,Dynamic>;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Waits until all waitFor calls are done See {@link sap.ui.test.Opa.emptyQueue} for the description

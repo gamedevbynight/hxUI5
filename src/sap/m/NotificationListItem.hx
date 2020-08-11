@@ -104,7 +104,11 @@ Default value is <code>Accent6</code>.
 	* @param	sAuthorAvatarColor New value for property <code>authorAvatarColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setAuthorAvatarColor( ?sAuthorAvatarColor:sap.m.AvatarColor):sap.m.NotificationListItem;
+=======
+	public function setAuthorAvatarColor( sAuthorAvatarColor:sap.m.AvatarColor):sap.m.NotificationListItem;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getAuthorInitials authorInitials}.
@@ -128,7 +132,11 @@ Default value is <code>empty string</code>.
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setDescription( ?sDescription:String):sap.m.NotificationListItem;
+=======
+	public function setDescription( sDescription:String):sap.m.NotificationListItem;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getHideShowMoreButton hideShowMoreButton}.
@@ -141,7 +149,11 @@ Default value is <code>false</code>.
 	* @param	bHideShowMoreButton New value for property <code>hideShowMoreButton</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setHideShowMoreButton( ?bHideShowMoreButton:Bool):sap.m.NotificationListItem;
+=======
+	public function setHideShowMoreButton( bHideShowMoreButton:Bool):sap.m.NotificationListItem;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets the aggregated {@link #getProcessingMessage processingMessage}.
@@ -161,7 +173,11 @@ Default value is <code>true</code>.
 	* @param	bTruncate New value for property <code>truncate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setTruncate( ?bTruncate:Bool):sap.m.NotificationListItem;
+=======
+	public function setTruncate( bTruncate:Bool):sap.m.NotificationListItem;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 }
 
 typedef NotificationListItemArgs = sap.m.NotificationListBase.NotificationListBaseArgs & {

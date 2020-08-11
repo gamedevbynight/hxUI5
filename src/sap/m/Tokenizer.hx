@@ -161,6 +161,7 @@ Default value is <code>100%</code>.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+<<<<<<< HEAD
 
 	/**
 	* Gets current value of property {@link #getRenderMode renderMode}.
@@ -171,6 +172,8 @@ Default value is <code>sap.m.TokenizerRenderMode.Loose</code>.
 	* @return	Value of property <code>renderMode</code>
 	*/
 	public function getRenderMode( ):String;
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Function returns the internally used scroll delegate.

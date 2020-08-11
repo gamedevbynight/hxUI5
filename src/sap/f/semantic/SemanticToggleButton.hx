@@ -26,6 +26,36 @@ extern class SemanticToggleButton extends sap.m.semantic.SemanticToggleButton
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+<<<<<<< HEAD
+=======
+
+	/**
+	* Gets current value of property {@link #getPressed pressed}.
+
+Defines the <code>SemanticToggleButton</code> pressed state.
+
+The property is set to <code>true</code> when the control is toggled (default is <code>false</code>).
+
+Default value is <code>false</code>.
+	* @return	Value of property <code>pressed</code>
+	*/
+	public function getPressed( ):Bool;
+
+	/**
+	* Sets a new value for property {@link #getPressed pressed}.
+
+Defines the <code>SemanticToggleButton</code> pressed state.
+
+The property is set to <code>true</code> when the control is toggled (default is <code>false</code>).
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>false</code>.
+	* @param	bPressed New value for property <code>pressed</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setPressed( bPressed:Bool):sap.f.semantic.SemanticToggleButton;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 }
 
 typedef SemanticToggleButtonArgs = sap.m.semantic.SemanticToggleButton.SemanticToggleButtonArgs & {

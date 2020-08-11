@@ -53,7 +53,11 @@ extern class String extends sap.ui.model.SimpleType
 
 	/**
 	* Validates whether the given value in model representation is valid and meets the defined constraints, see {@link #constructor}.
+<<<<<<< HEAD
 	* @param	sValue The value to be validated; <code>null</code> is treated like an empty string
+=======
+	* @param	sValue The value to be validated
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* @return	Void
 	*/
 	public function validateValue( sValue:String):Void;

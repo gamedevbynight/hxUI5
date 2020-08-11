@@ -69,6 +69,7 @@ Default value is <code>gold,darkorange,indianred,darkmagenta,cornflowerblue,deep
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+<<<<<<< HEAD
 
 	/**
 	* Sets a selected color for the ColorPicker control.
@@ -76,6 +77,8 @@ Default value is <code>gold,darkorange,indianred,darkmagenta,cornflowerblue,deep
 	* @return	<code>this</code> for method chaining
 	*/
 	public function setColorPickerSelectedColor( color:sap.ui.core.CSSColor):sap.m.ColorPalette;
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getColors colors}.

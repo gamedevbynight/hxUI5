@@ -196,7 +196,11 @@ Default value is <code>true</code>.
 	* @param	bIsCyclic New value for property <code>isCyclic</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setIsCyclic( ?bIsCyclic:Bool):sap.m.WheelSlider;
+=======
+	public function setIsCyclic( bIsCyclic:Bool):sap.m.WheelSlider;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getIsExpanded isExpanded}.
@@ -209,7 +213,11 @@ Default value is <code>false</code>.
 	* @param	bIsExpanded New value for property <code>isExpanded</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
+<<<<<<< HEAD
 	public function setIsExpanded( ?bIsExpanded:Bool):sap.m.WheelSlider;
+=======
+	public function setIsExpanded( bIsExpanded:Bool):sap.m.WheelSlider;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getLabel label}.

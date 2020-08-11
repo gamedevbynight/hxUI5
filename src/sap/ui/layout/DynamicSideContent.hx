@@ -141,6 +141,7 @@ Main content controls.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+<<<<<<< HEAD
 
 	/**
 	* Returns a scroll helper object used to handle scrolling.
@@ -148,6 +149,8 @@ Main content controls.
 	* @return	The scroll helper instance
 	*/
 	public function getScrollDelegate( oControl:Dynamic):sap.ui.core.delegate.ScrollEnablement;
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Gets current value of property {@link #getShowMainContent showMainContent}.

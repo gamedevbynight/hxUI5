@@ -100,6 +100,19 @@ The property name of the rows data which will be displayed as a group header if 
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+<<<<<<< HEAD
+=======
+
+	/**
+	* Gets current value of property {@link #getRootLevel rootLevel}.
+
+The root level is the level of the topmost tree nodes, which will be used as an entry point for OData services. This property is only supported when the TreeTable uses an underlying odata services with hierarchy annotations. This property is only supported with sap.ui.model.odata.v2.ODataModel The hierarchy annotations may also be provided locally as a parameter for the ODataTreeBinding.
+
+Default value is <code>0</code>.
+	* @return	Value of property <code>rootLevel</code>
+	*/
+	public function getRootLevel( ):Int;
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Returns an array containing the row indices of all selected tree nodes (ordered ascending).

@@ -40,6 +40,7 @@ extern class Popup extends sap.ui.base.ManagedObject
 	* @return	Object
 	*/
 	public function new( ?oContent:js.html.Element, ?bModal:Bool, ?bShadow:Bool, ?bAutoClose:Bool):Void;
+<<<<<<< HEAD
 	@:overload( function(vSelectors:Array<String>, ?bMarkAsSelectable:Bool):Void{ })
 
 	/**
@@ -53,6 +54,8 @@ When the browser focus is switched from the main popup content (which is set by 
 	* @return	Void
 	*/
 	public static function addExternalContent( vSelectors:String, ?bMarkAsSelectable:Bool):Void;
+=======
+>>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the static {@link #.blockLayerStateChange blockLayerStateChange} event.
