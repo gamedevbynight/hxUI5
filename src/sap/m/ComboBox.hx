@@ -42,15 +42,6 @@ This event is fired when the user types something that matches with an item in t
 	* Clones the <code>sap.m.ComboBox</code> control.
 	* @param	sIdSuffix Suffix to be added to the ids of the new control and its internal objects.
 	* @return	The cloned <code>sap.m.ComboBox</code> control.
-<<<<<<< HEAD
-=======
-	*/
-	public function clone( sIdSuffix:String):sap.m.ComboBox;
-
-	/**
-	* Closes the control's picker popup and focus input field.
-	* @return	<code>this</code> to allow method chaining.
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	*/
 	public function clone( sIdSuffix:String):sap.m.ComboBox;
 

@@ -21,11 +21,7 @@ Sample usage of the ComponentContainer:
     />
 </pre>
 
-<<<<<<< HEAD
 See also {@link module:sap/ui/core/ComponentSupport}.
-=======
-See also {@link sap.ui.core.ComponentSupport}.
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 */
 extern class ComponentContainer extends sap.ui.core.Control
 {

@@ -50,21 +50,6 @@ Default value is <code>empty string</code>.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
-<<<<<<< HEAD
-=======
-
-	/**
-	* Gets current value of property {@link #getNavigated navigated}.
-
-The navigated state of a row.
-
-If set to <code>true</code>, a navigation indicator is displayed at the end of the row. <b>Note:</b> The navigation indicator is only visible if row actions are available.
-
-Default value is <code>false</code>.
-	* @return	Value of property <code>navigated</code>
-	*/
-	public function getNavigated( ):Bool;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Gets current value of property {@link #getNavigated navigated}.

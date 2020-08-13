@@ -47,15 +47,9 @@ The passed function and listener object must match the ones used for event regis
 	/**
 	* Gets current value of property {@link #getFilter filter}.
 
-<<<<<<< HEAD
 Defines a predicate to test each message of the data state.
 
 This callback gets called using the {@link sap.ui.core.message.Message message} and {@link sap.ui.core.Control related control} parameters. Returns <code>true</code> to keep the message, <code>false</code> otherwise.
-=======
-Defines a predicate to test each data state of the messages.
-
-This callback gets called via the {@link sap.ui.model.DataState data state} parameter. Return <code>true</code> to keep the data state, <code>false</code> otherwise.
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* @return	Value of property <code>filter</code>
 	*/
 	public function getFilter( ):()->Void;
@@ -67,7 +61,6 @@ This callback gets called via the {@link sap.ui.model.DataState data state} para
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 
 	/**
-<<<<<<< HEAD
 	* Refreshes the messages displayed for the current data state.
 
 The current data state is evaluated again, and the filters are applied.
@@ -81,13 +74,6 @@ The current data state is evaluated again, and the filters are applied.
 Defines a predicate to test each message of the data state.
 
 This callback gets called using the {@link sap.ui.core.message.Message message} and {@link sap.ui.core.Control related control} parameters. Returns <code>true</code> to keep the message, <code>false</code> otherwise.
-=======
-	* Sets a new value for property {@link #getFilter filter}.
-
-Defines a predicate to test each data state of the messages.
-
-This callback gets called via the {@link sap.ui.model.DataState data state} parameter. Return <code>true</code> to keep the data state, <code>false</code> otherwise.
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 	* @param	fnFilter New value for property <code>filter</code>
@@ -107,20 +93,13 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 typedef DataStateIndicatorArgs = sap.ui.core.Element.ElementArgs & {
 
 	/**
-<<<<<<< HEAD
 	* Defines a predicate to test each message of the data state.
 
 This callback gets called using the {@link sap.ui.core.message.Message message} and {@link sap.ui.core.Control related control} parameters. Returns <code>true</code> to keep the message, <code>false</code> otherwise.
-=======
-	* Defines a predicate to test each data state of the messages.
-
-This callback gets called via the {@link sap.ui.model.DataState data state} parameter. Return <code>true</code> to keep the data state, <code>false</code> otherwise.
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	*/
 	@:optional var filter:()->Void;
 
 	/**
-<<<<<<< HEAD
 	* Defines the text for the link in the message strip.
 	*/
 	@:optional var messageLinkText:String;
@@ -131,8 +110,6 @@ This callback gets called via the {@link sap.ui.model.DataState data state} para
 	@:optional var messageLinkVisible:haxe.extern.EitherType<String,Bool>;
 
 	/**
-=======
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* This event is fired when the {@link sap.ui.model.DataState data state} of the plugin parent is changed.
 	*/
 	@:optional var dataStateChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;

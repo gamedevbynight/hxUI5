@@ -24,7 +24,7 @@ extern class MultiInput extends sap.m.Input
 	* @param	fnValidator The validation callback
 	* @return	Void
 	*/
-	public function addValidator( fnValidator:sap.m.MultiInput.fnValidator):Void;
+	public function addValidator( fnValidator:sap.m.multiinput.FnValidator->Dynamic):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:tokenUpdate tokenUpdate} event of this <code>sap.m.MultiInput</code>.
@@ -164,7 +164,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @param	fnValidator The validation callback to be removed
 	* @return	Void
 	*/
-	public function removeValidator( fnValidator:sap.m.MultiInput.fnValidator):Void;
+	public function removeValidator( fnValidator:sap.m.multiinput.FnValidator->Dynamic):Void;
 
 	/**
 	* Sets a new value for property {@link #getMaxTokens maxTokens}.

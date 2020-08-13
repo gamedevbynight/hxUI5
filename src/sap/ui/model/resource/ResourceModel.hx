@@ -29,11 +29,7 @@ extern class ResourceModel extends sap.ui.model.Model
 	* @return	The property binding for the given path
 	*/
 	public function bindProperty( sPath:String):sap.ui.model.PropertyBinding;
-<<<<<<< HEAD
 	@:overload( function(oData:sap.base.i18n.ResourceBundle):Dynamic{ })
-=======
-	@:overload( function(oData:sap.base.i18n.ResourceBundle):js.lib.Promise<ResourceModel>{ })
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Enhances the resource model with a custom resource bundle.

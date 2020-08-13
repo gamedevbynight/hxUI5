@@ -50,7 +50,6 @@ Default value is <code>false</code>.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.base.ManagedObjectMetadata;
-<<<<<<< HEAD
 
 	/**
 	* Gets current value of property {@link #getPressEnterKey pressEnterKey}.
@@ -59,8 +58,6 @@ Default value is <code>false</code>.
 	* @return	Value of property <code>pressEnterKey</code>
 	*/
 	public function getPressEnterKey( ):Bool;
-=======
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Gets current value of property {@link #getText text}.

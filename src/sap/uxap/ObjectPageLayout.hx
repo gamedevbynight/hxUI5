@@ -88,7 +88,6 @@ Fired when the current section is changed by scrolling.
 	public function attachSectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
-<<<<<<< HEAD
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:subSectionVisibilityChange subSectionVisibilityChange} event of this <code>sap.uxap.ObjectPageLayout</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.uxap.ObjectPageLayout</code> itself.
@@ -102,8 +101,6 @@ Fired when the visibility of subsections is changed.
 	public function attachSubSectionVisibilityChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
-=======
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:toggleAnchorBar toggleAnchorBar} event of this <code>sap.uxap.ObjectPageLayout</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.uxap.ObjectPageLayout</code> itself.
@@ -177,7 +174,6 @@ The passed function and listener object must match the ones used for event regis
 	public function detachSectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
-<<<<<<< HEAD
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:subSectionVisibilityChange subSectionVisibilityChange} event of this <code>sap.uxap.ObjectPageLayout</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -188,8 +184,6 @@ The passed function and listener object must match the ones used for event regis
 	public function detachSubSectionVisibilityChange( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
-=======
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:toggleAnchorBar toggleAnchorBar} event of this <code>sap.uxap.ObjectPageLayout</code>.
 
 The passed function and listener object must match the ones used for event registration.
@@ -1109,14 +1103,11 @@ If not set, no landmarks will be written.
 	@:optional var sectionChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-<<<<<<< HEAD
 	* Fired when the visibility of subsections is changed.
 	*/
 	@:optional var subSectionVisibilityChange:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-=======
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* The event is fired when the Anchor bar is switched from moving to fixed or the other way round.
 	*/
 	@:optional var toggleAnchorBar:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;

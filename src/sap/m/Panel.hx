@@ -197,16 +197,6 @@ Default value is <code>100%</code>.
 	public function insertContent( oContent:sap.ui.core.Control, iIndex:Int):sap.m.Panel;
 
 	/**
-<<<<<<< HEAD
-=======
-	* Sets the accessibleRole property of the control.
-	* @param	sRole Defines the aria role of the control.
-	* @return	Pointer to the control instance to allow method chaining.
-	*/
-	public function onBeforeRendering( sRole:sap.m.PanelAccessibleRole):sap.m.Panel;
-
-	/**
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* Sets the height of the panel.
 	* @param	sHeight The height of the panel as CSS size.
 	* @return	Pointer to the control instance to allow method chaining.
@@ -241,11 +231,7 @@ Default value is <code>Form</code>.
 	* @param	sAccessibleRole New value for property <code>accessibleRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-<<<<<<< HEAD
 	public function setAccessibleRole( ?sAccessibleRole:sap.m.PanelAccessibleRole):sap.m.Panel;
-=======
-	public function setAccessibleRole( sAccessibleRole:sap.m.PanelAccessibleRole):sap.m.Panel;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getBackgroundDesign backgroundDesign}.

@@ -415,11 +415,7 @@ Default value is <code>false</code>.
 	* @param	bGroupItems New value for property <code>groupItems</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-<<<<<<< HEAD
 	public function setGroupItems( ?bGroupItems:Bool):sap.m.MessagePopover;
-=======
-	public function setGroupItems( bGroupItems:Bool):sap.m.MessagePopover;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets the aggregated {@link #getHeaderButton headerButton}.
@@ -452,11 +448,7 @@ Default value is <code>Vertical</code>.
 	* @param	sPlacement New value for property <code>placement</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-<<<<<<< HEAD
 	public function setPlacement( ?sPlacement:sap.m.VerticalPlacementType):sap.m.MessagePopover;
-=======
-	public function setPlacement( sPlacement:sap.m.VerticalPlacementType):sap.m.MessagePopover;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* This method toggles between open and closed state of the MessagePopover instance. oControl parameter is mandatory in the same way as in 'openBy' method

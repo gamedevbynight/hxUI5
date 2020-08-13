@@ -26,22 +26,6 @@ extern class SemanticButton extends sap.m.semantic.SemanticButton
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
-<<<<<<< HEAD
-=======
-
-	/**
-	* Sets a new value for property {@link #getEnabled enabled}.
-
-Determines whether the <code>SemanticButton</code> is enabled.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>true</code>.
-	* @param	bEnabled New value for property <code>enabled</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
-	*/
-	public function setEnabled( bEnabled:Bool):sap.f.semantic.SemanticButton;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 }
 
 typedef SemanticButtonArgs = sap.m.semantic.SemanticButton.SemanticButtonArgs & {

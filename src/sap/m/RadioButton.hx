@@ -251,11 +251,7 @@ Default value is <code>true</code>.
 	* @param	bActiveHandling New value for property <code>activeHandling</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-<<<<<<< HEAD
 	public function setActiveHandling( ?bActiveHandling:Bool):sap.m.RadioButton;
-=======
-	public function setActiveHandling( bActiveHandling:Bool):sap.m.RadioButton;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.

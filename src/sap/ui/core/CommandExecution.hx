@@ -81,20 +81,8 @@ Default value is <code>true</code>.
 	* Sets whether the <code>CommandExecution</code> is enabled, or not. If set to false, the <code>CommandExecution</code> will still register the shortcut. This will block the default behavior for that shortcut.
 	* @param	bValue Whether the CommandExecution is enabled, or not.
 	* @return	The CommandExecution
-<<<<<<< HEAD
 	*/
 	public function setEnabled( bValue:Bool):sap.ui.core.Element;
-=======
-	*/
-	public function setEnabled( bValue:Bool):sap.ui.core.Element;
-
-	/**
-	* Sets whether the <code>CommandExecution</code> is visible, or not. If set to false, the <code>CommandExecution</code> will unregister the shortcut. If not visible, the CommandExecution will not be triggered even if it is enabled.
-	* @param	bValue Whether the CommandExecution is visible, or not.
-	* @return	The CommandExecution
-	*/
-	public function setVisible( bValue:Bool):sap.ui.core.Element;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets whether the <code>CommandExecution</code> is visible, or not. If set to false, the <code>CommandExecution</code> will unregister the shortcut. If not visible, the CommandExecution will not be triggered even if it is enabled.

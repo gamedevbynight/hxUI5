@@ -1114,11 +1114,7 @@ Default value is <code>false</code>.
 	* @param	bFitContent New value for property <code>fitContent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-<<<<<<< HEAD
 	public function setFitContent( ?bFitContent:Bool):sap.f.semantic.SemanticPage;
-=======
-	public function setFitContent( bFitContent:Bool):sap.f.semantic.SemanticPage;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets the aggregated {@link #getFlagAction flagAction}.

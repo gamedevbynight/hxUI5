@@ -162,11 +162,7 @@ Example: <pre>
 </pre>
 	* @return	Value of property <code>manifestChanges</code>
 	*/
-<<<<<<< HEAD
 	public function getManifestChanges( ):Array<Dynamic>;
-=======
-	public static function getMetadata( ):sap.ui.core.ElementMetadata;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Returns a value from the Manifest based on the specified path.

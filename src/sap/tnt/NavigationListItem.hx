@@ -108,7 +108,6 @@ The sub items.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
-<<<<<<< HEAD
 
 	/**
 	* Gets current value of property {@link #getTarget target}.
@@ -119,8 +118,6 @@ Options are the standard values for window.open() supported by browsers: <code>_
 	* @return	Value of property <code>target</code>
 	*/
 	public function getTarget( ):String;
-=======
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Gets current value of property {@link #getVisible visible}.

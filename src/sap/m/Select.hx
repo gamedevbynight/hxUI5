@@ -236,7 +236,6 @@ Default value is <code>false</code>.
 	public function getRequired( ):Bool;
 
 	/**
-<<<<<<< HEAD
 	* Gets current value of property {@link #getResetOnMissingKey resetOnMissingKey}.
 
 Modifies the behavior of the <code>setSelectedKey</code> method so that the selected item is cleared when a provided selected key is missing.
@@ -247,8 +246,6 @@ Default value is <code>false</code>.
 	public function getResetOnMissingKey( ):Bool;
 
 	/**
-=======
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	* Gets the selected item object from the aggregation named <code>items</code>.
 	* @return	The current target of the <code>selectedItem</code> association, or null.
 	*/
@@ -504,11 +501,7 @@ Default value is <code>empty string</code>.
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-<<<<<<< HEAD
 	public function setName( ?sName:String):sap.m.Select;
-=======
-	public function setName( sName:String):sap.m.Select;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getRequired required}.
@@ -521,7 +514,6 @@ Default value is <code>false</code>.
 	* @param	bRequired New value for property <code>required</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-<<<<<<< HEAD
 	public function setRequired( ?bRequired:Bool):sap.m.Select;
 
 	/**
@@ -536,9 +528,6 @@ Default value is <code>false</code>.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setResetOnMissingKey( ?bResetOnMissingKey:Bool):sap.m.Select;
-=======
-	public function setRequired( bRequired:Bool):sap.m.Select;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	@:overload( function(vItem:String):sap.m.Select{ })
 	@:overload( function(vItem:sap.ui.core.Item):sap.m.Select{ })
 

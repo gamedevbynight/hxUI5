@@ -132,7 +132,6 @@ Defines the items contained within this control.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
-<<<<<<< HEAD
 
 	/**
 	* Gets current value of property {@link #getOpen open}.
@@ -143,8 +142,6 @@ Default value is <code>false</code>.
 	* @return	Value of property <code>open</code>
 	*/
 	public function getOpen( ):Bool;
-=======
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Gets current value of property {@link #getShowSecondaryValues showSecondaryValues}.

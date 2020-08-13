@@ -191,11 +191,7 @@ Default value is <code>true</code>.
 	* @param	bAdaptiveFontSize New value for property <code>adaptiveFontSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-<<<<<<< HEAD
 	public function setAdaptiveFontSize( ?bAdaptiveFontSize:Bool):sap.m.NumericContent;
-=======
-	public function setAdaptiveFontSize( bAdaptiveFontSize:Bool):sap.m.NumericContent;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets a new value for property {@link #getAnimateTextChange animateTextChange}.

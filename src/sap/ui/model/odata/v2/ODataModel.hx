@@ -311,11 +311,7 @@ ETag handling must be active so the force update will work.
 	* Returns the definition of groups per entity type for two-way binding changes
 	* @return	Definition of groups for two-way binding changes, keyed by entity names.
 	*/
-<<<<<<< HEAD
 	public function getChangeGroups( ):Map<String,sap.ui.model.odata.v2.ODataModel.ChangeGroupDefinition>;
-=======
-	public function getChangeGroups( ):map<string,sap.ui.model.odata.v2.odatamodel.ChangeGroupDefinition>;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Returns the default count mode for retrieving the count of collections
@@ -592,11 +588,7 @@ If <code>bAll</code> is set to <code>true</code>, also deferred requests trigger
 </pre> <ul> <li><code>groupId</code>: Defines the group for changes of the defined <i>EntityTypeName</i></li> <li><code>changeSetId</code>: ID of a <code>ChangeSet</code> which bundles the changes for the entity type.</li> <li><code>single</code>: Defines if every change will get an own change set (defaults to <code>true</code>)</li> </ul>
 	* @return	Void
 	*/
-<<<<<<< HEAD
 	public function setChangeGroups( mGroups:Map<String,sap.ui.model.odata.v2.ODataModel.ChangeGroupDefinition>):Void;
-=======
-	public function setChangeGroups( mGroups:map<string,sap.ui.model.odata.v2.odatamodel.ChangeGroupDefinition>):Void;
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 
 	/**
 	* Sets the default mode how to retrieve the item count for a collection in this model.

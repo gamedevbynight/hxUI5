@@ -1771,14 +1771,11 @@ The following restrictions apply: <ul> <li>If a selection plugin is applied to t
     */
 	@:optional var _messageStrip:haxe.extern.EitherType<String,sap.ui.core.Control>;
 
-<<<<<<< HEAD
     /**
     * Hidden dependents are dependents that are not cloned. But like for normal dependents, their data binding context and lifecycle are bound to the table.
     */
 	@:optional var _hiddenDependents:Array<haxe.extern.EitherType<String,sap.ui.core.Element>>;
 
-=======
->>>>>>> bd78e88ba76c5bd0a95baa0cbb72c1713c532a11
 	/**
 	* The column by which the table is grouped. Grouping will only be performed if <code>enableGrouping</code> is set to <code>true</code>. Setting <code>groupBy</code> in the view does not work and throws an error. It can only be set if the column by which the table is grouped is already part of the <code>columns</code> aggregation of the table.
 	*/
