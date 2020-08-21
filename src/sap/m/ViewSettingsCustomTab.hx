@@ -32,7 +32,7 @@ extern class ViewSettingsCustomTab extends sap.ui.core.Item
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.
@@ -47,7 +47,7 @@ The content of this Custom tab
 
 Custom tab button icon
 
-Default value is <code>sap-icon://competitor</code>.
+Default value is <code>"sap-icon://competitor"</code>.
 	* @return	Value of property <code>icon</code>
 	*/
 	public function getIcon( ):sap.ui.core.URI;
@@ -107,7 +107,7 @@ Custom tab button icon
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>sap-icon://competitor</code>.
+Default value is <code>"sap-icon://competitor"</code>.
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

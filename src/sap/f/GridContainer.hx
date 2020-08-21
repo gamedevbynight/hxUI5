@@ -77,7 +77,7 @@ Fires if the border of the visualizations is reached so that an application can 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.GridContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBorderReached( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.GridContainer;
+	public function attachBorderReached( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.GridContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:layoutChange layoutChange} event of this <code>sap.f.GridContainer</code>.
@@ -90,7 +90,7 @@ Fired when the currently active GridSettings change.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.GridContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLayoutChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.GridContainer;
+	public function attachLayoutChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.GridContainer;
 
 	/**
 	* Destroys all the items in the aggregation {@link #getItems items}.
@@ -142,7 +142,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBorderReached( fnFunction:()->Void, ?oListener:Dynamic):sap.f.GridContainer;
+	public function detachBorderReached( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.GridContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:layoutChange layoutChange} event of this <code>sap.f.GridContainer</code>.
@@ -152,7 +152,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLayoutChange( fnFunction:()->Void, ?oListener:Dynamic):sap.f.GridContainer;
+	public function detachLayoutChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.GridContainer;
 
 	/**
 	* Creates a new subclass of class sap.f.GridContainer with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -163,7 +163,16 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
+
+	/**
+	* Focuses the item on the given index. Should be called after successful drop operation.
+
+<b>Note:</b>Should not be called before the <code>GridContainer</code> has been rendered.
+	* @param	iIndex The index of the item, which will be focused.
+	* @return	Void
+	*/
+	public function focusItem( iIndex:Int):Void;
 
 	/**
 	* Gets the <code>GridContainerSettings</code> for the current layout breakpoint.
@@ -272,6 +281,18 @@ The sap.f.GridContainerSettings applied for size "XS". Range: up to 374px.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
+
+	/**
+	* Gets current value of property {@link #getMinHeight minHeight}.
+
+Defines the minimum height of the grid.
+
+Allows an empty grid to be available as a drop target.
+
+Default value is <code>"2rem"</code>.
+	* @return	Value of property <code>minHeight</code>
+	*/
+	public function getMinHeight( ):sap.ui.core.CSSSize;
 
 	/**
 	* Gets current value of property {@link #getSnapToRow snapToRow}.
@@ -415,6 +436,21 @@ Default value is <code>false</code>.
 	public function setLayoutXS( oLayoutXS:sap.f.GridContainerSettings):sap.f.GridContainer;
 
 	/**
+	* Sets a new value for property {@link #getMinHeight minHeight}.
+
+Defines the minimum height of the grid.
+
+Allows an empty grid to be available as a drop target.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>"2rem"</code>.
+	* @param	sMinHeight New value for property <code>minHeight</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setMinHeight( ?sMinHeight:sap.ui.core.CSSSize):sap.f.GridContainer;
+
+	/**
 	* Sets a new value for property {@link #getSnapToRow snapToRow}.
 
 Should the items stretch to fill the rows that they occupy, or not.
@@ -437,7 +473,7 @@ Defines the width of the control.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth= New value for property <code>width</code>
+	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.f.GridContainer;
@@ -449,6 +485,13 @@ typedef GridContainerArgs = sap.ui.core.Control.ControlArgs & {
 	* Defines the width of the control.
 	*/
 	@:optional var width:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
+
+	/**
+	* Defines the minimum height of the grid.
+
+Allows an empty grid to be available as a drop target.
+	*/
+	@:optional var minHeight:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
 	/**
 	* If set to <code>true</code> the current range (large, medium or small) is defined by the size of the container surrounding the <code>GridContainer</code>, instead of the device screen size (media Query).

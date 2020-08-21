@@ -46,7 +46,7 @@ extern class Grid extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
@@ -79,7 +79,7 @@ Optional. Defines default for the whole Grid numbers of empty columns before the
 
 <b>Note:</b> The parameters must be provided in the order <large medium small>.
 
-Default value is <code>XL0 L0 M0 S0</code>.
+Default value is <code>"XL0 L0 M0 S0"</code>.
 	* @return	Value of property <code>defaultIndent</code>
 	*/
 	public function getDefaultIndent( ):sap.ui.layout.GridIndent;
@@ -91,7 +91,7 @@ Optional. A string type that represents the span values of the <code>Grid</code>
 
 <b>Note:</b> The parameters must be provided in the order <large medium small>.
 
-Default value is <code>XL3 L3 M6 S12</code>.
+Default value is <code>"XL3 L3 M6 S12"</code>.
 	* @return	Value of property <code>defaultSpan</code>
 	*/
 	public function getDefaultSpan( ):sap.ui.layout.GridSpan;
@@ -117,7 +117,7 @@ Default value is <code>1</code>.
 
 Optional. Defines the position of the <code>Grid</code> in the window or surrounding container.
 
-Default value is <code>Left</code>.
+Default value is <code>"Left"</code>.
 	* @return	Value of property <code>position</code>
 	*/
 	public function getPosition( ):sap.ui.layout.GridPosition;
@@ -137,7 +137,7 @@ Default value is <code>1</code>.
 
 Optional. Defines the width of the <code>Grid</code>. If not specified, then 100%.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -211,7 +211,7 @@ Optional. Defines default for the whole Grid numbers of empty columns before the
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>XL0 L0 M0 S0</code>.
+Default value is <code>"XL0 L0 M0 S0"</code>.
 	* @param	sDefaultIndent New value for property <code>defaultIndent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -226,7 +226,7 @@ Optional. A string type that represents the span values of the <code>Grid</code>
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>XL3 L3 M6 S12</code>.
+Default value is <code>"XL3 L3 M6 S12"</code>.
 	* @param	sDefaultSpan New value for property <code>defaultSpan</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -252,7 +252,7 @@ Optional. Defines the position of the <code>Grid</code> in the window or surroun
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Left</code>.
+Default value is <code>"Left"</code>.
 	* @param	sPosition New value for property <code>position</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -278,7 +278,7 @@ Optional. Defines the width of the <code>Grid</code>. If not specified, then 100
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

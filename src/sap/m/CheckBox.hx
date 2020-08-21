@@ -59,7 +59,7 @@ Event is triggered when the control status is changed by the user by selecting o
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.CheckBox</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.CheckBox;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.CheckBox;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:select select} event of this <code>sap.m.CheckBox</code>.
@@ -69,7 +69,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.CheckBox;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.CheckBox;
 
 	/**
 	* Creates a new subclass of class sap.m.CheckBox with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -80,7 +80,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActiveHandling activeHandling}.
@@ -345,7 +345,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.m.CheckBox;
+	public function setName( ?sName:String):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getPartiallySelected partiallySelected}.
@@ -386,7 +386,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.CheckBox;
+	public function setText( ?sText:String):sap.m.CheckBox;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -452,7 +452,7 @@ Determines the total width of the control or the width of its label only, depend
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth= New value for property <code>width</code>
+	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.CheckBox;

@@ -28,7 +28,7 @@ Fired when the value has changed and the focus leaves the code editor.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.codeeditor.CodeEditor</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.codeeditor.CodeEditor;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.codeeditor.CodeEditor;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:liveChange liveChange} event of this <code>sap.ui.codeeditor.CodeEditor</code>.
@@ -41,7 +41,7 @@ Fired when the value is changed by user interaction - each keystroke, delete, pa
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.codeeditor.CodeEditor</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLiveChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.codeeditor.CodeEditor;
+	public function attachLiveChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.codeeditor.CodeEditor;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:change change} event of this <code>sap.ui.codeeditor.CodeEditor</code>.
@@ -51,7 +51,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.codeeditor.CodeEditor;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.codeeditor.CodeEditor;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:liveChange liveChange} event of this <code>sap.ui.codeeditor.CodeEditor</code>.
@@ -61,7 +61,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLiveChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.codeeditor.CodeEditor;
+	public function detachLiveChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.codeeditor.CodeEditor;
 
 	/**
 	* Creates a new subclass of class sap.ui.codeeditor.CodeEditor with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -72,7 +72,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Sets the focus to the code editor
@@ -85,7 +85,7 @@ The passed function and listener object must match the ones used for event regis
 
 Sets the editors color theme Possible values are: default, hcb, hcb_bright, hcb_blue, theme-ambiance, chaos, chrome, clouds, clouds_midnight, cobalt, crimson_editor, dawn, dreamweaver, eclipse, github, gob, gruvbox, idle_fingers, iplastic, katzenmilch, kr_theme, kuroir, merbivore, merbivore_soft, mono_industrial, monokai, pastel_on_dark, solarized_dark, solarized_light, sqlserver, terminal, textmate, tomorrow, tomorrow_night, tomorrow_night_blue, tomorrow_night_bright, tomorrow_night_eighties, twilight, dracula vibrant_ink, xcode
 
-Default value is <code>default</code>.
+Default value is <code>"default"</code>.
 	* @return	Value of property <code>colorTheme</code>
 	*/
 	public function getColorTheme( ):String;
@@ -111,7 +111,7 @@ Default value is <code>true</code>.
 
 The height of the code editor. A minimal height of 3rem will be applied in case the height is less than 20px.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -159,7 +159,7 @@ Default value is <code>true</code>.
 
 The type of the code in the editor used for syntax highlighting Possible types are: abap, abc, actionscript, ada, apache_conf, applescript, asciidoc, assembly_x86, autohotkey, batchfile, bro, c9search, c_cpp, cirru, clojure, cobol, coffee, coldfusion, csharp, css, curly, d, dart, diff, django, dockerfile, dot, drools, eiffel, ejs, elixir, elm, erlang, forth, fortran, ftl, gcode, gherkin, gitignore, glsl, gobstones, golang, groovy, haml, handlebars, haskell, haskell_cabal, haxe, hjson, html, html_elixir, html_ruby, ini, io, jack, jade, java, javascript, json, jsoniq, jsp, jsx, julia, kotlin, latex, lean, less, liquid, lisp, live_script, livescript, logiql, lsl, lua, luapage, lucene, makefile, markdown, mask, matlab, mavens_mate_log, maze, mel, mips_assembler, mipsassembler, mushcode, mysql, nix, nsis, objectivec, ocaml, pascal, perl, pgsql, php, plain_text, powershell, praat, prolog, properties, protobuf, python, r, razor, rdoc, rhtml, rst, ruby, rust, sass, scad, scala, scheme, scss, sh, sjs, smarty, snippets, soy_template, space, sql, sqlserver, stylus, svg, swift, swig, tcl, tex, text, textile, toml, tsx, twig, typescript, vala, vbscript, velocity, verilog, vhdl, wollok, xml, xquery, yaml, terraform, slim, redshift, red, puppet, php_laravel_blade, mixal, jssm, fsharp, edifact, csp, cssound_score, cssound_orchestra, cssound_document,
 
-Default value is <code>javascript</code>.
+Default value is <code>"javascript"</code>.
 	* @return	Value of property <code>type</code>
 	*/
 	public function getType( ):String;
@@ -189,7 +189,7 @@ Default value is <code>false</code>.
 
 The width of the code editor
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -227,7 +227,7 @@ The height of the code editor. A minimal height of 3rem will be applied in case 
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -281,7 +281,7 @@ The type of the code in the editor used for syntax highlighting Possible types a
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>javascript</code>.
+Default value is <code>"javascript"</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -320,7 +320,7 @@ The width of the code editor
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

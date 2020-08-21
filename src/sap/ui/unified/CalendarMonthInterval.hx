@@ -45,7 +45,7 @@ Month selection was cancelled
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.CalendarMonthInterval</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCancel( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
+	public function attachCancel( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:select select} event of this <code>sap.ui.unified.CalendarMonthInterval</code>.
@@ -58,7 +58,7 @@ Month selection changed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.CalendarMonthInterval</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:startDateChange startDateChange} event of this <code>sap.ui.unified.CalendarMonthInterval</code>.
@@ -71,7 +71,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.CalendarMonthInterval</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachStartDateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
+	public function attachStartDateChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
 
 	/**
 	* Destroys all the selectedDates in the aggregation {@link #getSelectedDates selectedDates}.
@@ -93,7 +93,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCancel( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
+	public function detachCancel( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:select select} event of this <code>sap.ui.unified.CalendarMonthInterval</code>.
@@ -103,7 +103,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:startDateChange startDateChange} event of this <code>sap.ui.unified.CalendarMonthInterval</code>.
@@ -113,7 +113,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachStartDateChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
+	public function detachStartDateChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarMonthInterval;
 
 	/**
 	* Displays a month in the <code>CalendarMonthInterval</code> but doesn't set the focus.
@@ -131,7 +131,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Sets the focused month of the <code>CalendarMonthInterval</code>.
@@ -371,7 +371,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oMaxDate New value for property <code>maxDate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxDate( oMaxDate:Dynamic):sap.ui.unified.CalendarMonthInterval;
+	public function setMaxDate( ?oMaxDate:Dynamic):sap.ui.unified.CalendarMonthInterval;
 
 	/**
 	* Sets a new value for property {@link #getMinDate minDate}.
@@ -384,7 +384,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oMinDate New value for property <code>minDate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinDate( oMinDate:Dynamic):sap.ui.unified.CalendarMonthInterval;
+	public function setMinDate( ?oMinDate:Dynamic):sap.ui.unified.CalendarMonthInterval;
 
 	/**
 	* Sets a new value for property {@link #getMonths months}.
@@ -449,7 +449,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.unified.CalendarMonthInterval;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.unified.CalendarMonthInterval;
 }
 
 typedef CalendarMonthIntervalArgs = sap.ui.core.Control.ControlArgs & {

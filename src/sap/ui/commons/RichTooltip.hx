@@ -19,7 +19,7 @@ extern class RichTooltip extends sap.ui.core.TooltipBase
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getImageAltText imageAltText}.
@@ -66,7 +66,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sImageAltText New value for property <code>imageAltText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setImageAltText( sImageAltText:String):sap.ui.commons.RichTooltip;
+	public function setImageAltText( ?sImageAltText:String):sap.ui.commons.RichTooltip;
 
 	/**
 	* Sets a new value for property {@link #getImageSrc imageSrc}.
@@ -77,7 +77,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sImageSrc New value for property <code>imageSrc</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setImageSrc( sImageSrc:sap.ui.core.URI):sap.ui.commons.RichTooltip;
+	public function setImageSrc( ?sImageSrc:sap.ui.core.URI):sap.ui.commons.RichTooltip;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -88,7 +88,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.ui.commons.RichTooltip;
+	public function setTitle( ?sTitle:String):sap.ui.commons.RichTooltip;
 
 	/**
 	* This sets an individual text for the ValueState of the parent element of the RichTooltip.

@@ -35,7 +35,7 @@ Event fired when an active title of a <code>MessageItem</code> is clicked.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachActiveTitlePress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function attachActiveTitlePress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterClose afterClose} event of this <code>sap.m.MessagePopover</code>.
@@ -48,7 +48,7 @@ Event fired after the popover is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function attachAfterClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterOpen afterOpen} event of this <code>sap.m.MessagePopover</code>.
@@ -61,7 +61,7 @@ Event fired after the popover is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function attachAfterOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeClose beforeClose} event of this <code>sap.m.MessagePopover</code>.
@@ -74,7 +74,7 @@ Event fired before the popover is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function attachBeforeClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.MessagePopover</code>.
@@ -87,7 +87,7 @@ Event fired before the popover is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:itemSelect itemSelect} event of this <code>sap.m.MessagePopover</code>.
@@ -100,7 +100,7 @@ Event fired when description is shown.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachItemSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function attachItemSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:listSelect listSelect} event of this <code>sap.m.MessagePopover</code>.
@@ -113,7 +113,7 @@ Event fired when one of the lists is shown when (not) filtered by type.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachListSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function attachListSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:longtextLoaded longtextLoaded} event of this <code>sap.m.MessagePopover</code>.
@@ -126,7 +126,7 @@ Event fired when the long text description data from a remote URL is loaded.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLongtextLoaded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function attachLongtextLoaded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:urlValidated urlValidated} event of this <code>sap.m.MessagePopover</code>.
@@ -139,7 +139,7 @@ Event fired when a validation of a URL from long text description is ready.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePopover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUrlValidated( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function attachUrlValidated( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Closes the MessagePopover
@@ -167,7 +167,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachActiveTitlePress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function detachActiveTitlePress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterClose afterClose} event of this <code>sap.m.MessagePopover</code>.
@@ -177,7 +177,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function detachAfterClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterOpen afterOpen} event of this <code>sap.m.MessagePopover</code>.
@@ -187,7 +187,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function detachAfterOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeClose beforeClose} event of this <code>sap.m.MessagePopover</code>.
@@ -197,7 +197,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function detachBeforeClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.MessagePopover</code>.
@@ -207,7 +207,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function detachBeforeOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:itemSelect itemSelect} event of this <code>sap.m.MessagePopover</code>.
@@ -217,7 +217,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachItemSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function detachItemSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:listSelect listSelect} event of this <code>sap.m.MessagePopover</code>.
@@ -227,7 +227,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachListSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function detachListSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:longtextLoaded longtextLoaded} event of this <code>sap.m.MessagePopover</code>.
@@ -237,7 +237,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLongtextLoaded( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function detachLongtextLoaded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:urlValidated urlValidated} event of this <code>sap.m.MessagePopover</code>.
@@ -247,7 +247,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUrlValidated( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePopover;
+	public function detachUrlValidated( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Creates a new subclass of class sap.m.MessagePopover with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -258,7 +258,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAsyncDescriptionHandler asyncDescriptionHandler}.
@@ -323,7 +323,7 @@ A list with message items.
 
 Determines the position, where the control will appear on the screen. The default value is <code>sap.m.VerticalPlacementType.Vertical</code>. Setting this property while the control is open, will not cause any re-rendering and changing of the position. Changes will only be applied with the next interaction.
 
-Default value is <code>Vertical</code>.
+Default value is <code>"Vertical"</code>.
 	* @return	Value of property <code>placement</code>
 	*/
 	public function getPlacement( ):sap.m.VerticalPlacementType;
@@ -391,7 +391,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oAsyncDescriptionHandler New value for property <code>asyncDescriptionHandler</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAsyncDescriptionHandler( oAsyncDescriptionHandler:Dynamic):sap.m.MessagePopover;
+	public function setAsyncDescriptionHandler( ?oAsyncDescriptionHandler:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Sets a new value for property {@link #getAsyncURLHandler asyncURLHandler}.
@@ -402,7 +402,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oAsyncURLHandler New value for property <code>asyncURLHandler</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAsyncURLHandler( oAsyncURLHandler:Dynamic):sap.m.MessagePopover;
+	public function setAsyncURLHandler( ?oAsyncURLHandler:Dynamic):sap.m.MessagePopover;
 
 	/**
 	* Sets a new value for property {@link #getGroupItems groupItems}.
@@ -444,7 +444,7 @@ Determines the position, where the control will appear on the screen. The defaul
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Vertical</code>.
+Default value is <code>"Vertical"</code>.
 	* @param	sPlacement New value for property <code>placement</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

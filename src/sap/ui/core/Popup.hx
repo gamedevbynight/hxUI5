@@ -65,7 +65,7 @@ The event gets triggered in case of modal popups when the first of multiple popu
 	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
 	* @return	Void
 	*/
-	public static function attachBlockLayerStateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public static function attachBlockLayerStateChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:closed closed} event of this <code>sap.ui.core.Popup</code>.
@@ -76,7 +76,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.Popup</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachClosed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Popup;
+	public function attachClosed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Popup;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:opened opened} event of this <code>sap.ui.core.Popup</code>.
@@ -87,7 +87,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.Popup</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachOpened( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Popup;
+	public function attachOpened( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Popup;
 
 	/**
 	* Closes the popup.
@@ -112,7 +112,7 @@ The event gets triggered in case of modal popups when the first of multiple popu
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
-	public static function detachBlockLayerStateChange( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public static function detachBlockLayerStateChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:closed closed} event of this <code>sap.ui.core.Popup</code>.
@@ -122,7 +122,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachClosed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Popup;
+	public function detachClosed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Popup;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:opened opened} event of this <code>sap.ui.core.Popup</code>.
@@ -132,7 +132,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachOpened( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Popup;
+	public function detachOpened( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Popup;
 
 	/**
 	* When the Popup is being destroyed all corresponding references should be deleted as well to prevent any memory leaks.
@@ -149,7 +149,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Determines whether the pop-up should auto closes or not.
@@ -255,7 +255,7 @@ The default query selector <code>[data-sap-ui-integration-popup-content]</code> 
 	* @param	fnClose null
 	* @return	<code>this</code> to allow method chaining
 	*/
-	public function setAnimations( fnOpen:()->Void, fnClose:()->Void):sap.ui.core.Popup;
+	public function setAnimations( fnOpen:(Dynamic)->Void, fnClose:(Dynamic)->Void):sap.ui.core.Popup;
 
 	/**
 	* Used to specify whether the Popup should close as soon as - for non-touch environment: the focus leaves - for touch environment: user clicks the area which is outside the popup itself, the DOM element which the popup aligns to (except document), and any extra popup content set by calling setExtraContent.
@@ -293,7 +293,7 @@ A popup with modal {@link #setModal} enabled allows the focus to be shifted into
 	*/
 	public function setExtraContent( aContent:Array<String>):sap.ui.core.Popup;
 	@:overload( function(followOf:Bool):Void{ })
-	@:overload( function(followOf:()->Void):Void{ })
+	@:overload( function(followOf:(Dynamic)->Void):Void{ })
 
 	/**
 	* This enabled/disables the Popup to follow its opening reference. If the Popup is open and a followOf should be set the corresponding listener will be attached.

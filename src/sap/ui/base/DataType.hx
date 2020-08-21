@@ -147,6 +147,6 @@ This method allows applications or application frameworks to plug-in a generic v
 	* @param	fnNormalizer Function to apply for normalizing
 	* @return	Void
 	*/
-	public function setNormalizer( fnNormalizer:()->Void):Void;
+	public function setNormalizer( fnNormalizer:(Dynamic)->Void):Void;
 }
 

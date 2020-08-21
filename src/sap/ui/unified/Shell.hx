@@ -89,7 +89,7 @@ extern class Shell extends sap.ui.unified.ShellLayout
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getCurtainContent curtainContent}.
@@ -307,7 +307,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.ui.unified.Shell;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.ui.unified.Shell;
 
 	/**
 	* Sets the aggregated {@link #getSearch search}.

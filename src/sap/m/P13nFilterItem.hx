@@ -19,7 +19,7 @@ extern class P13nFilterItem extends sap.ui.core.Item
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColumnKey columnKey}.
@@ -78,7 +78,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sColumnKey New value for property <code>columnKey</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnKey( sColumnKey:String):sap.m.P13nFilterItem;
+	public function setColumnKey( ?sColumnKey:String):sap.m.P13nFilterItem;
 
 	/**
 	* Sets a new value for property {@link #getExclude exclude}.
@@ -102,7 +102,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sOperation New value for property <code>operation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setOperation( sOperation:String):sap.m.P13nFilterItem;
+	public function setOperation( ?sOperation:String):sap.m.P13nFilterItem;
 
 	/**
 	* Sets a new value for property {@link #getValue1 value1}.
@@ -113,7 +113,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValue1 New value for property <code>value1</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue1( sValue1:String):sap.m.P13nFilterItem;
+	public function setValue1( ?sValue1:String):sap.m.P13nFilterItem;
 
 	/**
 	* Sets a new value for property {@link #getValue2 value2}.
@@ -124,7 +124,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValue2 New value for property <code>value2</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue2( sValue2:String):sap.m.P13nFilterItem;
+	public function setValue2( ?sValue2:String):sap.m.P13nFilterItem;
 }
 
 typedef P13nFilterItemArgs = sap.ui.core.Item.ItemArgs & {

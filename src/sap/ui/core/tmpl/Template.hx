@@ -31,7 +31,7 @@ extern class Template extends sap.ui.base.ManagedObject
 	* @param	sControl the fully qualified name of the control
 	* @return	the created class / constructor function
 	*/
-	public function declareControl( sControl:String):()->Void;
+	public function declareControl( sControl:String):(Dynamic)->Void;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.tmpl.Template with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,7 +42,7 @@ extern class Template extends sap.ui.base.ManagedObject
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getContent content}.
@@ -88,7 +88,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sContent New value for property <code>content</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContent( sContent:String):sap.ui.core.tmpl.Template;
+	public function setContent( ?sContent:String):sap.ui.core.tmpl.Template;
 }
 
 typedef TemplateArgs = sap.ui.base.ManagedObject.ManagedObjectArgs & {

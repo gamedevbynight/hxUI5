@@ -71,7 +71,7 @@ The properties can also be defined in the descriptor. These properties can be ov
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns an existing component instance, identified by its ID.
@@ -210,7 +210,7 @@ To optimize the loading process, additional <code>asyncHints</code> can be provi
 	* @param	mOptions Configuration options
 	* @return	A Promise that resolves with the loaded component class or <code>undefined</code> in case <code>mOptions.asyncHints.preloadOnly</code> is set to <code>true</code>
 	*/
-	public static function load( mOptions:Dynamic):js.lib.Promise<()->Void>;
+	public static function load( mOptions:Dynamic):js.lib.Promise<(Dynamic)->Void>;
 
 	/**
 	* The hook which gets called when the static configuration of the component has been changed by some configuration extension.
@@ -247,7 +247,7 @@ Nested calls of this method are supported (e.g. inside a newly created, nested c
 	* @param	fn Function to execute
 	* @return	result of function <code>fn</code>
 	*/
-	public function runAsOwner( fn:()->Void):Dynamic;
+	public function runAsOwner( fn:(Dynamic)->Void):Dynamic;
 }
 
 typedef ComponentArgs = sap.ui.base.ManagedObject.ManagedObjectArgs & {

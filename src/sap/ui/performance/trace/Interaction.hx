@@ -11,7 +11,7 @@ To filter for certain categories of measurements a fnFilter can be implemented l
 	* @param	fnFilter a filter function that returns true if the passed measurement should be added to the result
 	* @return	all interaction measurements passing the filter function successfully
 	*/
-	public static function filter( fnFilter:()->Void):Array<Dynamic>;
+	public static function filter( fnFilter:(Dynamic)->Void):Array<Dynamic>;
 
 	/**
 	* Returns true if the interaction detection was enabled explicitly, or implicitly along with fesr.

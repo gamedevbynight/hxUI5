@@ -28,7 +28,7 @@ This event is fired before a carousel swipe has been completed. It is triggered 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Carousel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforePageChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Carousel;
+	public function attachBeforePageChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Carousel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:pageChanged pageChanged} event of this <code>sap.m.Carousel</code>.
@@ -41,7 +41,7 @@ This event is fired after a carousel swipe has been completed. It is triggered b
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Carousel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPageChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Carousel;
+	public function attachPageChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Carousel;
 
 	/**
 	* Destroys the customLayout in the aggregation {@link #getCustomLayout customLayout}.
@@ -63,7 +63,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforePageChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Carousel;
+	public function detachBeforePageChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Carousel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:pageChanged pageChanged} event of this <code>sap.m.Carousel</code>.
@@ -73,7 +73,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPageChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Carousel;
+	public function detachPageChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Carousel;
 
 	/**
 	* Creates a new subclass of class sap.m.Carousel with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -84,7 +84,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* ID of the element which is the current target of the association {@link #getActivePage activePage}, or <code>null</code>.
@@ -117,7 +117,7 @@ Defines how many pages are displayed in the visible area of the <code>Carousel</
 
 The height of the carousel. Note that when a percentage value is used, the height of the surrounding container must be defined.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -171,7 +171,7 @@ Default value is <code>true</code>.
 
 The width of the carousel. Note that when a percentage value is used, the height of the surrounding container must be defined.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -255,7 +255,7 @@ The height of the carousel. Note that when a percentage value is used, the heigh
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -307,7 +307,7 @@ The width of the carousel. Note that when a percentage value is used, the height
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

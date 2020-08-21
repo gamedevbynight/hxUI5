@@ -19,7 +19,7 @@ extern class FlexItemData extends sap.ui.core.LayoutData
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAlignSelf alignSelf}.
@@ -46,7 +46,7 @@ Default value is <code>Transparent</code>.
 
 The base size is the initial main size of the item for the flex algorithm. If set to "auto", this will be the computed size of the item.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @return	Value of property <code>baseSize</code>
 	*/
 	public function getBaseSize( ):sap.ui.core.CSSSize;
@@ -92,7 +92,7 @@ Default value is <code>empty string</code>.
 
 The minimum height of the flex item.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>minHeight</code>
 	*/
 	public function getMinHeight( ):sap.ui.core.CSSSize;
@@ -102,7 +102,7 @@ Default value is <code>auto</code>.
 
 The minimum width of the flex item.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>minWidth</code>
 	*/
 	public function getMinWidth( ):sap.ui.core.CSSSize;

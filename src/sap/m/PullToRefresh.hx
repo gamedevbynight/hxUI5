@@ -21,7 +21,7 @@ Event indicates that the user has requested new data
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PullToRefresh</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRefresh( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PullToRefresh;
+	public function attachRefresh( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PullToRefresh;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:refresh refresh} event of this <code>sap.m.PullToRefresh</code>.
@@ -31,7 +31,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRefresh( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PullToRefresh;
+	public function detachRefresh( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PullToRefresh;
 
 	/**
 	* Creates a new subclass of class sap.m.PullToRefresh with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,7 +42,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getCustomIcon customIcon}.
@@ -103,7 +103,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sCustomIcon New value for property <code>customIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCustomIcon( sCustomIcon:sap.ui.core.URI):sap.m.PullToRefresh;
+	public function setCustomIcon( ?sCustomIcon:sap.ui.core.URI):sap.m.PullToRefresh;
 
 	/**
 	* Sets a new value for property {@link #getDescription description}.
@@ -114,7 +114,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDescription( sDescription:String):sap.m.PullToRefresh;
+	public function setDescription( ?sDescription:String):sap.m.PullToRefresh;
 
 	/**
 	* Sets a new value for property {@link #getIconDensityAware iconDensityAware}.

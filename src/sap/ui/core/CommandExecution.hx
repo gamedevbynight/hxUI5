@@ -20,7 +20,7 @@ Execute will be fired when the CommandExecution will be triggered.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.CommandExecution</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachExecute( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.CommandExecution;
+	public function attachExecute( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.CommandExecution;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:execute execute} event of this <code>sap.ui.core.CommandExecution</code>.
@@ -30,7 +30,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachExecute( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.CommandExecution;
+	public function detachExecute( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.CommandExecution;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.CommandExecution with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -41,7 +41,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getCommand command}.

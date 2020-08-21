@@ -19,7 +19,7 @@ extern class MessageList extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAnchorId anchorId}.
@@ -34,7 +34,7 @@ ID of the anchor under which the MessageList will render.
 
 Maximum number of messages being display in the List before a scrollbar appears. Value '0' means no limit.
 
-Default value is <code>7</code>.
+Default value is <code>'7'</code>.
 	* @return	Value of property <code>maxListed</code>
 	*/
 	public function getMaxListed( ):String;
@@ -64,7 +64,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sAnchorId New value for property <code>anchorId</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAnchorId( sAnchorId:String):sap.ui.commons.MessageList;
+	public function setAnchorId( ?sAnchorId:String):sap.ui.commons.MessageList;
 
 	/**
 	* Sets a new value for property {@link #getMaxListed maxListed}.
@@ -73,7 +73,7 @@ Maximum number of messages being display in the List before a scrollbar appears.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>7</code>.
+Default value is <code>'7'</code>.
 	* @param	sMaxListed New value for property <code>maxListed</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

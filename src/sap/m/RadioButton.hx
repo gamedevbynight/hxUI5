@@ -48,7 +48,7 @@ Event is triggered when the user makes a change on the radio button (selecting o
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.RadioButton</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.RadioButton;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.RadioButton;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:select select} event of this <code>sap.m.RadioButton</code>.
@@ -58,7 +58,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.RadioButton;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.RadioButton;
 
 	/**
 	* Destroys all related objects to the RadioButton
@@ -75,7 +75,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActiveHandling activeHandling}.
@@ -124,7 +124,7 @@ Default value is <code>true</code>.
 
 Name of the radio button group the current radio button belongs to. You can define a new name for the group. If no new name is specified, this radio button belongs to the sapMRbDefaultGroup per default. Default behavior of a radio button in a group is that when one of the radio buttons in a group is selected, all others are unselected.
 
-Default value is <code>sapMRbDefaultGroup</code>.
+Default value is <code>'sapMRbDefaultGroup'</code>.
 	* @return	Value of property <code>groupName</code>
 	*/
 	public function getGroupName( ):String;
@@ -286,7 +286,7 @@ Name of the radio button group the current radio button belongs to. You can defi
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>sapMRbDefaultGroup</code>.
+Default value is <code>'sapMRbDefaultGroup'</code>.
 	* @param	sGroupName New value for property <code>groupName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -308,7 +308,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.RadioButton;
+	public function setText( ?sText:String):sap.m.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getTextAlign textAlign}.
@@ -370,7 +370,7 @@ Width of the RadioButton or it's label depending on the useEntireWidth property.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth= New value for property <code>width</code>
+	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.RadioButton;

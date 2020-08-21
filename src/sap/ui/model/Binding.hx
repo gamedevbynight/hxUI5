@@ -26,7 +26,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.model.Binding</code> itself
 	* @return	Void
 	*/
-	public function attachChange( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function attachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:dataReceived dataReceived} event of this <code>sap.ui.model.Binding</code>.
@@ -36,7 +36,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.model.Binding</code> itself
 	* @return	Void
 	*/
-	public function attachDataReceived( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function attachDataReceived( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:dataRequested dataRequested} event of this <code>sap.ui.model.Binding</code>.
@@ -46,7 +46,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.model.Binding</code> itself
 	* @return	Void
 	*/
-	public function attachDataRequested( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function attachDataRequested( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Removes all control messages for this binding from the MessageManager in addition to the standard clean-up tasks.
@@ -60,7 +60,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:dataReceived dataReceived} event of this <code>sap.ui.model.Binding</code>.
@@ -68,7 +68,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
-	public function detachDataReceived( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function detachDataReceived( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:dataRequested dataRequested} event of this <code>sap.ui.model.Binding</code>.
@@ -76,7 +76,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
-	public function detachDataRequested( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function detachDataRequested( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.Binding with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -87,7 +87,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the model context in which this binding will be resolved.

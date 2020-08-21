@@ -19,7 +19,7 @@ extern class ProgressIndicator extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBarColor barColor}.
@@ -36,7 +36,7 @@ Default value is <code>NEUTRAL</code>.
 
 Determines the text value that will be displayed in the bar.
 
-Default value is <code>0%</code>.
+Default value is <code>'0%'</code>.
 	* @return	Value of property <code>displayValue</code>
 	*/
 	public function getDisplayValue( ):String;
@@ -82,7 +82,7 @@ Default value is <code>true</code>.
 
 Determines the width of the control.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -107,7 +107,7 @@ Determines the text value that will be displayed in the bar.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>0%</code>.
+Default value is <code>'0%'</code>.
 	* @param	sDisplayValue New value for property <code>displayValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -153,7 +153,7 @@ Determines the width of the control.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

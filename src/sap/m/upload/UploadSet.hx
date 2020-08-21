@@ -42,7 +42,7 @@ This event is fired when a new file is added to the set of items to be uploaded.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterItemAdded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachAfterItemAdded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeItemAdded beforeItemAdded} event of this <code>sap.m.upload.UploadSet</code>.
@@ -55,7 +55,7 @@ This event is fired just before a new file is added to the set of items to be up
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeItemAdded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachBeforeItemAdded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeItemEdited beforeItemEdited} event of this <code>sap.m.upload.UploadSet</code>.
@@ -68,7 +68,7 @@ This event is fired when the edit button is clicked for an item and no other ite
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeItemEdited( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachBeforeItemEdited( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeItemRemoved beforeItemRemoved} event of this <code>sap.m.upload.UploadSet</code>.
@@ -81,7 +81,7 @@ This event is fired just before the confirmation dialog for 'Remove' action is d
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeItemRemoved( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachBeforeItemRemoved( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeUploadStarts beforeUploadStarts} event of this <code>sap.m.upload.UploadSet</code>.
@@ -94,7 +94,7 @@ This event is fired right before the upload process begins.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeUploadStarts( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachBeforeUploadStarts( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeUploadTermination beforeUploadTermination} event of this <code>sap.m.upload.UploadSet</code>.
@@ -107,7 +107,7 @@ This event is fired right before the upload is terminated.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeUploadTermination( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachBeforeUploadTermination( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:fileNameLengthExceeded fileNameLengthExceeded} event of this <code>sap.m.upload.UploadSet</code>.
@@ -120,7 +120,7 @@ This event is fired in either of the following cases: <ul> <li>When a file that 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFileNameLengthExceeded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachFileNameLengthExceeded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:fileSizeExceeded fileSizeExceeded} event of this <code>sap.m.upload.UploadSet</code>.
@@ -133,7 +133,7 @@ This event is fired in either of the following cases: <ul> <li>When a file that 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFileSizeExceeded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachFileSizeExceeded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:fileTypeMismatch fileTypeMismatch} event of this <code>sap.m.upload.UploadSet</code>.
@@ -146,7 +146,7 @@ This event is fired in either of the following cases: <ul> <li>When a file that 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFileTypeMismatch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachFileTypeMismatch( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:mediaTypeMismatch mediaTypeMismatch} event of this <code>sap.m.upload.UploadSet</code>.
@@ -159,7 +159,7 @@ This event is fired in either of the following cases: <ul> <li>When a file that 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMediaTypeMismatch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachMediaTypeMismatch( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:selectionChanged selectionChanged} event of this <code>sap.m.upload.UploadSet</code>.
@@ -172,7 +172,7 @@ This event is fired simultaneously with the respective event in the inner {@link
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelectionChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachSelectionChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadCompleted uploadCompleted} event of this <code>sap.m.upload.UploadSet</code>.
@@ -185,7 +185,7 @@ This event is fired right after the upload process is finished.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadCompleted( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachUploadCompleted( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadTerminated uploadTerminated} event of this <code>sap.m.upload.UploadSet</code>.
@@ -198,7 +198,7 @@ This event is fired right after the upload is terminated.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadTerminated( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function attachUploadTerminated( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Destroys all the headerFields in the aggregation {@link #getHeaderFields headerFields}.
@@ -238,7 +238,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterItemAdded( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachAfterItemAdded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeItemAdded beforeItemAdded} event of this <code>sap.m.upload.UploadSet</code>.
@@ -248,7 +248,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeItemAdded( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachBeforeItemAdded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeItemEdited beforeItemEdited} event of this <code>sap.m.upload.UploadSet</code>.
@@ -258,7 +258,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeItemEdited( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachBeforeItemEdited( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeItemRemoved beforeItemRemoved} event of this <code>sap.m.upload.UploadSet</code>.
@@ -268,7 +268,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeItemRemoved( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachBeforeItemRemoved( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeUploadStarts beforeUploadStarts} event of this <code>sap.m.upload.UploadSet</code>.
@@ -278,7 +278,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeUploadStarts( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachBeforeUploadStarts( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeUploadTermination beforeUploadTermination} event of this <code>sap.m.upload.UploadSet</code>.
@@ -288,7 +288,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeUploadTermination( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachBeforeUploadTermination( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:fileNameLengthExceeded fileNameLengthExceeded} event of this <code>sap.m.upload.UploadSet</code>.
@@ -298,7 +298,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFileNameLengthExceeded( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachFileNameLengthExceeded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:fileSizeExceeded fileSizeExceeded} event of this <code>sap.m.upload.UploadSet</code>.
@@ -308,7 +308,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFileSizeExceeded( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachFileSizeExceeded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:fileTypeMismatch fileTypeMismatch} event of this <code>sap.m.upload.UploadSet</code>.
@@ -318,7 +318,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFileTypeMismatch( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachFileTypeMismatch( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:mediaTypeMismatch mediaTypeMismatch} event of this <code>sap.m.upload.UploadSet</code>.
@@ -328,7 +328,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMediaTypeMismatch( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachMediaTypeMismatch( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:selectionChanged selectionChanged} event of this <code>sap.m.upload.UploadSet</code>.
@@ -338,7 +338,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelectionChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachSelectionChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadCompleted uploadCompleted} event of this <code>sap.m.upload.UploadSet</code>.
@@ -348,7 +348,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadCompleted( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachUploadCompleted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadTerminated uploadTerminated} event of this <code>sap.m.upload.UploadSet</code>.
@@ -358,7 +358,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadTerminated( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
+	public function detachUploadTerminated( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSet;
 
 	/**
 	* Creates a new subclass of class sap.m.upload.UploadSet with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -369,7 +369,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns an instance of the default <code>sap.ui.unified.FileUploader</code> used for adding files using the operating system's open file dialog, so that it can be customized, for example made invisible or assigned a different icon.
@@ -637,7 +637,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFileTypes New value for property <code>fileTypes</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFileTypes( sFileTypes:Array<String>):sap.m.upload.UploadSet;
+	public function setFileTypes( ?sFileTypes:Array<String>):sap.m.upload.UploadSet;
 
 	/**
 	* Sets a new value for property {@link #getInstantUpload instantUpload}.
@@ -661,7 +661,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iMaxFileNameLength New value for property <code>maxFileNameLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxFileNameLength( iMaxFileNameLength:Int):sap.m.upload.UploadSet;
+	public function setMaxFileNameLength( ?iMaxFileNameLength:Int):sap.m.upload.UploadSet;
 
 	/**
 	* Sets a new value for property {@link #getMaxFileSize maxFileSize}.
@@ -672,7 +672,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	fMaxFileSize New value for property <code>maxFileSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxFileSize( fMaxFileSize:Float):sap.m.upload.UploadSet;
+	public function setMaxFileSize( ?fMaxFileSize:Float):sap.m.upload.UploadSet;
 
 	/**
 	* Sets a new value for property {@link #getMediaTypes mediaTypes}.
@@ -683,7 +683,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMediaTypes New value for property <code>mediaTypes</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMediaTypes( sMediaTypes:Array<String>):sap.m.upload.UploadSet;
+	public function setMediaTypes( ?sMediaTypes:Array<String>):sap.m.upload.UploadSet;
 
 	/**
 	* Sets a new value for property {@link #getNoDataDescription noDataDescription}.
@@ -694,7 +694,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNoDataDescription New value for property <code>noDataDescription</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNoDataDescription( sNoDataDescription:String):sap.m.upload.UploadSet;
+	public function setNoDataDescription( ?sNoDataDescription:String):sap.m.upload.UploadSet;
 
 	/**
 	* Sets a new value for property {@link #getNoDataText noDataText}.
@@ -705,7 +705,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNoDataText New value for property <code>noDataText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNoDataText( sNoDataText:String):sap.m.upload.UploadSet;
+	public function setNoDataText( ?sNoDataText:String):sap.m.upload.UploadSet;
 
 	/**
 	* Sets a new value for property {@link #getShowIcons showIcons}.
@@ -769,7 +769,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUploadUrl New value for property <code>uploadUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUploadUrl( sUploadUrl:String):sap.m.upload.UploadSet;
+	public function setUploadUrl( ?sUploadUrl:String):sap.m.upload.UploadSet;
 
 	/**
 	* Starts uploading all files that comply with the restrictions defined in the <code>fileTypes</code>, <code>maxFileNameLength</code>, <code>maxFileSize</code>, and <code>mediaTypes</code> properties. <br>This method works only when the <code>uploadEnabled</code> property is set to <code>true</code>.

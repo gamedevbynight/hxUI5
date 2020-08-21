@@ -19,7 +19,7 @@ extern class RowSettings extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getHighlight highlight}.
@@ -30,7 +30,7 @@ If the highlight is set to {@link sap.ui.core.MessageType sap.ui.core.MessageTyp
 
 Accessibility support is provided through the associated {@link sap.ui.table.RowSettings#setHighlightText highlightText} property. If the <code>highlight</code> property is set to a value of {@link sap.ui.core.MessageType}, the <code>highlightText</code> property does not need to be set because a default text is used. However, the default text can be overridden by setting the <code>highlightText</code> property. In all other cases the <code>highlightText</code> property must be set.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @return	Value of property <code>highlight</code>
 	*/
 	public function getHighlight( ):String;
@@ -74,7 +74,7 @@ Accessibility support is provided through the associated {@link sap.ui.table.Row
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @param	sHighlight New value for property <code>highlight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

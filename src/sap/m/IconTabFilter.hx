@@ -45,7 +45,7 @@ extern class IconTabFilter extends sap.ui.core.Item implements sap.m.IconTab imp
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.
@@ -243,7 +243,7 @@ Specifies the icon to be displayed for the tab filter.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon= New value for property <code>icon</code>
+	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.IconTabFilter;

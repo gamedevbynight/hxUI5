@@ -14,7 +14,7 @@ extern class ODataListBinding extends sap.ui.model.ListBinding
 	* @param	oListener Object on which to call the given function
 	* @return	Void
 	*/
-	public function attachCreateCompleted( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function attachCreateCompleted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Attach event handler <code>fnFunction</code> to the 'createSent' event of this binding.
@@ -22,7 +22,7 @@ extern class ODataListBinding extends sap.ui.model.ListBinding
 	* @param	oListener Object on which to call the given function
 	* @return	Void
 	*/
-	public function attachCreateSent( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function attachCreateSent( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Attach event handler <code>fnFunction</code> to the 'patchCompleted' event of this binding.
@@ -30,7 +30,7 @@ extern class ODataListBinding extends sap.ui.model.ListBinding
 	* @param	oListener Object on which to call the given function
 	* @return	Void
 	*/
-	public function attachPatchCompleted( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function attachPatchCompleted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Attach event handler <code>fnFunction</code> to the 'patchSent' event of this binding.
@@ -38,7 +38,7 @@ extern class ODataListBinding extends sap.ui.model.ListBinding
 	* @param	oListener Object on which to call the given function
 	* @return	Void
 	*/
-	public function attachPatchSent( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function attachPatchSent( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Changes this binding's parameters and refreshes the binding.
@@ -54,7 +54,7 @@ The parameters are changed according to the given map of parameters: Parameters 
 	/**
 	* Creates a new entity and inserts it at the start or the end of the list.
 
-For creating the new entity, the binding's update group ID is used, see binding parameter $$updateGroupId of {@link sap.ui.model.odata.v4.ODataModel#bindList}.
+For creating the new entity, the binding's update group ID is used, see {@link #getUpdateGroupId}.
 
 You can call {@link sap.ui.model.odata.v4.Context#delete} to delete the created context again. As long as the context is transient (see {@link sap.ui.model.odata.v4.Context#isTransient}), {@link #resetChanges} and a call to {@link sap.ui.model.odata.v4.ODataModel#resetChanges} with the update group ID as parameter also delete the created context together with other changes.
 
@@ -90,7 +90,7 @@ Note: Creating at the end is only allowed if the final length of the binding is 
 	* @param	oListener Object on which to call the given function
 	* @return	Void
 	*/
-	public function detachCreateCompleted( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function detachCreateCompleted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Detach event handler <code>fnFunction</code> from the 'createSent' event of this binding.
@@ -98,7 +98,7 @@ Note: Creating at the end is only allowed if the final length of the binding is 
 	* @param	oListener Object on which to call the given function
 	* @return	Void
 	*/
-	public function detachCreateSent( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function detachCreateSent( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Detach event handler <code>fnFunction</code> from the 'patchCompleted' event of this binding.
@@ -106,7 +106,7 @@ Note: Creating at the end is only allowed if the final length of the binding is 
 	* @param	oListener Object on which to call the given function
 	* @return	Void
 	*/
-	public function detachPatchCompleted( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function detachPatchCompleted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Detach event handler <code>fnFunction</code> from the 'patchSent' event of this binding.
@@ -114,7 +114,7 @@ Note: Creating at the end is only allowed if the final length of the binding is 
 	* @param	oListener Object on which to call the given function
 	* @return	Void
 	*/
-	public function detachPatchSent( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function detachPatchSent( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.odata.v4.ODataListBinding with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -125,7 +125,7 @@ Note: Creating at the end is only allowed if the final length of the binding is 
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 	@:overload( function(?vFilters:sap.ui.model.Filter, ?sFilterType:sap.ui.model.FilterType):sap.ui.model.odata.v4.ODataListBinding{ })
 
 	/**
@@ -163,6 +163,12 @@ Additionally, you must be aware of server-driven paging and be ready to send a f
 	public function getDownloadUrl( ):String;
 
 	/**
+	* Returns the group ID of the binding that is used for read requests. The group ID of the binding is alternatively defined by <ul> <li>the <code>groupId</code> parameter of the OData model; see {@link sap.ui.model.odata.v4.ODataModel#constructor},</li> <li>the <code>$$groupId</code> binding parameter; see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}.</li> </ul>
+	* @return	The group ID
+	*/
+	public function getGroupId( ):String;
+
+	/**
 	* Returns the header context which allows binding to <code>$count</code>. If known, the value of such a binding is the sum of the element count of the collection on the server and the number of transient entities created on the client. Otherwise it is <code>undefined</code>. The value is a number and its type is <code>Edm.Int64</code>.
 
 The count is known to the binding in the following situations: <ul> <li>The server-side count has been requested via the system query option <code>$count</code>. <li>A "short read" in a paged collection (the server delivered less elements than requested) indicated that the server has no more unread elements. <li>It has been read completely in one request, for example an embedded collection via <code>$expand</code>. </ul>
@@ -198,6 +204,12 @@ The <code>$count</code> is unknown, if the binding is relative, but has no conte
 	public function getRootBinding( ):Dynamic;
 
 	/**
+	* Returns the group ID of the binding that is used for update requests. The update group ID of the binding is alternatively defined by <ul> <li>the <code>updateGroupId</code> parameter of the OData model; see {@link sap.ui.model.odata.v4.ODataModel#constructor},</li> <li>the <code>$$updateGroupId</code> binding parameter; see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}.</li> </ul>
+	* @return	The update group ID
+	*/
+	public function getUpdateGroupId( ):String;
+
+	/**
 	* Returns <code>true</code> if this binding or its dependent bindings have pending property changes or created entities which have not been sent successfully to the server. This function does not take into account the deletion of entities (see {@link sap.ui.model.odata.v4.Context#delete}) and the execution of OData operations (see {@link sap.ui.model.odata.v4.ODataContextBinding#execute}).
 
 Note: If this binding is relative, its data is cached separately for each parent context path. This method returns <code>true</code> if there are pending changes for the current parent context path of this binding. If this binding is unresolved (see {@link sap.ui.model.Binding#isResolved}), it returns <code>false</code>.
@@ -225,7 +237,7 @@ Refresh is supported for bindings which are not relative to a {@link sap.ui.mode
 Note: When calling {@link #refresh} multiple times, the result of the request triggered by the last call determines the binding's data; it is <b>independent</b> of the order of calls to {@link sap.ui.model.odata.v4.ODataModel#submitBatch} with the given group ID.
 
 If there are pending changes, an error is thrown. Use {@link #hasPendingChanges} to check if there are pending changes. If there are changes, call {@link sap.ui.model.odata.v4.ODataModel#submitBatch} to submit the changes or {@link sap.ui.model.odata.v4.ODataModel#resetChanges} to reset the changes before calling {@link #refresh}.
-	* @param	sGroupId The group ID to be used for refresh; if not specified, the binding's group ID is used. For suspended bindings, only the binding's group ID is supported because {@link #resume} uses the binding's group ID.
+	* @param	sGroupId The group ID to be used for refresh; if not specified, the binding's group ID is used, see {@link #getGroupId}. For suspended bindings, only the binding's group ID is supported because {@link #resume} uses the binding's group ID.
 
 Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or application group IDs as specified in {@link sap.ui.model.odata.v4.ODataModel}.
 	* @return	Void
@@ -236,7 +248,7 @@ Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or applic
 	* Requests the entities for the given index range of the binding's collection and resolves with the corresponding contexts.
 	* @param	iStart The index where to start the retrieval of contexts; must be greater than or equal to 0
 	* @param	iLength The number of contexts to retrieve beginning from the start index; defaults to the model's size limit, see {@link sap.ui.model.Model#setSizeLimit}; must be greater than 0, <code>Infinity</code> may be used to retrieve all data
-	* @param	sGroupId The group ID to be used for the request; if not specified, the group ID for this binding is used, see {@link sap.ui.model.odata.v4.ODataListBinding#constructor}. Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or application group IDs as specified in {@link sap.ui.model.odata.v4.ODataModel}.
+	* @param	sGroupId The group ID to be used for the request; if not specified, the group ID for this binding is used, see {@link #getGroupId}. Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or application group IDs as specified in {@link sap.ui.model.odata.v4.ODataModel}.
 	* @return	A promise which is resolved with the array of the contexts, the first entry containing the context for <code>iStart</code>; it is rejected if <code>iStart</code> or <code>iLength</code> are less than 0 or when requesting the data fails
 	*/
 	public function requestContexts( ?iStart:String, ?iLength:String, ?sGroupId:String):Array<js.lib.Promise<sap.ui.model.odata.v4.Context>>;

@@ -25,7 +25,7 @@ extern class SimpleType extends sap.ui.model.Type
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Formats the given raw value to an output value of the given target type. This happens according to the format options if the target type is <code>string</code>. If <code>vValue</code> is not defined or <code>null</code>, <code>null</code> is returned.

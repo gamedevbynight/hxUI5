@@ -26,7 +26,7 @@ public function new():Void;
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.test.gherkin.StepDefinitions.
@@ -46,6 +46,6 @@ public function new():Void;
 	* @param	fnFunc the function to execute in the event that the regular expression matches. Receives regular expression capturing groups as parameters in the same order that they are specified in the regular expression. If a data table is specified for the step, it will be passed as an additional final parameter. At execution time, all functions within a particular scenario will execute within the same "this" context.
 	* @return	Void
 	*/
-	public function register( rRegex:RegExp, fnFunc:()->Void):Void;
+	public function register( rRegex:RegExp, fnFunc:(Dynamic)->Void):Void;
 }
 

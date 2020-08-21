@@ -21,7 +21,7 @@ extern class ToolbarLayoutData extends sap.ui.core.LayoutData
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getMaxWidth maxWidth}.
@@ -66,7 +66,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMaxWidth New value for property <code>maxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxWidth( sMaxWidth:sap.ui.core.CSSSize):sap.m.ToolbarLayoutData;
+	public function setMaxWidth( ?sMaxWidth:sap.ui.core.CSSSize):sap.m.ToolbarLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getMinWidth minWidth}.
@@ -77,7 +77,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMinWidth New value for property <code>minWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinWidth( sMinWidth:sap.ui.core.CSSSize):sap.m.ToolbarLayoutData;
+	public function setMinWidth( ?sMinWidth:sap.ui.core.CSSSize):sap.m.ToolbarLayoutData;
 
 	/**
 	* Sets a new value for property {@link #getShrinkable shrinkable}.

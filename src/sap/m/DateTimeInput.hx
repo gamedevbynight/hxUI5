@@ -31,7 +31,7 @@ This event gets fired when the selection has finished and the value has changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.DateTimeInput</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.DateTimeInput;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.DateTimeInput;
 
 	/**
 	* Binds property {@link #getValue value} to model data.
@@ -50,7 +50,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.DateTimeInput;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.DateTimeInput;
 
 	/**
 	* Creates a new subclass of class sap.m.DateTimeInput with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -61,7 +61,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
@@ -210,7 +210,7 @@ Defines the text that appears in the value state message pop-up. If this is not 
 
 Defines the width of the control.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -239,7 +239,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oDateValue New value for property <code>dateValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDateValue( oDateValue:Dynamic):sap.m.DateTimeInput;
+	public function setDateValue( ?oDateValue:Dynamic):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getDisplayFormat displayFormat}.
@@ -250,7 +250,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDisplayFormat New value for property <code>displayFormat</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayFormat( sDisplayFormat:String):sap.m.DateTimeInput;
+	public function setDisplayFormat( ?sDisplayFormat:String):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getEditable editable}.
@@ -287,7 +287,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.m.DateTimeInput;
+	public function setName( ?sName:String):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getPlaceholder placeholder}.
@@ -298,7 +298,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sPlaceholder New value for property <code>placeholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholder( sPlaceholder:String):sap.m.DateTimeInput;
+	public function setPlaceholder( ?sPlaceholder:String):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getShowValueStateMessage showValueStateMessage}.
@@ -365,7 +365,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.m.DateTimeInput;
+	public function setValue( ?sValue:String):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getValueFormat valueFormat}.
@@ -376,7 +376,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValueFormat New value for property <code>valueFormat</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueFormat( sValueFormat:String):sap.m.DateTimeInput;
+	public function setValueFormat( ?sValueFormat:String):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
@@ -400,7 +400,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValueStateText New value for property <code>valueStateText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueStateText( sValueStateText:String):sap.m.DateTimeInput;
+	public function setValueStateText( ?sValueStateText:String):sap.m.DateTimeInput;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -409,7 +409,7 @@ Defines the width of the control.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

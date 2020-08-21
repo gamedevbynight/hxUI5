@@ -17,7 +17,7 @@ extern class SelectionDetailsItemLine extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getDisplayValue displayValue}.
@@ -74,7 +74,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDisplayValue New value for property <code>displayValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayValue( sDisplayValue:String):sap.m.SelectionDetailsItemLine;
+	public function setDisplayValue( ?sDisplayValue:String):sap.m.SelectionDetailsItemLine;
 
 	/**
 	* Sets a new value for property {@link #getLabel label}.
@@ -96,7 +96,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLineMarker New value for property <code>lineMarker</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLineMarker( sLineMarker:String):sap.m.SelectionDetailsItemLine;
+	public function setLineMarker( ?sLineMarker:String):sap.m.SelectionDetailsItemLine;
 
 	/**
 	* Sets a new value for property {@link #getUnit unit}.
@@ -107,7 +107,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUnit New value for property <code>unit</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUnit( sUnit:String):sap.m.SelectionDetailsItemLine;
+	public function setUnit( ?sUnit:String):sap.m.SelectionDetailsItemLine;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.

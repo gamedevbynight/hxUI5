@@ -19,14 +19,14 @@ extern class ComboBoxTextField extends sap.m.InputBase
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getMaxWidth maxWidth}.
 
 Sets the maximum width of the text field.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>maxWidth</code>
 	*/
 	public function getMaxWidth( ):sap.ui.core.CSSSize;
@@ -62,7 +62,7 @@ Sets the maximum width of the text field.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sMaxWidth New value for property <code>maxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

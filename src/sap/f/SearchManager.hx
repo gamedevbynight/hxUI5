@@ -30,7 +30,7 @@ Fired when the value of the search field is changed by the user, for example at 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.SearchManager</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLiveChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.SearchManager;
+	public function attachLiveChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.SearchManager;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:search search} event of this <code>sap.f.SearchManager</code>.
@@ -43,7 +43,7 @@ Fired when the user triggers a search.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.SearchManager</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSearch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.SearchManager;
+	public function attachSearch( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.SearchManager;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:suggest suggest} event of this <code>sap.f.SearchManager</code>.
@@ -56,7 +56,7 @@ Fired when the search field is initially focused or its value is changed by the 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.SearchManager</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSuggest( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.SearchManager;
+	public function attachSuggest( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.SearchManager;
 
 	/**
 	* Binds property {@link #getValue value} to model data.
@@ -81,7 +81,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLiveChange( fnFunction:()->Void, ?oListener:Dynamic):sap.f.SearchManager;
+	public function detachLiveChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.SearchManager;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:search search} event of this <code>sap.f.SearchManager</code>.
@@ -91,7 +91,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSearch( fnFunction:()->Void, ?oListener:Dynamic):sap.f.SearchManager;
+	public function detachSearch( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.SearchManager;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:suggest suggest} event of this <code>sap.f.SearchManager</code>.
@@ -101,7 +101,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSuggest( fnFunction:()->Void, ?oListener:Dynamic):sap.f.SearchManager;
+	public function detachSuggest( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.SearchManager;
 
 	/**
 	* Creates a new subclass of class sap.f.SearchManager with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -112,7 +112,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getEnabled enabled}.
@@ -254,7 +254,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sPlaceholder New value for property <code>placeholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholder( sPlaceholder:String):sap.f.SearchManager;
+	public function setPlaceholder( ?sPlaceholder:String):sap.f.SearchManager;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -265,7 +265,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.f.SearchManager;
+	public function setValue( ?sValue:String):sap.f.SearchManager;
 
 	/**
 	* Unbinds property {@link #getValue value} from model data.

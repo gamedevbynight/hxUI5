@@ -42,7 +42,7 @@ This event is fired when an open action is invoked on an item.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSetItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachOpenPressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSetItem;
+	public function attachOpenPressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSetItem;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:removePressed removePressed} event of this <code>sap.m.upload.UploadSetItem</code>.
@@ -55,7 +55,7 @@ This event is fired when a remove action is invoked on an item.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.UploadSetItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRemovePressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSetItem;
+	public function attachRemovePressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSetItem;
 
 	/**
 	* Destroys all the attributes in the aggregation {@link #getAttributes attributes}.
@@ -83,7 +83,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachOpenPressed( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSetItem;
+	public function detachOpenPressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSetItem;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:removePressed removePressed} event of this <code>sap.m.upload.UploadSetItem</code>.
@@ -93,7 +93,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRemovePressed( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.UploadSetItem;
+	public function detachRemovePressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.UploadSetItem;
 
 	/**
 	* Downloads the item. Only possible when the item has a valid URL specified in the <code>url</code> property.
@@ -111,7 +111,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getAttributes attributes}.
@@ -366,7 +366,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFileName New value for property <code>fileName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFileName( sFileName:String):sap.m.upload.UploadSetItem;
+	public function setFileName( ?sFileName:String):sap.m.upload.UploadSetItem;
 
 	/**
 	* Sets a new value for property {@link #getMediaType mediaType}.
@@ -377,7 +377,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMediaType New value for property <code>mediaType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMediaType( sMediaType:String):sap.m.upload.UploadSetItem;
+	public function setMediaType( ?sMediaType:String):sap.m.upload.UploadSetItem;
 
 	/**
 	* Set current progress.
@@ -395,7 +395,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sThumbnailUrl New value for property <code>thumbnailUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setThumbnailUrl( sThumbnailUrl:String):sap.m.upload.UploadSetItem;
+	public function setThumbnailUrl( ?sThumbnailUrl:String):sap.m.upload.UploadSetItem;
 
 	/**
 	* Sets a new value for property {@link #getUploadState uploadState}.
@@ -406,7 +406,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUploadState New value for property <code>uploadState</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUploadState( sUploadState:sap.m.UploadState):sap.m.upload.UploadSetItem;
+	public function setUploadState( ?sUploadState:sap.m.UploadState):sap.m.upload.UploadSetItem;
 
 	/**
 	* Sets a new value for property {@link #getUrl url}.
@@ -417,7 +417,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUrl New value for property <code>url</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUrl( sUrl:String):sap.m.upload.UploadSetItem;
+	public function setUrl( ?sUrl:String):sap.m.upload.UploadSetItem;
 
 	/**
 	* Sets a new value for property {@link #getVisibleEdit visibleEdit}.

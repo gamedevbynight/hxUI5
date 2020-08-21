@@ -27,7 +27,7 @@ extern class DataTableUtils
 	* @param	vNorm the normalization function to use to normalize property names. Can also be a string with values "titleCase", "pascalCase", "camelCase", "hyphenated" or "none".
 	* @return	- an object equivalent to the input data, with property names normalized
 	*/
-	public static function toObject( aData:Array<String>, ?vNorm:()->Void):Dynamic;
+	public static function toObject( aData:Array<String>, ?vNorm:(Dynamic)->Void):Dynamic;
 	@:overload( function(aData:Array<String>, ?vNorm:String):Array<Dynamic>{ })
 
 	/**
@@ -49,6 +49,6 @@ The data's column headers become the returned objects' property names. The prope
 	* @param	vNorm the normalization function to use to normalize property names. Can also be a String with values "titleCase", "pascalCase", "camelCase", "hyphenated" or "none".
 	* @return	- an array of objects equivalent to the input data, with property names normalized
 	*/
-	public static function toTable( aData:Array<String>, ?vNorm:()->Void):Array<Dynamic>;
+	public static function toTable( aData:Array<String>, ?vNorm:(Dynamic)->Void):Array<Dynamic>;
 }
 

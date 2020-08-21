@@ -38,7 +38,7 @@ Last but not least, with the third argument <code>FNMetaImpl</code> the construc
 	* @param	FNMetaImpl constructor function for the metadata object. If not given, it defaults to sap.ui.base.Metadata.
 	* @return	the created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the public facade of this object.

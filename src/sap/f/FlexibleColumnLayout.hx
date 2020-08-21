@@ -70,7 +70,7 @@ NOTE: In case of animated transitions this event is fired with some delay after 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.FlexibleColumnLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterBeginColumnNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function attachAfterBeginColumnNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterEndColumnNavigate afterEndColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -85,7 +85,7 @@ NOTE: In case of animated transitions this event is fired with some delay after 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.FlexibleColumnLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterEndColumnNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function attachAfterEndColumnNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterMidColumnNavigate afterMidColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -100,7 +100,7 @@ NOTE: In case of animated transitions this event is fired with some delay after 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.FlexibleColumnLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterMidColumnNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function attachAfterMidColumnNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beginColumnNavigate beginColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -113,7 +113,7 @@ Fires when navigation between two pages in the <code>Begin</code> column has bee
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.FlexibleColumnLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeginColumnNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function attachBeginColumnNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:columnResize columnResize} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -126,7 +126,7 @@ Fired when resize of each column has completed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.FlexibleColumnLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachColumnResize( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function attachColumnResize( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:endColumnNavigate endColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -139,7 +139,7 @@ Fires when navigation between two pages in the <code>End</code> column has been 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.FlexibleColumnLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachEndColumnNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function attachEndColumnNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:midColumnNavigate midColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -152,7 +152,7 @@ Fires when navigation between two pages in the <code>Mid</code> column has been 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.FlexibleColumnLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMidColumnNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function attachMidColumnNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:stateChange stateChange} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -165,7 +165,7 @@ Fired when there is a change in the <code>layout</code> property or in the maxim
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.FlexibleColumnLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachStateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function attachStateChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Navigates back to a page in the <code>FlexibleColumnLayout</code>. Columns are scanned for the page in the following order: <code>Begin</code>, <code>Mid</code>, <code>End</code>.
@@ -260,7 +260,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterBeginColumnNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function detachAfterBeginColumnNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterEndColumnNavigate afterEndColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -270,7 +270,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterEndColumnNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function detachAfterEndColumnNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterMidColumnNavigate afterMidColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -280,7 +280,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterMidColumnNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function detachAfterMidColumnNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beginColumnNavigate beginColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -290,7 +290,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeginColumnNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function detachBeginColumnNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:columnResize columnResize} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -300,7 +300,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachColumnResize( fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function detachColumnResize( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:endColumnNavigate endColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -310,7 +310,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachEndColumnNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function detachEndColumnNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:midColumnNavigate midColumnNavigate} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -320,7 +320,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMidColumnNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function detachMidColumnNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:stateChange stateChange} event of this <code>sap.f.FlexibleColumnLayout</code>.
@@ -330,7 +330,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachStateChange( fnFunction:()->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
+	public function detachStateChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.FlexibleColumnLayout;
 
 	/**
 	* Creates a new subclass of class sap.f.FlexibleColumnLayout with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -341,7 +341,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAutoFocus autoFocus}.
@@ -398,7 +398,7 @@ These should be any control with page semantics. These aggregated controls will 
 
 Determines the type of the transition/animation to apply for the <code>Begin</code> column when <code>to()</code> is called without defining the transition to use. The default is <code>slide</code>, other options are <code>fade</code>, <code>flip</code>, <code>show</code>, and the names of any registered custom transitions.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @return	Value of property <code>defaultTransitionNameBeginColumn</code>
 	*/
 	public function getDefaultTransitionNameBeginColumn( ):String;
@@ -408,7 +408,7 @@ Default value is <code>slide</code>.
 
 Determines the type of the transition/animation to apply for the <code>End</code> column when <code>to()</code> is called without defining the transition to use. The default is <code>slide</code>, other options are <code>fade</code>, <code>flip</code>, <code>show</code>, and the names of any registered custom transitions.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @return	Value of property <code>defaultTransitionNameEndColumn</code>
 	*/
 	public function getDefaultTransitionNameEndColumn( ):String;
@@ -418,7 +418,7 @@ Default value is <code>slide</code>.
 
 Determines the type of the transition/animation to apply for the <code>Mid</code> column when <code>to()</code> is called without defining the transition to use. The default is <code>slide</code>, other options are <code>fade</code>, <code>flip</code>, <code>show</code>, and the names of any registered custom transitions.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @return	Value of property <code>defaultTransitionNameMidColumn</code>
 	*/
 	public function getDefaultTransitionNameMidColumn( ):String;
@@ -626,7 +626,7 @@ Determines the type of the transition/animation to apply for the <code>Begin</co
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @param	sDefaultTransitionNameBeginColumn New value for property <code>defaultTransitionNameBeginColumn</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -639,7 +639,7 @@ Determines the type of the transition/animation to apply for the <code>End</code
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @param	sDefaultTransitionNameEndColumn New value for property <code>defaultTransitionNameEndColumn</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -652,7 +652,7 @@ Determines the type of the transition/animation to apply for the <code>Mid</code
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @param	sDefaultTransitionNameMidColumn New value for property <code>defaultTransitionNameMidColumn</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

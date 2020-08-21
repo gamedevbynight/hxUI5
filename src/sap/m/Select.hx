@@ -36,7 +36,7 @@ This event is fired when the value in the selection field is changed in combinat
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Select</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Select;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Select;
 
 	/**
 	* Binds aggregation {@link #getItems items} to model data.
@@ -67,7 +67,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Select;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Select;
 
 	/**
 	* Creates a new subclass of class sap.m.Select with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -78,7 +78,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
@@ -198,7 +198,7 @@ Sets the maximum width of the control.
 
 <b>Note:</b> This property is ignored if the <code>autoAdjustWidth</code> property is set to <code>true</code>.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>maxWidth</code>
 	*/
 	public function getMaxWidth( ):sap.ui.core.CSSSize;
@@ -340,7 +340,7 @@ Sets the width of the field. By default, the field width is automatically adjust
 
 <b>Note:</b> This property is ignored if the <code>autoAdjustWidth</code> property is set to <code>true</code>.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -470,7 +470,7 @@ The URI to the icon that will be displayed only when using the <code>IconOnly</c
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon= New value for property <code>icon</code>
+	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.Select;
@@ -484,7 +484,7 @@ Sets the maximum width of the control.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sMaxWidth New value for property <code>maxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -648,7 +648,7 @@ Sets the width of the field. By default, the field width is automatically adjust
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

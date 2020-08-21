@@ -48,7 +48,7 @@ This event will be fired after the popover is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Popover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Popover;
+	public function attachAfterClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Popover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterOpen afterOpen} event of this <code>sap.m.Popover</code>.
@@ -61,7 +61,7 @@ This event will be fired after the popover is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Popover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Popover;
+	public function attachAfterOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Popover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeClose beforeClose} event of this <code>sap.m.Popover</code>.
@@ -74,7 +74,7 @@ This event will be fired before the popover is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Popover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Popover;
+	public function attachBeforeClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Popover;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.Popover</code>.
@@ -87,7 +87,7 @@ This event will be fired before the popover is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Popover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Popover;
+	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Popover;
 
 	/**
 	* Closes the popover when it's already opened.
@@ -139,7 +139,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Popover;
+	public function detachAfterClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Popover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterOpen afterOpen} event of this <code>sap.m.Popover</code>.
@@ -149,7 +149,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Popover;
+	public function detachAfterOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Popover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeClose beforeClose} event of this <code>sap.m.Popover</code>.
@@ -159,7 +159,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Popover;
+	public function detachBeforeClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Popover;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.Popover</code>.
@@ -169,7 +169,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Popover;
+	public function detachBeforeOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Popover;
 
 	/**
 	* Creates a new subclass of class sap.m.Popover with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -180,7 +180,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -480,7 +480,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sContentHeight New value for property <code>contentHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentHeight( sContentHeight:sap.ui.core.CSSSize):sap.m.Popover;
+	public function setContentHeight( ?sContentHeight:sap.ui.core.CSSSize):sap.m.Popover;
 
 	/**
 	* Sets a new value for property {@link #getContentMinWidth contentMinWidth}.
@@ -490,7 +490,7 @@ Sets the minimum width of the content area inside popover.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sContentMinWidth= New value for property <code>contentMinWidth</code>
+	* @param	sContentMinWidth New value for property <code>contentMinWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setContentMinWidth( ?sContentMinWidth:sap.ui.core.CSSSize):sap.m.Popover;
@@ -504,7 +504,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sContentWidth New value for property <code>contentWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentWidth( sContentWidth:sap.ui.core.CSSSize):sap.m.Popover;
+	public function setContentWidth( ?sContentWidth:sap.ui.core.CSSSize):sap.m.Popover;
 
 	/**
 	* Sets the aggregated {@link #getCustomHeader customHeader}.
@@ -646,7 +646,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.Popover;
+	public function setTitle( ?sTitle:String):sap.m.Popover;
 
 	/**
 	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.

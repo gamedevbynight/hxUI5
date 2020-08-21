@@ -29,7 +29,7 @@ Is fired when the text in the input field has changed and the focus leaves the i
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.InputBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.InputBase;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.InputBase;
 
 	/**
 	* Binds property {@link #getValue value} to model data.
@@ -54,7 +54,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.InputBase;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.InputBase;
 
 	/**
 	* Creates a new subclass of class sap.m.InputBase with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -65,7 +65,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
@@ -256,7 +256,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.m.InputBase;
+	public function setName( ?sName:String):sap.m.InputBase;
 
 	/**
 	* Sets a new value for property {@link #getPlaceholder placeholder}.
@@ -267,7 +267,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sPlaceholder New value for property <code>placeholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholder( sPlaceholder:String):sap.m.InputBase;
+	public function setPlaceholder( ?sPlaceholder:String):sap.m.InputBase;
 
 	/**
 	* Sets a new value for property {@link #getRequired required}.
@@ -352,7 +352,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValueStateText New value for property <code>valueStateText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueStateText( sValueStateText:String):sap.m.InputBase;
+	public function setValueStateText( ?sValueStateText:String):sap.m.InputBase;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -365,7 +365,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.InputBase;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.InputBase;
 
 	/**
 	* Unbinds property {@link #getValue value} from model data.

@@ -45,7 +45,7 @@ extern class Splitter extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getFirstPaneContent firstPaneContent}.
@@ -60,7 +60,7 @@ Controls inside the first pane. These are the left ones in case of defining a ve
 
 The height of the split area in px or in %
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.commons.SplitterSize;
@@ -76,7 +76,7 @@ Default value is <code>100%</code>.
 
 The minimum size (width for vertical splitter or height for horizontal splitter) of the first Pane
 
-Default value is <code>0%</code>.
+Default value is <code>'0%'</code>.
 	* @return	Value of property <code>minSizeFirstPane</code>
 	*/
 	public function getMinSizeFirstPane( ):sap.ui.core.Percentage;
@@ -86,7 +86,7 @@ Default value is <code>0%</code>.
 
 The minimum size (width for vertical splitter or height for horizontal splitter) of the second Pane
 
-Default value is <code>0%</code>.
+Default value is <code>'0%'</code>.
 	* @return	Value of property <code>minSizeSecondPane</code>
 	*/
 	public function getMinSizeSecondPane( ):sap.ui.core.Percentage;
@@ -134,7 +134,7 @@ Default value is <code>Vertical</code>.
 
 Position of splitter bar in percentage. The default value means that the splitter is positioned in the middle of the area that is available for the splitter.
 
-Default value is <code>50%</code>.
+Default value is <code>'50%'</code>.
 	* @return	Value of property <code>splitterPosition</code>
 	*/
 	public function getSplitterPosition( ):sap.ui.core.Percentage;
@@ -144,7 +144,7 @@ Default value is <code>50%</code>.
 
 The width of the split area in px or in %
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.commons.SplitterSize;
@@ -220,7 +220,7 @@ The height of the split area in px or in %
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -233,7 +233,7 @@ The minimum size (width for vertical splitter or height for horizontal splitter)
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>0%</code>.
+Default value is <code>'0%'</code>.
 	* @param	sMinSizeFirstPane New value for property <code>minSizeFirstPane</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -246,7 +246,7 @@ The minimum size (width for vertical splitter or height for horizontal splitter)
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>0%</code>.
+Default value is <code>'0%'</code>.
 	* @param	sMinSizeSecondPane New value for property <code>minSizeSecondPane</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -298,7 +298,7 @@ Position of splitter bar in percentage. The default value means that the splitte
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>50%</code>.
+Default value is <code>'50%'</code>.
 	* @param	sSplitterPosition New value for property <code>splitterPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -311,7 +311,7 @@ The width of the split area in px or in %
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

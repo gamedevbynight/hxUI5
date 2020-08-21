@@ -39,7 +39,7 @@ Triggers when the user makes a change on the RadioButton.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.RadioButton</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RadioButton;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RadioButton;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:select select} event of this <code>sap.ui.commons.RadioButton</code>.
@@ -49,7 +49,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RadioButton;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RadioButton;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.RadioButton with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -60,7 +60,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -99,7 +99,7 @@ Default value is <code>true</code>.
 
 Defines the name of the RadioButtonGroup, in which the current RadioButton belongs to. You can define a new name for the group. If no new name is specified, the default is sapUiRbDefaultGroup. By default, when one of the RadioButtons in a group is selected, all others are unselected.
 
-Default value is <code>sapUiRbDefaultGroup</code>.
+Default value is <code>'sapUiRbDefaultGroup'</code>.
 	* @return	Value of property <code>groupName</code>
 	*/
 	public function getGroupName( ):String;
@@ -227,7 +227,7 @@ Defines the name of the RadioButtonGroup, in which the current RadioButton belon
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>sapUiRbDefaultGroup</code>.
+Default value is <code>'sapUiRbDefaultGroup'</code>.
 	* @param	sGroupName New value for property <code>groupName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -242,7 +242,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sKey New value for property <code>key</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKey( sKey:String):sap.ui.commons.RadioButton;
+	public function setKey( ?sKey:String):sap.ui.commons.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getSelected selected}.
@@ -266,7 +266,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.commons.RadioButton;
+	public function setText( ?sText:String):sap.ui.commons.RadioButton;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -303,7 +303,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.RadioButton;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.RadioButton;
 }
 
 typedef RadioButtonArgs = sap.ui.core.Control.ControlArgs & {

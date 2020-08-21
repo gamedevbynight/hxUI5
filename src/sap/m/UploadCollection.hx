@@ -44,7 +44,7 @@ The event is triggered before the actual upload starts. An event is fired per fi
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeUploadStarts( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function attachBeforeUploadStarts( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:change change} event of this <code>sap.m.UploadCollection</code>.
@@ -57,7 +57,7 @@ The event is triggered when files are selected in the FileUploader dialog. Appli
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:fileDeleted fileDeleted} event of this <code>sap.m.UploadCollection</code>.
@@ -70,7 +70,7 @@ The event is triggered when an uploaded attachment is selected and the Delete bu
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFileDeleted( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function attachFileDeleted( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:filenameLengthExceed filenameLengthExceed} event of this <code>sap.m.UploadCollection</code>.
@@ -83,7 +83,7 @@ The event is triggered when the name of a chosen file is longer than the value s
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFilenameLengthExceed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function attachFilenameLengthExceed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:fileRenamed fileRenamed} event of this <code>sap.m.UploadCollection</code>.
@@ -96,7 +96,7 @@ The event is triggered when the file name is changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFileRenamed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function attachFileRenamed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:fileSizeExceed fileSizeExceed} event of this <code>sap.m.UploadCollection</code>.
@@ -109,7 +109,7 @@ The event is triggered when the file size of an uploaded file is exceeded (only 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFileSizeExceed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function attachFileSizeExceed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:selectionChange selectionChange} event of this <code>sap.m.UploadCollection</code>.
@@ -122,7 +122,7 @@ Fires when selection is changed via user interaction inside the control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function attachSelectionChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:typeMissmatch typeMissmatch} event of this <code>sap.m.UploadCollection</code>.
@@ -135,7 +135,7 @@ The event is triggered when the file type or the MIME type don't match the permi
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTypeMissmatch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function attachTypeMissmatch( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadComplete uploadComplete} event of this <code>sap.m.UploadCollection</code>.
@@ -148,7 +148,7 @@ The event is triggered as soon as the upload request is completed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadComplete( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function attachUploadComplete( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadTerminated uploadTerminated} event of this <code>sap.m.UploadCollection</code>.
@@ -161,7 +161,7 @@ The event is triggered as soon as the upload request was terminated by the user.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadTerminated( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function attachUploadTerminated( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Binds aggregation {@link #getItems items} to model data.
@@ -210,7 +210,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeUploadStarts( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function detachBeforeUploadStarts( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:change change} event of this <code>sap.m.UploadCollection</code>.
@@ -220,7 +220,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:fileDeleted fileDeleted} event of this <code>sap.m.UploadCollection</code>.
@@ -230,7 +230,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFileDeleted( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function detachFileDeleted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:filenameLengthExceed filenameLengthExceed} event of this <code>sap.m.UploadCollection</code>.
@@ -240,7 +240,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFilenameLengthExceed( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function detachFilenameLengthExceed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:fileRenamed fileRenamed} event of this <code>sap.m.UploadCollection</code>.
@@ -250,7 +250,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFileRenamed( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function detachFileRenamed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:fileSizeExceed fileSizeExceed} event of this <code>sap.m.UploadCollection</code>.
@@ -260,7 +260,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFileSizeExceed( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function detachFileSizeExceed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:selectionChange selectionChange} event of this <code>sap.m.UploadCollection</code>.
@@ -270,7 +270,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function detachSelectionChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:typeMissmatch typeMissmatch} event of this <code>sap.m.UploadCollection</code>.
@@ -280,7 +280,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTypeMissmatch( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function detachTypeMissmatch( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadComplete uploadComplete} event of this <code>sap.m.UploadCollection</code>.
@@ -290,7 +290,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadComplete( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function detachUploadComplete( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadTerminated uploadTerminated} event of this <code>sap.m.UploadCollection</code>.
@@ -300,7 +300,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadTerminated( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollection;
+	public function detachUploadTerminated( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollection;
 
 	/**
 	* Downloads the given item. This function delegates to {@link sap.m.UploadCollectionItem#download uploadCollectionItem.download}.
@@ -319,7 +319,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getFileType fileType}.
@@ -404,7 +404,7 @@ Defines the allowed MIME types of files to be uploaded. The chosen files will be
 
 Defines the selection mode of the control (e.g. None, SingleSelect, MultiSelect, SingleSelectLeft, SingleSelectMaster). Since the UploadCollection reacts like a list for attachments, the API is close to the ListBase Interface. sap.m.ListMode.Delete mode is not supported and will be automatically set to sap.m.ListMode.None. In addition, if instant upload is set to false the mode sap.m.ListMode.MultiSelect is not supported and will be automatically set to sap.m.ListMode.None.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @return	Value of property <code>mode</code>
 	*/
 	public function getMode( ):sap.m.ListMode;
@@ -480,7 +480,7 @@ Default value is <code>false</code>.
 
 Defines whether separators are shown between list items.
 
-Default value is <code>All</code>.
+Default value is <code>"All"</code>.
 	* @return	Value of property <code>showSeparators</code>
 	*/
 	public function getShowSeparators( ):sap.m.ListSeparators;
@@ -528,7 +528,7 @@ Default value is <code>true</code>.
 
 Specifies the URL where the uploaded files have to be stored.
 
-Default value is <code>../../../upload</code>.
+Default value is <code>"../../../upload"</code>.
 	* @return	Value of property <code>uploadUrl</code>
 	*/
 	public function getUploadUrl( ):String;
@@ -651,7 +651,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFileType New value for property <code>fileType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFileType( sFileType:Array<String>):sap.m.UploadCollection;
+	public function setFileType( ?sFileType:Array<String>):sap.m.UploadCollection;
 
 	/**
 	* Sets the aggregated {@link #getInfoToolbar infoToolbar}.
@@ -682,7 +682,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iMaximumFilenameLength New value for property <code>maximumFilenameLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaximumFilenameLength( iMaximumFilenameLength:Int):sap.m.UploadCollection;
+	public function setMaximumFilenameLength( ?iMaximumFilenameLength:Int):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getMaximumFileSize maximumFileSize}.
@@ -693,7 +693,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	fMaximumFileSize New value for property <code>maximumFileSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaximumFileSize( fMaximumFileSize:Float):sap.m.UploadCollection;
+	public function setMaximumFileSize( ?fMaximumFileSize:Float):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getMimeType mimeType}.
@@ -704,7 +704,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMimeType New value for property <code>mimeType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMimeType( sMimeType:Array<String>):sap.m.UploadCollection;
+	public function setMimeType( ?sMimeType:Array<String>):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getMode mode}.
@@ -713,7 +713,7 @@ Defines the selection mode of the control (e.g. None, SingleSelect, MultiSelect,
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @param	sMode New value for property <code>mode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -743,7 +743,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNoDataDescription New value for property <code>noDataDescription</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNoDataDescription( sNoDataDescription:String):sap.m.UploadCollection;
+	public function setNoDataDescription( ?sNoDataDescription:String):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getNoDataText noDataText}.
@@ -754,7 +754,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNoDataText New value for property <code>noDataText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNoDataText( sNoDataText:String):sap.m.UploadCollection;
+	public function setNoDataText( ?sNoDataText:String):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getNumberOfAttachmentsText numberOfAttachmentsText}.
@@ -765,7 +765,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNumberOfAttachmentsText New value for property <code>numberOfAttachmentsText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNumberOfAttachmentsText( sNumberOfAttachmentsText:String):sap.m.UploadCollection;
+	public function setNumberOfAttachmentsText( ?sNumberOfAttachmentsText:String):sap.m.UploadCollection;
 
 	/**
 	* Sets a new value for property {@link #getSameFilenameAllowed sameFilenameAllowed}.
@@ -803,7 +803,7 @@ Defines whether separators are shown between list items.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>All</code>.
+Default value is <code>"All"</code>.
 	* @param	sShowSeparators New value for property <code>showSeparators</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -862,7 +862,7 @@ Specifies the URL where the uploaded files have to be stored.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>../../../upload</code>.
+Default value is <code>"../../../upload"</code>.
 	* @param	sUploadUrl New value for property <code>uploadUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

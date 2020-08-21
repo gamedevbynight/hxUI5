@@ -40,7 +40,7 @@ Event is triggered when a custom action is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SelectionDetails</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachActionPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
+	public function attachActionPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeClose beforeClose} event of this <code>sap.m.SelectionDetails</code>.
@@ -53,7 +53,7 @@ Event is triggered before the popover is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SelectionDetails</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
+	public function attachBeforeClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.SelectionDetails</code>.
@@ -66,7 +66,7 @@ Event is triggered before the popover is open.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SelectionDetails</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
+	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:navigate navigate} event of this <code>sap.m.SelectionDetails</code>.
@@ -79,7 +79,7 @@ Event is triggered after a list item of {@link sap.m.SelectionDetailsItem} is pr
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SelectionDetails</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
+	public function attachNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
 
 	/**
 	* Binds aggregation {@link #getItems items} to model data.
@@ -116,7 +116,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachActionPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
+	public function detachActionPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeClose beforeClose} event of this <code>sap.m.SelectionDetails</code>.
@@ -126,7 +126,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
+	public function detachBeforeClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.SelectionDetails</code>.
@@ -136,7 +136,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
+	public function detachBeforeOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:navigate navigate} event of this <code>sap.m.SelectionDetails</code>.
@@ -146,7 +146,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
+	public function detachNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectionDetails;
 
 	/**
 	* Creates a new subclass of class sap.m.SelectionDetails with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -157,7 +157,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getActionGroups actionGroups}.

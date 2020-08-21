@@ -42,7 +42,7 @@ When a deletePress event handler is attached to the item and the user presses th
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollectionItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDeletePress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollectionItem;
+	public function attachDeletePress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollectionItem;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:press press} event of this <code>sap.m.UploadCollectionItem</code>.
@@ -55,7 +55,7 @@ This event is triggered when the user presses the filename link. If this event i
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.UploadCollectionItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollectionItem;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollectionItem;
 
 	/**
 	* Binds aggregation {@link #getAttributes attributes} to model data.
@@ -110,7 +110,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDeletePress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollectionItem;
+	public function detachDeletePress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollectionItem;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.m.UploadCollectionItem</code>.
@@ -120,7 +120,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.UploadCollectionItem;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.UploadCollectionItem;
 
 	/**
 	* Downloads the item. The sap.ui.core.util.File method is used here. For further details on this method, see {sap.ui.core.util.File.save}.
@@ -138,7 +138,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAriaLabelForPicture ariaLabelForPicture}.
@@ -379,7 +379,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sAriaLabelForPicture New value for property <code>ariaLabelForPicture</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAriaLabelForPicture( sAriaLabelForPicture:String):sap.m.UploadCollectionItem;
+	public function setAriaLabelForPicture( ?sAriaLabelForPicture:String):sap.m.UploadCollectionItem;
 
 	/**
 	* Sets a new value for property {@link #getDocumentId documentId}.
@@ -390,7 +390,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDocumentId New value for property <code>documentId</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDocumentId( sDocumentId:String):sap.m.UploadCollectionItem;
+	public function setDocumentId( ?sDocumentId:String):sap.m.UploadCollectionItem;
 
 	/**
 	* Sets a new value for property {@link #getEnableDelete enableDelete}.
@@ -427,7 +427,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFileName New value for property <code>fileName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFileName( sFileName:String):sap.m.UploadCollectionItem;
+	public function setFileName( ?sFileName:String):sap.m.UploadCollectionItem;
 	@:overload( function(oFileUploader:sap.ui.core.ID):sap.m.UploadCollectionItem{ })
 
 	/**
@@ -446,7 +446,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMimeType New value for property <code>mimeType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMimeType( sMimeType:String):sap.m.UploadCollectionItem;
+	public function setMimeType( ?sMimeType:String):sap.m.UploadCollectionItem;
 
 	/**
 	* Sets a new value for property {@link #getSelected selected}.
@@ -470,7 +470,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sThumbnailUrl New value for property <code>thumbnailUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setThumbnailUrl( sThumbnailUrl:String):sap.m.UploadCollectionItem;
+	public function setThumbnailUrl( ?sThumbnailUrl:String):sap.m.UploadCollectionItem;
 
 	/**
 	* Sets a new value for property {@link #getUrl url}.
@@ -481,7 +481,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUrl New value for property <code>url</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUrl( sUrl:String):sap.m.UploadCollectionItem;
+	public function setUrl( ?sUrl:String):sap.m.UploadCollectionItem;
 
 	/**
 	* Sets a new value for property {@link #getVisibleDelete visibleDelete}.

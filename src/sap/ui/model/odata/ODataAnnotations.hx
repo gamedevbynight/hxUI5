@@ -33,7 +33,7 @@ extern class ODataAnnotations extends sap.ui.base.EventProvider
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.ODataAnnotations</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
+	public function attachFailed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:loaded loaded} event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
@@ -42,7 +42,7 @@ extern class ODataAnnotations extends sap.ui.base.EventProvider
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.ODataAnnotations</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLoaded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
+	public function attachLoaded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:failed failed} event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
@@ -52,7 +52,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
+	public function detachFailed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:loaded loaded} event of this <code>sap.ui.model.odata.ODataAnnotations</code>.
@@ -62,7 +62,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLoaded( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
+	public function detachLoaded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataAnnotations;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.odata.ODataAnnotations with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -73,7 +73,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* returns the raw annotation data

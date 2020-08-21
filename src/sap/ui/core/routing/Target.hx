@@ -28,7 +28,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.routing.Target</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDisplay( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Target;
+	public function attachDisplay( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Target;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:display display} event of this <code>sap.ui.core.routing.Target</code>.
@@ -38,7 +38,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDisplay( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Target;
+	public function detachDisplay( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Target;
 
 	/**
 	* Creates a view and puts it in an aggregation of a control that has been defined in the {@link sap.ui.core.routing.Target#constructor}.
@@ -56,7 +56,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.routing.Target.

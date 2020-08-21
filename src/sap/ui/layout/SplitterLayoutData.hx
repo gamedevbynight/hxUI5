@@ -19,7 +19,7 @@ extern class SplitterLayoutData extends sap.ui.core.LayoutData
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.layout.SplitterLayoutData.
@@ -52,7 +52,7 @@ Default value is <code>true</code>.
 
 Sets the size of the splitter content.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>size</code>
 	*/
 	public function getSize( ):sap.ui.core.CSSSize;
@@ -90,7 +90,7 @@ Sets the size of the splitter content.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @param	sSize New value for property <code>size</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

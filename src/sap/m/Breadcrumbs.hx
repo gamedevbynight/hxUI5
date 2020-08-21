@@ -32,7 +32,7 @@ extern class Breadcrumbs extends sap.ui.core.Control implements sap.m.IBreadcrum
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getCurrentLocationText currentLocationText}.
@@ -107,7 +107,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sCurrentLocationText New value for property <code>currentLocationText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCurrentLocationText( sCurrentLocationText:String):sap.m.Breadcrumbs;
+	public function setCurrentLocationText( ?sCurrentLocationText:String):sap.m.Breadcrumbs;
 
 	/**
 	* Custom setter for the <code>Breadcrumbs</code> separator style.

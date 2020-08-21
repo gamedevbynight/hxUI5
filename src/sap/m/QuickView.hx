@@ -21,7 +21,7 @@ This event fires after the QuickView is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.QuickView</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickView;
+	public function attachAfterClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickView;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterOpen afterOpen} event of this <code>sap.m.QuickView</code>.
@@ -34,7 +34,7 @@ This event fires after the QuickView is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.QuickView</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickView;
+	public function attachAfterOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickView;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeClose beforeClose} event of this <code>sap.m.QuickView</code>.
@@ -47,7 +47,7 @@ This event fires before the QuickView is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.QuickView</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickView;
+	public function attachBeforeClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickView;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.QuickView</code>.
@@ -60,7 +60,7 @@ This event fires before the QuickView is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.QuickView</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickView;
+	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickView;
 
 	/**
 	* Closes the QuickView.
@@ -76,7 +76,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickView;
+	public function detachAfterClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickView;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterOpen afterOpen} event of this <code>sap.m.QuickView</code>.
@@ -86,7 +86,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickView;
+	public function detachAfterOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickView;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeClose beforeClose} event of this <code>sap.m.QuickView</code>.
@@ -96,7 +96,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickView;
+	public function detachBeforeClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickView;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.QuickView</code>.
@@ -106,7 +106,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickView;
+	public function detachBeforeOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickView;
 
 	/**
 	* Creates a new subclass of class sap.m.QuickView with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -117,7 +117,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.m.QuickView.
@@ -140,7 +140,7 @@ Default value is <code>Right</code>.
 
 The width of the QuickView. The property takes effect only when running on desktop or tablet.
 
-Default value is <code>320px</code>.
+Default value is <code>'320px'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;

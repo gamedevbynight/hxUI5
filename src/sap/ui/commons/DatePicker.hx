@@ -19,7 +19,7 @@ extern class DatePicker extends sap.ui.commons.TextField
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getLocale locale}.
@@ -52,7 +52,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLocale New value for property <code>locale</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLocale( sLocale:String):sap.ui.commons.DatePicker;
+	public function setLocale( ?sLocale:String):sap.ui.commons.DatePicker;
 
 	/**
 	* Sets a new value for property {@link #getYyyymmdd yyyymmdd}.
@@ -63,7 +63,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sYyyymmdd New value for property <code>yyyymmdd</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setYyyymmdd( sYyyymmdd:String):sap.ui.commons.DatePicker;
+	public function setYyyymmdd( ?sYyyymmdd:String):sap.ui.commons.DatePicker;
 }
 
 typedef DatePickerArgs = sap.ui.commons.TextField.TextFieldArgs & {

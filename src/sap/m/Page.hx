@@ -39,7 +39,7 @@ this event is fired when Nav Button is pressed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Page</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachNavButtonPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Page;
+	public function attachNavButtonPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Page;
 
 	/**
 	* Destroys all the content in the aggregation {@link #getContent content}.
@@ -85,7 +85,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachNavButtonPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Page;
+	public function detachNavButtonPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Page;
 
 	/**
 	* Creates a new subclass of class sap.m.Page with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -96,7 +96,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
@@ -442,7 +442,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNavButtonTooltip New value for property <code>navButtonTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNavButtonTooltip( sNavButtonTooltip:String):sap.m.Page;
+	public function setNavButtonTooltip( ?sNavButtonTooltip:String):sap.m.Page;
 
 	/**
 	* Sets a new value for property {@link #getShowFooter showFooter}.
@@ -512,7 +512,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.Page;
+	public function setTitle( ?sTitle:String):sap.m.Page;
 
 	/**
 	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.

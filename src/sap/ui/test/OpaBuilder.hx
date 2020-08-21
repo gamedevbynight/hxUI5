@@ -61,7 +61,7 @@ extern class OpaBuilder
 	* @param	bReplace true to replace all previous defined matchers, false to add it (default)
 	* @return	this OpaBuilder instance
 	*/
-	public function check( fnCheck:()->Void, ?bReplace:Bool):sap.ui.test.OpaBuilder;
+	public function check( fnCheck:(Dynamic)->Void, ?bReplace:Bool):sap.ui.test.OpaBuilder;
 
 	/**
 	* Adds a check for the expected number of matching controls.
@@ -70,28 +70,28 @@ extern class OpaBuilder
 	*/
 	public function checkNumberOfMatches( iExpectedNumber:String):sap.ui.test.OpaBuilder;
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:sap.ui.test.matchers.Matcher, ?vActions:sap.ui.test.actions.Action, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:sap.ui.test.matchers.Matcher, ?vActions:()->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:sap.ui.test.matchers.Matcher, ?vActions:(Dynamic)->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:sap.ui.test.matchers.Matcher, ?vActions:Array<Dynamic>, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:()->Void, ?vActions:sap.ui.test.actions.Action, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:()->Void, ?vActions:()->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:()->Void, ?vActions:Array<Dynamic>, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:(Dynamic)->Void, ?vActions:sap.ui.test.actions.Action, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:(Dynamic)->Void, ?vActions:(Dynamic)->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:(Dynamic)->Void, ?vActions:Array<Dynamic>, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Array<Dynamic>, ?vActions:sap.ui.test.actions.Action, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Array<Dynamic>, ?vActions:()->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Array<Dynamic>, ?vActions:(Dynamic)->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Array<Dynamic>, ?vActions:Array<Dynamic>, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Dynamic, ?vActions:sap.ui.test.actions.Action, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Dynamic, ?vActions:()->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Dynamic, ?vActions:(Dynamic)->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:String, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Dynamic, ?vActions:Array<Dynamic>, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:sap.ui.test.matchers.Matcher, ?vActions:sap.ui.test.actions.Action, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:sap.ui.test.matchers.Matcher, ?vActions:()->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:sap.ui.test.matchers.Matcher, ?vActions:(Dynamic)->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:sap.ui.test.matchers.Matcher, ?vActions:Array<Dynamic>, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:()->Void, ?vActions:sap.ui.test.actions.Action, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:()->Void, ?vActions:()->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:()->Void, ?vActions:Array<Dynamic>, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:(Dynamic)->Void, ?vActions:sap.ui.test.actions.Action, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:(Dynamic)->Void, ?vActions:(Dynamic)->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:(Dynamic)->Void, ?vActions:Array<Dynamic>, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Array<Dynamic>, ?vActions:sap.ui.test.actions.Action, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Array<Dynamic>, ?vActions:()->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Array<Dynamic>, ?vActions:(Dynamic)->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Array<Dynamic>, ?vActions:Array<Dynamic>, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Dynamic, ?vActions:sap.ui.test.actions.Action, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Dynamic, ?vActions:()->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?oOpaInstance:sap.ui.test.Opa5, ?vId:RegExp, ?vControlType:String, ?bDialogElement:Bool, ?vMatchers:Dynamic, ?vActions:(Dynamic)->Void, ?oOptions:Dynamic):sap.ui.test.OpaBuilder{ })
 
 	/**
 	* Convenience creation and initialization of a new OpaBuilder.
@@ -127,7 +127,7 @@ extern class OpaBuilder
 	*/
 	public function description( sDescription:String):sap.ui.test.OpaBuilder;
 	@:overload( function(vActions:sap.ui.test.actions.Action, ?bReplace:Bool):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vActions:()->Void, ?bReplace:Bool):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vActions:(Dynamic)->Void, ?bReplace:Bool):sap.ui.test.OpaBuilder{ })
 
 	/**
 	* Add an action to be performed on all matched controls.
@@ -137,40 +137,40 @@ extern class OpaBuilder
 	*/
 	public function do( vActions:Array<Dynamic>, ?bReplace:Bool):sap.ui.test.OpaBuilder;
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:()->Void, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:()->Void, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:()->Void, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:(Dynamic)->Void, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:(Dynamic)->Void, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:(Dynamic)->Void, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:Array<Dynamic>, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:Array<Dynamic>, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:Array<Dynamic>, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessActions:Array<Dynamic>, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessActions:()->Void, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessActions:()->Void, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessActions:()->Void, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessActions:Array<Dynamic>, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessActions:Array<Dynamic>, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessActions:Array<Dynamic>, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessActions:(Dynamic)->Void, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessActions:(Dynamic)->Void, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessActions:(Dynamic)->Void, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessActions:Array<Dynamic>, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessActions:Array<Dynamic>, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessActions:Array<Dynamic>, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:()->Void, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:()->Void, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:()->Void, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:(Dynamic)->Void, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:(Dynamic)->Void, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:(Dynamic)->Void, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:Array<Dynamic>, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:Array<Dynamic>, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:Array<Dynamic>, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessActions:Array<Dynamic>, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessActions:sap.ui.test.actions.Action, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessActions:()->Void, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessActions:()->Void, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessActions:()->Void, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessActions:(Dynamic)->Void, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessActions:(Dynamic)->Void, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessActions:(Dynamic)->Void, ?vElseActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessActions:Array<Dynamic>, ?vElseActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessActions:Array<Dynamic>, ?vElseActions:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessActions:Array<Dynamic>, ?vElseActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 
 	/**
 	* Add an action that is only performed if target control fulfills the conditions. It is internally using {@link sap.ui.test.OpaBuilder.Actions.conditional}.
@@ -191,16 +191,16 @@ extern class OpaBuilder
 	*/
 	public function doEnterText( sText:String, ?bClearFirst:Bool, ?bKeepFocus:Bool, ?sIdSuffix:String):sap.ui.test.OpaBuilder;
 	@:overload( function(sAggregationName:String, ?vMatchers:sap.ui.test.matchers.Matcher, vActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(sAggregationName:String, ?vMatchers:sap.ui.test.matchers.Matcher, vActions:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(sAggregationName:String, ?vMatchers:sap.ui.test.matchers.Matcher, vActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(sAggregationName:String, ?vMatchers:sap.ui.test.matchers.Matcher, vActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(sAggregationName:String, ?vMatchers:()->Void, vActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(sAggregationName:String, ?vMatchers:()->Void, vActions:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(sAggregationName:String, ?vMatchers:()->Void, vActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(sAggregationName:String, ?vMatchers:(Dynamic)->Void, vActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
+	@:overload( function(sAggregationName:String, ?vMatchers:(Dynamic)->Void, vActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(sAggregationName:String, ?vMatchers:(Dynamic)->Void, vActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(sAggregationName:String, ?vMatchers:Array<Dynamic>, vActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(sAggregationName:String, ?vMatchers:Array<Dynamic>, vActions:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(sAggregationName:String, ?vMatchers:Array<Dynamic>, vActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(sAggregationName:String, ?vMatchers:Array<Dynamic>, vActions:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(sAggregationName:String, ?vMatchers:Dynamic, vActions:sap.ui.test.actions.Action):sap.ui.test.OpaBuilder{ })
-	@:overload( function(sAggregationName:String, ?vMatchers:Dynamic, vActions:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(sAggregationName:String, ?vMatchers:Dynamic, vActions:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 
 	/**
 	* Performs given actions on all items of an aggregation fulfilling the matchers.
@@ -211,19 +211,19 @@ extern class OpaBuilder
 	*/
 	public function doOnAggregation( sAggregationName:String, ?vMatchers:Dynamic, vActions:Array<Dynamic>):sap.ui.test.OpaBuilder;
 	@:overload( function(?vChildBuilderOrMatcher:sap.ui.test.matchers.Matcher, ?vActions:sap.ui.test.actions.Action, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?vChildBuilderOrMatcher:sap.ui.test.matchers.Matcher, ?vActions:()->Void, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?vChildBuilderOrMatcher:sap.ui.test.matchers.Matcher, ?vActions:(Dynamic)->Void, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?vChildBuilderOrMatcher:sap.ui.test.matchers.Matcher, ?vActions:Array<Dynamic>, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?vChildBuilderOrMatcher:()->Void, ?vActions:sap.ui.test.actions.Action, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?vChildBuilderOrMatcher:()->Void, ?vActions:()->Void, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?vChildBuilderOrMatcher:()->Void, ?vActions:Array<Dynamic>, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?vChildBuilderOrMatcher:(Dynamic)->Void, ?vActions:sap.ui.test.actions.Action, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?vChildBuilderOrMatcher:(Dynamic)->Void, ?vActions:(Dynamic)->Void, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?vChildBuilderOrMatcher:(Dynamic)->Void, ?vActions:Array<Dynamic>, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?vChildBuilderOrMatcher:Array<Dynamic>, ?vActions:sap.ui.test.actions.Action, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?vChildBuilderOrMatcher:Array<Dynamic>, ?vActions:()->Void, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?vChildBuilderOrMatcher:Array<Dynamic>, ?vActions:(Dynamic)->Void, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?vChildBuilderOrMatcher:Array<Dynamic>, ?vActions:Array<Dynamic>, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?vChildBuilderOrMatcher:Dynamic, ?vActions:sap.ui.test.actions.Action, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?vChildBuilderOrMatcher:Dynamic, ?vActions:()->Void, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?vChildBuilderOrMatcher:Dynamic, ?vActions:(Dynamic)->Void, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?vChildBuilderOrMatcher:Dynamic, ?vActions:Array<Dynamic>, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?vChildBuilderOrMatcher:sap.ui.test.OpaBuilder, ?vActions:sap.ui.test.actions.Action, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?vChildBuilderOrMatcher:sap.ui.test.OpaBuilder, ?vActions:()->Void, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?vChildBuilderOrMatcher:sap.ui.test.OpaBuilder, ?vActions:(Dynamic)->Void, ?bDirect:Bool):sap.ui.test.OpaBuilder{ })
 
 	/**
 	* Executes a builder with matching controls being descendants of matching target control(s). Children are any controls in the control tree beneath this target control(s).
@@ -248,7 +248,7 @@ extern class OpaBuilder
 	* @param	bReplace true to replace all previous defined error functions, false to add it (default)
 	* @return	this OpaBuilder instance
 	*/
-	public function error( vErrorMessage:()->Void, ?bReplace:Bool):sap.ui.test.OpaBuilder;
+	public function error( vErrorMessage:(Dynamic)->Void, ?bReplace:Bool):sap.ui.test.OpaBuilder;
 
 	/**
 	* Executes the definition on the given or previously defined Opa5 instance.
@@ -264,7 +264,7 @@ extern class OpaBuilder
 	*/
 	public function fragmentId( sFragmentId:String):sap.ui.test.OpaBuilder;
 	@:overload( function(vMatchers:sap.ui.test.matchers.Matcher, ?bReplace:Bool):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vMatchers:()->Void, ?bReplace:Bool):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vMatchers:(Dynamic)->Void, ?bReplace:Bool):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vMatchers:Array<Dynamic>, ?bReplace:Bool):sap.ui.test.OpaBuilder{ })
 
 	/**
@@ -275,7 +275,7 @@ extern class OpaBuilder
 	*/
 	public function has( vMatchers:Dynamic, ?bReplace:Bool):sap.ui.test.OpaBuilder;
 	@:overload( function(sAggregationName:String, ?vMatchers:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(sAggregationName:String, ?vMatchers:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(sAggregationName:String, ?vMatchers:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(sAggregationName:String, ?vMatchers:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 
 	/**
@@ -302,67 +302,67 @@ extern class OpaBuilder
 	*/
 	public function hasAggregationProperties( sAggregationName:String, oProperties:Dynamic):sap.ui.test.OpaBuilder;
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:()->Void, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:()->Void, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:()->Void, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:()->Void, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:Dynamic, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:Dynamic, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:Dynamic, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:Dynamic, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:sap.ui.test.matchers.Matcher, vSuccessMatcher:Dynamic, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:()->Void, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:()->Void, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:()->Void, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:()->Void, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:Dynamic, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:Dynamic, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:Dynamic, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:()->Void, vSuccessMatcher:Dynamic, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:Dynamic, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:Dynamic, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:Dynamic, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:(Dynamic)->Void, vSuccessMatcher:Dynamic, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:()->Void, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:()->Void, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:()->Void, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:()->Void, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:Dynamic, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:Dynamic, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:Dynamic, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:Dynamic, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Array<Dynamic>, vSuccessMatcher:Dynamic, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessMatcher:sap.ui.test.matchers.Matcher, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessMatcher:()->Void, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessMatcher:()->Void, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessMatcher:()->Void, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessMatcher:()->Void, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessMatcher:(Dynamic)->Void, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessMatcher:Array<Dynamic>, ?vElseMatcher:Dynamic):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessMatcher:Dynamic, ?vElseMatcher:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vConditions:Dynamic, vSuccessMatcher:Dynamic, ?vElseMatcher:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vConditions:Dynamic, vSuccessMatcher:Dynamic, ?vElseMatcher:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(vConditions:Dynamic, vSuccessMatcher:Dynamic, ?vElseMatcher:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 
 	/**
@@ -398,7 +398,7 @@ extern class OpaBuilder
 	*/
 	public function hasProperties( oProperties:Dynamic):sap.ui.test.OpaBuilder;
 	@:overload( function(?aMatchers:sap.ui.test.matchers.Matcher):sap.ui.test.OpaBuilder{ })
-	@:overload( function(?aMatchers:()->Void):sap.ui.test.OpaBuilder{ })
+	@:overload( function(?aMatchers:(Dynamic)->Void):sap.ui.test.OpaBuilder{ })
 	@:overload( function(?aMatchers:Array<Dynamic>):sap.ui.test.OpaBuilder{ })
 
 	/**
@@ -457,7 +457,7 @@ extern class OpaBuilder
 	*/
 	public function pollingInterval( iPollingInterval:Int):sap.ui.test.OpaBuilder;
 	@:overload( function(vSuccess:String, ?bReplace:Bool):sap.ui.test.OpaBuilder{ })
-	@:overload( function(vSuccess:()->Void, ?bReplace:Bool):sap.ui.test.OpaBuilder{ })
+	@:overload( function(vSuccess:(Dynamic)->Void, ?bReplace:Bool):sap.ui.test.OpaBuilder{ })
 
 	/**
 	* Adds a success message or function. When providing an OpaBuilder, the action will execute it.

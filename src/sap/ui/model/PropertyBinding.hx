@@ -27,7 +27,7 @@ extern class PropertyBinding extends sap.ui.model.Binding
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the binding mode
@@ -45,7 +45,7 @@ extern class PropertyBinding extends sap.ui.model.Binding
 	* Returns the formatter function
 	* @return	the formatter function
 	*/
-	public function getFormatter( ):()->Void;
+	public function getFormatter( ):(Dynamic)->Void;
 
 	/**
 	* Returns the related JavaScript primitive value of the bound target which is parsed by the {@link sap.ui.model.SimpleType#getModelFormat model format} of this binding's type. If this binding doesn't have a type, the original value which is stored in the model is returned.
@@ -101,7 +101,7 @@ When the binding is resumed and the control value was changed in the meantime, t
 	* @param	fnFormatter the formatter function for the binding
 	* @return	Void
 	*/
-	public function setFormatter( fnFormatter:()->Void):Void;
+	public function setFormatter( fnFormatter:(Dynamic)->Void):Void;
 
 	/**
 	* Sets the value for this binding with the related JavaScript primitive type. The value is formatted with the {@link sap.ui.model.SimpleType#getModelFormat model format} and validated against its type and then set to the model.

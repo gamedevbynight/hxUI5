@@ -44,7 +44,7 @@ Fires when selection is changed by user interaction.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.RadioButtonGroup</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.RadioButtonGroup;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.RadioButtonGroup;
 
 	/**
 	* Binds aggregation {@link #getButtons buttons} to model data.
@@ -75,7 +75,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.RadioButtonGroup;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.RadioButtonGroup;
 
 	/**
 	* Exits the radio button group.
@@ -92,7 +92,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -339,7 +339,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.RadioButtonGroup;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.RadioButtonGroup;
 
 	/**
 	* Unbinds aggregation {@link #getButtons buttons} from model data.

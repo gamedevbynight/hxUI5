@@ -21,7 +21,7 @@ Fires an event to log off the user from the application. No parameters.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.ApplicationHeader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLogoff( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.ApplicationHeader;
+	public function attachLogoff( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.ApplicationHeader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:logoff logoff} event of this <code>sap.ui.commons.ApplicationHeader</code>.
@@ -31,7 +31,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLogoff( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.ApplicationHeader;
+	public function detachLogoff( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.ApplicationHeader;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.ApplicationHeader with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,7 +42,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getDisplayLogoff displayLogoff}.
@@ -129,7 +129,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLogoSrc New value for property <code>logoSrc</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLogoSrc( sLogoSrc:sap.ui.core.URI):sap.ui.commons.ApplicationHeader;
+	public function setLogoSrc( ?sLogoSrc:sap.ui.core.URI):sap.ui.commons.ApplicationHeader;
 
 	/**
 	* Sets a new value for property {@link #getLogoText logoText}.
@@ -140,7 +140,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLogoText New value for property <code>logoText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLogoText( sLogoText:String):sap.ui.commons.ApplicationHeader;
+	public function setLogoText( ?sLogoText:String):sap.ui.commons.ApplicationHeader;
 
 	/**
 	* Sets a new value for property {@link #getUserName userName}.
@@ -151,7 +151,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUserName New value for property <code>userName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUserName( sUserName:String):sap.ui.commons.ApplicationHeader;
+	public function setUserName( ?sUserName:String):sap.ui.commons.ApplicationHeader;
 }
 
 typedef ApplicationHeaderArgs = sap.ui.core.Control.ControlArgs & {

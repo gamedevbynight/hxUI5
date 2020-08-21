@@ -37,7 +37,7 @@ Event is fired when the user presses the control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Button</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Button;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Button;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.ui.commons.Button</code>.
@@ -47,7 +47,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Button;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Button;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.Button with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -58,7 +58,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Puts the focus to the button.
@@ -252,7 +252,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.commons.Button;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.Button;
 
 	/**
 	* Sets a new value for property {@link #getHelpId helpId}.
@@ -275,7 +275,7 @@ Icon to be displayed as graphical element within the button. This can be a URI t
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon= New value for property <code>icon</code>
+	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIcon( ?sIcon:sap.ui.core.URI):sap.ui.commons.Button;
@@ -301,7 +301,7 @@ Icon to be displayed as graphical element within the button when it is hovered (
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIconHovered= New value for property <code>iconHovered</code>
+	* @param	sIconHovered New value for property <code>iconHovered</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIconHovered( ?sIconHovered:sap.ui.core.URI):sap.ui.commons.Button;
@@ -314,7 +314,7 @@ Icon to be displayed as graphical element within the button when it is selected 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIconSelected= New value for property <code>iconSelected</code>
+	* @param	sIconSelected New value for property <code>iconSelected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIconSelected( ?sIconSelected:sap.ui.core.URI):sap.ui.commons.Button;
@@ -380,7 +380,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.Button;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.Button;
 }
 
 typedef ButtonArgs = sap.ui.core.Control.ControlArgs & {

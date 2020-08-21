@@ -19,7 +19,7 @@ E.g.: myMessage.bindDetails(getDetails); function getDetails(sId) {... return ht
 	* @param	fnCallBack the callback function
 	* @return	Void
 	*/
-	public function bindDetails( fnCallBack:()->Void):Void;
+	public function bindDetails( fnCallBack:(Dynamic)->Void):Void;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.Message with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -30,7 +30,7 @@ E.g.: myMessage.bindDetails(getDetails); function getDetails(sId) {... return ht
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAssociatedElementId associatedElementId}.
@@ -79,7 +79,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sAssociatedElementId New value for property <code>associatedElementId</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAssociatedElementId( sAssociatedElementId:String):sap.ui.commons.Message;
+	public function setAssociatedElementId( ?sAssociatedElementId:String):sap.ui.commons.Message;
 
 	/**
 	* Sets a new value for property {@link #getDesign design}.
@@ -90,7 +90,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDesign New value for property <code>design</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDesign( sDesign:String):sap.ui.commons.Message;
+	public function setDesign( ?sDesign:String):sap.ui.commons.Message;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -101,7 +101,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.commons.Message;
+	public function setText( ?sText:String):sap.ui.commons.Message;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -112,7 +112,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:sap.ui.commons.MessageType):sap.ui.commons.Message;
+	public function setType( ?sType:sap.ui.commons.MessageType):sap.ui.commons.Message;
 }
 
 typedef MessageArgs = sap.ui.core.Control.ControlArgs & {

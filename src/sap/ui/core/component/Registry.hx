@@ -37,7 +37,7 @@ This function returns an array with all components matching the given predicate.
 	* @param	thisArg context object to provide as <code>this</code> in each call of <code>callback</code>
 	* @return	Array of components matching the predicate; order is undefined and might change in newer versions of UI5
 	*/
-	public static function filter( callback:()->Void, ?thisArg:Dynamic):Array<sap.ui.core.Component>;
+	public static function filter( callback:(Dynamic)->Void, ?thisArg:Dynamic):Array<sap.ui.core.Component>;
 
 	/**
 	* Calls the given <code>callback</code> for each existing component.
@@ -55,7 +55,7 @@ If a <code>thisArg</code> is given, it will be provided as <code>this</code> con
 	* @param	thisArg Context object to provide as <code>this</code> in each call of <code>callback</code>
 	* @return	Void
 	*/
-	public static function forEach( callback:()->Void, ?thisArg:Dynamic):Void;
+	public static function forEach( callback:(Dynamic)->Void, ?thisArg:Dynamic):Void;
 
 	/**
 	* Retrieves a Component by its ID.

@@ -32,7 +32,7 @@ extern class JSONModel extends sap.ui.model.ClientModel
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Serializes the current JSON data of the model into a string. Note: May not work in Internet Explorer 8 because of lacking JSON support (works only if IE 8 mode is enabled)

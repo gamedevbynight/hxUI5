@@ -28,7 +28,7 @@ event raised when a SortItem was added
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nSortPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAddSortItem( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
+	public function attachAddSortItem( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:removeSortItem removeSortItem} event of this <code>sap.m.P13nSortPanel</code>.
@@ -41,7 +41,7 @@ event raised when a SortItem was removed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nSortPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRemoveSortItem( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
+	public function attachRemoveSortItem( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:updateSortItem updateSortItem} event of this <code>sap.m.P13nSortPanel</code>.
@@ -54,7 +54,7 @@ event raised when a SortItem was updated
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nSortPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUpdateSortItem( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
+	public function attachUpdateSortItem( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
 
 	/**
 	* Binds aggregation {@link #getSortItems sortItems} to model data.
@@ -79,7 +79,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAddSortItem( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
+	public function detachAddSortItem( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:removeSortItem removeSortItem} event of this <code>sap.m.P13nSortPanel</code>.
@@ -89,7 +89,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRemoveSortItem( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
+	public function detachRemoveSortItem( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:updateSortItem updateSortItem} event of this <code>sap.m.P13nSortPanel</code>.
@@ -99,7 +99,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUpdateSortItem( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
+	public function detachUpdateSortItem( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nSortPanel;
 
 	/**
 	* Creates a new subclass of class sap.m.P13nSortPanel with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -110,7 +110,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getContainerQuery containerQuery}.
@@ -210,7 +210,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLayoutMode New value for property <code>layoutMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLayoutMode( sLayoutMode:String):sap.m.P13nSortPanel;
+	public function setLayoutMode( ?sLayoutMode:String):sap.m.P13nSortPanel;
 
 	/**
 	* setter for the supported operations array

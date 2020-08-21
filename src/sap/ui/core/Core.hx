@@ -62,7 +62,7 @@ When called, the context of the listener (its <code>this</code>) will be bound t
 	* @param	oListener Optional context object to call the callback on
 	* @return	Void
 	*/
-	public function attachControlEvent( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function attachControlEvent( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:formatError formatError} event of <code>sap.ui.core.Core</code>.
@@ -74,7 +74,7 @@ Please note that this event is a bubbling event and may already be canceled befo
 	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFormatError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
+	public function attachFormatError( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
 	* Registers a given function that is executed after the framework has been initialized.
@@ -85,7 +85,7 @@ More information about the initialization process and the steps it consists of c
 	* @param	fnFunction Function to be after initialization of the framework
 	* @return	Void
 	*/
-	public function attachInit( fnFunction:()->Void):Void;
+	public function attachInit( fnFunction:(Dynamic)->Void):Void;
 
 	/**
 	* Register a listener for the {@link #event:localizationChanged localizationChanged} event.
@@ -95,7 +95,7 @@ When called, the context of the listener (its <code>this</code>) will be bound t
 	* @param	oListener Context object to call the function on
 	* @return	Void
 	*/
-	public function attachLocalizationChanged( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function attachLocalizationChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:parseError parseError} event of <code>sap.ui.core.Core</code>.
@@ -108,7 +108,7 @@ Please note that this event is a bubbling event and may already be canceled befo
 	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachParseError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
+	public function attachParseError( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:ThemeChanged ThemeChanged} event of this <code>sap.ui.core.Core</code>.
@@ -118,7 +118,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
 	* @return	Void
 	*/
-	public function attachThemeChanged( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function attachThemeChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:validationError validationError} event of <code>sap.ui.core.Core</code>.
@@ -131,7 +131,7 @@ Please note that this event is a bubbling event and may already be canceled befo
 	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachValidationError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
+	public function attachValidationError( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:validationSuccess validationSuccess} event of <code>sap.ui.core.Core</code>.
@@ -144,7 +144,7 @@ Please note that this event is a bubbling event and may already be canceled befo
 	* @param	oListener Context object to call the event handler with. Defaults to a dummy event provider object
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachValidationSuccess( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
+	public function attachValidationSuccess( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Core;
 	@:overload( function(?vFieldGroupIds:String):Array<sap.ui.core.Control>{ })
 
 	/**
@@ -202,7 +202,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
-	public function detachControlEvent( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function detachControlEvent( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:formatError formatError} event of <code>sap.ui.core.Core</code>.
@@ -212,7 +212,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFormatError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
+	public function detachFormatError( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
 	* Unregister a listener from the {@link #event:localizationChanged localizationChanged} event.
@@ -222,7 +222,7 @@ The listener will only be unregistered if the same function/context combination 
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Void
 	*/
-	public function detachLocalizationChanged( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function detachLocalizationChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:parseError parseError} event of <code>sap.ui.core.Core</code>.
@@ -232,7 +232,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachParseError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
+	public function detachParseError( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:ThemeChanged ThemeChanged} event of this <code>sap.ui.core.Core</code>.
@@ -242,7 +242,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Object on which the given function had to be called.
 	* @return	Void
 	*/
-	public function detachThemeChanged( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public function detachThemeChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:validationError validationError} event of <code>sap.ui.core.Core</code>.
@@ -252,7 +252,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachValidationError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
+	public function detachValidationError( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:validationSuccess validationSuccess} event of <code>sap.ui.core.Core</code>.
@@ -262,7 +262,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachValidationSuccess( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Core;
+	public function detachValidationSuccess( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Core;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.Core with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -273,7 +273,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the registered component for the given id, if any.

@@ -64,7 +64,7 @@ extern class TimePicker extends sap.m.DateTimeField
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Holds a reference to a JavaScript Date Object. The <code>value</code> (string) property will be set according to it. Alternatively, if the <code>value</code> and <code>valueFormat</code> pair properties are supplied instead, the <code>dateValue</code> will be instantiated according to the parsed <code>value</code>.
@@ -133,7 +133,7 @@ Default value is <code>1</code>.
 
 Defines a placeholder symbol. Shown at the position where there is no user input yet.
 
-Default value is <code>_</code>.
+Default value is <code>"_"</code>.
 	* @return	Value of property <code>placeholderSymbol</code>
 	*/
 	public function getPlaceholderSymbol( ):String;
@@ -256,7 +256,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMask New value for property <code>mask</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMask( sMask:String):sap.m.TimePicker;
+	public function setMask( ?sMask:String):sap.m.TimePicker;
 
 	/**
 	* Sets a new value for property {@link #getMaskMode maskMode}.
@@ -287,7 +287,7 @@ Defines a placeholder symbol. Shown at the position where there is no user input
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>_</code>.
+Default value is <code>"_"</code>.
 	* @param	sPlaceholderSymbol New value for property <code>placeholderSymbol</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -318,7 +318,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.TimePicker;
+	public function setTitle( ?sTitle:String):sap.m.TimePicker;
 	@:overload( function(vTooltip:String):sap.m.TimePicker{ })
 
 	/**

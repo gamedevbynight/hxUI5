@@ -19,7 +19,7 @@ extern class StandardListItem extends sap.m.ListItemBase
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActiveIcon activeIcon}.
@@ -160,7 +160,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sActiveIcon New value for property <code>activeIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveIcon( sActiveIcon:sap.ui.core.URI):sap.m.StandardListItem;
+	public function setActiveIcon( ?sActiveIcon:sap.ui.core.URI):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getAdaptTitleSize adaptTitleSize}.
@@ -184,7 +184,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDescription( sDescription:String):sap.m.StandardListItem;
+	public function setDescription( ?sDescription:String):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -195,7 +195,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.StandardListItem;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getIconDensityAware iconDensityAware}.
@@ -232,7 +232,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sInfo New value for property <code>info</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInfo( sInfo:String):sap.m.StandardListItem;
+	public function setInfo( ?sInfo:String):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getInfoState infoState}.
@@ -282,7 +282,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.StandardListItem;
+	public function setTitle( ?sTitle:String):sap.m.StandardListItem;
 
 	/**
 	* Sets a new value for property {@link #getTitleTextDirection titleTextDirection}.

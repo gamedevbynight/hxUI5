@@ -25,7 +25,7 @@ extern class PositionContainer extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBottom bottom}.
@@ -102,7 +102,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBottom New value for property <code>bottom</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBottom( sBottom:sap.ui.core.CSSSize):sap.ui.commons.layout.PositionContainer;
+	public function setBottom( ?sBottom:sap.ui.core.CSSSize):sap.ui.commons.layout.PositionContainer;
 
 	/**
 	* Sets a new value for property {@link #getCenterHorizontally centerHorizontally}.
@@ -146,7 +146,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLeft New value for property <code>left</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLeft( sLeft:sap.ui.core.CSSSize):sap.ui.commons.layout.PositionContainer;
+	public function setLeft( ?sLeft:sap.ui.core.CSSSize):sap.ui.commons.layout.PositionContainer;
 
 	/**
 	* Sets a new value for property {@link #getRight right}.
@@ -157,7 +157,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sRight New value for property <code>right</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRight( sRight:sap.ui.core.CSSSize):sap.ui.commons.layout.PositionContainer;
+	public function setRight( ?sRight:sap.ui.core.CSSSize):sap.ui.commons.layout.PositionContainer;
 
 	/**
 	* Sets a new value for property {@link #getTop top}.
@@ -168,7 +168,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTop New value for property <code>top</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTop( sTop:sap.ui.core.CSSSize):sap.ui.commons.layout.PositionContainer;
+	public function setTop( ?sTop:sap.ui.core.CSSSize):sap.ui.commons.layout.PositionContainer;
 
 	/**
 	* Updates the position properties of the container according to the given position in JSON style.

@@ -44,7 +44,7 @@ Node is selected
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.TreeNode</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelected( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.TreeNode;
+	public function attachSelected( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.TreeNode;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:toggleOpenState toggleOpenState} event of this <code>sap.ui.commons.TreeNode</code>.
@@ -57,7 +57,7 @@ Node state has changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.TreeNode</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachToggleOpenState( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.TreeNode;
+	public function attachToggleOpenState( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.TreeNode;
 
 	/**
 	* Collapses the node.
@@ -81,7 +81,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelected( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.TreeNode;
+	public function detachSelected( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.TreeNode;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:toggleOpenState toggleOpenState} event of this <code>sap.ui.commons.TreeNode</code>.
@@ -91,7 +91,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachToggleOpenState( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.TreeNode;
+	public function detachToggleOpenState( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.TreeNode;
 
 	/**
 	* Expands the node.
@@ -110,7 +110,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -298,7 +298,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.ui.commons.TreeNode;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.ui.commons.TreeNode;
 
 	/**
 	* Redefinition of Setter for property <code>isSelected</code> for validation purpose
@@ -327,7 +327,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.commons.TreeNode;
+	public function setText( ?sText:String):sap.ui.commons.TreeNode;
 }
 
 typedef TreeNodeArgs = sap.ui.core.Element.ElementArgs & {

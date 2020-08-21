@@ -35,7 +35,7 @@ Event raised when a <code>ChartType</code> has been updated.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nDimMeasurePanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChangeChartType( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nDimMeasurePanel;
+	public function attachChangeChartType( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nDimMeasurePanel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:changeDimMeasureItems changeDimMeasureItems} event of this <code>sap.m.P13nDimMeasurePanel</code>.
@@ -48,7 +48,7 @@ Event raised when one or more <code>DimMeasureItems</code> has been updated. Agg
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nDimMeasurePanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChangeDimMeasureItems( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nDimMeasurePanel;
+	public function attachChangeDimMeasureItems( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nDimMeasurePanel;
 
 	/**
 	* Binds aggregation {@link #getDimMeasureItems dimMeasureItems} to model data.
@@ -79,7 +79,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChangeChartType( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nDimMeasurePanel;
+	public function detachChangeChartType( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nDimMeasurePanel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:changeDimMeasureItems changeDimMeasureItems} event of this <code>sap.m.P13nDimMeasurePanel</code>.
@@ -89,7 +89,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChangeDimMeasureItems( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nDimMeasurePanel;
+	public function detachChangeDimMeasureItems( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nDimMeasurePanel;
 
 	/**
 	* Creates a new subclass of class sap.m.P13nDimMeasurePanel with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -100,7 +100,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getAvailableChartTypes availableChartTypes}.

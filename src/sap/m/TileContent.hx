@@ -34,7 +34,7 @@ See {@link sap.ui.base.ManagedObject#bindAggregation ManagedObject.bindAggregati
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.
@@ -67,7 +67,7 @@ The footer text of the tile.
 
 The semantic color of the footer.
 
-Default value is <code>Neutral</code>.
+Default value is <code>"Neutral"</code>.
 	* @return	Value of property <code>footerColor</code>
 	*/
 	public function getFooterColor( ):sap.m.ValueColor;
@@ -77,7 +77,7 @@ Default value is <code>Neutral</code>.
 
 Frame types: 1x1, 2x1, and auto.
 
-Default value is <code>Auto</code>.
+Default value is <code>"Auto"</code>.
 	* @return	Value of property <code>frameType</code>
 	*/
 	public function getFrameType( ):sap.m.FrameType;
@@ -125,7 +125,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFooter New value for property <code>footer</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFooter( sFooter:String):sap.m.TileContent;
+	public function setFooter( ?sFooter:String):sap.m.TileContent;
 
 	/**
 	* Sets a new value for property {@link #getFooterColor footerColor}.
@@ -134,7 +134,7 @@ The semantic color of the footer.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Neutral</code>.
+Default value is <code>"Neutral"</code>.
 	* @param	sFooterColor New value for property <code>footerColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -147,7 +147,7 @@ Frame types: 1x1, 2x1, and auto.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Auto</code>.
+Default value is <code>"Auto"</code>.
 	* @param	sFrameType New value for property <code>frameType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -162,7 +162,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUnit New value for property <code>unit</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUnit( sUnit:String):sap.m.TileContent;
+	public function setUnit( ?sUnit:String):sap.m.TileContent;
 
 	/**
 	* Unbinds aggregation {@link #getContent content} from model data.

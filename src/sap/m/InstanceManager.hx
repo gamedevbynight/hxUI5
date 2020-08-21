@@ -9,7 +9,7 @@ extern class InstanceManager
 	* @param	fnCallback null
 	* @return	Enable method chaining.
 	*/
-	public static function closeAllDialogs( fnCallback:()->Void):sap.m.InstanceManager;
+	public static function closeAllDialogs( fnCallback:(Dynamic)->Void):sap.m.InstanceManager;
 
 	/**
 	* Closes all open lightboxes.

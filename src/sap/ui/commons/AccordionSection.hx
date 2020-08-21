@@ -28,7 +28,7 @@ Event is fired when the user scrolls the panel
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.AccordionSection</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachScroll( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.AccordionSection;
+	public function attachScroll( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.AccordionSection;
 
 	/**
 	* Destroys all the content in the aggregation {@link #getContent content}.
@@ -44,7 +44,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachScroll( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.AccordionSection;
+	public function detachScroll( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.AccordionSection;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.AccordionSection with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -55,7 +55,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.
@@ -152,7 +152,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMaxHeight New value for property <code>maxHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxHeight( sMaxHeight:sap.ui.core.CSSSize):sap.ui.commons.AccordionSection;
+	public function setMaxHeight( ?sMaxHeight:sap.ui.core.CSSSize):sap.ui.commons.AccordionSection;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -163,7 +163,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.ui.commons.AccordionSection;
+	public function setTitle( ?sTitle:String):sap.ui.commons.AccordionSection;
 }
 
 typedef AccordionSectionArgs = sap.ui.core.Element.ElementArgs & {

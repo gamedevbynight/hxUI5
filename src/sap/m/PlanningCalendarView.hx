@@ -21,7 +21,17 @@ extern class PlanningCalendarView extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
+
+	/**
+	* Gets current value of property {@link #getAppointmentHeight appointmentHeight}.
+
+Determines the different possible sizes for appointments.
+
+Default value is <code>Regular</code>.
+	* @return	Value of property <code>appointmentHeight</code>
+	*/
+	public function getAppointmentHeight( ):sap.ui.unified.CalendarAppointmentHeight;
 
 	/**
 	* Gets current value of property {@link #getDescription description}.
@@ -100,6 +110,19 @@ Default value is <code>false</code>.
 	public function getShowSubIntervals( ):Bool;
 
 	/**
+	* Sets a new value for property {@link #getAppointmentHeight appointmentHeight}.
+
+Determines the different possible sizes for appointments.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Regular</code>.
+	* @param	sAppointmentHeight New value for property <code>appointmentHeight</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setAppointmentHeight( ?sAppointmentHeight:sap.ui.unified.CalendarAppointmentHeight):sap.m.PlanningCalendarView;
+
+	/**
 	* Sets a new value for property {@link #getDescription description}.
 
 Defines the description of the <code>PlanningCalendarView</code>.
@@ -173,7 +196,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sKey New value for property <code>key</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKey( sKey:String):sap.m.PlanningCalendarView;
+	public function setKey( ?sKey:String):sap.m.PlanningCalendarView;
 
 	/**
 	* Sets a new value for property {@link #getShowSubIntervals showSubIntervals}.
@@ -231,4 +254,9 @@ typedef PlanningCalendarViewArgs = sap.ui.core.Element.ElementArgs & {
 <ul> <li>Quarter hour subintervals for interval type <code>Hour</code>.</li> <li>Hour subintervals for interval types <code>Day</code>, <code>Week</code> and <code>OneMonth</code>.</li> <li>Day subintervals for interval type <code>Month</code>.</li> </ul>
 	*/
 	@:optional var showSubIntervals:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Determines the different possible sizes for appointments.
+	*/
+	@:optional var appointmentHeight:haxe.extern.EitherType<String,sap.ui.unified.CalendarAppointmentHeight>;
 }

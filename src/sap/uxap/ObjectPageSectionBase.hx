@@ -31,7 +31,7 @@ extern class ObjectPageSectionBase extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getCustomAnchorBarButton customAnchorBarButton}.
@@ -122,7 +122,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.uxap.ObjectPageSectionBase;
+	public function setTitle( ?sTitle:String):sap.uxap.ObjectPageSectionBase;
 
 	/**
 	* Sets a new value for property {@link #getTitleLevel titleLevel}.

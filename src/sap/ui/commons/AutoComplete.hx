@@ -21,7 +21,7 @@ Fired when the user has changed the value and a suggestion list update should oc
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.AutoComplete</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSuggest( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.AutoComplete;
+	public function attachSuggest( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.AutoComplete;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:suggest suggest} event of this <code>sap.ui.commons.AutoComplete</code>.
@@ -31,7 +31,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSuggest( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.AutoComplete;
+	public function detachSuggest( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.AutoComplete;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.AutoComplete with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,7 +42,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getEnableScrolling enableScrolling}.
@@ -80,7 +80,7 @@ Example: <code> function(sValue, oItem){ return jQuery.sap.startsWithIgnoreCase(
 	* @param	fFilter The filter function. If not set the default filter function will be used.
 	* @return	Void
 	*/
-	public function setFilterFunction( ?fFilter:()->Void):Void;
+	public function setFilterFunction( ?fFilter:(Dynamic)->Void):Void;
 }
 
 typedef AutoCompleteArgs = sap.ui.commons.ComboBox.ComboBoxArgs & {

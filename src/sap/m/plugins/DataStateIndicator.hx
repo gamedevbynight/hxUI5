@@ -21,7 +21,7 @@ This event is fired when the {@link sap.ui.model.DataState data state} of the pl
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.plugins.DataStateIndicator</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDataStateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.plugins.DataStateIndicator;
+	public function attachDataStateChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.plugins.DataStateIndicator;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:dataStateChange dataStateChange} event of this <code>sap.m.plugins.DataStateIndicator</code>.
@@ -31,7 +31,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDataStateChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.plugins.DataStateIndicator;
+	public function detachDataStateChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.plugins.DataStateIndicator;
 
 	/**
 	* Creates a new subclass of class sap.m.plugins.DataStateIndicator with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,7 +42,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getFilter filter}.
@@ -52,7 +52,7 @@ Defines a predicate to test each message of the data state.
 This callback gets called using the {@link sap.ui.core.message.Message message} and {@link sap.ui.core.Control related control} parameters. Returns <code>true</code> to keep the message, <code>false</code> otherwise.
 	* @return	Value of property <code>filter</code>
 	*/
-	public function getFilter( ):()->Void;
+	public function getFilter( ):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.m.plugins.DataStateIndicator.
@@ -79,7 +79,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	fnFilter New value for property <code>filter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFilter( fnFilter:()->Void):sap.m.plugins.DataStateIndicator;
+	public function setFilter( fnFilter:(Dynamic)->Void):sap.m.plugins.DataStateIndicator;
 
 	/**
 	* Shows a message.
@@ -97,7 +97,7 @@ typedef DataStateIndicatorArgs = sap.ui.core.Element.ElementArgs & {
 
 This callback gets called using the {@link sap.ui.core.message.Message message} and {@link sap.ui.core.Control related control} parameters. Returns <code>true</code> to keep the message, <code>false</code> otherwise.
 	*/
-	@:optional var filter:()->Void;
+	@:optional var filter:(Dynamic)->Void;
 
 	/**
 	* Defines the text for the link in the message strip.

@@ -34,7 +34,7 @@ extern class ODataModel extends sap.ui.model.Model
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.v2.ODataModel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAnnotationsFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function attachAnnotationsFailed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the <code>annotationsLoaded</code> event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -43,7 +43,7 @@ extern class ODataModel extends sap.ui.model.Model
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.v2.ODataModel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAnnotationsLoaded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function attachAnnotationsLoaded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:batchRequestCompleted batchRequestCompleted} event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -52,7 +52,7 @@ extern class ODataModel extends sap.ui.model.Model
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.v2.ODataModel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBatchRequestCompleted( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function attachBatchRequestCompleted( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:batchRequestFailed batchRequestFailed} event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -61,7 +61,7 @@ extern class ODataModel extends sap.ui.model.Model
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.v2.ODataModel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBatchRequestFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function attachBatchRequestFailed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:batchRequestSent batchRequestSent} event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -70,7 +70,7 @@ extern class ODataModel extends sap.ui.model.Model
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.v2.ODataModel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBatchRequestSent( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function attachBatchRequestSent( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the <code>metadataFailed</code> event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -79,7 +79,7 @@ extern class ODataModel extends sap.ui.model.Model
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.v2.ODataModel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMetadataFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function attachMetadataFailed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the <code>metadataLoaded</code> event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -88,7 +88,7 @@ extern class ODataModel extends sap.ui.model.Model
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.v2.ODataModel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMetadataLoaded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function attachMetadataLoaded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Creates new context binding for this model.
@@ -135,11 +135,11 @@ extern class ODataModel extends sap.ui.model.Model
 	public function bindTree( sPath:String, ?oContext:sap.ui.model.Context, ?aFilters:Array<sap.ui.model.Filter>, ?mParameters:Dynamic, ?aSorters:Array<sap.ui.model.Sorter>):sap.ui.model.TreeBinding;
 
 	/**
-	* Trigger a request to the function import OData service that was specified in the model constructor.
+	* Triggers a request for the given function import.
 
-If the return type of the function import is either an entity type or a collection of an entity type, then the changes are reflected in the model. Otherwise they are ignored, and the <code>response</code> can be processed in the <code>success</code> callback.
-	* @param	sFunctionName A string containing the name of the function to call. The name is concatenated to the service URL which was specified in the model constructor.
-	* @param	mParameters Optional parameter map containing any of the following properties:
+If the return type of the function import is either an entity type or a collection of an entity type, then this OData model's cache is updated with the values of the returned entities. Otherwise they are ignored, and the <code>response</code> can be processed in the <code>success</code> callback.
+	* @param	sFunctionName The name of the function import starting with a slash, for example <code>/Activate</code>.
+	* @param	mParameters The parameter map containing any of the following properties:
 	* @return	An object which has a <code>contextCreated</code> function that returns a <code>Promise</code>. This resolves with the created {@link sap.ui.model.Context}. In addition it has an <code>abort</code> function to abort the current request.
 	*/
 	public function callFunction( sFunctionName:String, ?mParameters:Dynamic):Dynamic;
@@ -174,7 +174,7 @@ If a callback function is given, the created binding context for a fetched entit
 	* @param	bReload Whether to reload data
 	* @return	The created binding context, only if the data is already available and the binding context could be created synchronously
 	*/
-	public function createBindingContext( sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic, ?fnCallBack:()->Void, ?bReload:Bool):sap.ui.model.Context;
+	public function createBindingContext( sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic, ?fnCallBack:(Dynamic)->Void, ?bReload:Bool):sap.ui.model.Context;
 
 	/**
 	* Creates a new entry object which is described by the metadata of the entity type of the specified <code>sPath</code> Name. A context object is returned which can be used to bind against the newly created object.
@@ -225,7 +225,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAnnotationsFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function detachAnnotationsFailed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the <code>annotationsLoaded</code> event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -235,7 +235,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAnnotationsLoaded( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function detachAnnotationsLoaded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:batchRequestCompleted batchRequestCompleted} event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -245,7 +245,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBatchRequestCompleted( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function detachBatchRequestCompleted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:batchRequestFailed batchRequestFailed} event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -255,7 +255,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBatchRequestFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function detachBatchRequestFailed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:batchRequestSent batchRequestSent} event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -265,7 +265,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBatchRequestSent( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function detachBatchRequestSent( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the <code>metadataFailed</code> event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -275,7 +275,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMetadataFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function detachMetadataFailed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the <code>metadataLoaded</code> event of this <code>sap.ui.model.odata.v2.ODataModel</code>.
@@ -285,7 +285,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMetadataLoaded( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
+	public function detachMetadataLoaded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v2.ODataModel;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.odata.v2.ODataModel with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -296,7 +296,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Force the update on the server of an entity by setting its ETag to '*'.
@@ -467,7 +467,7 @@ To refresh all model data use @link sap.ui.model.odata.v2.ODatamModel#refresh
 	* @param	fnCheckEntry A function which can be used to restrict invalidation to specific entries, gets the entity key and object as parameters and should return true for entities to invalidate.
 	* @return	Void
 	*/
-	public function invalidate( ?fnCheckEntry:()->Void):Void;
+	public function invalidate( ?fnCheckEntry:(Dynamic)->Void):Void;
 
 	/**
 	* Invalidate all entries of the given entity type in the model data.
@@ -547,7 +547,7 @@ Note: In contrast to an individual Binding refresh, the model refresh ignores Bi
 	* @param	bAsync Whether the request should be sent asynchronously
 	* @return	An object which has an <code>abort</code> function to abort the current request.
 	*/
-	public function refreshSecurityToken( ?fnSuccess:()->Void, ?fnError:()->Void, ?bAsync:Bool):Dynamic;
+	public function refreshSecurityToken( ?fnSuccess:(Dynamic)->Void, ?fnError:(Dynamic)->Void, ?bAsync:Bool):Dynamic;
 
 	/**
 	* Trigger a <code>DELETE</code> request to the OData service that was specified in the model constructor.

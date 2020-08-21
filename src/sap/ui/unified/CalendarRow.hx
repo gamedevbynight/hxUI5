@@ -43,7 +43,7 @@ Fired if an interval was selected
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.CalendarRow</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachIntervalSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
+	public function attachIntervalSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:leaveRow leaveRow} event of this <code>sap.ui.unified.CalendarRow</code>.
@@ -56,7 +56,7 @@ The <code>CalendarRow</code> should be left while navigating. (Arrow up or arrow
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.CalendarRow</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLeaveRow( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
+	public function attachLeaveRow( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:select select} event of this <code>sap.ui.unified.CalendarRow</code>.
@@ -69,7 +69,7 @@ Fired if an appointment was selected
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.CalendarRow</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:startDateChange startDateChange} event of this <code>sap.ui.unified.CalendarRow</code>.
@@ -82,7 +82,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.CalendarRow</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachStartDateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
+	public function attachStartDateChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
 
 	/**
 	* Destroys all the appointments in the aggregation {@link #getAppointments appointments}.
@@ -104,7 +104,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachIntervalSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
+	public function detachIntervalSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:leaveRow leaveRow} event of this <code>sap.ui.unified.CalendarRow</code>.
@@ -114,7 +114,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLeaveRow( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
+	public function detachLeaveRow( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:select select} event of this <code>sap.ui.unified.CalendarRow</code>.
@@ -124,7 +124,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:startDateChange startDateChange} event of this <code>sap.ui.unified.CalendarRow</code>.
@@ -134,7 +134,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachStartDateChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
+	public function detachStartDateChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.CalendarRow;
 
 	/**
 	* Creates a new subclass of class sap.ui.unified.CalendarRow with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -145,7 +145,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Focus the given <code>CalendarAppointment</code> in the <code>CalendarRow</code>.
@@ -162,6 +162,26 @@ The passed function and listener object must match the ones used for event regis
 	public function focusNearestAppointment( oDate:Dynamic):sap.ui.unified.CalendarRow;
 
 	/**
+	* Gets current value of property {@link #getAppointmentHeight appointmentHeight}.
+
+Defines the height of the <code>CalendarAppoinment<code>
+
+Default value is <code>Regular</code>.
+	* @return	Value of property <code>appointmentHeight</code>
+	*/
+	public function getAppointmentHeight( ):sap.ui.unified.CalendarAppointmentHeight;
+
+	/**
+	* Gets current value of property {@link #getAppointmentRoundWidth appointmentRoundWidth}.
+
+Defines rounding of the width of <code>CalendarAppoinment<code> <b>Note:</b> This property is applied, when the calendar interval type is day and the view shows more than 20 days
+
+Default value is <code>None</code>.
+	* @return	Value of property <code>appointmentRoundWidth</code>
+	*/
+	public function getAppointmentRoundWidth( ):sap.ui.unified.CalendarAppointmentRoundWidth;
+
+	/**
 	* Gets content of aggregation {@link #getAppointments appointments}.
 
 Appointments to be displayed in the row. Appointments outside the visible time frame are not rendered.
@@ -170,18 +190,6 @@ Appointments to be displayed in the row. Appointments outside the visible time f
 	* @return	null
 	*/
 	public function getAppointments( ):Array<sap.ui.unified.CalendarAppointment>;
-
-	/**
-	* Gets current value of property {@link #getAppointmentsReducedHeight appointmentsReducedHeight}.
-
-If set the appointments without text (only title) are rendered with a smaller height.
-
-<b>Note:</b> On phone devices this property is ignored, appointments are always rendered in full height to allow touching.
-
-Default value is <code>false</code>.
-	* @return	Value of property <code>appointmentsReducedHeight</code>
-	*/
-	public function getAppointmentsReducedHeight( ):Bool;
 
 	/**
 	* Gets current value of property {@link #getAppointmentsVisualization appointmentsVisualization}.
@@ -468,19 +476,30 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeIntervalHeader( vIntervalHeader:sap.ui.unified.CalendarAppointment):sap.ui.unified.CalendarAppointment;
 
 	/**
-	* Sets a new value for property {@link #getAppointmentsReducedHeight appointmentsReducedHeight}.
+	* Sets a new value for property {@link #getAppointmentHeight appointmentHeight}.
 
-If set the appointments without text (only title) are rendered with a smaller height.
-
-<b>Note:</b> On phone devices this property is ignored, appointments are always rendered in full height to allow touching.
+Defines the height of the <code>CalendarAppoinment<code>
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>false</code>.
-	* @param	bAppointmentsReducedHeight New value for property <code>appointmentsReducedHeight</code>
+Default value is <code>Regular</code>.
+	* @param	sAppointmentHeight New value for property <code>appointmentHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAppointmentsReducedHeight( ?bAppointmentsReducedHeight:Bool):sap.ui.unified.CalendarRow;
+	public function setAppointmentHeight( ?sAppointmentHeight:sap.ui.unified.CalendarAppointmentHeight):sap.ui.unified.CalendarRow;
+
+	/**
+	* Sets a new value for property {@link #getAppointmentRoundWidth appointmentRoundWidth}.
+
+Defines rounding of the width of <code>CalendarAppoinment<code> <b>Note:</b> This property is applied, when the calendar interval type is day and the view shows more than 20 days
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>None</code>.
+	* @param	sAppointmentRoundWidth New value for property <code>appointmentRoundWidth</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setAppointmentRoundWidth( ?sAppointmentRoundWidth:sap.ui.unified.CalendarAppointmentRoundWidth):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getAppointmentsVisualization appointmentsVisualization}.
@@ -536,7 +555,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.unified.CalendarRow;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getIntervals intervals}.
@@ -585,7 +604,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNonWorkingDays New value for property <code>nonWorkingDays</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNonWorkingDays( sNonWorkingDays:Array<Int>):sap.ui.unified.CalendarRow;
+	public function setNonWorkingDays( ?sNonWorkingDays:Array<Int>):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getNonWorkingHours nonWorkingHours}.
@@ -598,7 +617,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNonWorkingHours New value for property <code>nonWorkingHours</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNonWorkingHours( sNonWorkingHours:Array<Int>):sap.ui.unified.CalendarRow;
+	public function setNonWorkingHours( ?sNonWorkingHours:Array<Int>):sap.ui.unified.CalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getShowEmptyIntervalHeaders showEmptyIntervalHeaders}.
@@ -686,7 +705,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.unified.CalendarRow;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.unified.CalendarRow;
 
 	/**
 	* If the current time is in the visible output of the <code>CalendarRow</code>, the indicator for the current time must be positioned.
@@ -789,18 +808,21 @@ If a lot of <code>CalendarRow</code> controls are used in one container control 
 	@:optional var groupAppointmentsMode:haxe.extern.EitherType<String,sap.ui.unified.GroupAppointmentsMode>;
 
 	/**
-	* If set the appointments without text (only title) are rendered with a smaller height.
-
-<b>Note:</b> On phone devices this property is ignored, appointments are always rendered in full height to allow touching.
-	*/
-	@:optional var appointmentsReducedHeight:haxe.extern.EitherType<String,Bool>;
-
-	/**
 	* Defines the visualization of the <code>CalendarAppoinment</code>
 
 <b>Note:</b> The real visualization depends on the used theme.
 	*/
 	@:optional var appointmentsVisualization:haxe.extern.EitherType<String,sap.ui.unified.CalendarAppointmentVisualization>;
+
+	/**
+	* Defines the height of the <code>CalendarAppoinment<code>
+	*/
+	@:optional var appointmentHeight:haxe.extern.EitherType<String,sap.ui.unified.CalendarAppointmentHeight>;
+
+	/**
+	* Defines rounding of the width of <code>CalendarAppoinment<code> <b>Note:</b> This property is applied, when the calendar interval type is day and the view shows more than 20 days
+	*/
+	@:optional var appointmentRoundWidth:haxe.extern.EitherType<String,sap.ui.unified.CalendarAppointmentRoundWidth>;
 
     /**
     * Appointments to be displayed in the row. Appointments outside the visible time frame are not rendered.

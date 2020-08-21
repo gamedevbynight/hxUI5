@@ -31,7 +31,7 @@ This event is fired when icon is pressed/activated by the user. When a handler i
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.Icon</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Icon;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Icon;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.ui.core.Icon</code>.
@@ -41,7 +41,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Icon;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Icon;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.Icon with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -52,7 +52,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActiveBackgroundColor activeBackgroundColor}.
@@ -222,7 +222,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sActiveBackgroundColor New value for property <code>activeBackgroundColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveBackgroundColor( sActiveBackgroundColor:String):sap.ui.core.Icon;
+	public function setActiveBackgroundColor( ?sActiveBackgroundColor:String):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getActiveColor activeColor}.
@@ -235,7 +235,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sActiveColor New value for property <code>activeColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveColor( sActiveColor:String):sap.ui.core.Icon;
+	public function setActiveColor( ?sActiveColor:String):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getAlt alt}.
@@ -246,7 +246,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sAlt New value for property <code>alt</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAlt( sAlt:String):sap.ui.core.Icon;
+	public function setAlt( ?sAlt:String):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundColor backgroundColor}.
@@ -259,7 +259,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBackgroundColor New value for property <code>backgroundColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundColor( sBackgroundColor:String):sap.ui.core.Icon;
+	public function setBackgroundColor( ?sBackgroundColor:String):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getColor color}.
@@ -272,7 +272,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sColor New value for property <code>color</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColor( sColor:String):sap.ui.core.Icon;
+	public function setColor( ?sColor:String):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getDecorative decorative}.
@@ -296,7 +296,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.core.Icon;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getHoverBackgroundColor hoverBackgroundColor}.
@@ -309,7 +309,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHoverBackgroundColor New value for property <code>hoverBackgroundColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHoverBackgroundColor( sHoverBackgroundColor:String):sap.ui.core.Icon;
+	public function setHoverBackgroundColor( ?sHoverBackgroundColor:String):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getHoverColor hoverColor}.
@@ -322,7 +322,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHoverColor New value for property <code>hoverColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHoverColor( sHoverColor:String):sap.ui.core.Icon;
+	public function setHoverColor( ?sHoverColor:String):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getNoTabStop noTabStop}.
@@ -346,7 +346,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSize New value for property <code>size</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSize( sSize:sap.ui.core.CSSSize):sap.ui.core.Icon;
+	public function setSize( ?sSize:sap.ui.core.CSSSize):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getSrc src}.
@@ -357,7 +357,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSrc New value for property <code>src</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSrc( sSrc:sap.ui.core.URI):sap.ui.core.Icon;
+	public function setSrc( ?sSrc:sap.ui.core.URI):sap.ui.core.Icon;
 
 	/**
 	* Sets a new value for property {@link #getUseIconTooltip useIconTooltip}.
@@ -381,7 +381,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.core.Icon;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.core.Icon;
 }
 
 typedef IconArgs = sap.ui.core.Control.ControlArgs & {

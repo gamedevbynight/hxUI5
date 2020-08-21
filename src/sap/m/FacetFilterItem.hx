@@ -19,7 +19,7 @@ extern class FacetFilterItem extends sap.m.ListItemBase
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getKey key}.
@@ -52,7 +52,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sKey New value for property <code>key</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKey( sKey:String):sap.m.FacetFilterItem;
+	public function setKey( ?sKey:String):sap.m.FacetFilterItem;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -63,7 +63,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.FacetFilterItem;
+	public function setText( ?sText:String):sap.m.FacetFilterItem;
 }
 
 typedef FacetFilterItemArgs = sap.m.ListItemBase.ListItemBaseArgs & {

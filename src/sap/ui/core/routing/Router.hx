@@ -147,7 +147,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.core.routing.Router</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeRouteMatched( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
+	public function attachBeforeRouteMatched( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:bypassed bypassed} event of this <code>sap.ui.core.routing.Router</code>.
@@ -160,7 +160,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.core.routing.Router</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBypassed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
+	public function attachBypassed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:routeMatched routeMatched} event of this <code>sap.ui.core.routing.Router</code>.
@@ -171,7 +171,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.core.routing.Router</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRouteMatched( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
+	public function attachRouteMatched( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:routePatternMatched routePatternMatched} event of this <code>sap.ui.core.routing.Router</code>.
@@ -184,7 +184,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.core.routing.Router</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRoutePatternMatched( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
+	public function attachRoutePatternMatched( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:titleChanged titleChanged} event of this <code>sap.ui.core.routing.Router</code>.
@@ -195,7 +195,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with, defaults to this <code>sap.ui.core.routing.Router</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTitleChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
+	public function attachTitleChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
 	* Removes the router from the hash changer.
@@ -213,7 +213,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeRouteMatched( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Router;
+	public function detachBeforeRouteMatched( fnFunction:(Dynamic)->Void, oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:bypassed bypassed} event of this <code>sap.ui.core.routing.Router</code>.
@@ -225,7 +225,7 @@ The event will get fired, if none of the routes of the router is matching.
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBypassed( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Router;
+	public function detachBypassed( fnFunction:(Dynamic)->Void, oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:routeMatched routeMatched} event of this <code>sap.ui.core.routing.Router</code>.
@@ -235,7 +235,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRouteMatched( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Router;
+	public function detachRouteMatched( fnFunction:(Dynamic)->Void, oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:routePatternMatched routePatternMatched} event of this <code>sap.ui.core.routing.Router</code>.
@@ -247,7 +247,7 @@ This event is similar to <code>routeMatched</code>. But it will only fire for th
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRoutePatternMatched( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Router;
+	public function detachRoutePatternMatched( fnFunction:(Dynamic)->Void, oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:titleChanged titleChanged} event of this <code>sap.ui.core.routing.Router</code>.
@@ -257,7 +257,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTitleChanged( fnFunction:()->Void, oListener:Dynamic):sap.ui.core.routing.Router;
+	public function detachTitleChanged( fnFunction:(Dynamic)->Void, oListener:Dynamic):sap.ui.core.routing.Router;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.routing.Router with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -268,7 +268,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the hash changer instance which is used in the router.

@@ -23,7 +23,7 @@ This event is fired when the value in the text input field is changed in combina
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ComboBox</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ComboBox;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ComboBox;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:selectionChange selectionChange} event of this <code>sap.m.ComboBox</code>.
@@ -36,7 +36,7 @@ This event is fired when the user types something that matches with an item in t
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ComboBox</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ComboBox;
+	public function attachSelectionChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ComboBox;
 
 	/**
 	* Clones the <code>sap.m.ComboBox</code> control.
@@ -59,7 +59,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ComboBox;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ComboBox;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:selectionChange selectionChange} event of this <code>sap.m.ComboBox</code>.
@@ -69,7 +69,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ComboBox;
+	public function detachSelectionChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ComboBox;
 
 	/**
 	* Creates a new subclass of class sap.m.ComboBox with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -80,7 +80,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getFilterSecondaryValues filterSecondaryValues}.

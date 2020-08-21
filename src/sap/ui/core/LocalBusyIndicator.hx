@@ -19,14 +19,14 @@ extern class LocalBusyIndicator extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getHeight height}.
 
 This property is the height of the control that has to be covered. With this height the position of the animation can be properly set.
 
-Default value is <code>100px</code>.
+Default value is <code>'100px'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -42,7 +42,7 @@ Default value is <code>100px</code>.
 
 This property is the width of the control that has to be covered. With this width the position of the animation can be properly set.
 
-Default value is <code>100px</code>.
+Default value is <code>'100px'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -54,7 +54,7 @@ This property is the height of the control that has to be covered. With this hei
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100px</code>.
+Default value is <code>'100px'</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -67,7 +67,7 @@ This property is the width of the control that has to be covered. With this widt
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100px</code>.
+Default value is <code>'100px'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

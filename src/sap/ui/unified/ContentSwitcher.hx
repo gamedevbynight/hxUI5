@@ -45,7 +45,7 @@ extern class ContentSwitcher extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActiveContent activeContent}.
@@ -62,7 +62,7 @@ Default value is <code>1</code>.
 
 Set the used animation when changing content. This just sets a CSS-class named "sapUiUnifiedACSwitcherAnimation" + this value on the root element of the control. The animation has to be implemented in CSS. This also enables applications to implement their own animations via CSS by reacting to the parent class. See the types sap.ui.unified.ContentSwitcherAnimation for default implementations.
 
-Default value is <code>None</code>.
+Default value is <code>'None'</code>.
 	* @return	Value of property <code>animation</code>
 	*/
 	public function getAnimation( ):String;
@@ -173,7 +173,7 @@ Set the used animation when changing content. This just sets a CSS-class named "
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>None</code>.
+Default value is <code>'None'</code>.
 	* @param	sAnimation New value for property <code>animation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

@@ -28,7 +28,7 @@ Event for the areas that can be clicked in an ImageMap
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.ImageMap</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.ImageMap;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.ImageMap;
 
 	/**
 	* Adds areas to the Image Map.
@@ -53,7 +53,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.ImageMap;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.ImageMap;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.ImageMap with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -64,7 +64,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getAreas areas}.
@@ -129,7 +129,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.ui.commons.ImageMap;
+	public function setName( ?sName:String):sap.ui.commons.ImageMap;
 }
 
 typedef ImageMapArgs = sap.ui.core.Control.ControlArgs & {

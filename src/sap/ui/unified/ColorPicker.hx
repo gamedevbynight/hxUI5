@@ -25,7 +25,7 @@ Fired when the value is changed by user action.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.ColorPicker</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.ColorPicker;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.ColorPicker;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:liveChange liveChange} event of this <code>sap.ui.unified.ColorPicker</code>.
@@ -40,7 +40,7 @@ Fired when the value is changed during the mouse move.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.ColorPicker</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLiveChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.ColorPicker;
+	public function attachLiveChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.ColorPicker;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:change change} event of this <code>sap.ui.unified.ColorPicker</code>.
@@ -50,7 +50,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.ColorPicker;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.ColorPicker;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:liveChange liveChange} event of this <code>sap.ui.unified.ColorPicker</code>.
@@ -60,7 +60,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLiveChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.ColorPicker;
+	public function detachLiveChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.ColorPicker;
 
 	/**
 	* Creates a new subclass of class sap.ui.unified.ColorPicker with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -71,7 +71,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColorString colorString}.
@@ -131,7 +131,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sColorString New value for property <code>colorString</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColorString( sColorString:String):sap.ui.unified.ColorPicker;
+	public function setColorString( ?sColorString:String):sap.ui.unified.ColorPicker;
 
 	/**
 	* Setter for <code>displayMode</code> property.

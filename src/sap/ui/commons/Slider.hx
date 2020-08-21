@@ -37,7 +37,7 @@ Value was changed. This event is fired if the value has changed by a user action
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Slider</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Slider;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Slider;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:liveChange liveChange} event of this <code>sap.ui.commons.Slider</code>.
@@ -50,7 +50,7 @@ Value was changed. This event is fired during the mouse move. The normal change 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Slider</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLiveChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Slider;
+	public function attachLiveChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Slider;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:change change} event of this <code>sap.ui.commons.Slider</code>.
@@ -60,7 +60,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Slider;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Slider;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:liveChange liveChange} event of this <code>sap.ui.commons.Slider</code>.
@@ -70,7 +70,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLiveChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Slider;
+	public function detachLiveChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Slider;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.Slider with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -81,7 +81,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -120,7 +120,7 @@ Default value is <code>true</code>.
 
 Height of the vertical slider.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -218,7 +218,7 @@ Default value is <code>false</code>.
 
 Width of the horizontal slider.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -286,7 +286,7 @@ Height of the vertical slider.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -303,7 +303,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLabels New value for property <code>labels</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabels( sLabels:Array<String>):sap.ui.commons.Slider;
+	public function setLabels( ?sLabels:Array<String>):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getMax max}.
@@ -344,7 +344,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	fSmallStepWidth New value for property <code>smallStepWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSmallStepWidth( fSmallStepWidth:Float):sap.ui.commons.Slider;
+	public function setSmallStepWidth( ?fSmallStepWidth:Float):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getStepLabels stepLabels}.
@@ -368,7 +368,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iTotalUnits New value for property <code>totalUnits</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTotalUnits( iTotalUnits:Int):sap.ui.commons.Slider;
+	public function setTotalUnits( ?iTotalUnits:Int):sap.ui.commons.Slider;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -405,7 +405,7 @@ Width of the horizontal slider.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

@@ -29,7 +29,7 @@ When the control doesn't have string content and no preserved DOM existed for th
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.HTML</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterRendering( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.HTML;
+	public function attachAfterRendering( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.HTML;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterRendering afterRendering} event of this <code>sap.ui.core.HTML</code>.
@@ -39,7 +39,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterRendering( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.HTML;
+	public function detachAfterRendering( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.HTML;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.HTML with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -50,7 +50,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getContent content}.
@@ -63,7 +63,7 @@ Some of these restrictions (there might be others!) are: <ul> <li>the content mu
 
 Please consider to consult the jQuery documentation as well.
 
-The HTML control currently doesn't prevent the usage of multiple root nodes in its DOM content (e.g. <code>setContent("&lt;div/>&lt;div/>")</code>), but this is not a guaranteed feature. The accepted content might be restricted to single root nodes in future versions. To notify applications about this fact, a warning is written in the log when multiple root nodes are used.
+The HTML control currently doesn't prevent the usage of multiple root nodes in its DOM content (e.g. <code>setContent("&lt;div>&lt;/div>&lt;div>&lt;/div>")</code>), but this is not a guaranteed feature. The accepted content might be restricted to single root nodes in future versions. To notify applications about this fact, a warning is written in the log when multiple root nodes are used.
 
 When changing the content dynamically, ensure that the ID of the root node remains the same as the HTML control's ID. Otherwise it cannot be guaranteed that certain lifecycle events take place.
 	* @return	Value of property <code>content</code>
@@ -130,7 +130,7 @@ Some of these restrictions (there might be others!) are: <ul> <li>the content mu
 
 Please consider to consult the jQuery documentation as well.
 
-The HTML control currently doesn't prevent the usage of multiple root nodes in its DOM content (e.g. <code>setContent("&lt;div/>&lt;div/>")</code>), but this is not a guaranteed feature. The accepted content might be restricted to single root nodes in future versions. To notify applications about this fact, a warning is written in the log when multiple root nodes are used.
+The HTML control currently doesn't prevent the usage of multiple root nodes in its DOM content (e.g. <code>setContent("&lt;div>&lt;/div>&lt;div>&lt;/div>")</code>), but this is not a guaranteed feature. The accepted content might be restricted to single root nodes in future versions. To notify applications about this fact, a warning is written in the log when multiple root nodes are used.
 
 When changing the content dynamically, ensure that the ID of the root node remains the same as the HTML control's ID. Otherwise it cannot be guaranteed that certain lifecycle events take place.
 
@@ -138,7 +138,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sContent New value for property <code>content</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContent( sContent:String):sap.ui.core.HTML;
+	public function setContent( ?sContent:String):sap.ui.core.HTML;
 
 	/**
 	* Sets some new DOM content for this HTML control. The content will replace the existing content after the next rendering. Properties are not modified, but preferDOM should be set to true.
@@ -204,7 +204,7 @@ Some of these restrictions (there might be others!) are: <ul> <li>the content mu
 
 Please consider to consult the jQuery documentation as well.
 
-The HTML control currently doesn't prevent the usage of multiple root nodes in its DOM content (e.g. <code>setContent("&lt;div/>&lt;div/>")</code>), but this is not a guaranteed feature. The accepted content might be restricted to single root nodes in future versions. To notify applications about this fact, a warning is written in the log when multiple root nodes are used.
+The HTML control currently doesn't prevent the usage of multiple root nodes in its DOM content (e.g. <code>setContent("&lt;div>&lt;/div>&lt;div>&lt;/div>")</code>), but this is not a guaranteed feature. The accepted content might be restricted to single root nodes in future versions. To notify applications about this fact, a warning is written in the log when multiple root nodes are used.
 
 When changing the content dynamically, ensure that the ID of the root node remains the same as the HTML control's ID. Otherwise it cannot be guaranteed that certain lifecycle events take place.
 	*/

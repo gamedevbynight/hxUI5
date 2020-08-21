@@ -21,7 +21,7 @@ The given object must provide method <code>onLogEntry</code> and can also be inf
 	* @param	fnSupportInfo Callback that returns an additional support object to be logged in support mode. This function is only called if support info mode is turned on with <code>logSupportInfo(true)</code>. To avoid negative effects regarding execution times and memory consumption, the returned object should be a simple immutable JSON object with mostly static and stable content.
 	* @return	Void
 	*/
-	public static function debug( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:()->Void):Void;
+	public static function debug( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:(Dynamic)->Void):Void;
 
 	/**
 	* Creates a new error-level entry in the log with the given message, details and calling component.
@@ -31,7 +31,7 @@ The given object must provide method <code>onLogEntry</code> and can also be inf
 	* @param	fnSupportInfo Callback that returns an additional support object to be logged in support mode. This function is only called if support info mode is turned on with <code>logSupportInfo(true)</code>. To avoid negative effects regarding execution times and memory consumption, the returned object should be a simple immutable JSON object with mostly static and stable content.
 	* @return	Void
 	*/
-	public static function error( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:()->Void):Void;
+	public static function error( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:(Dynamic)->Void):Void;
 
 	/**
 	* Creates a new fatal-level entry in the log with the given message, details and calling component.
@@ -41,7 +41,7 @@ The given object must provide method <code>onLogEntry</code> and can also be inf
 	* @param	fnSupportInfo Callback that returns an additional support object to be logged in support mode. This function is only called if support info mode is turned on with <code>logSupportInfo(true)</code>. To avoid negative effects regarding execution times and memory consumption, the returned object should be a simple immutable JSON object with mostly static and stable content.
 	* @return	Void
 	*/
-	public static function fatal( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:()->Void):Void;
+	public static function fatal( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:(Dynamic)->Void):Void;
 
 	/**
 	* Returns the log level currently effective for the given component. If no component is given or when no level has been configured for a given component, the log level for the default component of this logger is returned.
@@ -76,7 +76,7 @@ The logger comes with the same API as the Logger module: <ul> <li><code>#fatal</
 	* @param	fnSupportInfo Callback that returns an additional support object to be logged in support mode. This function is only called if support info mode is turned on with <code>logSupportInfo(true)</code>. To avoid negative effects regarding execution times and memory consumption, the returned object should be a simple immutable JSON object with mostly static and stable content.
 	* @return	Void
 	*/
-	public static function info( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:()->Void):Void;
+	public static function info( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:(Dynamic)->Void):Void;
 
 	/**
 	* Checks whether logging is enabled for the given log level, depending on the currently effective log level for the given component.
@@ -113,7 +113,7 @@ If no component is given, the default component of this logger will be taken int
 	* @param	fnSupportInfo Callback that returns an additional support object to be logged in support mode. This function is only called if support info mode is turned on with <code>logSupportInfo(true)</code>. To avoid negative effects regarding execution times and memory consumption, the returned object should be a simple immutable JSON object with mostly static and stable content.
 	* @return	Void
 	*/
-	public static function trace( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:()->Void):Void;
+	public static function trace( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:(Dynamic)->Void):Void;
 
 	/**
 	* Creates a new warning-level entry in the log with the given message, details and calling component.
@@ -123,6 +123,6 @@ If no component is given, the default component of this logger will be taken int
 	* @param	fnSupportInfo Callback that returns an additional support object to be logged in support mode. This function is only called if support info mode is turned on with <code>logSupportInfo(true)</code>. To avoid negative effects regarding execution times and memory consumption, the returned object should be a simple immutable JSON object with mostly static and stable content.
 	* @return	Void
 	*/
-	public static function warning( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:()->Void):Void;
+	public static function warning( sMessage:String, ?sDetails:String, ?sComponent:String, ?fnSupportInfo:(Dynamic)->Void):Void;
 }
 

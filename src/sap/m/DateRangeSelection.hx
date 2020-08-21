@@ -59,7 +59,7 @@ extern class DateRangeSelection extends sap.m.DatePicker
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Getter for property <code>dateValue</code>.
@@ -76,7 +76,7 @@ The start date of the range as JavaScript Date object. This is independent from 
 
 Delimiter between start and end date. Default value is "-". If no delimiter is given, the one defined for the used locale is used.
 
-Default value is <code>-</code>.
+Default value is <code>'-'</code>.
 	* @return	Value of property <code>delimiter</code>
 	*/
 	public function getDelimiter( ):String;
@@ -135,7 +135,7 @@ Delimiter between start and end date. Default value is "-". If no delimiter is g
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>-</code>.
+Default value is <code>'-'</code>.
 	* @param	sDelimiter New value for property <code>delimiter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -152,7 +152,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oSecondDateValue New value for property <code>secondDateValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSecondDateValue( oSecondDateValue:Dynamic):sap.m.DateRangeSelection;
+	public function setSecondDateValue( ?oSecondDateValue:Dynamic):sap.m.DateRangeSelection;
 
 	/**
 	* Setter for property <code>value</code>.

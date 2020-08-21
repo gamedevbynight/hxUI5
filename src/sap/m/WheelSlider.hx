@@ -28,7 +28,7 @@ Fires when the slider is collapsed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.WheelSlider</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCollapsed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.WheelSlider;
+	public function attachCollapsed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.WheelSlider;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:expanded expanded} event of this <code>sap.m.WheelSlider</code>.
@@ -41,7 +41,7 @@ Fires when the slider is expanded.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.WheelSlider</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachExpanded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.WheelSlider;
+	public function attachExpanded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.WheelSlider;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:selectedKeyChange selectedKeyChange} event of this <code>sap.m.WheelSlider</code>.
@@ -54,7 +54,7 @@ Fires when the selected key changes.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.WheelSlider</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelectedKeyChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.WheelSlider;
+	public function attachSelectedKeyChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.WheelSlider;
 
 	/**
 	* Destroys all the items in the aggregation {@link #getItems items}.
@@ -70,7 +70,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCollapsed( fnFunction:()->Void, ?oListener:Dynamic):sap.m.WheelSlider;
+	public function detachCollapsed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.WheelSlider;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:expanded expanded} event of this <code>sap.m.WheelSlider</code>.
@@ -80,7 +80,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachExpanded( fnFunction:()->Void, ?oListener:Dynamic):sap.m.WheelSlider;
+	public function detachExpanded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.WheelSlider;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:selectedKeyChange selectedKeyChange} event of this <code>sap.m.WheelSlider</code>.
@@ -90,7 +90,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelectedKeyChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.WheelSlider;
+	public function detachSelectedKeyChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.WheelSlider;
 
 	/**
 	* Creates a new subclass of class sap.m.WheelSlider with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -101,7 +101,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getIsCyclic isCyclic}.
@@ -220,7 +220,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLabel New value for property <code>label</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabel( sLabel:String):sap.m.WheelSlider;
+	public function setLabel( ?sLabel:String):sap.m.WheelSlider;
 
 	/**
 	* Sets a new value for property {@link #getSelectedKey selectedKey}.
@@ -231,7 +231,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSelectedKey New value for property <code>selectedKey</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelectedKey( sSelectedKey:String):sap.m.WheelSlider;
+	public function setSelectedKey( ?sSelectedKey:String):sap.m.WheelSlider;
 }
 
 typedef WheelSliderArgs = sap.ui.core.Control.ControlArgs & {

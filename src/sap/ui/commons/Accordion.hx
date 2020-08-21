@@ -28,7 +28,7 @@ Event is triggered when the user closes a section.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Accordion</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSectionClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
+	public function attachSectionClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:sectionOpen sectionOpen} event of this <code>sap.ui.commons.Accordion</code>.
@@ -41,7 +41,7 @@ Event is triggered when the user opens a section.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Accordion</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSectionOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
+	public function attachSectionOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:sectionsReorder sectionsReorder} event of this <code>sap.ui.commons.Accordion</code>.
@@ -54,7 +54,7 @@ Event is triggered when the user changes the position of a section.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Accordion</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSectionsReorder( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
+	public function attachSectionsReorder( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
 
 	/**
 	* Closes a section and opens the default one
@@ -77,7 +77,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSectionClose( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
+	public function detachSectionClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:sectionOpen sectionOpen} event of this <code>sap.ui.commons.Accordion</code>.
@@ -87,7 +87,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSectionOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
+	public function detachSectionOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:sectionsReorder sectionsReorder} event of this <code>sap.ui.commons.Accordion</code>.
@@ -97,7 +97,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSectionsReorder( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
+	public function detachSectionsReorder( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Accordion;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.Accordion with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -108,7 +108,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.commons.Accordion.
@@ -137,7 +137,7 @@ Empty container used to display any library control
 
 When the specified width is less than the width of a section content, a horizontal scroll bar is provided.
 
-Default value is <code>200px</code>.
+Default value is <code>'200px'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -195,7 +195,7 @@ When the specified width is less than the width of a section content, a horizont
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>200px</code>.
+Default value is <code>'200px'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

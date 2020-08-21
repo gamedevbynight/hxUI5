@@ -44,7 +44,7 @@ The duration of this measure is an avarage of durations measured for each call. 
 	* @return	current measurement containing id, info and start-timestamp, end-timestamp, time, duration (false if error)
 	*/
 	public static function end( sId:String):Dynamic;
-	@:overload( function(?fnFilter:()->Void, ?bCompleted:Bool, ?aCategories:Array<String>):Array<sap.ui.performance.measurement.Entry>{ })
+	@:overload( function(?fnFilter:(Dynamic)->Void, ?bCompleted:Bool, ?aCategories:Array<String>):Array<sap.ui.performance.measurement.Entry>{ })
 
 	/**
 	* Gets all performance measurements where a provided filter function returns a truthy value.
@@ -55,7 +55,7 @@ If neither a filter function nor a category is provided an empty array is return
 	* @param	aCategories The function returns only measurements which match these specified categories
 	* @return	filtered array with measurements containing id, info and start-timestamp, end-timestamp, time, duration, categories (false if error)
 	*/
-	public static function filterMeasurements( ?fnFilter:()->Void, ?bCompleted:Dynamic, ?aCategories:Array<String>):Array<sap.ui.performance.measurement.Entry>;
+	public static function filterMeasurements( ?fnFilter:(Dynamic)->Void, ?bCompleted:Dynamic, ?aCategories:Array<String>):Array<sap.ui.performance.measurement.Entry>;
 
 	/**
 	* Gets the current state of the performance measurement functionality.

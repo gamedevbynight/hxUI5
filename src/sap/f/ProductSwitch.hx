@@ -28,7 +28,7 @@ Fires when an unselected item is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.ProductSwitch</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.ProductSwitch;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ProductSwitch;
 
 	/**
 	* Destroys all the items in the aggregation {@link #getItems items}.
@@ -44,7 +44,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.f.ProductSwitch;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ProductSwitch;
 
 	/**
 	* Creates a new subclass of class sap.f.ProductSwitch with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -55,7 +55,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getItems items}.

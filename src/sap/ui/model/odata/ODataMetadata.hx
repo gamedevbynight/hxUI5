@@ -25,7 +25,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.ODataMetadata</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
+	public function attachFailed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:loaded loaded} event of this <code>sap.ui.model.odata.ODataMetadata</code>.
@@ -36,7 +36,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.odata.ODataMetadata</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLoaded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
+	public function attachLoaded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:failed failed} event of this <code>sap.ui.model.odata.ODataMetadata</code>.
@@ -46,7 +46,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
+	public function detachFailed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:loaded loaded} event of this <code>sap.ui.model.odata.ODataMetadata</code>.
@@ -56,7 +56,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLoaded( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
+	public function detachLoaded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.ODataMetadata;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.odata.ODataMetadata with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -67,7 +67,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.odata.ODataMetadata.

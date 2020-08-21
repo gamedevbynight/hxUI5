@@ -26,7 +26,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>Route</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeMatched( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
+	public function attachBeforeMatched( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:matched matched} event of this <code>sap.ui.core.routing.Route</code>.
@@ -37,7 +37,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.routing.Route</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMatched( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
+	public function attachMatched( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:patternMatched patternMatched} event of this <code>sap.ui.core.routing.Route</code>.
@@ -48,7 +48,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>Route</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPatternMatched( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
+	public function attachPatternMatched( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
 
 	/**
 	* Destroys a route
@@ -64,7 +64,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeMatched( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
+	public function detachBeforeMatched( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:matched matched} event of this <code>sap.ui.core.routing.Route</code>.
@@ -74,7 +74,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMatched( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
+	public function detachMatched( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:patternMatched patternMatched} event of this <code>sap.ui.core.routing.Route</code>.
@@ -84,7 +84,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPatternMatched( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
+	public function detachPatternMatched( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Route;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.routing.Route with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -95,7 +95,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.routing.Route.

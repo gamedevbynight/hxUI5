@@ -34,7 +34,7 @@ extern class ViewSettingsCustomItem extends sap.m.ViewSettingsItem
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Internally the control is handled as a managed object instead of an aggregation because this control is sometimes aggregated in other controls like a popover or a dialog.

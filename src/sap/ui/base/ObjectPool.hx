@@ -43,7 +43,7 @@ extern class ObjectPool extends sap.ui.base.Object
 	* @param	oObjectClass Constructor for the class of objects that this pool should manage
 	* @return	Object
 	*/
-	public function new( ?oObjectClass:()->Void):Void;
+	public function new( ?oObjectClass:(Dynamic)->Void):Void;
 
 	/**
 	* Borrows a free object from the pool. Any arguments to this method are forwarded to the init method of the borrowed object.
@@ -61,7 +61,7 @@ extern class ObjectPool extends sap.ui.base.Object
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.base.ObjectPool.

@@ -46,7 +46,7 @@ extern class AbsoluteLayout extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns an array of the controls contained in the aggregated position containers (might be empty).
@@ -59,7 +59,7 @@ extern class AbsoluteLayout extends sap.ui.core.Control
 
 The overall height of the control. When not set, 100% is automatically set.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -103,7 +103,7 @@ Default value is <code>Hidden</code>.
 
 The overall width of the control. When not set, 100% is automatically set.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;

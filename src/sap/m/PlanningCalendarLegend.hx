@@ -32,7 +32,7 @@ extern class PlanningCalendarLegend extends sap.ui.unified.CalendarLegend
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getAppointmentItems appointmentItems}.
@@ -47,7 +47,7 @@ The legend items which show color and type information about the calendar appoin
 
 Defines the text displayed in the header of the appointment items list. It is commonly related to the calendar appointments.
 
-Default value is <code>Appointments</code>.
+Default value is <code>"Appointments"</code>.
 	* @return	Value of property <code>appointmentItemsHeader</code>
 	*/
 	public function getAppointmentItemsHeader( ):String;
@@ -57,7 +57,7 @@ Default value is <code>Appointments</code>.
 
 Defines the text displayed in the header of the items list. It is commonly related to the calendar days.
 
-Default value is <code>Calendar</code>.
+Default value is <code>"Calendar"</code>.
 	* @return	Value of property <code>itemsHeader</code>
 	*/
 	public function getItemsHeader( ):String;
@@ -107,7 +107,7 @@ Defines the text displayed in the header of the appointment items list. It is co
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Appointments</code>.
+Default value is <code>"Appointments"</code>.
 	* @param	sAppointmentItemsHeader New value for property <code>appointmentItemsHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -120,7 +120,7 @@ Defines the text displayed in the header of the items list. It is commonly relat
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Calendar</code>.
+Default value is <code>"Calendar"</code>.
 	* @param	sItemsHeader New value for property <code>itemsHeader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

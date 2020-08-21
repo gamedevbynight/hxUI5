@@ -51,7 +51,7 @@ Fired if an appointment is created.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PlanningCalendarRow</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAppointmentCreate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
+	public function attachAppointmentCreate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:appointmentDragEnter appointmentDragEnter} event of this <code>sap.m.PlanningCalendarRow</code>.
@@ -66,7 +66,7 @@ When this event handler is attached, the default behavior of the <code>enableApp
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PlanningCalendarRow</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAppointmentDragEnter( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
+	public function attachAppointmentDragEnter( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:appointmentDrop appointmentDrop} event of this <code>sap.m.PlanningCalendarRow</code>.
@@ -79,7 +79,7 @@ Fired if an appointment is dropped.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PlanningCalendarRow</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAppointmentDrop( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
+	public function attachAppointmentDrop( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:appointmentResize appointmentResize} event of this <code>sap.m.PlanningCalendarRow</code>.
@@ -92,7 +92,7 @@ Fired if an appointment is resized.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PlanningCalendarRow</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAppointmentResize( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
+	public function attachAppointmentResize( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
 
 	/**
 	* Destroys all the appointments in the aggregation {@link #getAppointments appointments}.
@@ -126,7 +126,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAppointmentCreate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
+	public function detachAppointmentCreate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:appointmentDragEnter appointmentDragEnter} event of this <code>sap.m.PlanningCalendarRow</code>.
@@ -136,7 +136,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAppointmentDragEnter( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
+	public function detachAppointmentDragEnter( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:appointmentDrop appointmentDrop} event of this <code>sap.m.PlanningCalendarRow</code>.
@@ -146,7 +146,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAppointmentDrop( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
+	public function detachAppointmentDrop( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:appointmentResize appointmentResize} event of this <code>sap.m.PlanningCalendarRow</code>.
@@ -156,7 +156,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAppointmentResize( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
+	public function detachAppointmentResize( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendarRow;
 
 	/**
 	* Creates a new subclass of class sap.m.PlanningCalendarRow with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -167,7 +167,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getAppointments appointments}.
@@ -555,7 +555,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.PlanningCalendarRow;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.PlanningCalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getKey key}.
@@ -566,7 +566,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sKey New value for property <code>key</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKey( sKey:String):sap.m.PlanningCalendarRow;
+	public function setKey( ?sKey:String):sap.m.PlanningCalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getNoAppointmentsText noAppointmentsText}.
@@ -577,7 +577,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNoAppointmentsText New value for property <code>noAppointmentsText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNoAppointmentsText( sNoAppointmentsText:String):sap.m.PlanningCalendarRow;
+	public function setNoAppointmentsText( ?sNoAppointmentsText:String):sap.m.PlanningCalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getNonWorkingDays nonWorkingDays}.
@@ -590,7 +590,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNonWorkingDays New value for property <code>nonWorkingDays</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNonWorkingDays( sNonWorkingDays:Array<Int>):sap.m.PlanningCalendarRow;
+	public function setNonWorkingDays( ?sNonWorkingDays:Array<Int>):sap.m.PlanningCalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getNonWorkingHours nonWorkingHours}.
@@ -603,7 +603,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNonWorkingHours New value for property <code>nonWorkingHours</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNonWorkingHours( sNonWorkingHours:Array<Int>):sap.m.PlanningCalendarRow;
+	public function setNonWorkingHours( ?sNonWorkingHours:Array<Int>):sap.m.PlanningCalendarRow;
 
 	/**
 	* Sets a new value for property {@link #getSelected selected}.

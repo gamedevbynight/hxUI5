@@ -32,7 +32,7 @@ extern class ScrollContainer extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.
@@ -61,7 +61,7 @@ The height of the ScrollContainer. By default the height equals the content heig
 
 Note that when a percentage is given, for the height to work as expected, the height of the surrounding container must be defined.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -99,7 +99,7 @@ Default value is <code>false</code>.
 
 The width of the ScrollContainer. If not set, it consumes the complete available width, behaving like normal HTML block elements. If only vertical scrolling is enabled, make sure the content always fits or wraps.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -178,7 +178,7 @@ Note that when a percentage is given, for the height to work as expected, the he
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -219,7 +219,7 @@ The width of the ScrollContainer. If not set, it consumes the complete available
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

@@ -28,7 +28,7 @@ Event raised if a <code>GroupItem</code> has been added.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nGroupPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAddGroupItem( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
+	public function attachAddGroupItem( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:removeGroupItem removeGroupItem} event of this <code>sap.m.P13nGroupPanel</code>.
@@ -41,7 +41,7 @@ Event raised if a <code>GroupItem</code> has been removed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nGroupPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRemoveGroupItem( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
+	public function attachRemoveGroupItem( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:updateGroupItem updateGroupItem} event of this <code>sap.m.P13nGroupPanel</code>.
@@ -54,7 +54,7 @@ Event raised if a <code>GroupItem</code> has been updated.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nGroupPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUpdateGroupItem( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
+	public function attachUpdateGroupItem( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
 
 	/**
 	* Binds aggregation {@link #getGroupItems groupItems} to model data.
@@ -79,7 +79,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAddGroupItem( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
+	public function detachAddGroupItem( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:removeGroupItem removeGroupItem} event of this <code>sap.m.P13nGroupPanel</code>.
@@ -89,7 +89,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRemoveGroupItem( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
+	public function detachRemoveGroupItem( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:updateGroupItem updateGroupItem} event of this <code>sap.m.P13nGroupPanel</code>.
@@ -99,7 +99,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUpdateGroupItem( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
+	public function detachUpdateGroupItem( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nGroupPanel;
 
 	/**
 	* Creates a new subclass of class sap.m.P13nGroupPanel with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -110,7 +110,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getContainerQuery containerQuery}.
@@ -143,7 +143,7 @@ Can be used to control the layout behavior. Default is "" which will automatical
 
 Defines the maximum number of groups.
 
-Default value is <code>-1</code>.
+Default value is <code>'-1'</code>.
 	* @return	Value of property <code>maxGroups</code>
 	*/
 	public function getMaxGroups( ):String;
@@ -220,7 +220,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLayoutMode New value for property <code>layoutMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLayoutMode( sLayoutMode:String):sap.m.P13nGroupPanel;
+	public function setLayoutMode( ?sLayoutMode:String):sap.m.P13nGroupPanel;
 
 	/**
 	* Sets a new value for property {@link #getMaxGroups maxGroups}.
@@ -229,7 +229,7 @@ Defines the maximum number of groups.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>-1</code>.
+Default value is <code>'-1'</code>.
 	* @param	sMaxGroups New value for property <code>maxGroups</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

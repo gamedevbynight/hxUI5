@@ -21,7 +21,7 @@ Scroll event.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.ScrollBar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachScroll( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ScrollBar;
+	public function attachScroll( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ScrollBar;
 
 	/**
 	* Binds the mouse wheel scroll event of the control that has the scrollbar to the scrollbar itself.
@@ -38,7 +38,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachScroll( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ScrollBar;
+	public function detachScroll( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ScrollBar;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.ScrollBar with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -49,7 +49,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getContentSize contentSize}.
@@ -120,7 +120,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sContentSize New value for property <code>contentSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentSize( sContentSize:sap.ui.core.CSSSize):sap.ui.core.ScrollBar;
+	public function setContentSize( ?sContentSize:sap.ui.core.CSSSize):sap.ui.core.ScrollBar;
 
 	/**
 	* Sets a new value for property {@link #getScrollPosition scrollPosition}.
@@ -131,7 +131,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iScrollPosition New value for property <code>scrollPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScrollPosition( iScrollPosition:Int):sap.ui.core.ScrollBar;
+	public function setScrollPosition( ?iScrollPosition:Int):sap.ui.core.ScrollBar;
 
 	/**
 	* Sets a new value for property {@link #getSize size}.
@@ -142,7 +142,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSize New value for property <code>size</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSize( sSize:sap.ui.core.CSSSize):sap.ui.core.ScrollBar;
+	public function setSize( ?sSize:sap.ui.core.CSSSize):sap.ui.core.ScrollBar;
 
 	/**
 	* Sets a new value for property {@link #getSteps steps}.
@@ -153,7 +153,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iSteps New value for property <code>steps</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSteps( iSteps:Int):sap.ui.core.ScrollBar;
+	public function setSteps( ?iSteps:Int):sap.ui.core.ScrollBar;
 
 	/**
 	* Sets a new value for property {@link #getVertical vertical}.

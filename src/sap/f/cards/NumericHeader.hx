@@ -32,7 +32,7 @@ Fires when the user presses the control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.cards.NumericHeader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.cards.NumericHeader;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.cards.NumericHeader;
 
 	/**
 	* Destroys all the sideIndicators in the aggregation {@link #getSideIndicators sideIndicators}.
@@ -54,7 +54,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.f.cards.NumericHeader;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.cards.NumericHeader;
 
 	/**
 	* Creates a new subclass of class sap.f.cards.NumericHeader with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -65,7 +65,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getDetails details}.
@@ -110,7 +110,7 @@ Additional side number indicators. For example "Deviation" and "Target". Not mor
 
 The semantic color which represents the state of the main number indicator.
 
-Default value is <code>Neutral</code>.
+Default value is <code>"Neutral"</code>.
 	* @return	Value of property <code>state</code>
 	*/
 	public function getState( ):sap.m.ValueColor;
@@ -154,7 +154,7 @@ Defines the toolbar.
 
 The direction of the trend arrow. Shows deviation for the value of the main number indicator.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @return	Value of property <code>trend</code>
 	*/
 	public function getTrend( ):sap.m.DeviationIndicator;

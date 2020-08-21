@@ -3,24 +3,24 @@ package sap.ui.core.routing;
 @:native("sap.ui.core.routing.HashChanger")
 
 /**
-* Class for manipulating and receiving changes of the browserhash with the hasher framework.
+* Class for manipulating and receiving changes of the browser hash with the hasher framework.
 
 Fires a <code>hashChanged</code> event if the browser hash changes.
 */
-extern class HashChanger extends sap.ui.base.EventProvider
+extern class HashChanger extends sap.ui.core.routing.HashChangerBase
 {
 public function new():Void;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.routing.HashChanger with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
 
-<code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.base.EventProvider.extend}.
+<code>oClassInfo</code> might contain the same kind of information as described in {@link sap.ui.core.routing.HashChangerBase.extend}.
 	* @param	sClassName Name of the class being created
 	* @param	oClassInfo Object literal with information about the class
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets the current hash

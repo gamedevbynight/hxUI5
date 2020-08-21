@@ -47,7 +47,7 @@ See {@link sap.ui.base.ManagedObject#bindAggregation ManagedObject.bindAggregati
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAnimationDuration animationDuration}.
@@ -269,7 +269,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.commons.Carousel;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.Carousel;
 
 	/**
 	* Sets a new value for property {@link #getOrientation orientation}.
@@ -293,7 +293,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iVisibleItems New value for property <code>visibleItems</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisibleItems( iVisibleItems:Int):sap.ui.commons.Carousel;
+	public function setVisibleItems( ?iVisibleItems:Int):sap.ui.commons.Carousel;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -304,7 +304,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.Carousel;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.Carousel;
 
 	/**
 	* Shows the element with the specified Id. This can be only used after the component is rendered.

@@ -42,20 +42,6 @@ extern class Tokenizer extends sap.ui.core.Control
 	public function addToken( oToken:sap.m.Token):sap.m.Tokenizer;
 
 	/**
-	* Function validates the given text and adds a new token if validation was successful.
-	* @param	oParameters Parameter bag containing the following fields:
-	* @return	Void
-	*/
-	public function addValidateToken( oParameters:Dynamic):Void;
-
-	/**
-	* Function adds a validation callback called before any new token gets added to the tokens aggregation.
-	* @param	fValidator The validation function
-	* @return	Void
-	*/
-	public function addValidator( fValidator:()->Void):Void;
-
-	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:tokenChange tokenChange} event of this <code>sap.m.Tokenizer</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.Tokenizer</code> itself.
@@ -66,7 +52,7 @@ fired when the tokens aggregation changed (add / remove token)
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Tokenizer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTokenChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Tokenizer;
+	public function attachTokenChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Tokenizer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:tokenUpdate tokenUpdate} event of this <code>sap.m.Tokenizer</code>.
@@ -79,7 +65,7 @@ Fired when the tokens aggregation changed due to a user interaction (add / remov
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Tokenizer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTokenUpdate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Tokenizer;
+	public function attachTokenUpdate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Tokenizer;
 
 	/**
 	* Destroys all the tokens in the aggregation {@link #getTokens tokens}.
@@ -95,7 +81,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTokenChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Tokenizer;
+	public function detachTokenChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Tokenizer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:tokenUpdate tokenUpdate} event of this <code>sap.m.Tokenizer</code>.
@@ -105,7 +91,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTokenUpdate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Tokenizer;
+	public function detachTokenUpdate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Tokenizer;
 
 	/**
 	* Creates a new subclass of class sap.m.Tokenizer with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -116,7 +102,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -151,7 +137,7 @@ Default value is <code>true</code>.
 
 Defines the maximum width of the Tokenizer.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>maxWidth</code>
 	*/
 	public function getMaxWidth( ):sap.ui.core.CSSSize;
@@ -167,7 +153,7 @@ Default value is <code>100%</code>.
 
 Defines the mode that the Tokenizer will use: <ul> <li><code>sap.m.TokenizerRenderMode.Loose</code> mode shows all tokens, no matter the width of the Tokenizer</li> <li><code>sap.m.TokenizerRenderMode.Narrow</code> mode forces the Tokenizer to show only as much tokens as possible in its width and add an n-More indicator</li> </ul>
 
-Default value is <code>sap.m.TokenizerRenderMode.Loose</code>.
+Default value is <code>RenderMode.Loose</code>.
 	* @return	Value of property <code>renderMode</code>
 	*/
 	public function getRenderMode( ):String;
@@ -240,12 +226,6 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @return	An array of the removed elements (might be empty)
 	*/
 	public function removeAllTokens( ):Array<sap.m.Token>;
-
-	/**
-	* Function removes all validation callbacks
-	* @return	Void
-	*/
-	public function removeAllValidators( ):Void;
 	@:overload( function(vAriaDescribedBy:Int):sap.ui.core.ID{ })
 	@:overload( function(vAriaDescribedBy:sap.ui.core.ID):sap.ui.core.ID{ })
 
@@ -273,13 +253,6 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @return	The removed token or <code>null</code>
 	*/
 	public function removeToken( vToken:sap.m.Token):sap.m.Token;
-
-	/**
-	* Function removes a validation callback.
-	* @param	fValidator The validation function
-	* @return	Void
-	*/
-	public function removeValidator( fValidator:()->Void):Void;
 
 	/**
 	* Function scrolls the tokens to the end.
@@ -314,7 +287,7 @@ Defines the maximum width of the Tokenizer.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sMaxWidth New value for property <code>maxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -334,7 +307,7 @@ Defines the mode that the Tokenizer will use: <ul> <li><code>sap.m.TokenizerRend
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>sap.m.TokenizerRenderMode.Loose</code>.
+Default value is <code>RenderMode.Loose</code>.
 	* @param	sRenderMode New value for property <code>renderMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -349,7 +322,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Tokenizer;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Tokenizer;
 }
 
 typedef TokenizerArgs = sap.ui.core.Control.ControlArgs & {

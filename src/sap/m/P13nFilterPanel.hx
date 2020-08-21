@@ -28,7 +28,7 @@ Event raised if a filter item has been added.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nFilterPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAddFilterItem( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
+	public function attachAddFilterItem( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:filterItemChanged filterItemChanged} event of this <code>sap.m.P13nFilterPanel</code>.
@@ -41,7 +41,7 @@ Event raised if a filter item has been changed. reason can be added, updated or 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nFilterPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFilterItemChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
+	public function attachFilterItemChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:removeFilterItem removeFilterItem} event of this <code>sap.m.P13nFilterPanel</code>.
@@ -54,7 +54,7 @@ Event raised if a filter item has been removed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nFilterPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRemoveFilterItem( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
+	public function attachRemoveFilterItem( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:updateFilterItem updateFilterItem} event of this <code>sap.m.P13nFilterPanel</code>.
@@ -67,7 +67,7 @@ Event raised if a filter item has been updated.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nFilterPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUpdateFilterItem( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
+	public function attachUpdateFilterItem( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
 
 	/**
 	* Binds aggregation {@link #getFilterItems filterItems} to model data.
@@ -98,7 +98,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAddFilterItem( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
+	public function detachAddFilterItem( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:filterItemChanged filterItemChanged} event of this <code>sap.m.P13nFilterPanel</code>.
@@ -108,7 +108,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFilterItemChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
+	public function detachFilterItemChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:removeFilterItem removeFilterItem} event of this <code>sap.m.P13nFilterPanel</code>.
@@ -118,7 +118,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRemoveFilterItem( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
+	public function detachRemoveFilterItem( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:updateFilterItem updateFilterItem} event of this <code>sap.m.P13nFilterPanel</code>.
@@ -128,7 +128,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUpdateFilterItem( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
+	public function detachUpdateFilterItem( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nFilterPanel;
 
 	/**
 	* Creates a new subclass of class sap.m.P13nFilterPanel with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -139,7 +139,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the array of conditions.
@@ -202,7 +202,7 @@ Can be used to control the layout behavior. Default is "" which will automatical
 
 Defines the maximum number of exclude filters.
 
-Default value is <code>-1</code>.
+Default value is <code>'-1'</code>.
 	* @return	Value of property <code>maxExcludes</code>
 	*/
 	public function getMaxExcludes( ):String;
@@ -212,7 +212,7 @@ Default value is <code>-1</code>.
 
 Defines the maximum number of include filters.
 
-Default value is <code>-1</code>.
+Default value is <code>'-1'</code>.
 	* @return	Value of property <code>maxIncludes</code>
 	*/
 	public function getMaxIncludes( ):String;
@@ -333,7 +333,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLayoutMode New value for property <code>layoutMode</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLayoutMode( sLayoutMode:String):sap.m.P13nFilterPanel;
+	public function setLayoutMode( ?sLayoutMode:String):sap.m.P13nFilterPanel;
 
 	/**
 	* Sets a new value for property {@link #getMaxExcludes maxExcludes}.
@@ -342,7 +342,7 @@ Defines the maximum number of exclude filters.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>-1</code>.
+Default value is <code>'-1'</code>.
 	* @param	sMaxExcludes New value for property <code>maxExcludes</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -355,7 +355,7 @@ Defines the maximum number of include filters.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>-1</code>.
+Default value is <code>'-1'</code>.
 	* @param	sMaxIncludes New value for property <code>maxIncludes</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

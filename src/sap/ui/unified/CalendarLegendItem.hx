@@ -19,7 +19,7 @@ extern class CalendarLegendItem extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColor color}.
@@ -62,7 +62,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sColor New value for property <code>color</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColor( sColor:sap.ui.core.CSSColor):sap.ui.unified.CalendarLegendItem;
+	public function setColor( ?sColor:sap.ui.core.CSSColor):sap.ui.unified.CalendarLegendItem;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -73,7 +73,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.unified.CalendarLegendItem;
+	public function setText( ?sText:String):sap.ui.unified.CalendarLegendItem;
 
 	/**
 	* Sets a new value for property {@link #getType type}.

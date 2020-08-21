@@ -21,7 +21,7 @@ Event which is fired when the ValueHelp is requested.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.ValueHelpField</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachValueHelpRequest( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.ValueHelpField;
+	public function attachValueHelpRequest( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.ValueHelpField;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:valueHelpRequest valueHelpRequest} event of this <code>sap.ui.commons.ValueHelpField</code>.
@@ -31,7 +31,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachValueHelpRequest( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.ValueHelpField;
+	public function detachValueHelpRequest( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.ValueHelpField;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.ValueHelpField with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,7 +42,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getIconDisabledURL iconDisabledURL}.
@@ -83,7 +83,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconDisabledURL New value for property <code>iconDisabledURL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDisabledURL( sIconDisabledURL:sap.ui.core.URI):sap.ui.commons.ValueHelpField;
+	public function setIconDisabledURL( ?sIconDisabledURL:sap.ui.core.URI):sap.ui.commons.ValueHelpField;
 
 	/**
 	* Sets a new value for property {@link #getIconHoverURL iconHoverURL}.
@@ -94,7 +94,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconHoverURL New value for property <code>iconHoverURL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconHoverURL( sIconHoverURL:sap.ui.core.URI):sap.ui.commons.ValueHelpField;
+	public function setIconHoverURL( ?sIconHoverURL:sap.ui.core.URI):sap.ui.commons.ValueHelpField;
 
 	/**
 	* Sets a new value for property {@link #getIconURL iconURL}.
@@ -105,7 +105,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconURL New value for property <code>iconURL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconURL( sIconURL:sap.ui.core.URI):sap.ui.commons.ValueHelpField;
+	public function setIconURL( ?sIconURL:sap.ui.core.URI):sap.ui.commons.ValueHelpField;
 }
 
 typedef ValueHelpFieldArgs = sap.ui.commons.TextField.TextFieldArgs & {

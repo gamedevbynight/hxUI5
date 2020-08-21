@@ -65,7 +65,7 @@ Is fired when one of the following happens: <br> <ol> <li>the text in the input 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.StepInput</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.StepInput;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.StepInput;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:change change} event of this <code>sap.m.StepInput</code>.
@@ -75,7 +75,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.StepInput;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.StepInput;
 
 	/**
 	* Creates a new subclass of class sap.m.StepInput with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -86,7 +86,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -147,7 +147,7 @@ Determines the distribution of space between the input field and the description
 
 <b>Note:</b> This property takes effect only if the <code>description</code> property is also set.
 
-Default value is <code>50%</code>.
+Default value is <code>'50%'</code>.
 	* @return	Value of property <code>fieldWidth</code>
 	*/
 	public function getFieldWidth( ):sap.ui.core.CSSSize;
@@ -273,7 +273,7 @@ Default value is <code>0</code>.
 	/**
 	* Gets current value of property {@link #getValueState valueState}.
 
-Accepts the core enumeration ValueState.type that supports <code>None</code>, <code>Error</code>, <code>Warning</code> and <code>Success</code>.
+Accepts the core enumeration ValueState.type that supports <code>None</code>, <code>Error</code>, <code>Warning</code> and <code>Success</code>. ValueState is managed internally only when validation is triggered by user interaction.
 
 Default value is <code>None</code>.
 	* @return	Value of property <code>valueState</code>
@@ -335,7 +335,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDescription( sDescription:String):sap.m.StepInput;
+	public function setDescription( ?sDescription:String):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getDisplayValuePrecision displayValuePrecision}.
@@ -387,7 +387,7 @@ Determines the distribution of space between the input field and the description
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>50%</code>.
+Default value is <code>'50%'</code>.
 	* @param	sFieldWidth New value for property <code>fieldWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -415,7 +415,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.m.StepInput;
+	public function setName( ?sName:String):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getPlaceholder placeholder}.
@@ -426,7 +426,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sPlaceholder New value for property <code>placeholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholder( sPlaceholder:String):sap.m.StepInput;
+	public function setPlaceholder( ?sPlaceholder:String):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getRequired required}.
@@ -498,7 +498,7 @@ Default value is <code>0</code>.
 	/**
 	* Sets a new value for property {@link #getValueState valueState}.
 
-Accepts the core enumeration ValueState.type that supports <code>None</code>, <code>Error</code>, <code>Warning</code> and <code>Success</code>.
+Accepts the core enumeration ValueState.type that supports <code>None</code>, <code>Error</code>, <code>Warning</code> and <code>Success</code>. ValueState is managed internally only when validation is triggered by user interaction.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -517,7 +517,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValueStateText New value for property <code>valueStateText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueStateText( sValueStateText:String):sap.m.StepInput;
+	public function setValueStateText( ?sValueStateText:String):sap.m.StepInput;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -586,7 +586,7 @@ If the user increases/decreases the value by <code>largerStep</code>, this calcu
 	@:optional var width:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 
 	/**
-	* Accepts the core enumeration ValueState.type that supports <code>None</code>, <code>Error</code>, <code>Warning</code> and <code>Success</code>.
+	* Accepts the core enumeration ValueState.type that supports <code>None</code>, <code>Error</code>, <code>Warning</code> and <code>Success</code>. ValueState is managed internally only when validation is triggered by user interaction.
 	*/
 	@:optional var valueState:haxe.extern.EitherType<String,sap.ui.core.ValueState>;
 

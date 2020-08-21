@@ -21,7 +21,7 @@ Event is fired when the user navigates to another page by selecting it directly,
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Paginator</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPage( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Paginator;
+	public function attachPage( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Paginator;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:page page} event of this <code>sap.ui.commons.Paginator</code>.
@@ -31,7 +31,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPage( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Paginator;
+	public function detachPage( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Paginator;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.Paginator with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,7 +42,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getCurrentPage currentPage}.
@@ -90,7 +90,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iNumberOfPages New value for property <code>numberOfPages</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNumberOfPages( iNumberOfPages:Int):sap.ui.commons.Paginator;
+	public function setNumberOfPages( ?iNumberOfPages:Int):sap.ui.commons.Paginator;
 }
 
 typedef PaginatorArgs = sap.ui.core.Control.ControlArgs & {

@@ -23,7 +23,7 @@ extern class RangeSlider extends sap.m.Slider
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.m.RangeSlider.
@@ -38,7 +38,7 @@ Determines the currently selected range on the slider.
 
 If the value is lower/higher than the allowed minimum/maximum, a warning message will be output to the console.
 
-Default value is <code>0,100</code>.
+Default value is <code>[0, 100]</code>.
 	* @return	Value of property <code>range</code>
 	*/
 	public function getRange( ):Array<Float>;
@@ -64,7 +64,7 @@ If the value is lower/higher than the allowed minimum/maximum, a warning message
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>0,100</code>.
+Default value is <code>[0, 100]</code>.
 	* @param	sRange New value for property <code>range</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

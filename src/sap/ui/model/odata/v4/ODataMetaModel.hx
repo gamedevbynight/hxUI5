@@ -51,7 +51,7 @@ A path which ends with an "@" segment can be used to iterate all inline or exter
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a snapshot of each $metadata or annotation file loaded so far, combined into a single "JSON" object according to the streamlined OData V4 Metadata JSON Format.
@@ -79,6 +79,13 @@ A path which ends with an "@" segment can be used to iterate all inline or exter
 	public static function getMetadata( ):sap.ui.base.Metadata;
 
 	/**
+	* Returns the OData metadata model path corresponding to the given OData data model path.
+	* @param	sPath An absolute data path within the OData data model, for example "/EMPLOYEES/0/ENTRYDATE" or "/EMPLOYEES('42')/ENTRYDATE
+	* @return	The corresponding metadata path within the OData metadata model, for example "/EMPLOYEES/ENTRYDATE"
+	*/
+	public function getMetaPath( sPath:String):String;
+
+	/**
 	* Returns the metadata object for the given path relative to the given context. Returns <code>undefined</code> in case the metadata is not (yet) available. Use {@link #requestObject} for asynchronous access.
 	* @param	sPath A relative or absolute path within the metadata model
 	* @param	oContext The context to be used as a starting point in case of a relative path
@@ -96,9 +103,10 @@ A path which ends with an "@" segment can be used to iterate all inline or exter
 	/**
 	* Returns the UI5 type for the given property path that formats and parses corresponding to the property's EDM type and constraints. The property's type must be a primitive type. Use {@link #requestUI5Type} for asynchronous access.
 	* @param	sPath An absolute path to an OData property within the OData data model
+	* @param	mFormatOptions Type-specific format options, since 1.81.0. The boolean format option "parseKeepsEmptyString" applies to {@link sap.ui.model.odata.type.String} only and is ignored for all other types. All other format options are passed "as is".
 	* @return	The corresponding UI5 type from {@link sap.ui.model.odata.type}, if all required metadata to calculate this type is already available; if no specific type can be determined, a warning is logged and {@link sap.ui.model.odata.type.Raw} is used
 	*/
-	public function getUI5Type( sPath:String):sap.ui.model.odata.type.ODataType;
+	public function getUI5Type( sPath:String, ?mFormatOptions:Dynamic):sap.ui.model.odata.type.ODataType;
 
 	/**
 	* Determines which type of value list exists for the given property.
@@ -194,9 +202,10 @@ Any other segment, including an OData simple identifier, is looked up as a prope
 	/**
 	* Requests the UI5 type for the given property path that formats and parses corresponding to the property's EDM type and constraints. The property's type must be a primitive type. Use {@link #getUI5Type} for synchronous access.
 	* @param	sPath An absolute path to an OData property within the OData data model
+	* @param	mFormatOptions Type-specific format options, since 1.81.0. The boolean format option "parseKeepsEmptyString" applies to {@link sap.ui.model.odata.type.String} only and is ignored for all other types. All other format options are passed "as is".
 	* @return	A promise that gets resolved with the corresponding UI5 type from {@link sap.ui.model.odata.type}; if no specific type can be determined, a warning is logged and {@link sap.ui.model.odata.type.Raw} is used
 	*/
-	public function requestUI5Type( sPath:String):js.lib.Promise<ODataMetaModel>;
+	public function requestUI5Type( sPath:String, ?mFormatOptions:Dynamic):js.lib.Promise<ODataMetaModel>;
 
 	/**
 	* Request unit customizing based on the code list reference given in the entity container's <code>com.sap.vocabularies.CodeList.v1.UnitOfMeasure</code> annotation. The corresponding HTTP request uses the HTTP headers obtained via {@link sap.ui.model.odata.v4.ODataModel#getHttpHeaders} from this meta model's data model.
@@ -210,7 +219,7 @@ Any other segment, including an OData simple identifier, is looked up as a prope
 	* Requests information to retrieve a value list for the property given by <code>sPropertyPath</code>.
 	* @param	sPropertyPath An absolute path to an OData property within the OData data model or a (meta) path to an operation parameter, for example "/TEAMS(1)/acme.NewAction/Team_ID"
 	* @param	bAutoExpandSelect The value of the parameter <code>autoExpandSelect</code> for value list models created by this method. If the value list model is the data model associated with this meta model, this flag has no effect. Supported since 1.68.0
-	* @return	A promise which is resolved with a map of qualifier to value list mapping objects structured as defined by <code>com.sap.vocabularies.Common.v1.ValueListType</code>; the map entry with key "" represents the mapping without qualifier. Each entry has an additional property "$model" which is the {@link sap.ui.model.odata.v4.ODataModel} instance to read value list data via this mapping; this model is constructed with the HTTP headers obtained via {@link sap.ui.model.odata.v4.ODataModel#getHttpHeaders} from this meta model's data model. Since 1.80.0, unless the value list model is the data model associated with this meta model, the model parameter "sharedRequests" is set automatically, see {@link sap.ui.model.odata.v4.ODataModel#constructor}. For the remaining cases, use the binding-specific parameter "$$sharedRequest", see {@link sap.ui.model.odata.v4.ODataModel#bindList}.
+	* @return	A promise which is resolved with a map of qualifier to value list mapping objects structured as defined by <code>com.sap.vocabularies.Common.v1.ValueListType</code>; the map entry with key "" represents the mapping without qualifier. Each entry has an additional property "$model" which is the {@link sap.ui.model.odata.v4.ODataModel} instance to read value list data via this mapping; that model is constructed with the HTTP headers obtained via {@link sap.ui.model.odata.v4.ODataModel#getHttpHeaders} from this meta model's data model. Since 1.80.0, that model's parameter "sharedRequests" is set automatically (see {@link sap.ui.model.odata.v4.ODataModel#constructor}). If the value list model is the data model associated with this meta model, use the binding-specific parameter "$$sharedRequest" instead, see {@link sap.ui.model.odata.v4.ODataModel#bindList}.
 
 For fixed values, only one mapping is expected and the qualifier is ignored. The mapping is available with key "".
 

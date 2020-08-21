@@ -32,7 +32,7 @@ If no view is connected or if the view doesn't contain an element with the given
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.mvc.ControllerExtension.
@@ -64,6 +64,6 @@ Example for <code>oExtension</code>: <pre>
 	* @param	oExtension The custom extension definition
 	* @return	A controller extension class
 	*/
-	public static function override( oExtension:Dynamic):()->Void;
+	public static function override( oExtension:Dynamic):(Dynamic)->Void;
 }
 

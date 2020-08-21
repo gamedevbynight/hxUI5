@@ -18,7 +18,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with, defaults to this <code>MessageProcessor</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMessageChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.message.MessageProcessor;
+	public function attachMessageChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.message.MessageProcessor;
 
 	/**
 	* Implement in inheriting classes
@@ -40,7 +40,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMessageChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.message.MessageProcessor;
+	public function detachMessageChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.message.MessageProcessor;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.message.MessageProcessor with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -51,7 +51,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the ID of the MessageProcessor instance

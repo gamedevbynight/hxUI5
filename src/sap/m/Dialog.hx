@@ -53,7 +53,7 @@ This event will be fired after the Dialog is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Dialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Dialog;
+	public function attachAfterClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Dialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterOpen afterOpen} event of this <code>sap.m.Dialog</code>.
@@ -66,7 +66,7 @@ This event will be fired after the Dialog is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Dialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Dialog;
+	public function attachAfterOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Dialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeClose beforeClose} event of this <code>sap.m.Dialog</code>.
@@ -79,7 +79,7 @@ This event will be fired before the Dialog is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Dialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Dialog;
+	public function attachBeforeClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Dialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.Dialog</code>.
@@ -92,7 +92,7 @@ This event will be fired before the Dialog is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Dialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Dialog;
+	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Dialog;
 
 	/**
 	* Close the dialog.
@@ -144,7 +144,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Dialog;
+	public function detachAfterClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Dialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterOpen afterOpen} event of this <code>sap.m.Dialog</code>.
@@ -154,7 +154,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Dialog;
+	public function detachAfterOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Dialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeClose beforeClose} event of this <code>sap.m.Dialog</code>.
@@ -164,7 +164,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Dialog;
+	public function detachBeforeClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Dialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.Dialog</code>.
@@ -174,7 +174,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Dialog;
+	public function detachBeforeOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Dialog;
 
 	/**
 	* Creates a new subclass of class sap.m.Dialog with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -185,7 +185,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -538,7 +538,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sContentHeight New value for property <code>contentHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentHeight( sContentHeight:sap.ui.core.CSSSize):sap.m.Dialog;
+	public function setContentHeight( ?sContentHeight:sap.ui.core.CSSSize):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getContentWidth contentWidth}.
@@ -549,7 +549,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sContentWidth New value for property <code>contentWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentWidth( sContentWidth:sap.ui.core.CSSSize):sap.m.Dialog;
+	public function setContentWidth( ?sContentWidth:sap.ui.core.CSSSize):sap.m.Dialog;
 
 	/**
 	* Sets the aggregated {@link #getCustomHeader customHeader}.
@@ -587,7 +587,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oEscapeHandler New value for property <code>escapeHandler</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEscapeHandler( oEscapeHandler:Dynamic):sap.m.Dialog;
+	public function setEscapeHandler( ?oEscapeHandler:Dynamic):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getHorizontalScrolling horizontalScrolling}.
@@ -611,7 +611,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.Dialog;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.Dialog;
 	@:overload( function(oInitialFocus:sap.ui.core.ID):sap.m.Dialog{ })
 
 	/**
@@ -691,7 +691,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.Dialog;
+	public function setTitle( ?sTitle:String):sap.m.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
@@ -868,7 +868,7 @@ If a value other than <code>None</code> is set, a predefined icon will be added 
 	@:optional var _valueState:haxe.extern.EitherType<String,sap.ui.core.InvisibleText>;
 
 	/**
-	* In the Dialog focus is set first on the <code>leftButton</code> and then on <code>rightButton</code>, when available. If another control needs to get the focus, set the <code>initialFocus</code> with the control which should be focused on. Setting <code>initialFocus</code> to input controls doesn't open the On-Screen keyboard on mobile device as, due to browser limitation, the On-Screen keyboard can't be opened with JavaScript code. The opening of On-Screen keyboard must be triggered by real user action.
+	* In the Dialog focus is set first on the <code>beginButton</code> and then on <code>endButton</code>, when available. If another control needs to get the focus, set the <code>initialFocus</code> with the control which should be focused on. Setting <code>initialFocus</code> to input controls doesn't open the On-Screen keyboard on mobile device as, due to browser limitation, the On-Screen keyboard can't be opened with JavaScript code. The opening of On-Screen keyboard must be triggered by real user action.
 	*/
 	@:optional var initialFocus:haxe.extern.EitherType<String,sap.ui.core.Control>;
 

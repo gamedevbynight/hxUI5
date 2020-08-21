@@ -41,7 +41,7 @@ See {@link sap.ui.base.ManagedObject#bindAggregation ManagedObject.bindAggregati
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getCrossAppNavCallback crossAppNavCallback}.
@@ -202,7 +202,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFallbackIcon New value for property <code>fallbackIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFallbackIcon( sFallbackIcon:sap.ui.core.URI):sap.m.QuickViewPage;
+	public function setFallbackIcon( ?sFallbackIcon:sap.ui.core.URI):sap.m.QuickViewPage;
 
 	/**
 	* Sets a new value for property {@link #getHeader header}.

@@ -27,7 +27,7 @@ Event is fired before a Callout is displayed. Call the preventDefault method of 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.CalloutBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
+	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:close close} event of this <code>sap.ui.commons.CalloutBase</code>.
@@ -40,7 +40,7 @@ Event is fired when the Callout window is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.CalloutBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
+	public function attachClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:open open} event of this <code>sap.ui.commons.CalloutBase</code>.
@@ -53,7 +53,7 @@ The event is fired when the popup is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.CalloutBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
+	public function attachOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:opened opened} event of this <code>sap.ui.commons.CalloutBase</code>.
@@ -66,7 +66,7 @@ Is fired when the Callout has been opened
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.CalloutBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachOpened( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
+	public function attachOpened( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
 
 	/**
 	* Closes Callout
@@ -82,7 +82,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
+	public function detachBeforeOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:close close} event of this <code>sap.ui.commons.CalloutBase</code>.
@@ -92,7 +92,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachClose( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
+	public function detachClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:open open} event of this <code>sap.ui.commons.CalloutBase</code>.
@@ -102,7 +102,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
+	public function detachOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:opened opened} event of this <code>sap.ui.commons.CalloutBase</code>.
@@ -112,7 +112,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachOpened( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
+	public function detachOpened( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.CalloutBase;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.CalloutBase with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -123,7 +123,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.commons.CalloutBase.

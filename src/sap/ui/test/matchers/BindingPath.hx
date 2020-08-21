@@ -16,6 +16,16 @@ As of version 1.72, it is available as a declarative matcher with the following 
         propertyPath: "string"
     }
 }
+</code></pre> As of version 1.81, you can use regular expressions in declarative syntax: <code><pre>{
+    bindingPath: {
+        path: {
+            regex: {
+                source: "binding.*PathValue$",
+                flags: "ig"
+            }
+        }
+    }
+}
 </code></pre>
 */
 extern class BindingPath extends sap.ui.test.matchers.Matcher
@@ -37,7 +47,7 @@ extern class BindingPath extends sap.ui.test.matchers.Matcher
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.test.matchers.BindingPath.
@@ -56,18 +66,18 @@ The name of the binding model that is used for matching.
 	/**
 	* Gets current value of property {@link #getPath path}.
 
-The value of the binding context path that is used for matching.
+The value of the binding context path that is used for matching. As of version 1.81, it can also be a regular expression.
 	* @return	Value of property <code>path</code>
 	*/
-	public function getPath( ):String;
+	public function getPath( ):Dynamic;
 
 	/**
 	* Gets current value of property {@link #getPropertyPath propertyPath}.
 
-The value of the binding property path that is used for matching. If (context) path is also set, propertyPath will be assumed to be relative to the binding context path
+The value of the binding property path that is used for matching. If (context) path is also set, propertyPath will be assumed to be relative to the binding context path As of version 1.81, it can also be a regular expression.
 	* @return	Value of property <code>propertyPath</code>
 	*/
-	public function getPropertyPath( ):String;
+	public function getPropertyPath( ):Dynamic;
 
 	/**
 	* Checks if the control has a binding with matching path
@@ -90,23 +100,23 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	/**
 	* Sets a new value for property {@link #getPath path}.
 
-The value of the binding context path that is used for matching.
+The value of the binding context path that is used for matching. As of version 1.81, it can also be a regular expression.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-	* @param	sPath New value for property <code>path</code>
+	* @param	oPath New value for property <code>path</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPath( sPath:String):sap.ui.test.matchers.BindingPath;
+	public function setPath( oPath:Dynamic):sap.ui.test.matchers.BindingPath;
 
 	/**
 	* Sets a new value for property {@link #getPropertyPath propertyPath}.
 
-The value of the binding property path that is used for matching. If (context) path is also set, propertyPath will be assumed to be relative to the binding context path
+The value of the binding property path that is used for matching. If (context) path is also set, propertyPath will be assumed to be relative to the binding context path As of version 1.81, it can also be a regular expression.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-	* @param	sPropertyPath New value for property <code>propertyPath</code>
+	* @param	oPropertyPath New value for property <code>propertyPath</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPropertyPath( sPropertyPath:String):sap.ui.test.matchers.BindingPath;
+	public function setPropertyPath( oPropertyPath:Dynamic):sap.ui.test.matchers.BindingPath;
 }
 

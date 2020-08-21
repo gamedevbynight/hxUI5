@@ -3,7 +3,7 @@ package sap;
 @:native("sap.ui")
 extern class Ui
 {
-	@:overload( function(?sModuleName:String, ?aDependencies:Array<String>, vFactory:()->Void, ?bExport:Bool):Void{ })
+	@:overload( function(?sModuleName:String, ?aDependencies:Array<String>, vFactory:(Dynamic)->Void, ?bExport:Bool):Void{ })
 
 	/**
 	* Defines a JavaScript module with its ID, its dependencies and a module export value or factory.
@@ -142,7 +142,7 @@ The current implementation of <code>sap.ui.define</code> differs from the AMD sp
 	* @return	the API of the current SAPUI5 Core instance.
 	*/
 	public static function getCore( ):sap.ui.core.Core;
-	@:overload( function(vDependencies:String, ?fnCallback:()->Void, ?fnErrback:()->Void):Dynamic{ })
+	@:overload( function(vDependencies:String, ?fnCallback:(Dynamic)->Void, ?fnErrback:(Dynamic)->Void):Dynamic{ })
 
 	/**
 	* Resolves one or more module dependencies.
@@ -182,6 +182,6 @@ This method uses the same variation of the {@link jQuery.sap.getResourcePath uni
 	* @param	fnErrback Callback function to execute if an error was detected while loading the dependencies or executing the factory function. Note that due to browser limitations not all errors will be reported via this callback. In general, module loading is designed for the non-error case. Error handling is not complete.
 	* @return	A single module export value (sync probing variant) or undefined (async loading variant)
 	*/
-	public static function require( vDependencies:Array<String>, ?fnCallback:()->Void, ?fnErrback:()->Void):Dynamic;
+	public static function require( vDependencies:Array<String>, ?fnCallback:(Dynamic)->Void, ?fnErrback:(Dynamic)->Void):Dynamic;
 }
 

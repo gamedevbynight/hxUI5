@@ -28,7 +28,7 @@ Event is fired when a tree node is selected.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Tree</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Tree;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Tree;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:selectionChange selectionChange} event of this <code>sap.ui.commons.Tree</code>.
@@ -41,7 +41,7 @@ fired when the selection of the tree has been changed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Tree</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Tree;
+	public function attachSelectionChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Tree;
 
 	/**
 	* Binds aggregation {@link #getNodes nodes} to model data.
@@ -72,7 +72,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Tree;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Tree;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:selectionChange selectionChange} event of this <code>sap.ui.commons.Tree</code>.
@@ -82,7 +82,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Tree;
+	public function detachSelectionChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Tree;
 
 	/**
 	* Expands all nodes in the tree.
@@ -99,14 +99,14 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getHeight height}.
 
 Tree height
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -193,7 +193,7 @@ Tree title
 
 Tree width
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -237,7 +237,7 @@ Tree height
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -252,7 +252,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMinWidth New value for property <code>minWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinWidth( sMinWidth:sap.ui.core.CSSSize):sap.ui.commons.Tree;
+	public function setMinWidth( ?sMinWidth:sap.ui.core.CSSSize):sap.ui.commons.Tree;
 
 	/**
 	* Sets a new value for property {@link #getSelectionMode selectionMode}.
@@ -315,7 +315,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.ui.commons.Tree;
+	public function setTitle( ?sTitle:String):sap.ui.commons.Tree;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -324,7 +324,7 @@ Tree width
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

@@ -19,7 +19,7 @@ extern class GridItemLayoutData extends sap.ui.core.LayoutData implements sap.ui
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getGridColumn gridColumn}.
@@ -95,7 +95,7 @@ Sets the value for the CSS display:grid item property grid-column {@link https:/
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridColumn= New value for property <code>gridColumn</code>
+	* @param	sGridColumn New value for property <code>gridColumn</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setGridColumn( ?sGridColumn:sap.ui.layout.cssgrid.CSSGridLine):sap.ui.layout.cssgrid.GridItemLayoutData;
@@ -108,7 +108,7 @@ Sets the value for the CSS display:grid item property grid-column-end {@link htt
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridColumnEnd= New value for property <code>gridColumnEnd</code>
+	* @param	sGridColumnEnd New value for property <code>gridColumnEnd</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setGridColumnEnd( ?sGridColumnEnd:sap.ui.layout.cssgrid.CSSGridLine):sap.ui.layout.cssgrid.GridItemLayoutData;
@@ -121,7 +121,7 @@ Sets the value for the CSS display:grid item property grid-column-start {@link h
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridColumnStart= New value for property <code>gridColumnStart</code>
+	* @param	sGridColumnStart New value for property <code>gridColumnStart</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setGridColumnStart( ?sGridColumnStart:sap.ui.layout.cssgrid.CSSGridLine):sap.ui.layout.cssgrid.GridItemLayoutData;
@@ -134,7 +134,7 @@ Sets the value for the CSS display:grid item property grid-row {@link https://de
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridRow= New value for property <code>gridRow</code>
+	* @param	sGridRow New value for property <code>gridRow</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setGridRow( ?sGridRow:sap.ui.layout.cssgrid.CSSGridLine):sap.ui.layout.cssgrid.GridItemLayoutData;
@@ -147,7 +147,7 @@ Sets the value for the CSS display:grid item property grid-row-end {@link https:
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridRowEnd= New value for property <code>gridRowEnd</code>
+	* @param	sGridRowEnd New value for property <code>gridRowEnd</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setGridRowEnd( ?sGridRowEnd:sap.ui.layout.cssgrid.CSSGridLine):sap.ui.layout.cssgrid.GridItemLayoutData;
@@ -160,7 +160,7 @@ Sets the value for the CSS display:grid item property grid-row-start {@link http
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sGridRowStart= New value for property <code>gridRowStart</code>
+	* @param	sGridRowStart New value for property <code>gridRowStart</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setGridRowStart( ?sGridRowStart:sap.ui.layout.cssgrid.CSSGridLine):sap.ui.layout.cssgrid.GridItemLayoutData;

@@ -19,7 +19,7 @@ extern class ObjectPageAccessibleLandmarkInfo extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getContentLabel contentLabel}.
@@ -38,7 +38,7 @@ Landmark role of the content container of the corresponding <code>sap.uxap.Objec
 
 If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will be added to the container.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @return	Value of property <code>contentRole</code>
 	*/
 	public function getContentRole( ):sap.ui.core.AccessibleLandmarkRole;
@@ -60,7 +60,7 @@ Landmark role of the footer container of the corresponding <code>sap.uxap.Object
 
 If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will be added to the container.
 
-Default value is <code>Region</code>.
+Default value is <code>"Region"</code>.
 	* @return	Value of property <code>footerRole</code>
 	*/
 	public function getFooterRole( ):sap.ui.core.AccessibleLandmarkRole;
@@ -82,7 +82,7 @@ Landmark role of the header container of the corresponding <code>sap.uxap.Object
 
 If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will be added to the container.
 
-Default value is <code>Banner</code>.
+Default value is <code>"Banner"</code>.
 	* @return	Value of property <code>headerRole</code>
 	*/
 	public function getHeaderRole( ):sap.ui.core.AccessibleLandmarkRole;
@@ -110,7 +110,7 @@ Landmark role of the navigation container of the corresponding <code>sap.uxap.Ob
 
 If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will be added to the container.
 
-Default value is <code>Navigation</code>.
+Default value is <code>"Navigation"</code>.
 	* @return	Value of property <code>navigationRole</code>
 	*/
 	public function getNavigationRole( ):sap.ui.core.AccessibleLandmarkRole;
@@ -132,7 +132,7 @@ Landmark role of the root container of the corresponding <code>sap.uxap.ObjectPa
 
 If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will be added to the container.
 
-Default value is <code>Main</code>.
+Default value is <code>"Main"</code>.
 	* @return	Value of property <code>rootRole</code>
 	*/
 	public function getRootRole( ):sap.ui.core.AccessibleLandmarkRole;
@@ -148,7 +148,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sContentLabel New value for property <code>contentLabel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentLabel( sContentLabel:String):sap.uxap.ObjectPageAccessibleLandmarkInfo;
+	public function setContentLabel( ?sContentLabel:String):sap.uxap.ObjectPageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getContentRole contentRole}.
@@ -159,7 +159,7 @@ If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @param	sContentRole New value for property <code>contentRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -176,7 +176,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFooterLabel New value for property <code>footerLabel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFooterLabel( sFooterLabel:String):sap.uxap.ObjectPageAccessibleLandmarkInfo;
+	public function setFooterLabel( ?sFooterLabel:String):sap.uxap.ObjectPageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getFooterRole footerRole}.
@@ -187,7 +187,7 @@ If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Region</code>.
+Default value is <code>"Region"</code>.
 	* @param	sFooterRole New value for property <code>footerRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -204,7 +204,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeaderLabel New value for property <code>headerLabel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderLabel( sHeaderLabel:String):sap.uxap.ObjectPageAccessibleLandmarkInfo;
+	public function setHeaderLabel( ?sHeaderLabel:String):sap.uxap.ObjectPageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getHeaderRole headerRole}.
@@ -215,7 +215,7 @@ If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Banner</code>.
+Default value is <code>"Banner"</code>.
 	* @param	sHeaderRole New value for property <code>headerRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -232,7 +232,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNavigationLabel New value for property <code>navigationLabel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNavigationLabel( sNavigationLabel:String):sap.uxap.ObjectPageAccessibleLandmarkInfo;
+	public function setNavigationLabel( ?sNavigationLabel:String):sap.uxap.ObjectPageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getNavigationRole navigationRole}.
@@ -243,7 +243,7 @@ If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Navigation</code>.
+Default value is <code>"Navigation"</code>.
 	* @param	sNavigationRole New value for property <code>navigationRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -260,7 +260,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sRootLabel New value for property <code>rootLabel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRootLabel( sRootLabel:String):sap.uxap.ObjectPageAccessibleLandmarkInfo;
+	public function setRootLabel( ?sRootLabel:String):sap.uxap.ObjectPageAccessibleLandmarkInfo;
 
 	/**
 	* Sets a new value for property {@link #getRootRole rootRole}.
@@ -271,7 +271,7 @@ If set to <code>sap.ui.core.AccessibleLandmarkRole.None</code>, no landmark will
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Main</code>.
+Default value is <code>"Main"</code>.
 	* @param	sRootRole New value for property <code>rootRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

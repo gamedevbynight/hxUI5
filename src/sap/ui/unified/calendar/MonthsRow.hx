@@ -45,7 +45,7 @@ Month focus changed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.calendar.MonthsRow</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFocus( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.MonthsRow;
+	public function attachFocus( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.MonthsRow;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:select select} event of this <code>sap.ui.unified.calendar.MonthsRow</code>.
@@ -58,7 +58,7 @@ Month selection changed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.calendar.MonthsRow</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.MonthsRow;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.MonthsRow;
 
 	/**
 	* Checks if a date is focusable in the current rendered output. This means that if it is not rendered, it is not focusable.
@@ -87,7 +87,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFocus( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.MonthsRow;
+	public function detachFocus( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.MonthsRow;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:select select} event of this <code>sap.ui.unified.calendar.MonthsRow</code>.
@@ -97,7 +97,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.MonthsRow;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.MonthsRow;
 
 	/**
 	* Displays the month of a given date without setting the focus
@@ -115,7 +115,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.

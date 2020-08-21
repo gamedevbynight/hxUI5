@@ -11,7 +11,7 @@ extern class XHRInterceptor
 	* @param	fnCallback The registered callback function
 	* @return	Void
 	*/
-	public static function register( sName:String, sXHRMethod:String, fnCallback:()->Void):Void;
+	public static function register( sName:String, sXHRMethod:String, fnCallback:(Dynamic)->Void):Void;
 
 	/**
 	* Unregister a registered function.

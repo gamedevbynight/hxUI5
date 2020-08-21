@@ -44,7 +44,7 @@ Each argument must be either a matrix layout cell, which is added to the row "as
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColumns columns}.
@@ -143,7 +143,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iColumns New value for property <code>columns</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumns( iColumns:Int):sap.ui.commons.layout.MatrixLayout;
+	public function setColumns( ?iColumns:Int):sap.ui.commons.layout.MatrixLayout;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -154,7 +154,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.commons.layout.MatrixLayout;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.layout.MatrixLayout;
 
 	/**
 	* Sets a new value for property {@link #getLayoutFixed layoutFixed}.
@@ -178,7 +178,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.layout.MatrixLayout;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.layout.MatrixLayout;
 
 	/**
 	* Sets a new value for property {@link #getWidths widths}.
@@ -189,7 +189,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidths New value for property <code>widths</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidths( sWidths:Array<sap.ui.core.CSSSize>):sap.ui.commons.layout.MatrixLayout;
+	public function setWidths( ?sWidths:Array<sap.ui.core.CSSSize>):sap.ui.commons.layout.MatrixLayout;
 }
 
 typedef MatrixLayoutArgs = sap.ui.core.Control.ControlArgs & {

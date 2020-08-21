@@ -28,7 +28,7 @@ Due to performance the data of the panel can be requested in lazy mode e.g. when
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nPanel</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeNavigationTo( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nPanel;
+	public function attachBeforeNavigationTo( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nPanel;
 
 	/**
 	* This method defines the point in time before the panel becomes active.
@@ -59,7 +59,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeNavigationTo( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nPanel;
+	public function detachBeforeNavigationTo( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nPanel;
 
 	/**
 	* Creates a new subclass of class sap.m.P13nPanel with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -70,7 +70,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getChangeNotifier changeNotifier}.
@@ -203,7 +203,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oChangeNotifier New value for property <code>changeNotifier</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setChangeNotifier( oChangeNotifier:Dynamic):sap.m.P13nPanel;
+	public function setChangeNotifier( ?oChangeNotifier:Dynamic):sap.m.P13nPanel;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -214,7 +214,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.P13nPanel;
+	public function setTitle( ?sTitle:String):sap.m.P13nPanel;
 
 	/**
 	* Sets a new value for property {@link #getTitleLarge titleLarge}.
@@ -225,7 +225,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitleLarge New value for property <code>titleLarge</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleLarge( sTitleLarge:String):sap.m.P13nPanel;
+	public function setTitleLarge( ?sTitleLarge:String):sap.m.P13nPanel;
 
 	/**
 	* Sets a new value for property {@link #getType type}.
@@ -236,7 +236,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setType( sType:String):sap.m.P13nPanel;
+	public function setType( ?sType:String):sap.m.P13nPanel;
 
 	/**
 	* Sets a new value for property {@link #getValidationExecutor validationExecutor}.
@@ -247,7 +247,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oValidationExecutor New value for property <code>validationExecutor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValidationExecutor( oValidationExecutor:Dynamic):sap.m.P13nPanel;
+	public function setValidationExecutor( ?oValidationExecutor:Dynamic):sap.m.P13nPanel;
 
 	/**
 	* Sets a new value for property {@link #getValidationListener validationListener}.
@@ -258,7 +258,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oValidationListener New value for property <code>validationListener</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValidationListener( oValidationListener:Dynamic):sap.m.P13nPanel;
+	public function setValidationListener( ?oValidationListener:Dynamic):sap.m.P13nPanel;
 
 	/**
 	* Sets a new value for property {@link #getVerticalScrolling verticalScrolling}.

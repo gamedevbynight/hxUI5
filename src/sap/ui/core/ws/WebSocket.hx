@@ -25,7 +25,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>WebSocket</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function attachClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:error error} event of this <code>sap.ui.core.ws.WebSocket</code>.
@@ -36,7 +36,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>WebSocket</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function attachError( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:message message} event of this <code>sap.ui.core.ws.WebSocket</code>.
@@ -47,7 +47,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>WebSocket</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMessage( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function attachMessage( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:open open} event of this <code>sap.ui.core.ws.WebSocket</code>.
@@ -58,7 +58,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>WebSocket</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function attachOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
 	* Closes the connection.
@@ -76,7 +76,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachClose( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function detachClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:error error} event of this <code>sap.ui.core.ws.WebSocket</code>.
@@ -86,7 +86,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function detachError( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:message message} event of this <code>sap.ui.core.ws.WebSocket</code>.
@@ -96,7 +96,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMessage( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function detachMessage( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:open open} event of this <code>sap.ui.core.ws.WebSocket</code>.
@@ -106,7 +106,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
+	public function detachOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ws.WebSocket;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.ws.WebSocket with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -117,7 +117,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* null

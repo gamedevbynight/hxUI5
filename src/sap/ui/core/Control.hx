@@ -61,7 +61,7 @@ Use {@link #detachBrowserEvent} to remove the event handler(s) again.
 	* @param	oListener The object, that wants to be notified, when the event occurs
 	* @return	Returns <code>this</code> to allow method chaining
 	*/
-	public function attachBrowserEvent( ?sEventType:String, ?fnHandler:()->Void, ?oListener:Dynamic):sap.ui.core.Control;
+	public function attachBrowserEvent( ?sEventType:String, ?fnHandler:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Control;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:validateFieldGroup validateFieldGroup} event of this <code>sap.ui.core.Control</code>.
@@ -78,7 +78,7 @@ Listen to this event to validate data of the controls belonging to a field group
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.Control</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachValidateFieldGroup( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Control;
+	public function attachValidateFieldGroup( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Control;
 	@:overload( function(?vFieldGroupIds:String):Bool{ })
 
 	/**
@@ -113,7 +113,7 @@ Note: listeners are only removed, if the same combination of event type, callbac
 	* @param	oListener The context object that was given in the call to <code>attachBrowserEvent</code>.
 	* @return	Void
 	*/
-	public function detachBrowserEvent( ?sEventType:String, ?fnHandler:()->Void, ?oListener:Dynamic):Void;
+	public function detachBrowserEvent( ?sEventType:String, ?fnHandler:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:validateFieldGroup validateFieldGroup} event of this <code>sap.ui.core.Control</code>.
@@ -123,7 +123,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachValidateFieldGroup( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.Control;
+	public function detachValidateFieldGroup( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.Control;
 
 	/**
 	* Defines a new subclass of Control with the name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -161,7 +161,7 @@ If the resulting renderer is incomplete (has no <code>render</code> function) or
 	* @param	oStaticInfo static info to construct the metadata from
 	* @return	Constructor of the newly created class
 	*/
-	public static function extend( sClassName:String, oStaticInfo:Dynamic):()->Void;
+	public static function extend( sClassName:String, oStaticInfo:Dynamic):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBusy busy}.
@@ -188,7 +188,7 @@ Default value is <code>1000</code>.
 
 The size of the BusyIndicator. For controls with a width smaller 3rem a <code>sap.ui.core.BusyIndicatorSize.Small</code> should be used. If the size could vary in width and the width could get smaller than 3rem, the <code>sap.ui.core.BusyIndicatorSize.Auto</code> option could be used. The default is set to <code>sap.ui.core.BusyIndicatorSize.Medium</code> For a full screen BusyIndicator use <code>sap.ui.core.BusyIndicatorSize.Large</code>.
 
-Default value is <code>Medium</code>.
+Default value is <code>'Medium'</code>.
 	* @return	Value of property <code>busyIndicatorSize</code>
 	*/
 	public function getBusyIndicatorSize( ):sap.ui.core.BusyIndicatorSize;
@@ -291,7 +291,7 @@ The size of the BusyIndicator. For controls with a width smaller 3rem a <code>sa
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Medium</code>.
+Default value is <code>'Medium'</code>.
 	* @param	sBusyIndicatorSize New value for property <code>busyIndicatorSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

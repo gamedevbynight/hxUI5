@@ -19,7 +19,7 @@ extern class Area extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAlt alt}.
@@ -68,7 +68,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sAlt New value for property <code>alt</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAlt( sAlt:String):sap.ui.commons.Area;
+	public function setAlt( ?sAlt:String):sap.ui.commons.Area;
 
 	/**
 	* Sets a new value for property {@link #getCoords coords}.
@@ -79,7 +79,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sCoords New value for property <code>coords</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCoords( sCoords:String):sap.ui.commons.Area;
+	public function setCoords( ?sCoords:String):sap.ui.commons.Area;
 
 	/**
 	* Sets a new value for property {@link #getHref href}.
@@ -90,7 +90,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHref New value for property <code>href</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHref( sHref:sap.ui.core.URI):sap.ui.commons.Area;
+	public function setHref( ?sHref:sap.ui.core.URI):sap.ui.commons.Area;
 
 	/**
 	* Sets a new value for property {@link #getShape shape}.
@@ -101,7 +101,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sShape New value for property <code>shape</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShape( sShape:String):sap.ui.commons.Area;
+	public function setShape( ?sShape:String):sap.ui.commons.Area;
 }
 
 typedef AreaArgs = sap.ui.core.Element.ElementArgs & {

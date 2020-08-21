@@ -19,7 +19,7 @@ extern class IconTabSeparator extends sap.ui.core.Element implements sap.m.IconT
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getIcon icon}.
@@ -67,7 +67,7 @@ The icon to display for this separator. If no icon is given, a separator line is
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon= New value for property <code>icon</code>
+	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.IconTabSeparator;

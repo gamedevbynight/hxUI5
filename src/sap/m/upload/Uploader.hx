@@ -20,7 +20,7 @@ The event is fired when an XHR request reports its abortion.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.Uploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadAborted( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
+	public function attachUploadAborted( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadCompleted uploadCompleted} event of this <code>sap.m.upload.Uploader</code>.
@@ -33,7 +33,7 @@ The event is fired when an XHR request reports successful completion of upload p
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.Uploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadCompleted( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
+	public function attachUploadCompleted( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadProgressed uploadProgressed} event of this <code>sap.m.upload.Uploader</code>.
@@ -46,7 +46,7 @@ The event is fired every time an XHR request reports progress in uploading.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.Uploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadProgressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
+	public function attachUploadProgressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadStarted uploadStarted} event of this <code>sap.m.upload.Uploader</code>.
@@ -59,7 +59,7 @@ The event is fired just after the POST request was sent.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.upload.Uploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadStarted( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
+	public function attachUploadStarted( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadAborted uploadAborted} event of this <code>sap.m.upload.Uploader</code>.
@@ -69,7 +69,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadAborted( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
+	public function detachUploadAborted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadCompleted uploadCompleted} event of this <code>sap.m.upload.Uploader</code>.
@@ -79,7 +79,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadCompleted( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
+	public function detachUploadCompleted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadProgressed uploadProgressed} event of this <code>sap.m.upload.Uploader</code>.
@@ -89,7 +89,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadProgressed( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
+	public function detachUploadProgressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadStarted uploadStarted} event of this <code>sap.m.upload.Uploader</code>.
@@ -99,7 +99,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadStarted( fnFunction:()->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
+	public function detachUploadStarted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.upload.Uploader;
 
 	/**
 	* Starts the process of downloading a file.
@@ -119,7 +119,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getDownloadUrl downloadUrl}.
@@ -152,7 +152,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDownloadUrl New value for property <code>downloadUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDownloadUrl( sDownloadUrl:String):sap.m.upload.Uploader;
+	public function setDownloadUrl( ?sDownloadUrl:String):sap.m.upload.Uploader;
 
 	/**
 	* Sets a new value for property {@link #getUploadUrl uploadUrl}.
@@ -163,7 +163,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUploadUrl New value for property <code>uploadUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUploadUrl( sUploadUrl:String):sap.m.upload.Uploader;
+	public function setUploadUrl( ?sUploadUrl:String):sap.m.upload.Uploader;
 
 	/**
 	* Attempts to terminate the process of uploading the specified file.

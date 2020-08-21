@@ -15,7 +15,7 @@ The event handler is called with a single argument: a map <code>mParams</code> w
 	* @param	sName The name of the range set to listen to. The range set must be initialized beforehand ({@link sap.ui.Device.media.initRangeSet}). If no name is provided, the {@link sap.ui.Device.media.RANGESETS.SAP_STANDARD default range set} is used.
 	* @return	Void
 	*/
-	public static function attachHandler( fnFunction:()->Void, ?oListener:Dynamic, ?sName:String):Void;
+	public static function attachHandler( fnFunction:(Dynamic)->Void, ?oListener:Dynamic, ?sName:String):Void;
 
 	/**
 	* Removes a previously attached event handler from the change events of the screen width.
@@ -26,7 +26,7 @@ The passed parameters must match those used for registration with {@link #.attac
 	* @param	sName The name of the range set to listen to. If no name is provided, the {@link sap.ui.Device.media.RANGESETS.SAP_STANDARD default range set} is used.
 	* @return	Void
 	*/
-	public static function detachHandler( fnFunction:()->Void, ?oListener:Dynamic, ?sName:String):Void;
+	public static function detachHandler( fnFunction:(Dynamic)->Void, ?oListener:Dynamic, ?sName:String):Void;
 
 	/**
 	* Returns information about the current active range of the range set with the given name.

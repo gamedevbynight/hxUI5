@@ -50,7 +50,7 @@ Fired when the user clicks on the toolbar, if the Active property is set to "tru
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Toolbar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Toolbar;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Toolbar;
 
 	/**
 	* Destroys all the content in the aggregation {@link #getContent content}.
@@ -66,7 +66,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Toolbar;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Toolbar;
 
 	/**
 	* Creates a new subclass of class sap.m.Toolbar with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -77,7 +77,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActive active}.
@@ -240,7 +240,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sAriaHasPopup New value for property <code>ariaHasPopup</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAriaHasPopup( sAriaHasPopup:String):sap.m.Toolbar;
+	public function setAriaHasPopup( ?sAriaHasPopup:String):sap.m.Toolbar;
 
 	/**
 	* Sets a new value for property {@link #getDesign design}.
@@ -280,7 +280,7 @@ Defines the height of the control. By default, the <code>height</code> property 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sHeight= New value for property <code>height</code>
+	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.Toolbar;
@@ -309,7 +309,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Toolbar;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Toolbar;
 }
 
 typedef ToolbarArgs = sap.ui.core.Control.ControlArgs & {

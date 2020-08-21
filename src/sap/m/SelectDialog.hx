@@ -34,7 +34,7 @@ This event will be fired when the cancel button is clicked or ESC key is pressed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SelectDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCancel( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectDialog;
+	public function attachCancel( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectDialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:confirm confirm} event of this <code>sap.m.SelectDialog</code>.
@@ -47,7 +47,7 @@ This event will be fired when the dialog is confirmed by selecting an item in si
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SelectDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachConfirm( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectDialog;
+	public function attachConfirm( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectDialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:liveChange liveChange} event of this <code>sap.m.SelectDialog</code>.
@@ -60,7 +60,7 @@ This event will be fired when the value of the search field is changed by a user
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SelectDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLiveChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectDialog;
+	public function attachLiveChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectDialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:search search} event of this <code>sap.m.SelectDialog</code>.
@@ -73,7 +73,7 @@ This event will be fired when the search button has been clicked on the searchfi
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SelectDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSearch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectDialog;
+	public function attachSearch( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectDialog;
 
 	/**
 	* Clears the selections in the <code>sap.m.SelectDialog</code> and its internally used <code>sap.m.List</code> control.
@@ -97,7 +97,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCancel( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectDialog;
+	public function detachCancel( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectDialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:confirm confirm} event of this <code>sap.m.SelectDialog</code>.
@@ -107,7 +107,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachConfirm( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectDialog;
+	public function detachConfirm( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectDialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:liveChange liveChange} event of this <code>sap.m.SelectDialog</code>.
@@ -117,7 +117,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLiveChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectDialog;
+	public function detachLiveChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectDialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:search search} event of this <code>sap.m.SelectDialog</code>.
@@ -127,7 +127,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSearch( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectDialog;
+	public function detachSearch( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectDialog;
 
 	/**
 	* Creates a new subclass of class sap.m.SelectDialog with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -138,7 +138,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getConfirmButtonText confirmButtonText}.

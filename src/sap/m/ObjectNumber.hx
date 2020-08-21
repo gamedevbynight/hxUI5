@@ -31,7 +31,7 @@ extern class ObjectNumber extends sap.ui.core.Control implements sap.ui.core.IFo
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -138,7 +138,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNumber New value for property <code>number</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNumber( sNumber:String):sap.m.ObjectNumber;
+	public function setNumber( ?sNumber:String):sap.m.ObjectNumber;
 
 	/**
 	* Sets a new value for property {@link #getState state}.
@@ -188,7 +188,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUnit New value for property <code>unit</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUnit( sUnit:String):sap.m.ObjectNumber;
+	public function setUnit( ?sUnit:String):sap.m.ObjectNumber;
 }
 
 typedef ObjectNumberArgs = sap.ui.core.Control.ControlArgs & {

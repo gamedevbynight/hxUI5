@@ -28,7 +28,7 @@ The event is fired the width of the container reaches a new range.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.ResponsiveContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRangeSwitch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.ResponsiveContainer;
+	public function attachRangeSwitch( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.ResponsiveContainer;
 
 	/**
 	* Destroys all the ranges in the aggregation {@link #getRanges ranges}.
@@ -44,7 +44,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRangeSwitch( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.ResponsiveContainer;
+	public function detachRangeSwitch( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.ResponsiveContainer;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.ResponsiveContainer with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -55,7 +55,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* ID of the element which is the current target of the association {@link #getDefaultContent defaultContent}, or <code>null</code>.
@@ -68,7 +68,7 @@ The passed function and listener object must match the ones used for event regis
 
 The width of the responsive container.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -92,7 +92,7 @@ The ranges defined for this container
 
 The width of the responsive container.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -144,7 +144,7 @@ The width of the responsive container.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -157,7 +157,7 @@ The width of the responsive container.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

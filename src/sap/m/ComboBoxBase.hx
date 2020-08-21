@@ -32,7 +32,7 @@ This event is fired when the end user clicks the combo box button to open the dr
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ComboBoxBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLoadItems( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ComboBoxBase;
+	public function attachLoadItems( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ComboBoxBase;
 
 	/**
 	* Binds aggregation {@link #getItems items} to model data.
@@ -63,7 +63,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLoadItems( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ComboBoxBase;
+	public function detachLoadItems( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ComboBoxBase;
 
 	/**
 	* Creates a new subclass of class sap.m.ComboBoxBase with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -74,7 +74,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets the enabled items from the aggregation named <code>items</code>.
@@ -194,7 +194,7 @@ Default value is <code>false</code>.
 	* @param	fnFilter A callback function called when typing in a ComboBoxBase control or ancestor.
 	* @return	<code>this</code> to allow method chaining.
 	*/
-	public function setFilterFunction( fnFilter:()->Void):sap.m.ComboBoxBase;
+	public function setFilterFunction( fnFilter:(Dynamic)->Void):sap.m.ComboBoxBase;
 
 	/**
 	* Sets a new value for property {@link #getFormattedTextFocused formattedTextFocused}.
@@ -240,7 +240,7 @@ Default value is <code>false</code>.
 	* @param	fnFilter Function to filter the items shown in the SuggestionsPopover
 	* @return	Void
 	*/
-	public function showItems( fnFilter:()->Void):Void;
+	public function showItems( fnFilter:(Dynamic)->Void):Void;
 
 	/**
 	* Unbinds aggregation {@link #getItems items} from model data.

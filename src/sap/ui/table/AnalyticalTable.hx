@@ -57,7 +57,7 @@ Please also take notice of the fact, that "addSelectionInterval" does not change
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColumnVisibilityMenuSorter columnVisibilityMenuSorter}.
@@ -141,7 +141,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oColumnVisibilityMenuSorter New value for property <code>columnVisibilityMenuSorter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnVisibilityMenuSorter( oColumnVisibilityMenuSorter:Dynamic):sap.ui.table.AnalyticalTable;
+	public function setColumnVisibilityMenuSorter( ?oColumnVisibilityMenuSorter:Dynamic):sap.ui.table.AnalyticalTable;
 
 	/**
 	* In an <code>AnalyticalTable</code> control you can only select indices, which correspond to the currently visualized tree. Invisible nodes (e.g. collapsed child nodes) cannot be selected via Index, because they do not correspond to an <code>AnalyticalTable</code> row.

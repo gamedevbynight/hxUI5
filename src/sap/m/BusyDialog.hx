@@ -29,7 +29,7 @@ Fires when the busy dialog is closed. Note: the BusyDialog will not be closed by
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.BusyDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.BusyDialog;
+	public function attachClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.BusyDialog;
 
 	/**
 	* Closes the BusyDialog.
@@ -46,7 +46,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.BusyDialog;
+	public function detachClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.BusyDialog;
 
 	/**
 	* Creates a new subclass of class sap.m.BusyDialog with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -57,7 +57,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
@@ -102,7 +102,7 @@ Default value is <code>true</code>.
 
 Height of the provided icon with default value "44px".
 
-Default value is <code>44px</code>.
+Default value is <code>"44px"</code>.
 	* @return	Value of property <code>customIconHeight</code>
 	*/
 	public function getCustomIconHeight( ):sap.ui.core.CSSSize;
@@ -122,7 +122,7 @@ Default value is <code>1000</code>.
 
 Width of the provided icon with default value "44px".
 
-Default value is <code>44px</code>.
+Default value is <code>"44px"</code>.
 	* @return	Value of property <code>customIconWidth</code>
 	*/
 	public function getCustomIconWidth( ):sap.ui.core.CSSSize;

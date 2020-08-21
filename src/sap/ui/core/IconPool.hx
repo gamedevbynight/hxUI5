@@ -12,7 +12,7 @@ extern class IconPool
 	* @return	the info object of the registered icon which has the name, collection, uri, fontFamily, content and suppressMirroring properties.
 	*/
 	public static function addIcon( iconName:String, collectionName:String, iconInfo:Dynamic):Dynamic;
-	@:overload( function(setting:String, constructor:()->Void):sap.ui.core.Control{ })
+	@:overload( function(setting:String, constructor:(Dynamic)->Void):sap.ui.core.Control{ })
 
 	/**
 	* Creates an instance of {@link sap.ui.core.Icon} if the given URI is an icon URI, otherwise the given constructor is called. The given URI is set to the src property of the control.
@@ -20,7 +20,7 @@ extern class IconPool
 	* @param	constructor The constructor function which is called when the given URI isn't an icon URI
 	* @return	Either an instance of sap.ui.core.Icon or instance created by calling the given constructor
 	*/
-	public static function createControlByURI( setting:Dynamic, constructor:()->Void):sap.ui.core.Control;
+	public static function createControlByURI( setting:Dynamic, constructor:(Dynamic)->Void):sap.ui.core.Control;
 
 	/**
 	* Checks if the icon font is loaded

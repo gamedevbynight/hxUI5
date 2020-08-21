@@ -21,7 +21,7 @@ Fired when an item has been expanded or collapsed by user interaction.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Tree</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachToggleOpenState( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Tree;
+	public function attachToggleOpenState( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Tree;
 	@:overload( function(vParam:Int):sap.m.Tree{ })
 
 	/**
@@ -45,7 +45,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachToggleOpenState( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Tree;
+	public function detachToggleOpenState( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Tree;
 	@:overload( function(vParam:Int):sap.m.Tree{ })
 
 	/**
@@ -80,7 +80,7 @@ Example: <pre>
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.m.Tree.

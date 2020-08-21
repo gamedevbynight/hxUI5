@@ -19,7 +19,7 @@ extern class AnalyticalColumn extends sap.ui.table.Column
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getGroupHeaderFormatter groupHeaderFormatter}.
@@ -82,7 +82,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oGroupHeaderFormatter New value for property <code>groupHeaderFormatter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGroupHeaderFormatter( oGroupHeaderFormatter:Dynamic):sap.ui.table.AnalyticalColumn;
+	public function setGroupHeaderFormatter( ?oGroupHeaderFormatter:Dynamic):sap.ui.table.AnalyticalColumn;
 
 	/**
 	* Sets a new value for property {@link #getInResult inResult}.
@@ -106,7 +106,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLeadingProperty New value for property <code>leadingProperty</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLeadingProperty( sLeadingProperty:String):sap.ui.table.AnalyticalColumn;
+	public function setLeadingProperty( ?sLeadingProperty:String):sap.ui.table.AnalyticalColumn;
 
 	/**
 	* Sets a new value for property {@link #getShowIfGrouped showIfGrouped}.

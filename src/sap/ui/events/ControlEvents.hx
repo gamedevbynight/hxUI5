@@ -22,13 +22,13 @@ The mouse events and touch events are supported simultaneously on both desktop a
 	* @param	fnCallback Callback function
 	* @return	Void
 	*/
-	public static function bindAnyEvent( fnCallback:()->Void):Void;
+	public static function bindAnyEvent( fnCallback:(Dynamic)->Void):Void;
 
 	/**
 	* Unbinds all events for listening with the given callback function.
 	* @param	fnCallback Callback function
 	* @return	Void
 	*/
-	public static function unbindAnyEvent( fnCallback:()->Void):Void;
+	public static function unbindAnyEvent( fnCallback:(Dynamic)->Void):Void;
 }
 

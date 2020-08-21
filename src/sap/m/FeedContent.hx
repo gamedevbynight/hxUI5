@@ -21,7 +21,7 @@ The event is triggered when the feed content is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.FeedContent</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.FeedContent;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FeedContent;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.m.FeedContent</code>.
@@ -31,7 +31,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.FeedContent;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FeedContent;
 
 	/**
 	* Creates a new subclass of class sap.m.FeedContent with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,7 +42,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getContentText contentText}.
@@ -101,7 +101,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sContentText New value for property <code>contentText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setContentText( sContentText:String):sap.m.FeedContent;
+	public function setContentText( ?sContentText:String):sap.m.FeedContent;
 
 	/**
 	* Sets a new value for property {@link #getSubheader subheader}.
@@ -112,7 +112,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSubheader New value for property <code>subheader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSubheader( sSubheader:String):sap.m.FeedContent;
+	public function setSubheader( ?sSubheader:String):sap.m.FeedContent;
 
 	/**
 	* Sets a new value for property {@link #getTruncateValueTo truncateValueTo}.
@@ -136,7 +136,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.m.FeedContent;
+	public function setValue( ?sValue:String):sap.m.FeedContent;
 
 	/**
 	* Sets a new value for property {@link #getValueColor valueColor}.
@@ -147,7 +147,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValueColor New value for property <code>valueColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueColor( sValueColor:sap.m.ValueColor):sap.m.FeedContent;
+	public function setValueColor( ?sValueColor:sap.m.ValueColor):sap.m.FeedContent;
 }
 
 typedef FeedContentArgs = sap.ui.core.Control.ControlArgs & {

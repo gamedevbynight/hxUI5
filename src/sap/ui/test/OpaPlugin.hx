@@ -18,7 +18,7 @@ public function new():Void;
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets all the controls or elements of a certain type that are currently instantiated. If the type is omitted, all controls and elements are returned.
@@ -26,7 +26,7 @@ public function new():Void;
 	* @param	sControlType optional control type name, e.g: "sap.m.CheckBox"
 	* @return	an array of the found controls (can be empty)
 	*/
-	public function getAllControls( ?fnConstructorType:()->Void, ?sControlType:String):Array<Dynamic>;
+	public function getAllControls( ?fnConstructorType:(Dynamic)->Void, ?sControlType:String):Array<Dynamic>;
 
 	/**
 	* Find a control by its global ID

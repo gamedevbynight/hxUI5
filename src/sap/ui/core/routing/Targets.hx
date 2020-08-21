@@ -36,7 +36,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.routing.Targets</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDisplay( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
+	public function attachDisplay( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:titleChanged titleChanged} event of this <code>sap.ui.core.routing.Targets</code>.
@@ -47,7 +47,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.routing.Targets</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTitleChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
+	public function attachTitleChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
 
 	/**
 	* Destroys the targets instance and all created targets. Does not destroy the views instance passed to the constructor. It has to be destroyed separately.
@@ -63,7 +63,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDisplay( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
+	public function detachDisplay( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:titleChanged titleChanged} event of this <code>sap.ui.core.routing.Targets</code>.
@@ -73,7 +73,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTitleChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
+	public function detachTitleChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.routing.Targets;
 	@:overload( function(vTargets:String, ?oData:Dynamic, ?sTitleTarget:String):Dynamic{ })
 
 	/**
@@ -94,7 +94,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Fires event {@link #event:created created} to attached listeners.
@@ -108,14 +108,15 @@ The passed function and listener object must match the ones used for event regis
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.base.Metadata;
-	@:overload( function(vName:String):Dynamic{ })
+	@:overload( function(vName:String, ?bSuppressNotFoundError:Bool):Dynamic{ })
 
 	/**
 	* Returns a target by its name (if you pass myTarget: { view: "myView" }) in the config myTarget is the name.
 	* @param	vName the name of a single target or the name of multiple targets
-	* @return	The target with the coresponding name or undefined. If an array way passed as name this will return an array with all found targets. Non existing targets will not be returned but will log an error.
+	* @param	bSuppressNotFoundError In case no target is found for the given name, the not found error is supressed when this is set with true
+	* @return	The target with the coresponding name or undefined. If an array way passed as name this will return an array with all found targets. Non existing targets will not be returned and an error is logged when <code>bSuppressNotFoundError</code> param isn't set to <code>true</code>.
 	*/
-	public function getTarget( vName:Array<String>):Dynamic;
+	public function getTarget( vName:Array<String>, ?bSuppressNotFoundError:Bool):Dynamic;
 
 	/**
 	* Returns the views instance passed to the constructor

@@ -27,7 +27,7 @@ extern class BusyIndicator extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
@@ -60,7 +60,7 @@ Default value is <code>true</code>.
 
 Height of the provided icon. By default 44px are used.
 
-Default value is <code>44px</code>.
+Default value is <code>"44px"</code>.
 	* @return	Value of property <code>customIconHeight</code>
 	*/
 	public function getCustomIconHeight( ):sap.ui.core.CSSSize;
@@ -80,7 +80,7 @@ Default value is <code>1000</code>.
 
 Width of the provided icon. By default 44px are used.
 
-Default value is <code>44px</code>.
+Default value is <code>"44px"</code>.
 	* @return	Value of property <code>customIconWidth</code>
 	*/
 	public function getCustomIconWidth( ):sap.ui.core.CSSSize;
@@ -96,7 +96,7 @@ Default value is <code>44px</code>.
 
 Defines the size of the busy indicator. The animation consists of three circles, each of which will be this size. Therefore the total width of the control amounts to three times the given size.
 
-Default value is <code>1rem</code>.
+Default value is <code>"1rem"</code>.
 	* @return	Value of property <code>size</code>
 	*/
 	public function getSize( ):sap.ui.core.CSSSize;
@@ -144,7 +144,7 @@ Icon URL if an icon is used as the busy indicator.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sCustomIcon= New value for property <code>customIcon</code>
+	* @param	sCustomIcon New value for property <code>customIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setCustomIcon( ?sCustomIcon:sap.ui.core.URI):sap.m.BusyIndicator;
@@ -169,7 +169,7 @@ Height of the provided icon. By default 44px are used.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>44px</code>.
+Default value is <code>"44px"</code>.
 	* @param	sCustomIconHeight New value for property <code>customIconHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -195,7 +195,7 @@ Width of the provided icon. By default 44px are used.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>44px</code>.
+Default value is <code>"44px"</code>.
 	* @param	sCustomIconWidth New value for property <code>customIconWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -208,7 +208,7 @@ Defines the size of the busy indicator. The animation consists of three circles,
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>1rem</code>.
+Default value is <code>"1rem"</code>.
 	* @param	sSize New value for property <code>size</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

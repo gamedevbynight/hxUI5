@@ -25,7 +25,7 @@ extern class MessageItem extends sap.ui.core.Item
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActiveTitle activeTitle}.
@@ -147,7 +147,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iCounter New value for property <code>counter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCounter( iCounter:Int):sap.m.MessageItem;
+	public function setCounter( ?iCounter:Int):sap.m.MessageItem;
 
 	/**
 	* Sets a new value for property {@link #getDescription description}.
@@ -191,7 +191,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLongtextUrl New value for property <code>longtextUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLongtextUrl( sLongtextUrl:sap.ui.core.URI):sap.m.MessageItem;
+	public function setLongtextUrl( ?sLongtextUrl:sap.ui.core.URI):sap.m.MessageItem;
 
 	/**
 	* Sets a new value for property {@link #getMarkupDescription markupDescription}.
@@ -215,7 +215,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSubtitle New value for property <code>subtitle</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSubtitle( sSubtitle:String):sap.m.MessageItem;
+	public function setSubtitle( ?sSubtitle:String):sap.m.MessageItem;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.

@@ -19,7 +19,7 @@ extern class TextArea extends sap.ui.commons.TextField
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getCols cols}.
@@ -84,7 +84,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iCols New value for property <code>cols</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCols( iCols:Int):sap.ui.commons.TextArea;
+	public function setCols( ?iCols:Int):sap.ui.commons.TextArea;
 
 	/**
 	* Property setter for the cursor position
@@ -102,7 +102,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sExplanation New value for property <code>explanation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExplanation( sExplanation:String):sap.ui.commons.TextArea;
+	public function setExplanation( ?sExplanation:String):sap.ui.commons.TextArea;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -113,7 +113,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.commons.TextArea;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.TextArea;
 
 	/**
 	* Property setter for MaxLength
@@ -131,7 +131,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iRows New value for property <code>rows</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRows( iRows:Int):sap.ui.commons.TextArea;
+	public function setRows( ?iRows:Int):sap.ui.commons.TextArea;
 
 	/**
 	* Sets a new value for property {@link #getWrapping wrapping}.
@@ -142,7 +142,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWrapping New value for property <code>wrapping</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWrapping( sWrapping:sap.ui.core.Wrapping):sap.ui.commons.TextArea;
+	public function setWrapping( ?sWrapping:sap.ui.core.Wrapping):sap.ui.commons.TextArea;
 }
 
 typedef TextAreaArgs = sap.ui.commons.TextField.TextFieldArgs & {

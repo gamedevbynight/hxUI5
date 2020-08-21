@@ -37,7 +37,7 @@ Fired when the <code>buttonMode</code> is set to <code>Split</code> and the user
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MenuButton</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDefaultAction( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MenuButton;
+	public function attachDefaultAction( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MenuButton;
 
 	/**
 	* Destroys the menu in the aggregation {@link #getMenu menu}.
@@ -53,7 +53,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDefaultAction( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MenuButton;
+	public function detachDefaultAction( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MenuButton;
 
 	/**
 	* Creates a new subclass of class sap.m.MenuButton with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -64,7 +64,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActiveIcon activeIcon}.
@@ -251,7 +251,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sActiveIcon New value for property <code>activeIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveIcon( sActiveIcon:sap.ui.core.URI):sap.m.MenuButton;
+	public function setActiveIcon( ?sActiveIcon:sap.ui.core.URI):sap.m.MenuButton;
 
 	/**
 	* Sets the <code>buttonMode</code> of the control.
@@ -282,7 +282,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.MenuButton;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.MenuButton;
 
 	/**
 	* Sets a new value for property {@link #getIconDensityAware iconDensityAware}.
@@ -328,7 +328,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.MenuButton;
+	public function setText( ?sText:String):sap.m.MenuButton;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -387,7 +387,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.MenuButton;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.MenuButton;
 }
 
 typedef MenuButtonArgs = sap.ui.core.Control.ControlArgs & {

@@ -31,7 +31,7 @@ Fired when a row has been expanded or collapsed by user interaction. Only availa
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.TreeTable</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachToggleOpenState( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.TreeTable;
+	public function attachToggleOpenState( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.TreeTable;
 	@:overload( function(vRowIndex:Int):sap.ui.table.TreeTable{ })
 
 	/**
@@ -55,7 +55,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachToggleOpenState( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.TreeTable;
+	public function detachToggleOpenState( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.TreeTable;
 	@:overload( function(vRowIndex:Int):sap.ui.table.TreeTable{ })
 
 	/**
@@ -85,7 +85,7 @@ Please also see <code>sap.ui.model.odata.OperationMode</code>.
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getGroupHeaderProperty groupHeaderProperty}.
@@ -162,7 +162,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sGroupHeaderProperty New value for property <code>groupHeaderProperty</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGroupHeaderProperty( sGroupHeaderProperty:String):sap.ui.table.TreeTable;
+	public function setGroupHeaderProperty( ?sGroupHeaderProperty:String):sap.ui.table.TreeTable;
 
 	/**
 	* Sets the selected index In a TreeTable you can only select indices, which correspond to the currently visualized tree. Invisible tree nodes (e.g. collapsed child nodes) can not be selected via Index, because they do not correspond to a TreeTable row.

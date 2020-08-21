@@ -24,7 +24,7 @@ public function new():Void;
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Callback function which can be used to determine the title of a given column within the TablePersoDialog. As a default, the column header controls are asked for their 'text' or 'title' property. This works in most cases, for example if the header control is an sap.m.Label (has 'text' property) or an sap.m.ObjectListItem (has 'title' property).

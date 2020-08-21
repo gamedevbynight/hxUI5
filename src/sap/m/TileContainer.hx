@@ -28,7 +28,7 @@ Fires when a Tile is added.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.TileContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTileAdd( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.TileContainer;
+	public function attachTileAdd( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TileContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:tileDelete tileDelete} event of this <code>sap.m.TileContainer</code>.
@@ -41,7 +41,7 @@ Fires if a Tile is deleted in Edit mode.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.TileContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTileDelete( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.TileContainer;
+	public function attachTileDelete( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TileContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:tileMove tileMove} event of this <code>sap.m.TileContainer</code>.
@@ -54,7 +54,7 @@ Fires if a Tile is moved.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.TileContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTileMove( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.TileContainer;
+	public function attachTileMove( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TileContainer;
 
 	/**
 	* Deletes a Tile.
@@ -77,7 +77,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTileAdd( fnFunction:()->Void, ?oListener:Dynamic):sap.m.TileContainer;
+	public function detachTileAdd( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TileContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:tileDelete tileDelete} event of this <code>sap.m.TileContainer</code>.
@@ -87,7 +87,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTileDelete( fnFunction:()->Void, ?oListener:Dynamic):sap.m.TileContainer;
+	public function detachTileDelete( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TileContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:tileMove tileMove} event of this <code>sap.m.TileContainer</code>.
@@ -97,7 +97,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTileMove( fnFunction:()->Void, ?oListener:Dynamic):sap.m.TileContainer;
+	public function detachTileMove( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TileContainer;
 
 	/**
 	* Creates a new subclass of class sap.m.TileContainer with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -108,7 +108,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAllowAdd allowAdd}.
@@ -131,7 +131,7 @@ Determines whether the TileContainer is editable so you can move, delete or add 
 
 Defines the height of the TileContainer in px.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -161,7 +161,7 @@ The Tiles to be displayed by the TileContainer.
 
 Defines the width of the TileContainer in px.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -237,7 +237,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	bAllowAdd New value for property <code>allowAdd</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAllowAdd( bAllowAdd:Bool):sap.m.TileContainer;
+	public function setAllowAdd( ?bAllowAdd:Bool):sap.m.TileContainer;
 
 	/**
 	* Sets the editable property to the TileContainer, allowing to move icons. This is currently also set with a long tap.
@@ -253,7 +253,7 @@ Defines the height of the TileContainer in px.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -266,7 +266,7 @@ Defines the width of the TileContainer in px.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

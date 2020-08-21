@@ -21,7 +21,7 @@ extern class GridData extends sap.ui.core.LayoutData
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getIndent indent}.
@@ -236,7 +236,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIndent New value for property <code>indent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIndent( sIndent:sap.ui.layout.GridIndent):sap.ui.layout.GridData;
+	public function setIndent( ?sIndent:sap.ui.layout.GridIndent):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getIndentL indentL}.
@@ -247,7 +247,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iIndentL New value for property <code>indentL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIndentL( iIndentL:Int):sap.ui.layout.GridData;
+	public function setIndentL( ?iIndentL:Int):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getIndentM indentM}.
@@ -258,7 +258,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iIndentM New value for property <code>indentM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIndentM( iIndentM:Int):sap.ui.layout.GridData;
+	public function setIndentM( ?iIndentM:Int):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getIndentS indentS}.
@@ -269,7 +269,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iIndentS New value for property <code>indentS</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIndentS( iIndentS:Int):sap.ui.layout.GridData;
+	public function setIndentS( ?iIndentS:Int):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getIndentXL indentXL}.
@@ -280,7 +280,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iIndentXL New value for property <code>indentXL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIndentXL( iIndentXL:Int):sap.ui.layout.GridData;
+	public function setIndentXL( ?iIndentXL:Int):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getLinebreak linebreak}.
@@ -356,7 +356,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMoveBackwards New value for property <code>moveBackwards</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMoveBackwards( sMoveBackwards:sap.ui.layout.GridIndent):sap.ui.layout.GridData;
+	public function setMoveBackwards( ?sMoveBackwards:sap.ui.layout.GridIndent):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getMoveForward moveForward}.
@@ -367,7 +367,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMoveForward New value for property <code>moveForward</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMoveForward( sMoveForward:sap.ui.layout.GridIndent):sap.ui.layout.GridData;
+	public function setMoveForward( ?sMoveForward:sap.ui.layout.GridIndent):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getSpan span}.
@@ -382,7 +382,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSpan New value for property <code>span</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSpan( sSpan:sap.ui.layout.GridSpan):sap.ui.layout.GridData;
+	public function setSpan( ?sSpan:sap.ui.layout.GridSpan):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getSpanL spanL}.
@@ -393,7 +393,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iSpanL New value for property <code>spanL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSpanL( iSpanL:Int):sap.ui.layout.GridData;
+	public function setSpanL( ?iSpanL:Int):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getSpanM spanM}.
@@ -404,7 +404,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iSpanM New value for property <code>spanM</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSpanM( iSpanM:Int):sap.ui.layout.GridData;
+	public function setSpanM( ?iSpanM:Int):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getSpanS spanS}.
@@ -415,7 +415,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iSpanS New value for property <code>spanS</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSpanS( iSpanS:Int):sap.ui.layout.GridData;
+	public function setSpanS( ?iSpanS:Int):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getSpanXL spanXL}.
@@ -426,7 +426,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iSpanXL New value for property <code>spanXL</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSpanXL( iSpanXL:Int):sap.ui.layout.GridData;
+	public function setSpanXL( ?iSpanXL:Int):sap.ui.layout.GridData;
 
 	/**
 	* Sets a new value for property {@link #getVisibleL visibleL}.

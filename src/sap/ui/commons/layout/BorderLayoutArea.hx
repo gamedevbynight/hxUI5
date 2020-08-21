@@ -32,7 +32,7 @@ extern class BorderLayoutArea extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.
@@ -47,7 +47,7 @@ Controls within the area
 
 The content alignment as CSS value
 
-Default value is <code>left</code>.
+Default value is <code>'left'</code>.
 	* @return	Value of property <code>contentAlign</code>
 	*/
 	public function getContentAlign( ):String;
@@ -63,7 +63,7 @@ Default value is <code>left</code>.
 
 The overflow mode of the area in horizontal direction as CSS value
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>overflowX</code>
 	*/
 	public function getOverflowX( ):String;
@@ -73,7 +73,7 @@ Default value is <code>auto</code>.
 
 The overflow mode of the area in vertical direction as CSS value
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>overflowY</code>
 	*/
 	public function getOverflowY( ):String;
@@ -83,7 +83,7 @@ Default value is <code>auto</code>.
 
 Defines the height or the width. Is not used when the area element is in Center.
 
-Default value is <code>100px</code>.
+Default value is <code>'100px'</code>.
 	* @return	Value of property <code>size</code>
 	*/
 	public function getSize( ):sap.ui.core.CSSSize;
@@ -137,7 +137,7 @@ The content alignment as CSS value
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>left</code>.
+Default value is <code>'left'</code>.
 	* @param	sContentAlign New value for property <code>contentAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -150,7 +150,7 @@ The overflow mode of the area in horizontal direction as CSS value
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @param	sOverflowX New value for property <code>overflowX</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -163,7 +163,7 @@ The overflow mode of the area in vertical direction as CSS value
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @param	sOverflowY New value for property <code>overflowY</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -176,7 +176,7 @@ Defines the height or the width. Is not used when the area element is in Center.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100px</code>.
+Default value is <code>'100px'</code>.
 	* @param	sSize New value for property <code>size</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

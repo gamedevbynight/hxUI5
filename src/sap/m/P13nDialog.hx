@@ -28,7 +28,7 @@ Event fired if the 'cancel' button in <code>P13nDialog</code> is clicked.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCancel( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nDialog;
+	public function attachCancel( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nDialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:ok ok} event of this <code>sap.m.P13nDialog</code>.
@@ -41,7 +41,7 @@ Event fired if the 'ok' button in <code>P13nDialog</code> is clicked.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachOk( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nDialog;
+	public function attachOk( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nDialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:reset reset} event of this <code>sap.m.P13nDialog</code>.
@@ -54,7 +54,7 @@ Event fired if the 'reset' button in <code>P13nDialog</code> is clicked.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.P13nDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachReset( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nDialog;
+	public function attachReset( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nDialog;
 
 	/**
 	* Binds aggregation {@link #getPanels panels} to model data.
@@ -79,7 +79,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCancel( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nDialog;
+	public function detachCancel( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nDialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:ok ok} event of this <code>sap.m.P13nDialog</code>.
@@ -89,7 +89,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachOk( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nDialog;
+	public function detachOk( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nDialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:reset reset} event of this <code>sap.m.P13nDialog</code>.
@@ -99,7 +99,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachReset( fnFunction:()->Void, ?oListener:Dynamic):sap.m.P13nDialog;
+	public function detachReset( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.P13nDialog;
 
 	/**
 	* Creates a new subclass of class sap.m.P13nDialog with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -110,7 +110,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getInitialVisiblePanelType initialVisiblePanelType}.
@@ -209,7 +209,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sInitialVisiblePanelType New value for property <code>initialVisiblePanelType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInitialVisiblePanelType( sInitialVisiblePanelType:String):sap.m.P13nDialog;
+	public function setInitialVisiblePanelType( ?sInitialVisiblePanelType:String):sap.m.P13nDialog;
 
 	/**
 	* Sets a new value for property {@link #getShowReset showReset}.
@@ -246,7 +246,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oValidationExecutor New value for property <code>validationExecutor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValidationExecutor( oValidationExecutor:Dynamic):sap.m.P13nDialog;
+	public function setValidationExecutor( ?oValidationExecutor:Dynamic):sap.m.P13nDialog;
 
 	/**
 	* Unbinds aggregation {@link #getPanels panels} from model data.

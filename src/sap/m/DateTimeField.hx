@@ -21,7 +21,7 @@ extern class DateTimeField extends sap.m.InputBase
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getDateValue dateValue}.
@@ -72,7 +72,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oDateValue New value for property <code>dateValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDateValue( oDateValue:Dynamic):sap.m.DateTimeField;
+	public function setDateValue( ?oDateValue:Dynamic):sap.m.DateTimeField;
 
 	/**
 	* Sets a new value for property {@link #getDisplayFormat displayFormat}.
@@ -83,7 +83,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDisplayFormat New value for property <code>displayFormat</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayFormat( sDisplayFormat:String):sap.m.DateTimeField;
+	public function setDisplayFormat( ?sDisplayFormat:String):sap.m.DateTimeField;
 
 	/**
 	* Sets a new value for property {@link #getInitialFocusedDateValue initialFocusedDateValue}.
@@ -96,7 +96,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oInitialFocusedDateValue New value for property <code>initialFocusedDateValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInitialFocusedDateValue( oInitialFocusedDateValue:Dynamic):sap.m.DateTimeField;
+	public function setInitialFocusedDateValue( ?oInitialFocusedDateValue:Dynamic):sap.m.DateTimeField;
 
 	/**
 	* Sets a new value for property {@link #getValueFormat valueFormat}.
@@ -107,7 +107,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValueFormat New value for property <code>valueFormat</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueFormat( sValueFormat:String):sap.m.DateTimeField;
+	public function setValueFormat( ?sValueFormat:String):sap.m.DateTimeField;
 }
 
 typedef DateTimeFieldArgs = sap.m.InputBase.InputBaseArgs & {

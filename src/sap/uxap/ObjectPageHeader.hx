@@ -34,7 +34,7 @@ The event is fired when the unsaved changes button is pressed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.ObjectPageHeader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMarkChangesPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
+	public function attachMarkChangesPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:markLockedPress markLockedPress} event of this <code>sap.uxap.ObjectPageHeader</code>.
@@ -47,7 +47,7 @@ The event is fired when the Locked button is pressed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.ObjectPageHeader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMarkLockedPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
+	public function attachMarkLockedPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:titleSelectorPress titleSelectorPress} event of this <code>sap.uxap.ObjectPageHeader</code>.
@@ -60,7 +60,7 @@ The event is fired when the objectPage header title selector (down-arrow) is pre
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.ObjectPageHeader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTitleSelectorPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
+	public function attachTitleSelectorPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Destroys all the actions in the aggregation {@link #getActions actions}.
@@ -100,7 +100,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMarkChangesPress( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
+	public function detachMarkChangesPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:markLockedPress markLockedPress} event of this <code>sap.uxap.ObjectPageHeader</code>.
@@ -110,7 +110,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMarkLockedPress( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
+	public function detachMarkLockedPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:titleSelectorPress titleSelectorPress} event of this <code>sap.uxap.ObjectPageHeader</code>.
@@ -120,7 +120,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTitleSelectorPress( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
+	public function detachTitleSelectorPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Creates a new subclass of class sap.uxap.ObjectPageHeader with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -131,7 +131,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getActions actions}.
@@ -570,7 +570,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sObjectImageURI New value for property <code>objectImageURI</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setObjectImageURI( sObjectImageURI:String):sap.uxap.ObjectPageHeader;
+	public function setObjectImageURI( ?sObjectImageURI:String):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getObjectSubtitle objectSubtitle}.
@@ -581,7 +581,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sObjectSubtitle New value for property <code>objectSubtitle</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setObjectSubtitle( sObjectSubtitle:String):sap.uxap.ObjectPageHeader;
+	public function setObjectSubtitle( ?sObjectSubtitle:String):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getObjectTitle objectTitle}.
@@ -592,7 +592,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sObjectTitle New value for property <code>objectTitle</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setObjectTitle( sObjectTitle:String):sap.uxap.ObjectPageHeader;
+	public function setObjectTitle( ?sObjectTitle:String):sap.uxap.ObjectPageHeader;
 
 	/**
 	* Sets a new value for property {@link #getShowMarkers showMarkers}.

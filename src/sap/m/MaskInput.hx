@@ -32,7 +32,7 @@ extern class MaskInput extends sap.m.InputBase
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getMask mask}.
@@ -53,7 +53,7 @@ Mask defined by its characters type (respectively, by its length). You should co
 
 Defines a placeholder symbol. Shown at the position where there is no user input yet.
 
-Default value is <code>_</code>.
+Default value is <code>"_"</code>.
 	* @return	Value of property <code>placeholderSymbol</code>
 	*/
 	public function getPlaceholderSymbol( ):String;
@@ -107,7 +107,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMask New value for property <code>mask</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMask( sMask:String):sap.m.MaskInput;
+	public function setMask( ?sMask:String):sap.m.MaskInput;
 
 	/**
 	* Sets a new value for property {@link #getPlaceholderSymbol placeholderSymbol}.
@@ -116,7 +116,7 @@ Defines a placeholder symbol. Shown at the position where there is no user input
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>_</code>.
+Default value is <code>"_"</code>.
 	* @param	sPlaceholderSymbol New value for property <code>placeholderSymbol</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

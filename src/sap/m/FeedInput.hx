@@ -21,7 +21,7 @@ The Post event is triggered when the user has entered a value and pressed the po
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.FeedInput</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPost( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.FeedInput;
+	public function attachPost( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FeedInput;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:post post} event of this <code>sap.m.FeedInput</code>.
@@ -31,7 +31,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPost( fnFunction:()->Void, ?oListener:Dynamic):sap.m.FeedInput;
+	public function detachPost( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FeedInput;
 
 	/**
 	* Creates a new subclass of class sap.m.FeedInput with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,7 +42,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAriaLabelForPicture ariaLabelForPicture}.
@@ -57,7 +57,7 @@ Text for Picture which will be read by screenreader. If a new ariaLabelForPictur
 
 Sets a new tooltip for Submit button. The tooltip can either be a simple string (which in most cases will be rendered as the title attribute of this element) or an instance of sap.ui.core.TooltipBase. If a new tooltip is set, any previously set tooltip is deactivated. The default value is set language dependent.
 
-Default value is <code>Submit</code>.
+Default value is <code>"Submit"</code>.
 	* @return	Value of property <code>buttonTooltip</code>
 	*/
 	public function getButtonTooltip( ):sap.ui.core.TooltipBase;
@@ -135,7 +135,7 @@ Default value is <code>0</code>.
 
 The placeholder text shown in the input area as long as the user has not entered any text value.
 
-Default value is <code>Post something here</code>.
+Default value is <code>"Post something here"</code>.
 	* @return	Value of property <code>placeholder</code>
 	*/
 	public function getPlaceholder( ):String;
@@ -189,7 +189,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sAriaLabelForPicture New value for property <code>ariaLabelForPicture</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAriaLabelForPicture( sAriaLabelForPicture:String):sap.m.FeedInput;
+	public function setAriaLabelForPicture( ?sAriaLabelForPicture:String):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getButtonTooltip buttonTooltip}.
@@ -198,7 +198,7 @@ Sets a new tooltip for Submit button. The tooltip can either be a simple string 
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Submit</code>.
+Default value is <code>"Submit"</code>.
 	* @param	sButtonTooltip New value for property <code>buttonTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -252,7 +252,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.FeedInput;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.FeedInput;
 
 	/**
 	* Sets a new value for property {@link #getIconDensityAware iconDensityAware}.
@@ -291,7 +291,7 @@ The placeholder text shown in the input area as long as the user has not entered
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Post something here</code>.
+Default value is <code>"Post something here"</code>.
 	* @param	sPlaceholder New value for property <code>placeholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -347,7 +347,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.m.FeedInput;
+	public function setValue( ?sValue:String):sap.m.FeedInput;
 }
 
 typedef FeedInputArgs = sap.ui.core.Control.ControlArgs & {

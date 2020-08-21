@@ -32,7 +32,7 @@ Fired when the View has parsed the UI description and instantiated the contained
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.mvc.View</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterInit( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
+	public function attachAfterInit( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterRendering afterRendering} event of this <code>sap.ui.core.mvc.View</code>.
@@ -45,7 +45,7 @@ Fired when the View has been (re-)rendered and its HTML is present in the DOM.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.mvc.View</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterRendering( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
+	public function attachAfterRendering( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeExit beforeExit} event of this <code>sap.ui.core.mvc.View</code>.
@@ -58,7 +58,7 @@ Fired when the view has received the request to destroy itself, but before it ha
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.mvc.View</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeExit( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
+	public function attachBeforeExit( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeRendering beforeRendering} event of this <code>sap.ui.core.mvc.View</code>.
@@ -71,7 +71,7 @@ Fired before this View is re-rendered. Use to unbind event handlers from HTML el
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.mvc.View</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeRendering( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
+	public function attachBeforeRendering( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
 
 	/**
 	* Returns an element by its ID in the context of this view.
@@ -126,7 +126,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterInit( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
+	public function detachAfterInit( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterRendering afterRendering} event of this <code>sap.ui.core.mvc.View</code>.
@@ -136,7 +136,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterRendering( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
+	public function detachAfterRendering( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeExit beforeExit} event of this <code>sap.ui.core.mvc.View</code>.
@@ -146,7 +146,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeExit( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
+	public function detachBeforeExit( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeRendering beforeRendering} event of this <code>sap.ui.core.mvc.View</code>.
@@ -156,7 +156,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeRendering( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
+	public function detachBeforeRendering( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.mvc.View;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.mvc.View with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -167,7 +167,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.
@@ -239,7 +239,7 @@ Name of the View
 
 The width
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -298,7 +298,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.core.mvc.View;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.core.mvc.View;
 
 	/**
 	* Sets a new value for property {@link #getViewName viewName}.
@@ -309,7 +309,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sViewName New value for property <code>viewName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setViewName( sViewName:String):sap.ui.core.mvc.View;
+	public function setViewName( ?sViewName:String):sap.ui.core.mvc.View;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -318,7 +318,7 @@ The width
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

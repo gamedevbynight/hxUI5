@@ -38,7 +38,7 @@ Event is fired when contents are resized.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.layout.Splitter</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachResize( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.layout.Splitter;
+	public function attachResize( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.layout.Splitter;
 
 	/**
 	* Destroys all the contentAreas in the aggregation {@link #getContentAreas contentAreas}.
@@ -54,7 +54,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachResize( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.layout.Splitter;
+	public function detachResize( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.layout.Splitter;
 
 	/**
 	* Creates a new subclass of class sap.ui.layout.Splitter with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -65,7 +65,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContentAreas contentAreas}.
@@ -80,7 +80,7 @@ The content areas to be split. The control will show n-1 splitter bars between n
 
 The height of the control
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -106,7 +106,7 @@ Default value is <code>Horizontal</code>.
 
 The width of the control
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -156,7 +156,7 @@ The height of the control
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -182,7 +182,7 @@ The width of the control
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

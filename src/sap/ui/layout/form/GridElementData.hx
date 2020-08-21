@@ -19,7 +19,7 @@ extern class GridElementData extends sap.ui.core.LayoutData
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getHCells hCells}.
@@ -32,7 +32,7 @@ If set to <code>full</code>, only one field is allowed within the <code>FormElem
 
 <b>Note:</b> For labels, the full size setting has no effect.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>hCells</code>
 	*/
 	public function getHCells( ):sap.ui.layout.form.GridElementCells;
@@ -68,7 +68,7 @@ If set to <code>full</code>, only one field is allowed within the <code>FormElem
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @param	sHCells New value for property <code>hCells</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

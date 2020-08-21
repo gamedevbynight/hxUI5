@@ -38,7 +38,7 @@ extern class BlockLayoutCell extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBackgroundColorSet backgroundColorSet}.
@@ -83,7 +83,7 @@ Defines the title of the cell. <b>Note:</b> When the <code>titleLink</code> aggr
 
 Defines the alignment of the cell title
 
-Default value is <code>Begin</code>.
+Default value is <code>"Begin"</code>.
 	* @return	Value of property <code>titleAlignment</code>
 	*/
 	public function getTitleAlignment( ):sap.ui.core.HorizontalAlign;
@@ -93,7 +93,7 @@ Default value is <code>Begin</code>.
 
 Defines the aria level of the title This information is e.g. used by assistive technologies like screenreaders to create a hierarchical site map for faster navigation.
 
-Default value is <code>Auto</code>.
+Default value is <code>"Auto"</code>.
 	* @return	Value of property <code>titleLevel</code>
 	*/
 	public function getTitleLevel( ):sap.ui.core.TitleLevel;
@@ -179,7 +179,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.ui.layout.BlockLayoutCell;
+	public function setTitle( ?sTitle:String):sap.ui.layout.BlockLayoutCell;
 
 	/**
 	* Sets a new value for property {@link #getTitleAlignment titleAlignment}.
@@ -188,7 +188,7 @@ Defines the alignment of the cell title
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Begin</code>.
+Default value is <code>"Begin"</code>.
 	* @param	sTitleAlignment New value for property <code>titleAlignment</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -201,7 +201,7 @@ Defines the aria level of the title This information is e.g. used by assistive t
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Auto</code>.
+Default value is <code>"Auto"</code>.
 	* @param	sTitleLevel New value for property <code>titleLevel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

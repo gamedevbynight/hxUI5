@@ -19,7 +19,7 @@ extern class QuickViewGroupElement extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getEmailSubject emailSubject}.
@@ -62,7 +62,7 @@ Default value is <code>empty string</code>.
 
 Specifies the target of the link - it works like the target property of the HTML <a> tag. Works only with QuickViewGroupElement of type link.
 
-Default value is <code>_blank</code>.
+Default value is <code>"_blank"</code>.
 	* @return	Value of property <code>target</code>
 	*/
 	public function getTarget( ):String;
@@ -153,7 +153,7 @@ Specifies the target of the link - it works like the target property of the HTML
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>_blank</code>.
+Default value is <code>"_blank"</code>.
 	* @param	sTarget New value for property <code>target</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

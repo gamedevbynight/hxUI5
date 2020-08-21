@@ -65,7 +65,7 @@ Event is fired when the value of the file path has been changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:fileAllowed fileAllowed} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -78,7 +78,7 @@ Event is fired when the file is allowed for upload on client side.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFileAllowed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function attachFileAllowed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:fileEmpty fileEmpty} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -91,7 +91,7 @@ Event is fired when the size of the file is 0
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFileEmpty( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function attachFileEmpty( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:filenameLengthExceed filenameLengthExceed} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -104,7 +104,7 @@ Event is fired, if the filename of a chosen file is longer than the value specif
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFilenameLengthExceed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function attachFilenameLengthExceed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:fileSizeExceed fileSizeExceed} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -117,7 +117,7 @@ Event is fired when the size of a file is above the <code>maximumFileSize</code>
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFileSizeExceed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function attachFileSizeExceed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:typeMissmatch typeMissmatch} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -130,7 +130,7 @@ Event is fired when the type of a file does not match the <code>mimeType</code> 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTypeMissmatch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function attachTypeMissmatch( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadAborted uploadAborted} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -145,7 +145,7 @@ This event is only supported with property <code>sendXHR</code> set to true, i.e
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadAborted( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function attachUploadAborted( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadComplete uploadComplete} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -160,7 +160,7 @@ To see if the upload request was successful, check the <code>status</code> param
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadComplete( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function attachUploadComplete( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadProgress uploadProgress} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -177,7 +177,7 @@ This event is only supported with property <code>sendXHR</code> set to true, i.e
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadProgress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function attachUploadProgress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:uploadStart uploadStart} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -190,7 +190,7 @@ Event is fired before an upload is started.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.FileUploader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUploadStart( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function attachUploadStart( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Clears the content of the <code>FileUploader</code>.
@@ -226,7 +226,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:fileAllowed fileAllowed} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -236,7 +236,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFileAllowed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function detachFileAllowed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:fileEmpty fileEmpty} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -246,7 +246,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFileEmpty( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function detachFileEmpty( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:filenameLengthExceed filenameLengthExceed} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -256,7 +256,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFilenameLengthExceed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function detachFilenameLengthExceed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:fileSizeExceed fileSizeExceed} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -266,7 +266,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFileSizeExceed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function detachFileSizeExceed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:typeMissmatch typeMissmatch} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -276,7 +276,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTypeMissmatch( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function detachTypeMissmatch( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadAborted uploadAborted} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -286,7 +286,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadAborted( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function detachUploadAborted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadComplete uploadComplete} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -296,7 +296,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadComplete( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function detachUploadComplete( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadProgress uploadProgress} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -306,7 +306,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadProgress( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function detachUploadProgress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:uploadStart uploadStart} event of this <code>sap.ui.unified.FileUploader</code>.
@@ -316,7 +316,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUploadStart( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
+	public function detachUploadStart( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.FileUploader;
 
 	/**
 	* Creates a new subclass of class sap.ui.unified.FileUploader with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -327,7 +327,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAdditionalData additionalData}.
@@ -398,6 +398,16 @@ The header parameters for the <code>FileUploader</code> which are only submitted
 	* @return	null
 	*/
 	public function getHeaderParameters( ):Array<sap.ui.unified.FileUploaderParameter>;
+
+	/**
+	* Gets current value of property {@link #getHttpRequestMethod httpRequestMethod}.
+
+Chosen HTTP request method for file upload.
+
+Default value is <code>Post</code>.
+	* @return	Value of property <code>httpRequestMethod</code>
+	*/
+	public function getHttpRequestMethod( ):sap.ui.unified.FileUploaderHttpRequestMethod;
 
 	/**
 	* Gets current value of property {@link #getIcon icon}.
@@ -763,7 +773,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sAdditionalData New value for property <code>additionalData</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAdditionalData( sAdditionalData:String):sap.ui.unified.FileUploader;
+	public function setAdditionalData( ?sAdditionalData:String):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getButtonOnly buttonOnly}.
@@ -787,7 +797,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sButtonText New value for property <code>buttonText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setButtonText( sButtonText:String):sap.ui.unified.FileUploader;
+	public function setButtonText( ?sButtonText:String):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -815,7 +825,20 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFileType New value for property <code>fileType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFileType( sFileType:Array<String>):sap.ui.unified.FileUploader;
+	public function setFileType( ?sFileType:Array<String>):sap.ui.unified.FileUploader;
+
+	/**
+	* Sets a new value for property {@link #getHttpRequestMethod httpRequestMethod}.
+
+Chosen HTTP request method for file upload.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Post</code>.
+	* @param	sHttpRequestMethod New value for property <code>httpRequestMethod</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setHttpRequestMethod( ?sHttpRequestMethod:sap.ui.unified.FileUploaderHttpRequestMethod):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -827,7 +850,7 @@ This can be a URI to an image or an icon font URI.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon= New value for property <code>icon</code>
+	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIcon( ?sIcon:sap.ui.core.URI):sap.ui.unified.FileUploader;
@@ -855,7 +878,7 @@ If not specified, the base icon is used. If an icon font icon is used, this prop
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIconHovered= New value for property <code>iconHovered</code>
+	* @param	sIconHovered New value for property <code>iconHovered</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIconHovered( ?sIconHovered:sap.ui.core.URI):sap.ui.unified.FileUploader;
@@ -883,7 +906,7 @@ If not specified, the base or hovered icon is used. If an icon font icon is used
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIconSelected= New value for property <code>iconSelected</code>
+	* @param	sIconSelected New value for property <code>iconSelected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIconSelected( ?sIconSelected:sap.ui.core.URI):sap.ui.unified.FileUploader;
@@ -899,7 +922,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iMaximumFilenameLength New value for property <code>maximumFilenameLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaximumFilenameLength( iMaximumFilenameLength:Int):sap.ui.unified.FileUploader;
+	public function setMaximumFilenameLength( ?iMaximumFilenameLength:Int):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getMaximumFileSize maximumFileSize}.
@@ -912,7 +935,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	fMaximumFileSize New value for property <code>maximumFileSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaximumFileSize( fMaximumFileSize:Float):sap.ui.unified.FileUploader;
+	public function setMaximumFileSize( ?fMaximumFileSize:Float):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getMimeType mimeType}.
@@ -927,7 +950,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMimeType New value for property <code>mimeType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMimeType( sMimeType:Array<String>):sap.ui.unified.FileUploader;
+	public function setMimeType( ?sMimeType:Array<String>):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getMultiple multiple}.
@@ -955,7 +978,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.ui.unified.FileUploader;
+	public function setName( ?sName:String):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getPlaceholder placeholder}.
@@ -966,7 +989,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sPlaceholder New value for property <code>placeholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholder( sPlaceholder:String):sap.ui.unified.FileUploader;
+	public function setPlaceholder( ?sPlaceholder:String):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getSameFilenameAllowed sameFilenameAllowed}.
@@ -1009,7 +1032,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sStyle New value for property <code>style</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStyle( sStyle:String):sap.ui.unified.FileUploader;
+	public function setStyle( ?sStyle:String):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getUploadOnChange uploadOnChange}.
@@ -1032,7 +1055,7 @@ Used when URL address is on a remote server.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sUploadUrl= New value for property <code>uploadUrl</code>
+	* @param	sUploadUrl New value for property <code>uploadUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setUploadUrl( ?sUploadUrl:sap.ui.core.URI):sap.ui.unified.FileUploader;
@@ -1091,7 +1114,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValueStateText New value for property <code>valueStateText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValueStateText( sValueStateText:String):sap.ui.unified.FileUploader;
+	public function setValueStateText( ?sValueStateText:String):sap.ui.unified.FileUploader;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -1101,7 +1124,7 @@ Specifies the displayed control width.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth= New value for property <code>width</code>
+	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.unified.FileUploader;
@@ -1212,6 +1235,11 @@ Example: <code>["image/png", "image/jpeg"]</code>.
 This property is not supported by Internet Explorer 9.
 	*/
 	@:optional var sendXHR:haxe.extern.EitherType<String,Bool>;
+
+	/**
+	* Chosen HTTP request method for file upload.
+	*/
+	@:optional var httpRequestMethod:haxe.extern.EitherType<String,sap.ui.unified.FileUploaderHttpRequestMethod>;
 
 	/**
 	* Placeholder for the text field.

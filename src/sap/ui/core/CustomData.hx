@@ -21,7 +21,7 @@ extern class CustomData extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to <code>sap.ui.core.ElementMetadata</code>
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getKey key}.
@@ -72,7 +72,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sKey New value for property <code>key</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKey( sKey:String):sap.ui.core.CustomData;
+	public function setKey( ?sKey:String):sap.ui.core.CustomData;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -83,7 +83,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( oValue:Dynamic):sap.ui.core.CustomData;
+	public function setValue( ?oValue:Dynamic):sap.ui.core.CustomData;
 
 	/**
 	* Sets a new value for property {@link #getWriteToDom writeToDom}.

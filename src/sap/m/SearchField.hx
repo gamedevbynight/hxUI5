@@ -44,7 +44,7 @@ This event is fired when the user changes the value of the search field. Unlike 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SearchField</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SearchField;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SearchField;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:liveChange liveChange} event of this <code>sap.m.SearchField</code>.
@@ -57,7 +57,7 @@ This event is fired each time when the value of the search field is changed by t
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SearchField</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLiveChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SearchField;
+	public function attachLiveChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SearchField;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:search search} event of this <code>sap.m.SearchField</code>.
@@ -70,7 +70,7 @@ Event which is fired when the user triggers a search.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SearchField</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSearch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SearchField;
+	public function attachSearch( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SearchField;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:suggest suggest} event of this <code>sap.m.SearchField</code>.
@@ -83,7 +83,7 @@ This event is fired when the search field is initially focused or its value is c
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SearchField</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSuggest( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SearchField;
+	public function attachSuggest( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SearchField;
 
 	/**
 	* Binds property {@link #getValue value} to model data.
@@ -108,7 +108,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SearchField;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SearchField;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:liveChange liveChange} event of this <code>sap.m.SearchField</code>.
@@ -118,7 +118,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLiveChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SearchField;
+	public function detachLiveChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SearchField;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:search search} event of this <code>sap.m.SearchField</code>.
@@ -128,7 +128,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSearch( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SearchField;
+	public function detachSearch( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SearchField;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:suggest suggest} event of this <code>sap.m.SearchField</code>.
@@ -138,7 +138,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSuggest( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SearchField;
+	public function detachSuggest( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SearchField;
 
 	/**
 	* Creates a new subclass of class sap.m.SearchField with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -149,7 +149,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -264,9 +264,7 @@ Default value is <code>true</code>.
 	/**
 	* Gets current value of property {@link #getWidth width}.
 
-Defines the CSS width of the input. 100% by default.
-
-Default value is <code>100%</code>.
+Defines the CSS width of the input. If not set, width is 100%.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -381,7 +379,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sPlaceholder New value for property <code>placeholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholder( sPlaceholder:String):sap.m.SearchField;
+	public function setPlaceholder( ?sPlaceholder:String):sap.m.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getRefreshButtonTooltip refreshButtonTooltip}.
@@ -392,7 +390,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sRefreshButtonTooltip New value for property <code>refreshButtonTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRefreshButtonTooltip( sRefreshButtonTooltip:String):sap.m.SearchField;
+	public function setRefreshButtonTooltip( ?sRefreshButtonTooltip:String):sap.m.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getShowRefreshButton showRefreshButton}.
@@ -429,7 +427,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.m.SearchField;
+	public function setValue( ?sValue:String):sap.m.SearchField;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -447,11 +445,9 @@ Default value is <code>true</code>.
 	/**
 	* Sets a new value for property {@link #getWidth width}.
 
-Defines the CSS width of the input. 100% by default.
+Defines the CSS width of the input. If not set, width is 100%.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-
-Default value is <code>100%</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -482,7 +478,7 @@ typedef SearchFieldArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var value:String;
 
 	/**
-	* Defines the CSS width of the input. 100% by default.
+	* Defines the CSS width of the input. If not set, width is 100%.
 	*/
 	@:optional var width:haxe.extern.EitherType<String,sap.ui.core.CSSSize>;
 

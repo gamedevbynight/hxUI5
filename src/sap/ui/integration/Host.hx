@@ -23,7 +23,7 @@ Fired when an action is triggered.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.integration.Host</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAction( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.Host;
+	public function attachAction( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.integration.Host;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:action action} event of this <code>sap.ui.integration.Host</code>.
@@ -33,7 +33,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAction( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.Host;
+	public function detachAction( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.integration.Host;
 
 	/**
 	* Creates a new subclass of class sap.ui.integration.Host with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -44,7 +44,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActions actions}.
@@ -79,7 +79,7 @@ If a card depends on a destination, but this callback is not implemented, an err
 The callback receives <code>destinationName</code> as parameter and returns a string with the URL. Or alternatively the callback may return a <code>Promise</code> with the URL as an argument.
 	* @return	Value of property <code>resolveDestination</code>
 	*/
-	public function getResolveDestination( ):()->Void;
+	public function getResolveDestination( ):(Dynamic)->Void;
 
 	/**
 	* Sets a new value for property {@link #getActions actions}.
@@ -107,7 +107,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	fnResolveDestination New value for property <code>resolveDestination</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setResolveDestination( fnResolveDestination:()->Void):sap.ui.integration.Host;
+	public function setResolveDestination( fnResolveDestination:(Dynamic)->Void):sap.ui.integration.Host;
 }
 
 typedef HostArgs = sap.ui.core.Element.ElementArgs & {
@@ -126,7 +126,7 @@ If a card depends on a destination, but this callback is not implemented, an err
 
 The callback receives <code>destinationName</code> as parameter and returns a string with the URL. Or alternatively the callback may return a <code>Promise</code> with the URL as an argument.
 	*/
-	@:optional var resolveDestination:()->Void;
+	@:optional var resolveDestination:(Dynamic)->Void;
 
 	/**
 	* Fired when an action is triggered.

@@ -32,7 +32,7 @@ The complete event is fired when the user clicks the finish button of the Wizard
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Wizard</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachComplete( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Wizard;
+	public function attachComplete( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Wizard;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:stepActivate stepActivate} event of this <code>sap.m.Wizard</code>.
@@ -45,7 +45,7 @@ The StepActivated event is fired every time a new step is activated.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Wizard</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachStepActivate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Wizard;
+	public function attachStepActivate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Wizard;
 
 	/**
 	* Destroys all aggregated steps in the Wizard.
@@ -61,7 +61,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachComplete( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Wizard;
+	public function detachComplete( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Wizard;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:stepActivate stepActivate} event of this <code>sap.m.Wizard</code>.
@@ -71,7 +71,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachStepActivate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Wizard;
+	public function detachStepActivate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Wizard;
 
 	/**
 	* Discards all progress done from the given step(incl.) to the end of the wizard. The verified state of the steps is returned to the initial provided.
@@ -90,7 +90,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
@@ -129,7 +129,7 @@ Default value is <code>false</code>.
 
 Determines the height of the Wizard.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -175,7 +175,7 @@ The wizard steps to be included in the content of the control.
 
 Determines the width of the Wizard.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -248,7 +248,7 @@ Changes the text of the finish button for the last step. This property can be us
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Review</code>.
+Default value is <code>"Review"</code>.
 	* @param	sFinishButtonText New value for property <code>finishButtonText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -261,7 +261,7 @@ Determines the height of the Wizard.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -281,7 +281,7 @@ Determines the width of the Wizard.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

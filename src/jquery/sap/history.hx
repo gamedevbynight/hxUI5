@@ -71,7 +71,7 @@ extern class history
 	* @param	oThis If oThis is provided, the fn function's this keyword will be bound to this object.
 	* @return	It returns the this object to enable chaining.
 	*/
-	public function addRoute( sIdf:String, fn:()->Void, ?oThis:Dynamic):Dynamic;
+	public function addRoute( sIdf:String, fn:(Dynamic)->Void, ?oThis:Dynamic):Dynamic;
 
 	/**
 	* This function adds a virtual history record based on the current hash. A virtual record is only for marking the current state of the application, and when the back button clicked it will return to the previous state. It is used when the marked state shouldn't be seen by the user when user click the back or forward button of the browser. For example, when showing a context menu a virtual history record should be added and this record will be skipped when user navigates back and it will return directly to the previous history record. If you avoid adding the virtual history record, it will return to one history record before the one your virtual record is based on. That's why virtual record is necessary.
@@ -105,6 +105,6 @@ extern class history
 	* @param	fn The function that will be set as the default handler
 	* @return	Void
 	*/
-	public function setDefaultHandler( fn:()->Void):Void;
+	public function setDefaultHandler( fn:(Dynamic)->Void):Void;
 }
 

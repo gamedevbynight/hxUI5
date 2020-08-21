@@ -194,7 +194,7 @@ Element.extend('sap.mylib.MyElement', {
 	* @param	oStaticInfo static info to construct the metadata from
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, oStaticInfo:Dynamic):()->Void;
+	public static function extend( sClassName:String, oStaticInfo:Dynamic):(Dynamic)->Void;
 
 	/**
 	* Searches and returns an array of child elements and controls which are referenced within an aggregation or aggregations of child elements/controls. This can be either done recursive or not.

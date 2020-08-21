@@ -19,7 +19,7 @@ extern class RoadMapStep extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getEnabled enabled}.
@@ -77,7 +77,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLabel New value for property <code>label</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLabel( sLabel:String):sap.ui.commons.RoadMapStep;
+	public function setLabel( ?sLabel:String):sap.ui.commons.RoadMapStep;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.

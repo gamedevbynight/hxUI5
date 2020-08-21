@@ -8,13 +8,13 @@ package sap.ui.model;
 extern class Filter extends sap.ui.base.Object
 {
 	@:overload( function(?vFilterInfo:Dynamic, ?vOperator:sap.ui.model.FilterOperator, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
-	@:overload( function(?vFilterInfo:Dynamic, ?vOperator:()->Void, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
+	@:overload( function(?vFilterInfo:Dynamic, ?vOperator:(Dynamic)->Void, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
 	@:overload( function(?vFilterInfo:Dynamic, ?vOperator:Bool, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
 	@:overload( function(?vFilterInfo:String, ?vOperator:sap.ui.model.FilterOperator, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
-	@:overload( function(?vFilterInfo:String, ?vOperator:()->Void, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
+	@:overload( function(?vFilterInfo:String, ?vOperator:(Dynamic)->Void, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
 	@:overload( function(?vFilterInfo:String, ?vOperator:Bool, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
 	@:overload( function(?vFilterInfo:Array<sap.ui.model.Filter>, ?vOperator:sap.ui.model.FilterOperator, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
-	@:overload( function(?vFilterInfo:Array<sap.ui.model.Filter>, ?vOperator:()->Void, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
+	@:overload( function(?vFilterInfo:Array<sap.ui.model.Filter>, ?vOperator:(Dynamic)->Void, ?vValue1:Dynamic, ?vValue2:Dynamic):Void{ })
 
 	/**
 	* 
@@ -47,7 +47,7 @@ The comparator method returns -1, 0, 1 for comparable values and NaN for non-com
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.Filter.

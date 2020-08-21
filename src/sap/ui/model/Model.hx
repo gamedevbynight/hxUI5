@@ -18,7 +18,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.Model</code> itself.
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachParseError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
+	public function attachParseError( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:propertyChange propertyChange} event of this <code>sap.ui.model.Model</code>.
@@ -29,7 +29,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.Model</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPropertyChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
+	public function attachPropertyChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:requestCompleted requestCompleted} event of this <code>sap.ui.model.Model</code>.
@@ -40,7 +40,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.Model</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRequestCompleted( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
+	public function attachRequestCompleted( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:requestFailed requestFailed} event of this <code>sap.ui.model.Model</code>.
@@ -51,7 +51,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.Model</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRequestFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
+	public function attachRequestFailed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:requestSent requestSent} event of this <code>sap.ui.model.Model</code>.
@@ -62,7 +62,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.model.Model</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRequestSent( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
+	public function attachRequestSent( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.Model;
 	@:overload( function(sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic, ?oEvents:Dynamic):sap.ui.model.ContextBinding{ })
 
 	/**
@@ -115,7 +115,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	bReload force reload even if data is already available. For server side models this should refetch the data from the server
 	* @return	the binding context, if it could be created synchronously
 	*/
-	public function createBindingContext( sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic, ?fnCallBack:()->Void, ?bReload:Bool):sap.ui.model.Context;
+	public function createBindingContext( sPath:String, ?oContext:Dynamic, ?mParameters:Dynamic, ?fnCallBack:(Dynamic)->Void, ?bReload:Bool):sap.ui.model.Context;
 
 	/**
 	* Destroys the model and clears the model data.
@@ -140,7 +140,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachParseError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
+	public function detachParseError( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:propertyChange propertyChange} event of this <code>sap.ui.model.Model</code>.
@@ -150,7 +150,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPropertyChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
+	public function detachPropertyChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:requestCompleted requestCompleted} event of this <code>sap.ui.model.Model</code>.
@@ -160,7 +160,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRequestCompleted( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
+	public function detachRequestCompleted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:requestFailed requestFailed} event of this <code>sap.ui.model.Model</code>.
@@ -170,7 +170,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRequestFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
+	public function detachRequestFailed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:requestSent requestSent} event of this <code>sap.ui.model.Model</code>.
@@ -180,7 +180,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRequestSent( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.Model;
+	public function detachRequestSent( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.Model;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.Model with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -191,7 +191,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Get the default binding mode for the model.

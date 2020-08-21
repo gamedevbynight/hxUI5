@@ -35,7 +35,7 @@ extern class ProgressIndicator extends sap.ui.core.Control implements sap.ui.cor
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -148,7 +148,7 @@ Default value is <code>Inherit</code>.
 
 Specifies the width of the control.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -218,7 +218,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDisplayValue New value for property <code>displayValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDisplayValue( sDisplayValue:String):sap.m.ProgressIndicator;
+	public function setDisplayValue( ?sDisplayValue:String):sap.m.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -242,7 +242,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.ProgressIndicator;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.ProgressIndicator;
 
 	/**
 	* Sets a new value for property {@link #getPercentValue percentValue}.
@@ -305,7 +305,7 @@ Specifies the width of the control.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

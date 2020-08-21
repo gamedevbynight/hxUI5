@@ -7,7 +7,11 @@ package sap.m;
 
 Each message can have a close button, so that it can be removed from the UI if needed.
 
-With version 1.50 you can use a limited set of formatting tags for the message text by setting <code>enableFormattedText</code>. The allowed tags are: <ul> <li>&lt;a&gt;</li> <li>&lt;em&gt;</li> <li>&lt;strong&gt;</li> <li>&lt;u&gt;</li> </ul> <h3>Usage</h3> <h4>When to use</h4> <ul> <li>You want to provide information or status update within the detail area of an object</li> </ul> <h4>When not to use</h4> <ul> <li>You want to display information within the object page header, within a control, in the master list, or above the page header.</li> </ul>
+With version 1.50 you can use a limited set of formatting tags for the message text by setting <code>enableFormattedText</code>. The allowed tags are: <ul> <li>&lt;a&gt;</li> <li>&lt;em&gt;</li> <li>&lt;strong&gt;</li> <li>&lt;u&gt;</li> </ul>
+
+<h3>Dynamically generated Message Strip</h3> To meet the accessibility requirements when using dynamically generated Message Strip you must implement it alongside <code>sap.ui.core.InvisibleMessage</code>. This will allow screen readers to announce it in real time. We suggest such dynamically generated message strips to be announced as Information Bar, as shown in our “Dynamic Message Strip Generator sample.”
+
+<h3>Usage</h3> <h4>When to use</h4> <ul> <li>You want to provide information or status update within the detail area of an object</li> </ul> <h4>When not to use</h4> <ul> <li>You want to display information within the object page header, within a control, in the master list, or above the page header.</li> </ul>
 */
 extern class MessageStrip extends sap.ui.core.Control
 {
@@ -25,7 +29,7 @@ This event will be fired after the container is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageStrip</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageStrip;
+	public function attachClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageStrip;
 
 	/**
 	* Closes the MessageStrip. This method sets the visible property of the MessageStrip to false. The MessageStrip can be shown again by setting the visible property to true.
@@ -47,7 +51,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageStrip;
+	public function detachClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageStrip;
 
 	/**
 	* Creates a new subclass of class sap.m.MessageStrip with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -58,7 +62,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getCustomIcon customIcon}.
@@ -144,7 +148,7 @@ Determines a custom icon which is displayed. If none is set, the default icon fo
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sCustomIcon= New value for property <code>customIcon</code>
+	* @param	sCustomIcon New value for property <code>customIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setCustomIcon( ?sCustomIcon:sap.ui.core.URI):sap.m.MessageStrip;

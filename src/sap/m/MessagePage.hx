@@ -44,7 +44,7 @@ This event is fired when Nav Button is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessagePage</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachNavButtonPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePage;
+	public function attachNavButtonPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePage;
 
 	/**
 	* Destroys all the buttons in the aggregation {@link #getButtons buttons}.
@@ -72,7 +72,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachNavButtonPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessagePage;
+	public function detachNavButtonPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessagePage;
 
 	/**
 	* Creates a new subclass of class sap.m.MessagePage with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -83,7 +83,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -128,7 +128,7 @@ The (optional) custom Text control of this page. Use this aggregation when the "
 
 Determines the detailed description that shows additional information on the MessagePage.
 
-Default value is <code>Check the filter settings.</code>.
+Default value is <code>"Check the filter settings."</code>.
 	* @return	Value of property <code>description</code>
 	*/
 	public function getDescription( ):String;
@@ -150,7 +150,7 @@ Default value is <code>false</code>.
 
 Determines the icon displayed on the MessagePage.
 
-Default value is <code>sap-icon://documents</code>.
+Default value is <code>"sap-icon://documents"</code>.
 	* @return	Value of property <code>icon</code>
 	*/
 	public function getIcon( ):sap.ui.core.URI;
@@ -194,7 +194,7 @@ Default value is <code>false</code>.
 
 Determines the main text displayed on the MessagePage.
 
-Default value is <code>No matching items found.</code>.
+Default value is <code>"No matching items found."</code>.
 	* @return	Value of property <code>text</code>
 	*/
 	public function getText( ):String;
@@ -300,7 +300,7 @@ Determines the detailed description that shows additional information on the Mes
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Check the filter settings.</code>.
+Default value is <code>"Check the filter settings."</code>.
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -328,7 +328,7 @@ Determines the icon displayed on the MessagePage.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>sap-icon://documents</code>.
+Default value is <code>"sap-icon://documents"</code>.
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -343,7 +343,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconAlt New value for property <code>iconAlt</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconAlt( sIconAlt:String):sap.m.MessagePage;
+	public function setIconAlt( ?sIconAlt:String):sap.m.MessagePage;
 
 	/**
 	* Sets a new value for property {@link #getShowHeader showHeader}.
@@ -378,7 +378,7 @@ Determines the main text displayed on the MessagePage.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>No matching items found.</code>.
+Default value is <code>"No matching items found."</code>.
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -406,7 +406,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.MessagePage;
+	public function setTitle( ?sTitle:String):sap.m.MessagePage;
 }
 
 typedef MessagePageArgs = sap.ui.core.Control.ControlArgs & {

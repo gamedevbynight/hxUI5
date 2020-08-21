@@ -21,7 +21,7 @@ extern class AvatarGroupItem extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the color of the avatar.
@@ -72,7 +72,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFallbackIcon New value for property <code>fallbackIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFallbackIcon( sFallbackIcon:String):sap.f.AvatarGroupItem;
+	public function setFallbackIcon( ?sFallbackIcon:String):sap.f.AvatarGroupItem;
 
 	/**
 	* Sets a new value for property {@link #getInitials initials}.
@@ -83,7 +83,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sInitials New value for property <code>initials</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInitials( sInitials:String):sap.f.AvatarGroupItem;
+	public function setInitials( ?sInitials:String):sap.f.AvatarGroupItem;
 
 	/**
 	* Sets a new value for property {@link #getSrc src}.
@@ -94,7 +94,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSrc New value for property <code>src</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSrc( sSrc:sap.ui.core.URI):sap.f.AvatarGroupItem;
+	public function setSrc( ?sSrc:sap.ui.core.URI):sap.f.AvatarGroupItem;
 }
 
 typedef AvatarGroupItemArgs = sap.ui.core.Control.ControlArgs & {

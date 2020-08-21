@@ -53,7 +53,7 @@ Event is fired when the user triggers the link control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Link</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Link;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Link;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.m.Link</code>.
@@ -63,7 +63,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Link;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Link;
 
 	/**
 	* Creates a new subclass of class sap.m.Link with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -74,7 +74,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -269,7 +269,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHref New value for property <code>href</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHref( sHref:sap.ui.core.URI):sap.m.Link;
+	public function setHref( ?sHref:sap.ui.core.URI):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getSubtle subtle}.
@@ -295,7 +295,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTarget New value for property <code>target</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTarget( sTarget:String):sap.m.Link;
+	public function setTarget( ?sTarget:String):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -362,7 +362,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Link;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Link;
 
 	/**
 	* Sets a new value for property {@link #getWrapping wrapping}.

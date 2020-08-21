@@ -19,7 +19,7 @@ extern class RowRepeaterFilter extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getFilters filters}.
@@ -60,7 +60,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oFilters New value for property <code>filters</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFilters( oFilters:Dynamic):sap.ui.commons.RowRepeaterFilter;
+	public function setFilters( ?oFilters:Dynamic):sap.ui.commons.RowRepeaterFilter;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -71,7 +71,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:String):sap.ui.commons.RowRepeaterFilter;
+	public function setIcon( ?sIcon:String):sap.ui.commons.RowRepeaterFilter;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -82,7 +82,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.commons.RowRepeaterFilter;
+	public function setText( ?sText:String):sap.ui.commons.RowRepeaterFilter;
 }
 
 typedef RowRepeaterFilterArgs = sap.ui.core.Element.ElementArgs & {

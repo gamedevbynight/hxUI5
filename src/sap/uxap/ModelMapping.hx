@@ -19,7 +19,7 @@ extern class ModelMapping extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getExternalModelName externalModelName}.
@@ -42,7 +42,7 @@ Determines the external path.
 
 Determines the internal model name.
 
-Default value is <code>Model</code>.
+Default value is <code>"Model"</code>.
 	* @return	Value of property <code>internalModelName</code>
 	*/
 	public function getInternalModelName( ):String;
@@ -62,7 +62,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sExternalModelName New value for property <code>externalModelName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExternalModelName( sExternalModelName:String):sap.uxap.ModelMapping;
+	public function setExternalModelName( ?sExternalModelName:String):sap.uxap.ModelMapping;
 
 	/**
 	* Sets a new value for property {@link #getExternalPath externalPath}.
@@ -73,7 +73,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sExternalPath New value for property <code>externalPath</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setExternalPath( sExternalPath:String):sap.uxap.ModelMapping;
+	public function setExternalPath( ?sExternalPath:String):sap.uxap.ModelMapping;
 
 	/**
 	* Sets a new value for property {@link #getInternalModelName internalModelName}.
@@ -82,7 +82,7 @@ Determines the internal model name.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Model</code>.
+Default value is <code>"Model"</code>.
 	* @param	sInternalModelName New value for property <code>internalModelName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

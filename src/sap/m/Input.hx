@@ -72,7 +72,7 @@ Fired when the value of the input is changed by user interaction - each keystrok
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Input</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLiveChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Input;
+	public function attachLiveChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Input;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:submit submit} event of this <code>sap.m.Input</code>.
@@ -87,7 +87,7 @@ This event is fired when user presses the <kbd>Enter</kbd> key on the input.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Input</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSubmit( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Input;
+	public function attachSubmit( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Input;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:suggest suggest} event of this <code>sap.m.Input</code>.
@@ -100,7 +100,7 @@ This event is fired when user types in the input and showSuggestion is set to tr
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Input</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSuggest( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Input;
+	public function attachSuggest( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Input;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:suggestionItemSelected suggestionItemSelected} event of this <code>sap.m.Input</code>.
@@ -113,7 +113,7 @@ This event is fired when suggestionItem shown in suggestion popup are selected. 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Input</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSuggestionItemSelected( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Input;
+	public function attachSuggestionItemSelected( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Input;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:valueHelpRequest valueHelpRequest} event of this <code>sap.m.Input</code>.
@@ -126,7 +126,7 @@ When the value help indicator is clicked, this event will be fired.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Input</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachValueHelpRequest( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Input;
+	public function attachValueHelpRequest( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Input;
 
 	/**
 	* Binds aggregation {@link #getSuggestionColumns suggestionColumns} to model data.
@@ -190,7 +190,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLiveChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Input;
+	public function detachLiveChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Input;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:submit submit} event of this <code>sap.m.Input</code>.
@@ -200,7 +200,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSubmit( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Input;
+	public function detachSubmit( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Input;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:suggest suggest} event of this <code>sap.m.Input</code>.
@@ -210,7 +210,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSuggest( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Input;
+	public function detachSuggest( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Input;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:suggestionItemSelected suggestionItemSelected} event of this <code>sap.m.Input</code>.
@@ -220,7 +220,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSuggestionItemSelected( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Input;
+	public function detachSuggestionItemSelected( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Input;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:valueHelpRequest valueHelpRequest} event of this <code>sap.m.Input</code>.
@@ -230,7 +230,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachValueHelpRequest( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Input;
+	public function detachValueHelpRequest( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Input;
 
 	/**
 	* Creates a new subclass of class sap.m.Input with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -241,7 +241,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAutocomplete autocomplete}.
@@ -276,7 +276,7 @@ Default value is <code>true</code>.
 
 This property only takes effect if the description property is set. It controls the distribution of space between the input field and the description text. The default value is 50% leaving the other 50% for the description.
 
-Default value is <code>50%</code>.
+Default value is <code>'50%'</code>.
 	* @return	Value of property <code>fieldWidth</code>
 	*/
 	public function getFieldWidth( ):sap.ui.core.CSSSize;
@@ -675,7 +675,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDescription( sDescription:String):sap.m.Input;
+	public function setDescription( ?sDescription:String):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getEnableSuggestionsHighlighting enableSuggestionsHighlighting}.
@@ -697,7 +697,7 @@ This property only takes effect if the description property is set. It controls 
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>50%</code>.
+Default value is <code>'50%'</code>.
 	* @param	sFieldWidth New value for property <code>fieldWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -708,7 +708,7 @@ Default value is <code>50%</code>.
 	* @param	fnFilter The filter function is called when displaying suggestion items and has two input parameters: the first one is the string that is currently typed in the input field and the second one is the item that is being filtered. Returning true will add this item to the popup, returning false will not display it.
 	* @return	this pointer for chaining
 	*/
-	public function setFilterFunction( fnFilter:()->Void):sap.m.Input;
+	public function setFilterFunction( fnFilter:(Dynamic)->Void):sap.m.Input;
 
 	/**
 	* Sets a new value for property {@link #getFilterSuggests filterSuggests}.
@@ -745,14 +745,14 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMaxSuggestionWidth New value for property <code>maxSuggestionWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxSuggestionWidth( sMaxSuggestionWidth:sap.ui.core.CSSSize):sap.m.Input;
+	public function setMaxSuggestionWidth( ?sMaxSuggestionWidth:sap.ui.core.CSSSize):sap.m.Input;
 
 	/**
 	* Sets a custom result filter function for tabular suggestions to select the text that is passed to the input field. Default is to check whether the first cell with a "text" property begins with the typed value. For one value and two-value suggestions this callback function is not called.
 	* @param	fnFilter The result function is called with one parameter: the sap.m.ColumnListItem that is selected. The function must return a result string that will be displayed as the input field's value.
 	* @return	this pointer for chaining
 	*/
-	public function setRowResultFunction( fnFilter:()->Void):sap.m.Input;
+	public function setRowResultFunction( fnFilter:(Dynamic)->Void):sap.m.Input;
 
 	/**
 	* Sets the <code>selectedItem</code> association.
@@ -836,7 +836,7 @@ Defines the validation callback function called when a suggestion row gets selec
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	oSuggestionRowValidator= New value for property <code>suggestionRowValidator</code>
+	* @param	oSuggestionRowValidator New value for property <code>suggestionRowValidator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setSuggestionRowValidator( ?oSuggestionRowValidator:Dynamic):sap.m.Input;
@@ -862,7 +862,7 @@ Defines the display text formatter function.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	oTextFormatter= New value for property <code>textFormatter</code>
+	* @param	oTextFormatter New value for property <code>textFormatter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setTextFormatter( ?oTextFormatter:Dynamic):sap.m.Input;
@@ -931,7 +931,7 @@ Default value is empty/<code>undefined</code>
 	* @param	fnFilter Function to filter the items shown in the SuggestionsPopover
 	* @return	Void
 	*/
-	public function showItems( fnFilter:()->Void):Void;
+	public function showItems( fnFilter:(Dynamic)->Void):Void;
 
 	/**
 	* Unbinds aggregation {@link #getSuggestionColumns suggestionColumns} from model data.

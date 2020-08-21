@@ -20,14 +20,14 @@ extern class ResizeHandler
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.ResizeHandler.
 	* @return	Metadata object describing this class
 	*/
 	public static function getMetadata( ):sap.ui.base.Metadata;
-	@:overload( function(oRef:js.html.Element, fHandler:()->Void):String{ })
+	@:overload( function(oRef:js.html.Element, fHandler:(Dynamic)->Void):String{ })
 
 	/**
 	* Registers the given event handler for resize events on the given DOM element or control.
@@ -41,6 +41,6 @@ The available parameters of the resize event are: <ul> <li><code>oEvent.target</
 	* @param	fHandler The event handler which should be called whenever the size of the given reference is changed. The event object is passed as first argument to the event handler. See the description of this function for more details about the available parameters of this event.
 	* @return	A registration ID which can be used for deregistering the event handler, see {@link sap.ui.core.ResizeHandler.deregister}. If the UI5 framework is not yet initialized <code>null</code> is returned.
 	*/
-	public static function register( oRef:sap.ui.core.Control, fHandler:()->Void):String;
+	public static function register( oRef:sap.ui.core.Control, fHandler:(Dynamic)->Void):String;
 }
 

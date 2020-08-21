@@ -36,7 +36,7 @@ Fired when the context menu is opened. When the context menu is opened, the bind
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeOpenContextMenu( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Table;
+	public function attachBeforeOpenContextMenu( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:paste paste} event of this <code>sap.m.Table</code>.
@@ -49,7 +49,7 @@ This event gets fired when the user pastes content from the clipboard to the tab
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPaste( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Table;
+	public function attachPaste( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:popinChanged popinChanged} event of this <code>sap.m.Table</code>.
@@ -62,7 +62,7 @@ Fired when the table pop-in has changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPopinChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Table;
+	public function attachPopinChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Table;
 
 	/**
 	* Destroys all the columns in the aggregation {@link #getColumns columns}.
@@ -78,7 +78,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeOpenContextMenu( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Table;
+	public function detachBeforeOpenContextMenu( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:paste paste} event of this <code>sap.m.Table</code>.
@@ -88,7 +88,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPaste( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Table;
+	public function detachPaste( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:popinChanged popinChanged} event of this <code>sap.m.Table</code>.
@@ -98,7 +98,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPopinChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Table;
+	public function detachPopinChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Table;
 
 	/**
 	* Creates a new subclass of class sap.m.Table with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -109,7 +109,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAlternateRowColors alternateRowColors}.
@@ -161,7 +161,7 @@ Defines the contextual width for the <code>sap.m.Table</code> control. By defini
 
 For example, by setting the <code>contextualWidth</code> property to 600px or Tablet, the table can be placed in a container with 600px width, where the pop-in is used. You can use specific CSS sizes (for example, 600px or 600), you can also use the <code>sap.m.ScreenSize</code> enumeration (for example, Phone, Tablet, Desktop, Small, Medium, Large, ....). If this property is set to <code>Auto</code>, the <code>ResizeHandler</code> will manage the contextual width of the table. <b>Note:</b> Only "Inherit", "Auto", and pixel-based CSS sizes (for example, 200, 200px) can be applied to the <code>contextualWidth</code> property. Due to the rendering cost, we recommend to use the valid value mentioned before except for "Auto".
 
-Default value is <code>Inherit</code>.
+Default value is <code>"Inherit"</code>.
 	* @return	Value of property <code>contextualWidth</code>
 	*/
 	public function getContextualWidth( ):String;
@@ -300,7 +300,7 @@ For example, by setting the <code>contextualWidth</code> property to 600px or Ta
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Inherit</code>.
+Default value is <code>"Inherit"</code>.
 	* @param	sContextualWidth New value for property <code>contextualWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

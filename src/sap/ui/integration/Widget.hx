@@ -21,7 +21,7 @@ Fired when an action is triggered on the Widget.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.integration.Widget</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAction( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.Widget;
+	public function attachAction( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.integration.Widget;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:manifestReady manifestReady} event of this <code>sap.ui.integration.Widget</code>.
@@ -34,7 +34,7 @@ Fired when the manifest is loaded.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.integration.Widget</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachManifestReady( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.Widget;
+	public function attachManifestReady( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.integration.Widget;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:action action} event of this <code>sap.ui.integration.Widget</code>.
@@ -44,7 +44,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAction( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.Widget;
+	public function detachAction( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.integration.Widget;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:manifestReady manifestReady} event of this <code>sap.ui.integration.Widget</code>.
@@ -54,7 +54,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachManifestReady( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.Widget;
+	public function detachManifestReady( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.integration.Widget;
 
 	/**
 	* Creates a new subclass of class sap.ui.integration.Widget with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -65,7 +65,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBaseUrl baseUrl}.
@@ -170,7 +170,7 @@ The URL of the manifest or an object.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	oManifest= New value for property <code>manifest</code>
+	* @param	oManifest New value for property <code>manifest</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setManifest( ?oManifest:Dynamic):sap.ui.integration.Widget;

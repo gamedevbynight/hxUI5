@@ -10,7 +10,7 @@ extern class URLHelper
 	* @param	oListener The object that wants to be notified when the event occurs.
 	* @return	The URLHelper instance
 	*/
-	public static function attachRedirect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.URLHelper;
+	public static function attachRedirect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.URLHelper;
 
 	/**
 	* Detach an already registered listener of the <code>redirect</code> event.
@@ -18,7 +18,7 @@ extern class URLHelper
 	* @param	oListener The object, that wants to be notified, when the event occurs.
 	* @return	The URLHelper instance
 	*/
-	public static function detachRedirect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.URLHelper;
+	public static function detachRedirect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.URLHelper;
 
 	/**
 	* Builds Email URI from given parameter. Trims spaces from email addresses.

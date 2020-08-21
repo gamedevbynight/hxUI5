@@ -39,7 +39,7 @@ oControl.applySettings({"someProperty" : vPropertySetting});
 	* @param	fnRootFormatter root formatter function; default: <code>Array.prototype.join(., " ")</code> in case of multiple parts, just like {@link sap.ui.model.CompositeBinding#getExternalValue getExternalValue}
 	* @return	constant value or binding info object for a property as expected by {@link sap.ui.base.ManagedObject#applySettings applySettings}
 	*/
-	public static function createPropertySetting( aParts:Array<Dynamic>, ?fnRootFormatter:()->Void):Dynamic;
+	public static function createPropertySetting( aParts:Array<Dynamic>, ?fnRootFormatter:(Dynamic)->Void):Dynamic;
 	@:overload( function(oInterface:sap.ui.core.util.XMLPreprocessor.IContext, ?vRawValue:Dynamic):String{ })
 
 	/**

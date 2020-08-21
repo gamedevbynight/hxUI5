@@ -19,7 +19,7 @@ extern class OpenSearchProvider extends sap.ui.core.search.SearchProvider
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.search.OpenSearchProvider.
@@ -32,7 +32,7 @@ extern class OpenSearchProvider extends sap.ui.core.search.SearchProvider
 
 The type of data which is provided by the given suggestUrl: either 'json' or 'xml'.
 
-Default value is <code>json</code>.
+Default value is <code>'json'</code>.
 	* @return	Value of property <code>suggestType</code>
 	*/
 	public function getSuggestType( ):String;
@@ -52,7 +52,7 @@ The type of data which is provided by the given suggestUrl: either 'json' or 'xm
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>json</code>.
+Default value is <code>'json'</code>.
 	* @param	sSuggestType New value for property <code>suggestType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -67,7 +67,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSuggestUrl New value for property <code>suggestUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSuggestUrl( sSuggestUrl:sap.ui.core.URI):sap.ui.core.search.OpenSearchProvider;
+	public function setSuggestUrl( ?sSuggestUrl:sap.ui.core.URI):sap.ui.core.search.OpenSearchProvider;
 
 	/**
 	* Call this function to get suggest values from the search provider. The given callback function is called with the suggest value (type 'string', 1st parameter) and an array of the suggestions (type '[string]', 2nd parameter).
@@ -75,7 +75,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	fCallback The callback function which is called when the suggestions are available.
 	* @return	Void
 	*/
-	public function suggest( sValue:String, fCallback:()->Void):Void;
+	public function suggest( sValue:String, fCallback:(Dynamic)->Void):Void;
 }
 
 typedef OpenSearchProviderArgs = sap.ui.core.search.SearchProvider.SearchProviderArgs & {

@@ -61,7 +61,7 @@ Fired if an appointment is created.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAppointmentCreate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function attachAppointmentCreate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:appointmentDrop appointmentDrop} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -74,7 +74,7 @@ Fired if an appointment is dropped.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAppointmentDrop( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function attachAppointmentDrop( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:appointmentResize appointmentResize} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -87,7 +87,7 @@ Fired when an appointment is resized.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAppointmentResize( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function attachAppointmentResize( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:appointmentSelect appointmentSelect} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -100,20 +100,20 @@ Fired when the selected state of an appointment is changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAppointmentSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function attachAppointmentSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:cellPress cellPress} event of this <code>sap.m.SinglePlanningCalendar</code>.
 
 When called, the context of the event handler (its <code>this</code>) will be bound to <code>oListener</code> if specified, otherwise it will be bound to this <code>sap.m.SinglePlanningCalendar</code> itself.
 
-Fired when a grid cell is focused.
+Fired when a grid cell is pressed.
 	* @param	oData An application-specific payload object that will be passed to the event handler along with the event object when firing the event
 	* @param	fnFunction The function to be called when the event occurs
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCellPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function attachCellPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:headerDateSelect headerDateSelect} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -126,7 +126,7 @@ Fired if a date is selected in the calendar header.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachHeaderDateSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function attachHeaderDateSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:moreLinkPress moreLinkPress} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -139,7 +139,7 @@ Fired when a 'more' button is pressed. <b>Note:</b> The 'more' button appears in
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMoreLinkPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function attachMoreLinkPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:startDateChange startDateChange} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -152,7 +152,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachStartDateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function attachStartDateChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:viewChange viewChange} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -165,7 +165,7 @@ The view was changed by user interaction.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SinglePlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachViewChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function attachViewChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Destroys all the actions in the aggregation {@link #getActions actions}.
@@ -199,7 +199,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAppointmentCreate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function detachAppointmentCreate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:appointmentDrop appointmentDrop} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -209,7 +209,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAppointmentDrop( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function detachAppointmentDrop( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:appointmentResize appointmentResize} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -219,7 +219,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAppointmentResize( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function detachAppointmentResize( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:appointmentSelect appointmentSelect} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -229,7 +229,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAppointmentSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function detachAppointmentSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:cellPress cellPress} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -239,7 +239,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCellPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function detachCellPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:headerDateSelect headerDateSelect} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -249,7 +249,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachHeaderDateSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function detachHeaderDateSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:moreLinkPress moreLinkPress} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -259,7 +259,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMoreLinkPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function detachMoreLinkPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:startDateChange startDateChange} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -269,7 +269,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachStartDateChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function detachStartDateChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:viewChange viewChange} event of this <code>sap.m.SinglePlanningCalendar</code>.
@@ -279,7 +279,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachViewChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
+	public function detachViewChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SinglePlanningCalendar;
 
 	/**
 	* Creates a new subclass of class sap.m.SinglePlanningCalendar with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -290,7 +290,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getActions actions}.
@@ -856,7 +856,7 @@ See {@link #property:enableAppointmentsResize enableAppointmentsResize} for the 
 	@:optional var appointmentSelect:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 
 	/**
-	* Fired when a grid cell is focused.
+	* Fired when a grid cell is pressed.
 	*/
 	@:optional var cellPress:(oControlEvent:haxe.extern.EitherType<String,sap.ui.base.Event>)->Void;
 

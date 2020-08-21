@@ -46,7 +46,7 @@ Fired when the <i>Add New Tab</i> button is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.TabContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAddNewButtonPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.TabContainer;
+	public function attachAddNewButtonPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TabContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:itemClose itemClose} event of this <code>sap.m.TabContainer</code>.
@@ -59,7 +59,7 @@ Fired when an item is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.TabContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachItemClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.TabContainer;
+	public function attachItemClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TabContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:itemSelect itemSelect} event of this <code>sap.m.TabContainer</code>.
@@ -72,7 +72,7 @@ Fired when an item is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.TabContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachItemSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.TabContainer;
+	public function attachItemSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TabContainer;
 
 	/**
 	* Binds aggregation {@link #getItems items} to model data.
@@ -97,7 +97,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAddNewButtonPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.TabContainer;
+	public function detachAddNewButtonPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TabContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:itemClose itemClose} event of this <code>sap.m.TabContainer</code>.
@@ -107,7 +107,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachItemClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.TabContainer;
+	public function detachItemClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TabContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:itemSelect itemSelect} event of this <code>sap.m.TabContainer</code>.
@@ -117,7 +117,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachItemSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.TabContainer;
+	public function detachItemSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TabContainer;
 
 	/**
 	* Creates a new subclass of class sap.m.TabContainer with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -128,7 +128,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.

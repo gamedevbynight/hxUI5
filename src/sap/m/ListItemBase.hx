@@ -29,7 +29,7 @@ Fires when the user clicks on the detail button of the control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ListItemBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDetailPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListItemBase;
+	public function attachDetailPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListItemBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:press press} event of this <code>sap.m.ListItemBase</code>.
@@ -42,7 +42,7 @@ Fires when the user clicks on the control. <b>Note:</b> This event is not fired 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ListItemBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListItemBase;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListItemBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:detailPress detailPress} event of this <code>sap.m.ListItemBase</code>.
@@ -52,7 +52,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDetailPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListItemBase;
+	public function detachDetailPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListItemBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.m.ListItemBase</code>.
@@ -62,7 +62,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListItemBase;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListItemBase;
 
 	/**
 	* Creates a new subclass of class sap.m.ListItemBase with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -73,7 +73,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
@@ -98,7 +98,7 @@ Valid values for the <code>highlight</code> property are values of the enumerati
 
 Accessibility support is provided through the associated {@link sap.m.ListItemBase#setHighlightText highlightText} property. If the <code>highlight</code> property is set to a value of {@link sap.ui.core.MessageType}, the <code>highlightText</code> property does not need to be set because a default text is used. However, the default text can be overridden by setting the <code>highlightText</code> property. In all other cases the <code>highlightText</code> property must be set.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @return	Value of property <code>highlight</code>
 	*/
 	public function getHighlight( ):String;
@@ -195,7 +195,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iCounter New value for property <code>counter</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCounter( iCounter:Int):sap.m.ListItemBase;
+	public function setCounter( ?iCounter:Int):sap.m.ListItemBase;
 
 	/**
 	* Sets a new value for property {@link #getHighlight highlight}.
@@ -208,7 +208,7 @@ Accessibility support is provided through the associated {@link sap.m.ListItemBa
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @param	sHighlight New value for property <code>highlight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

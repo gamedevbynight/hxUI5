@@ -28,7 +28,7 @@ Fired when this item is selected.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.tnt.NavigationListItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.tnt.NavigationListItem;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.tnt.NavigationListItem;
 
 	/**
 	* Destroys all the items in the aggregation {@link #getItems items}.
@@ -44,7 +44,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.tnt.NavigationListItem;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.tnt.NavigationListItem;
 
 	/**
 	* Creates a new subclass of class sap.tnt.NavigationListItem with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -55,7 +55,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getExpanded expanded}.
@@ -196,7 +196,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHref New value for property <code>href</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHref( sHref:sap.ui.core.URI):sap.tnt.NavigationListItem;
+	public function setHref( ?sHref:sap.ui.core.URI):sap.tnt.NavigationListItem;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -206,7 +206,7 @@ Specifies the icon for the item.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon= New value for property <code>icon</code>
+	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIcon( ?sIcon:sap.ui.core.URI):sap.tnt.NavigationListItem;
@@ -222,7 +222,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTarget New value for property <code>target</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTarget( sTarget:String):sap.tnt.NavigationListItem;
+	public function setTarget( ?sTarget:String):sap.tnt.NavigationListItem;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.

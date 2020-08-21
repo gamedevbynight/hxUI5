@@ -19,7 +19,7 @@ Event is fired if the selection of tree nodes is changed in any way.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>TreeBindingAdapter</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelectionChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.TreeBindingAdapter;
+	public function attachSelectionChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.TreeBindingAdapter;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:selectionChanged selectionChanged} event of this <code>sap.ui.model.TreeBindingAdapter</code>.
@@ -29,6 +29,6 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelectionChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.TreeBindingAdapter;
+	public function detachSelectionChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.TreeBindingAdapter;
 }
 

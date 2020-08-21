@@ -25,7 +25,7 @@ Triggered after the list of items is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.FacetFilterList</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachListClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
+	public function attachListClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:listOpen listOpen} event of this <code>sap.m.FacetFilterList</code>.
@@ -38,7 +38,7 @@ Fired before the filter list is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.FacetFilterList</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachListOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
+	public function attachListOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:search search} event of this <code>sap.m.FacetFilterList</code>.
@@ -53,7 +53,7 @@ The default filtering behavior of the control can be prevented by calling <code>
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.FacetFilterList</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSearch( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
+	public function attachSearch( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:listClose listClose} event of this <code>sap.m.FacetFilterList</code>.
@@ -63,7 +63,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachListClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
+	public function detachListClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:listOpen listOpen} event of this <code>sap.m.FacetFilterList</code>.
@@ -73,7 +73,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachListOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
+	public function detachListOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:search search} event of this <code>sap.m.FacetFilterList</code>.
@@ -83,7 +83,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSearch( fnFunction:()->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
+	public function detachSearch( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FacetFilterList;
 
 	/**
 	* Creates a new subclass of class sap.m.FacetFilterList with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -94,7 +94,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActive active}.
@@ -242,7 +242,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iAllCount New value for property <code>allCount</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAllCount( iAllCount:Int):sap.m.FacetFilterList;
+	public function setAllCount( ?iAllCount:Int):sap.m.FacetFilterList;
 
 	/**
 	* Sets a new value for property {@link #getDataType dataType}.
@@ -279,7 +279,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sKey New value for property <code>key</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKey( sKey:String):sap.m.FacetFilterList;
+	public function setKey( ?sKey:String):sap.m.FacetFilterList;
 
 	/**
 	* Overrides to allow only MultiSelect and SingleSelectMaster list modes. If an invalid mode is given then the mode will not be changed.
@@ -343,7 +343,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.FacetFilterList;
+	public function setTitle( ?sTitle:String):sap.m.FacetFilterList;
 
 	/**
 	* Sets a new value for property {@link #getWordWrap wordWrap}.

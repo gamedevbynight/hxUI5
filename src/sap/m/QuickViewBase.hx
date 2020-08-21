@@ -28,7 +28,7 @@ The event is fired when navigation between two pages has completed. In case of a
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.QuickViewBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickViewBase;
+	public function attachAfterNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickViewBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:navigate navigate} event of this <code>sap.m.QuickViewBase</code>.
@@ -41,7 +41,7 @@ The event is fired when navigation between two pages has been triggered. The tra
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.QuickViewBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickViewBase;
+	public function attachNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickViewBase;
 
 	/**
 	* Binds aggregation {@link #getPages pages} to model data.
@@ -66,7 +66,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickViewBase;
+	public function detachAfterNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickViewBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:navigate navigate} event of this <code>sap.m.QuickViewBase</code>.
@@ -76,7 +76,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.QuickViewBase;
+	public function detachNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.QuickViewBase;
 
 	/**
 	* Creates a new subclass of class sap.m.QuickViewBase with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -87,7 +87,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.m.QuickViewBase.

@@ -25,7 +25,7 @@ extern class DateInterval extends sap.ui.model.CompositeType
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Format the given array containing two values to an output value of type string. Other internal types than 'string' and 'any' are not supported by the date interval type. If a source format has been defined for this type, the formatValue does also accept an array with string values as input. This will be parsed into an array of Dates using the source format.

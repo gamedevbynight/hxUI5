@@ -19,7 +19,7 @@ extern class TablePersoController extends sap.ui.base.ManagedObject
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAutoSave autoSave}.
@@ -36,7 +36,7 @@ Default value is <code>true</code>.
 
 By defining a custom data key the <code>TablePersoController</code> will try to get the key for saving the perso data from the custom data of the Table and Column instead of creating it by concatenating the ID of the Table and the Column. Basically this will be more stable than using the auto IDs.
 
-Default value is <code>persoKey</code>.
+Default value is <code>"persoKey"</code>.
 	* @return	Value of property <code>customDataKey</code>
 	*/
 	public function getCustomDataKey( ):String;
@@ -102,7 +102,7 @@ By defining a custom data key the <code>TablePersoController</code> will try to 
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>persoKey</code>.
+Default value is <code>"persoKey"</code>.
 	* @param	sCustomDataKey New value for property <code>customDataKey</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

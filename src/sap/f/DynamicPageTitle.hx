@@ -84,7 +84,7 @@ Also fired when the developer toggles the title state by programmatically changi
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.DynamicPageTitle</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachStateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.DynamicPageTitle;
+	public function attachStateChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.DynamicPageTitle;
 
 	/**
 	* Destroys all the actions in the aggregation {@link #getActions actions}.
@@ -154,7 +154,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachStateChange( fnFunction:()->Void, ?oListener:Dynamic):sap.f.DynamicPageTitle;
+	public function detachStateChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.DynamicPageTitle;
 
 	/**
 	* Creates a new subclass of class sap.f.DynamicPageTitle with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -165,7 +165,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getActions actions}.
@@ -190,7 +190,7 @@ If all the areas have assigned values greater than 1, the numbers are scaled so 
 
 <Note:> When this property is set the <code>primaryArea</code> property has no effect.
 
-Default value is <code>1:1.6:1.6</code>.
+Default value is <code>"1:1.6:1.6"</code>.
 	* @return	Value of property <code>areaShrinkRatio</code>
 	*/
 	public function getAreaShrinkRatio( ):sap.f.DynamicPageTitleShrinkRatio;

@@ -65,7 +65,7 @@ Fired when the user requests the context menu for a table cell.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeOpenContextMenu( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachBeforeOpenContextMenu( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:busyStateChanged busyStateChanged} event of this <code>sap.ui.table.Table</code>.
@@ -78,7 +78,7 @@ This event gets fired when the busy state of the table changes. It should only b
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBusyStateChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachBusyStateChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:cellClick cellClick} event of this <code>sap.ui.table.Table</code>.
@@ -91,7 +91,7 @@ fired when the user clicks a cell of the table (experimental!).
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCellClick( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachCellClick( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:columnFreeze columnFreeze} event of this <code>sap.ui.table.Table</code>.
@@ -104,7 +104,7 @@ fired when a column of the table should be freezed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachColumnFreeze( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachColumnFreeze( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:columnMove columnMove} event of this <code>sap.ui.table.Table</code>.
@@ -117,7 +117,7 @@ fired when a table column is moved.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachColumnMove( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachColumnMove( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:columnResize columnResize} event of this <code>sap.ui.table.Table</code>.
@@ -130,7 +130,7 @@ fired when a table column is resized.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachColumnResize( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachColumnResize( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:columnSelect columnSelect} event of this <code>sap.ui.table.Table</code>.
@@ -143,7 +143,7 @@ fired when a column of the table has been selected
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachColumnSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachColumnSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:columnVisibility columnVisibility} event of this <code>sap.ui.table.Table</code>.
@@ -156,7 +156,7 @@ fired when the visibility of a table column is changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachColumnVisibility( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachColumnVisibility( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:customFilter customFilter} event of this <code>sap.ui.table.Table</code>.
@@ -169,7 +169,7 @@ This event is triggered when the custom filter item of the column menu is presse
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCustomFilter( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachCustomFilter( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:filter filter} event of this <code>sap.ui.table.Table</code>.
@@ -182,7 +182,7 @@ fired when the table is filtered.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFilter( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachFilter( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:firstVisibleRowChanged firstVisibleRowChanged} event of this <code>sap.ui.table.Table</code>.
@@ -195,7 +195,7 @@ This event gets fired when the first visible row is changed. It should only be u
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFirstVisibleRowChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachFirstVisibleRowChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:group group} event of this <code>sap.ui.table.Table</code>.
@@ -208,7 +208,7 @@ fired when the table is grouped (experimental!).
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachGroup( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachGroup( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:paste paste} event of this <code>sap.ui.table.Table</code>.
@@ -221,7 +221,7 @@ This event gets fired when the user pastes content from the clipboard to the tab
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPaste( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachPaste( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:rowSelectionChange rowSelectionChange} event of this <code>sap.ui.table.Table</code>.
@@ -236,7 +236,7 @@ fired when the row selection of the table has been changed (the event parameters
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRowSelectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachRowSelectionChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:sort sort} event of this <code>sap.ui.table.Table</code>.
@@ -249,7 +249,7 @@ fired when the table is sorted.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Table</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSort( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function attachSort( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Triggers automatic resizing of a column to the widest content.
@@ -344,7 +344,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeOpenContextMenu( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachBeforeOpenContextMenu( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:busyStateChanged busyStateChanged} event of this <code>sap.ui.table.Table</code>.
@@ -354,7 +354,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBusyStateChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachBusyStateChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:cellClick cellClick} event of this <code>sap.ui.table.Table</code>.
@@ -364,7 +364,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCellClick( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachCellClick( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:columnFreeze columnFreeze} event of this <code>sap.ui.table.Table</code>.
@@ -374,7 +374,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachColumnFreeze( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachColumnFreeze( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:columnMove columnMove} event of this <code>sap.ui.table.Table</code>.
@@ -384,7 +384,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachColumnMove( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachColumnMove( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:columnResize columnResize} event of this <code>sap.ui.table.Table</code>.
@@ -394,7 +394,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachColumnResize( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachColumnResize( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:columnSelect columnSelect} event of this <code>sap.ui.table.Table</code>.
@@ -404,7 +404,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachColumnSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachColumnSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:columnVisibility columnVisibility} event of this <code>sap.ui.table.Table</code>.
@@ -414,7 +414,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachColumnVisibility( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachColumnVisibility( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:customFilter customFilter} event of this <code>sap.ui.table.Table</code>.
@@ -424,7 +424,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCustomFilter( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachCustomFilter( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:filter filter} event of this <code>sap.ui.table.Table</code>.
@@ -434,7 +434,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFilter( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachFilter( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:firstVisibleRowChanged firstVisibleRowChanged} event of this <code>sap.ui.table.Table</code>.
@@ -444,7 +444,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFirstVisibleRowChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachFirstVisibleRowChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:group group} event of this <code>sap.ui.table.Table</code>.
@@ -454,7 +454,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachGroup( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachGroup( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:paste paste} event of this <code>sap.ui.table.Table</code>.
@@ -464,7 +464,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPaste( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachPaste( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:rowSelectionChange rowSelectionChange} event of this <code>sap.ui.table.Table</code>.
@@ -474,7 +474,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRowSelectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachRowSelectionChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:sort sort} event of this <code>sap.ui.table.Table</code>.
@@ -484,7 +484,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSort( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Table;
+	public function detachSort( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Table;
 
 	/**
 	* Creates a new subclass of class sap.ui.table.Table with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -495,7 +495,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Filters a column by a value. If no filter value is passed, the filter value equals an empty string, and the filter for this column is removed.
@@ -919,7 +919,7 @@ Default value is <code>Fixed</code>.
 
 Width of the Table.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -1112,7 +1112,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iColumnHeaderHeight New value for property <code>columnHeaderHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnHeaderHeight( iColumnHeaderHeight:Int):sap.ui.table.Table;
+	public function setColumnHeaderHeight( ?iColumnHeaderHeight:Int):sap.ui.table.Table;
 
 	/**
 	* Sets a new value for property {@link #getColumnHeaderVisible columnHeaderVisible}.
@@ -1370,7 +1370,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iRowHeight New value for property <code>rowHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRowHeight( iRowHeight:Int):sap.ui.table.Table;
+	public function setRowHeight( ?iRowHeight:Int):sap.ui.table.Table;
 
 	/**
 	* Sets the aggregated {@link #getRowSettingsTemplate rowSettingsTemplate}.
@@ -1511,7 +1511,7 @@ Width of the Table.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>'auto'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

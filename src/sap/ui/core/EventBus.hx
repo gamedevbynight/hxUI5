@@ -30,7 +30,7 @@ The object must not be used anymore after destroy was called.
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.EventBus.
@@ -55,7 +55,7 @@ The object must not be used anymore after destroy was called.
 	* @param	oListener The object that wants to be notified when the event occurs (<code>this</code> context within the handler function). If it is not specified, the handler function is called in the context of the event bus.
 	* @return	Returns <code>this</code> to allow method chaining
 	*/
-	public function subscribe( ?sChannelId:String, sEventId:String, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.EventBus;
+	public function subscribe( ?sChannelId:String, sEventId:String, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.EventBus;
 
 	/**
 	* Attaches an event handler, called one time only, to the event with the given identifier on the given event channel.
@@ -67,7 +67,7 @@ When the event occurs, the handler function is called and the handler registrati
 	* @param	oListener The object that wants to be notified when the event occurs (<code>this</code> context within the handler function). If it is not specified, the handler function is called in the context of the event bus.
 	* @return	Returns <code>this</code> to allow method chaining
 	*/
-	public function subscribeOnce( ?sChannelId:String, sEventId:String, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.EventBus;
+	public function subscribeOnce( ?sChannelId:String, sEventId:String, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.EventBus;
 
 	/**
 	* Removes a previously subscribed event handler from the event with the given identifier on the given event channel.
@@ -79,6 +79,6 @@ The passed parameters must match those used for registration with {@link #subscr
 	* @param	oListener The object that wanted to be notified when the event occurred
 	* @return	Returns <code>this</code> to allow method chaining
 	*/
-	public function unsubscribe( ?sChannelId:String, sEventId:String, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.EventBus;
+	public function unsubscribe( ?sChannelId:String, sEventId:String, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.EventBus;
 }
 

@@ -28,7 +28,7 @@ Fired when aggregation of the item changes.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MenuItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAggregationChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MenuItem;
+	public function attachAggregationChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MenuItem;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:press press} event of this <code>sap.m.MenuItem</code>.
@@ -41,7 +41,7 @@ Fired after the item has been pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MenuItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MenuItem;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MenuItem;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:propertyChanged propertyChanged} event of this <code>sap.m.MenuItem</code>.
@@ -54,7 +54,7 @@ Fired when a property of the item changes.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MenuItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPropertyChanged( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MenuItem;
+	public function attachPropertyChanged( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MenuItem;
 
 	/**
 	* Binds aggregation {@link #getItems items} to model data.
@@ -79,7 +79,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAggregationChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MenuItem;
+	public function detachAggregationChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MenuItem;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.m.MenuItem</code>.
@@ -89,7 +89,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MenuItem;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MenuItem;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:propertyChanged propertyChanged} event of this <code>sap.m.MenuItem</code>.
@@ -99,7 +99,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPropertyChanged( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MenuItem;
+	public function detachPropertyChanged( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MenuItem;
 
 	/**
 	* Creates a new subclass of class sap.m.MenuItem with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -110,7 +110,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getIcon icon}.
@@ -195,7 +195,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:String):sap.m.MenuItem;
+	public function setIcon( ?sIcon:String):sap.m.MenuItem;
 
 	/**
 	* Sets a new value for property {@link #getStartsSection startsSection}.

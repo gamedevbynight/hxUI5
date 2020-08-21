@@ -19,7 +19,7 @@ extern class ResponsiveContainerRange extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* ID of the element which is the current target of the association {@link #getContent content}, or <code>null</code>.
@@ -79,7 +79,7 @@ The minimal height for this range to be displayed.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sHeight= New value for property <code>height</code>
+	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.ResponsiveContainerRange;
@@ -105,7 +105,7 @@ The minimal width for this range to be displayed.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth= New value for property <code>width</code>
+	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.ResponsiveContainerRange;

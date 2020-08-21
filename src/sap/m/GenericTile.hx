@@ -28,7 +28,7 @@ The event is triggered when the user presses the tile.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.GenericTile</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.GenericTile;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.GenericTile;
 
 	/**
 	* Binds aggregation {@link #getTileContent tileContent} to model data.
@@ -53,7 +53,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.GenericTile;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.GenericTile;
 
 	/**
 	* Creates a new subclass of class sap.m.GenericTile with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -64,7 +64,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAriaLabel ariaLabel}.
@@ -253,7 +253,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sAriaLabel New value for property <code>ariaLabel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAriaLabel( sAriaLabel:String):sap.m.GenericTile;
+	public function setAriaLabel( ?sAriaLabel:String):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundImage backgroundImage}.
@@ -264,7 +264,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBackgroundImage New value for property <code>backgroundImage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundImage( sBackgroundImage:sap.ui.core.URI):sap.m.GenericTile;
+	public function setBackgroundImage( ?sBackgroundImage:sap.ui.core.URI):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getFailedText failedText}.
@@ -275,7 +275,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFailedText New value for property <code>failedText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFailedText( sFailedText:String):sap.m.GenericTile;
+	public function setFailedText( ?sFailedText:String):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getFrameType frameType}.
@@ -299,7 +299,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeader New value for property <code>header</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeader( sHeader:String):sap.m.GenericTile;
+	public function setHeader( ?sHeader:String):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getHeaderImage headerImage}.
@@ -310,7 +310,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeaderImage New value for property <code>headerImage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderImage( sHeaderImage:sap.ui.core.URI):sap.m.GenericTile;
+	public function setHeaderImage( ?sHeaderImage:sap.ui.core.URI):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getImageDescription imageDescription}.
@@ -321,7 +321,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sImageDescription New value for property <code>imageDescription</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setImageDescription( sImageDescription:String):sap.m.GenericTile;
+	public function setImageDescription( ?sImageDescription:String):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getMode mode}.
@@ -384,7 +384,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSubheader New value for property <code>subheader</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSubheader( sSubheader:String):sap.m.GenericTile;
+	public function setSubheader( ?sSubheader:String):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getUrl url}.
@@ -395,7 +395,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUrl New value for property <code>url</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUrl( sUrl:sap.ui.core.URI):sap.m.GenericTile;
+	public function setUrl( ?sUrl:sap.ui.core.URI):sap.m.GenericTile;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.

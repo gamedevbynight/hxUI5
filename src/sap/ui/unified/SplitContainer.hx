@@ -45,7 +45,7 @@ extern class SplitContainer extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.
@@ -84,7 +84,7 @@ The content to appear in the secondary area.
 
 The width if the secondary content. The height is always 100%.
 
-Default value is <code>250px</code>.
+Default value is <code>'250px'</code>.
 	* @return	Value of property <code>secondaryContentSize</code>
 	*/
 	public function getSecondaryContentSize( ):sap.ui.core.CSSSize;
@@ -181,7 +181,7 @@ The width if the secondary content. The height is always 100%.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>250px</code>.
+Default value is <code>'250px'</code>.
 	* @param	sSecondaryContentSize New value for property <code>secondaryContentSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -196,7 +196,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	bShowSecondaryContent New value for property <code>showSecondaryContent</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setShowSecondaryContent( bShowSecondaryContent:Bool):sap.ui.unified.SplitContainer;
+	public function setShowSecondaryContent( ?bShowSecondaryContent:Bool):sap.ui.unified.SplitContainer;
 }
 
 typedef SplitContainerArgs = sap.ui.core.Control.ControlArgs & {

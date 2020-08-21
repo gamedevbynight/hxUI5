@@ -50,7 +50,7 @@ Date selection was cancelled
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.Calendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCancel( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
+	public function attachCancel( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:select select} event of this <code>sap.ui.unified.Calendar</code>.
@@ -63,7 +63,7 @@ Date selection changed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.Calendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:startDateChange startDateChange} event of this <code>sap.ui.unified.Calendar</code>.
@@ -78,7 +78,7 @@ Use <code>getStartDate</code> function to determine the current start date
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.Calendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachStartDateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
+	public function attachStartDateChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:weekNumberSelect weekNumberSelect} event of this <code>sap.ui.unified.Calendar</code>.
@@ -95,7 +95,7 @@ The default behavior can be prevented using the <code>preventDefault</code> meth
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.Calendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachWeekNumberSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
+	public function attachWeekNumberSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
 
 	/**
 	* Destroys all the disabledDates in the aggregation {@link #getDisabledDates disabledDates}.
@@ -123,7 +123,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCancel( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
+	public function detachCancel( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:select select} event of this <code>sap.ui.unified.Calendar</code>.
@@ -133,7 +133,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:startDateChange startDateChange} event of this <code>sap.ui.unified.Calendar</code>.
@@ -143,7 +143,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachStartDateChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
+	public function detachStartDateChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:weekNumberSelect weekNumberSelect} event of this <code>sap.ui.unified.Calendar</code>.
@@ -153,7 +153,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachWeekNumberSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
+	public function detachWeekNumberSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.Calendar;
 
 	/**
 	* Displays a date in the calendar but doesn't set the focus.
@@ -171,7 +171,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Sets the focused date of the calendar.
@@ -541,7 +541,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNonWorkingDays New value for property <code>nonWorkingDays</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNonWorkingDays( sNonWorkingDays:Array<Int>):sap.ui.unified.Calendar;
+	public function setNonWorkingDays( ?sNonWorkingDays:Array<Int>):sap.ui.unified.Calendar;
 
 	/**
 	* Sets a new value for property {@link #getPrimaryCalendarType primaryCalendarType}.
@@ -552,7 +552,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sPrimaryCalendarType New value for property <code>primaryCalendarType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPrimaryCalendarType( sPrimaryCalendarType:sap.ui.core.CalendarType):sap.ui.unified.Calendar;
+	public function setPrimaryCalendarType( ?sPrimaryCalendarType:sap.ui.core.CalendarType):sap.ui.unified.Calendar;
 
 	/**
 	* Sets a new value for property {@link #getSecondaryCalendarType secondaryCalendarType}.
@@ -563,7 +563,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSecondaryCalendarType New value for property <code>secondaryCalendarType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSecondaryCalendarType( sSecondaryCalendarType:sap.ui.core.CalendarType):sap.ui.unified.Calendar;
+	public function setSecondaryCalendarType( ?sSecondaryCalendarType:sap.ui.core.CalendarType):sap.ui.unified.Calendar;
 
 	/**
 	* Sets a new value for property {@link #getShowWeekNumbers showWeekNumbers}.
@@ -604,7 +604,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.unified.Calendar;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.unified.Calendar;
 }
 
 typedef CalendarArgs = sap.ui.core.Control.ControlArgs & {

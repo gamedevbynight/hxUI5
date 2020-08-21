@@ -32,7 +32,7 @@ This event will be fired after the ActionSheet is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ActionSheet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ActionSheet;
+	public function attachAfterClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ActionSheet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterOpen afterOpen} event of this <code>sap.m.ActionSheet</code>.
@@ -45,7 +45,7 @@ This event will be fired after the ActionSheet is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ActionSheet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ActionSheet;
+	public function attachAfterOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ActionSheet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeClose beforeClose} event of this <code>sap.m.ActionSheet</code>.
@@ -58,7 +58,7 @@ This event will be fired before the ActionSheet is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ActionSheet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ActionSheet;
+	public function attachBeforeClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ActionSheet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.ActionSheet</code>.
@@ -71,7 +71,7 @@ This event will be fired before the ActionSheet is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ActionSheet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ActionSheet;
+	public function attachBeforeOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ActionSheet;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:cancelButtonPress cancelButtonPress} event of this <code>sap.m.ActionSheet</code>.
@@ -86,7 +86,7 @@ This event is fired when the cancelButton is clicked.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ActionSheet</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCancelButtonPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ActionSheet;
+	public function attachCancelButtonPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ActionSheet;
 
 	/**
 	* Calling this method will make the ActionSheet disappear from the screen.
@@ -108,7 +108,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ActionSheet;
+	public function detachAfterClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ActionSheet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterOpen afterOpen} event of this <code>sap.m.ActionSheet</code>.
@@ -118,7 +118,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ActionSheet;
+	public function detachAfterOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ActionSheet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeClose beforeClose} event of this <code>sap.m.ActionSheet</code>.
@@ -128,7 +128,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ActionSheet;
+	public function detachBeforeClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ActionSheet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeOpen beforeOpen} event of this <code>sap.m.ActionSheet</code>.
@@ -138,7 +138,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ActionSheet;
+	public function detachBeforeOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ActionSheet;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:cancelButtonPress cancelButtonPress} event of this <code>sap.m.ActionSheet</code>.
@@ -148,7 +148,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCancelButtonPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ActionSheet;
+	public function detachCancelButtonPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ActionSheet;
 
 	/**
 	* Creates a new subclass of class sap.m.ActionSheet with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -159,7 +159,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getButtons buttons}.
@@ -265,7 +265,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sCancelButtonText New value for property <code>cancelButtonText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setCancelButtonText( sCancelButtonText:String):sap.m.ActionSheet;
+	public function setCancelButtonText( ?sCancelButtonText:String):sap.m.ActionSheet;
 
 	/**
 	* Sets a new value for property {@link #getPlacement placement}.
@@ -302,7 +302,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.ActionSheet;
+	public function setTitle( ?sTitle:String):sap.m.ActionSheet;
 }
 
 typedef ActionSheetArgs = sap.ui.core.Control.ControlArgs & {

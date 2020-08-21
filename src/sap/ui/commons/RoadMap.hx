@@ -28,7 +28,7 @@ Event is fired when a given step is expanded or collapsed by user.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.RoadMap</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachStepExpanded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RoadMap;
+	public function attachStepExpanded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RoadMap;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:stepSelected stepSelected} event of this <code>sap.ui.commons.RoadMap</code>.
@@ -41,7 +41,7 @@ Event is fired when the user selects a step.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.RoadMap</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachStepSelected( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RoadMap;
+	public function attachStepSelected( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RoadMap;
 
 	/**
 	* Destroys all the steps in the aggregation {@link #getSteps steps}.
@@ -57,7 +57,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachStepExpanded( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RoadMap;
+	public function detachStepExpanded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RoadMap;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:stepSelected stepSelected} event of this <code>sap.ui.commons.RoadMap</code>.
@@ -67,7 +67,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachStepSelected( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RoadMap;
+	public function detachStepSelected( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RoadMap;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.RoadMap with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -78,7 +78,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getFirstVisibleStep firstVisibleStep}.
@@ -123,7 +123,7 @@ Steps that are composing the RoadMap
 
 Determines the control width in CSS size
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -169,7 +169,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFirstVisibleStep New value for property <code>firstVisibleStep</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFirstVisibleStep( sFirstVisibleStep:String):sap.ui.commons.RoadMap;
+	public function setFirstVisibleStep( ?sFirstVisibleStep:String):sap.ui.commons.RoadMap;
 
 	/**
 	* Sets a new value for property {@link #getNumberOfVisibleSteps numberOfVisibleSteps}.
@@ -180,7 +180,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iNumberOfVisibleSteps New value for property <code>numberOfVisibleSteps</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNumberOfVisibleSteps( iNumberOfVisibleSteps:Int):sap.ui.commons.RoadMap;
+	public function setNumberOfVisibleSteps( ?iNumberOfVisibleSteps:Int):sap.ui.commons.RoadMap;
 
 	/**
 	* Sets a new value for property {@link #getSelectedStep selectedStep}.
@@ -191,7 +191,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSelectedStep New value for property <code>selectedStep</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSelectedStep( sSelectedStep:String):sap.ui.commons.RoadMap;
+	public function setSelectedStep( ?sSelectedStep:String):sap.ui.commons.RoadMap;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -200,7 +200,7 @@ Determines the control width in CSS size
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

@@ -36,7 +36,7 @@ This event is fired on next step activation from the Wizard.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.WizardStep</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachActivate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.WizardStep;
+	public function attachActivate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.WizardStep;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:complete complete} event of this <code>sap.m.WizardStep</code>.
@@ -49,7 +49,7 @@ This event is fired after the user presses the Next button in the Wizard, or on 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.WizardStep</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachComplete( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.WizardStep;
+	public function attachComplete( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.WizardStep;
 
 	/**
 	* Destroys all the content in the aggregation {@link #getContent content}.
@@ -65,7 +65,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachActivate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.WizardStep;
+	public function detachActivate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.WizardStep;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:complete complete} event of this <code>sap.m.WizardStep</code>.
@@ -75,7 +75,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachComplete( fnFunction:()->Void, ?oListener:Dynamic):sap.m.WizardStep;
+	public function detachComplete( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.WizardStep;
 
 	/**
 	* Creates a new subclass of class sap.m.WizardStep with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -86,7 +86,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.
@@ -209,7 +209,7 @@ Determines the icon that is displayed for this step. The icon is visualized in t
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon= New value for property <code>icon</code>
+	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.WizardStep;
@@ -300,7 +300,7 @@ typedef WizardStepArgs = sap.ui.core.Control.ControlArgs & {
 	@:optional var subsequentSteps:Array<haxe.extern.EitherType<String,sap.m.WizardStep>>;
 
 	/**
-	* The next step to be taken after the step is completed. Set this association value in the complete event of the current WizardStep.
+	* The next step to be taken. It must be defined in order for the previous step to be completed.
 	*/
 	@:optional var nextStep:haxe.extern.EitherType<String,sap.m.WizardStep>;
 

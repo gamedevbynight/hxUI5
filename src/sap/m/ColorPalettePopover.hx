@@ -21,7 +21,7 @@ Fired when the user selects a color.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ColorPalettePopover</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachColorSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ColorPalettePopover;
+	public function attachColorSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ColorPalettePopover;
 
 	/**
 	* Closes the <code>ColorPalettePopover</code>.
@@ -37,7 +37,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachColorSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ColorPalettePopover;
+	public function detachColorSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ColorPalettePopover;
 
 	/**
 	* Creates a new subclass of class sap.m.ColorPalettePopover with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -48,14 +48,14 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColors colors}.
 
 Defines the List of colors displayed in the palette. Minimum is 2 colors, maximum is 15 colors.
 
-Default value is <code>gold,darkorange,indianred,darkmagenta,cornflowerblue,deepskyblue,darkcyan,olivedrab,darkslategray,azure,white,lightgray,darkgray,dimgray,black</code>.
+Default value is <code>["gold", "darkorange", "indianred", "darkmagenta", "cornflowerblue", "deepskyblue", "darkcyan", "olivedrab", "darkslategray", "azure", "white", "lightgray", "darkgray", "dimgray", "black"]</code>.
 	* @return	Value of property <code>colors</code>
 	*/
 	public function getColors( ):Array<sap.ui.core.CSSColor>;
@@ -128,7 +128,7 @@ Defines the List of colors displayed in the palette. Minimum is 2 colors, maximu
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>gold,darkorange,indianred,darkmagenta,cornflowerblue,deepskyblue,darkcyan,olivedrab,darkslategray,azure,white,lightgray,darkgray,dimgray,black</code>.
+Default value is <code>["gold", "darkorange", "indianred", "darkmagenta", "cornflowerblue", "deepskyblue", "darkcyan", "olivedrab", "darkslategray", "azure", "white", "lightgray", "darkgray", "dimgray", "black"]</code>.
 	* @param	sColors New value for property <code>colors</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -143,7 +143,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDefaultColor New value for property <code>defaultColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultColor( sDefaultColor:sap.ui.core.CSSColor):sap.m.ColorPalettePopover;
+	public function setDefaultColor( ?sDefaultColor:sap.ui.core.CSSColor):sap.m.ColorPalettePopover;
 
 	/**
 	* Sets a new value for property {@link #getDisplayMode displayMode}.

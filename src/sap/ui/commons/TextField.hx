@@ -43,7 +43,7 @@ Event is fired when the text in the field has changed AND the focus leaves the T
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.TextField</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.TextField;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.TextField;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:liveChange liveChange} event of this <code>sap.ui.commons.TextField</code>.
@@ -56,7 +56,7 @@ This event if fired during typing into the <code>TextField</code> and returns th
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.TextField</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLiveChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.TextField;
+	public function attachLiveChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.TextField;
 
 	/**
 	* Binds property {@link #getValue value} to model data.
@@ -75,7 +75,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.TextField;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.TextField;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:liveChange liveChange} event of this <code>sap.ui.commons.TextField</code>.
@@ -85,7 +85,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLiveChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.TextField;
+	public function detachLiveChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.TextField;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.TextField with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -96,7 +96,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAccessibleRole accessibleRole}.
@@ -396,7 +396,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.ui.commons.TextField;
+	public function setName( ?sName:String):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getPlaceholder placeholder}.
@@ -407,7 +407,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sPlaceholder New value for property <code>placeholder</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPlaceholder( sPlaceholder:String):sap.ui.commons.TextField;
+	public function setPlaceholder( ?sPlaceholder:String):sap.ui.commons.TextField;
 
 	/**
 	* Sets a new value for property {@link #getRequired required}.
@@ -483,7 +483,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.TextField;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.TextField;
 
 	/**
 	* Unbinds property {@link #getValue value} from model data.

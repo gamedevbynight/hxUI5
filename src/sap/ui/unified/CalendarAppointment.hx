@@ -21,7 +21,7 @@ extern class CalendarAppointment extends sap.ui.unified.DateTypeRange
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColor color}.
@@ -30,6 +30,14 @@ Overrides the color derived from the <code>type</code> property. This property w
 	* @return	Value of property <code>color</code>
 	*/
 	public function getColor( ):sap.ui.core.CSSColor;
+
+	/**
+	* Gets current value of property {@link #getDescription description}.
+
+Description of the appointment.
+	* @return	Value of property <code>description</code>
+	*/
+	public function getDescription( ):String;
 
 	/**
 	* Gets current value of property {@link #getIcon icon}.
@@ -100,7 +108,18 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sColor New value for property <code>color</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColor( sColor:sap.ui.core.CSSColor):sap.ui.unified.CalendarAppointment;
+	public function setColor( ?sColor:sap.ui.core.CSSColor):sap.ui.unified.CalendarAppointment;
+
+	/**
+	* Sets a new value for property {@link #getDescription description}.
+
+Description of the appointment.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+	* @param	sDescription New value for property <code>description</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setDescription( sDescription:String):sap.ui.unified.CalendarAppointment;
 
 	/**
 	* Sets a new value for property {@link #getIcon icon}.
@@ -113,7 +132,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.ui.unified.CalendarAppointment;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.ui.unified.CalendarAppointment;
 
 	/**
 	* Sets a new value for property {@link #getKey key}.
@@ -124,7 +143,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sKey New value for property <code>key</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setKey( sKey:String):sap.ui.unified.CalendarAppointment;
+	public function setKey( ?sKey:String):sap.ui.unified.CalendarAppointment;
 
 	/**
 	* Sets a new value for property {@link #getSelected selected}.
@@ -186,6 +205,11 @@ typedef CalendarAppointmentArgs = sap.ui.unified.DateTypeRange.DateTypeRangeArgs
 	* Text of the appointment.
 	*/
 	@:optional var text:String;
+
+	/**
+	* Description of the appointment.
+	*/
+	@:optional var description:String;
 
 	/**
 	* Icon of the Appointment. (e.g. picture of the person)

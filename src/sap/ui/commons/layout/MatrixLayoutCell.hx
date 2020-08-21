@@ -57,14 +57,14 @@ Returns <code>this</code> to allow method chaining
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
 
 Determines the matrix layout cell's background design.
 
-Default value is <code>Transparent</code>.
+Default value is <code>'Transparent'</code>.
 	* @return	Value of property <code>backgroundDesign</code>
 	*/
 	public function getBackgroundDesign( ):sap.ui.commons.layout.BackgroundDesign;
@@ -94,7 +94,7 @@ If the matrix row has a defined height and the matrix has layoutFixed = true, th
 
 Determines the horizontal alignment of the matrix layout cell's content with the cell's borders.
 
-Default value is <code>Begin</code>.
+Default value is <code>'Begin'</code>.
 	* @return	Value of property <code>hAlign</code>
 	*/
 	public function getHAlign( ):sap.ui.commons.layout.HAlign;
@@ -110,7 +110,7 @@ Default value is <code>Begin</code>.
 
 Determines the padding of the matrix layout cell's content within the cell's borders. The default value is appropriate for all cells in a form-like layout. Consider to remove the padding on the outer layout in case of nesting.
 
-Default value is <code>End</code>.
+Default value is <code>'End'</code>.
 	* @return	Value of property <code>padding</code>
 	*/
 	public function getPadding( ):sap.ui.commons.layout.Padding;
@@ -130,7 +130,7 @@ Default value is <code>1</code>.
 
 Determines how a matrix layout cell is separated from its predecessor, via a vertical gutter of variable width, with or without a vertical line.
 
-Default value is <code>None</code>.
+Default value is <code>'None'</code>.
 	* @return	Value of property <code>separation</code>
 	*/
 	public function getSeparation( ):sap.ui.commons.layout.Separation;
@@ -140,7 +140,7 @@ Default value is <code>None</code>.
 
 Determines the vertical alignment of the matrix layout cell's content with the cell's borders.
 
-Default value is <code>Middle</code>.
+Default value is <code>'Middle'</code>.
 	* @return	Value of property <code>vAlign</code>
 	*/
 	public function getVAlign( ):sap.ui.commons.layout.VAlign;
@@ -200,7 +200,7 @@ Determines the matrix layout cell's background design.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Transparent</code>.
+Default value is <code>'Transparent'</code>.
 	* @param	sBackgroundDesign New value for property <code>backgroundDesign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -226,7 +226,7 @@ Determines the horizontal alignment of the matrix layout cell's content with the
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Begin</code>.
+Default value is <code>'Begin'</code>.
 	* @param	sHAlign New value for property <code>hAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -239,7 +239,7 @@ Determines the padding of the matrix layout cell's content within the cell's bor
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>End</code>.
+Default value is <code>'End'</code>.
 	* @param	sPadding New value for property <code>padding</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -265,7 +265,7 @@ Determines how a matrix layout cell is separated from its predecessor, via a ver
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>None</code>.
+Default value is <code>'None'</code>.
 	* @param	sSeparation New value for property <code>separation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -278,7 +278,7 @@ Determines the vertical alignment of the matrix layout cell's content with the c
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Middle</code>.
+Default value is <code>'Middle'</code>.
 	* @param	sVAlign New value for property <code>vAlign</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

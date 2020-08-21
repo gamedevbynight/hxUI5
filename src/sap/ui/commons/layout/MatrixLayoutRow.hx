@@ -57,7 +57,7 @@ Returns <code>this</code> to allow method chaining
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getCells cells}.
@@ -138,7 +138,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.commons.layout.MatrixLayoutRow;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.layout.MatrixLayoutRow;
 }
 
 typedef MatrixLayoutRowArgs = sap.ui.core.Element.ElementArgs & {

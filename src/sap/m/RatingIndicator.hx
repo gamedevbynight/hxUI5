@@ -37,7 +37,7 @@ The event is fired when the user has done a rating.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.RatingIndicator</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.RatingIndicator;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.RatingIndicator;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:liveChange liveChange} event of this <code>sap.m.RatingIndicator</code>.
@@ -50,7 +50,7 @@ This event is triggered during the dragging period, each time the rating value c
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.RatingIndicator</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLiveChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.RatingIndicator;
+	public function attachLiveChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.RatingIndicator;
 
 	/**
 	* Binds property {@link #getValue value} to model data.
@@ -69,7 +69,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.RatingIndicator;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.RatingIndicator;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:liveChange liveChange} event of this <code>sap.m.RatingIndicator</code>.
@@ -79,7 +79,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLiveChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.RatingIndicator;
+	public function detachLiveChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.RatingIndicator;
 
 	/**
 	* Creates a new subclass of class sap.m.RatingIndicator with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -90,7 +90,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -280,7 +280,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconHovered New value for property <code>iconHovered</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconHovered( sIconHovered:sap.ui.core.URI):sap.m.RatingIndicator;
+	public function setIconHovered( ?sIconHovered:sap.ui.core.URI):sap.m.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getIconSelected iconSelected}.
@@ -291,7 +291,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconSelected New value for property <code>iconSelected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconSelected( sIconSelected:sap.ui.core.URI):sap.m.RatingIndicator;
+	public function setIconSelected( ?sIconSelected:sap.ui.core.URI):sap.m.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getIconSize iconSize}.
@@ -302,7 +302,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconSize New value for property <code>iconSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconSize( sIconSize:sap.ui.core.CSSSize):sap.m.RatingIndicator;
+	public function setIconSize( ?sIconSize:sap.ui.core.CSSSize):sap.m.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getIconUnselected iconUnselected}.
@@ -313,7 +313,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconUnselected New value for property <code>iconUnselected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconUnselected( sIconUnselected:sap.ui.core.URI):sap.m.RatingIndicator;
+	public function setIconUnselected( ?sIconUnselected:sap.ui.core.URI):sap.m.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getMaxValue maxValue}.

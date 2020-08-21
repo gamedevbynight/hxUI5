@@ -49,7 +49,7 @@ This event is triggered when a filter is set.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.RowRepeater</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFilter( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
+	public function attachFilter( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:page page} event of this <code>sap.ui.commons.RowRepeater</code>.
@@ -62,7 +62,7 @@ This event is triggered when paging was executed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.RowRepeater</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPage( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
+	public function attachPage( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:resize resize} event of this <code>sap.ui.commons.RowRepeater</code>.
@@ -75,7 +75,7 @@ This event is triggered when the number of rows was changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.RowRepeater</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachResize( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
+	public function attachResize( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:sort sort} event of this <code>sap.ui.commons.RowRepeater</code>.
@@ -88,7 +88,7 @@ This event is triggered when a sorting is applied.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.RowRepeater</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSort( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
+	public function attachSort( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
 
 	/**
 	* Binds aggregation {@link #getRows rows} to model data.
@@ -137,7 +137,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFilter( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
+	public function detachFilter( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:page page} event of this <code>sap.ui.commons.RowRepeater</code>.
@@ -147,7 +147,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPage( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
+	public function detachPage( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:resize resize} event of this <code>sap.ui.commons.RowRepeater</code>.
@@ -157,7 +157,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachResize( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
+	public function detachResize( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:sort sort} event of this <code>sap.ui.commons.RowRepeater</code>.
@@ -167,7 +167,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSort( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
+	public function detachSort( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RowRepeater;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.RowRepeater with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -178,7 +178,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Switch to first page.
@@ -446,7 +446,7 @@ Row height adapts to rendered content. If a fixed height is specified the cells 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sFixedRowHeight= New value for property <code>fixedRowHeight</code>
+	* @param	sFixedRowHeight New value for property <code>fixedRowHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setFixedRowHeight( ?sFixedRowHeight:sap.ui.core.CSSSize):sap.ui.commons.RowRepeater;
@@ -483,7 +483,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iThreshold New value for property <code>threshold</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setThreshold( iThreshold:Int):sap.ui.commons.RowRepeater;
+	public function setThreshold( ?iThreshold:Int):sap.ui.commons.RowRepeater;
 
 	/**
 	* Sets the aggregated {@link #getTitle title}.

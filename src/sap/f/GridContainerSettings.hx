@@ -21,7 +21,7 @@ extern class GridContainerSettings extends sap.ui.base.ManagedObject
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColumns columns}.
@@ -40,7 +40,7 @@ The width of the columns.
 
 <b>Note:</b> Values different than single size in 'px' or 'rem' are not supported for the polyfill for IE.
 
-Default value is <code>80px</code>.
+Default value is <code>"80px"</code>.
 	* @return	Value of property <code>columnSize</code>
 	*/
 	public function getColumnSize( ):sap.ui.core.CSSSize;
@@ -52,7 +52,7 @@ The size of the gap between columns and rows.
 
 <b>Note:</b> Use only 'px' or 'rem'. Some features may not work as expected otherwise.
 
-Default value is <code>16px</code>.
+Default value is <code>"16px"</code>.
 	* @return	Value of property <code>gap</code>
 	*/
 	public function getGap( ):sap.ui.core.CSSSize;
@@ -94,7 +94,7 @@ The height of the rows.
 
 <b>Note:</b> Use only 'px' or 'rem'. Some features may not work as expected otherwise.
 
-Default value is <code>80px</code>.
+Default value is <code>"80px"</code>.
 	* @return	Value of property <code>rowSize</code>
 	*/
 	public function getRowSize( ):sap.ui.core.CSSSize;
@@ -121,7 +121,7 @@ The width of the columns.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>80px</code>.
+Default value is <code>"80px"</code>.
 	* @param	sColumnSize New value for property <code>columnSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -136,7 +136,7 @@ The size of the gap between columns and rows.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>16px</code>.
+Default value is <code>"16px"</code>.
 	* @param	sGap New value for property <code>gap</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -181,7 +181,7 @@ The height of the rows.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>80px</code>.
+Default value is <code>"80px"</code>.
 	* @param	sRowSize New value for property <code>rowSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

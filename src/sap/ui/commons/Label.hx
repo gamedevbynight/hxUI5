@@ -19,7 +19,7 @@ extern class Label extends sap.ui.core.Control implements sap.ui.commons.Toolbar
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getDesign design}.
@@ -141,7 +141,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.ui.commons.Label;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.ui.commons.Label;
 	@:overload( function(oLabelFor:sap.ui.core.ID):sap.ui.commons.Label{ })
 
 	/**
@@ -173,7 +173,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	bRequiredAtBegin New value for property <code>requiredAtBegin</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRequiredAtBegin( bRequiredAtBegin:Bool):sap.ui.commons.Label;
+	public function setRequiredAtBegin( ?bRequiredAtBegin:Bool):sap.ui.commons.Label;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -222,7 +222,7 @@ Determines the control width as common CSS-size (for example, px or % as unit).
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sWidth= New value for property <code>width</code>
+	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.Label;

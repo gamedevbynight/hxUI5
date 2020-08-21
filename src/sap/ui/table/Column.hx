@@ -28,7 +28,7 @@ Fires before the column menu is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.table.Column</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachColumnMenuOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Column;
+	public function attachColumnMenuOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Column;
 
 	/**
 	* Destroys the label in the aggregation {@link #getLabel label}.
@@ -62,7 +62,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachColumnMenuOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.table.Column;
+	public function detachColumnMenuOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.table.Column;
 
 	/**
 	* Creates a new subclass of class sap.ui.table.Column with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -73,7 +73,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAutoResizable autoResizable}.
@@ -369,7 +369,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDefaultFilterOperator New value for property <code>defaultFilterOperator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDefaultFilterOperator( sDefaultFilterOperator:String):sap.ui.table.Column;
+	public function setDefaultFilterOperator( ?sDefaultFilterOperator:String):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getFiltered filtered}.
@@ -393,7 +393,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFilterOperator New value for property <code>filterOperator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFilterOperator( sFilterOperator:String):sap.ui.table.Column;
+	public function setFilterOperator( ?sFilterOperator:String):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getFilterProperty filterProperty}.
@@ -406,7 +406,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFilterProperty New value for property <code>filterProperty</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFilterProperty( sFilterProperty:String):sap.ui.table.Column;
+	public function setFilterProperty( ?sFilterProperty:String):sap.ui.table.Column;
 
 	/**
 	* The filter type can be the class name of a type, an expression similar to the binding syntax, or a function. A function receives the entered filter value as a parameter and should return the appropriate value for the filter expression.
@@ -436,7 +436,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFilterValue New value for property <code>filterValue</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFilterValue( sFilterValue:String):sap.ui.table.Column;
+	public function setFilterValue( ?sFilterValue:String):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getGrouped grouped}.
@@ -514,7 +514,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.ui.table.Column;
+	public function setName( ?sName:String):sap.ui.table.Column;
 
 	/**
 	* Sets a new value for property {@link #getResizable resizable}.
@@ -592,7 +592,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSortProperty New value for property <code>sortProperty</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSortProperty( sSortProperty:String):sap.ui.table.Column;
+	public function setSortProperty( ?sSortProperty:String):sap.ui.table.Column;
 	@:overload( function(vTemplate:sap.ui.core.Control):sap.ui.table.Column{ })
 
 	/**
@@ -624,7 +624,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.table.Column;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.table.Column;
 }
 
 typedef ColumnArgs = sap.ui.core.Element.ElementArgs & {

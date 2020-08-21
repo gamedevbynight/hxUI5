@@ -36,7 +36,7 @@ Fired when the profile avatar is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.ShellBar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAvatarPressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function attachAvatarPressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:copilotPressed copilotPressed} event of this <code>sap.f.ShellBar</code>.
@@ -49,7 +49,7 @@ Fired when the SAP CoPilot icon is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.ShellBar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCopilotPressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function attachCopilotPressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:homeIconPressed homeIconPressed} event of this <code>sap.f.ShellBar</code>.
@@ -62,7 +62,7 @@ Fired when the <code>homeIcon</code> is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.ShellBar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachHomeIconPressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function attachHomeIconPressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:menuButtonPressed menuButtonPressed} event of this <code>sap.f.ShellBar</code>.
@@ -75,7 +75,7 @@ Fired when the alternative menu button is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.ShellBar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMenuButtonPressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function attachMenuButtonPressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:navButtonPressed navButtonPressed} event of this <code>sap.f.ShellBar</code>.
@@ -88,7 +88,7 @@ Fired when the navigation/back button is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.ShellBar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachNavButtonPressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function attachNavButtonPressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:notificationsPressed notificationsPressed} event of this <code>sap.f.ShellBar</code>.
@@ -101,7 +101,7 @@ Fired when the notifications button is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.ShellBar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachNotificationsPressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function attachNotificationsPressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:productSwitcherPressed productSwitcherPressed} event of this <code>sap.f.ShellBar</code>.
@@ -114,7 +114,7 @@ Fired when the product switcher button is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.ShellBar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachProductSwitcherPressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function attachProductSwitcherPressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:searchButtonPressed searchButtonPressed} event of this <code>sap.f.ShellBar</code>.
@@ -127,7 +127,7 @@ Fired when the search button is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.ShellBar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSearchButtonPressed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function attachSearchButtonPressed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Destroys all the additionalContent in the aggregation {@link #getAdditionalContent additionalContent}.
@@ -161,7 +161,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAvatarPressed( fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function detachAvatarPressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:copilotPressed copilotPressed} event of this <code>sap.f.ShellBar</code>.
@@ -171,7 +171,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCopilotPressed( fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function detachCopilotPressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:homeIconPressed homeIconPressed} event of this <code>sap.f.ShellBar</code>.
@@ -181,7 +181,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachHomeIconPressed( fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function detachHomeIconPressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:menuButtonPressed menuButtonPressed} event of this <code>sap.f.ShellBar</code>.
@@ -191,7 +191,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMenuButtonPressed( fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function detachMenuButtonPressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:navButtonPressed navButtonPressed} event of this <code>sap.f.ShellBar</code>.
@@ -201,7 +201,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachNavButtonPressed( fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function detachNavButtonPressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:notificationsPressed notificationsPressed} event of this <code>sap.f.ShellBar</code>.
@@ -211,7 +211,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachNotificationsPressed( fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function detachNotificationsPressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:productSwitcherPressed productSwitcherPressed} event of this <code>sap.f.ShellBar</code>.
@@ -221,7 +221,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachProductSwitcherPressed( fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function detachProductSwitcherPressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:searchButtonPressed searchButtonPressed} event of this <code>sap.f.ShellBar</code>.
@@ -231,7 +231,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSearchButtonPressed( fnFunction:()->Void, ?oListener:Dynamic):sap.f.ShellBar;
+	public function detachSearchButtonPressed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.ShellBar;
 
 	/**
 	* Creates a new subclass of class sap.f.ShellBar with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -242,7 +242,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getAdditionalContent additionalContent}.
@@ -436,7 +436,7 @@ Defines the URI to the home icon, such as company or product logo.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sHomeIcon= New value for property <code>homeIcon</code>
+	* @param	sHomeIcon New value for property <code>homeIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setHomeIcon( ?sHomeIcon:sap.ui.core.URI):sap.f.ShellBar;

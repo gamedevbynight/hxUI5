@@ -60,7 +60,7 @@ Fired when navigating in <code>Calendar</code> popup.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.DatePicker</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.DatePicker;
+	public function attachNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.DatePicker;
 
 	/**
 	* Destroys all the specialDates in the aggregation {@link #getSpecialDates specialDates}.
@@ -76,7 +76,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.DatePicker;
+	public function detachNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.DatePicker;
 
 	/**
 	* Creates a new subclass of class sap.m.DatePicker with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -87,7 +87,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* The date as JavaScript Date object. This is independent from any formatter.
@@ -182,7 +182,7 @@ To set a single date (instead of a range), set only the startDate property of th
 
 Returns a date as a string in the format defined in property <code>valueFormat</code>.
 
-<b>Note:</b> The value is always expected and updated in Gregorian calendar format. (If data binding is used the format of the binding is used.)
+<b>Note:</b> If there is no data binding, the value is expected and updated in Gregorian calendar type. (Otherwise, the type of the binding is used.)
 
 If this property is used, the <code>dateValue</code> property should not be changed from the caller.
 	* @return	the value of property <code>value</code>
@@ -269,7 +269,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oMaxDate New value for property <code>maxDate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxDate( oMaxDate:Dynamic):sap.m.DatePicker;
+	public function setMaxDate( ?oMaxDate:Dynamic):sap.m.DatePicker;
 
 	/**
 	* Sets a new value for property {@link #getMinDate minDate}.
@@ -282,7 +282,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oMinDate New value for property <code>minDate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinDate( oMinDate:Dynamic):sap.m.DatePicker;
+	public function setMinDate( ?oMinDate:Dynamic):sap.m.DatePicker;
 
 	/**
 	* Sets a new value for property {@link #getSecondaryCalendarType secondaryCalendarType}.
@@ -293,7 +293,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSecondaryCalendarType New value for property <code>secondaryCalendarType</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSecondaryCalendarType( sSecondaryCalendarType:sap.ui.core.CalendarType):sap.m.DatePicker;
+	public function setSecondaryCalendarType( ?sSecondaryCalendarType:sap.ui.core.CalendarType):sap.m.DatePicker;
 
 	/**
 	* Sets <code>showFooter</code> property to the given boolean value
@@ -307,7 +307,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 
 Expects a date as a string in the format defined in property <code>valueFormat</code>.
 
-<b>Note:</b> The value is always expected and updated in Gregorian calendar format. (If data binding is used the format of the binding is used.)
+<b>Note:</b> If there is no data binding, the value is expected and updated in Gregorian calendar type. (Otherwise, the type of the binding is used.)
 
 If this property is used, the <code>dateValue</code> property should not be changed from the caller.
 

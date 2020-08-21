@@ -37,7 +37,7 @@ The event is fired when the user has done a rating.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.RatingIndicator</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RatingIndicator;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RatingIndicator;
 
 	/**
 	* Binds property {@link #getValue value} to model data.
@@ -56,7 +56,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.RatingIndicator;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.RatingIndicator;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.RatingIndicator with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -67,7 +67,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -226,7 +226,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconHovered New value for property <code>iconHovered</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconHovered( sIconHovered:sap.ui.core.URI):sap.ui.commons.RatingIndicator;
+	public function setIconHovered( ?sIconHovered:sap.ui.core.URI):sap.ui.commons.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getIconSelected iconSelected}.
@@ -237,7 +237,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconSelected New value for property <code>iconSelected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconSelected( sIconSelected:sap.ui.core.URI):sap.ui.commons.RatingIndicator;
+	public function setIconSelected( ?sIconSelected:sap.ui.core.URI):sap.ui.commons.RatingIndicator;
 
 	/**
 	* Sets a new value for property {@link #getIconUnselected iconUnselected}.
@@ -248,7 +248,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconUnselected New value for property <code>iconUnselected</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconUnselected( sIconUnselected:sap.ui.core.URI):sap.ui.commons.RatingIndicator;
+	public function setIconUnselected( ?sIconUnselected:sap.ui.core.URI):sap.ui.commons.RatingIndicator;
 
 	/**
 	* Setter for property <code>maxValue</code>.

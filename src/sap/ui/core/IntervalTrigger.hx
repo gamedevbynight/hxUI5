@@ -21,7 +21,7 @@ extern class IntervalTrigger extends sap.ui.base.Object
 	* @param	oListener that should be triggered.
 	* @return	Void
 	*/
-	public static function addListener( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public static function addListener( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Destructor method for objects.
@@ -38,7 +38,7 @@ extern class IntervalTrigger extends sap.ui.base.Object
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.IntervalTrigger.
@@ -52,7 +52,7 @@ extern class IntervalTrigger extends sap.ui.base.Object
 	* @param	oListener that should be removed
 	* @return	Void
 	*/
-	public static function removeListener( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public static function removeListener( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Sets the trigger interval. If the value is >0 triggering will start if there are any registered listeners. If the interval is set to <=0 triggering will stop.

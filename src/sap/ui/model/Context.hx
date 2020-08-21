@@ -25,7 +25,7 @@ extern class Context extends sap.ui.base.Object
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns messages associated with this context, that is messages belonging to the object referred to by this context or a child object of that object. The messages are sorted by their {@link sap.ui.core.message.Message#getType type} according to the type's severity in a way that messages with highest severity come first.

@@ -38,7 +38,7 @@ extern class FixFlex extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getFixContent fixContent}.
@@ -53,7 +53,7 @@ Controls in the fixed part of the layout.
 
 Determines the height (if the vertical property is "true") or the width (if the vertical property is "false") of the fixed area. If left at the default value "auto", the fixed-size area will be as large as its content. In this case the content cannot use percentage sizes.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @return	Value of property <code>fixContentSize</code>
 	*/
 	public function getFixContentSize( ):sap.ui.core.CSSSize;
@@ -141,7 +141,7 @@ Determines the height (if the vertical property is "true") or the width (if the 
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @param	sFixContentSize New value for property <code>fixContentSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

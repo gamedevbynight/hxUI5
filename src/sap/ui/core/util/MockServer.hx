@@ -17,7 +17,7 @@ extern class MockServer extends sap.ui.base.ManagedObject
 	* @param	sEntitySet (optional) the name of the entity set
 	* @return	Void
 	*/
-	public function attachAfter( event:String, fnCallback:()->Void, sEntitySet:String):Void;
+	public function attachAfter( event:String, fnCallback:(Dynamic)->Void, sEntitySet:String):Void;
 
 	/**
 	* Attaches an event handler to be called before the built-in request processing of the mock server
@@ -26,7 +26,7 @@ extern class MockServer extends sap.ui.base.ManagedObject
 	* @param	sEntitySet (optional) the name of the entity set
 	* @return	Void
 	*/
-	public function attachBefore( event:String, fnCallback:()->Void, sEntitySet:String):Void;
+	public function attachBefore( event:String, fnCallback:(Dynamic)->Void, sEntitySet:String):Void;
 
 	/**
 	* Global configuration of all mock servers.
@@ -59,7 +59,7 @@ Applications should call this method if they don't need the object any longer.
 	* @param	sEntitySet (optional) the name of the entity set
 	* @return	Void
 	*/
-	public function detachAfter( event:String, fnCallback:()->Void, sEntitySet:String):Void;
+	public function detachAfter( event:String, fnCallback:(Dynamic)->Void, sEntitySet:String):Void;
 
 	/**
 	* Removes a previously attached event handler
@@ -68,7 +68,7 @@ Applications should call this method if they don't need the object any longer.
 	* @param	sEntitySet (optional) the name of the entity set
 	* @return	Void
 	*/
-	public function detachBefore( event:String, fnCallback:()->Void, sEntitySet:String):Void;
+	public function detachBefore( event:String, fnCallback:(Dynamic)->Void, sEntitySet:String):Void;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.util.MockServer with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -79,7 +79,7 @@ Applications should call this method if they don't need the object any longer.
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the data model of the given EntitySet name.

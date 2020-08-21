@@ -31,7 +31,7 @@ Fires when the user clicks/taps on active text.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ObjectStatus</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ObjectStatus;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ObjectStatus;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.m.ObjectStatus</code>.
@@ -41,7 +41,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ObjectStatus;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ObjectStatus;
 
 	/**
 	* Creates a new subclass of class sap.m.ObjectStatus with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -52,7 +52,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActive active}.
@@ -113,7 +113,7 @@ Default value is <code>false</code>.
 
 Defines the text value state. The allowed values are from the enum type <code>sap.ui.core.ValueState</code>. Since version 1.66 the <code>state</code> property also accepts values from enum type <code>sap.ui.core.IndicationColor</code>.
 
-Default value is <code>sap.ui.core.ValueState.None</code>.
+Default value is <code>ValueState.None</code>.
 	* @return	Value of property <code>state</code>
 	*/
 	public function getState( ):String;
@@ -183,7 +183,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.ObjectStatus;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.ObjectStatus;
 
 	/**
 	* Sets a new value for property {@link #getIconDensityAware iconDensityAware}.
@@ -229,7 +229,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.ObjectStatus;
+	public function setText( ?sText:String):sap.m.ObjectStatus;
 
 	/**
 	* Sets a new value for property {@link #getTextDirection textDirection}.
@@ -253,7 +253,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.ObjectStatus;
+	public function setTitle( ?sTitle:String):sap.m.ObjectStatus;
 }
 
 typedef ObjectStatusArgs = sap.ui.core.Control.ControlArgs & {

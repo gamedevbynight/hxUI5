@@ -59,7 +59,7 @@ The event is fired when the Edit Header button is pressed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.ObjectPageLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachEditHeaderButtonPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+	public function attachEditHeaderButtonPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:navigate navigate} event of this <code>sap.uxap.ObjectPageLayout</code>.
@@ -72,7 +72,7 @@ The event is fired when the selected section is changed using the navigation.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.ObjectPageLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+	public function attachNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:sectionChange sectionChange} event of this <code>sap.uxap.ObjectPageLayout</code>.
@@ -85,7 +85,7 @@ Fired when the current section is changed by scrolling.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.ObjectPageLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+	public function attachSectionChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:subSectionVisibilityChange subSectionVisibilityChange} event of this <code>sap.uxap.ObjectPageLayout</code>.
@@ -98,7 +98,7 @@ Fired when the visibility of subsections is changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.ObjectPageLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSubSectionVisibilityChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+	public function attachSubSectionVisibilityChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:toggleAnchorBar toggleAnchorBar} event of this <code>sap.uxap.ObjectPageLayout</code>.
@@ -111,7 +111,7 @@ The event is fired when the Anchor bar is switched from moving to fixed or the o
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.ObjectPageLayout</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachToggleAnchorBar( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+	public function attachToggleAnchorBar( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Destroys the footer in the aggregation {@link #getFooter footer}.
@@ -151,7 +151,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachEditHeaderButtonPress( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+	public function detachEditHeaderButtonPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:navigate navigate} event of this <code>sap.uxap.ObjectPageLayout</code>.
@@ -161,7 +161,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+	public function detachNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:sectionChange sectionChange} event of this <code>sap.uxap.ObjectPageLayout</code>.
@@ -171,7 +171,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+	public function detachSectionChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:subSectionVisibilityChange subSectionVisibilityChange} event of this <code>sap.uxap.ObjectPageLayout</code>.
@@ -181,7 +181,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSubSectionVisibilityChange( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+	public function detachSubSectionVisibilityChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:toggleAnchorBar toggleAnchorBar} event of this <code>sap.uxap.ObjectPageLayout</code>.
@@ -191,7 +191,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachToggleAnchorBar( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
+	public function detachToggleAnchorBar( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.ObjectPageLayout;
 
 	/**
 	* Creates a new subclass of class sap.uxap.ObjectPageLayout with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -202,7 +202,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAlwaysShowContentHeader alwaysShowContentHeader}.
@@ -289,7 +289,7 @@ Object page header title - the upper, always static, part of the Object page hea
 
 Determines the height of the ObjectPage.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -663,7 +663,7 @@ Determines the height of the ObjectPage.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

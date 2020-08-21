@@ -25,7 +25,7 @@ extern class GridDropInfo extends sap.ui.core.dnd.DropInfo implements sap.ui.cor
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getDropIndicatorSize dropIndicatorSize}.
@@ -41,7 +41,7 @@ This callback will be called when the indicator is displayed, that happens durin
 The callback receives <code>draggedControl</code> as parameter and must return an object of type <code>{rows: <int>, columns: <int>}</code> or <code>null</code>.
 	* @return	Value of property <code>dropIndicatorSize</code>
 	*/
-	public function getDropIndicatorSize( ):()->Void;
+	public function getDropIndicatorSize( ):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.f.dnd.GridDropInfo.
@@ -66,7 +66,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	fnDropIndicatorSize New value for property <code>dropIndicatorSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDropIndicatorSize( fnDropIndicatorSize:()->Void):sap.f.dnd.GridDropInfo;
+	public function setDropIndicatorSize( fnDropIndicatorSize:(Dynamic)->Void):sap.f.dnd.GridDropInfo;
 }
 
 typedef GridDropInfoArgs = sap.ui.core.dnd.DropInfo.DropInfoArgs & {
@@ -82,5 +82,5 @@ This callback will be called when the indicator is displayed, that happens durin
 
 The callback receives <code>draggedControl</code> as parameter and must return an object of type <code>{rows: <int>, columns: <int>}</code> or <code>null</code>.
 	*/
-	@:optional var dropIndicatorSize:()->Void;
+	@:optional var dropIndicatorSize:(Dynamic)->Void;
 }

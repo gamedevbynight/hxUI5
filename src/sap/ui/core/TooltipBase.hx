@@ -21,7 +21,7 @@ This event is fired when the Tooltip has been closed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.TooltipBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachClosed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.TooltipBase;
+	public function attachClosed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.TooltipBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:closed closed} event of this <code>sap.ui.core.TooltipBase</code>.
@@ -31,7 +31,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachClosed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.TooltipBase;
+	public function detachClosed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.TooltipBase;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.TooltipBase with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,14 +42,14 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAtPosition atPosition}.
 
 Optional. At position defines which position on the target control to align the positioned tooltip.
 
-Default value is <code>begin bottom</code>.
+Default value is <code>'begin bottom'</code>.
 	* @return	Value of property <code>atPosition</code>
 	*/
 	public function getAtPosition( ):sap.ui.core.Dock;
@@ -79,7 +79,7 @@ Default value is <code>200</code>.
 
 Optional. Collision - when the positioned element overflows the window in some direction, move it to an alternative position.
 
-Default value is <code>flip</code>.
+Default value is <code>'flip'</code>.
 	* @return	Value of property <code>collision</code>
 	*/
 	public function getCollision( ):sap.ui.core.Collision;
@@ -95,7 +95,7 @@ Default value is <code>flip</code>.
 
 Optional. My position defines which position on the extended tooltip being positioned to align with the target control.
 
-Default value is <code>begin top</code>.
+Default value is <code>'begin top'</code>.
 	* @return	Value of property <code>myPosition</code>
 	*/
 	public function getMyPosition( ):sap.ui.core.Dock;
@@ -105,7 +105,7 @@ Default value is <code>begin top</code>.
 
 Optional. Offset adds these left-top values to the calculated position. Example: "10 3".
 
-Default value is <code>10 3</code>.
+Default value is <code>'10 3'</code>.
 	* @return	Value of property <code>offset</code>
 	*/
 	public function getOffset( ):String;
@@ -147,7 +147,7 @@ Optional. At position defines which position on the target control to align the 
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>begin bottom</code>.
+Default value is <code>'begin bottom'</code>.
 	* @param	sAtPosition New value for property <code>atPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -186,7 +186,7 @@ Optional. Collision - when the positioned element overflows the window in some d
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>flip</code>.
+Default value is <code>'flip'</code>.
 	* @param	sCollision New value for property <code>collision</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -199,7 +199,7 @@ Optional. My position defines which position on the extended tooltip being posit
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>begin top</code>.
+Default value is <code>'begin top'</code>.
 	* @param	sMyPosition New value for property <code>myPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -212,7 +212,7 @@ Optional. Offset adds these left-top values to the calculated position. Example:
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>10 3</code>.
+Default value is <code>'10 3'</code>.
 	* @param	sOffset New value for property <code>offset</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

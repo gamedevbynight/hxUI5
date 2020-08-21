@@ -28,7 +28,7 @@ Event is fired when the icon is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.FeedListItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachIconPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.FeedListItem;
+	public function attachIconPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FeedListItem;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:senderPress senderPress} event of this <code>sap.m.FeedListItem</code>.
@@ -41,7 +41,7 @@ Event is fired when name of the sender is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.FeedListItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSenderPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.FeedListItem;
+	public function attachSenderPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FeedListItem;
 
 	/**
 	* Destroys all the actions in the aggregation {@link #getActions actions}.
@@ -57,7 +57,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachIconPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.FeedListItem;
+	public function detachIconPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FeedListItem;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:senderPress senderPress} event of this <code>sap.m.FeedListItem</code>.
@@ -67,7 +67,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSenderPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.FeedListItem;
+	public function detachSenderPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.FeedListItem;
 
 	/**
 	* Creates a new subclass of class sap.m.FeedListItem with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -78,7 +78,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getActions actions}.
@@ -101,7 +101,7 @@ Icon displayed when the list item is active.
 
 Determines the target attribute of the generated HTML anchor tags. Note: Applicable only if ConvertLinksToAnchorTags property is used with a value other than sap.m.LinkConversion.None. Options are the standard values for the target attribute of the HTML anchor tag: _self, _top, _blank, _parent, _search.
 
-Default value is <code>_blank</code>.
+Default value is <code>"_blank"</code>.
 	* @return	Value of property <code>convertedLinksDefaultTarget</code>
 	*/
 	public function getConvertedLinksDefaultTarget( ):String;
@@ -269,7 +269,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sActiveIcon New value for property <code>activeIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveIcon( sActiveIcon:sap.ui.core.URI):sap.m.FeedListItem;
+	public function setActiveIcon( ?sActiveIcon:sap.ui.core.URI):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getConvertedLinksDefaultTarget convertedLinksDefaultTarget}.
@@ -278,7 +278,7 @@ Determines the target attribute of the generated HTML anchor tags. Note: Applica
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>_blank</code>.
+Default value is <code>"_blank"</code>.
 	* @param	sConvertedLinksDefaultTarget New value for property <code>convertedLinksDefaultTarget</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -306,7 +306,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.FeedListItem;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getIconActive iconActive}.
@@ -345,7 +345,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sInfo New value for property <code>info</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInfo( sInfo:String):sap.m.FeedListItem;
+	public function setInfo( ?sInfo:String):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getLessLabel lessLabel}.
@@ -356,7 +356,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLessLabel New value for property <code>lessLabel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLessLabel( sLessLabel:String):sap.m.FeedListItem;
+	public function setLessLabel( ?sLessLabel:String):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getMaxCharacters maxCharacters}.
@@ -367,7 +367,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	iMaxCharacters New value for property <code>maxCharacters</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxCharacters( iMaxCharacters:Int):sap.m.FeedListItem;
+	public function setMaxCharacters( ?iMaxCharacters:Int):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getMoreLabel moreLabel}.
@@ -378,7 +378,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMoreLabel New value for property <code>moreLabel</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMoreLabel( sMoreLabel:String):sap.m.FeedListItem;
+	public function setMoreLabel( ?sMoreLabel:String):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getSender sender}.
@@ -389,7 +389,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSender New value for property <code>sender</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSender( sSender:String):sap.m.FeedListItem;
+	public function setSender( ?sSender:String):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getSenderActive senderActive}.
@@ -426,7 +426,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.m.FeedListItem;
+	public function setText( ?sText:String):sap.m.FeedListItem;
 
 	/**
 	* Sets a new value for property {@link #getTimestamp timestamp}.
@@ -437,7 +437,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTimestamp New value for property <code>timestamp</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTimestamp( sTimestamp:String):sap.m.FeedListItem;
+	public function setTimestamp( ?sTimestamp:String):sap.m.FeedListItem;
 
 	/**
 	* Redefinition of sap.m.ListItemBase.setType: type = "sap.m.ListType.Navigation" behaves like type = "sap.m.ListType.Active" for a FeedListItem

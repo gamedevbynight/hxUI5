@@ -21,7 +21,7 @@ extern class SearchProvider extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getIcon icon}.
@@ -46,7 +46,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:String):sap.ui.core.search.SearchProvider;
+	public function setIcon( ?sIcon:String):sap.ui.core.search.SearchProvider;
 
 	/**
 	* Call this function to get suggest values from the search provider. The given callback function is called with the suggest value (type 'string', 1st parameter) and an array of the suggestions (type '[string]', 2nd parameter).
@@ -54,7 +54,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	fnCallback The callback function which is called when the suggestions are available.
 	* @return	Void
 	*/
-	public function suggest( sValue:String, fnCallback:()->Void):Void;
+	public function suggest( sValue:String, fnCallback:(Dynamic)->Void):Void;
 }
 
 typedef SearchProviderArgs = sap.ui.core.Element.ElementArgs & {

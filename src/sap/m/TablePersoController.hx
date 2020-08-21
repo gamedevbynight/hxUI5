@@ -59,7 +59,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.TablePersoController</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPersonalizationsDone( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.TablePersoController;
+	public function attachPersonalizationsDone( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TablePersoController;
 
 	/**
 	* Destroys the persoService in the aggregation {@link #getPersoService persoService}.
@@ -75,7 +75,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPersonalizationsDone( fnFunction:()->Void, ?oListener:Dynamic):sap.m.TablePersoController;
+	public function detachPersonalizationsDone( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.TablePersoController;
 
 	/**
 	* Creates a new subclass of class sap.m.TablePersoController with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -86,7 +86,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getComponentName componentName}.

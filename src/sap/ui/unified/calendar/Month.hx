@@ -50,7 +50,7 @@ Date focus changed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.calendar.Month</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFocus( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
+	public function attachFocus( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:select select} event of this <code>sap.ui.unified.calendar.Month</code>.
@@ -63,7 +63,7 @@ Date selection changed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.calendar.Month</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:weekNumberSelect weekNumberSelect} event of this <code>sap.ui.unified.calendar.Month</code>.
@@ -80,7 +80,7 @@ The default behavior can be prevented using the <code>preventDefault</code> meth
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.calendar.Month</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachWeekNumberSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
+	public function attachWeekNumberSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
 
 	/**
 	* checks if a date is focusable in the current rendered output. So if not rendered or in other month it is not focusable.
@@ -115,7 +115,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFocus( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
+	public function detachFocus( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:select select} event of this <code>sap.ui.unified.calendar.Month</code>.
@@ -125,7 +125,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:weekNumberSelect weekNumberSelect} event of this <code>sap.ui.unified.calendar.Month</code>.
@@ -135,7 +135,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachWeekNumberSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
+	public function detachWeekNumberSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Month;
 
 	/**
 	* displays the month of a given date without setting the focus
@@ -153,7 +153,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
@@ -456,7 +456,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNonWorkingDays New value for property <code>nonWorkingDays</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNonWorkingDays( sNonWorkingDays:Array<Int>):sap.ui.unified.calendar.Month;
+	public function setNonWorkingDays( ?sNonWorkingDays:Array<Int>):sap.ui.unified.calendar.Month;
 
 	/**
 	* Sets a new value for property {@link #getPrimaryCalendarType primaryCalendarType}.
@@ -530,7 +530,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.unified.calendar.Month;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.unified.calendar.Month;
 }
 
 typedef MonthArgs = sap.ui.core.Control.ControlArgs & {

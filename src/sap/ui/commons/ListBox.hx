@@ -58,7 +58,7 @@ Event is fired when selection is changed by user interaction.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.ListBox</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.ListBox;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.ListBox;
 
 	/**
 	* Removes complete selection.
@@ -80,7 +80,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.ListBox;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.ListBox;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.ListBox with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -91,7 +91,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAllowMultiSelect allowMultiSelect}.
@@ -436,7 +436,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMaxWidth New value for property <code>maxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxWidth( sMaxWidth:sap.ui.core.CSSSize):sap.ui.commons.ListBox;
+	public function setMaxWidth( ?sMaxWidth:sap.ui.core.CSSSize):sap.ui.commons.ListBox;
 
 	/**
 	* Sets a new value for property {@link #getMinWidth minWidth}.
@@ -447,7 +447,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMinWidth New value for property <code>minWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinWidth( sMinWidth:sap.ui.core.CSSSize):sap.ui.commons.ListBox;
+	public function setMinWidth( ?sMinWidth:sap.ui.core.CSSSize):sap.ui.commons.ListBox;
 
 	/**
 	* Positions the ListBox contents so that they are scrolled-down by the given number of pixels.

@@ -37,7 +37,7 @@ Event is fired when the user clicks the control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Link</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Link;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Link;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.ui.commons.Link</code>.
@@ -47,7 +47,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Link;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Link;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.Link with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -58,7 +58,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Puts the focus to the link.
@@ -203,7 +203,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHref New value for property <code>href</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHref( sHref:sap.ui.core.URI):sap.ui.commons.Link;
+	public function setHref( ?sHref:sap.ui.core.URI):sap.ui.commons.Link;
 
 	/**
 	* Sets a new value for property {@link #getTarget target}.
@@ -214,7 +214,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTarget New value for property <code>target</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTarget( sTarget:String):sap.ui.commons.Link;
+	public function setTarget( ?sTarget:String):sap.ui.commons.Link;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -238,7 +238,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.Link;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.Link;
 }
 
 typedef LinkArgs = sap.ui.core.Control.ControlArgs & {

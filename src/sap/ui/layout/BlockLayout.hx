@@ -42,14 +42,14 @@ extern class BlockLayout extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBackground background}.
 
 Determines the background used for the Layout
 
-Default value is <code>Default</code>.
+Default value is <code>"Default"</code>.
 	* @return	Value of property <code>background</code>
 	*/
 	public function getBackground( ):sap.ui.layout.BlockBackgroundType;
@@ -117,7 +117,7 @@ Determines the background used for the Layout
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Default</code>.
+Default value is <code>"Default"</code>.
 	* @param	sBackground New value for property <code>background</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

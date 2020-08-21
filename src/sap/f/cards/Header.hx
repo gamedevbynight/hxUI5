@@ -25,7 +25,7 @@ Fires when the user presses the control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.f.cards.Header</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.f.cards.Header;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.cards.Header;
 
 	/**
 	* Destroys the toolbar in the aggregation {@link #getToolbar toolbar}.
@@ -41,7 +41,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.f.cards.Header;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.f.cards.Header;
 
 	/**
 	* Creates a new subclass of class sap.f.cards.Header with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -52,7 +52,17 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
+
+	/**
+	* Gets current value of property {@link #getIconAlt iconAlt}.
+
+Defines an alt text for the avatar or icon.
+
+Default value is <code>empty string</code>.
+	* @return	Value of property <code>iconAlt</code>
+	*/
+	public function getIconAlt( ):String;
 
 	/**
 	* Gets current value of property {@link #getIconDisplayShape iconDisplayShape}.
@@ -129,6 +139,19 @@ Defines the toolbar.
 	public function getToolbar( ):sap.ui.core.Control;
 
 	/**
+	* Sets a new value for property {@link #getIconAlt iconAlt}.
+
+Defines an alt text for the avatar or icon.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>empty string</code>.
+	* @param	sIconAlt New value for property <code>iconAlt</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setIconAlt( ?sIconAlt:String):sap.f.cards.Header;
+
+	/**
 	* Sets a new value for property {@link #getIconDisplayShape iconDisplayShape}.
 
 Defines the shape of the icon.
@@ -162,7 +185,7 @@ Defines the icon source.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIconSrc= New value for property <code>iconSrc</code>
+	* @param	sIconSrc New value for property <code>iconSrc</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIconSrc( ?sIconSrc:sap.ui.core.URI):sap.f.cards.Header;
@@ -245,6 +268,11 @@ typedef HeaderArgs = sap.ui.core.Control.ControlArgs & {
 	* Defines the initials of the icon.
 	*/
 	@:optional var iconInitials:String;
+
+	/**
+	* Defines an alt text for the avatar or icon.
+	*/
+	@:optional var iconAlt:String;
 
     /**
     * Defines the toolbar.

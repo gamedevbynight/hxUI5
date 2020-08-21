@@ -39,7 +39,7 @@ extern class MessageBar extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAnchorID anchorID}.
@@ -56,7 +56,7 @@ Default value is <code>empty string</code>.
 
 Type: sap.ui.core.Popup.Dock SnapPoint of MessageBar over anchorId. Note: Use "begin" or "end" for RTL support. Note: "center" is not indicated, as positioning is only set once, either via the css "left" or the "right" attribute. Therefore a MessageBar will only be extended in one direction, as Messages come in.
 
-Default value is <code>begin top</code>.
+Default value is <code>"begin top"</code>.
 	* @return	Value of property <code>anchorSnapPoint</code>
 	*/
 	public function getAnchorSnapPoint( ):String;
@@ -117,7 +117,7 @@ Type: sap.ui.core.Popup.Dock SnapPoint of MessageBar over anchorId. Note: Use "b
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>begin top</code>.
+Default value is <code>"begin top"</code>.
 	* @param	sAnchorSnapPoint New value for property <code>anchorSnapPoint</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

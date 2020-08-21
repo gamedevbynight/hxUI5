@@ -20,7 +20,7 @@ extern class Metadata
 	* Returns the (constructor of the) described class
 	* @return	class described by this metadata
 	*/
-	public function getClass( ):()->Void;
+	public function getClass( ):(Dynamic)->Void;
 
 	/**
 	* Returns the fully qualified name of the described class

@@ -9,7 +9,7 @@ Instances of this class define the sort order for a list binding.
 */
 extern class Sorter extends sap.ui.base.Object
 {
-	@:overload( function(?sPath:String, ?bDescending:Bool, ?vGroup:Bool, ?fnComparator:()->Void):Void{ })
+	@:overload( function(?sPath:String, ?bDescending:Bool, ?vGroup:Bool, ?fnComparator:(Dynamic)->Void):Void{ })
 
 	/**
 	* 
@@ -19,7 +19,7 @@ extern class Sorter extends sap.ui.base.Object
 	* @param	fnComparator A custom comparator function, which is used for client-side sorting instead of the default comparator method. Information about parameters and expected return values of such a method can be found in the {@link #.defaultComparator default comparator} documentation. <b>Note:</b> Custom comparator functions are meant to be used on the client. Models that implement sorting in the backend usually don't support custom comparator functions. Consult the documentation of the specific model implementation.
 	* @return	Object
 	*/
-	public function new( ?sPath:String, ?bDescending:Bool, ?vGroup:()->Void, ?fnComparator:()->Void):Void;
+	public function new( ?sPath:String, ?bDescending:Bool, ?vGroup:(Dynamic)->Void, ?fnComparator:(Dynamic)->Void):Void;
 
 	/**
 	* Compares two values
@@ -42,7 +42,7 @@ The comparator method returns -1, 0 or 1, depending on the order of the two item
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a group object, at least containing a key property for group detection. May contain additional properties as provided by a custom group function.
@@ -55,7 +55,7 @@ The comparator method returns -1, 0 or 1, depending on the order of the two item
 	* Returns the group function of this Sorter. If grouping is not enabled on this Sorter, it will return undefined, if no explicit group function has been defined the default group function is returned. The returned function is bound to its Sorter, so it will group according to its own property path, even if it is used in the context of another Sorter.
 	* @return	The group function
 	*/
-	public function getGroupFunction( ):()->Void;
+	public function getGroupFunction( ):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.Sorter.

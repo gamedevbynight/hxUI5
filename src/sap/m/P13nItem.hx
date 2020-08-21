@@ -19,7 +19,7 @@ extern class P13nItem extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAggregationRole aggregationRole}.
@@ -159,7 +159,7 @@ Default value is <code>empty string</code>.
 
 data type of the column (text, numeric or date is supported)
 
-Default value is <code>text</code>.
+Default value is <code>"text"</code>.
 	* @return	Value of property <code>type</code>
 	*/
 	public function getType( ):String;
@@ -205,7 +205,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sAggregationRole New value for property <code>aggregationRole</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAggregationRole( sAggregationRole:String):sap.m.P13nItem;
+	public function setAggregationRole( ?sAggregationRole:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getColumnKey columnKey}.
@@ -216,7 +216,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sColumnKey New value for property <code>columnKey</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setColumnKey( sColumnKey:String):sap.m.P13nItem;
+	public function setColumnKey( ?sColumnKey:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getDescription description}.
@@ -227,7 +227,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sDescription New value for property <code>description</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setDescription( sDescription:String):sap.m.P13nItem;
+	public function setDescription( ?sDescription:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getFormatSettings formatSettings}.
@@ -247,7 +247,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oFormatSettings New value for property <code>formatSettings</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFormatSettings( oFormatSettings:Dynamic):sap.m.P13nItem;
+	public function setFormatSettings( ?oFormatSettings:Dynamic):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getHref href}.
@@ -258,7 +258,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHref New value for property <code>href</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHref( sHref:String):sap.m.P13nItem;
+	public function setHref( ?sHref:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getIsDefault isDefault}.
@@ -282,7 +282,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMaxLength New value for property <code>maxLength</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxLength( sMaxLength:String):sap.m.P13nItem;
+	public function setMaxLength( ?sMaxLength:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getNullable nullable}.
@@ -306,7 +306,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sPrecision New value for property <code>precision</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPrecision( sPrecision:String):sap.m.P13nItem;
+	public function setPrecision( ?sPrecision:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getPress press}.
@@ -317,7 +317,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oPress New value for property <code>press</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setPress( oPress:Dynamic):sap.m.P13nItem;
+	public function setPress( ?oPress:Dynamic):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getRole role}.
@@ -328,7 +328,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sRole New value for property <code>role</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setRole( sRole:String):sap.m.P13nItem;
+	public function setRole( ?sRole:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getScale scale}.
@@ -339,7 +339,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sScale New value for property <code>scale</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScale( sScale:String):sap.m.P13nItem;
+	public function setScale( ?sScale:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getTarget target}.
@@ -350,7 +350,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTarget New value for property <code>target</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTarget( sTarget:String):sap.m.P13nItem;
+	public function setTarget( ?sTarget:String):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getText text}.
@@ -372,7 +372,7 @@ data type of the column (text, numeric or date is supported)
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>text</code>.
+Default value is <code>"text"</code>.
 	* @param	sType New value for property <code>type</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -387,7 +387,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oTypeInstance New value for property <code>typeInstance</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTypeInstance( oTypeInstance:Dynamic):sap.m.P13nItem;
+	public function setTypeInstance( ?oTypeInstance:Dynamic):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getValues values}.
@@ -398,7 +398,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValues New value for property <code>values</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValues( sValues:Array<String>):sap.m.P13nItem;
+	public function setValues( ?sValues:Array<String>):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getVisible visible}.
@@ -409,7 +409,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	bVisible New value for property <code>visible</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setVisible( bVisible:Bool):sap.m.P13nItem;
+	public function setVisible( ?bVisible:Bool):sap.m.P13nItem;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -420,7 +420,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:String):sap.m.P13nItem;
+	public function setWidth( ?sWidth:String):sap.m.P13nItem;
 }
 
 typedef P13nItemArgs = sap.ui.core.Element.ElementArgs & {

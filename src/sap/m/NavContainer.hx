@@ -55,7 +55,7 @@ The event is fired when navigation between two pages has completed (once all eve
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.NavContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.NavContainer;
+	public function attachAfterNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.NavContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:navigate navigate} event of this <code>sap.m.NavContainer</code>.
@@ -68,7 +68,7 @@ The event is fired when navigation between two pages has been triggered (before 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.NavContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.NavContainer;
+	public function attachNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.NavContainer;
 
 	/**
 	* Navigates back one level. If already on the initial page and there is no place to go back, nothing happens.
@@ -143,7 +143,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.NavContainer;
+	public function detachAfterNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.NavContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:navigate navigate} event of this <code>sap.m.NavContainer</code>.
@@ -153,7 +153,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.NavContainer;
+	public function detachNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.NavContainer;
 
 	/**
 	* Creates a new subclass of class sap.m.NavContainer with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -164,7 +164,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAutoFocus autoFocus}.
@@ -191,7 +191,7 @@ Default value is <code>true</code>.
 
 The type of the transition/animation to apply when "to()" is called without defining a transition type to use. The default is "slide". Other options are: "baseSlide", "fade", "flip" and "show" - and the names of any registered custom transitions.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @return	Value of property <code>defaultTransitionName</code>
 	*/
 	public function getDefaultTransitionName( ):String;
@@ -201,7 +201,7 @@ Default value is <code>slide</code>.
 
 The height of the NavContainer. Can be changed when the NavContainer should not cover the whole available area.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -258,7 +258,7 @@ Default value is <code>true</code>.
 
 The width of the NavContainer. Can be changed when the NavContainer should not cover the whole available area.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -319,7 +319,7 @@ The type of the transition/animation to apply when "to()" is called without defi
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @param	sDefaultTransitionName New value for property <code>defaultTransitionName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -332,7 +332,7 @@ The height of the NavContainer. Can be changed when the NavContainer should not 
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -366,7 +366,7 @@ The width of the NavContainer. Can be changed when the NavContainer should not c
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>'100%'</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

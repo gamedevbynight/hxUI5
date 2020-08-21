@@ -71,7 +71,7 @@ Fired when a new value for a bound property should have been propagated from the
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.base.ManagedObject</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFormatError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
+	public function attachFormatError( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:modelContextChange modelContextChange} event of this <code>sap.ui.base.ManagedObject</code>.
@@ -84,7 +84,7 @@ Fired when models or contexts are changed on this object (either by calling setM
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.base.ManagedObject</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachModelContextChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
+	public function attachModelContextChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:parseError parseError} event of this <code>sap.ui.base.ManagedObject</code>.
@@ -97,7 +97,7 @@ Fired when a new value for a bound property should have been propagated to the m
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.base.ManagedObject</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachParseError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
+	public function attachParseError( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:validationError validationError} event of this <code>sap.ui.base.ManagedObject</code>.
@@ -110,7 +110,7 @@ Fired when a new value for a bound property should have been propagated to the m
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.base.ManagedObject</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachValidationError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
+	public function attachValidationError( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:validationSuccess validationSuccess} event of this <code>sap.ui.base.ManagedObject</code>.
@@ -123,7 +123,7 @@ Fired after a new value for a bound property has been propagated to the model. O
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.base.ManagedObject</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachValidationSuccess( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
+	public function attachValidationSuccess( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
 
 	/**
 	* Bind an aggregation to the model.
@@ -243,7 +243,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFormatError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
+	public function detachFormatError( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:modelContextChange modelContextChange} event of this <code>sap.ui.base.ManagedObject</code>.
@@ -253,7 +253,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachModelContextChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
+	public function detachModelContextChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:parseError parseError} event of this <code>sap.ui.base.ManagedObject</code>.
@@ -263,7 +263,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachParseError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
+	public function detachParseError( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:validationError validationError} event of this <code>sap.ui.base.ManagedObject</code>.
@@ -273,7 +273,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachValidationError( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
+	public function detachValidationError( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:validationSuccess validationSuccess} event of this <code>sap.ui.base.ManagedObject</code>.
@@ -283,7 +283,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachValidationSuccess( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
+	public function detachValidationSuccess( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.ManagedObject;
 
 	/**
 	* Escapes the given value so it can be used in the constructor's settings object. Should be used when property values are initialized with static string values which could contain binding characters (curly braces).
@@ -384,7 +384,7 @@ For each event 'Some' the following methods will be created by the "extend" meth
 	* @param	FNMetaImpl constructor function for the metadata object. If not given, it defaults to <code>sap.ui.base.ManagedObjectMetadata</code>.
 	* @return	the created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Searches and returns all aggregated objects that pass the given check function.

@@ -85,7 +85,7 @@ Fired if an appointment is selected.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAppointmentSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function attachAppointmentSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:intervalSelect intervalSelect} event of this <code>sap.m.PlanningCalendar</code>.
@@ -98,7 +98,7 @@ Fired if an interval was selected in the calendar header or in the row.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachIntervalSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function attachIntervalSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:rowHeaderClick rowHeaderClick} event of this <code>sap.m.PlanningCalendar</code>.
@@ -111,7 +111,7 @@ Fires when a row header is clicked.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRowHeaderClick( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function attachRowHeaderClick( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:rowSelectionChange rowSelectionChange} event of this <code>sap.m.PlanningCalendar</code>.
@@ -124,7 +124,7 @@ Fires when row selection is changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachRowSelectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function attachRowSelectionChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:startDateChange startDateChange} event of this <code>sap.m.PlanningCalendar</code>.
@@ -137,7 +137,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachStartDateChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function attachStartDateChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:viewChange viewChange} event of this <code>sap.m.PlanningCalendar</code>.
@@ -150,7 +150,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PlanningCalendar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachViewChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function attachViewChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Destroys all the rows in the aggregation {@link #getRows rows}.
@@ -184,7 +184,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAppointmentSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function detachAppointmentSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:intervalSelect intervalSelect} event of this <code>sap.m.PlanningCalendar</code>.
@@ -194,7 +194,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachIntervalSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function detachIntervalSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:rowHeaderClick rowHeaderClick} event of this <code>sap.m.PlanningCalendar</code>.
@@ -204,7 +204,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRowHeaderClick( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function detachRowHeaderClick( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:rowSelectionChange rowSelectionChange} event of this <code>sap.m.PlanningCalendar</code>.
@@ -214,7 +214,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachRowSelectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function detachRowSelectionChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:startDateChange startDateChange} event of this <code>sap.m.PlanningCalendar</code>.
@@ -224,7 +224,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachStartDateChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function detachStartDateChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:viewChange viewChange} event of this <code>sap.m.PlanningCalendar</code>.
@@ -234,7 +234,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachViewChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
+	public function detachViewChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Creates a new subclass of class sap.m.PlanningCalendar with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -245,7 +245,27 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
+
+	/**
+	* Gets current value of property {@link #getAppointmentHeight appointmentHeight}.
+
+Determines the different possible sizes for appointments.
+
+Default value is <code>Regular</code>.
+	* @return	Value of property <code>appointmentHeight</code>
+	*/
+	public function getAppointmentHeight( ):sap.ui.unified.CalendarAppointmentHeight;
+
+	/**
+	* Gets current value of property {@link #getAppointmentRoundWidth appointmentRoundWidth}.
+
+Defines rounding of the width <code>CalendarAppoinment<code> <b>Note:</b> This property is applied, when the calendar interval type is day and the view shows more than 20 days
+
+Default value is <code>None</code>.
+	* @return	Value of property <code>appointmentRoundWidth</code>
+	*/
+	public function getAppointmentRoundWidth( ):sap.ui.unified.CalendarAppointmentRoundWidth;
 
 	/**
 	* Gets current value of property {@link #getAppointmentsReducedHeight appointmentsReducedHeight}.
@@ -494,7 +514,7 @@ Defines the key of the <code>PlanningCalendarView</code> used for the output.
 
 <b>Note:</b> The default value is set <code>Hour</code>. If you are using your own views, the keys of these views should be used instead.
 
-Default value is <code>sap.ui.unified.CalendarIntervalType.Hour</code>.
+Default value is <code>CalendarIntervalType.Hour</code>.
 	* @return	Value of property <code>viewKey</code>
 	*/
 	public function getViewKey( ):String;
@@ -670,6 +690,32 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function selectAllRows( bSelect:Bool):sap.m.PlanningCalendar;
 
 	/**
+	* Sets a new value for property {@link #getAppointmentHeight appointmentHeight}.
+
+Determines the different possible sizes for appointments.
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>Regular</code>.
+	* @param	sAppointmentHeight New value for property <code>appointmentHeight</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setAppointmentHeight( ?sAppointmentHeight:sap.ui.unified.CalendarAppointmentHeight):sap.m.PlanningCalendar;
+
+	/**
+	* Sets a new value for property {@link #getAppointmentRoundWidth appointmentRoundWidth}.
+
+Defines rounding of the width <code>CalendarAppoinment<code> <b>Note:</b> This property is applied, when the calendar interval type is day and the view shows more than 20 days
+
+When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
+
+Default value is <code>None</code>.
+	* @param	sAppointmentRoundWidth New value for property <code>appointmentRoundWidth</code>
+	* @return	Reference to <code>this</code> in order to allow method chaining
+	*/
+	public function setAppointmentRoundWidth( ?sAppointmentRoundWidth:sap.ui.unified.CalendarAppointmentRoundWidth):sap.m.PlanningCalendar;
+
+	/**
 	* Sets a new value for property {@link #getAppointmentsReducedHeight appointmentsReducedHeight}.
 
 Determines whether the appointments that have only title without text are rendered with smaller height.
@@ -745,7 +791,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.m.PlanningCalendar;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.m.PlanningCalendar;
 	@:overload( function(oLegend:sap.ui.core.ID):sap.m.PlanningCalendar{ })
 
 	/**
@@ -766,7 +812,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oMaxDate New value for property <code>maxDate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxDate( oMaxDate:Dynamic):sap.m.PlanningCalendar;
+	public function setMaxDate( ?oMaxDate:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getMinDate minDate}.
@@ -779,7 +825,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oMinDate New value for property <code>minDate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinDate( oMinDate:Dynamic):sap.m.PlanningCalendar;
+	public function setMinDate( ?oMinDate:Dynamic):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getNoDataText noDataText}.
@@ -790,7 +836,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNoDataText New value for property <code>noDataText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNoDataText( sNoDataText:String):sap.m.PlanningCalendar;
+	public function setNoDataText( ?sNoDataText:String):sap.m.PlanningCalendar;
 
 	/**
 	* Sets a new value for property {@link #getShowDayNamesLine showDayNamesLine}.
@@ -897,21 +943,17 @@ Defines the key of the <code>PlanningCalendarView</code> used for the output.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>sap.ui.unified.CalendarIntervalType.Hour</code>.
+Default value is <code>CalendarIntervalType.Hour</code>.
 	* @param	sViewKey New value for property <code>viewKey</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setViewKey( ?sViewKey:String):sap.m.PlanningCalendar;
 
 	/**
-	* Sets a new value for property {@link #getWidth width}.
-
-Specifies the width of the <code>PlanningCalendar</code>.
-
-When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
-	* @param	sWidth New value for property <code>width</code>
-	* @return	Reference to <code>this</code> in order to allow method chaining
+	* Sets the width property and ensures that the start date is in sync with each row timeline.
+	* @param	sWidth the width to be set to the PlanningCalendar
+	* @return	this for method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.PlanningCalendar;
+	public function setWidth( sWidth:Dynamic):Dynamic;
 }
 

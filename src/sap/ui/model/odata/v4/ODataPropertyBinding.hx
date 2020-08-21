@@ -23,7 +23,13 @@ extern class ODataPropertyBinding extends sap.ui.model.PropertyBinding
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
+
+	/**
+	* Returns the group ID of the binding that is used for read requests. The group ID of the binding is alternatively defined by <ul> <li>the <code>groupId</code> parameter of the OData model; see {@link sap.ui.model.odata.v4.ODataModel#constructor},</li> <li>the <code>$$groupId</code> binding parameter; see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}.</li> </ul>
+	* @return	The group ID
+	*/
+	public function getGroupId( ):String;
 
 	/**
 	* Returns a metadata object for class sap.ui.model.odata.v4.ODataPropertyBinding.
@@ -36,6 +42,12 @@ extern class ODataPropertyBinding extends sap.ui.model.PropertyBinding
 	* @return	The root binding or <code>undefined</code> if this binding is unresolved (see {@link sap.ui.model.Binding#isResolved}).
 	*/
 	public function getRootBinding( ):Dynamic;
+
+	/**
+	* Returns the group ID of the binding that is used for update requests. The update group ID of the binding is alternatively defined by <ul> <li>the <code>updateGroupId</code> parameter of the OData model; see {@link sap.ui.model.odata.v4.ODataModel#constructor},</li> <li>the <code>$$updateGroupId</code> binding parameter; see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}.</li> </ul>
+	* @return	The update group ID
+	*/
+	public function getUpdateGroupId( ):String;
 
 	/**
 	* Returns the current value.
@@ -71,7 +83,7 @@ Refresh is supported for bindings which are not relative to a {@link sap.ui.mode
 Note: When calling {@link #refresh} multiple times, the result of the request triggered by the last call determines the binding's data; it is <b>independent</b> of the order of calls to {@link sap.ui.model.odata.v4.ODataModel#submitBatch} with the given group ID.
 
 If there are pending changes, an error is thrown. Use {@link #hasPendingChanges} to check if there are pending changes. If there are changes, call {@link sap.ui.model.odata.v4.ODataModel#submitBatch} to submit the changes or {@link sap.ui.model.odata.v4.ODataModel#resetChanges} to reset the changes before calling {@link #refresh}.
-	* @param	sGroupId The group ID to be used for refresh; if not specified, the binding's group ID is used. For suspended bindings, only the binding's group ID is supported because {@link #resume} uses the binding's group ID.
+	* @param	sGroupId The group ID to be used for refresh; if not specified, the binding's group ID is used, see {@link #getGroupId}. For suspended bindings, only the binding's group ID is supported because {@link #resume} uses the binding's group ID.
 
 Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or application group IDs as specified in {@link sap.ui.model.odata.v4.ODataModel}.
 	* @return	Void
@@ -120,7 +132,7 @@ Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or applic
 	/**
 	* Sets the new current value and updates the cache. If the value cannot be accepted or cannot be updated on the server, an error is logged to the console and added to the message manager as a technical message.
 	* @param	vValue The new value which must be primitive
-	* @param	sGroupId The group ID to be used for this update call; if not specified, the update group ID for this binding (or its relevant parent binding) is used, see {@link sap.ui.model.odata.v4.ODataPropertyBinding#constructor}. Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or application group IDs as specified in {@link sap.ui.model.odata.v4.ODataModel}.
+	* @param	sGroupId The group ID to be used for this update call; if not specified, the update group ID for this binding (or its relevant parent binding) is used, see {@link #getUpdateGroupId}. Valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or application group IDs as specified in {@link sap.ui.model.odata.v4.ODataModel}.
 	* @return	Void
 	*/
 	public function setValue( vValue:Dynamic, ?sGroupId:String):Void;

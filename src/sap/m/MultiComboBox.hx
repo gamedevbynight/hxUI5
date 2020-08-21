@@ -39,7 +39,7 @@ Event is fired when selection of an item is changed. Note: please do not use the
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MultiComboBox</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MultiComboBox;
+	public function attachSelectionChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MultiComboBox;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:selectionFinish selectionFinish} event of this <code>sap.m.MultiComboBox</code>.
@@ -52,7 +52,7 @@ Event is fired when user has finished a selection of items in a list box and lis
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MultiComboBox</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelectionFinish( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MultiComboBox;
+	public function attachSelectionFinish( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MultiComboBox;
 
 	/**
 	* Clones the <code>sap.m.MultiComboBox</code> control.
@@ -75,7 +75,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MultiComboBox;
+	public function detachSelectionChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MultiComboBox;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:selectionFinish selectionFinish} event of this <code>sap.m.MultiComboBox</code>.
@@ -85,7 +85,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelectionFinish( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MultiComboBox;
+	public function detachSelectionFinish( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MultiComboBox;
 
 	/**
 	* Creates a new subclass of class sap.m.MultiComboBox with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -96,7 +96,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.m.MultiComboBox.

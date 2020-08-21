@@ -28,7 +28,7 @@ Once the promise is resolved, {@link #getPath} returns a path including the key 
 	* Deletes the OData entity this context points to.
 
 The context must not be used anymore after successful deletion.
-	* @param	sGroupId The group ID to be used for the DELETE request; if not specified, the update group ID for the context's binding is used, see {@link sap.ui.model.odata.v4.ODataModel#bindContext} and {@link sap.ui.model.odata.v4.ODataModel#bindList}; the resulting group ID must not have {@link sap.ui.model.odata.v4.SubmitMode.API}.
+	* @param	sGroupId The group ID to be used for the DELETE request; if not specified, the update group ID for the context's binding is used, see {@link #getUpdateGroupId}; the resulting group ID must not have {@link sap.ui.model.odata.v4.SubmitMode.API}. Since 1.81, if this context is transient (see {@link #isTransient}), no group ID needs to be specified.
 	* @return	A promise which is resolved without a result in case of success, or rejected with an instance of <code>Error</code> in case of failure, e.g. if the given context does not point to an entity, if it is not part of a list binding, if there are pending changes for the context's binding, if the resulting group ID has SubmitMode.API, or if the deletion on the server fails. <p> The error instance is flagged with <code>isConcurrentModification</code> in case a concurrent modification (e.g. by another user) of the entity between loading and deletion has been detected; this should be shown to the user who needs to decide whether to try deletion again. If the entity does not exist, we assume it has already been deleted by someone else and report success.
 	*/
 	public function delete( ?sGroupId:String):js.lib.Promise<Context>;
@@ -54,7 +54,7 @@ The context must not be used anymore after successful deletion.
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the binding this context belongs to.
@@ -69,8 +69,14 @@ The context must not be used anymore after successful deletion.
 	public function getCanonicalPath( ):String;
 
 	/**
+	* Returns the group ID of the context's binding that is used for read requests. See {@link sap.ui.model.odata.v4.ODataListBinding#getGroupId} and {@link sap.ui.model.odata.v4.ODataContextBinding#getGroupId}.
+	* @return	The group ID
+	*/
+	public function getGroupId( ):String;
+
+	/**
 	* Returns the context's index within the binding's collection. The return value changes when a new entity is added via {@link sap.ui.model.odata.v4.ODataListBinding#create} without <code>bAtEnd</code>, and when a context representing a created entity is deleted again.
-	* @return	The context's index within the binding's collection or <code>undefined</code> if the context does not belong to a list binding.
+	* @return	The context's index within the binding's collection. It is <code>undefined</code> if <ul> <li> it does not belong to a list binding, <li> it is kept alive (see {@link #isKeepAlive}), but not in the collection currently. </ul>
 	*/
 	public function getIndex( ):String;
 
@@ -98,6 +104,12 @@ Returns <code>undefined</code> if the data is not (yet) available; no request is
 	public function getProperty( sPath:String, ?bExternalFormat:Bool):Dynamic;
 
 	/**
+	* Returns the group ID of the context's binding that is used for update requests. See {@link sap.ui.model.odata.v4.ODataListBinding#getUpdateGroupId} and {@link sap.ui.model.odata.v4.ODataContextBinding#getUpdateGroupId}.
+	* @return	The update group ID
+	*/
+	public function getUpdateGroupId( ):String;
+
+	/**
 	* Returns whether there are pending changes for bindings dependent on this context, or for unresolved bindings (see {@link sap.ui.model.Binding#isResolved}) which were dependent on this context at the time the pending change was created. This includes the context itself being transient (see {@link #isTransient}).
 	* @return	Whether there are pending changes
 	*/
@@ -110,6 +122,12 @@ Returns <code>undefined</code> if the data is not (yet) available; no request is
 	public function isExpanded( ):Dynamic;
 
 	/**
+	* Returns whether this context is kept alive.
+	* @return	<code>true</code> if this context is kept alive
+	*/
+	public function isKeepAlive( ):Bool;
+
+	/**
 	* For a context created using {@link sap.ui.model.odata.v4.ODataListBinding#create}, the method returns <code>true</code> if the context is transient, meaning that the promise returned by {@link #created} is not yet resolved or rejected, and returns <code>false</code> if the context is not transient. The result of this function can also be accessed via instance annotation "@$ui5.context.isTransient" at the entity.
 	* @return	Whether this context is transient if it is created using {@link sap.ui.model.odata.v4.ODataListBinding#create}; <code>undefined</code> if it is not created using {@link sap.ui.model.odata.v4.ODataListBinding#create}
 	*/
@@ -117,7 +135,7 @@ Returns <code>undefined</code> if the data is not (yet) available; no request is
 
 	/**
 	* Refreshes the single entity represented by this context.
-	* @param	sGroupId The group ID to be used for the refresh; if not specified, the group ID for the context's binding is used, see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}.
+	* @param	sGroupId The group ID to be used for the refresh; if not specified, the group ID for the context's binding is used, see {@link #getGroupId}.
 	* @param	bAllowRemoval If the context belongs to a list binding, the parameter allows the list binding to remove the context from the list binding's collection because the entity does not match the binding's filter anymore, see {@link sap.ui.model.odata.v4.ODataListBinding#filter}; a removed context is destroyed, see {@link #destroy}. If the context belongs to a context binding, the parameter must not be used. Supported since 1.55.0
 	* @return	Void
 	*/
@@ -137,14 +155,15 @@ If you want {@link #requestObject} to read fresh data, call {@link #refresh} fir
 	* @return	A promise on the requested value
 	*/
 	public function requestObject( ?sPath:String):js.lib.Promise<Context>;
+	@:overload( function(?vPath:String, ?bExternalFormat:Bool):js.lib.Promise<Context>{ })
 
 	/**
-	* Returns a promise on the property value for the given path relative to this context. The path is expected to point to a structural property with primitive type.
-	* @param	sPath A path relative to this context
-	* @param	bExternalFormat If <code>true</code>, the value is returned in external format using a UI5 type for the given property path that formats corresponding to the property's EDM type and constraints.
-	* @return	A promise on the requested value; it is rejected if the value is not primitive
+	* Returns a promise on the property value for the given path relative to this context. The path is expected to point to a structural property with primitive type. Since 1.81.1 it is possible to request more than one property. Property values that are not cached yet are requested from the back end.
+	* @param	vPath One or multiple paths relative to this context
+	* @param	bExternalFormat If <code>true</code>, the values are returned in external format using UI5 types for the given property paths that format corresponding to the properties' EDM types and constraints
+	* @return	A promise on the requested value or values; it is rejected if a value is not primitive
 	*/
-	public function requestProperty( ?sPath:String, ?bExternalFormat:Bool):js.lib.Promise<Context>;
+	public function requestProperty( ?vPath:Array<String>, ?bExternalFormat:Bool):js.lib.Promise<Context>;
 
 	/**
 	* Loads side effects for this context using the given "14.5.11 Expression edm:NavigationPropertyPath" or "14.5.13 Expression edm:PropertyPath" objects. Use this method to explicitly load side effects in case implicit loading is switched off via the binding-specific parameter <code>$$patchWithoutSideEffects</code>. The method can be called on <ul> <li> the bound context of a context binding, <li> the return value context of an operation binding, <li> a context of a list binding representing a single entity, <li> the header context of a list binding; side effects are loaded for the whole binding in this case. </ul> Key predicates must be available in this context's path. Avoid navigation properties as part of a binding's $select system query option as they may trigger pointless requests. There must be only context bindings between this context and its first ancestor binding which uses own data service requests.
@@ -157,16 +176,23 @@ All failed updates or creates for the group ID are repeated within the same batc
 
 The events 'dataRequested' and 'dataReceived' are not fired. Whatever should happen in the event handler attached to... <ul> <li>'dataRequested', can instead be done before calling {@link #requestSideEffects}.</li> <li>'dataReceived', can instead be done once the <code>oPromise</code> returned by {@link #requestSideEffects} fulfills or rejects (using <code>oPromise.then(function () {...}, function () {...})</code>).</li> </ul>
 	* @param	aPathExpressions The "14.5.11 Expression edm:NavigationPropertyPath" or "14.5.13 Expression edm:PropertyPath" objects describing which properties need to be loaded because they may have changed due to side effects of a previous update, for example <code>[{$PropertyPath : "TEAM_ID"}, {$NavigationPropertyPath : "EMPLOYEE_2_MANAGER"}, {$PropertyPath : "EMPLOYEE_2_TEAM/Team_Id"}]</code>. An empty navigation property path means that the whole entity may have changed, including its navigation properties. Since 1.75, a property path may end with a "*" segment to indicate that all structural properties may have changed, but no navigation properties (unless listed explicitly), for example <code>[{$PropertyPath : "*"}, {$NavigationPropertyPath : "EMPLOYEE_2_MANAGER"}]</code> or <code>[{$PropertyPath : "EMPLOYEE_2_MANAGER/*"}]</code>.
-	* @param	sGroupId The group ID to be used (since 1.69.0); if not specified, the update group ID for the context's binding is used, see "$$updateGroupId" at {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}. If a different group ID is specified, make sure that {@link #requestSideEffects} is called after the corresponding updates have been successfully processed by the server and that there are no pending changes for the affected properties.
+	* @param	sGroupId The group ID to be used (since 1.69.0); if not specified, the update group ID for the context's binding is used, see {@link #getUpdateGroupId}. If a different group ID is specified, make sure that {@link #requestSideEffects} is called after the corresponding updates have been successfully processed by the server and that there are no pending changes for the affected properties.
 	* @return	Promise resolved with <code>undefined</code>, or rejected with an error if loading of side effects fails. Use it to set fields affected by side effects to read-only before {@link #requestSideEffects} and make them editable again when the promise resolves; in the error handler, you can repeat the loading of side effects.
 	*/
 	public function requestSideEffects( aPathExpressions:Array<Dynamic>, ?sGroupId:String):js.lib.Promise<Context>;
 
 	/**
+	* Sets this context's <code>keepAlive</code> attribute. If <code>true</code> the context is kept alive even when it is removed from its binding's collection, for example if a filter is applied and the entity represented by this context does not match the filter criteria.
+	* @param	bKeepAlive Whether to keep the context alive
+	* @return	Void
+	*/
+	public function setKeepAlive( bKeepAlive:Bool):Void;
+
+	/**
 	* Sets a new value for the property identified by the given path. The path is relative to this context and is expected to point to a structural property with primitive type.
 	* @param	sPath A path relative to this context
 	* @param	vValue The new value which must be primitive
-	* @param	sGroupId The group ID to be used for the PATCH request; if not specified, the update group ID for the context's binding is used, see {@link sap.ui.model.odata.v4.ODataModel#bindList} and {@link sap.ui.model.odata.v4.ODataModel#bindContext}. Since 1.74, you can use <code>null</code> to prevent the PATCH request.
+	* @param	sGroupId The group ID to be used for the PATCH request; if not specified, the update group ID for the context's binding is used, see {@link #getUpdateGroupId}. Since 1.74.0, you can use <code>null</code> to prevent the PATCH request.
 	* @return	A promise which is resolved without a result in case of success, or rejected with an instance of <code>Error</code> in case of failure
 	*/
 	public function setProperty( sPath:String, vValue:Dynamic, ?sGroupId:String):js.lib.Promise<Context>;

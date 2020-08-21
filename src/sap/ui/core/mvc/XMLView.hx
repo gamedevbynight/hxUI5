@@ -38,7 +38,7 @@ The <code>controller</code> property is optional and can hold a controller insta
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.core.mvc.XMLView.
@@ -46,7 +46,7 @@ The <code>controller</code> property is optional and can hold a controller insta
 	*/
 	public static function getMetadata( ):sap.ui.core.ElementMetadata;
 	@:overload( function(sType:String, vPreprocessor:String, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })
-	@:overload( function(sType:String, vPreprocessor:()->Void, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })
+	@:overload( function(sType:String, vPreprocessor:(Dynamic)->Void, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })
 	@:overload( function(sType:sap.ui.core.mvc.XMLView.PreprocessorType, vPreprocessor:String, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void{ })
 
 	/**
@@ -64,7 +64,7 @@ It can be either a module name as string of an implementation of {@link sap.ui.c
 	* @param	mSettings optional configuration for preprocessor
 	* @return	Void
 	*/
-	public static function registerPreprocessor( sType:sap.ui.core.mvc.XMLView.PreprocessorType, vPreprocessor:()->Void, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void;
+	public static function registerPreprocessor( sType:sap.ui.core.mvc.XMLView.PreprocessorType, vPreprocessor:(Dynamic)->Void, bSyncSupport:Bool, ?bOnDemand:Bool, ?mSettings:Dynamic):Void;
 }
 
 typedef XMLViewArgs = sap.ui.core.mvc.View.ViewArgs & {

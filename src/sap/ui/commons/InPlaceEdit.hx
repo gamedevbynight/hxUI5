@@ -21,7 +21,7 @@ Event is fired when the text in the field has changed AND the focus leaves the I
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.InPlaceEdit</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.InPlaceEdit;
+	public function attachChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.InPlaceEdit;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:liveChange liveChange} event of this <code>sap.ui.commons.InPlaceEdit</code>.
@@ -34,7 +34,7 @@ This event if fired during typing into the InPlaceEdit and returns the currently
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.InPlaceEdit</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLiveChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.InPlaceEdit;
+	public function attachLiveChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.InPlaceEdit;
 
 	/**
 	* Clear the old text after a change to disable the undo functionality. If undoEnabled is false this has no effect.
@@ -56,7 +56,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.InPlaceEdit;
+	public function detachChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.InPlaceEdit;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:liveChange liveChange} event of this <code>sap.ui.commons.InPlaceEdit</code>.
@@ -66,7 +66,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLiveChange( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.InPlaceEdit;
+	public function detachLiveChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.InPlaceEdit;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.InPlaceEdit with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -77,7 +77,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getContent content}.

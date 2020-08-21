@@ -315,7 +315,7 @@ extern class SemanticPage extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getAddAction addAction}.
@@ -642,7 +642,7 @@ If all the areas have assigned values greater than 1, the numbers are scaled so 
 
 <Note:> When this property is set the <code>titlePrimaryArea</code> property has no effect.
 
-Default value is <code>1:1.6:1.6</code>.
+Default value is <code>"1:1.6:1.6"</code>.
 	* @return	Value of property <code>titleAreaShrinkRatio</code>
 	*/
 	public function getTitleAreaShrinkRatio( ):sap.f.DynamicPageTitleShrinkRatio;
@@ -1275,7 +1275,7 @@ If all the areas have assigned values greater than 1, the numbers are scaled so 
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>1:1.6:1.6</code>.
+Default value is <code>"1:1.6:1.6"</code>.
 	* @param	sTitleAreaShrinkRatio New value for property <code>titleAreaShrinkRatio</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

@@ -27,8 +27,8 @@ extern class PropertyEditorFactory
 	/**
 	* Registers classes for the given editor types. If an editor type is already registered, it will be skipped and must first be deregistered using the <code>PropertyEditorFactory.deregisterType</code> function.
 	* @param	mTypes Map containing pairs of editor type and the path to load the class from
-	* @return	Void
+	* @return	Resolves with a map with name and object of the registered PropertyEditors
 	*/
-	public static function registerTypes( mTypes:Map<String,String>):Void;
+	public static function registerTypes( mTypes:Map<String,String>):js.lib.Promise<Dynamic>;
 }
 

@@ -65,7 +65,7 @@ extern class DynamicPage extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBackgroundDesign backgroundDesign}.
@@ -100,9 +100,9 @@ Please keep in mind that the alignment is not possible in the following cases: <
 	/**
 	* Gets current value of property {@link #getFitContent fitContent}.
 
-Optimizes <code>DynamicPage</code> responsiveness on small screens and behavior when expanding/collapsing the <code>DynamicPageHeader</code>.
+Forces the content container of the <code>DynamicPage</code> to make room for stretchable controls in the <code>content</code> aggregation to fill exactly the visible space between the header and the footer.
 
-<b>Note:</b> It is recommended to use this property when displaying content of adaptive controls that stretch to fill the available space. Such controls may be {@link sap.ui.table.Table} and {@link sap.ui.table.AnalyticalTable} depending on their settings.
+<b>Notes:</b> <ul> <li>Enable this property only if the control of the <code>content</code> aggregation is configured to automatically stretch to fill the available height, which means that the content would appear squashed in height when this property is disabled. Such stretchable controls may be {@link sap.ui.table.Table} and {@link sap.ui.table.AnalyticalTable} depending on their settings.</li> <li>It is not recommended to enable this property for controls that do not stretch in height (and appear properly when this property is disabled).</li> </ul>
 
 Default value is <code>false</code>.
 	* @return	Value of property <code>fitContent</code>
@@ -226,9 +226,9 @@ Default value is <code>Standard</code>.
 	/**
 	* Sets a new value for property {@link #getFitContent fitContent}.
 
-Optimizes <code>DynamicPage</code> responsiveness on small screens and behavior when expanding/collapsing the <code>DynamicPageHeader</code>.
+Forces the content container of the <code>DynamicPage</code> to make room for stretchable controls in the <code>content</code> aggregation to fill exactly the visible space between the header and the footer.
 
-<b>Note:</b> It is recommended to use this property when displaying content of adaptive controls that stretch to fill the available space. Such controls may be {@link sap.ui.table.Table} and {@link sap.ui.table.AnalyticalTable} depending on their settings.
+<b>Notes:</b> <ul> <li>Enable this property only if the control of the <code>content</code> aggregation is configured to automatically stretch to fill the available height, which means that the content would appear squashed in height when this property is disabled. Such stretchable controls may be {@link sap.ui.table.Table} and {@link sap.ui.table.AnalyticalTable} depending on their settings.</li> <li>It is not recommended to enable this property for controls that do not stretch in height (and appear properly when this property is disabled).</li> </ul>
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
@@ -371,9 +371,9 @@ The header can be also expanded/collapsed by user interaction, which requires th
 	@:optional var backgroundDesign:haxe.extern.EitherType<String,sap.m.PageBackgroundDesign>;
 
 	/**
-	* Optimizes <code>DynamicPage</code> responsiveness on small screens and behavior when expanding/collapsing the <code>DynamicPageHeader</code>.
+	* Forces the content container of the <code>DynamicPage</code> to make room for stretchable controls in the <code>content</code> aggregation to fill exactly the visible space between the header and the footer.
 
-<b>Note:</b> It is recommended to use this property when displaying content of adaptive controls that stretch to fill the available space. Such controls may be {@link sap.ui.table.Table} and {@link sap.ui.table.AnalyticalTable} depending on their settings.
+<b>Notes:</b> <ul> <li>Enable this property only if the control of the <code>content</code> aggregation is configured to automatically stretch to fill the available height, which means that the content would appear squashed in height when this property is disabled. Such stretchable controls may be {@link sap.ui.table.Table} and {@link sap.ui.table.AnalyticalTable} depending on their settings.</li> <li>It is not recommended to enable this property for controls that do not stretch in height (and appear properly when this property is disabled).</li> </ul>
 	*/
 	@:optional var fitContent:haxe.extern.EitherType<String,Bool>;
 

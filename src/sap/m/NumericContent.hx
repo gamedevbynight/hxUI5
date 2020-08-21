@@ -21,7 +21,7 @@ The event is fired when the user chooses the numeric content.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.NumericContent</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.NumericContent;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.NumericContent;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.m.NumericContent</code>.
@@ -31,7 +31,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.NumericContent;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.NumericContent;
 
 	/**
 	* Creates a new subclass of class sap.m.NumericContent with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -42,7 +42,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAdaptiveFontSize adaptiveFontSize}.
@@ -95,7 +95,7 @@ Description of an icon that is used in the tooltip.
 
 The indicator arrow that shows value deviation.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @return	Value of property <code>indicator</code>
 	*/
 	public function getIndicator( ):sap.m.DeviationIndicator;
@@ -129,7 +129,7 @@ The scaling prefix. Financial characters can be used for currencies and counters
 
 Indicates the load status.
 
-Default value is <code>Loaded</code>.
+Default value is <code>"Loaded"</code>.
 	* @return	Value of property <code>state</code>
 	*/
 	public function getState( ):sap.m.LoadState;
@@ -157,7 +157,7 @@ The actual value.
 
 The semantic color of the value.
 
-Default value is <code>Neutral</code>.
+Default value is <code>"Neutral"</code>.
 	* @return	Value of property <code>valueColor</code>
 	*/
 	public function getValueColor( ):sap.m.ValueColor;
@@ -228,7 +228,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.NumericContent;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getIconDescription iconDescription}.
@@ -239,7 +239,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconDescription New value for property <code>iconDescription</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconDescription( sIconDescription:String):sap.m.NumericContent;
+	public function setIconDescription( ?sIconDescription:String):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getIndicator indicator}.
@@ -248,7 +248,7 @@ The indicator arrow that shows value deviation.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @param	sIndicator New value for property <code>indicator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -276,7 +276,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sScale New value for property <code>scale</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setScale( sScale:String):sap.m.NumericContent;
+	public function setScale( ?sScale:String):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getState state}.
@@ -285,7 +285,7 @@ Indicates the load status.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Loaded</code>.
+Default value is <code>"Loaded"</code>.
 	* @param	sState New value for property <code>state</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -313,7 +313,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.m.NumericContent;
+	public function setValue( ?sValue:String):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getValueColor valueColor}.
@@ -322,7 +322,7 @@ The semantic color of the value.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Neutral</code>.
+Default value is <code>"Neutral"</code>.
 	* @param	sValueColor New value for property <code>valueColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -337,7 +337,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.NumericContent;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.NumericContent;
 
 	/**
 	* Sets a new value for property {@link #getWithMargin withMargin}.

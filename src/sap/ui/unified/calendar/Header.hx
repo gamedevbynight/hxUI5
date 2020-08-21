@@ -25,7 +25,7 @@ First button pressed (normally day)
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.calendar.Header</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPressButton0( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
+	public function attachPressButton0( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:pressButton1 pressButton1} event of this <code>sap.ui.unified.calendar.Header</code>.
@@ -38,7 +38,7 @@ Second button pressed (normally month)
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.calendar.Header</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPressButton1( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
+	public function attachPressButton1( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:pressButton2 pressButton2} event of this <code>sap.ui.unified.calendar.Header</code>.
@@ -51,7 +51,7 @@ Third button pressed (normally year)
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.calendar.Header</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPressButton2( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
+	public function attachPressButton2( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:pressNext pressNext} event of this <code>sap.ui.unified.calendar.Header</code>.
@@ -64,7 +64,7 @@ Next button pressed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.calendar.Header</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPressNext( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
+	public function attachPressNext( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:pressPrevious pressPrevious} event of this <code>sap.ui.unified.calendar.Header</code>.
@@ -77,7 +77,7 @@ Previous button pressed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.unified.calendar.Header</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPressPrevious( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
+	public function attachPressPrevious( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:pressButton0 pressButton0} event of this <code>sap.ui.unified.calendar.Header</code>.
@@ -87,7 +87,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPressButton0( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
+	public function detachPressButton0( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:pressButton1 pressButton1} event of this <code>sap.ui.unified.calendar.Header</code>.
@@ -97,7 +97,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPressButton1( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
+	public function detachPressButton1( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:pressButton2 pressButton2} event of this <code>sap.ui.unified.calendar.Header</code>.
@@ -107,7 +107,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPressButton2( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
+	public function detachPressButton2( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:pressNext pressNext} event of this <code>sap.ui.unified.calendar.Header</code>.
@@ -117,7 +117,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPressNext( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
+	public function detachPressNext( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:pressPrevious pressPrevious} event of this <code>sap.ui.unified.calendar.Header</code>.
@@ -127,7 +127,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPressPrevious( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
+	public function detachPressPrevious( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.unified.calendar.Header;
 
 	/**
 	* Creates a new subclass of class sap.ui.unified.calendar.Header with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -138,7 +138,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAdditionalTextButton0 additionalTextButton0}.

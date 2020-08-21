@@ -28,7 +28,7 @@ This event is fired when there is an error loading the PDF file.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PDFViewer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachError( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PDFViewer;
+	public function attachError( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PDFViewer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:loaded loaded} event of this <code>sap.m.PDFViewer</code>.
@@ -41,7 +41,7 @@ This event is fired when a PDF file is loaded. If the PDF is loaded in smaller c
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PDFViewer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLoaded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PDFViewer;
+	public function attachLoaded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PDFViewer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:sourceValidationFailed sourceValidationFailed} event of this <code>sap.m.PDFViewer</code>.
@@ -54,7 +54,7 @@ This event is fired when the PDF viewer control cannot check the loaded content.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.PDFViewer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSourceValidationFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.PDFViewer;
+	public function attachSourceValidationFailed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PDFViewer;
 
 	/**
 	* Destroys the errorPlaceholder in the aggregation {@link #getErrorPlaceholder errorPlaceholder}.
@@ -76,7 +76,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachError( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PDFViewer;
+	public function detachError( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PDFViewer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:loaded loaded} event of this <code>sap.m.PDFViewer</code>.
@@ -86,7 +86,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLoaded( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PDFViewer;
+	public function detachLoaded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PDFViewer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:sourceValidationFailed sourceValidationFailed} event of this <code>sap.m.PDFViewer</code>.
@@ -96,7 +96,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSourceValidationFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.m.PDFViewer;
+	public function detachSourceValidationFailed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.PDFViewer;
 
 	/**
 	* Downloads the PDF file.
@@ -113,7 +113,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getDisplayType displayType}.
@@ -146,7 +146,7 @@ A custom text that is displayed instead of the PDF file content when the PDF fil
 
 Defines the height of the PDF viewer control, respective to the height of the parent container. Can be set to a percent, pixel, or em value.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -196,7 +196,7 @@ A custom title for the PDF viewer.
 
 Defines the width of the PDF viewer control, respective to the width of the parent container. Can be set to a percent, pixel, or em value.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -275,7 +275,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sErrorPlaceholderMessage New value for property <code>errorPlaceholderMessage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setErrorPlaceholderMessage( sErrorPlaceholderMessage:String):sap.m.PDFViewer;
+	public function setErrorPlaceholderMessage( ?sErrorPlaceholderMessage:String):sap.m.PDFViewer;
 
 	/**
 	* Sets a new value for property {@link #getHeight height}.
@@ -284,7 +284,7 @@ Defines the height of the PDF viewer control, respective to the height of the pa
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -312,7 +312,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSource New value for property <code>source</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSource( sSource:sap.ui.core.URI):sap.m.PDFViewer;
+	public function setSource( ?sSource:sap.ui.core.URI):sap.m.PDFViewer;
 
 	/**
 	* Sets a new value for property {@link #getTitle title}.
@@ -323,7 +323,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.PDFViewer;
+	public function setTitle( ?sTitle:String):sap.m.PDFViewer;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -332,7 +332,7 @@ Defines the width of the PDF viewer control, respective to the width of the pare
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

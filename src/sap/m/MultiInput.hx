@@ -20,11 +20,19 @@ extern class MultiInput extends sap.m.Input
 	public function addToken( oToken:sap.m.Token):sap.m.MultiInput;
 
 	/**
-	* Function adds a validation callback called before any new token gets added to the tokens aggregation.
-	* @param	fnValidator The validation callback
+	* Function validates the given text and adds a new token if validation was successful.
+	* @param	oParameters Parameter bag containing the following fields:
+	* @param	aValidators [optional] Array of all validators to be used
 	* @return	Void
 	*/
-	public function addValidator( fnValidator:sap.m.multiinput.FnValidator->Dynamic):Void;
+	public function addValidateToken( oParameters:Dynamic, aValidators:Array<(Dynamic)->Void>):Void;
+
+	/**
+	* Function adds a validation callback called before any new token gets added to the tokens aggregation.
+	* @param	fValidator The validation function
+	* @return	Void
+	*/
+	public function addValidator( fValidator:(Dynamic)->Void):Void;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:tokenUpdate tokenUpdate} event of this <code>sap.m.MultiInput</code>.
@@ -37,7 +45,7 @@ Fired when the tokens aggregation changed due to a user interaction (add / remov
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MultiInput</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTokenUpdate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MultiInput;
+	public function attachTokenUpdate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MultiInput;
 
 	/**
 	* Clones the <code>sap.m.MultiInput</code> control.
@@ -59,7 +67,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTokenUpdate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MultiInput;
+	public function detachTokenUpdate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MultiInput;
 
 	/**
 	* Creates a new subclass of class sap.m.MultiInput with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -70,7 +78,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getMaxTokens maxTokens}.
@@ -99,6 +107,12 @@ The currently displayed tokens
 	* @return	null
 	*/
 	public function getTokens( ):Array<sap.m.Token>;
+
+	/**
+	* Function returns all validation callbacks.
+	* @return	An array of token validation callbacks
+	*/
+	public function getValidators( ):Array<(Dynamic)->Void>;
 
 	/**
 	* Checks for the provided <code>sap.m.Token</code> in the aggregation {@link #getTokens tokens}. and returns its index if found or -1 otherwise.
@@ -145,7 +159,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeAllTokens( ):Array<sap.m.Token>;
 
 	/**
-	* Function removes all validation callbacks
+	* Function removes all validation callbacks.
 	* @return	Void
 	*/
 	public function removeAllValidators( ):Void;
@@ -160,11 +174,11 @@ Additionally, it unregisters them from the hosting UIArea.
 	public function removeToken( vToken:sap.m.Token):sap.m.Token;
 
 	/**
-	* Function removes a validation callback
-	* @param	fnValidator The validation callback to be removed
+	* Function removes a validation callback.
+	* @param	fValidator The validation function
 	* @return	Void
 	*/
-	public function removeValidator( fnValidator:sap.m.multiinput.FnValidator->Dynamic):Void;
+	public function removeValidator( fValidator:(Dynamic)->Void):Void;
 
 	/**
 	* Sets a new value for property {@link #getMaxTokens maxTokens}.

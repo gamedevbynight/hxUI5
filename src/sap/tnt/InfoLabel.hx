@@ -34,7 +34,7 @@ See {@link sap.ui.base.ManagedObject#bindProperty ManagedObject.bindProperty} fo
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColorScheme colorScheme}.
@@ -144,7 +144,7 @@ Defines the icon to be displayed as graphical element within the <code>InfoLabel
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon= New value for property <code>icon</code>
+	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIcon( ?sIcon:sap.ui.core.URI):sap.tnt.InfoLabel;
@@ -197,7 +197,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.tnt.InfoLabel;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.tnt.InfoLabel;
 
 	/**
 	* Unbinds property {@link #getText text} from model data.

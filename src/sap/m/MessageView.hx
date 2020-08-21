@@ -30,7 +30,7 @@ Event fired when an activeTitle of a MessageItem is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachActiveTitlePress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
+	public function attachActiveTitlePress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:itemSelect itemSelect} event of this <code>sap.m.MessageView</code>.
@@ -43,7 +43,7 @@ Event fired when description is shown.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachItemSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
+	public function attachItemSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:listSelect listSelect} event of this <code>sap.m.MessageView</code>.
@@ -56,7 +56,7 @@ Event fired when one of the lists is shown when (not) filtered by type.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachListSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
+	public function attachListSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:longtextLoaded longtextLoaded} event of this <code>sap.m.MessageView</code>.
@@ -69,7 +69,7 @@ Event fired when the long text description data from a remote URL is loaded.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLongtextLoaded( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
+	public function attachLongtextLoaded( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:urlValidated urlValidated} event of this <code>sap.m.MessageView</code>.
@@ -82,7 +82,7 @@ Event fired when a validation of a URL from long text description is ready.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.MessageView</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUrlValidated( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
+	public function attachUrlValidated( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Destroys the headerButton in the aggregation {@link #getHeaderButton headerButton}.
@@ -104,7 +104,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachActiveTitlePress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
+	public function detachActiveTitlePress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:itemSelect itemSelect} event of this <code>sap.m.MessageView</code>.
@@ -114,7 +114,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachItemSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
+	public function detachItemSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:listSelect listSelect} event of this <code>sap.m.MessageView</code>.
@@ -124,7 +124,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachListSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
+	public function detachListSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:longtextLoaded longtextLoaded} event of this <code>sap.m.MessageView</code>.
@@ -134,7 +134,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLongtextLoaded( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
+	public function detachLongtextLoaded( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:urlValidated urlValidated} event of this <code>sap.m.MessageView</code>.
@@ -144,7 +144,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUrlValidated( fnFunction:()->Void, ?oListener:Dynamic):sap.m.MessageView;
+	public function detachUrlValidated( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.MessageView;
 
 	/**
 	* Creates a new subclass of class sap.m.MessageView with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -155,7 +155,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAsyncDescriptionHandler asyncDescriptionHandler}.
@@ -262,7 +262,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oAsyncDescriptionHandler New value for property <code>asyncDescriptionHandler</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAsyncDescriptionHandler( oAsyncDescriptionHandler:Dynamic):sap.m.MessageView;
+	public function setAsyncDescriptionHandler( ?oAsyncDescriptionHandler:Dynamic):sap.m.MessageView;
 
 	/**
 	* Sets a new value for property {@link #getAsyncURLHandler asyncURLHandler}.
@@ -273,7 +273,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oAsyncURLHandler New value for property <code>asyncURLHandler</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setAsyncURLHandler( oAsyncURLHandler:Dynamic):sap.m.MessageView;
+	public function setAsyncURLHandler( ?oAsyncURLHandler:Dynamic):sap.m.MessageView;
 
 	/**
 	* Sets a new value for property {@link #getGroupItems groupItems}.

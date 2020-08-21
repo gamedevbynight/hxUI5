@@ -39,7 +39,7 @@ This event is fired if the user clicks the token's delete icon.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Token</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDelete( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Token;
+	public function attachDelete( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Token;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:deselect deselect} event of this <code>sap.m.Token</code>.
@@ -52,7 +52,7 @@ This event is fired when the token gets deselected.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Token</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDeselect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Token;
+	public function attachDeselect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Token;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:press press} event of this <code>sap.m.Token</code>.
@@ -65,7 +65,7 @@ This event is fired when the user clicks on the token.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Token</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Token;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Token;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:select select} event of this <code>sap.m.Token</code>.
@@ -78,7 +78,7 @@ This event is fired when the token gets selected.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Token</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelect( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Token;
+	public function attachSelect( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Token;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:delete delete} event of this <code>sap.m.Token</code>.
@@ -88,7 +88,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDelete( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Token;
+	public function detachDelete( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Token;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:deselect deselect} event of this <code>sap.m.Token</code>.
@@ -98,7 +98,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDeselect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Token;
+	public function detachDeselect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Token;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.m.Token</code>.
@@ -108,7 +108,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Token;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Token;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:select select} event of this <code>sap.m.Token</code>.
@@ -118,7 +118,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelect( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Token;
+	public function detachSelect( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Token;
 
 	/**
 	* Creates a new subclass of class sap.m.Token with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -129,7 +129,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.

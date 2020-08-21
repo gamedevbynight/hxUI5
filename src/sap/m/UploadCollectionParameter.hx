@@ -19,7 +19,7 @@ extern class UploadCollectionParameter extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.m.UploadCollectionParameter.
@@ -52,7 +52,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.m.UploadCollectionParameter;
+	public function setName( ?sName:String):sap.m.UploadCollectionParameter;
 
 	/**
 	* Sets a new value for property {@link #getValue value}.
@@ -63,7 +63,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sValue New value for property <code>value</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setValue( sValue:String):sap.m.UploadCollectionParameter;
+	public function setValue( ?sValue:String):sap.m.UploadCollectionParameter;
 }
 
 typedef UploadCollectionParameterArgs = sap.ui.core.Element.ElementArgs & {

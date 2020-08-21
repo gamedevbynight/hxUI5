@@ -29,7 +29,7 @@ extern class App extends sap.m.NavContainer
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBackgroundColor backgroundColor}.
@@ -118,7 +118,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBackgroundColor New value for property <code>backgroundColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundColor( sBackgroundColor:String):sap.m.App;
+	public function setBackgroundColor( ?sBackgroundColor:String):sap.m.App;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundImage backgroundImage}.
@@ -129,7 +129,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBackgroundImage New value for property <code>backgroundImage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundImage( sBackgroundImage:sap.ui.core.URI):sap.m.App;
+	public function setBackgroundImage( ?sBackgroundImage:sap.ui.core.URI):sap.m.App;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundOpacity backgroundOpacity}.
@@ -180,7 +180,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oHomeIcon New value for property <code>homeIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHomeIcon( oHomeIcon:Dynamic):sap.m.App;
+	public function setHomeIcon( ?oHomeIcon:Dynamic):sap.m.App;
 
 	/**
 	* Sets a new value for property {@link #getMobileWebAppCapable mobileWebAppCapable}.

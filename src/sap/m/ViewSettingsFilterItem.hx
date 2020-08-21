@@ -28,7 +28,7 @@ Let the outside world know that the filter detail aggregation was changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ViewSettingsFilterItem</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFilterDetailItemsAggregationChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsFilterItem;
+	public function attachFilterDetailItemsAggregationChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsFilterItem;
 
 	/**
 	* Binds aggregation {@link #getItems items} to model data.
@@ -53,7 +53,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFilterDetailItemsAggregationChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsFilterItem;
+	public function detachFilterDetailItemsAggregationChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsFilterItem;
 
 	/**
 	* Creates a new subclass of class sap.m.ViewSettingsFilterItem with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -64,7 +64,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getItems items}.

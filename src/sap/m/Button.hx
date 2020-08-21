@@ -49,7 +49,7 @@ Fired when the user clicks or taps on the control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Button</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Button;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Button;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:press press} event of this <code>sap.m.Button</code>.
@@ -59,7 +59,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Button;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Button;
 
 	/**
 	* Creates a new subclass of class sap.m.Button with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -70,7 +70,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getActiveIcon activeIcon}.
@@ -217,7 +217,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sActiveIcon New value for property <code>activeIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setActiveIcon( sActiveIcon:sap.ui.core.URI):sap.m.Button;
+	public function setActiveIcon( ?sActiveIcon:sap.ui.core.URI):sap.m.Button;
 
 	/**
 	* Sets a new value for property {@link #getEnabled enabled}.
@@ -240,7 +240,7 @@ Defines the icon to be displayed as graphical element within the <code>Button</c
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sIcon= New value for property <code>icon</code>
+	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.Button;
@@ -321,7 +321,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Button;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Button;
 }
 
 typedef ButtonArgs = sap.ui.core.Control.ControlArgs & {

@@ -32,14 +32,14 @@ extern class CalendarLegend extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColumnWidth columnWidth}.
 
 Defines the width of the created columns in which the items are arranged.
 
-Default value is <code>120px</code>.
+Default value is <code>'120px'</code>.
 	* @return	Value of property <code>columnWidth</code>
 	*/
 	public function getColumnWidth( ):sap.ui.core.CSSSize;
@@ -63,7 +63,7 @@ Items to be displayed.
 
 Determines the standard items related to the calendar days, such as, today, selected, working and non-working. Values must be one of <code>sap.ui.unified.StandardCalendarLegendItem</code>. Note: for versions 1.50 and 1.52, this property was defined in the subclass <code>sap.m.PlanningCalendarLegend</code>
 
-Default value is <code>Today,Selected,WorkingDay,NonWorkingDay</code>.
+Default value is <code>['Today', 'Selected', 'WorkingDay', 'NonWorkingDay']</code>.
 	* @return	Value of property <code>standardItems</code>
 	*/
 	public function getStandardItems( ):Array<String>;
@@ -107,7 +107,7 @@ Defines the width of the created columns in which the items are arranged.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>120px</code>.
+Default value is <code>'120px'</code>.
 	* @param	sColumnWidth New value for property <code>columnWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -120,7 +120,7 @@ Determines the standard items related to the calendar days, such as, today, sele
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Today,Selected,WorkingDay,NonWorkingDay</code>.
+Default value is <code>['Today', 'Selected', 'WorkingDay', 'NonWorkingDay']</code>.
 	* @param	sStandardItems New value for property <code>standardItems</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

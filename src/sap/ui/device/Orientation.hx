@@ -26,7 +26,7 @@ The event handler is called with a single argument: a map <code>mParams</code> w
 	* @param	oListener The object that wants to be notified when the event occurs (<code>this</code> context within the handler function). If it is not specified, the handler function is called in the context of the <code>window</code>.
 	* @return	Void
 	*/
-	public static function attachHandler( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public static function attachHandler( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 
 	/**
 	* Removes a previously attached event handler from the orientation change events.
@@ -36,6 +36,6 @@ The passed parameters must match those used for registration with {@link #.attac
 	* @param	oListener The object that wanted to be notified when the event occurred
 	* @return	Void
 	*/
-	public static function detachHandler( fnFunction:()->Void, ?oListener:Dynamic):Void;
+	public static function detachHandler( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):Void;
 }
 

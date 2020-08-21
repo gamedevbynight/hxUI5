@@ -19,14 +19,14 @@ extern class GridBoxLayout extends sap.ui.layout.cssgrid.GridLayoutBase
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBoxesPerRowConfig boxesPerRowConfig}.
 
 A string type that defines number of Boxes per row for extra large, large, medium and small screens
 
-Default value is <code>XL7 L6 M4 S2</code>.
+Default value is <code>"XL7 L6 M4 S2"</code>.
 	* @return	Value of property <code>boxesPerRowConfig</code>
 	*/
 	public function getBoxesPerRowConfig( ):sap.ui.layout.BoxesPerRowConfig;
@@ -70,7 +70,7 @@ A string type that defines number of Boxes per row for extra large, large, mediu
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>XL7 L6 M4 S2</code>.
+Default value is <code>"XL7 L6 M4 S2"</code>.
 	* @param	sBoxesPerRowConfig New value for property <code>boxesPerRowConfig</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -84,7 +84,7 @@ Defines the minimum width of the Boxes
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sBoxMinWidth= New value for property <code>boxMinWidth</code>
+	* @param	sBoxMinWidth New value for property <code>boxMinWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setBoxMinWidth( ?sBoxMinWidth:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.GridBoxLayout;
@@ -97,7 +97,7 @@ Defines the width of the Boxes
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sBoxWidth= New value for property <code>boxWidth</code>
+	* @param	sBoxWidth New value for property <code>boxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setBoxWidth( ?sBoxWidth:sap.ui.core.CSSSize):sap.ui.layout.cssgrid.GridBoxLayout;

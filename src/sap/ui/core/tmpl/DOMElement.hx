@@ -53,7 +53,7 @@ extern class DOMElement extends sap.ui.core.Control
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getAttributes attributes}.
@@ -82,7 +82,7 @@ Nested DOM elements to support nested bindable structures
 
 The HTML-tag of the DOM element which contains the text
 
-Default value is <code>span</code>.
+Default value is <code>'span'</code>.
 	* @return	Value of property <code>tag</code>
 	*/
 	public function getTag( ):String;
@@ -173,7 +173,7 @@ The HTML-tag of the DOM element which contains the text
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>span</code>.
+Default value is <code>'span'</code>.
 	* @param	sTag New value for property <code>tag</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -188,7 +188,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sText New value for property <code>text</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setText( sText:String):sap.ui.core.tmpl.DOMElement;
+	public function setText( ?sText:String):sap.ui.core.tmpl.DOMElement;
 }
 
 typedef DOMElementArgs = sap.ui.core.Control.ControlArgs & {

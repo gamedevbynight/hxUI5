@@ -19,7 +19,7 @@ The role of the app developer is to integrate the card into the app and define: 
 
 <i>When not to use</i> <ul> <li>When you need more header and content flexibility.</li> <li>When you have to achieve simple card visualization. For such cases, use: {@link sap.f.Card sap.f.Card}.</li> <li>When you have to use an application model. For such cases, use: {@link sap.f.Card sap.f.Card}.</li> <li>When you need complex behavior. For such cases, use: {@link sap.f.Card sap.f.Card}.</li> </ul>
 */
-extern class Card extends sap.ui.core.Control implements sap.f.ICard
+extern class Card extends sap.ui.core.Control implements sap.f.ICard implements sap.m.IBadge
 {
 	@:overload(function(?sId:String, ?mSettings:CardArgs):Void {})
 	public function new(?mSettings:CardArgs):Void;
@@ -35,7 +35,7 @@ Fired when an action is triggered on the card.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.integration.widgets.Card</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAction( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
+	public function attachAction( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:manifestReady manifestReady} event of this <code>sap.ui.integration.widgets.Card</code>.
@@ -48,7 +48,7 @@ Fired when the manifest is loaded.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.integration.widgets.Card</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachManifestReady( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
+	public function attachManifestReady( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:action action} event of this <code>sap.ui.integration.widgets.Card</code>.
@@ -58,7 +58,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAction( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
+	public function detachAction( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:manifestReady manifestReady} event of this <code>sap.ui.integration.widgets.Card</code>.
@@ -68,7 +68,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachManifestReady( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
+	public function detachManifestReady( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.integration.widgets.Card;
 
 	/**
 	* Creates a new subclass of class sap.ui.integration.widgets.Card with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -79,7 +79,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBaseUrl baseUrl}.
@@ -116,7 +116,7 @@ Default value is <code>Active</code>.
 
 Defines the height of the card.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @return	Value of property <code>height</code>
 	*/
 	public function getHeight( ):sap.ui.core.CSSSize;
@@ -184,7 +184,7 @@ Example: <pre>
 
 Defines the width of the card.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -225,7 +225,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBaseUrl New value for property <code>baseUrl</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBaseUrl( sBaseUrl:sap.ui.core.URI):sap.ui.integration.widgets.Card;
+	public function setBaseUrl( ?sBaseUrl:sap.ui.core.URI):sap.ui.integration.widgets.Card;
 
 	/**
 	* Sets a new value for the <code>dataMode</code> property.
@@ -241,7 +241,7 @@ Defines the height of the card.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -271,7 +271,7 @@ The URL of the manifest or an object.
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	oManifest= New value for property <code>manifest</code>
+	* @param	oManifest New value for property <code>manifest</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setManifest( ?oManifest:Dynamic):sap.ui.integration.widgets.Card;
@@ -305,11 +305,21 @@ Defines the width of the card.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.integration.widgets.Card;
+
+	/**
+	* Displays a message strip on top of the content with the given text.
+
+<b>Note</b> Currently only available for an Adaptive Card.
+	* @param	sMessage The message.
+	* @param	sType Type of the message.
+	* @return	Void
+	*/
+	public function showMessage( sMessage:String, sType:sap.m.MessageType):Void;
 }
 
 typedef CardArgs = sap.ui.core.Control.ControlArgs & {

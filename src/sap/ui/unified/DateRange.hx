@@ -19,7 +19,7 @@ extern class DateRange extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getEndDate endDate}.
@@ -52,7 +52,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oEndDate New value for property <code>endDate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setEndDate( oEndDate:Dynamic):sap.ui.unified.DateRange;
+	public function setEndDate( ?oEndDate:Dynamic):sap.ui.unified.DateRange;
 
 	/**
 	* Sets a new value for property {@link #getStartDate startDate}.
@@ -63,7 +63,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oStartDate New value for property <code>startDate</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStartDate( oStartDate:Dynamic):sap.ui.unified.DateRange;
+	public function setStartDate( ?oStartDate:Dynamic):sap.ui.unified.DateRange;
 }
 
 typedef DateRangeArgs = sap.ui.core.Element.ElementArgs & {

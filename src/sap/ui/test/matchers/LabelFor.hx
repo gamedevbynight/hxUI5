@@ -35,7 +35,7 @@ extern class LabelFor extends sap.ui.test.matchers.Matcher
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getKey key}.
@@ -56,7 +56,7 @@ The key of the I18N text in the containing {@link module:sap/base/i18n/ResourceB
 
 The name of the {@link sap.ui.model.resource.ResourceModel} assigned to the control.
 
-Default value is <code>i18n</code>.
+Default value is <code>"i18n"</code>.
 	* @return	Value of property <code>modelName</code>
 	*/
 	public function getModelName( ):String;
@@ -74,7 +74,7 @@ The parameters for replacing the placeholders of the I18N text. See {@link modul
 
 The name of the control property to match the I18N text with.
 
-Default value is <code>text</code>.
+Default value is <code>"text"</code>.
 	* @return	Value of property <code>propertyName</code>
 	*/
 	public function getPropertyName( ):String;
@@ -112,7 +112,7 @@ The name of the {@link sap.ui.model.resource.ResourceModel} assigned to the cont
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>i18n</code>.
+Default value is <code>"i18n"</code>.
 	* @param	sModelName New value for property <code>modelName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -136,7 +136,7 @@ The name of the control property to match the I18N text with.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>text</code>.
+Default value is <code>"text"</code>.
 	* @param	sPropertyName New value for property <code>propertyName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

@@ -49,7 +49,7 @@ Fired when the user selects the control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Avatar</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Avatar;
+	public function attachPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Avatar;
 
 	/**
 	* Binds aggregation {@link #getDetailBox detailBox} to model data.
@@ -74,7 +74,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Avatar;
+	public function detachPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Avatar;
 
 	/**
 	* Creates a new subclass of class sap.m.Avatar with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -85,7 +85,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaDescribedBy ariaDescribedBy}.
@@ -140,7 +140,7 @@ Specifies custom display size of the <code>Avatar</code>.
 
 <b>Note:</b> It takes effect if the <code>displaySize</code> property is set to <code>Custom</code>.
 
-Default value is <code>3rem</code>.
+Default value is <code>"3rem"</code>.
 	* @return	Value of property <code>customDisplaySize</code>
 	*/
 	public function getCustomDisplaySize( ):sap.ui.core.CSSSize;
@@ -152,7 +152,7 @@ Specifies custom font size of the <code>Avatar</code>.
 
 <b>Note:</b> It takes effect if the <code>displaySize</code> property is set to <code>Custom</code>.
 
-Default value is <code>1.125rem</code>.
+Default value is <code>"1.125rem"</code>.
 	* @return	Value of property <code>customFontSize</code>
 	*/
 	public function getCustomFontSize( ):sap.ui.core.CSSSize;
@@ -294,7 +294,7 @@ The predefined icons are recommended for: <ul> <li>Suggesting a zooming action: 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
 Default value is <code>empty string</code>.
-	* @param	sBadgeIcon= New value for property <code>badgeIcon</code>
+	* @param	sBadgeIcon New value for property <code>badgeIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
 	public function setBadgeIcon( ?sBadgeIcon:sap.ui.core.URI):sap.m.Avatar;
@@ -310,7 +310,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBadgeTooltip New value for property <code>badgeTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBadgeTooltip( sBadgeTooltip:String):sap.m.Avatar;
+	public function setBadgeTooltip( ?sBadgeTooltip:String):sap.m.Avatar;
 
 	/**
 	* Sets a new value for property {@link #getCustomDisplaySize customDisplaySize}.
@@ -321,7 +321,7 @@ Specifies custom display size of the <code>Avatar</code>.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>3rem</code>.
+Default value is <code>"3rem"</code>.
 	* @param	sCustomDisplaySize New value for property <code>customDisplaySize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -336,7 +336,7 @@ Specifies custom font size of the <code>Avatar</code>.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>1.125rem</code>.
+Default value is <code>"1.125rem"</code>.
 	* @param	sCustomFontSize New value for property <code>customFontSize</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -387,7 +387,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFallbackIcon New value for property <code>fallbackIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFallbackIcon( sFallbackIcon:String):sap.m.Avatar;
+	public function setFallbackIcon( ?sFallbackIcon:String):sap.m.Avatar;
 
 	/**
 	* Sets a new value for property {@link #getImageFitType imageFitType}.
@@ -411,7 +411,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sInitials New value for property <code>initials</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setInitials( sInitials:String):sap.m.Avatar;
+	public function setInitials( ?sInitials:String):sap.m.Avatar;
 
 	/**
 	* Sets a new value for property {@link #getShowBorder showBorder}.
@@ -435,7 +435,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sSrc New value for property <code>src</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSrc( sSrc:sap.ui.core.URI):sap.m.Avatar;
+	public function setSrc( ?sSrc:sap.ui.core.URI):sap.m.Avatar;
 
 	/**
 	* Unbinds aggregation {@link #getDetailBox detailBox} from model data.

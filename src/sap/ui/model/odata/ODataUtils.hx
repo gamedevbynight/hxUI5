@@ -27,7 +27,7 @@ extern class ODataUtils
 	* @param	sEdmType the EDM type
 	* @return	the comparator function taking two values of the given type and returning <code>0</code> if the values are equal, <code>-1</code> if the first value is smaller, <code>1</code> if the first value is larger and <code>NaN</code> if they cannot be compared (e.g. one value is <code>null</code> or <code>undefined</code>)
 	*/
-	public static function getComparator( sEdmType:String):()->Void;
+	public static function getComparator( sEdmType:String):(Dynamic)->Void;
 	@:overload( function(sServiceURL:String, vParameters:Dynamic):String{ })
 
 	/**

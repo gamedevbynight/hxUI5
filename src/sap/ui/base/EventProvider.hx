@@ -17,7 +17,7 @@ public function new():Void;
 	* @param	oListener The object that wants to be notified when the event occurs (<code>this</code> context within the handler function). If it is not specified, the handler function is called in the context of the event provider.
 	* @return	Returns <code>this</code> to allow method chaining
 	*/
-	public function attachEvent( sEventId:String, ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.EventProvider;
+	public function attachEvent( sEventId:String, ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.EventProvider;
 
 	/**
 	* Attaches an event handler, called one time only, to the event with the given identifier.
@@ -29,7 +29,7 @@ When the event occurs, the handler function is called and the handler registrati
 	* @param	oListener The object that wants to be notified when the event occurs (<code>this</code> context within the handler function). If it is not specified, the handler function is called in the context of the event provider.
 	* @return	Returns <code>this</code> to allow method chaining
 	*/
-	public function attachEventOnce( sEventId:String, ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.EventProvider;
+	public function attachEventOnce( sEventId:String, ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.EventProvider;
 
 	/**
 	* Cleans up the internal structures and removes all event handlers.
@@ -48,7 +48,7 @@ The passed parameters must match those used for registration with {@link #attach
 	* @param	oListener The object that wanted to be notified when the event occurred
 	* @return	Returns <code>this</code> to allow method chaining
 	*/
-	public function detachEvent( sEventId:String, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.base.EventProvider;
+	public function detachEvent( sEventId:String, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.base.EventProvider;
 
 	/**
 	* Creates a new subclass of class sap.ui.base.EventProvider with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -59,7 +59,7 @@ The passed parameters must match those used for registration with {@link #attach
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns a metadata object for class sap.ui.base.EventProvider.

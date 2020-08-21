@@ -35,7 +35,7 @@ Event is fired when the dialog has been closed (after closing-animation etc.). E
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.commons.Dialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachClosed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Dialog;
+	public function attachClosed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Dialog;
 
 	/**
 	* Closes the dialog control instance.
@@ -63,7 +63,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachClosed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.commons.Dialog;
+	public function detachClosed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.commons.Dialog;
 
 	/**
 	* Creates a new subclass of class sap.ui.commons.Dialog with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -74,7 +74,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAccessibleRole accessibleRole}.
@@ -429,7 +429,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
 	@:overload( function(oInitialFocus:sap.ui.core.ID):sap.ui.commons.Dialog{ })
 
 	/**
@@ -461,7 +461,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMaxHeight New value for property <code>maxHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxHeight( sMaxHeight:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
+	public function setMaxHeight( ?sMaxHeight:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getMaxWidth maxWidth}.
@@ -472,7 +472,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMaxWidth New value for property <code>maxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMaxWidth( sMaxWidth:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
+	public function setMaxWidth( ?sMaxWidth:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getMinHeight minHeight}.
@@ -483,7 +483,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMinHeight New value for property <code>minHeight</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinHeight( sMinHeight:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
+	public function setMinHeight( ?sMinHeight:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getMinWidth minWidth}.
@@ -494,7 +494,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMinWidth New value for property <code>minWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinWidth( sMinWidth:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
+	public function setMinWidth( ?sMinWidth:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
 
 	/**
 	* Sets a new value for property {@link #getModal modal}.
@@ -583,7 +583,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.commons.Dialog;
 }
 
 typedef DialogArgs = sap.ui.core.Control.ControlArgs & {

@@ -12,7 +12,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with; defaults to <code>sap.ui.core.BusyIndicator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public static function attachClose( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
+	public static function attachClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
 
 	/**
 	* Registers a handler for the {@link #event:Open Open} event.
@@ -22,7 +22,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object to call the event handler with; defaults to <code>sap.ui.core.BusyIndicator</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public static function attachOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
+	public static function attachOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
 
 	/**
 	* Unregisters a handler from the {@link #event:Close Close} event.
@@ -30,7 +30,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public static function detachClose( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
+	public static function detachClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
 
 	/**
 	* Unregisters a handler from the {@link #event:Open Open} event.
@@ -38,7 +38,7 @@ When called, the context of the event handler (its <code>this</code>) will be bo
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public static function detachOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
+	public static function detachOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.BusyIndicator;
 
 	/**
 	* Removes the BusyIndicator from the screen.

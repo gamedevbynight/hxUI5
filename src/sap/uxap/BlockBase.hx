@@ -36,7 +36,7 @@ Fired when an aggregated view is instantiated.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.uxap.BlockBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachViewInit( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.BlockBase;
+	public function attachViewInit( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.BlockBase;
 
 	/**
 	* Destroys all the mappings in the aggregation {@link #getMappings mappings}.
@@ -52,7 +52,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachViewInit( fnFunction:()->Void, ?oListener:Dynamic):sap.uxap.BlockBase;
+	public function detachViewInit( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.uxap.BlockBase;
 
 	/**
 	* Creates a new subclass of class sap.uxap.BlockBase with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -63,14 +63,14 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getColumnLayout columnLayout}.
 
 Determines on how many columns the layout will be rendered. Allowed values are integers from 1 to 4 and "auto".
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @return	Value of property <code>columnLayout</code>
 	*/
 	public function getColumnLayout( ):sap.uxap.BlockBaseColumnLayout;

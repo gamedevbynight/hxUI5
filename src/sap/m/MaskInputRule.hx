@@ -19,14 +19,14 @@ extern class MaskInputRule extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getMaskFormatSymbol maskFormatSymbol}.
 
 Defines the symbol used in the mask format which will accept a certain range of characters.
 
-Default value is <code>*</code>.
+Default value is <code>"*"</code>.
 	* @return	Value of property <code>maskFormatSymbol</code>
 	*/
 	public function getMaskFormatSymbol( ):String;
@@ -42,7 +42,7 @@ Default value is <code>*</code>.
 
 Defines the allowed characters as a regular expression.
 
-Default value is <code>[a-zA-Z0-9]</code>.
+Default value is <code>"[a-zA-Z0-9]"</code>.
 	* @return	Value of property <code>regex</code>
 	*/
 	public function getRegex( ):String;
@@ -54,7 +54,7 @@ Defines the symbol used in the mask format which will accept a certain range of 
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>*</code>.
+Default value is <code>"*"</code>.
 	* @param	sMaskFormatSymbol New value for property <code>maskFormatSymbol</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -67,7 +67,7 @@ Defines the allowed characters as a regular expression.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>[a-zA-Z0-9]</code>.
+Default value is <code>"[a-zA-Z0-9]"</code>.
 	* @param	sRegex New value for property <code>regex</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

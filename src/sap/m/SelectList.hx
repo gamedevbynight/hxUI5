@@ -36,7 +36,7 @@ This event is fired when an item is pressed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SelectList</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachItemPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectList;
+	public function attachItemPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectList;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:selectionChange selectionChange} event of this <code>sap.m.SelectList</code>.
@@ -51,7 +51,7 @@ This event is fired when the selection has changed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SelectList</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectList;
+	public function attachSelectionChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectList;
 
 	/**
 	* Binds aggregation {@link #getItems items} to model data.
@@ -76,7 +76,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachItemPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectList;
+	public function detachItemPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectList;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:selectionChange selectionChange} event of this <code>sap.m.SelectList</code>.
@@ -86,7 +86,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SelectList;
+	public function detachSelectionChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SelectList;
 
 	/**
 	* Creates a new subclass of class sap.m.SelectList with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -97,7 +97,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
@@ -175,7 +175,7 @@ Default value is <code>Delimited</code>.
 
 Sets the maximum width of the control.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>maxWidth</code>
 	*/
 	public function getMaxWidth( ):sap.ui.core.CSSSize;
@@ -229,7 +229,7 @@ Default value is <code>false</code>.
 
 Sets the width of the control.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -314,7 +314,7 @@ Sets the maximum width of the control.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sMaxWidth New value for property <code>maxWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -368,7 +368,7 @@ Sets the width of the control.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>auto</code>.
+Default value is <code>"auto"</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

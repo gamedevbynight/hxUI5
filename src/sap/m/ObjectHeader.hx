@@ -69,7 +69,7 @@ Event is fired when the title icon is active and the user taps/clicks on it
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ObjectHeader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachIconPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
+	public function attachIconPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:introPress introPress} event of this <code>sap.m.ObjectHeader</code>.
@@ -82,7 +82,7 @@ Event is fired when the intro is active and the user taps/clicks on it
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ObjectHeader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachIntroPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
+	public function attachIntroPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:titlePress titlePress} event of this <code>sap.m.ObjectHeader</code>.
@@ -95,7 +95,7 @@ Event is fired when the title is active and the user taps/clicks on it
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ObjectHeader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTitlePress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
+	public function attachTitlePress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:titleSelectorPress titleSelectorPress} event of this <code>sap.m.ObjectHeader</code>.
@@ -108,7 +108,7 @@ Event is fired when the object header title selector (down-arrow) is pressed
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ObjectHeader</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachTitleSelectorPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
+	public function attachTitleSelectorPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
 
 	/**
 	* Destroys all the additionalNumbers in the aggregation {@link #getAdditionalNumbers additionalNumbers}.
@@ -148,7 +148,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachIconPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
+	public function detachIconPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:introPress introPress} event of this <code>sap.m.ObjectHeader</code>.
@@ -158,7 +158,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachIntroPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
+	public function detachIntroPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:titlePress titlePress} event of this <code>sap.m.ObjectHeader</code>.
@@ -168,7 +168,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTitlePress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
+	public function detachTitlePress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:titleSelectorPress titleSelectorPress} event of this <code>sap.m.ObjectHeader</code>.
@@ -178,7 +178,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachTitleSelectorPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
+	public function detachTitleSelectorPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ObjectHeader;
 
 	/**
 	* Creates a new subclass of class sap.m.ObjectHeader with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -189,7 +189,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getAdditionalNumbers additionalNumbers}.
@@ -492,7 +492,7 @@ Default value is <code>H1</code>.
 
 Determines a custom text for the tooltip of the select title arrow. If not set, a default text of the tooltip will be displayed.
 
-Default value is <code>Options</code>.
+Default value is <code>"Options"</code>.
 	* @return	Value of property <code>titleSelectorTooltip</code>
 	*/
 	public function getTitleSelectorTooltip( ):String;
@@ -732,7 +732,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIcon New value for property <code>icon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIcon( sIcon:sap.ui.core.URI):sap.m.ObjectHeader;
+	public function setIcon( ?sIcon:sap.ui.core.URI):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getIconActive iconActive}.
@@ -743,7 +743,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	bIconActive New value for property <code>iconActive</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconActive( bIconActive:Bool):sap.m.ObjectHeader;
+	public function setIconActive( ?bIconActive:Bool):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getIconAlt iconAlt}.
@@ -754,7 +754,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconAlt New value for property <code>iconAlt</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconAlt( sIconAlt:String):sap.m.ObjectHeader;
+	public function setIconAlt( ?sIconAlt:String):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getIconDensityAware iconDensityAware}.
@@ -780,7 +780,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIconTooltip New value for property <code>iconTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIconTooltip( sIconTooltip:String):sap.m.ObjectHeader;
+	public function setIconTooltip( ?sIconTooltip:String):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getImageShape imageShape}.
@@ -806,7 +806,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIntro New value for property <code>intro</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntro( sIntro:String):sap.m.ObjectHeader;
+	public function setIntro( ?sIntro:String):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getIntroActive introActive}.
@@ -817,7 +817,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	bIntroActive New value for property <code>introActive</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntroActive( bIntroActive:Bool):sap.m.ObjectHeader;
+	public function setIntroActive( ?bIntroActive:Bool):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getIntroHref introHref}.
@@ -828,7 +828,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIntroHref New value for property <code>introHref</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntroHref( sIntroHref:sap.ui.core.URI):sap.m.ObjectHeader;
+	public function setIntroHref( ?sIntroHref:sap.ui.core.URI):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getIntroTarget introTarget}.
@@ -839,7 +839,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sIntroTarget New value for property <code>introTarget</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setIntroTarget( sIntroTarget:String):sap.m.ObjectHeader;
+	public function setIntroTarget( ?sIntroTarget:String):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getIntroTextDirection introTextDirection}.
@@ -946,7 +946,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.ObjectHeader;
+	public function setTitle( ?sTitle:String):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getTitleActive titleActive}.
@@ -957,7 +957,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	bTitleActive New value for property <code>titleActive</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleActive( bTitleActive:Bool):sap.m.ObjectHeader;
+	public function setTitleActive( ?bTitleActive:Bool):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getTitleHref titleHref}.
@@ -970,7 +970,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitleHref New value for property <code>titleHref</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleHref( sTitleHref:sap.ui.core.URI):sap.m.ObjectHeader;
+	public function setTitleHref( ?sTitleHref:sap.ui.core.URI):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getTitleLevel titleLevel}.
@@ -1003,7 +1003,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitleTarget New value for property <code>titleTarget</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitleTarget( sTitleTarget:String):sap.m.ObjectHeader;
+	public function setTitleTarget( ?sTitleTarget:String):sap.m.ObjectHeader;
 
 	/**
 	* Sets a new value for property {@link #getTitleTextDirection titleTextDirection}.

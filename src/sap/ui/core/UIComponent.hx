@@ -45,7 +45,7 @@ This method can be overwritten by subclasses if the default implementation doesn
 	* @param	FNMetaImpl Constructor function for the metadata object. If not given, it defaults to an internal subclass of <code>sap.ui.core.ComponentMetadata</code>.
 	* @return	Void
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):Void;
 
 	/**
 	* Returns the local ID of an element by removing the component ID prefix or <code>null</code> if the ID does not contain a prefix.

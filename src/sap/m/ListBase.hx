@@ -40,7 +40,7 @@ Fired when the context menu is opened. When the context menu is opened, the bind
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ListBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeOpenContextMenu( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function attachBeforeOpenContextMenu( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:delete delete} event of this <code>sap.m.ListBase</code>.
@@ -53,7 +53,7 @@ Fires when delete icon is pressed by user.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ListBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDelete( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function attachDelete( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:itemPress itemPress} event of this <code>sap.m.ListBase</code>.
@@ -66,7 +66,7 @@ Fires when an item is pressed unless the item's <code>type</code> property is <c
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ListBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachItemPress( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function attachItemPress( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:selectionChange selectionChange} event of this <code>sap.m.ListBase</code>.
@@ -79,7 +79,7 @@ Fires when selection is changed via user interaction inside the control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ListBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSelectionChange( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function attachSelectionChange( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:swipe swipe} event of this <code>sap.m.ListBase</code>.
@@ -94,7 +94,7 @@ Fires after user's swipe action and before the <code>swipeContent</code> is show
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ListBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachSwipe( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function attachSwipe( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:updateFinished updateFinished} event of this <code>sap.m.ListBase</code>.
@@ -107,7 +107,7 @@ Fires after <code>items</code> binding is updated and processed by the control.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ListBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUpdateFinished( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function attachUpdateFinished( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:updateStarted updateStarted} event of this <code>sap.m.ListBase</code>.
@@ -122,7 +122,7 @@ Fires before <code>items</code> binding is updated (e.g. sorting, filtering)
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ListBase</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachUpdateStarted( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function attachUpdateStarted( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Binds aggregation {@link #getItems items} to model data.
@@ -171,7 +171,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeOpenContextMenu( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function detachBeforeOpenContextMenu( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:delete delete} event of this <code>sap.m.ListBase</code>.
@@ -181,7 +181,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDelete( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function detachDelete( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:itemPress itemPress} event of this <code>sap.m.ListBase</code>.
@@ -191,7 +191,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachItemPress( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function detachItemPress( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:selectionChange selectionChange} event of this <code>sap.m.ListBase</code>.
@@ -201,7 +201,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSelectionChange( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function detachSelectionChange( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:swipe swipe} event of this <code>sap.m.ListBase</code>.
@@ -211,7 +211,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachSwipe( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function detachSwipe( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:updateFinished updateFinished} event of this <code>sap.m.ListBase</code>.
@@ -221,7 +221,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUpdateFinished( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function detachUpdateFinished( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:updateStarted updateStarted} event of this <code>sap.m.ListBase</code>.
@@ -231,7 +231,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachUpdateStarted( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ListBase;
+	public function detachUpdateStarted( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ListBase;
 
 	/**
 	* Creates a new subclass of class sap.m.ListBase with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -242,7 +242,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns array of IDs of the elements which are the current targets of the association {@link #getAriaLabelledBy ariaLabelledBy}.
@@ -528,7 +528,7 @@ Default value is <code>Both</code>.
 
 Sets the width of the control.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @return	Value of property <code>width</code>
 	*/
 	public function getWidth( ):sap.ui.core.CSSSize;
@@ -633,7 +633,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sFooterText New value for property <code>footerText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setFooterText( sFooterText:String):sap.m.ListBase;
+	public function setFooterText( ?sFooterText:String):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getGrowing growing}.
@@ -696,7 +696,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sGrowingTriggerText New value for property <code>growingTriggerText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setGrowingTriggerText( sGrowingTriggerText:String):sap.m.ListBase;
+	public function setGrowingTriggerText( ?sGrowingTriggerText:String):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getHeaderText headerText}.
@@ -707,7 +707,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeaderText New value for property <code>headerText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderText( sHeaderText:String):sap.m.ListBase;
+	public function setHeaderText( ?sHeaderText:String):sap.m.ListBase;
 
 	/**
 	* Sets the aggregated {@link #getHeaderToolbar headerToolbar}.
@@ -797,7 +797,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sNoDataText New value for property <code>noDataText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setNoDataText( sNoDataText:String):sap.m.ListBase;
+	public function setNoDataText( ?sNoDataText:String):sap.m.ListBase;
 
 	/**
 	* Sets a new value for property {@link #getRememberSelections rememberSelections}.
@@ -911,7 +911,7 @@ Sets the width of the control.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>100%</code>.
+Default value is <code>"100%"</code>.
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/

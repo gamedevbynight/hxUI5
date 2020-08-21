@@ -33,7 +33,7 @@ extern class Column extends sap.ui.core.Element
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAutoPopinWidth autoPopinWidth}.
@@ -92,7 +92,7 @@ Defines the column importance.
 
 If the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=true</code>, then the column importance is taken into consideration for calculating the <code>minScreenWidth</code> property and for setting the <code>demandPopin</code> property of the column. See {@link sap.m.Table#getAutoPopinMode}
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @return	Value of property <code>importance</code>
 	*/
 	public function getImportance( ):sap.ui.core.Priority;
@@ -114,7 +114,7 @@ Default value is <code>false</code>.
 
 Defines the control serialization function if <code>mergeDuplicates</code> property is set to <code>true</code>. The control itself uses this function to compare values of two repeating cells. Default value "getText" is suitable for <code>sap.m.Label</code> and <code>sap.m.Text</code> controls but for the <code>sap.ui.core.Icon</code> control "getSrc" function should be used to merge icons. <b>Note:</b> You can pass one string parameter to given function after "#" sign. e.g. "data#myparameter"
 
-Default value is <code>getText</code>.
+Default value is <code>'getText'</code>.
 	* @return	Value of property <code>mergeFunctionName</code>
 	*/
 	public function getMergeFunctionName( ):String;
@@ -257,7 +257,7 @@ If the <code>sap.m.Table</code> control is configured with <code>autoPopinMode=t
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>None</code>.
+Default value is <code>"None"</code>.
 	* @param	sImportance New value for property <code>importance</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -285,7 +285,7 @@ Defines the control serialization function if <code>mergeDuplicates</code> prope
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>getText</code>.
+Default value is <code>'getText'</code>.
 	* @param	sMergeFunctionName New value for property <code>mergeFunctionName</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -300,7 +300,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMinScreenWidth New value for property <code>minScreenWidth</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMinScreenWidth( sMinScreenWidth:String):sap.m.Column;
+	public function setMinScreenWidth( ?sMinScreenWidth:String):sap.m.Column;
 
 	/**
 	* Sets a new value for property {@link #getPopinDisplay popinDisplay}.
@@ -339,7 +339,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sStyleClass New value for property <code>styleClass</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setStyleClass( sStyleClass:String):sap.m.Column;
+	public function setStyleClass( ?sStyleClass:String):sap.m.Column;
 
 	/**
 	* Sets a new value for property {@link #getVAlign vAlign}.
@@ -376,7 +376,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.m.Column;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.m.Column;
 }
 
 typedef ColumnArgs = sap.ui.core.Element.ElementArgs & {

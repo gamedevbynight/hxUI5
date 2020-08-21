@@ -27,7 +27,7 @@ extern class ODataModel extends sap.ui.model.Model
 	* @param	oListener Object on which to call the given function
 	* @return	<code>this</code> to allow method chaining
 	*/
-	public function attachSessionTimeout( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v4.ODataModel;
+	public function attachSessionTimeout( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v4.ODataModel;
 
 	/**
 	* Creates a new context binding for the given path, context and parameters.
@@ -116,7 +116,7 @@ Examples: <ul> <li><code>/Products('42')/Name##@com.sap.vocabularies.Common.v1.L
 	* @param	oListener Object on which to call the given function
 	* @return	<code>this</code> to allow method chaining
 	*/
-	public function detachSessionTimeout( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.model.odata.v4.ODataModel;
+	public function detachSessionTimeout( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.model.odata.v4.ODataModel;
 
 	/**
 	* Creates a new subclass of class sap.ui.model.odata.v4.ODataModel with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -127,7 +127,7 @@ Examples: <ul> <li><code>/Products('42')/Name##@com.sap.vocabularies.Common.v1.L
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Returns the model's bindings.
@@ -202,7 +202,7 @@ Examples: <ul> <li><code>/Products('42')/Name##@com.sap.vocabularies.Common.v1.L
 Note: When calling {@link #refresh} multiple times, the result of the request triggered by the last call determines the model's data; it is <b>independent</b> of the order of calls to {@link #submitBatch} with the given group ID.
 
 If there are pending changes, an error is thrown. Use {@link #hasPendingChanges} to check if there are pending changes. If there are changes, call {@link #submitBatch} to submit the changes or {@link #resetChanges} to reset the changes before calling {@link #refresh}.
-	* @param	sGroupId The group ID to be used for refresh; valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or application group IDs as specified in {@link sap.ui.model.odata.v4.ODataModel}. It is ignored for suspended bindings, because resume uses the binding's group ID
+	* @param	sGroupId The group ID to be used for refresh; valid values are <code>undefined</code>, '$auto', '$auto.*', '$direct' or application group IDs as specified in {@link sap.ui.model.odata.v4.ODataModel}. It is ignored for suspended bindings, because resume uses the binding's group ID.
 	* @return	Void
 	*/
 	public function refresh( ?sGroupId:String):Void;

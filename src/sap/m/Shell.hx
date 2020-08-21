@@ -21,7 +21,7 @@ Fires when the user presses the logout button/link.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.Shell</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachLogout( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.Shell;
+	public function attachLogout( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Shell;
 
 	/**
 	* Destroys the app in the aggregation {@link #getApp app}.
@@ -37,7 +37,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachLogout( fnFunction:()->Void, ?oListener:Dynamic):sap.m.Shell;
+	public function detachLogout( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.Shell;
 
 	/**
 	* Creates a new subclass of class sap.m.Shell with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -48,7 +48,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getApp app}.
@@ -199,7 +199,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBackgroundColor New value for property <code>backgroundColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundColor( sBackgroundColor:sap.ui.core.CSSColor):sap.m.Shell;
+	public function setBackgroundColor( ?sBackgroundColor:sap.ui.core.CSSColor):sap.m.Shell;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundImage backgroundImage}.
@@ -210,7 +210,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBackgroundImage New value for property <code>backgroundImage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundImage( sBackgroundImage:sap.ui.core.URI):sap.m.Shell;
+	public function setBackgroundImage( ?sBackgroundImage:sap.ui.core.URI):sap.m.Shell;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundOpacity backgroundOpacity}.
@@ -247,7 +247,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeaderRightText New value for property <code>headerRightText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeaderRightText( sHeaderRightText:String):sap.m.Shell;
+	public function setHeaderRightText( ?sHeaderRightText:String):sap.m.Shell;
 
 	/**
 	* Sets a new value for property {@link #getHomeIcon homeIcon}.
@@ -264,7 +264,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oHomeIcon New value for property <code>homeIcon</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHomeIcon( oHomeIcon:Dynamic):sap.m.Shell;
+	public function setHomeIcon( ?oHomeIcon:Dynamic):sap.m.Shell;
 
 	/**
 	* Sets a new value for property {@link #getLogo logo}.
@@ -275,7 +275,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sLogo New value for property <code>logo</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setLogo( sLogo:sap.ui.core.URI):sap.m.Shell;
+	public function setLogo( ?sLogo:sap.ui.core.URI):sap.m.Shell;
 
 	/**
 	* Sets a new value for property {@link #getShowLogout showLogout}.
@@ -299,7 +299,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTitle New value for property <code>title</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTitle( sTitle:String):sap.m.Shell;
+	public function setTitle( ?sTitle:String):sap.m.Shell;
 
 	/**
 	* Sets a new value for property {@link #getTitleLevel titleLevel}.

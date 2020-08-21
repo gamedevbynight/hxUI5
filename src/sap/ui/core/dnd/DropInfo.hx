@@ -21,7 +21,7 @@ This event is fired when a dragged element enters a drop target.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.dnd.DropInfo</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDragEnter( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
+	public function attachDragEnter( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:dragOver dragOver} event of this <code>sap.ui.core.dnd.DropInfo</code>.
@@ -34,7 +34,7 @@ This event is fired when an element is being dragged over a valid drop target.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.dnd.DropInfo</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDragOver( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
+	public function attachDragOver( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:drop drop} event of this <code>sap.ui.core.dnd.DropInfo</code>.
@@ -47,7 +47,7 @@ This event is fired when an element is dropped on a valid drop target, as specif
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.dnd.DropInfo</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDrop( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
+	public function attachDrop( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:dragEnter dragEnter} event of this <code>sap.ui.core.dnd.DropInfo</code>.
@@ -57,7 +57,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDragEnter( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
+	public function detachDragEnter( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:dragOver dragOver} event of this <code>sap.ui.core.dnd.DropInfo</code>.
@@ -67,7 +67,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDragOver( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
+	public function detachDragOver( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:drop drop} event of this <code>sap.ui.core.dnd.DropInfo</code>.
@@ -77,7 +77,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDrop( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
+	public function detachDrop( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.dnd.DropInfo;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.dnd.DropInfo with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -88,7 +88,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getDropEffect dropEffect}.
@@ -97,7 +97,7 @@ Defines the visual drop effect.
 
 In Internet Explorer, default visual drop effect is <code>Copy</code> and this property has no effect.
 
-Default value is <code>Move</code>.
+Default value is <code>"Move"</code>.
 	* @return	Value of property <code>dropEffect</code>
 	*/
 	public function getDropEffect( ):sap.ui.core.dnd.DropEffect;
@@ -107,7 +107,7 @@ Default value is <code>Move</code>.
 
 Defines the layout of the droppable controls if <code>dropPosition</code> is set to <code>Between</code> or <code>OnOrBetween</code>.
 
-Default value is <code>Default</code>.
+Default value is <code>"Default"</code>.
 	* @return	Value of property <code>dropLayout</code>
 	*/
 	public function getDropLayout( ):sap.ui.core.dnd.DropLayout;
@@ -117,7 +117,7 @@ Default value is <code>Default</code>.
 
 Defines the position for the drop action, visualized by a rectangle.
 
-Default value is <code>On</code>.
+Default value is <code>"On"</code>.
 	* @return	Value of property <code>dropPosition</code>
 	*/
 	public function getDropPosition( ):sap.ui.core.dnd.DropPosition;
@@ -145,7 +145,7 @@ In Internet Explorer, default visual drop effect is <code>Copy</code> and this p
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Move</code>.
+Default value is <code>"Move"</code>.
 	* @param	sDropEffect New value for property <code>dropEffect</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -158,7 +158,7 @@ Defines the layout of the droppable controls if <code>dropPosition</code> is set
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>Default</code>.
+Default value is <code>"Default"</code>.
 	* @param	sDropLayout New value for property <code>dropLayout</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -171,7 +171,7 @@ Defines the position for the drop action, visualized by a rectangle.
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>On</code>.
+Default value is <code>"On"</code>.
 	* @param	sDropPosition New value for property <code>dropPosition</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -186,7 +186,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sTargetAggregation New value for property <code>targetAggregation</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setTargetAggregation( sTargetAggregation:String):sap.ui.core.dnd.DropInfo;
+	public function setTargetAggregation( ?sTargetAggregation:String):sap.ui.core.dnd.DropInfo;
 }
 
 typedef DropInfoArgs = sap.ui.core.dnd.DragDropBase.DragDropBaseArgs & {

@@ -47,7 +47,7 @@ Fires when navigation between two pages in detail area has completed. NOTE: In c
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SplitContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterDetailNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function attachAfterDetailNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterMasterClose afterMasterClose} event of this <code>sap.m.SplitContainer</code>.
@@ -60,7 +60,7 @@ Fires when the master area is fully closed after the animation (if any).
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SplitContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterMasterClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function attachAfterMasterClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterMasterNavigate afterMasterNavigate} event of this <code>sap.m.SplitContainer</code>.
@@ -73,7 +73,7 @@ Fires when navigation between two pages in master area has completed. NOTE: In c
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SplitContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterMasterNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function attachAfterMasterNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:afterMasterOpen afterMasterOpen} event of this <code>sap.m.SplitContainer</code>.
@@ -86,7 +86,7 @@ Fires when the master area is fully opened after animation if any.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SplitContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachAfterMasterOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function attachAfterMasterOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeMasterClose beforeMasterClose} event of this <code>sap.m.SplitContainer</code>.
@@ -99,7 +99,7 @@ Fires before the master area is closed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SplitContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeMasterClose( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function attachBeforeMasterClose( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:beforeMasterOpen beforeMasterOpen} event of this <code>sap.m.SplitContainer</code>.
@@ -112,7 +112,7 @@ Fires before the master area is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SplitContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachBeforeMasterOpen( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function attachBeforeMasterOpen( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:detailNavigate detailNavigate} event of this <code>sap.m.SplitContainer</code>.
@@ -125,7 +125,7 @@ Fires when navigation between two pages in detail area has been triggered. The t
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SplitContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachDetailNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function attachDetailNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:masterButton masterButton} event of this <code>sap.m.SplitContainer</code>.
@@ -138,7 +138,7 @@ Fires when a Master Button needs to be shown or hidden. This is necessary for cu
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SplitContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMasterButton( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function attachMasterButton( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:masterNavigate masterNavigate} event of this <code>sap.m.SplitContainer</code>.
@@ -151,7 +151,7 @@ Fires when navigation between two pages in master area has been triggered. The t
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.SplitContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachMasterNavigate( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function attachMasterNavigate( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Navigates back to the previous detail page found in the history.
@@ -256,7 +256,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterDetailNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function detachAfterDetailNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterMasterClose afterMasterClose} event of this <code>sap.m.SplitContainer</code>.
@@ -266,7 +266,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterMasterClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function detachAfterMasterClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterMasterNavigate afterMasterNavigate} event of this <code>sap.m.SplitContainer</code>.
@@ -276,7 +276,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterMasterNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function detachAfterMasterNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:afterMasterOpen afterMasterOpen} event of this <code>sap.m.SplitContainer</code>.
@@ -286,7 +286,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachAfterMasterOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function detachAfterMasterOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeMasterClose beforeMasterClose} event of this <code>sap.m.SplitContainer</code>.
@@ -296,7 +296,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeMasterClose( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function detachBeforeMasterClose( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:beforeMasterOpen beforeMasterOpen} event of this <code>sap.m.SplitContainer</code>.
@@ -306,7 +306,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachBeforeMasterOpen( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function detachBeforeMasterOpen( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:detailNavigate detailNavigate} event of this <code>sap.m.SplitContainer</code>.
@@ -316,7 +316,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachDetailNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function detachDetailNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:masterButton masterButton} event of this <code>sap.m.SplitContainer</code>.
@@ -326,7 +326,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMasterButton( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function detachMasterButton( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:masterNavigate masterNavigate} event of this <code>sap.m.SplitContainer</code>.
@@ -336,7 +336,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachMasterNavigate( fnFunction:()->Void, ?oListener:Dynamic):sap.m.SplitContainer;
+	public function detachMasterNavigate( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.SplitContainer;
 
 	/**
 	* Creates a new subclass of class sap.m.SplitContainer with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -347,7 +347,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getBackgroundColor backgroundColor}.
@@ -411,7 +411,7 @@ This method is provided mainly for API consistency between sap.m.SplitContainer 
 
 Determines the type of the transition/animation to apply when to() is called without defining the transition to use. The default is "slide", other options are "fade", "show", and the names of any registered custom transitions.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @return	Value of property <code>defaultTransitionNameDetail</code>
 	*/
 	public function getDefaultTransitionNameDetail( ):String;
@@ -421,7 +421,7 @@ Default value is <code>slide</code>.
 
 Determines the type of the transition/animation to apply when to() is called, without defining the transition to use. The default is "slide", other options are "fade", "show", and the names of any registered custom transitions.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @return	Value of property <code>defaultTransitionNameMaster</code>
 	*/
 	public function getDefaultTransitionNameMaster( ):String;
@@ -611,7 +611,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBackgroundColor New value for property <code>backgroundColor</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundColor( sBackgroundColor:String):sap.m.SplitContainer;
+	public function setBackgroundColor( ?sBackgroundColor:String):sap.m.SplitContainer;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundImage backgroundImage}.
@@ -622,7 +622,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sBackgroundImage New value for property <code>backgroundImage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setBackgroundImage( sBackgroundImage:sap.ui.core.URI):sap.m.SplitContainer;
+	public function setBackgroundImage( ?sBackgroundImage:sap.ui.core.URI):sap.m.SplitContainer;
 
 	/**
 	* Sets a new value for property {@link #getBackgroundOpacity backgroundOpacity}.
@@ -657,7 +657,7 @@ Determines the type of the transition/animation to apply when to() is called wit
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @param	sDefaultTransitionNameDetail New value for property <code>defaultTransitionNameDetail</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -670,7 +670,7 @@ Determines the type of the transition/animation to apply when to() is called, wi
 
 When called with a value of <code>null</code> or <code>undefined</code>, the default value of the property will be restored.
 
-Default value is <code>slide</code>.
+Default value is <code>"slide"</code>.
 	* @param	sDefaultTransitionNameMaster New value for property <code>defaultTransitionNameMaster</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
@@ -701,7 +701,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMasterButtonText New value for property <code>masterButtonText</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMasterButtonText( sMasterButtonText:String):sap.m.SplitContainer;
+	public function setMasterButtonText( ?sMasterButtonText:String):sap.m.SplitContainer;
 
 	/**
 	* Sets a new value for property {@link #getMasterButtonTooltip masterButtonTooltip}.
@@ -712,7 +712,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sMasterButtonTooltip New value for property <code>masterButtonTooltip</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setMasterButtonTooltip( sMasterButtonTooltip:String):sap.m.SplitContainer;
+	public function setMasterButtonTooltip( ?sMasterButtonTooltip:String):sap.m.SplitContainer;
 
 	/**
 	* Sets a new value for property {@link #getMode mode}.

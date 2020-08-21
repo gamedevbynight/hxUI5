@@ -80,7 +80,7 @@ Called when the Cancel button is pressed. It can be used to set the state of cus
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ViewSettingsDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachCancel( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+	public function attachCancel( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:confirm confirm} event of this <code>sap.m.ViewSettingsDialog</code>.
@@ -93,7 +93,7 @@ Indicates that the user has pressed the OK button and the selected sort, group, 
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ViewSettingsDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachConfirm( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+	public function attachConfirm( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:filterDetailPageOpened filterDetailPageOpened} event of this <code>sap.m.ViewSettingsDialog</code>.
@@ -106,7 +106,7 @@ Fired when the filter detail page is opened.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ViewSettingsDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachFilterDetailPageOpened( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+	public function attachFilterDetailPageOpened( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:reset reset} event of this <code>sap.m.ViewSettingsDialog</code>.
@@ -119,7 +119,7 @@ Called when the Reset button is pressed. It can be used to set the state of cust
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ViewSettingsDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachReset( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+	public function attachReset( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:resetFilters resetFilters} event of this <code>sap.m.ViewSettingsDialog</code>.
@@ -132,7 +132,7 @@ Called when the filters are being reset.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.m.ViewSettingsDialog</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachResetFilters( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+	public function attachResetFilters( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Binds aggregation {@link #getCustomTabs customTabs} to model data.
@@ -223,7 +223,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachCancel( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+	public function detachCancel( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:confirm confirm} event of this <code>sap.m.ViewSettingsDialog</code>.
@@ -233,7 +233,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachConfirm( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+	public function detachConfirm( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:filterDetailPageOpened filterDetailPageOpened} event of this <code>sap.m.ViewSettingsDialog</code>.
@@ -243,7 +243,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachFilterDetailPageOpened( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+	public function detachFilterDetailPageOpened( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:reset reset} event of this <code>sap.m.ViewSettingsDialog</code>.
@@ -253,7 +253,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachReset( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+	public function detachReset( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:resetFilters resetFilters} event of this <code>sap.m.ViewSettingsDialog</code>.
@@ -263,7 +263,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachResetFilters( fnFunction:()->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
+	public function detachResetFilters( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.m.ViewSettingsDialog;
 
 	/**
 	* Creates a new subclass of class sap.m.ViewSettingsDialog with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -274,7 +274,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets content of aggregation {@link #getCustomTabs customTabs}.
@@ -605,7 +605,7 @@ Additionally, it unregisters them from the hosting UIArea.
 	* @param	fnTest A function that accepts two parameters fnTest({string} query, {string} value) and returns boolean if the value satisfies the query.
 	* @return	this instance for chaining
 	*/
-	public function setFilterSearchCallback( fnTest:()->Void):sap.m.ViewSettingsDialog;
+	public function setFilterSearchCallback( fnTest:(Dynamic)->Void):sap.m.ViewSettingsDialog;
 
 	/**
 	* Sets a new value for property {@link #getFilterSearchOperator filterSearchOperator}.

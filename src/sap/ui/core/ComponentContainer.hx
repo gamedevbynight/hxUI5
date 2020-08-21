@@ -39,7 +39,7 @@ Fired when the component instance has been created by the ComponentContainer.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.ComponentContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachComponentCreated( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ComponentContainer;
+	public function attachComponentCreated( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ComponentContainer;
 
 	/**
 	* Attaches event handler <code>fnFunction</code> to the {@link #event:componentFailed componentFailed} event of this <code>sap.ui.core.ComponentContainer</code>.
@@ -52,7 +52,7 @@ Fired when the creation of the component instance has failed.
 	* @param	oListener Context object to call the event handler with. Defaults to this <code>sap.ui.core.ComponentContainer</code> itself
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function attachComponentFailed( ?oData:Dynamic, fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ComponentContainer;
+	public function attachComponentFailed( ?oData:Dynamic, fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ComponentContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:componentCreated componentCreated} event of this <code>sap.ui.core.ComponentContainer</code>.
@@ -62,7 +62,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachComponentCreated( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ComponentContainer;
+	public function detachComponentCreated( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ComponentContainer;
 
 	/**
 	* Detaches event handler <code>fnFunction</code> from the {@link #event:componentFailed componentFailed} event of this <code>sap.ui.core.ComponentContainer</code>.
@@ -72,7 +72,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	oListener Context object on which the given function had to be called
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function detachComponentFailed( fnFunction:()->Void, ?oListener:Dynamic):sap.ui.core.ComponentContainer;
+	public function detachComponentFailed( fnFunction:(Dynamic)->Void, ?oListener:Dynamic):sap.ui.core.ComponentContainer;
 
 	/**
 	* Creates a new subclass of class sap.ui.core.ComponentContainer with name <code>sClassName</code> and enriches it with the information contained in <code>oClassInfo</code>.
@@ -83,7 +83,7 @@ The passed function and listener object must match the ones used for event regis
 	* @param	FNMetaImpl Constructor function for the metadata object; if not given, it defaults to the metadata implementation used by this class
 	* @return	Created class / constructor function
 	*/
-	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:()->Void):()->Void;
+	public static function extend( sClassName:String, ?oClassInfo:Dynamic, ?FNMetaImpl:(Dynamic)->Void):(Dynamic)->Void;
 
 	/**
 	* Gets current value of property {@link #getAsync async}.
@@ -267,7 +267,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sHeight New value for property <code>height</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setHeight( sHeight:sap.ui.core.CSSSize):sap.ui.core.ComponentContainer;
+	public function setHeight( ?sHeight:sap.ui.core.CSSSize):sap.ui.core.ComponentContainer;
 
 	/**
 	* Sets a new value for property {@link #getLifecycle lifecycle}.
@@ -291,7 +291,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oManifest New value for property <code>manifest</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setManifest( oManifest:Dynamic):sap.ui.core.ComponentContainer;
+	public function setManifest( ?oManifest:Dynamic):sap.ui.core.ComponentContainer;
 
 	/**
 	* Sets a new value for property {@link #getName name}.
@@ -302,7 +302,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sName New value for property <code>name</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setName( sName:String):sap.ui.core.ComponentContainer;
+	public function setName( ?sName:String):sap.ui.core.ComponentContainer;
 
 	/**
 	* Sets a new value for property {@link #getPropagateModel propagateModel}.
@@ -326,7 +326,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	oSettings New value for property <code>settings</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setSettings( oSettings:Dynamic):sap.ui.core.ComponentContainer;
+	public function setSettings( ?oSettings:Dynamic):sap.ui.core.ComponentContainer;
 
 	/**
 	* Sets a new value for property {@link #getUrl url}.
@@ -337,7 +337,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUrl New value for property <code>url</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUrl( sUrl:sap.ui.core.URI):sap.ui.core.ComponentContainer;
+	public function setUrl( ?sUrl:sap.ui.core.URI):sap.ui.core.ComponentContainer;
 
 	/**
 	* Sets a new value for property {@link #getUsage usage}.
@@ -354,7 +354,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sUsage New value for property <code>usage</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setUsage( sUsage:String):sap.ui.core.ComponentContainer;
+	public function setUsage( ?sUsage:String):sap.ui.core.ComponentContainer;
 
 	/**
 	* Sets a new value for property {@link #getWidth width}.
@@ -365,7 +365,7 @@ When called with a value of <code>null</code> or <code>undefined</code>, the def
 	* @param	sWidth New value for property <code>width</code>
 	* @return	Reference to <code>this</code> in order to allow method chaining
 	*/
-	public function setWidth( sWidth:sap.ui.core.CSSSize):sap.ui.core.ComponentContainer;
+	public function setWidth( ?sWidth:sap.ui.core.CSSSize):sap.ui.core.ComponentContainer;
 }
 
 typedef ComponentContainerArgs = sap.ui.core.Control.ControlArgs & {
